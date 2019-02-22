@@ -15,7 +15,6 @@
 #include <memory>
 #include "Engine/World.h"
 #include "FilePath.h"
-#include "Components/CameraShake.h"
 
 MitchGame::MitchGame()
 	: Game()
@@ -30,14 +29,12 @@ MitchGame::~MitchGame()
 void MitchGame::Initialize()
 {
 	auto GameWorld = GetEngine().GetWorld().lock();
+
 	MainCamera = GameWorld->CreateEntity();
 	Transform& CameraPos = MainCamera.AddComponent<Transform>("Main Camera");
 	CameraPos.SetPosition(glm::vec3(0, 5, 20));
 	MainCamera.AddComponent<Camera>();
 	MainCamera.AddComponent<FlyingCamera>();
-	CameraShake& shakeComponent = MainCamera.AddComponent<CameraShake>();
-	shakeComponent.MaxDirection = glm::vec3(10, 10, 25);
-	shakeComponent.ShakeAmount = 0.25f;
 	MainCamera.AddComponent<Light>();
 
 	SecondaryCamera = GameWorld->CreateEntity();
@@ -48,53 +45,20 @@ void MitchGame::Initialize()
 	SecondaryCamera.AddComponent<FlyingCamera>();
 
 	Entity TestModel = GameWorld->CreateEntity();
-	Transform& ModelTransform = TestModel.AddComponent<Transform>("Ground obvs");
+	Transform& ModelTransform = TestModel.AddComponent<Transform>("Cube");
 	ModelTransform.SetPosition(glm::vec3(0.f, 20.f, 0.f));
-	ModelTransform.SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
+	ModelTransform.SetScale(glm::vec3(1.5f, 1.5f, 1.5f));
 	TestModel.AddComponent<Rigidbody>();
-	TestModel.AddComponent<Model>("Assets/marcus.fbx");
-
-	Entity TestModel2 = GameWorld->CreateEntity();
-	Transform& ModelTransform2 = TestModel2.AddComponent<Transform>("Ground obvs2");
-	ModelTransform2.SetPosition(glm::vec3(5.f, 20.f, 0.f));
-	TestModel2.AddComponent<Rigidbody>();
-	//TestModel2.AddComponent<Model>("Assets/cube.obj");
-
-	/*Entity Ground2 = GameWorld->CreateEntity();
-	Ground2.AddComponent<Transform>("Ground obvs");
-	Ground2.GetComponent<Transform>().SetPosition(glm::vec3(0, 0, 0));
-	Ground2.GetComponent<Transform>().SetScale(glm::vec3(0.025f, 0.025f, 0.025f));
-	Ground2.AddComponent<Model>("Assets/Hog/Roadhog.fbx");*/
-
-	const int Lights = 10;
-	srand(13);
-	for (unsigned int i = 0; i < Lights; i++)
-	{
-		Entity TestLight = GameWorld->CreateEntity();
-		Transform& LightTransform = TestLight.AddComponent<Transform>("Light " + std::to_string(i));
-		Light& LightInfo = TestLight.AddComponent<Light>();
-
-		float xPos = ((rand() % 100) / 100.0) * 6.0 - 3.0;
-		float yPos = ((rand() % 100) / 100.0) * 6.0 - 4.0;
-		float zPos = ((rand() % 100) / 100.0) * 6.0 - 3.0;
-		LightTransform.SetPosition(glm::vec3(xPos, yPos, zPos));
-		LightTransform.SetScale(glm::vec3(0.1f, 0.1f, 0.1f));
-		TestLight.AddComponent<Rigidbody>();
-		TestLight.AddComponent<Model>("Assets/marcus.fbx");
-	}
+	TestModel.AddComponent<Model>("Assets/Cube.fbx");
 
 	FlyingCameraController = new FlyingCameraCore();
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
-
-	CameraShakeController = new CameraShakeCore();
-	GameWorld->AddCore<CameraShakeCore>(*CameraShakeController);
 }
 
-float totalTime = 0.f;
 void MitchGame::Update(float DeltaTime)
 {
 	FlyingCameraController->Update(DeltaTime);
-	CameraShakeController->Update(DeltaTime);
+
 	Input& Instance = Input::GetInstance();
 	if (Instance.IsKeyDown(KeyCode::Number1))
 	{
@@ -104,35 +68,6 @@ void MitchGame::Update(float DeltaTime)
 	{
 		SecondaryCamera.GetComponent<Camera>().SetCurrent();
 	}
-	if (Instance.IsKeyDown(KeyCode::P) && !AddedPhysics)
-	{
-		for (auto& Cube : Cubes)
-		{
-			Cube.AddComponent<Rigidbody>();
-		}
-		AddedPhysics = true;
-	}
-	int i = 0;
-	for (auto& Cube : Cubes)
-	{
-		Transform& CubeTransform = Cube.GetComponent<Transform>();
-		CubeTransform.SetPosition(glm::vec3(i, glm::sin(totalTime + i), 0));
-		i++;
-	}
-
-	totalTime += DeltaTime;
-
-	Camera* CurrentCamera = Camera::CurrentCamera;
-	{
-		if (CurrentCamera->Zoom >= 1.0f && CurrentCamera->Zoom <= 45.0f)
-			CurrentCamera->Zoom -= PrevMouseScroll.y - Input::GetInstance().GetMouseScrollOffset().y;
-		if (CurrentCamera->Zoom <= 1.0f)
-			CurrentCamera->Zoom = 1.0f;
-		if (CurrentCamera->Zoom >= 45.0f)
-			CurrentCamera->Zoom = 45.0f;
-	}
-	PrevMouseScroll = Input::GetInstance().GetMouseScrollOffset();
-	Transform& TransformComponent = MainCamera.GetComponent<Transform>();
 }
 
 void MitchGame::End()
