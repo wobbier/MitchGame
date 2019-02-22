@@ -26,7 +26,7 @@ before_build:
   - nuget restore
 after_build:
   - mkdir _Artifacts
-  - robocopy "Build\%CONFIGURATION%\Assets" "_Artifacts\Assets" *.* /mir /w:0 /r:1 /v /log:"_Artifacts\\Assets.log"
+  - xcopy /y /d /s Build\%CONFIGURATION%\Assets _Artifacts\Assets\
   - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.dll %APPVEYOR_BUILD_FOLDER%\_Artifacts
   - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.exe %APPVEYOR_BUILD_FOLDER%\_Artifacts
   - 7z a %APPVEYOR_BUILD_FOLDER%\MitchGame_%APPVEYOR_REPO_BRANCH%_%APPVEYOR_BUILD_VERSION%_%CONFIGURATION%.zip _Artifacts
