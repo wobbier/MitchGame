@@ -8,19 +8,9 @@ build:
 branches:
   only:
     - master
-environment:
-  matrix:
-  - env_renderdoc_path: "https://renderdoc.org/stable/1.2/RenderDoc_1.2_64.msi"
-
-install:
-- ps: >-
-    if ($Env:env_renderdoc_path) {
-      md _tmp
-      cd _tmp
-      Start-FileDownload $Env:env_renderdoc_path "RenderDoc.msi"
-      Start-Process -FilePath "RenderDoc.msi" /S -Wait
-      cd ../
-    }
+configuration:
+ - Debug
+ - Release
 before_build:
   - git submodule init
   - git submodule update
@@ -36,7 +26,10 @@ before_build:
   - nuget restore
 after_build:
   - mkdir _Artifacts
-  - xcopy /y /d /s Build\%CONFIGURATION%\Assets _Artifacts\Assets\
+  - robocopy "Build\%CONFIGURATION%\Assets" "_Artifacts\Assets\" *.* /mir /w:0 /r:1 /v /log:"_Artifacts\\Assets.log"
   - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.dll %APPVEYOR_BUILD_FOLDER%\_Artifacts
   - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.exe %APPVEYOR_BUILD_FOLDER%\_Artifacts
   - 7z a %APPVEYOR_BUILD_FOLDER%\MitchGame_%APPVEYOR_REPO_BRANCH%_%APPVEYOR_BUILD_VERSION%_%CONFIGURATION%.zip _Artifacts
+  
+artifacts:
+- path: MitchGame_$(appveyor_repo_branch)_$(appveyor_build_version)_$(configuration).zip
