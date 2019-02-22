@@ -8,6 +8,19 @@ build:
 branches:
   only:
     - master
+environment:
+  matrix:
+  - env_renderdoc_path: "https://renderdoc.org/stable/1.2/RenderDoc_1.2_64.msi"
+
+install:
+- ps: >-
+    if ($Env:env_renderdoc_path) {
+      md _tmp
+      cd _tmp
+      Start-FileDownload $Env:env_renderdoc_path "RenderDoc.msi"
+      Start-Process -FilePath "RenderDoc.msi" /S -Wait
+      cd ../
+    }
 before_build:
   - git submodule init
   - git submodule update
