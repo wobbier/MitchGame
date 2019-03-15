@@ -63,11 +63,11 @@ void FlyingCameraCore::Update(float dt)
 			}
 			if (Instance.IsKeyDown(KeyCode::A))
 			{
-				TransformComponent.Translate(glm::normalize(glm::cross(CameraComponent.Up, CameraComponent.Front)) * CameraSpeed);
+				TransformComponent.Translate(CameraComponent.Up.Cross(CameraComponent.Front).Normalized() * CameraSpeed);
 			}
 			if (Instance.IsKeyDown(KeyCode::D))
 			{
-				TransformComponent.Translate(glm::normalize(glm::cross(CameraComponent.Front, CameraComponent.Up)) * CameraSpeed);
+				TransformComponent.Translate(CameraComponent.Front.Cross(CameraComponent.Up).Normalized() * CameraSpeed);
 			}
 			if (Instance.IsKeyDown(KeyCode::Space))
 			{
@@ -75,29 +75,29 @@ void FlyingCameraCore::Update(float dt)
 			}
 			if (Instance.IsKeyDown(KeyCode::E))
 			{
-				TransformComponent.Translate(glm::normalize(glm::cross(glm::cross(CameraComponent.Front, CameraComponent.Up), CameraComponent.Front)) * CameraSpeed);
+				TransformComponent.Translate(CameraComponent.Front.Cross(CameraComponent.Up).Cross(CameraComponent.Front).Normalized() * CameraSpeed);
 			}
 			if (Instance.IsKeyDown(KeyCode::Q))
 			{
-				TransformComponent.Translate(glm::normalize(glm::cross(glm::cross(CameraComponent.Front, -CameraComponent.Up), CameraComponent.Front)) * CameraSpeed);
+				TransformComponent.Translate(CameraComponent.Front.Cross(-CameraComponent.Up).Cross(CameraComponent.Front).Normalized() * CameraSpeed);
 			}
 
-			glm::vec2 MousePosition = Instance.GetMousePosition();
-			if (MousePosition == glm::vec2(0, 0))
+			Vector2 MousePosition = Instance.GetMousePosition();
+			if (MousePosition == Vector2(0, 0))
 			{
 				continue;
 			}
 			if (FirstUpdate)
 			{
-				LastX = MousePosition.x;
-				LastY = MousePosition.y;
+				LastX = MousePosition.X();
+				LastY = MousePosition.Y();
 				FirstUpdate = false;
 			}
 
-			float XOffset = MousePosition.x - LastX;
-			float YOffest = LastY - MousePosition.y;
-			LastX = MousePosition.x;
-			LastY = MousePosition.y;
+			float XOffset = MousePosition.X() - LastX;
+			float YOffest = LastY - MousePosition.Y();
+			LastX = MousePosition.X();
+			LastY = MousePosition.Y();
 
 			XOffset *= FlyingCameraComponent.LookSensitivity;
 			YOffest *= FlyingCameraComponent.LookSensitivity;
@@ -110,11 +110,11 @@ void FlyingCameraCore::Update(float dt)
 			if (Pitch < -89.0f)
 				Pitch = -89.0f;
 
-			glm::vec3 Front;
-			Front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-			Front.y = sin(glm::radians(Pitch));
-			Front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-			CameraComponent.Front = glm::normalize(Front);
+			Vector3& Front = CameraComponent.Front;
+			Front[0] = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+			Front[1]= sin(glm::radians(Pitch));
+			Front[2] = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+			Front.Normalize();
 		}
 	}
 }
