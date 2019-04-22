@@ -11,14 +11,14 @@ public:
 	MitchGame();
 	virtual ~MitchGame() override;
 
-	virtual void Initialize() override;
+	virtual void OnStart() override;
 
-	virtual void Update(float DeltaTime) override;
+	virtual void OnUpdate(float DeltaTime) override;
 
-	virtual void End() override;
+	virtual void OnEnd() override;
 
 	FlyingCameraCore* FlyingCameraController;
 
-	Entity MainCamera;
-	Entity SecondaryCamera;
+	WeakPtr<Entity> MainCamera;
+	WeakPtr<Entity> SecondaryCamera;
 };

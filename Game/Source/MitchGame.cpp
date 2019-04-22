@@ -26,50 +26,50 @@ MitchGame::~MitchGame()
 	Game::~Game();
 }
 
-void MitchGame::Initialize()
+void MitchGame::OnStart()
 {
 	auto GameWorld = GetEngine().GetWorld().lock();
 
 	MainCamera = GameWorld->CreateEntity();
-	Transform& CameraPos = MainCamera.AddComponent<Transform>("Main Camera");
+	Transform& CameraPos = MainCamera.lock()->AddComponent<Transform>("Main Camera");
 	CameraPos.SetPosition(glm::vec3(0, 5, 20));
-	MainCamera.AddComponent<Camera>();
-	MainCamera.AddComponent<FlyingCamera>();
-	MainCamera.AddComponent<Light>();
+	MainCamera.lock()->AddComponent<Camera>();
+	MainCamera.lock()->AddComponent<FlyingCamera>();
+	MainCamera.lock()->AddComponent<Light>();
 
 	SecondaryCamera = GameWorld->CreateEntity();
-	Transform& SecondaryPos = SecondaryCamera.AddComponent<Transform>("Secondary Camera");
+	Transform& SecondaryPos = SecondaryCamera.lock()->AddComponent<Transform>("Secondary Camera");
 	SecondaryPos.SetPosition(glm::vec3(0, 5, 20));
-	SecondaryCamera.AddComponent<Camera>();
-	SecondaryCamera.AddComponent<Light>();
-	SecondaryCamera.AddComponent<FlyingCamera>();
+	SecondaryCamera.lock()->AddComponent<Camera>();
+	SecondaryCamera.lock()->AddComponent<Light>();
+	SecondaryCamera.lock()->AddComponent<FlyingCamera>();
 
-	Entity TestModel = GameWorld->CreateEntity();
-	Transform& ModelTransform = TestModel.AddComponent<Transform>("Cube");
+	auto TestModel = GameWorld->CreateEntity();
+	Transform& ModelTransform = TestModel.lock()->AddComponent<Transform>("Sponza");
 	ModelTransform.SetPosition(glm::vec3(0.f, 20.f, 0.f));
 	ModelTransform.SetScale(glm::vec3(1.5f, 1.5f, 1.5f));
-	TestModel.AddComponent<Rigidbody>();
-	TestModel.AddComponent<Model>("Assets/Cube.fbx");
+	TestModel.lock()->AddComponent<Rigidbody>();
+	TestModel.lock()->AddComponent<Model>("Assets/sponza.obj");
 
 	FlyingCameraController = new FlyingCameraCore();
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
 }
 
-void MitchGame::Update(float DeltaTime)
+void MitchGame::OnUpdate(float DeltaTime)
 {
 	FlyingCameraController->Update(DeltaTime);
 
 	Input& Instance = Input::GetInstance();
 	if (Instance.IsKeyDown(KeyCode::Number1))
 	{
-		MainCamera.GetComponent<Camera>().SetCurrent();
+		MainCamera.lock()->GetComponent<Camera>().SetCurrent();
 	}
 	if (Instance.IsKeyDown(KeyCode::Number2))
 	{
-		SecondaryCamera.GetComponent<Camera>().SetCurrent();
+		SecondaryCamera.lock()->GetComponent<Camera>().SetCurrent();
 	}
 }
 
-void MitchGame::End()
+void MitchGame::OnEnd()
 {
 }
