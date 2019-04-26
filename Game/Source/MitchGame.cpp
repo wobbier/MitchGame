@@ -47,7 +47,7 @@ void MitchGame::OnStart()
 	auto TestModel = GameWorld->CreateEntity();
 	Transform& ModelTransform = TestModel.lock()->AddComponent<Transform>("Sponza");
 	ModelTransform.SetPosition(glm::vec3(0.f, 20.f, 0.f));
-	ModelTransform.SetScale(glm::vec3(1.5f, 1.5f, 1.5f));
+	ModelTransform.SetScale(glm::vec3(.1f, .1f, .1f));
 	TestModel.lock()->AddComponent<Rigidbody>();
 	TestModel.lock()->AddComponent<Model>("Assets/sponza.obj");
 

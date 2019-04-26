@@ -4,7 +4,7 @@
 #include "Components/Camera.h"
 #include "Engine/Input.h"
 #include "Events/EventManager.h"
-#include "Brofiler.h"
+#include "optick.h"
 
 FlyingCameraCore::FlyingCameraCore() : Base(ComponentFilter().Requires<FlyingCamera>().Requires<Camera>())
 {
@@ -23,7 +23,7 @@ void FlyingCameraCore::Init()
 
 void FlyingCameraCore::Update(float dt)
 {
-	BROFILER_CATEGORY("FlyingCameraCore::Update", Brofiler::Color::Green);
+	OPTICK_CATEGORY("FlyingCameraCore::Update", Optick::Category::Camera);
 
 	Input& Instance = Input::GetInstance();
 	if (Instance.IsKeyDown(KeyCode::Enter))
