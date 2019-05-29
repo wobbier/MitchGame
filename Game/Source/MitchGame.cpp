@@ -15,20 +15,25 @@
 #include <memory>
 #include "Engine/World.h"
 #include "FilePath.h"
+#include "Engine/Engine.h"
+#include "Game.h"
+#include "Cores/PhysicsCore.h"
+#include "Cores/Cameras/FlyingCameraCore.h"
 
-MitchGame::MitchGame()
+MitchGame::MitchGame(Engine* engine)
 	: Game()
+	, m_engine(engine)
 {
+	Physics = new PhysicsCore();
 }
 
 MitchGame::~MitchGame()
 {
-	Game::~Game();
 }
 
 void MitchGame::OnStart()
 {
-	auto GameWorld = GetEngine().GetWorld().lock();
+	auto GameWorld = m_engine->GetWorld().lock();
 
 	MainCamera = GameWorld->CreateEntity();
 	Transform& CameraPos = MainCamera.lock()->AddComponent<Transform>("Main Camera");
@@ -46,17 +51,21 @@ void MitchGame::OnStart()
 
 	auto TestModel = GameWorld->CreateEntity();
 	Transform& ModelTransform = TestModel.lock()->AddComponent<Transform>("Sponza");
-	ModelTransform.SetPosition(glm::vec3(0.f, 20.f, 0.f));
+	ModelTransform.SetPosition(glm::vec3(0.f, 0.f, 0.f));
 	ModelTransform.SetScale(glm::vec3(.1f, .1f, .1f));
-	TestModel.lock()->AddComponent<Rigidbody>();
-	TestModel.lock()->AddComponent<Model>("Assets/sponza.obj");
+	//TestModel.lock()->AddComponent<Rigidbody>();
+	//TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
+	TestModel.lock()->AddComponent<Model>("Assets/Cube3.fbx");
 
 	FlyingCameraController = new FlyingCameraCore();
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
+	GameWorld->AddCore<PhysicsCore>(*Physics);
 }
 
 void MitchGame::OnUpdate(float DeltaTime)
 {
+	Physics->Update(DeltaTime);
+
 	FlyingCameraController->Update(DeltaTime);
 
 	Input& Instance = Input::GetInstance();
@@ -72,4 +81,27 @@ void MitchGame::OnUpdate(float DeltaTime)
 
 void MitchGame::OnEnd()
 {
+}
+
+void MitchGame::OnInitialize()
+{
+}
+
+void MitchGame::PostRender()
+{
+}
+
+extern "C"
+{
+	Game* CreateGame(const char* gameName, Engine* engine)
+	{
+		MitchGame* game = new MitchGame(engine);
+		engineInstance = engine;
+		return game;
+	}
+
+	void DestroyGame(Game* game)
+	{
+		delete game;
+	}
 }

@@ -1,9 +1,12 @@
 #include "MitchGame.h"
+#include "Engine/Engine.h"
 
 int main()
 {
-	MitchGame* game = new MitchGame();
-	game->Run();
+	Engine gameEngine;
+
+	gameEngine.Init(new MitchGame(&gameEngine));
+	gameEngine.Run();
 
 	return 0;
 }
