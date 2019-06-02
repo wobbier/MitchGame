@@ -1,13 +1,13 @@
 #pragma once
 #include "Game.h"
 #include "Pointers.h"
-#include "Engine/Engine.h"
+#include "ECS/Entity.h"
 
 class MitchGame
 	: public Game
 {
 public:
-	MitchGame(class Engine* engine);
+	MitchGame();
 	~MitchGame();
 
 	virtual void OnInitialize() override;
@@ -23,12 +23,4 @@ public:
 
 	WeakPtr<Entity> MainCamera;
 	WeakPtr<Entity> SecondaryCamera;
-
-	class Engine* m_engine;
 };
-
-extern "C"
-{
-	__declspec(dllexport) Game* CreateGame(const char* gameName, Engine* engine);
-	__declspec(dllexport) void DestroyGame(Game* game);
-}

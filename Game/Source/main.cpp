@@ -5,7 +5,7 @@ int main()
 {
 	Engine gameEngine;
 
-	gameEngine.Init(new MitchGame(&gameEngine));
+	gameEngine.Init(new MitchGame());
 	gameEngine.Run();
 
 	return 0;

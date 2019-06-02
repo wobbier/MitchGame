@@ -1,4 +1,5 @@
 #include "MitchGame.h"
+#include "Engine/Engine.h"
 #include "ECS/Component.h"
 #include "Engine/Clock.h"
 #include "Components/Transform.h"
@@ -15,14 +16,12 @@
 #include <memory>
 #include "Engine/World.h"
 #include "FilePath.h"
-#include "Engine/Engine.h"
 #include "Game.h"
 #include "Cores/PhysicsCore.h"
 #include "Cores/Cameras/FlyingCameraCore.h"
 
-MitchGame::MitchGame(Engine* engine)
+MitchGame::MitchGame()
 	: Game()
-	, m_engine(engine)
 {
 	Physics = new PhysicsCore();
 }
@@ -33,7 +32,7 @@ MitchGame::~MitchGame()
 
 void MitchGame::OnStart()
 {
-	auto GameWorld = m_engine->GetWorld().lock();
+	auto GameWorld = GetEngine().GetWorld().lock();
 
 	MainCamera = GameWorld->CreateEntity();
 	Transform& CameraPos = MainCamera.lock()->AddComponent<Transform>("Main Camera");
@@ -89,19 +88,4 @@ void MitchGame::OnInitialize()
 
 void MitchGame::PostRender()
 {
-}
-
-extern "C"
-{
-	Game* CreateGame(const char* gameName, Engine* engine)
-	{
-		MitchGame* game = new MitchGame(engine);
-		engineInstance = engine;
-		return game;
-	}
-
-	void DestroyGame(Game* game)
-	{
-		delete game;
-	}
 }
