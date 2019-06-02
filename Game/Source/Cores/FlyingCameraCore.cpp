@@ -130,3 +130,9 @@ bool FlyingCameraCore::OnEvent(const BaseEvent& evt)
 
 	return false;
 }
+
+void FlyingCameraCore::OnEntityAdded(Entity& NewEntity)
+{
+	int i = 0;
+	++i;
+}

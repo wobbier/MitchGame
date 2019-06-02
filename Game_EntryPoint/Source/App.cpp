@@ -5,6 +5,7 @@
 #include <ppltasks.h>
 #include "Renderer.h"
 #include "Device/D3D12Device.h"
+#include "Engine/Engine.h"
 
 using namespace concurrency;
 using namespace Windows::ApplicationModel;
@@ -44,13 +45,13 @@ void App::SetWindow(CoreWindow^ window)
 // Initializes scene resources, or loads a previously saved app state.
 void App::Load(Platform::String^ entryPoint)
 {
-	m_main->Start();
+	GetEngine().Init(m_main.get());
 }
 
 // This method is called after the window becomes active.
 void App::Run()
 {
-	m_main->Run();
+	GetEngine().Run();
 }
 
 // Required for IFrameworkView.
@@ -76,14 +77,14 @@ void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
 	// the app will be forced to exit.
 	SuspendingDeferral^ deferral = args->SuspendingOperation->GetDeferral();
 
-	create_task([this, deferral]()
-	{
-        Game::GetEngine().GetRenderer().GetDevice().Trim();
+	//create_task([this, deferral]()
+	//{
+        GetEngine().GetRenderer().GetDevice().Trim();
 
 		// Insert your code here.
 
 		deferral->Complete();
-	});
+	//});
 }
 
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)

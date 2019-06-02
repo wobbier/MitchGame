@@ -25,6 +25,9 @@ public:
 
 	virtual bool OnEvent(const BaseEvent& evt);
 
+
+	virtual void OnEntityAdded(Entity& NewEntity) override;
+
 private:
 	float LastX = 0.f;
 	float LastY = 0.f;

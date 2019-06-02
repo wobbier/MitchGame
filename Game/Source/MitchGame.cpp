@@ -24,6 +24,7 @@ MitchGame::MitchGame()
 	: Game()
 {
 	Physics = new PhysicsCore();
+	FlyingCameraController = new FlyingCameraCore();
 }
 
 MitchGame::~MitchGame()
@@ -32,6 +33,7 @@ MitchGame::~MitchGame()
 
 void MitchGame::OnStart()
 {
+	GetEngine().LoadScene("Assets/Alley.lvl");
 	auto GameWorld = GetEngine().GetWorld().lock();
 
 	MainCamera = GameWorld->CreateEntity();
@@ -56,7 +58,6 @@ void MitchGame::OnStart()
 	//TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
 	TestModel.lock()->AddComponent<Model>("Assets/Cube3.fbx");
 
-	FlyingCameraController = new FlyingCameraCore();
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
 	GameWorld->AddCore<PhysicsCore>(*Physics);
 }
