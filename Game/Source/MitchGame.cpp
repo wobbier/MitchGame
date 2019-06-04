@@ -11,8 +11,8 @@
 #include "Components/Physics/Rigidbody.h"
 #include "Components/Graphics/Model.h"
 #include "Components/Lighting/Light.h"
-#include "Components/FlyingCamera.h"
-
+#include "Components/Cameras/FlyingCamera.h"
+#include "Cores/TestCore.h"
 #include <memory>
 #include "Engine/World.h"
 #include "FilePath.h"
