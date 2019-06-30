@@ -15,7 +15,7 @@
 #include "Cores/TestCore.h"
 #include <memory>
 #include "Engine/World.h"
-#include "FilePath.h"
+#include "Path.h"
 #include "Game.h"
 #include "Cores/PhysicsCore.h"
 #include "Cores/Cameras/FlyingCameraCore.h"

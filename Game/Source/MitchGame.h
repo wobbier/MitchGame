@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Pointers.h"
 #include "ECS/Entity.h"
+#include "Cores/TestCore.h"
 
 class MitchGame
 	: public Game
