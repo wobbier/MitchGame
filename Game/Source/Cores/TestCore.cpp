@@ -18,9 +18,11 @@ void TestCore::OnEntityRemoved(Entity& InEntity)
 {
 }
 
+#if ME_EDITOR
 void TestCore::OnEditorInspect()
 {
 }
+#endif
 
 void TestCore::Update(float dt)
 {

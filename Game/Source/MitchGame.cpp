@@ -39,7 +39,7 @@ void MitchGame::OnStart()
 	MainCamera = GameWorld->CreateEntity();
 	Transform& CameraPos = MainCamera.lock()->AddComponent<Transform>("Main Camera");
 	CameraPos.SetPosition(glm::vec3(0, 5, 20));
-	MainCamera.lock()->AddComponent<Camera>();
+	Camera& cam = MainCamera.lock()->AddComponent<Camera>();
 	MainCamera.lock()->AddComponent<FlyingCamera>();
 	MainCamera.lock()->AddComponent<Light>();
 
@@ -56,8 +56,9 @@ void MitchGame::OnStart()
 	ModelTransform.SetScale(glm::vec3(.1f, .1f, .1f));
 	//TestModel.lock()->AddComponent<Rigidbody>();
 	//TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
-	TestModel.lock()->AddComponent<Model>("Assets/Cube3.fbx");
+	TestModel.lock()->AddComponent<Model>("Assets/Craftsman/Craftsman.fbx");
 
+	FlyingCameraController->SetCamera(&cam);
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
 	GameWorld->AddCore<PhysicsCore>(*Physics);
 }
