@@ -3,10 +3,8 @@
 
 int main()
 {
-	Engine gameEngine;
-
-	gameEngine.Init(new MitchGame());
-	gameEngine.Run();
+	GetEngine().Init(new MitchGame());
+	GetEngine().Run();
 
 	return 0;
 }
