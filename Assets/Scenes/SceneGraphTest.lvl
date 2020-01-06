@@ -1,0 +1,82 @@
+{
+    "Cores": [
+        {
+            "Type": "AudioCore"
+        },
+        {
+            "Type": "SceneGraphTestCore"
+        }
+    ],
+    "Scene": [
+        {
+            "Components": [
+                {
+                    "IsCurrent": true,
+                    "Skybox": "Assets/3D/tex/Sky.png",
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                },
+                {
+                    "Position": [
+                        -0.6064399480819702,
+                        0.0,
+                        11.254087448120117
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "Name": "Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Ambient": [
+                        1.0,
+                        0.9999899864196777,
+                        0.9999899864196777
+                    ],
+                    "Diffuse": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Direction": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Type": "DirectionalLight"
+                }
+            ],
+            "Name": "Sun"
+        }
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "Cores": [
+        {
+            "Type": "AudioCore"
+        }
+    ],
+    "Scene": [
+        {
+            "Components": [
+                {
+                    "IsCurrent": true,
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                },
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        16.296649932861328
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "Name": "Main Camera"
+        },
+        {
+            "Children": [
+                {
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "Name": "Cube"
+                },
+                {
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        {
+                            "Textures": {
+                                "Diffuse": {
+                                    "Path": "Assets/CubeDiffuse.jpg",
+                                    "RenderMode": "Opaque"
+                                }
+                            },
+                            "Type": "Mesh",
+                            "test": true
+                        }
+                    ],
+                    "Name": "Cube"
+                }
+            ],
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ModelPath": "Assets/Cube.fbx",
+                    "Type": "Model"
+                }
+            ],
+            "Name": "Cube"
+        },
+        {
+            "Children": [
+                {
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "Name": "Cube"
+                },
+                {
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        {
+                            "Textures": {
+                                "Diffuse": {
+                                    "Path": "Assets/CubeDiffuse.jpg",
+                                    "RenderMode": "Opaque"
+                                }
+                            },
+                            "Type": "Mesh",
+                            "test": true
+                        }
+                    ],
+                    "Name": "Cube"
+                }
+            ],
+            "Components": [
+                {
+                    "Position": [
+                        0.8510803580284119,
+                        -2.625805377960205,
+                        0.3376346826553345
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ModelPath": "Assets/Cube.fbx",
+                    "Type": "Model"
+                }
+            ],
+            "Name": "Cube"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        30.99254035949707,
+                        -32.906349182128906,
+                        11.094173431396484
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Ambient": [
+                        0.20000000298023224,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
+                    "Diffuse": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Direction": [
+                        0.25,
+                        0.5,
+                        -1.0
+                    ],
+                    "Type": "DirectionalLight"
+                }
+            ],
+            "Name": "Sunlight"
+        }
+    ]
+}

@@ -23,7 +23,6 @@
 MitchGame::MitchGame()
 	: Game()
 {
-	Physics = new PhysicsCore();
 	FlyingCameraController = new FlyingCameraCore();
 }
 
@@ -60,21 +59,18 @@ void MitchGame::OnStart()
 
 	FlyingCameraController->SetCamera(&cam);
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
-	GameWorld->AddCore<PhysicsCore>(*Physics);
 }
 
 void MitchGame::OnUpdate(float DeltaTime)
 {
-	Physics->Update(DeltaTime);
-
 	FlyingCameraController->Update(DeltaTime);
 
 	Input& Instance = Input::GetInstance();
-	if (Instance.IsKeyDown(KeyCode::Number1))
+	if (Instance.GetKeyboardState().NumPad1)
 	{
 		MainCamera.lock()->GetComponent<Camera>().SetCurrent();
 	}
-	if (Instance.IsKeyDown(KeyCode::Number2))
+	if (Instance.GetKeyboardState().NumPad2)
 	{
 		SecondaryCamera.lock()->GetComponent<Camera>().SetCurrent();
 	}
