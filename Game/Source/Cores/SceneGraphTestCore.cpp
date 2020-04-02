@@ -27,9 +27,11 @@ void SceneGraphTestCore::OnEntityRemoved(Entity& InEntity)
 {
 }
 
+#if ME_EDITOR
 void SceneGraphTestCore::OnEditorInspect()
 {
 }
+#endif
 
 void SceneGraphTestCore::Update(float dt)
 {
@@ -53,27 +55,27 @@ void SceneGraphTestCore::OnStart()
 {
 	auto world = GetEngine().GetWorld().lock();
 
-	WeakPtr<Entity> rootEnt = world->CreateFromPrefab(std::string(kPrefabName));
-	Transform& rootTransform = rootEnt.lock()->GetComponent<Transform>();
+	EntityHandle rootEnt = world->CreateFromPrefab(std::string(kPrefabName));
+	Transform& rootTransform = rootEnt->GetComponent<Transform>();
 
 	for (int i = 0; i < 10; ++i)
 	{
-		WeakPtr<Entity> subEnt = world->CreateFromPrefab(std::string(kPrefabName2), &rootTransform);
-		Transform& transform = subEnt.lock()->GetComponent<Transform>();
+		EntityHandle subEnt = world->CreateFromPrefab(std::string(kPrefabName2), &rootTransform);
+		Transform& transform = subEnt->GetComponent<Transform>();
 		transform.SetPosition(Vector3(((float)i - 4.5f) * 2.f, -3.f, 0.f));
 		transform.SetScale(0.5f);
 
 		for (int i = 0; i < 10; ++i)
 		{
-			WeakPtr<Entity> sub2Ent = world->CreateFromPrefab(std::string(kPrefabName3), &transform);
-			Transform& subTransform = sub2Ent.lock()->GetComponent<Transform>();
+			EntityHandle sub2Ent = world->CreateFromPrefab(std::string(kPrefabName3), &transform);
+			Transform& subTransform = sub2Ent->GetComponent<Transform>();
 			subTransform.SetPosition(Vector3(((float)i - 4.5f) * 2.f, -3.f, 0.f));
 			subTransform.SetScale(0.5f);
 
 			for (int i = 0; i < 10; ++i)
 			{
-				WeakPtr<Entity> sub3Ent = world->CreateFromPrefab(std::string(kPrefabName4), &subTransform);
-				Transform& sub3Transform = sub3Ent.lock()->GetComponent<Transform>();
+				EntityHandle sub3Ent = world->CreateFromPrefab(std::string(kPrefabName4), &subTransform);
+				Transform& sub3Transform = sub3Ent->GetComponent<Transform>();
 				sub3Transform.SetPosition(Vector3(((float)i - 4.5f) * 2.f, -3.f, 0.f));
 				sub3Transform.SetScale(0.5f);
 			}

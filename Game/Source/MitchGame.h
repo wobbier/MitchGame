@@ -1,8 +1,7 @@
 #pragma once
 #include "Game.h"
 #include "Pointers.h"
-#include "ECS/Entity.h"
-#include "Cores/TestCore.h"
+#include "ECS/EntityHandle.h"
 
 class MitchGame
 	: public Game
@@ -21,6 +20,6 @@ public:
 
 	class FlyingCameraCore* FlyingCameraController = nullptr;
 
-	WeakPtr<Entity> MainCamera;
-	WeakPtr<Entity> SecondaryCamera;
+	EntityHandle MainCamera;
+	EntityHandle SecondaryCamera;
 };

@@ -23,6 +23,11 @@
                         0.0,
                         0.0
                     ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
                     "Type": "Transform"
                 }
             ],
@@ -43,7 +48,25 @@
                                 0.0,
                                 0.0
                             ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
                             "Type": "Transform"
+                        },
+                        {
+                            "DiffuseColor": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "MeshType": "Model",
+                            "Tiling": [
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Mesh"
                         }
                     ],
                     "Name": "Cube"
@@ -61,17 +84,31 @@
                                 0.0,
                                 0.0
                             ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
                             "Type": "Transform"
                         },
                         {
+                            "DiffuseColor": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "MeshType": "Model",
                             "Textures": {
                                 "Diffuse": {
-                                    "Path": "Assets/CubeDiffuse.jpg",
+                                    "Path": "Assets/3D/CubeDiffuse.jpg",
                                     "RenderMode": "Opaque"
                                 }
                             },
-                            "Type": "Mesh",
-                            "test": true
+                            "Tiling": [
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Mesh"
                         }
                     ],
                     "Name": "Cube"
@@ -89,10 +126,15 @@
                         0.0,
                         0.0
                     ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
                     "Type": "Transform"
                 },
                 {
-                    "ModelPath": "Assets/Cube.fbx",
+                    "ModelPath": "Assets/3D/Cube.fbx",
                     "Type": "Model"
                 }
             ],
@@ -113,7 +155,25 @@
                                 0.0,
                                 0.0
                             ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
                             "Type": "Transform"
+                        },
+                        {
+                            "DiffuseColor": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "MeshType": "Model",
+                            "Tiling": [
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Mesh"
                         }
                     ],
                     "Name": "Cube"
@@ -131,17 +191,31 @@
                                 0.0,
                                 0.0
                             ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
                             "Type": "Transform"
                         },
                         {
+                            "DiffuseColor": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "MeshType": "Model",
                             "Textures": {
                                 "Diffuse": {
-                                    "Path": "Assets/CubeDiffuse.jpg",
+                                    "Path": "Assets/3D/CubeDiffuse.jpg",
                                     "RenderMode": "Opaque"
                                 }
                             },
-                            "Type": "Mesh",
-                            "test": true
+                            "Tiling": [
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Mesh"
                         }
                     ],
                     "Name": "Cube"
@@ -159,10 +233,15 @@
                         0.0,
                         0.0
                     ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
                     "Type": "Transform"
                 },
                 {
-                    "ModelPath": "Assets/Cube.fbx",
+                    "ModelPath": "Assets/3D/Cube.fbx",
                     "Type": "Model"
                 }
             ],
@@ -180,6 +259,11 @@
                         0.0,
                         0.0,
                         0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
                     ],
                     "Type": "Transform"
                 },

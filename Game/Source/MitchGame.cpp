@@ -6,7 +6,6 @@
 #include "ECS/Entity.h"
 #include <string>
 #include "Engine/Input.h"
-#include "Components/Animation.h"
 #include "Components/Camera.h"
 #include "Components/Physics/Rigidbody.h"
 #include "Components/Graphics/Model.h"
@@ -32,30 +31,30 @@ MitchGame::~MitchGame()
 
 void MitchGame::OnStart()
 {
-	GetEngine().LoadScene("Assets/Alley.lvl");
+	GetEngine().LoadScene("Assets/Main.lvl");
 	auto GameWorld = GetEngine().GetWorld().lock();
 
 	MainCamera = GameWorld->CreateEntity();
-	Transform& CameraPos = MainCamera.lock()->AddComponent<Transform>("Main Camera");
+	Transform& CameraPos = MainCamera->AddComponent<Transform>("Main Camera");
 	CameraPos.SetPosition(Vector3(0, 5, 20));
-	Camera& cam = MainCamera.lock()->AddComponent<Camera>();
-	MainCamera.lock()->AddComponent<FlyingCamera>();
-	MainCamera.lock()->AddComponent<Light>();
+	Camera& cam = MainCamera->AddComponent<Camera>();
+	MainCamera->AddComponent<FlyingCamera>();
+	MainCamera->AddComponent<Light>();
 
 	SecondaryCamera = GameWorld->CreateEntity();
-	Transform& SecondaryPos = SecondaryCamera.lock()->AddComponent<Transform>("Secondary Camera");
+	Transform& SecondaryPos = SecondaryCamera->AddComponent<Transform>("Secondary Camera");
 	SecondaryPos.SetPosition(Vector3(0, 5, 20));
-	SecondaryCamera.lock()->AddComponent<Camera>();
-	SecondaryCamera.lock()->AddComponent<Light>();
-	SecondaryCamera.lock()->AddComponent<FlyingCamera>();
+	SecondaryCamera->AddComponent<Camera>();
+	SecondaryCamera->AddComponent<Light>();
+	SecondaryCamera->AddComponent<FlyingCamera>();
 
 	auto TestModel = GameWorld->CreateEntity();
-	Transform& ModelTransform = TestModel.lock()->AddComponent<Transform>("Sponza");
+	Transform& ModelTransform = TestModel->AddComponent<Transform>("Sponza");
 	ModelTransform.SetPosition(Vector3(0.f, 0.f, 0.f));
 	ModelTransform.SetScale(Vector3(.1f, .1f, .1f));
 	//TestModel.lock()->AddComponent<Rigidbody>();
 	//TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
-	TestModel.lock()->AddComponent<Model>("Assets/Craftsman/Craftsman.fbx");
+	TestModel->AddComponent<Model>("Assets/Craftsman/Craftsman.fbx");
 
 	FlyingCameraController->SetCamera(&cam);
 	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
@@ -65,14 +64,14 @@ void MitchGame::OnUpdate(float DeltaTime)
 {
 	FlyingCameraController->Update(DeltaTime);
 
-	Input& Instance = Input::GetInstance();
+	Input& Instance = GetEngine().GetInput();
 	if (Instance.GetKeyboardState().NumPad1)
 	{
-		MainCamera.lock()->GetComponent<Camera>().SetCurrent();
+		MainCamera->GetComponent<Camera>().SetCurrent();
 	}
 	if (Instance.GetKeyboardState().NumPad2)
 	{
-		SecondaryCamera.lock()->GetComponent<Camera>().SetCurrent();
+		SecondaryCamera->GetComponent<Camera>().SetCurrent();
 	}
 }
 

@@ -1,0 +1,66 @@
+{
+    "Cores": [
+        {
+            "Type": "AudioCore"
+        }
+    ],
+    "Scene": [
+        {
+            "Components": [
+                {
+                    "IsCurrent": true,
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                },
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "Main Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "FilePath": "Assets/UI/Main.html",
+                    "Type": "MenuController"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "UI"
+        }
+    ]
+}
