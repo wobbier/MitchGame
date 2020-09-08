@@ -10,6 +10,12 @@ public:
 	SceneGraphTestObject();
 	virtual void Init() override;
 
+private:
+	void OnSerialize(json& outJson) override;
+
+
+	void OnDeserialize(const json& inJson) override;
+
 };
 
 ME_REGISTER_COMPONENT(SceneGraphTestObject);
@@ -34,6 +40,9 @@ public:
 #endif
 
 	virtual void Update(float dt) override;
+
+
+	void OnEntityDestroyed(Entity& InEntity) override;
 
 private:
 	virtual void Init() override;

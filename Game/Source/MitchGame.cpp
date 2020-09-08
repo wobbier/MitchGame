@@ -18,6 +18,7 @@
 #include "Game.h"
 #include "Cores/PhysicsCore.h"
 #include "Cores/Cameras/FlyingCameraCore.h"
+#include "Events/SceneEvents.h"
 
 MitchGame::MitchGame()
 	: Game()
@@ -31,6 +32,7 @@ MitchGame::~MitchGame()
 
 void MitchGame::OnStart()
 {
+	return;
 	GetEngine().LoadScene("Assets/Main.lvl");
 	auto GameWorld = GetEngine().GetWorld().lock();
 
@@ -81,6 +83,12 @@ void MitchGame::OnEnd()
 
 void MitchGame::OnInitialize()
 {
+	NewSceneEvent evt;
+	evt.Fire();
+	GetEngine().GetWorld().lock()->Start();
+	GetEngine().LoadScene("Assets/Scenes/SceneGraphTest.lvl");
+	GetEngine().GetWorld().lock()->Simulate();
+	GetEngine().GetWorld().lock()->Start();
 }
 
 void MitchGame::PostRender()
