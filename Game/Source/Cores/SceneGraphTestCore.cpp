@@ -64,7 +64,7 @@ void SceneGraphTestCore::Update(float dt)
 		int batchEnd = batch.second;
 		int batchSize = batchEnd - batchBegin;
 
-		entry.m_callBack = [this, &Entities, batchBegin, batchEnd, dt]() {
+		entry.m_callBack = [this, &Entities, batchBegin, batchEnd, dt](int Index) {
 			OPTICK_CATEGORY("B::Job", Optick::Category::Debug);
 
 			for (int entIndex = batchBegin; entIndex < batchEnd; ++entIndex)
