@@ -1,9 +1,6 @@
 {
     "Cores": [
         {
-            "Type": "AudioCore"
-        },
-        {
             "Type": "SceneGraphTestCore"
         }
     ],
@@ -11,19 +8,26 @@
         {
             "Components": [
                 {
+                    "ClearColor": [
+                        0.41580164432525635,
+                        0.6676335334777832,
+                        0.8235294222831726
+                    ],
+                    "Far": 2000.0,
                     "IsCurrent": true,
+                    "Near": 0.10000000149011612,
                     "Type": "Camera",
                     "Zoom": 45.0
                 },
                 {
                     "Position": [
-                        0.0,
-                        0.0,
-                        0.0
+                        3.0,
+                        4.0,
+                        25.0
                     ],
                     "Rotation": [
-                        0.0,
-                        0.0,
+                        -16.0,
+                        -0.0,
                         0.0
                     ],
                     "Scale": [
@@ -34,7 +38,8 @@
                     "Type": "Transform"
                 }
             ],
-            "Name": "New Entity"
+            "DestroyOnLoad": true,
+            "Name": "Main Camera"
         }
     ]
 }

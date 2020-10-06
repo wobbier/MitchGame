@@ -1,43 +1,5 @@
 {
     "Children": [
-        {
-            "Components": [
-                {
-                    "Position": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "Rotation": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "Scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "Type": "Transform"
-                },
-                {
-                    "DiffuseColor": [
-                        0.7009804248809814,
-                        0.2061707079410553,
-                        0.2061707079410553
-                    ],
-                    "Textures": {
-                        "Diffuse": {
-                            "Path": "Assets/3D/CubeDiffuse.jpg",
-                            "RenderMode": "Opaque"
-                        }
-                    },
-                    "Type": "Mesh",
-                    "test": true
-                }
-            ],
-            "Name": "Cube"
-        }
     ],
     "Components": [
         {
@@ -64,7 +26,22 @@
         },
         {
             "Type": "SceneGraphTestObject"
-        }
+        },
+		{
+			"DiffuseColor": [
+				0.7009804248809814,
+				0.2061707079410553,
+				0.2061707079410553
+			],
+			"Textures": {
+				"Diffuse": {
+					"Path": "Assets/3D/CubeDiffuse.jpg",
+					"RenderMode": "Opaque"
+				}
+			},
+			"Type": "Mesh",
+			"test": true
+		}
     ],
     "Name": "Scene Cube"
 }
