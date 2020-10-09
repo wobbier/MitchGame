@@ -75,7 +75,7 @@ void SceneGraphTestCore::Update(float dt)
 				{
 					OPTICK_CATEGORY("Update Rotation Vector", Optick::Category::Debug);
 					Vector3 rot = transform.GetRotation();
-					rot.SetY(rot.Y() + (Mathf::Radians(10.0f * dt * 50.f)));
+					rot.y += Mathf::Radians(10.0f * dt * 50.f);
 					transform.SetRotation(rot);
 				}
 			}
