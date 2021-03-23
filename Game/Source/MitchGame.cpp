@@ -20,8 +20,8 @@
 #include "Cores/Cameras/FlyingCameraCore.h"
 #include "Events/SceneEvents.h"
 
-MitchGame::MitchGame()
-	: Game()
+MitchGame::MitchGame(int argc, char** argv)
+	: Game(argc, argv)
 {
 	FlyingCameraController = new FlyingCameraCore();
 }
@@ -64,17 +64,17 @@ void MitchGame::OnStart()
 
 void MitchGame::OnUpdate(float DeltaTime)
 {
-	FlyingCameraController->Update(DeltaTime);
+	//FlyingCameraController->Update(DeltaTime);
 
-	Input& Instance = GetEngine().GetInput();
-	if (Instance.GetKeyboardState().NumPad1)
-	{
-		MainCamera->GetComponent<Camera>().SetCurrent();
-	}
-	if (Instance.GetKeyboardState().NumPad2)
-	{
-		SecondaryCamera->GetComponent<Camera>().SetCurrent();
-	}
+	//Input& Instance = GetEngine().GetInput();
+	//if (Instance.GetKeyboardState().NumPad1)
+	//{
+	//	MainCamera->GetComponent<Camera>().SetCurrent();
+	//}
+	//if (Instance.GetKeyboardState().NumPad2)
+	//{
+	//	SecondaryCamera->GetComponent<Camera>().SetCurrent();
+	//}
 }
 
 void MitchGame::OnEnd()
