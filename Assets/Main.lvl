@@ -59,7 +59,7 @@
                     "Type": "MenuController"
                 }
             ],
-            "DestroyOnLoad": true,
+            "DestroyOnLoad": false,
             "Name": "UI"
         }
     ]

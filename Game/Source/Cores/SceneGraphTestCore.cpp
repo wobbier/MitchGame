@@ -50,21 +50,52 @@ void SceneGraphTestCore::Update(float dt)
 
 	auto& Entities = GetEntities();
 
-	Burst& burst = GetEngine().GetBurstWorker();
-	burst.PrepareWork();
+
+	{
+		{
+
+			//Transform* CurrentTransform = GetRootTransform();
+			//for (const SharedPtr<Transform>& Child : CurrentTransform->GetChildren())
+			//{
+			//	OPTICK_EVENT("SceneGraph::GetChildren");
+			//	if (Child->IsDirty())
+			//	{
+			//		//Job* job = pool.CreateClosureJobAsChild([&Child, CurrentTransform](Job& job) {
+			//		OPTICK_CATEGORY("Update Transform", Optick::Category::Scene);
+			//		glm::mat4 model = glm::mat4(1.f);
+			//		model = glm::translate(model, Child->GetPosition().InternalVector);
+			//		model = glm::rotate(model, Child->GetWorldRotation().ToAngle(), Child->GetWorldRotation().ToAxis().InternalVector);
+			//		model = glm::scale(model, Child->GetScale().InternalVector);
+
+			//		Matrix4 xxx = model * CurrentTransform->WorldTransform.GetInternalMatrix();
+			//		Child->SetWorldTransform(xxx);
+			//		if (!Child->GetChildren().empty())
+			//		{
+			//			UpdateRecursively(Child.get(), true, nullptr, true);// *job);
+			//		}
+			//		//}, rootJob);
+			//		//worker->Submit(job);
+			//	}
+			//}
+		}
+
+	}
+	auto [worker, pool] = GetEngine().GetJobSystemNew();
 
 	std::vector<std::pair<int, int>> batches;
-	burst.GenerateChunks(Entities.size(), 11, batches);
+	Burst::GenerateChunks(Entities.size(), 30, batches);
+
+	Job* rootJob = worker->GetPool().CreateClosureJob([](Job& job) {
+	});
 
 	for (auto& batch : batches)
 	{
 		OPTICK_CATEGORY("Burst::BatchAdd", Optick::Category::Debug);
-		Burst::LambdaWorkEntry entry;
 		int batchBegin = batch.first;
 		int batchEnd = batch.second;
 		int batchSize = batchEnd - batchBegin;
 
-		entry.m_callBack = [this, &Entities, batchBegin, batchEnd, dt](int Index) {
+		Job* job = worker->GetPool().CreateClosureJobAsChild([this, &Entities, batchBegin, batchEnd, dt](Job& job) {
 			OPTICK_CATEGORY("B::Job", Optick::Category::Debug);
 
 			for (int entIndex = batchBegin; entIndex < batchEnd; ++entIndex)
@@ -74,17 +105,16 @@ void SceneGraphTestCore::Update(float dt)
 				Transform& transform = InEntity.GetComponent<Transform>();
 				{
 					OPTICK_CATEGORY("Update Rotation Vector", Optick::Category::Debug);
-					Vector3 rot = transform.GetRotation();
-					rot.y += Mathf::Radians(10.0f * dt * 50.f);
-					transform.SetRotation(rot);
+					transform.Rotate({0.f, 1.0f * dt, 0.f}, TransformSpace::Self);
 				}
 			}
-		};
+		}, rootJob);
+		worker->Submit(job);
 
-		burst.AddWork2(entry, (int)sizeof(Burst::LambdaWorkEntry));
 	}
+	worker->Submit(rootJob);
+	worker->Wait(rootJob);
 
-	burst.FinalizeWork();
 }
 
 void SceneGraphTestCore::OnEntityDestroyed(Entity& InEntity)

@@ -7,7 +7,7 @@ class MitchGame
 	: public Game
 {
 public:
-	MitchGame();
+	MitchGame(int argc, char** argv);
 	~MitchGame();
 
 	virtual void OnInitialize() override;
