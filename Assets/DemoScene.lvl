@@ -1,0 +1,233 @@
+{
+    "Cores": [
+        {
+            "Type": "CharacterCore"
+        },
+        {
+            "Type": "PhysicsCore"
+        }
+    ],
+    "Scene": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        -0.5,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        40.0,
+                        1.0,
+                        40.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "DiffuseColor": [
+                            0.3529411554336548,
+                            0.35293760895729065,
+                            0.35293760895729065
+                        ],
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/3D/CubeDiffuse.jpg",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "ColliderType": "Box",
+                    "Mass": 0.0,
+                    "Scale": [
+                        40.0,
+                        1.0,
+                        40.0
+                    ],
+                    "Type": "Rigidbody"
+                },
+                {
+                    "ModelPath": "Assets/3D/Cube.fbx",
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "Floor"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        1.4309956668512314e-06,
+                        5.387057781219482,
+                        40.995330810546875
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        40.0,
+                        5.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "DiffuseColor": [
+                            0.5588235259056091,
+                            0.5588179230690002,
+                            0.5588179230690002
+                        ],
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/3D/CubeDiffuse.jpg",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "ColliderType": "Box",
+                    "Mass": 0.0,
+                    "Scale": [
+                        40.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Rigidbody"
+                },
+                {
+                    "ModelPath": "Assets/3D/Cube.fbx",
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "Wall"
+        },
+        {
+            "Children": [
+                {
+                    "Components": [
+                        {
+                            "ClearColor": [
+                                0.656862735748291,
+                                0.6568561792373657,
+                                0.6568561792373657
+                            ],
+                            "Far": 2000.0,
+                            "IsCurrent": true,
+                            "Near": 0.10000000149011612,
+                            "Type": "Camera",
+                            "Zoom": 45.0
+                        },
+                        {
+                            "Position": [
+                                0.0,
+                                3.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "Camera"
+                }
+            ],
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        17.496999740600586,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Type": "Character"
+                },
+                {
+                    "Deceleration": 30.0,
+                    "JumpForce": 30.0,
+                    "JumpRechargeTime": 0.5,
+                    "MaxSpeed": 170.0,
+                    "StepHeight": 1.0,
+                    "Type": "CharacterController"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "Example Character"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "FilePath": "Assets/UI/CharacterUI.html",
+                    "Type": "BasicUIView"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "UI"
+        }
+    ]
+}
