@@ -133,7 +133,7 @@ void CharacterCore::HandleMouseLook(float dt)
 
 	if (m_firstUpdate || input.IsKeyDown(KeyCode::R))
 	{
-		GetEngine().GetInput().SetMousePosition(newPos);
+		//GetEngine().GetInput().SetMousePosition(newPos);
 		//MousePosition = GetEngine().GetInput().GetMousePosition();
 		previousMousePos = input.GetMousePosition();
 		
