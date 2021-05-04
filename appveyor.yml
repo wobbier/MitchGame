@@ -9,8 +9,8 @@ branches:
   only:
     - master
 configuration:
- - Debug
  - Debug Editor
+ - Debug
 before_build:
   - git submodule init
   - git submodule update
@@ -28,9 +28,9 @@ after_build:
   - mkdir _Artifacts
   - xcopy /y /d /s Engine\Tools _Artifacts\Engine\Tools\
   - xcopy /y /d /s Build\Release\Assets _Artifacts\Assets\
-  - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.dll %APPVEYOR_BUILD_FOLDER%\_Artifacts
-  - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.exe %APPVEYOR_BUILD_FOLDER%\_Artifacts
-  - 7z a %APPVEYOR_BUILD_FOLDER%\MitchGame_%APPVEYOR_REPO_BRANCH%_%APPVEYOR_BUILD_VERSION%_%CONFIGURATION%.zip _Artifacts
+  - xcopy /y /d "%APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.dll" "%APPVEYOR_BUILD_FOLDER%\_Artifacts"
+  - xcopy /y /d "%APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.exe" "%APPVEYOR_BUILD_FOLDER%\_Artifacts"
+  - 7z a "%APPVEYOR_BUILD_FOLDER%\MitchGame_%APPVEYOR_REPO_BRANCH%_%APPVEYOR_BUILD_VERSION%_%CONFIGURATION%.zip" _Artifacts
   
 artifacts:
-- path: MitchGame_$(appveyor_repo_branch)_$(appveyor_build_version)_$(configuration).zip
+- path: "MitchGame_$(appveyor_repo_branch)_$(appveyor_build_version)_$(configuration).zip"
