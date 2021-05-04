@@ -10,7 +10,7 @@ branches:
     - master
 configuration:
  - Debug
- - Release
+ - Debug Editor
 before_build:
   - git submodule init
   - git submodule update
@@ -26,6 +26,7 @@ before_build:
   - nuget restore
 after_build:
   - mkdir _Artifacts
+  - xcopy /y /d /s Engine\Tools _Artifacts\Engine\Tools\
   - xcopy /y /d /s Build\%CONFIGURATION%\Assets _Artifacts\Assets\
   - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.dll %APPVEYOR_BUILD_FOLDER%\_Artifacts
   - xcopy /y /d %APPVEYOR_BUILD_FOLDER%\Build\%CONFIGURATION%\*.exe %APPVEYOR_BUILD_FOLDER%\_Artifacts
