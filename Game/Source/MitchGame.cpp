@@ -20,10 +20,10 @@
 #include "Cores/Cameras/FlyingCameraCore.h"
 #include "Events/SceneEvents.h"
 
-MitchGame::MitchGame(int argc, char** argv)
-	: Game(argc, argv)
+MitchGame::MitchGame( int argc, char** argv )
+    : Game( argc, argv )
 {
-	FlyingCameraController = new FlyingCameraCore();
+    FlyingCameraController = new FlyingCameraCore();
 }
 
 MitchGame::~MitchGame()
@@ -32,49 +32,49 @@ MitchGame::~MitchGame()
 
 void MitchGame::OnStart()
 {
-	return;
-	GetEngine().LoadScene("Assets/Main.lvl");
-	auto GameWorld = GetEngine().GetWorld().lock();
+    return;
+    GetEngine().LoadScene( "Assets/Main.lvl" );
+    auto GameWorld = GetEngine().GetWorld().lock();
 
-	MainCamera = GameWorld->CreateEntity();
-	Transform& CameraPos = MainCamera->AddComponent<Transform>("Main Camera");
-	CameraPos.SetPosition(Vector3(0, 5, 20));
-	Camera& cam = MainCamera->AddComponent<Camera>();
-	MainCamera->AddComponent<FlyingCamera>();
-	MainCamera->AddComponent<Light>();
+    MainCamera = GameWorld->CreateEntity();
+    Transform& CameraPos = MainCamera->AddComponent<Transform>( "Main Camera" );
+    CameraPos.SetPosition( Vector3( 0, 5, 20 ) );
+    Camera& cam = MainCamera->AddComponent<Camera>();
+    MainCamera->AddComponent<FlyingCamera>();
+    MainCamera->AddComponent<Light>();
 
-	SecondaryCamera = GameWorld->CreateEntity();
-	Transform& SecondaryPos = SecondaryCamera->AddComponent<Transform>("Secondary Camera");
-	SecondaryPos.SetPosition(Vector3(0, 5, 20));
-	SecondaryCamera->AddComponent<Camera>();
-	SecondaryCamera->AddComponent<Light>();
-	SecondaryCamera->AddComponent<FlyingCamera>();
+    SecondaryCamera = GameWorld->CreateEntity();
+    Transform& SecondaryPos = SecondaryCamera->AddComponent<Transform>( "Secondary Camera" );
+    SecondaryPos.SetPosition( Vector3( 0, 5, 20 ) );
+    SecondaryCamera->AddComponent<Camera>();
+    SecondaryCamera->AddComponent<Light>();
+    SecondaryCamera->AddComponent<FlyingCamera>();
 
-	auto TestModel = GameWorld->CreateEntity();
-	Transform& ModelTransform = TestModel->AddComponent<Transform>("Sponza");
-	ModelTransform.SetPosition(Vector3(0.f, 0.f, 0.f));
-	ModelTransform.SetScale(Vector3(.1f, .1f, .1f));
-	//TestModel.lock()->AddComponent<Rigidbody>();
-	//TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
-	TestModel->AddComponent<Model>("Assets/Craftsman/Craftsman.fbx");
+    auto TestModel = GameWorld->CreateEntity();
+    Transform& ModelTransform = TestModel->AddComponent<Transform>( "Sponza" );
+    ModelTransform.SetPosition( Vector3( 0.f, 0.f, 0.f ) );
+    ModelTransform.SetScale( Vector3( .1f, .1f, .1f ) );
+    //TestModel.lock()->AddComponent<Rigidbody>();
+    //TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
+    TestModel->AddComponent<Model>( "Assets/Craftsman/Craftsman.fbx" );
 
-	FlyingCameraController->SetCamera(&cam);
-	GameWorld->AddCore<FlyingCameraCore>(*FlyingCameraController);
+    FlyingCameraController->SetCamera( &cam );
+    GameWorld->AddCore<FlyingCameraCore>( *FlyingCameraController );
 }
 
-void MitchGame::OnUpdate(float DeltaTime)
+void MitchGame::OnUpdate( const UpdateContext& inUpdateContext )
 {
-	//FlyingCameraController->Update(DeltaTime);
+    //FlyingCameraController->Update(DeltaTime);
 
-	//Input& Instance = GetEngine().GetInput();
-	//if (Instance.GetKeyboardState().NumPad1)
-	//{
-	//	MainCamera->GetComponent<Camera>().SetCurrent();
-	//}
-	//if (Instance.GetKeyboardState().NumPad2)
-	//{
-	//	SecondaryCamera->GetComponent<Camera>().SetCurrent();
-	//}
+    //Input& Instance = GetEngine().GetInput();
+    //if (Instance.GetKeyboardState().NumPad1)
+    //{
+    //	MainCamera->GetComponent<Camera>().SetCurrent();
+    //}
+    //if (Instance.GetKeyboardState().NumPad2)
+    //{
+    //	SecondaryCamera->GetComponent<Camera>().SetCurrent();
+    //}
 }
 
 void MitchGame::OnEnd()
@@ -83,12 +83,12 @@ void MitchGame::OnEnd()
 
 void MitchGame::OnInitialize()
 {
-	NewSceneEvent evt;
-	evt.Fire();
-	GetEngine().GetWorld().lock()->Start();
-	GetEngine().LoadScene("Assets/Scenes/SceneGraphTest.lvl");
-	GetEngine().GetWorld().lock()->Simulate();
-	GetEngine().GetWorld().lock()->Start();
+    NewSceneEvent evt;
+    evt.Fire();
+    GetEngine().GetWorld().lock()->Start();
+    GetEngine().LoadScene( "Assets/Scenes/SceneGraphTest.lvl" );
+    GetEngine().GetWorld().lock()->Simulate();
+    GetEngine().GetWorld().lock()->Start();
 }
 
 void MitchGame::PostRender()

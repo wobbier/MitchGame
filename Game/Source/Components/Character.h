@@ -1,34 +1,34 @@
 #pragma once
 
 class Character
-	: public Component<Character>
+    : public Component<Character>
 {
 public:
-	Character()
-		: Component("Character")
-	{
+    Character()
+        : Component( "Character" )
+    {
 
-	}
+    }
 
-#if ME_EDITOR
-	virtual void OnEditorInspect() final
-	{
+#if USING( ME_EDITOR )
+    virtual void OnEditorInspect() final
+    {
 
-	}
+    }
 #endif
 
-	virtual void Init() final
-	{
-	}
+    virtual void Init() final
+    {
+    }
 
 private:
-	void OnSerialize(json& outJson) final
-	{
-	}
+    void OnSerialize( json& outJson ) final
+    {
+    }
 
-	void OnDeserialize(const json& inJson) final
-	{
-	}
+    void OnDeserialize( const json& inJson ) final
+    {
+    }
 };
 
-ME_REGISTER_COMPONENT(Character)
+ME_REGISTER_COMPONENT( Character )

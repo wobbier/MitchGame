@@ -1,1 +1,0 @@
-%~dp0Engine\Tools\premake5.exe --file=premake.lua vs2017 --with-renderdoc --project-name=MitchGame --project-type=UWP

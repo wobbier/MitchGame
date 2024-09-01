@@ -9,48 +9,48 @@ class Transform;
 class CharacterController;
 
 class CharacterCore final
-	: public Core<CharacterCore>
+    : public Core<CharacterCore>
 {
 public:
-	CharacterCore();
-	~CharacterCore() = default;
+    CharacterCore();
+    ~CharacterCore() = default;
 
-	virtual void Init() override;
+    virtual void Init() override;
 
-	virtual void OnEntityAdded(Entity& NewEntity) override;
+    virtual void OnEntityAdded( Entity& NewEntity ) override;
 
-	virtual void OnEntityRemoved(Entity& InEntity) override;
+    virtual void OnEntityRemoved( Entity& InEntity ) override;
 
-	virtual void Update(float dt) override;
+    virtual void Update( const UpdateContext& inUpdateContext ) override;
 
-#if ME_EDITOR
-	virtual void OnEditorInspect() override;
+#if USING( ME_EDITOR )
+    virtual void OnEditorInspect() override;
 #endif
 
 private:
-	void HandleMouseLook(float dt);
-	void HandlePortalShots();
-	bool FirePortal(bool IsBluePortal);
+    void HandleMouseLook( float dt );
+    void HandlePortalShots();
+    bool FirePortal( bool IsBluePortal );
 
-	virtual void OnStart() override;
+    virtual void OnStart() override;
 
-	float m_movementSpeed = 550.f;
+    float m_movementSpeed = 550.f;
 
-	bool m_prevPrimaryFireDown = false;
-	bool m_prevSecondaryFireDown = false;
-	bool m_firstUpdate = true;
+    bool m_prevPrimaryFireDown = false;
+    bool m_prevSecondaryFireDown = false;
+    bool m_firstUpdate = true;
 
-	float LookSensitivity = 20.f;
-	AudioSource* m_orangePortalShot = nullptr;
-	AudioSource* m_bluePortalShot = nullptr;
-	std::vector<AudioSource*> m_invalidPortalSounds;
-	Camera* m_camera = nullptr;
-	Transform* m_playerTransform = nullptr;
-	Transform* m_cameraTransform = nullptr;
-	CharacterController* m_controller = nullptr;
-	Random64 random;
-	Vector2 previousMousePos;
-	//DirectX::Mouse::State m_previousMouseState;
+    float LookSensitivity = 20.f;
+    AudioSource* m_orangePortalShot = nullptr;
+    AudioSource* m_bluePortalShot = nullptr;
+    std::vector<AudioSource*> m_invalidPortalSounds;
+    Camera* m_camera = nullptr;
+    Transform* m_playerTransform = nullptr;
+    Transform* m_cameraTransform = nullptr;
+    CharacterController* m_controller = nullptr;
+    Random64 random;
+    Vector2 previousMousePos;
+    //DirectX::Mouse::State m_previousMouseState;
 };
 
-ME_REGISTER_CORE(CharacterCore)
+ME_REGISTER_CORE( CharacterCore )

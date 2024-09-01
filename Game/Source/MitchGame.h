@@ -4,22 +4,22 @@
 #include "ECS/EntityHandle.h"
 
 class MitchGame
-	: public Game
+    : public Game
 {
 public:
-	MitchGame(int argc, char** argv);
-	~MitchGame();
+    MitchGame( int argc, char** argv );
+    ~MitchGame();
 
-	virtual void OnInitialize() override;
+    virtual void OnInitialize() override;
 
-	virtual void OnStart() override;
-	virtual void OnUpdate(float DeltaTime) override;
-	virtual void OnEnd() override;
+    virtual void OnStart() override;
+    virtual void OnUpdate( const UpdateContext& inUpdateContext ) override;
+    virtual void OnEnd() override;
 
-	virtual void PostRender() override;
+    virtual void PostRender() override;
 
-	class FlyingCameraCore* FlyingCameraController = nullptr;
+    class FlyingCameraCore* FlyingCameraController = nullptr;
 
-	EntityHandle MainCamera;
-	EntityHandle SecondaryCamera;
+    EntityHandle MainCamera;
+    EntityHandle SecondaryCamera;
 };
