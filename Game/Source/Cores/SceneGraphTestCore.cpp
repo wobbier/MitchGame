@@ -83,7 +83,7 @@ void SceneGraphTestCore::Update(float dt)
 	auto [worker, pool] = GetEngine().GetJobSystemNew();
 
 	std::vector<std::pair<int, int>> batches;
-	Burst::GenerateChunks(Entities.size(), 30, batches);
+	Burst::GenerateChunks(Entities.size(), Burst::GetMaxBurstThreads() + 1, batches);
 
 	Job* rootJob = worker->GetPool().CreateClosureJob([](Job& job) {
 	});

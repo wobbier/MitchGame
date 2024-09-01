@@ -39,10 +39,14 @@
                             "Diffuse": {
                                 "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png",
                                 "RenderMode": "Opaque"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Normal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            4.0,
+                            -4.0,
                             4.0
                         ],
                         "Type": "DiffuseMaterial"
