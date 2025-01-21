@@ -26,14 +26,16 @@ MitchGame::MitchGame( int argc, char** argv )
     FlyingCameraController = new FlyingCameraCore();
 }
 
+
 MitchGame::~MitchGame()
 {
 }
 
+
 void MitchGame::OnStart()
 {
+    GetEngine().LoadScene( "Assets/SceneGraphTest.lvl" );
     return;
-    GetEngine().LoadScene( "Assets/Main.lvl" );
     auto GameWorld = GetEngine().GetWorld().lock();
 
     MainCamera = GameWorld->CreateEntity();
@@ -62,6 +64,7 @@ void MitchGame::OnStart()
     GameWorld->AddCore<FlyingCameraCore>( *FlyingCameraController );
 }
 
+
 void MitchGame::OnUpdate( const UpdateContext& inUpdateContext )
 {
     //FlyingCameraController->Update(DeltaTime);
@@ -77,9 +80,11 @@ void MitchGame::OnUpdate( const UpdateContext& inUpdateContext )
     //}
 }
 
+
 void MitchGame::OnEnd()
 {
 }
+
 
 void MitchGame::OnInitialize()
 {
@@ -90,6 +95,12 @@ void MitchGame::OnInitialize()
     GetEngine().GetWorld().lock()->Simulate();
     GetEngine().GetWorld().lock()->Start();
 }
+
+
+void MitchGame::PreRender()
+{
+}
+
 
 void MitchGame::PostRender()
 {

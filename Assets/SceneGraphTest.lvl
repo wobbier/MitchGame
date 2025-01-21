@@ -8,26 +8,13 @@
         {
             "Components": [
                 {
-                    "ClearColor": [
-                        0.41580164432525635,
-                        0.6676335334777832,
-                        0.8235294222831726
-                    ],
-                    "ClearType": "Color",
-                    "Far": 2000.0,
-                    "IsCurrent": true,
-                    "Near": 0.10000000149011612,
-                    "Type": "Camera",
-                    "Zoom": 45.0
-                },
-                {
                     "Position": [
                         3.0,
                         4.0,
-                        25.0
+                        -25.0
                     ],
                     "Rotation": [
-                        -16.0,
+                        13.0,
                         -0.0,
                         0.0
                     ],
@@ -37,10 +24,2000 @@
                         1.0
                     ],
                     "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.07525990903377533,
+                        0.0,
+                        0.1413043737411499
+                    ],
+                    "ClearType": "Skybox",
+                    "Far": 2000.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "Skybox": "Assets/Skybox/skybox.jpg",
+                    "Type": "Camera",
+                    "Zoom": 45.0
                 }
             ],
             "DestroyOnLoad": true,
             "Name": "Main Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        3.9875967502593994,
+                        -0.13004007935523987,
+                        0.25763577222824097
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.009999999776482582,
+                        0.009999999776482582,
+                        0.009999999776482582
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "FaceMode": 0,
+                        "RenderMode": 0,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/OBJ/SM_Veh_4x4_Car_01.obj",
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "OBJ Car"
+        },
+        {
+            "Children": [
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Wheel_rr_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Wheel_rr_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Wheel_rr_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Wheel_rr_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Wheel_rr_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Wheel_fr_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Wheel_fr_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Wheel_fr_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Wheel_fr_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Wheel_fr_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Rear_Door_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Rear_Door_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Rear_Door_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Rear_Door_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Rear_Door_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Children": [
+                                                                {
+                                                                    "Children": [
+                                                                        {
+                                                                            "Children": [
+                                                                                {
+                                                                                    "Components": [
+                                                                                        {
+                                                                                            "Position": [
+                                                                                                0.0,
+                                                                                                0.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "Rotation": [
+                                                                                                0.0,
+                                                                                                -0.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "Scale": [
+                                                                                                1.0,
+                                                                                                1.0,
+                                                                                                1.0
+                                                                                            ],
+                                                                                            "Type": "Transform"
+                                                                                        },
+                                                                                        {
+                                                                                            "Material": {
+                                                                                                "BlendMode": 0,
+                                                                                                "DiffuseColor": [
+                                                                                                    1.0,
+                                                                                                    1.0,
+                                                                                                    1.0
+                                                                                                ],
+                                                                                                "FaceMode": 0,
+                                                                                                "RenderMode": 0,
+                                                                                                "Textures": {
+                                                                                                    "Diffuse": {
+                                                                                                        "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                                        "RenderMode": "Opaque"
+                                                                                                    }
+                                                                                                },
+                                                                                                "Tiling": [
+                                                                                                    1.0,
+                                                                                                    1.0
+                                                                                                ],
+                                                                                                "Type": "DiffuseMaterial"
+                                                                                            },
+                                                                                            "MeshType": "Model",
+                                                                                            "Type": "Mesh"
+                                                                                        }
+                                                                                    ],
+                                                                                    "DestroyOnLoad": true,
+                                                                                    "Name": ""
+                                                                                }
+                                                                            ],
+                                                                            "Components": [
+                                                                                {
+                                                                                    "Position": [
+                                                                                        0.0,
+                                                                                        0.0,
+                                                                                        0.0
+                                                                                    ],
+                                                                                    "Rotation": [
+                                                                                        0.0,
+                                                                                        -0.0,
+                                                                                        0.0
+                                                                                    ],
+                                                                                    "Scale": [
+                                                                                        1.0,
+                                                                                        1.0,
+                                                                                        1.0
+                                                                                    ],
+                                                                                    "Type": "Transform"
+                                                                                }
+                                                                            ],
+                                                                            "DestroyOnLoad": true,
+                                                                            "Name": "SM_Veh_4x4_Car_SteeringW_01"
+                                                                        }
+                                                                    ],
+                                                                    "Components": [
+                                                                        {
+                                                                            "Position": [
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0
+                                                                            ],
+                                                                            "Rotation": [
+                                                                                0.0,
+                                                                                -0.0,
+                                                                                0.0
+                                                                            ],
+                                                                            "Scale": [
+                                                                                1.0,
+                                                                                1.0,
+                                                                                1.0
+                                                                            ],
+                                                                            "Type": "Transform"
+                                                                        }
+                                                                    ],
+                                                                    "DestroyOnLoad": true,
+                                                                    "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_ScalingPivotInverse"
+                                                                }
+                                                            ],
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_ScalingPivot"
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_RotationPivotInverse"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_Rotation"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_RotationPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_RotationOffset"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_SteeringW_01_$AssimpFbx$_Translation"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Door_R_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Door_R_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Door_R_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Door_R_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Door_R_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Door_L_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Door_L_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Door_L_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Door_L_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Door_L_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Wheel_rl_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Wheel_rl_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Wheel_rl_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Wheel_rl_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Wheel_rl_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Wheel_fl_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Wheel_fl_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Wheel_fl_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Wheel_fl_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Wheel_fl_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 3,
+                                                                        "DiffuseColor": [
+                                                                            0.529891312122345,
+                                                                            0.5753780603408813,
+                                                                            0.625
+                                                                        ],
+                                                                        "FaceMode": 2,
+                                                                        "RenderMode": 1,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Engine/Assets/Textures/DefaultAlpha.png",
+                                                                                "RenderMode": "Transparent"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Glass_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Glass_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Glass_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Glass_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Glass_01_$AssimpFbx$_RotationPivot"
+                },
+                {
+                    "Children": [
+                        {
+                            "Children": [
+                                {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                        {
+                                                            "Components": [
+                                                                {
+                                                                    "Position": [
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Rotation": [
+                                                                        0.0,
+                                                                        -0.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "Scale": [
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
+                                                                    ],
+                                                                    "Type": "Transform"
+                                                                },
+                                                                {
+                                                                    "Material": {
+                                                                        "BlendMode": 0,
+                                                                        "DiffuseColor": [
+                                                                            1.0,
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "FaceMode": 0,
+                                                                        "RenderMode": 0,
+                                                                        "Textures": {
+                                                                            "Diffuse": {
+                                                                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                                                                "RenderMode": "Opaque"
+                                                                            }
+                                                                        },
+                                                                        "Tiling": [
+                                                                            1.0,
+                                                                            1.0
+                                                                        ],
+                                                                        "Type": "DiffuseMaterial"
+                                                                    },
+                                                                    "MeshType": "Model",
+                                                                    "Type": "Mesh"
+                                                                }
+                                                            ],
+                                                            "DestroyOnLoad": true,
+                                                            "Name": ""
+                                                        }
+                                                    ],
+                                                    "Components": [
+                                                        {
+                                                            "Position": [
+                                                                0.0,
+                                                                0.0,
+                                                                0.0
+                                                            ],
+                                                            "Rotation": [
+                                                                0.0,
+                                                                -0.0,
+                                                                0.0
+                                                            ],
+                                                            "Scale": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ],
+                                                            "Type": "Transform"
+                                                        }
+                                                    ],
+                                                    "DestroyOnLoad": true,
+                                                    "Name": "SM_Veh_4x4_Car_Rear_Seat_01"
+                                                }
+                                            ],
+                                            "Components": [
+                                                {
+                                                    "Position": [
+                                                        0.0,
+                                                        0.0,
+                                                        0.0
+                                                    ],
+                                                    "Rotation": [
+                                                        0.0,
+                                                        -0.0,
+                                                        0.0
+                                                    ],
+                                                    "Scale": [
+                                                        1.0,
+                                                        1.0,
+                                                        1.0
+                                                    ],
+                                                    "Type": "Transform"
+                                                }
+                                            ],
+                                            "DestroyOnLoad": true,
+                                            "Name": "SM_Veh_4x4_Car_Rear_Seat_01_$AssimpFbx$_ScalingPivotInverse"
+                                        }
+                                    ],
+                                    "Components": [
+                                        {
+                                            "Position": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "Rotation": [
+                                                0.0,
+                                                -0.0,
+                                                0.0
+                                            ],
+                                            "Scale": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "Type": "Transform"
+                                        }
+                                    ],
+                                    "DestroyOnLoad": true,
+                                    "Name": "SM_Veh_4x4_Car_Rear_Seat_01_$AssimpFbx$_ScalingPivot"
+                                }
+                            ],
+                            "Components": [
+                                {
+                                    "Position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Rotation": [
+                                        0.0,
+                                        -0.0,
+                                        0.0
+                                    ],
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "Type": "Transform"
+                                }
+                            ],
+                            "DestroyOnLoad": true,
+                            "Name": "SM_Veh_4x4_Car_Rear_Seat_01_$AssimpFbx$_RotationPivotInverse"
+                        }
+                    ],
+                    "Components": [
+                        {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ],
+                            "Rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    ],
+                    "DestroyOnLoad": true,
+                    "Name": "SM_Veh_4x4_Car_Rear_Seat_01_$AssimpFbx$_RotationPivot"
+                }
+            ],
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.009999999776482582,
+                        0.009999999776482582,
+                        0.009999999776482582
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "FaceMode": 0,
+                        "RenderMode": 0,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_03_A.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Veh_4x4_Car_01.fbx",
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "New Entity"
         }
     ]
 }

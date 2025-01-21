@@ -5,6 +5,7 @@
 #include "Mathf.h"
 #include "optick.h"
 #include "Work/Burst.h"
+#include "Core/JobSystem.h"
 
 SceneGraphTestObject::SceneGraphTestObject()
     : Component( "SceneGraphTestObject" )
@@ -50,6 +51,7 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
 
     auto& Entities = GetEntities();
 
+    JobSystem& jobSystem = inUpdateContext.GetSystem<Engine>()->m_jobSystem;
 
     {
         {
@@ -80,13 +82,13 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
         }
 
     }
-    auto [worker, pool] = GetEngine().GetJobSystemNew();
+    //auto [worker, pool] = GetEngine().GetJobSystemNew();
 
     std::vector<std::pair<int, int>> batches;
     Burst::GenerateChunks( Entities.size(), Burst::GetMaxBurstThreads() + 1, batches );
 
-    Job* rootJob = worker->GetPool().CreateClosureJob( []( Job& job ) {
-        } );
+    //Job* rootJob = worker->GetPool().CreateClosureJob( []( Job& job ) {
+    //    } );
 
     for( auto& batch : batches )
     {
@@ -95,25 +97,31 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
         int batchEnd = batch.second;
         int batchSize = batchEnd - batchBegin;
         float dt = inUpdateContext.GetDeltaTime();
-        Job* job = worker->GetPool().CreateClosureJobAsChild( [this, &Entities, batchBegin, batchEnd, dt]( Job& job ) {
-            OPTICK_CATEGORY( "B::Job", Optick::Category::Debug );
-
-            for( int entIndex = batchBegin; entIndex < batchEnd; ++entIndex )
+        auto job = [dt, &Entities, batchBegin, batchEnd]()
             {
-                auto& InEntity = Entities[entIndex];
-                OPTICK_CATEGORY( "Update Rotation", Optick::Category::Debug );
-                Transform& transform = InEntity.GetComponent<Transform>();
-                {
-                    OPTICK_CATEGORY( "Update Rotation Vector", Optick::Category::Debug );
-                    transform.Rotate( { 0.f, 1.0f * dt, 0.f }, TransformSpace::Self );
-                }
-            }
-            }, rootJob );
-        worker->Submit( job );
+//Job* job = worker->GetPool().CreateClosureJobAsChild( [this, &Entities, batchBegin, batchEnd, dt]( Job& job ) {
+                OPTICK_CATEGORY( "B::Job", Optick::Category::Debug );
 
+                for( int entIndex = batchBegin; entIndex < batchEnd; ++entIndex )
+                {
+                    auto& InEntity = Entities[entIndex];
+                    OPTICK_CATEGORY( "Update Rotation", Optick::Category::Debug );
+                    Transform& transform = InEntity.GetComponent<Transform>();
+                    {
+                        OPTICK_CATEGORY( "Update Rotation Vector", Optick::Category::Debug );
+                        transform.Rotate( { 0.f, 1.0f * dt, 0.f }, TransformSpace::Self );
+                    }
+                }
+            };
+        //    }, rootJob );
+        //worker->Submit( job );
+
+        jobSystem.AddWork( job, false );
+        jobSystem.SignalWorkAvailable();
     }
-    worker->Submit( rootJob );
-    worker->Wait( rootJob );
+    jobSystem.WaitAndWork();
+    //worker->Submit( rootJob );
+    //worker->Wait( rootJob );
 
 }
 
@@ -152,6 +160,14 @@ void SceneGraphTestCore::OnStart()
                 Transform& sub3Transform = sub3Ent->GetComponent<Transform>();
                 sub3Transform.SetPosition( Vector3( ( (float)k - 4.5f ) * 2.f, -3.f, 0.f ) );
                 sub3Transform.SetScale( 0.5f );
+
+                for( int l = 0; l < 10; ++l )
+                {
+                    EntityHandle sub4Ent = world->CreateFromPrefab( std::string( kPrefabName4 ), &sub3Transform );
+                    Transform& sub4Transform = sub4Ent->GetComponent<Transform>();
+                    sub4Transform.SetPosition( Vector3( ( (float)l - 4.5f ) * 2.f, -3.f, 0.f ) );
+                    sub4Transform.SetScale( 0.5f );
+                }
             }
         }
     }

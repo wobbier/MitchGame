@@ -1,0 +1,216 @@
+-------------------
+Folder Name: Characters
+-------------------
+Prefab Name: Character_Explorer_Female_01
+    Mesh Name: _Character_Explorer_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: _Character_Explorer_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Beard_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Female_Hat_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Male_Hat_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hat_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hat_Hunter_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hat_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: Character_Explorer_Male_01
+    Mesh Name: _Character_Explorer_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: _Character_Explorer_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Beard_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Female_Hat_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hair_Male_Hat_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hat_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hat_Hunter_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: Chr_Attach_Hat_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+-------------------
+Folder Name: Props
+-------------------
+Prefab Name: SM_Prop_Bag_01
+    Mesh Name: SM_Prop_Bag_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Bedroll_01
+    Mesh Name: SM_Prop_Bedroll_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Binoculars_01
+    Mesh Name: SM_Prop_Binoculars_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Compass_01
+    Mesh Name: SM_Prop_Compass_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Flashlight_01
+    Mesh Name: SM_Prop_Flashlight_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_IceAxe_01
+    Mesh Name: SM_Prop_IceAxe_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Idol_01
+    Mesh Name: SM_Prop_Idol_01
+        Slot: PolygonExplorers_01_A_Shiny (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Knife_01
+    Mesh Name: SM_Prop_Knife_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Knife_Cover_01
+    Mesh Name: SM_Prop_Knife_Cover_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Map_01
+    Mesh Name: SM_Prop_Map_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Map_02
+    Mesh Name: SM_Prop_Map_02
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Plinth_01
+    Mesh Name: SM_Prop_Plinth_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Prop_Torch_01
+    Mesh Name: SM_Prop_Torch_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Wep_Pistol_Revolver_01
+    Mesh Name: SM_Wep_Pistol_Revolver_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: SM_Wep_Pistol_Revolver_Cylander_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: SM_Wep_Pistol_Revolver_CylinderFlip_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: SM_Wep_Pistol_Revolver_Hammer_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+    Mesh Name: SM_Wep_Pistol_Revolver_Trigger_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+-------------------
+Folder Name: Vehicle
+-------------------
+Prefab Name: SK_Veh_4x4_Car_Alt_01
+    Mesh Name: SK_Veh_4x4_Car_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Door_L_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Door_R_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Glass_Alt_01
+        Slot: PolygonExplorers_Glass (No Albedo Texture)
+    Mesh Name: SK_Veh_4x4_Car_Rear_Door_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Rear_Seat_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_SteeringW_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Wheel_fl_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Wheel_fr_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Wheel_rl_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SK_Veh_4x4_Car_Wheel_rr_Alt_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+
+Prefab Name: SM_Veh_4x4_Car_01
+    Mesh Name: SM_Veh_4x4_Car_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Door_L_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Door_R_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Glass_01
+        Slot: PolygonExplorers_Glass (No Albedo Texture)
+    Mesh Name: SM_Veh_4x4_Car_Rear_Door_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Rear_Seat_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_SteeringW_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Wheel_fl_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Wheel_fr_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Wheel_rl_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+    Mesh Name: SM_Veh_4x4_Car_Wheel_rr_01
+        Slot: PolygonExplorers_03_A (PolygonExplorers_Texture_03_A)
+
+-------------------
+Folder Name: Attachments
+-------------------
+Prefab Name: SM_Chr_Attach_Backpack_01
+    Mesh Name: SM_Chr_Attach_Backpack_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Beard_01
+    Mesh Name: SM_Chr_Attach_Beard_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hair_Female_01
+    Mesh Name: SM_Chr_Attach_Hair_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hair_Female_Hat_01
+    Mesh Name: SM_Chr_Attach_Hair_Female_Hat_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hair_Male_01
+    Mesh Name: SM_Chr_Attach_Hair_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hair_Male_Hat_01
+    Mesh Name: SM_Chr_Attach_Hair_Male_Hat_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hat_Female_01
+    Mesh Name: SM_Chr_Attach_Hat_Female_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hat_Hunter_01
+    Mesh Name: SM_Chr_Attach_Hat_Hunter_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Hat_Male_01
+    Mesh Name: SM_Chr_Attach_Hat_Male_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Pouch_01
+    Mesh Name: SM_Chr_Attach_Pouch_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Rope_01
+    Mesh Name: SM_Chr_Attach_Rope_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
+Prefab Name: SM_Chr_Attach_Whip_01
+    Mesh Name: SM_Chr_Attach_Whip_01
+        Slot: PolygonExplorers_01_A (PolygonExplorers_Texture_01_A)
+
