@@ -2,6 +2,7 @@
 #include "ECS/Core.h"
 #include "Components/Transform.h"
 #include "Math/Random.h"
+#include "Math/Vector2.h"
 
 class AudioSource;
 class Camera;

@@ -6,6 +6,7 @@
 #include "optick.h"
 #include "Work/Burst.h"
 #include "Core/JobSystem.h"
+#include "Work/SimpleJobSystem.h"
 
 SceneGraphTestObject::SceneGraphTestObject()
     : Component( "SceneGraphTestObject" )
@@ -51,55 +52,20 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
 
     auto& Entities = GetEntities();
 
-    JobSystem& jobSystem = inUpdateContext.GetSystem<Engine>()->m_jobSystem;
-
-    {
-        {
-
-            //Transform* CurrentTransform = GetRootTransform();
-            //for (const SharedPtr<Transform>& Child : CurrentTransform->GetChildren())
-            //{
-            //	OPTICK_EVENT("SceneGraph::GetChildren");
-            //	if (Child->IsDirty())
-            //	{
-            //		//Job* job = pool.CreateClosureJobAsChild([&Child, CurrentTransform](Job& job) {
-            //		OPTICK_CATEGORY("Update Transform", Optick::Category::Scene);
-            //		glm::mat4 model = glm::mat4(1.f);
-            //		model = glm::translate(model, Child->GetPosition().InternalVector);
-            //		model = glm::rotate(model, Child->GetWorldRotation().ToAngle(), Child->GetWorldRotation().ToAxis().InternalVector);
-            //		model = glm::scale(model, Child->GetScale().InternalVector);
-
-            //		Matrix4 xxx = model * CurrentTransform->WorldTransform.GetInternalMatrix();
-            //		Child->SetWorldTransform(xxx);
-            //		if (!Child->GetChildren().empty())
-            //		{
-            //			UpdateRecursively(Child.get(), true, nullptr, true);// *job);
-            //		}
-            //		//}, rootJob);
-            //		//worker->Submit(job);
-            //	}
-            //}
-        }
-
-    }
-    //auto [worker, pool] = GetEngine().GetJobSystemNew();
+    SimpleJobSystem& jobSystem = inUpdateContext.GetSystem<Engine>()->GetJobSystem();
 
     std::vector<std::pair<int, int>> batches;
-    Burst::GenerateChunks( Entities.size(), Burst::GetMaxBurstThreads() + 1, batches );
+    Burst::GenerateChunks( Entities.size(), jobSystem.GetNumWorkers()*2, batches );
 
-    //Job* rootJob = worker->GetPool().CreateClosureJob( []( Job& job ) {
-    //    } );
-
+    float dt = inUpdateContext.GetDeltaTime();
     for( auto& batch : batches )
     {
         OPTICK_CATEGORY( "Burst::BatchAdd", Optick::Category::Debug );
         int batchBegin = batch.first;
         int batchEnd = batch.second;
         int batchSize = batchEnd - batchBegin;
-        float dt = inUpdateContext.GetDeltaTime();
         auto job = [dt, &Entities, batchBegin, batchEnd]()
             {
-//Job* job = worker->GetPool().CreateClosureJobAsChild( [this, &Entities, batchBegin, batchEnd, dt]( Job& job ) {
                 OPTICK_CATEGORY( "B::Job", Optick::Category::Debug );
 
                 for( int entIndex = batchBegin; entIndex < batchEnd; ++entIndex )
@@ -113,16 +79,10 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
                     }
                 }
             };
-        //    }, rootJob );
-        //worker->Submit( job );
 
-        jobSystem.AddWork( job, false );
-        jobSystem.SignalWorkAvailable();
+        jobSystem.submit( job );
     }
-    jobSystem.WaitAndWork();
-    //worker->Submit( rootJob );
-    //worker->Wait( rootJob );
-
+    jobSystem.waitForAllJobs();
 }
 
 void SceneGraphTestCore::OnEntityDestroyed( Entity& InEntity )
@@ -140,28 +100,28 @@ void SceneGraphTestCore::OnStart()
     EntityHandle rootEnt = world->CreateFromPrefab( std::string( kPrefabName ) );
     Transform& rootTransform = rootEnt->GetComponent<Transform>();
 
-    for( int i = 0; i < 10; ++i )
+    for( int i = 0; i < 16; ++i )
     {
         EntityHandle subEnt = world->CreateFromPrefab( std::string( kPrefabName2 ), &rootTransform );
         Transform& transform = subEnt->GetComponent<Transform>();
         transform.SetPosition( Vector3( ( (float)i - 4.5f ) * 2.f, -3.f, 0.f ) );
         transform.SetScale( 0.5f );
 
-        for( int j = 0; j < 10; ++j )
+        for( int j = 0; j < 16; ++j )
         {
             EntityHandle sub2Ent = world->CreateFromPrefab( std::string( kPrefabName3 ), &transform );
             Transform& subTransform = sub2Ent->GetComponent<Transform>();
             subTransform.SetPosition( Vector3( ( (float)j - 4.5f ) * 2.f, -3.f, 0.f ) );
             subTransform.SetScale( 0.5f );
 
-            for( int k = 0; k < 10; ++k )
+            for( int k = 0; k < 15; ++k )
             {
                 EntityHandle sub3Ent = world->CreateFromPrefab( std::string( kPrefabName4 ), &subTransform );
                 Transform& sub3Transform = sub3Ent->GetComponent<Transform>();
                 sub3Transform.SetPosition( Vector3( ( (float)k - 4.5f ) * 2.f, -3.f, 0.f ) );
                 sub3Transform.SetScale( 0.5f );
 
-                for( int l = 0; l < 10; ++l )
+                for( int l = 0; l < 14; ++l )
                 {
                     EntityHandle sub4Ent = world->CreateFromPrefab( std::string( kPrefabName4 ), &sub3Transform );
                     Transform& sub4Transform = sub4Ent->GetComponent<Transform>();

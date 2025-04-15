@@ -1,17 +1,12 @@
 {
     "Cores": [
         {
-            "Type": "AudioCore"
+            "Type": "ScriptCore"
         }
     ],
     "Scene": [
         {
             "Components": [
-                {
-                    "IsCurrent": true,
-                    "Type": "Camera",
-                    "Zoom": 45.0
-                },
                 {
                     "Position": [
                         0.0,
@@ -20,7 +15,7 @@
                     ],
                     "Rotation": [
                         0.0,
-                        0.0,
+                        -0.0,
                         0.0
                     ],
                     "Scale": [
@@ -29,6 +24,19 @@
                         1.0
                     ],
                     "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "ClearType": "Color",
+                    "Far": 1000.0,
+                    "IsCurrent": true,
+                    "Near": 1.0,
+                    "Type": "Camera",
+                    "Zoom": 45.0
                 }
             ],
             "DestroyOnLoad": true,
@@ -44,7 +52,7 @@
                     ],
                     "Rotation": [
                         0.0,
-                        0.0,
+                        -0.0,
                         0.0
                     ],
                     "Scale": [
@@ -56,11 +64,40 @@
                 },
                 {
                     "FilePath": "Assets/UI/Main.html",
-                    "Type": "MenuController"
+                    "Type": "MenuController",
+                    "UIURL": ""
                 }
             ],
             "DestroyOnLoad": false,
             "Name": "UI"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ScriptName": "ImGuiTest",
+                    "Type": "ScriptComponent"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "ImGuiCSTest"
         }
     ]
 }
