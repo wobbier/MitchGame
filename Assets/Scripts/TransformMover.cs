@@ -3,18 +3,20 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 public class TransformMover
-    : Entity
+    : Component
 {
     public bool MyTestBool = false;
-    float totalTime = 0.0f;
+    public float totalTime = 0.0f;
     public TransformMover()
         : base()
     {
-        OnUpdate(0.0f);
+        Console.WriteLine("Created a new C# TransformMover Component");
+        //Console.WriteLine($"TransformMover ctor: {GetHashCode()}");
     }
 
     void OnCreate()
     {
+        Console.WriteLine("OnCreate C# TransformMover Component");
         if (HasComponent<Transform>())
         {
             Console.WriteLine("FOUND TRANSFORM COMPONENT");
@@ -23,6 +25,8 @@ public class TransformMover
 
     void OnUpdate(float dt)
     {
+        Console.WriteLine($"TransformMover.OnUpdate — Hash: {GetHashCode()}, totalTime: {totalTime}");
+
         Transform camera = World.GetTransformByName("Main Camera");
         if (camera != null)
         {
@@ -37,6 +41,10 @@ public class TransformMover
         //if(GetComponent<ImGuiTest>() != null)
         //{
         //}
+        if(totalTime == 0.0f)
+        {
+            Console.WriteLine("OnUpdate C# TransformMover something happened");
+        }
         totalTime += dt;
     }
 }
