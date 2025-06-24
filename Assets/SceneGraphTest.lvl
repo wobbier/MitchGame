@@ -31,18 +31,17 @@
                         0.46917468309402466,
                         0.1413043737411499
                     ],
-                    "ClearType": "Procedural",
+                    "ClearType": "Color",
                     "Far": 2000.0,
                     "IsCurrent": true,
                     "Near": 0.10000000149011612,
-                    "Skybox": "Engine/Assets/Skybox/skybox.jpg",
+                    "Skybox": "Assets/Skybox/skybox.jpg",
                     "Type": "Camera",
                     "Zoom": 45.0
                 },
                 {
-                    "FilePath": "Assets/UI/CharacterUI.html",
-                    "Type": "BasicUIView",
-                    "UIURL": ""
+                    "ScriptName": "TransformTest",
+                    "Type": "ScriptComponent"
                 }
             ],
             "DestroyOnLoad": true,

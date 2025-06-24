@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 public class TransformTest
-    : Entity
+    : Component
 {
     Transform transformComp;
     public float time = 0.0f;

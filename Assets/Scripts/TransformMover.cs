@@ -25,7 +25,7 @@ public class TransformMover
 
     void OnUpdate(float dt)
     {
-        Console.WriteLine($"TransformMover.OnUpdate — Hash: {GetHashCode()}, totalTime: {totalTime}");
+        //Console.WriteLine($"TransformMover.OnUpdate — Hash: {GetHashCode()}, totalTime: {totalTime}");
 
         Transform camera = World.GetTransformByName("Main Camera");
         if (camera != null)
