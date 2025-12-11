@@ -8,6 +8,8 @@ MenuController::MenuController()
 	FilePath = Path("Assets/UI/Main.html");
 }
 
+#if USING( ME_UI )
+
 void MenuController::OnUILoad(ultralight::JSObject& GlobalWindow, ultralight::View* Caller)
 {
 	BasicUIView::OnUILoad(GlobalWindow, Caller);
@@ -23,3 +25,5 @@ void MenuController::LoadScene(const ultralight::JSObject& thisObject, const ult
 	evt.Level = news;
 	evt.Fire();
 }
+
+#endif

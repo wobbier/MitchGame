@@ -215,3 +215,4 @@ imgui.ini
 **/*.xc*
 *.bin.d
 *.dds
+.build
