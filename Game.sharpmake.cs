@@ -23,8 +23,8 @@ public class SharpGameSolution : BaseGameSolution
 
         Globals.FMOD_Win64_Dir = "C:/Program Files (x86)/FMOD SoundSystem/FMOD Studio API Windows/";
         Globals.FMOD_UWP_Dir = "C:/Program Files (x86)/FMOD SoundSystem/FMOD Studio API Universal Windows Platform/";
-        Globals.MONO_Win64_Dir = string.Empty;
-        Globals.IsUltralightEnabled = false;
+        Globals.DOTNET_Win64_Dir = "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Host.win-x64\\8.0.27\\runtimes\\win-x64\\native";
+        Globals.IsUltralightEnabled = true;
         Globals.IsPhysicsEnabled3D = true;
         //Globals.ExeName = "MitchGame";
     }
