@@ -11,6 +11,17 @@
 **/*.vcxproj.*
 **/*.pbxproj
 
+# Generated build files (Linux make / premake / compile DB)
+Makefile
+*.make
+compile_commands.json
+**/compile_commands.json
+
+# Runtime log / dump artifacts
+Engine.txt
+fmod_log.txt
+startup.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -216,3 +227,5 @@ imgui.ini
 *.bin.d
 *.dds
 .build
+
+/capture*.json

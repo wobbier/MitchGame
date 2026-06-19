@@ -17,7 +17,7 @@
                         -58.48525619506836
                     ],
                     "Rotation": [
-                        13.0,
+                        12.999996185302734,
                         -0.0,
                         0.0
                     ],
@@ -123,9 +123,9 @@
                         0.0
                     ],
                     "Scale": [
-                        1.0,
-                        0.14157819747924805,
-                        1.0
+                        50.0,
+                        50.0,
+                        50.0
                     ],
                     "Type": "Transform"
                 },
@@ -139,6 +139,12 @@
                         ],
                         "FaceMode": 0,
                         "RenderMode": 0,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_02_A.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
                         "Tiling": [
                             1.0,
                             1.0

@@ -10,6 +10,8 @@ public:
     SceneGraphTestObject();
     virtual void Init() override;
 
+    int Level = 0;
+
 private:
     void OnSerialize( json& outJson ) override;
 
@@ -40,6 +42,9 @@ public:
 #endif
 
     virtual void Update( const UpdateContext& inUpdateContext ) override;
+
+    bool m_animate = true;
+    bool m_animateColor = true;
 
 
     void OnEntityDestroyed( Entity& InEntity ) override;

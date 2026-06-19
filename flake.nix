@@ -1,5 +1,5 @@
 {
-  description = "MitchGame dev environment (SDL2 + BGFX + GL/EGL)";
+  description = "MitchEngine dev environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -13,19 +13,19 @@
           inherit system;
           config.allowUnfree = true;
         };
+        dotnet = pkgs.dotnet-sdk_8;
       in
       {
         # ----------------------------------------------------------
-        # MitchGame Dev Shell
+        # MitchEngine Dev Shell
         #
-        # NOTES FOR FUTURE MITCH:
         # - bgfx loads GL/EGL dynamically with dlopen()
         # - Mesa + libglvnd MUST be in LD_LIBRARY_PATH so bgfx finds
-        #   64-bit libEGL.so.1 instead of Steam’s 32-bit version.
+        #   64-bit libEGL.so.1 instead of Steam's 32-bit version.
         # - ALWAYS enter this shell with:  nix develop
         # ----------------------------------------------------------
         devShells.default = pkgs.mkShell {
-          name = "mitchgame-devshell";
+          name = "mitchengine-devshell";
 
           buildInputs = with pkgs; [
             # Core build tools
@@ -42,24 +42,51 @@
             mesa        # GL + EGL + DRI drivers
             libglvnd    # GL/Vulkan dispatch loader
 
+            # Wayland (wl_egl_window_create for native Wayland + Vulkan)
+            wayland
+
+            dotnet
+            # X11 dev headers (needed by SDL_syswm.h and XWayland support)
+            xorg.libX11
+            xorg.libXcursor
+            xorg.libXext
+            xorg.libXrandr
+            xorg.libXinerama
+            xorg.libXxf86vm
+            xorg.libXfixes
+            xorg.libxcb
+
             # Optional Vulkan support for bgfx
-            # vulkan-loader
+            vulkan-loader
+
+            # Required by Ultralight AppCore on Linux
+            fontconfig
           ];
 
-          # Provide GL/EGL so bgfx’s dlopen("libEGL.so.1") succeeds.
+          # Provide GL/EGL so bgfx's dlopen("libEGL.so.1") succeeds.
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
             pkgs.libglvnd
             pkgs.mesa
             pkgs.SDL2
+            pkgs.vulkan-loader
           ];
 
           shellHook = ''
-            echo "🔧 MitchGame dev shell active!"
+            export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$(pwd)/Engine/ThirdParty/Optick:$(pwd)/Engine/ThirdParty/fmod/api/core/lib/x86_64"
+            export DOTNET_ROOT="${dotnet}/share/dotnet"
+
+            _DOTNET_NATIVE=$(find ${dotnet}/share/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64 -mindepth 3 -maxdepth 3 -name "native" -type d 2>/dev/null | head -1)
+            if [ -n "$_DOTNET_NATIVE" ]; then
+              export DOTNET_LINUX_NATIVE_DIR="$_DOTNET_NATIVE"
+            fi
+            unset _DOTNET_NATIVE
+
+            echo "🍉 Shell Ready!"
             echo "  Build: make -f MitchGame.make Havana config=editor_debug"
             echo "  Run:   ./.build/Editor_Debug/Havana"
             echo "  Optional: SDL_VIDEODRIVER=wayland ..."
             echo ""
-            echo "LD_LIBRARY_PATH set for correct 64-bit EGL → bgfx friendliness 😎"
+            echo "DOTNET_LINUX_NATIVE_DIR=$DOTNET_LINUX_NATIVE_DIR"
           '';
         };
       });
