@@ -23,7 +23,8 @@ void MenuController::LoadScene(const ultralight::JSObject& thisObject, const ult
 	ultralight::String thing = args[0].ToString();
 	std::string news = std::string(thing.utf8().data());
 	evt.Level = news;
-	evt.Fire();
+	// Queued: loading a scene tears down the world, which must not happen mid-frame from UI script.
+	evt.Queue();
 }
 
 #endif
