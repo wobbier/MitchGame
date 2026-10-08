@@ -4,12 +4,36 @@
     {
       "label": "build-havana-editor-debug",
       "type": "shell",
-      "command": "make",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
       "args": [
+        "make",
         "-f",
         "MitchGame.make",
         "Havana",
         "config=editor_debug",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build-havana-game-debug",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "Game_EntryPoint",
+        "config=game_linux_debug",
         "-j$(nproc)"
       ],
       "options": {

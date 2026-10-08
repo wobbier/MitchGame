@@ -2,7 +2,10 @@
   description = "MitchEngine dev environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    # Must track the host's nixpkgs channel: graphics is impure (apps load the
+    # driver from the host's /run/opengl-driver), and a glibc skew between the
+    # shell and the host leaks newer symbol versions into links.
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -47,28 +50,71 @@
 
             dotnet
             # X11 dev headers (needed by SDL_syswm.h and XWayland support)
-            xorg.libX11
-            xorg.libXcursor
-            xorg.libXext
-            xorg.libXrandr
-            xorg.libXinerama
-            xorg.libXxf86vm
-            xorg.libXfixes
-            xorg.libxcb
+            libX11
+            libXcursor
+            libXext
+            libXrandr
+            libXinerama
+            libXxf86vm
+            libXfixes
+            libxcb
+
+            bzip2  # For decompressing .tar.bz2 files from bgfx releases
+
+            # libcurl headers/libs for Web::DownloadFile (HttpDownload.cpp)
+            curl
 
             # Optional Vulkan support for bgfx
             vulkan-loader
 
             # Required by Ultralight AppCore on Linux
             fontconfig
+
+            # Ultralight (latest) links against the system GTK3 stack
+            gtk3
+            glib
+            pango
+            cairo
+            atk
+            gdk-pixbuf
+            harfbuzz
           ];
 
           # Provide GL/EGL so bgfx's dlopen("libEGL.so.1") succeeds.
+          # makeLibraryPath only adds each listed package's own lib dir
+          # (not transitive deps), so every Ultralight/GTK dependency is
+          # listed explicitly.
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
             pkgs.libglvnd
             pkgs.mesa
             pkgs.SDL2
             pkgs.vulkan-loader
+
+            # X11/XCB runtime libs. These are in buildInputs for compiling, but
+            # makeLibraryPath is non-transitive and SDL2 / GTK (via Ultralight
+            # AppCore) need libX11 at link and load time, so list them here too.
+            pkgs.libX11
+            pkgs.libXcursor
+            pkgs.libXext
+            pkgs.libXrandr
+            pkgs.libXinerama
+            pkgs.libXxf86vm
+            pkgs.libXfixes
+            pkgs.libxcb
+
+            # Linked as -l:lib*.so (no Nix RUNPATH entry), so resolve them here
+            pkgs.fontconfig
+            pkgs.wayland
+
+            # Ultralight (latest) GTK3 runtime deps
+            pkgs.gtk3
+            pkgs.glib
+            pkgs.pango
+            pkgs.cairo
+            pkgs.atk
+            pkgs.gdk-pixbuf
+            pkgs.harfbuzz
+            pkgs.bzip2  # libbz2.so.1.0
           ];
 
           shellHook = ''
