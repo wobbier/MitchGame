@@ -5,8 +5,7 @@
 #include "Mathf.h"
 #include "optick.h"
 #include "Work/Burst.h"
-#include "Core/JobSystem.h"
-#include "Work/SimpleJobSystem.h"
+#include "Jobs/JobSystem.h"
 #include "Components/Graphics/Mesh.h"
 #include "Graphics/Material.h"
 
@@ -88,10 +87,7 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
 
     auto& Entities = GetEntities();
 
-    SimpleJobSystem& jobSystem = inUpdateContext.GetSystem<Engine>()->GetJobSystem();
-
-    std::vector<std::pair<int, int>> batches;
-    Burst::GenerateChunks( Entities.size(), jobSystem.GetNumWorkers()*2, batches );
+    Jobs::JobSystem& jobSystem = inUpdateContext.GetSystem<Engine>()->GetJobSystem();
 
     const float dt = inUpdateContext.GetDeltaTime();
     const float time = inUpdateContext.GetTotalTime();
@@ -105,16 +101,11 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
 
     const bool rotate = m_animate;
     const bool recolor = m_animateColor;
-    for( auto& batch : batches )
-    {
-        OPTICK_CATEGORY( "Burst::BatchAdd", Optick::Category::Debug );
-        int batchBegin = batch.first;
-        int batchEnd = batch.second;
-        auto job = [dt, &Entities, batchBegin, batchEnd, rotate, recolor, &levelColors]()
+    jobSystem.ParallelFor( static_cast<uint32_t>( Entities.size() ), 256, [&]( uint32_t batchBegin, uint32_t batchEnd )
             {
                 OPTICK_CATEGORY( "B::Job", Optick::Category::Debug );
 
-                for( int entIndex = batchBegin; entIndex < batchEnd; ++entIndex )
+                for( uint32_t entIndex = batchBegin; entIndex < batchEnd; ++entIndex )
                 {
                     auto& InEntity = Entities[entIndex];
 
@@ -135,11 +126,7 @@ void SceneGraphTestCore::Update( const UpdateContext& inUpdateContext )
                         }
                     }
                 }
-            };
-
-        jobSystem.submit( job );
-    }
-    jobSystem.waitForAllJobs();
+            } );
 }
 
 

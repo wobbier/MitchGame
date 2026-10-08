@@ -1,0 +1,51 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                { "Type": "Transform", "Position": [0.0, 4.0, -14.0], "Rotation": [15.0, 0.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
+                { "Type": "Camera", "ClearType": "Color", "ClearColor": [0.08, 0.09, 0.12], "IsCurrent": true, "Near": 0.1, "Far": 500.0, "Zoom": 45.0 }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                { "Type": "Transform", "Position": [0.0, -1.0, 0.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [10.0, 1.0, 10.0] },
+                { "Type": "Mesh", "MeshType": "Plane", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.35, 0.35, 0.38] } }
+            ]
+        },
+        {
+            "Name": "Parent",
+            "Components": [
+                { "Type": "Transform", "Position": [-3.0, 0.0, 0.0], "Rotation": [0.0, 45.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
+                { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.85, 0.25, 0.2] } }
+            ],
+            "Children": [
+                {
+                    "Name": "Child",
+                    "Components": [
+                        { "Type": "Transform", "Position": [0.0, 2.5, 0.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [0.5, 0.5, 0.5] },
+                        { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.2, 0.75, 0.3] } }
+                    ],
+                    "Children": [
+                        {
+                            "Name": "Grandchild",
+                            "Components": [
+                                { "Type": "Transform", "Position": [3.0, 0.0, 0.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
+                                { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.2, 0.4, 0.9] } }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Right Cube",
+            "Components": [
+                { "Type": "Transform", "Position": [4.0, 0.0, 2.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
+                { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.9, 0.8, 0.25] } }
+            ]
+        }
+    ]
+}
