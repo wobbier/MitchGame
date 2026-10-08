@@ -1,0 +1,166 @@
+{
+    "Cores": [
+        {
+            "Type": "ScriptCore"
+        },
+        {
+            "Type": "SceneGraphTestCore"
+        }
+    ],
+    "Scene": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -23.398130416870117,
+                        15.019614219665527,
+                        -58.48525619506836
+                    ],
+                    "Rotation": [
+                        12.999996185302734,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.07525990903377533,
+                        0.46917468309402466,
+                        0.1413043737411499
+                    ],
+                    "ClearType": "Color",
+                    "Far": 2000.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "Skybox": "Assets/Skybox/skybox.jpg",
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                },
+                {
+                    "ScriptFields": "{\"Aggression\":17.9,\"PatrolRadius\":10,\"EnemyType\":\"Grunt\",\"test\":false,\"testVec\":{\"x\":8.3,\"y\":30,\"z\":0}}",
+                    "ScriptName": "EnemyAI",
+                    "Type": "ScriptComponent"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "Main Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ScriptFields": "{\"MyTestBool\":false,\"blueAmount\":{\"x\":0,\"y\":0,\"z\":0}}",
+                    "ScriptName": "ImGuiTest",
+                    "Type": "ScriptComponent"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "CSImGUITest"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ScriptFields": "{\"MyTestBool\":false,\"totalTime\":0}",
+                    "ScriptName": "TransformMover",
+                    "Type": "ScriptComponent"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "TransformMover"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        50.0,
+                        50.0,
+                        50.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.800000011920929,
+                            0.800000011920929,
+                            0.800000011920929
+                        ],
+                        "FaceMode": 0,
+                        "RenderMode": 0,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/Synty/ExplorerKit/Textures/PolygonExplorers_Texture_02_A.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "ModelPath": "Assets/3D/Cube.fbx",
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "Name": "POLYGON_Town_Demo-reex"
+        }
+    ]
+}
