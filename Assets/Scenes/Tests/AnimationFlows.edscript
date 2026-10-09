@@ -1,0 +1,50 @@
+# Animation editor regression script (run with AnimationTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/AnimationTest.lvl --editor-exec Assets/Scenes/Tests/AnimationFlows.edscript
+wait 20
+mark-count
+
+# Edit mode: the bones hold their bind pose
+assert-field Blender/Root/Mid | Transform.Position | [0.0, 1.0, 0.0]
+assert-field Blender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+assert-field Bender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+select Blender
+wait 3
+screenshot .tmp/overhaul/shots/animation_edit.png
+
+# Skinned meshes frame, bound and pick in their current pose, not the bind pose: lay the
+# Blender's chain on its side, frame it, and click the middle of the view
+select Blender/Root
+set Transform.Position [0.0, 1.0, 0.0]
+set Transform.Rotation [0.0, 0.0, 0.7071068, 0.7071068]
+select Blender
+focus-window World View
+wait 2
+action View.Front
+action View.FrameSelected
+wait 60
+select-none
+pick 0.5 0.5
+wait 10
+assert-active Blender
+screenshot .tmp/overhaul/shots/animation_posed_pick.png
+undo
+undo
+assert-field Blender/Root | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+
+# Play: the clips bend the tubes and the hat rides the tip bone
+play
+wait 90
+assert-playing 1
+assert-field Bender/Root/Mid | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
+assert-field Blender/Root/Mid | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
+assert-field Blender/Root/Mid/Tip/Hat | Transform.Position | [0.0, 1.05, 0.0]
+screenshot .tmp/overhaul/shots/animation_play.png
+
+# Stop restores the bind pose
+stop
+wait 5
+assert-playing 0
+assert-field Blender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+assert-field Bender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+assert-field Waver/Root/Mid/Tip | Transform.Position | [0.0, 1.0, 0.0]
+assert-count-delta 0

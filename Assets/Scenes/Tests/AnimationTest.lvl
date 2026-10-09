@@ -1,0 +1,346 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2.2,
+                        -8
+                    ],
+                    "Rotation": [
+                        6,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.32,
+                        0.4,
+                        0.55
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 50.0
+                }
+            ]
+        },
+        {
+            "Name": "Sun",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        10,
+                        -5
+                    ],
+                    "Rotation": [
+                        45,
+                        -30,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.9
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 30.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        10,
+                        1,
+                        10
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.5,
+                            0.52,
+                            0.55
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Bender",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Test/SkinnedTube.fbx"
+                },
+                {
+                    "Type": "Animator",
+                    "DefaultState": "Bend"
+                }
+            ]
+        },
+        {
+            "Name": "Waver",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Test/SkinnedTube.fbx"
+                },
+                {
+                    "Type": "Animator",
+                    "DefaultState": "Wave"
+                }
+            ]
+        },
+        {
+            "Name": "Blender",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Test/SkinnedTube.fbx"
+                },
+                {
+                    "Type": "Animator",
+                    "DefaultState": "Bend",
+                    "States": [
+                        {
+                            "Name": "Bend",
+                            "Clip": "Bend"
+                        },
+                        {
+                            "Name": "Wave",
+                            "Clip": "Wave"
+                        }
+                    ],
+                    "Transitions": [
+                        {
+                            "From": "Bend",
+                            "To": "Wave",
+                            "Condition": "Always",
+                            "Duration": 0.6,
+                            "ExitTime": 1.0
+                        },
+                        {
+                            "From": "Wave",
+                            "To": "Bend",
+                            "Condition": "Always",
+                            "Duration": 0.6,
+                            "ExitTime": 1.0
+                        }
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Root",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                1,
+                                1,
+                                1
+                            ]
+                        }
+                    ],
+                    "Children": [
+                        {
+                            "Name": "Mid",
+                            "Components": [
+                                {
+                                    "Type": "Transform",
+                                    "Position": [
+                                        0,
+                                        1,
+                                        0
+                                    ],
+                                    "Rotation": [
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Scale": [
+                                        1,
+                                        1,
+                                        1
+                                    ]
+                                }
+                            ],
+                            "Children": [
+                                {
+                                    "Name": "Tip",
+                                    "Components": [
+                                        {
+                                            "Type": "Transform",
+                                            "Position": [
+                                                0,
+                                                1,
+                                                0
+                                            ],
+                                            "Rotation": [
+                                                0,
+                                                0,
+                                                0
+                                            ],
+                                            "Scale": [
+                                                1,
+                                                1,
+                                                1
+                                            ]
+                                        }
+                                    ],
+                                    "Children": [
+                                        {
+                                            "Name": "Hat",
+                                            "Components": [
+                                                {
+                                                    "Type": "Transform",
+                                                    "Position": [
+                                                        0,
+                                                        1.05,
+                                                        0
+                                                    ],
+                                                    "Rotation": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "Scale": [
+                                                        0.22,
+                                                        0.22,
+                                                        0.22
+                                                    ]
+                                                },
+                                                {
+                                                    "Type": "Mesh",
+                                                    "MeshType": "Sphere",
+                                                    "Material": {
+                                                        "Type": "StandardMaterial",
+                                                        "DiffuseColor": [
+                                                            0.2,
+                                                            0.55,
+                                                            0.95
+                                                        ],
+                                                        "Metallic": 0.0,
+                                                        "Roughness": 0.3
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
