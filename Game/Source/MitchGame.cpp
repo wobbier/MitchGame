@@ -57,7 +57,6 @@ void MitchGame::OnStart()
     //TestModel.lock()->AddComponent<Model>("Assets/ExampleAssets/Models/Hammer.fbx");
     TestModel->AddComponent<Model>( "Assets/Craftsman/Craftsman.fbx" );
 
-    FlyingCameraController->SetCamera( &cam );
     GameWorld->AddCore<FlyingCameraCore>( *FlyingCameraController );
 }
 
