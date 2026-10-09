@@ -1,0 +1,83 @@
+# Editor workflow regression script (run with HierarchyTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/EditorFlows.edscript
+wait 20
+mark-count
+assert-dirty 0
+
+# Create / rename / undo / redo
+create Probe
+assert-exists Probe
+assert-active Probe
+assert-dirty 1
+rename Renamed Probe
+assert-exists Renamed Probe
+undo
+assert-exists Probe
+redo
+assert-exists Renamed Probe
+undo
+undo
+assert-missing Probe
+assert-count-delta 0
+assert-dirty 0
+
+# Delete a subtree and bring it back with identical hierarchy
+select Parent
+action Edit.Delete
+assert-missing Parent
+assert-missing Grandchild
+assert-count-delta -3
+undo
+assert-exists Parent/Child/Grandchild
+assert-count-delta 0
+assert-children Parent | 1
+
+# Duplicate keeps the subtree and parent
+select Parent
+action Edit.Duplicate
+assert-count-delta 3
+assert-selected 1
+undo
+assert-count-delta 0
+
+# Reparent keeps world position
+select Right Cube
+reparent Right Cube | Parent
+assert-parent Right Cube | Parent
+undo
+assert-parent Right Cube | root
+
+# Field edits are undoable
+select Ground
+set Transform.Position [0,3,0]
+assert-field Ground Transform.Position [0,3,0]
+undo
+assert-field Ground Transform.Position [0,-1,0]
+
+# Component add/remove keeps state
+select Right Cube
+action Edit.Copy
+action Edit.Paste
+assert-count-delta 1
+undo
+assert-count-delta 0
+remove-component Mesh
+undo
+assert-field Right Cube | Mesh.MeshType | "Cube"
+
+# Play mode restores the edit-time scene and selection
+select Child
+play
+wait 10
+assert-playing 1
+select Ground
+action Edit.Delete
+assert-missing Ground
+stop
+wait 5
+assert-playing 0
+assert-exists Ground
+assert-active Child
+assert-count-delta 0
+screenshot .tmp/overhaul/shots/editor_flows.png
+wait 5

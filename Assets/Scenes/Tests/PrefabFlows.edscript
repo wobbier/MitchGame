@@ -1,0 +1,46 @@
+# Prefab workflow regression script (run with HierarchyTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/PrefabFlows.edscript
+wait 20
+mark-count
+
+# Create a prefab from an existing subtree: the subtree becomes its first instance.
+create-prefab Parent | .tmp/Tests/TestParent.prefab
+assert-prefab Parent | .tmp/Tests/TestParent.prefab
+assert-prefab Parent/Child/Grandchild | .tmp/Tests/TestParent.prefab
+
+# A second instance.
+instantiate .tmp/Tests/TestParent.prefab
+rename Instance2
+assert-count-delta 3
+assert-prefab Instance2/Child | .tmp/Tests/TestParent.prefab
+assert-overridden Instance2 | Transform.Position | 0
+
+# Overrides and Revert All.
+select Instance2/Child
+set Transform.Scale [2,2,2]
+assert-overridden Instance2/Child | Transform.Scale | 1
+prefab-revert Instance2
+assert-field Instance2/Child | Transform.Scale | [0.5,0.5,0.5]
+assert-overridden Instance2/Child | Transform.Scale | 0
+undo
+assert-field Instance2/Child | Transform.Scale | [2,2,2]
+prefab-revert Instance2
+
+# Apply All from one instance updates the other (unmodified) instance.
+select Parent/Child
+set Transform.Scale [0.25,0.25,0.25]
+prefab-apply Parent
+assert-field Instance2/Child | Transform.Scale | [0.25,0.25,0.25]
+assert-overridden Parent/Child | Transform.Scale | 0
+
+# Components added in the prefab reach other instances.
+select Parent/Child/Grandchild
+add-component Camera
+prefab-apply Parent
+assert-field Instance2/Child/Grandchild | Camera.FieldOfView | 60
+
+# Unpack is undoable.
+prefab-unpack Instance2
+assert-prefab Instance2 | none
+undo
+assert-prefab Instance2 | .tmp/Tests/TestParent.prefab
