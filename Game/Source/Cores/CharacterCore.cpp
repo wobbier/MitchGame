@@ -209,7 +209,7 @@ bool CharacterCore::FirePortal( bool IsBluePortal )
     RaycastHit ray;
     if( physics->Raycast( m_cameraTransform->GetWorldPosition(), m_cameraTransform->GetWorldPosition() + m_cameraTransform->Front() * 20.0f, ray ) )
     {
-        Transform& trans = ray.What->Parent->GetComponent<Transform>();
+        Transform& trans = ray.Entity->GetComponent<Transform>();
         BRUH( "HIT" + trans.GetName() );
 
         for( int i = 0; i < directions.size(); ++i )

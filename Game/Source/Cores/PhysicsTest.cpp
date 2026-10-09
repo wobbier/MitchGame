@@ -6,6 +6,7 @@
 #include "optick.h"
 #include "Work/Burst.h"
 #include "Components/Physics/Rigidbody.h"
+#include "Components/Physics/Colliders.h"
 
 
 PhysicsTestCore::PhysicsTestCore()
@@ -93,14 +94,15 @@ void PhysicsTestCore::OnStart()
 
     EntityHandle rootEnt = world->CreateFromPrefab( std::string( kPrefabName ) );
     Transform& rootTransform = rootEnt->GetComponent<Transform>();
-    Rigidbody& rigidbody = rootEnt->AddComponent<Rigidbody>( Rigidbody::ColliderType::Box );
-    rigidbody.SetMass( 1.f );
+    Rigidbody& rigidbody = rootEnt->AddComponent<Rigidbody>();
+    rigidbody.Mass = 1.f;
+    rootEnt->AddComponent<BoxCollider>();
 
     for( int i = 0; i < 10; ++i )
     {
         EntityHandle subEnt = world->CreateFromPrefab( std::string( kPrefabName2 ) );
         Transform& transform = subEnt->GetComponent<Transform>();
-        subEnt->AddComponent<Rigidbody>( Rigidbody::ColliderType::Box ).SetMass( 0.f );
+        subEnt->AddComponent<BoxCollider>();   // no Rigidbody: static
         transform.SetPosition( Vector3( ( (float)i - 4.5f ) * 2.f, -3.f, 0.f ) );
         transform.SetScale( 0.5f );
 
@@ -108,7 +110,7 @@ void PhysicsTestCore::OnStart()
         {
             EntityHandle sub2Ent = world->CreateFromPrefab( std::string( kPrefabName3 ) );
             Transform& subTransform = sub2Ent->GetComponent<Transform>();
-            sub2Ent->AddComponent<Rigidbody>( Rigidbody::ColliderType::Box ).SetMass( 0.f );
+            sub2Ent->AddComponent<BoxCollider>();
             subTransform.SetPosition( Vector3( ( (float)j - 9.f ) * 2.f, -3.f, 0.f ) );
             subTransform.SetScale( 0.5f );
 
@@ -116,7 +118,7 @@ void PhysicsTestCore::OnStart()
             {
                 EntityHandle sub3Ent = world->CreateFromPrefab( std::string( kPrefabName4 ) );
                 Transform& sub3Transform = sub3Ent->GetComponent<Transform>();
-                sub3Ent->AddComponent<Rigidbody>( Rigidbody::ColliderType::Box ).SetMass( 0.f );
+                sub3Ent->AddComponent<BoxCollider>();
                 sub3Transform.SetPosition( Vector3( ( (float)k - 13.5f ) * 2.f, -3.f, 0.f ) );
                 sub3Transform.SetScale( 0.5f );
             }
