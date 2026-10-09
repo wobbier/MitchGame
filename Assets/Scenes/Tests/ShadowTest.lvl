@@ -1,0 +1,779 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        7,
+                        -16
+                    ],
+                    "Rotation": [
+                        24,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.35,
+                        0.45,
+                        0.6
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 300.0,
+                    "Zoom": 50.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        30
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        40,
+                        1,
+                        60
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.55,
+                            0.55,
+                            0.55
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Sun",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        20,
+                        0
+                    ],
+                    "Rotation": [
+                        40,
+                        -35,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.95,
+                        0.85
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 90.0
+                }
+            ]
+        },
+        {
+            "Name": "Pillar",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4,
+                        4,
+                        2
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.5,
+                        4,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.8,
+                            0.78
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Sphere",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.25,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Capsule",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        1,
+                        1
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.25,
+                            0.55,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Floating Cube",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.5,
+                        2.8,
+                        -2.5
+                    ],
+                    "Rotation": [
+                        20,
+                        30,
+                        10
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.8,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Cube 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.0,
+                        1.5,
+                        10
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.5,
+                        1.5,
+                        1.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.75
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Pillar 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3,
+                        10
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        3,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.7,
+                            0.65
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Cube 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.6,
+                        1.5,
+                        20
+                    ],
+                    "Rotation": [
+                        0,
+                        25,
+                        0
+                    ],
+                    "Scale": [
+                        1.5,
+                        1.5,
+                        1.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.75
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Pillar 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3,
+                        20
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        3,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.7,
+                            0.65
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Cube 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.0,
+                        1.5,
+                        32
+                    ],
+                    "Rotation": [
+                        0,
+                        50,
+                        0
+                    ],
+                    "Scale": [
+                        1.5,
+                        1.5,
+                        1.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.75
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Pillar 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3,
+                        32
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        3,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.7,
+                            0.65
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Cube 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.6,
+                        1.5,
+                        46
+                    ],
+                    "Rotation": [
+                        0,
+                        75,
+                        0
+                    ],
+                    "Scale": [
+                        1.5,
+                        1.5,
+                        1.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.75
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Pillar 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3,
+                        46
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        3,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.7,
+                            0.65
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Cube 4",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.0,
+                        1.5,
+                        62
+                    ],
+                    "Rotation": [
+                        0,
+                        100,
+                        0
+                    ],
+                    "Scale": [
+                        1.5,
+                        1.5,
+                        1.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.75
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Pillar 4",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3,
+                        62
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        3,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.7,
+                            0.65
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Cube 5",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.6,
+                        1.5,
+                        80
+                    ],
+                    "Rotation": [
+                        0,
+                        125,
+                        0
+                    ],
+                    "Scale": [
+                        1.5,
+                        1.5,
+                        1.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.75
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Far Pillar 5",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3,
+                        80
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        3,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.7,
+                            0.65
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Spot Target",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        0.6,
+                        -6.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.85
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Spot",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        3.5,
+                        -12.0
+                    ],
+                    "Rotation": [
+                        22.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Spot",
+                    "Color": [
+                        1.0,
+                        0.8,
+                        0.5
+                    ],
+                    "Intensity": 120.0,
+                    "Range": 25.0,
+                    "InnerConeAngle": 18.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": true
+                }
+            ]
+        }
+    ]
+}
