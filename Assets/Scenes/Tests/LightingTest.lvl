@@ -1,0 +1,787 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3.5,
+                        -11
+                    ],
+                    "Rotation": [
+                        17,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.02,
+                        0.025,
+                        0.035
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 45.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        14,
+                        1,
+                        14
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.52
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Back Wall",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        4,
+                        7
+                    ],
+                    "Rotation": [
+                        -90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        14,
+                        1,
+                        6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.45,
+                            0.45,
+                            0.48
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.7
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Dielectric 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.1
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Metal 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6,
+                        0.2,
+                        3.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.1
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Dielectric 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.30000000000000004
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Metal 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3,
+                        0.2,
+                        3.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.30000000000000004
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Dielectric 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Metal 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.2,
+                        3.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.5
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Dielectric 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.7000000000000001
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Metal 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        0.2,
+                        3.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.7000000000000001
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Dielectric 4",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Metal 4",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        0.2,
+                        3.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Pillar",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8,
+                        1,
+                        4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        2,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Capsule",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8,
+                        0.5,
+                        4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        20
+                    ],
+                    "Scale": [
+                        1,
+                        1.5,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.5,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Emissive Cube",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.6,
+                        -3
+                    ],
+                    "Rotation": [
+                        0,
+                        45,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.05
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "EmissiveColor": [
+                            1.0,
+                            0.45,
+                            0.1
+                        ],
+                        "EmissiveIntensity": 6.0
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Moon",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        8,
+                        0
+                    ],
+                    "Rotation": [
+                        50,
+                        -30,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        0.6,
+                        0.7,
+                        1.0
+                    ],
+                    "Intensity": 0.6,
+                    "Range": 10.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "Name": "Red Point",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        0.6,
+                        -1.8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.25,
+                        0.15
+                    ],
+                    "Intensity": 12.0,
+                    "Range": 7.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "Name": "Blue Point",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.5,
+                        0.6,
+                        -1.8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.2,
+                        0.45,
+                        1.0
+                    ],
+                    "Intensity": 12.0,
+                    "Range": 7.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "Name": "Green Point",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1.8,
+                        5.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.3,
+                        1.0,
+                        0.35
+                    ],
+                    "Intensity": 10.0,
+                    "Range": 6.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "Name": "Spot",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        5.5,
+                        -5.0
+                    ],
+                    "Rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Spot",
+                    "Color": [
+                        1.0,
+                        0.95,
+                        0.85
+                    ],
+                    "Intensity": 60.0,
+                    "Range": 14.0,
+                    "InnerConeAngle": 18.0,
+                    "OuterConeAngle": 28.0,
+                    "CastShadows": true
+                }
+            ]
+        }
+    ]
+}

@@ -9,7 +9,6 @@
 #include "Components/Camera.h"
 #include "Components/Physics/Rigidbody.h"
 #include "Components/Graphics/Model.h"
-#include "Components/Lighting/Light.h"
 #include "Components/Cameras/FlyingCamera.h"
 #include "Cores/TestCore.h"
 #include <memory>
@@ -43,13 +42,11 @@ void MitchGame::OnStart()
     CameraPos.SetPosition( Vector3( 0, 5, 20 ) );
     Camera& cam = MainCamera->AddComponent<Camera>();
     MainCamera->AddComponent<FlyingCamera>();
-    MainCamera->AddComponent<Light>();
 
     SecondaryCamera = GameWorld->CreateEntity();
     Transform& SecondaryPos = SecondaryCamera->AddComponent<Transform>( "Secondary Camera" );
     SecondaryPos.SetPosition( Vector3( 0, 5, 20 ) );
     SecondaryCamera->AddComponent<Camera>();
-    SecondaryCamera->AddComponent<Light>();
     SecondaryCamera->AddComponent<FlyingCamera>();
 
     auto TestModel = GameWorld->CreateEntity();
