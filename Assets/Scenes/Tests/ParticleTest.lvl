@@ -1,0 +1,676 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2.6,
+                        -7
+                    ],
+                    "Rotation": [
+                        14,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.03,
+                        0.035,
+                        0.06
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 50.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        15,
+                        1,
+                        15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4,
+                            0.38,
+                            0.35
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Moon",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        10,
+                        0
+                    ],
+                    "Rotation": [
+                        45,
+                        -40,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        0.55,
+                        0.65,
+                        1.0
+                    ],
+                    "Intensity": 0.4,
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "Name": "Stone 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.7,
+                        0.12,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.14,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.33,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Stone 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.35000000000000003,
+                        0.12,
+                        0.606217782649107
+                    ],
+                    "Rotation": [
+                        0,
+                        60,
+                        0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.14,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.33,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Stone 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.3499999999999998,
+                        0.12,
+                        0.6062177826491071
+                    ],
+                    "Rotation": [
+                        0,
+                        120,
+                        0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.14,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.33,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Stone 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.7,
+                        0.12,
+                        8.572527594031472e-17
+                    ],
+                    "Rotation": [
+                        0,
+                        180,
+                        0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.14,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.33,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Stone 4",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.3500000000000003,
+                        0.12,
+                        -0.6062177826491069
+                    ],
+                    "Rotation": [
+                        0,
+                        240,
+                        0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.14,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.33,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Stone 5",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.35000000000000003,
+                        0.12,
+                        -0.606217782649107
+                    ],
+                    "Rotation": [
+                        0,
+                        300,
+                        0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.14,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.33,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Fire",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 60.0,
+                    "Lifetime": [
+                        0.6,
+                        1.2
+                    ],
+                    "Speed": [
+                        0.8,
+                        1.6
+                    ],
+                    "Size": [
+                        0.25,
+                        0.45
+                    ],
+                    "EndSize": 0.3,
+                    "ShapeRadius": 0.35,
+                    "ConeAngle": 10.0,
+                    "Intensity": 4.0,
+                    "NoiseStrength": 1.2,
+                    "Gravity": -0.15,
+                    "SoftParticleDistance": 0.3
+                }
+            ]
+        },
+        {
+            "Name": "Smoke",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "EmissionRate": 10.0,
+                    "Lifetime": [
+                        3.0,
+                        5.0
+                    ],
+                    "Speed": [
+                        0.4,
+                        0.8
+                    ],
+                    "Size": [
+                        0.4,
+                        0.7
+                    ],
+                    "EndSize": 3.0,
+                    "StartColor": [
+                        0.25,
+                        0.25,
+                        0.25
+                    ],
+                    "StartColor2": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ],
+                    "EndColor": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ],
+                    "StartAlpha": 0.45,
+                    "Intensity": 1.0,
+                    "Gravity": -0.03,
+                    "NoiseStrength": 0.3,
+                    "SoftParticleDistance": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Sparks",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.2,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Shape": "Cone",
+                    "ConeAngle": 35.0,
+                    "ShapeRadius": 0.3,
+                    "EmissionRate": 25.0,
+                    "Lifetime": [
+                        0.6,
+                        1.4
+                    ],
+                    "Speed": [
+                        2.0,
+                        4.0
+                    ],
+                    "Size": [
+                        0.02,
+                        0.04
+                    ],
+                    "EndSize": 0.5,
+                    "StartColor": [
+                        1.0,
+                        0.8,
+                        0.4
+                    ],
+                    "StartColor2": [
+                        1.0,
+                        0.95,
+                        0.7
+                    ],
+                    "EndColor": [
+                        1.0,
+                        0.3,
+                        0.05
+                    ],
+                    "Intensity": 8.0,
+                    "Gravity": 0.4,
+                    "Drag": 0.3,
+                    "NoiseStrength": 2.0,
+                    "Alignment": "Stretched",
+                    "StretchFactor": 0.08
+                }
+            ]
+        },
+        {
+            "Name": "Fire Light",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.8,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.55,
+                        0.2
+                    ],
+                    "Intensity": 18.0,
+                    "Range": 8.0
+                }
+            ]
+        },
+        {
+            "Name": "Pillar",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.6,
+                        1.5,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        1.5,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.58,
+                            0.55
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.7
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Steam",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.6,
+                        0.0,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "Shape": "Sphere",
+                    "ShapeRadius": 0.6,
+                    "EmissionRate": 20.0,
+                    "Lifetime": [
+                        2.0,
+                        3.0
+                    ],
+                    "Speed": [
+                        0.2,
+                        0.5
+                    ],
+                    "Size": [
+                        0.6,
+                        1.0
+                    ],
+                    "EndSize": 2.0,
+                    "StartColor": [
+                        0.8,
+                        0.85,
+                        0.9
+                    ],
+                    "StartColor2": [
+                        0.9,
+                        0.95,
+                        1.0
+                    ],
+                    "EndColor": [
+                        0.7,
+                        0.75,
+                        0.8
+                    ],
+                    "StartAlpha": 0.35,
+                    "Intensity": 1.0,
+                    "Gravity": -0.05,
+                    "NoiseStrength": 0.2,
+                    "SoftParticleDistance": 0.8
+                }
+            ]
+        },
+        {
+            "Name": "Crate",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.4,
+                        0.5,
+                        1.0
+                    ],
+                    "Rotation": [
+                        0,
+                        30,
+                        0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.55,
+                            0.4,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        }
+    ]
+}
