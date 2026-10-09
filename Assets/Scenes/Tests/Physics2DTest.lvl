@@ -1,0 +1,1129 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        4,
+                        -20
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.3,
+                        0.38,
+                        0.5
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 50.0
+                }
+            ]
+        },
+        {
+            "Name": "Sun",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        20,
+                        -10
+                    ],
+                    "Rotation": [
+                        35,
+                        20,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.88
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 60.0
+                }
+            ]
+        },
+        {
+            "Name": "Backdrop",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        4,
+                        2
+                    ],
+                    "Rotation": [
+                        -90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        20,
+                        1,
+                        10
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.42,
+                            0.44,
+                            0.48
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.25,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        12,
+                        0.25,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.52
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Ramp",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.5,
+                        2.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        -25
+                    ],
+                    "Scale": [
+                        3.5,
+                        0.12,
+                        0.8
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.45,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Friction": 0.8
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 0-0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.2,
+                        0.4,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 0-1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.3839999999999999,
+                        0.4,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 0-2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.43200000000000016,
+                        0.4,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 0-3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.2480000000000004,
+                        0.4,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 1-0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.7919999999999999,
+                        1.2000000000000002,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.65,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 1-1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.024000000000000243,
+                        1.2000000000000002,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.65,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 1-2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.8400000000000001,
+                        1.2000000000000002,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.65,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 2-0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.3839999999999999,
+                        2.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 2-1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.43200000000000016,
+                        2.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Pyramid 3-0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.024000000000000243,
+                        2.8000000000000003,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.75,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "Name": "Ball 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        5.2,
+                        9.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.95
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "Name": "Ball 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.0,
+                        11.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "Name": "Ball 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.8,
+                        13.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.95
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "Name": "Ball 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        5.6,
+                        15.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "Name": "Paddle",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        3.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.6,
+                        0.1,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.55,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 2.0,
+                    "GravityScale": 0.0
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "UseMotor": true,
+                    "MotorSpeed": -150.0,
+                    "MaxMotorForce": 500.0
+                }
+            ]
+        },
+        {
+            "Name": "Pendulum Pivot",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.5,
+                        7,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.08,
+                        0.08,
+                        0.08
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.2,
+                            0.22
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.5
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Pendulum Bob",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.0,
+                        7,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.6
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 3.0
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Distance",
+                    "ConnectedAnchor": [
+                        -3.5,
+                        7.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Wheel",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.5,
+                        5.5,
+                        0
+                    ],
+                    "Rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.15,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.15,
+                            0.15,
+                            0.17
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Friction": 1.0
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 2.0
+                }
+            ]
+        },
+        {
+            "Name": "Trigger",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        1.0,
+                        2.0
+                    ],
+                    "IsTrigger": true
+                }
+            ]
+        },
+        {
+            "Name": "Character",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.5,
+                        0.85,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.8,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.75,
+                            0.55
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "CharacterController2D"
+                }
+            ]
+        }
+    ]
+}

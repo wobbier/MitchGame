@@ -1,0 +1,29 @@
+# 2D physics editor regression script (run with Physics2DTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/Physics2DTest.lvl --editor-exec Assets/Scenes/Tests/Physics2DFlows.edscript
+wait 20
+mark-count
+
+# Edit mode: nothing simulates
+assert-field Ball 0 | Transform.Position | [5.2, 9.0, 0.0]
+select Wheel
+action View.Physics
+wait 3
+screenshot .tmp/overhaul/shots/physics2d_edit.png
+action View.Physics
+
+# Play: the pyramid holds, balls land, the wheel keeps facing the camera
+play
+wait 240
+assert-playing 1
+assert-field Pyramid 0-0 | Transform.Position.1 | 0.4 ~ 0.02
+assert-field Pyramid 3-0 | Transform.Position.1 | 2.8 ~ 0.05
+assert-field Ball 0 | Transform.Position.2 | 0.0
+screenshot .tmp/overhaul/shots/physics2d_play.png
+
+# Stop restores the edit-time poses
+stop
+wait 5
+assert-playing 0
+assert-field Ball 0 | Transform.Position | [5.2, 9.0, 0.0]
+assert-field Wheel | Transform.Position | [-9.5, 5.5, 0.0]
+assert-count-delta 0
