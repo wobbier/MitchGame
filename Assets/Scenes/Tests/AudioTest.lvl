@@ -1,0 +1,343 @@
+{
+    "Cores": [
+        {
+            "Type": "FlyingCameraCore"
+        }
+    ],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1.7,
+                        -10
+                    ],
+                    "Rotation": [
+                        8,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.12,
+                        0.14,
+                        0.2
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 55.0
+                },
+                {
+                    "Type": "AudioListener"
+                },
+                {
+                    "Type": "FlyingCamera"
+                }
+            ]
+        },
+        {
+            "Name": "Moon",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        12,
+                        -4
+                    ],
+                    "Rotation": [
+                        50,
+                        -25,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        0.7,
+                        0.78,
+                        1.0
+                    ],
+                    "Intensity": 1.2,
+                    "CastShadows": true,
+                    "ShadowDistance": 40.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        20,
+                        1,
+                        20
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.3,
+                            0.32
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Hum Linear",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.6,
+                            1.0
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "EmissiveColor": [
+                            0.2,
+                            0.6,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 3.0
+                    }
+                },
+                {
+                    "Type": "AudioSource",
+                    "FilePath": "Assets/Sounds/Test/Hum.wav",
+                    "Bus": "SFX",
+                    "Volume": 1.0,
+                    "Pitch": 1.0,
+                    "Mute": false,
+                    "PlayOnAwake": true,
+                    "Loop": true,
+                    "SpatialBlend": 1.0,
+                    "MinDistance": 1.0,
+                    "MaxDistance": 10.0,
+                    "Rolloff": "Linear",
+                    "DopplerLevel": 1.0,
+                    "Priority": 128,
+                    "MaxOneShots": 8
+                }
+            ]
+        },
+        {
+            "Name": "Hum Inverse",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.55,
+                            0.15
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "EmissiveColor": [
+                            1.0,
+                            0.55,
+                            0.15
+                        ],
+                        "EmissiveIntensity": 3.0
+                    }
+                },
+                {
+                    "Type": "AudioSource",
+                    "FilePath": "Assets/Sounds/Test/Hum.wav",
+                    "Bus": "SFX",
+                    "Volume": 1.0,
+                    "Pitch": 1.5,
+                    "Mute": false,
+                    "PlayOnAwake": true,
+                    "Loop": true,
+                    "SpatialBlend": 1.0,
+                    "MinDistance": 2.0,
+                    "MaxDistance": 40.0,
+                    "Rolloff": "Inverse",
+                    "DopplerLevel": 1.0,
+                    "Priority": 128,
+                    "MaxOneShots": 8
+                }
+            ]
+        },
+        {
+            "Name": "Hum LinearSquare",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4,
+                            1.0,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "EmissiveColor": [
+                            0.4,
+                            1.0,
+                            0.4
+                        ],
+                        "EmissiveIntensity": 3.0
+                    }
+                },
+                {
+                    "Type": "AudioSource",
+                    "FilePath": "Assets/Sounds/Test/Hum.wav",
+                    "Bus": "SFX",
+                    "Volume": 1.0,
+                    "Pitch": 0.75,
+                    "Mute": false,
+                    "PlayOnAwake": true,
+                    "Loop": true,
+                    "SpatialBlend": 1.0,
+                    "MinDistance": 1.0,
+                    "MaxDistance": 14.0,
+                    "Rolloff": "LinearSquare",
+                    "DopplerLevel": 1.0,
+                    "Priority": 128,
+                    "MaxOneShots": 8
+                }
+            ]
+        },
+        {
+            "Name": "Chime",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        -6
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "AudioSource",
+                    "FilePath": "Assets/Sounds/Test/Chime.wav",
+                    "Bus": "UI",
+                    "Volume": 1.0,
+                    "Pitch": 1.0,
+                    "Mute": false,
+                    "PlayOnAwake": true,
+                    "Loop": false,
+                    "SpatialBlend": 0.0,
+                    "MinDistance": 1.0,
+                    "MaxDistance": 12.0,
+                    "Rolloff": "Linear",
+                    "DopplerLevel": 1.0,
+                    "Priority": 128,
+                    "MaxOneShots": 8
+                }
+            ]
+        }
+    ]
+}

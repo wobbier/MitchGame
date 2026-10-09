@@ -1,0 +1,42 @@
+# Audio editor regression script (run with AudioTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/AudioTest.lvl --editor-exec Assets/Scenes/Tests/AudioFlows.edscript
+# Automated runs mix silently (no audio device); add --audio to hear it.
+wait 20
+mark-count
+
+# Edit mode: nothing plays on its own, and the reflected settings load
+assert-audio Hum Linear | 0
+assert-field Hum Inverse | AudioSource.Rolloff | "Inverse"
+assert-field Hum Inverse | AudioSource.Pitch | 1.5
+assert-field Chime | AudioSource.Bus | "UI"
+
+# Inspector edits are undoable
+select Hum Linear
+set AudioSource.Volume 0.5
+assert-field Hum Linear | AudioSource.Volume | 0.5
+undo
+assert-field Hum Linear | AudioSource.Volume | 1.0
+focus-window World View
+wait 3
+screenshot .tmp/overhaul/shots/audio_edit.png
+
+# Play: PlayOnAwake sources start and keep playing through a pause
+play
+wait 30
+assert-playing 1
+assert-audio Hum Linear | 1
+assert-audio Hum Inverse | 1
+assert-audio Hum LinearSquare | 1
+action Play.Pause
+wait 10
+assert-audio Hum Linear | 1
+action Play.Pause
+wait 10
+
+# Stop silences everything and restores the scene
+stop
+wait 5
+assert-playing 0
+assert-audio Hum Linear | 0
+assert-audio Hum Inverse | 0
+assert-count-delta 0
