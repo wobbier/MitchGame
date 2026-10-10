@@ -31,6 +31,24 @@ undo
 undo
 assert-field Blender/Root | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
 
+# Edit-mode preview: the Bender's clip poses its bones without playing; saving keeps the authored
+# pose, and stopping the preview puts it back
+select Bender
+action Animation.PreviewSelected
+wait 10
+assert-playing 0
+assert-field Bender/Root/Mid | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
+save-as .tmp/overhaul/AnimationPreviewSave.lvl
+wait 2
+assert-field Bender/Root/Mid | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
+action Animation.StopPreviews
+wait 2
+assert-field Bender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+# Starting a preview, then pressing Play, plays from the authored pose
+action Animation.PreviewSelected
+wait 5
+select-none
+
 # Play: the clips bend the tubes and the hat rides the tip bone
 play
 wait 90
@@ -48,3 +66,9 @@ assert-field Blender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
 assert-field Bender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
 assert-field Waver/Root/Mid/Tip | Transform.Position | [0.0, 1.0, 0.0]
 assert-count-delta 0
+
+# The scene saved mid-preview holds the authored pose
+load .tmp/overhaul/AnimationPreviewSave.lvl
+wait 5
+assert-field Bender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+assert-field Blender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
