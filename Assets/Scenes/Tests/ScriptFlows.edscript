@@ -19,6 +19,8 @@ wait-log RenameProbe: started with Value 7 | 600
 wait-log TriggerProbe: Dropper entered | 600
 wait-log TriggerProbe: Dropper left | 600
 wait-log CollisionProbe: hit Ground (normal y -1.0) | 600
+# [ExecutionOrder] beats scene order; OnLateUpdate follows every OnUpdate
+wait-log OrderProbe: execution order and late update held for 30 frames | 600
 wait 60
 assert-playing 1
 assert-field Probe | Transform.Scale | [2.0, 2.0, 2.0]

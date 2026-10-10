@@ -316,6 +316,62 @@
                     "ScriptFields": "{\"oldValue\": 7}"
                 }
             ]
+        },
+        {
+            "Name": "OrderLate",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8,
+                        0,
+                        4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "OrderProbeLate",
+                    "ScriptFields": "{}"
+                }
+            ]
+        },
+        {
+            "Name": "OrderEarly",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10,
+                        0,
+                        4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "OrderProbeEarly",
+                    "ScriptFields": "{}"
+                }
+            ]
         }
     ]
 }
