@@ -433,7 +433,8 @@
                     "Intensity": 1.0,
                     "Gravity": -0.03,
                     "NoiseStrength": 0.3,
-                    "SoftParticleDistance": 1.0
+                    "SoftParticleDistance": 1.0,
+                    "Lit": true
                 }
             ]
         },
@@ -631,7 +632,8 @@
                     "Intensity": 1.0,
                     "Gravity": -0.05,
                     "NoiseStrength": 0.2,
-                    "SoftParticleDistance": 0.8
+                    "SoftParticleDistance": 0.8,
+                    "Lit": true
                 }
             ]
         },
