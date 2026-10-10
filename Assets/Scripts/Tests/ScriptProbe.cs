@@ -10,6 +10,9 @@ public class ScriptProbe : Script
 
     public override void OnStart()
     {
+        // Local multiplayer input: player 0 always exists (keyboard and mouse, any pad).
+        Debug.Log($"ScriptProbe: {Input.PlayerCount} input player(s), player 0 pad {Input.Player(0).Gamepad}");
+
         // Physics + entity names: grow when the ray down finds the ground by name.
         var origin = transform.WorldPosition;
         if (Physics.Raycast(origin, new Vector3(0, -1, 0), 50.0f, out var hit))
