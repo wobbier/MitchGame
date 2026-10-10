@@ -81,3 +81,10 @@ assert-active Child
 assert-count-delta 0
 screenshot .tmp/overhaul/shots/editor_flows.png
 wait 5
+
+# Shader hot reload compiles off the main thread and swaps the program in when it's done
+replace-in-file Engine/Assets/Shaders/Post/FXAA.frag | // FXAA (Lottes), compact | // FXAA (Lottes) [hot reload test], compact
+wait-log Hot reloaded: | 1800
+replace-in-file Engine/Assets/Shaders/Post/FXAA.frag | // FXAA (Lottes) [hot reload test], compact | // FXAA (Lottes), compact
+wait 2
+wait-log Hot reloaded: | 1800
