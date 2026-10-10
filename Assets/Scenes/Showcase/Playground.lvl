@@ -3992,6 +3992,11 @@
                     "InnerConeAngle": 20.0,
                     "OuterConeAngle": 30.0,
                     "CastShadows": false
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Flicker",
+                    "ScriptFields": "{\"Strength\": 0.3, \"Speed\": 1.0, \"Seed\": 10}"
                 }
             ]
         },
@@ -4191,6 +4196,11 @@
                     "InnerConeAngle": 20.0,
                     "OuterConeAngle": 30.0,
                     "CastShadows": false
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Flicker",
+                    "ScriptFields": "{\"Strength\": 0.25, \"Speed\": 1.3, \"Seed\": 0.0}"
                 }
             ]
         },
@@ -4306,6 +4316,11 @@
                     "InnerConeAngle": 20.0,
                     "OuterConeAngle": 30.0,
                     "CastShadows": false
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Flicker",
+                    "ScriptFields": "{\"Strength\": 0.25, \"Speed\": 1.3, \"Seed\": 1.0}"
                 }
             ]
         },

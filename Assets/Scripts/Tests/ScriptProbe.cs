@@ -21,6 +21,12 @@ public class ScriptProbe : Script
             }
         }
         Debug.Log($"ScriptProbe started on {Entity.Name}, ground '{GroundName}'");
+
+        // Generic component access: double the sun through its reflected Light fields.
+        var sun = World.Find("Sun");
+        float intensity = sun.GetField("Light", "Intensity", 0f);
+        sun.SetField("Light", "Intensity", intensity * 2f);
+        sun.SetField("Light", "Color", new Vector3(1f, 0.5f, 0.25f));
     }
 
     public override void OnFixedUpdate(float fixedDeltaTime)

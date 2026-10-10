@@ -12,12 +12,20 @@ assert-field Probe | Transform.Position | [0.0, 1.0, 0.0]
 
 # Play: OnStart raycasts to the Ground by name (scale 2), OnUpdate rises, OnFixedUpdate turns
 play
+# Physics callbacks: the Dropper falls through the Gate trigger and lands on the Ground
+wait-log TriggerProbe: Dropper entered | 600
+wait-log TriggerProbe: Dropper left | 600
+wait-log CollisionProbe: hit Ground (normal y -1.0) | 600
 wait 60
 assert-playing 1
 assert-field Probe | Transform.Scale | [2.0, 2.0, 2.0]
 assert-field Probe | Transform.Position.1 | != 1.0
 assert-field Probe | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
 screenshot .tmp/overhaul/shots/script_play.png
+
+# Generic component access from C#: ScriptProbe doubled the sun and recoloured it
+assert-field Sun | Light.Intensity | 6.0
+assert-field Sun | Light.Color | [1.0, 0.5, 0.25]
 
 # Hot reload while playing: change the probe's code; the new code runs and fields carry over
 assert-field Reloader | Transform.Scale | [1.0, 1.0, 1.0]
@@ -38,4 +46,6 @@ assert-playing 0
 assert-field Probe | Transform.Position | [0.0, 1.0, 0.0]
 assert-field Probe | Transform.Scale | [1.0, 1.0, 1.0]
 assert-field Reloader | Transform.Position | [0.0, 3.0, 0.0]
+assert-field Sun | Light.Intensity | 3.0
+assert-field Dropper | Transform.Position | [4.0, 4.0, 0.0]
 assert-count-delta 0

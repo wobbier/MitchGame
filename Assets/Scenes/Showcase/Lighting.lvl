@@ -2725,6 +2725,11 @@
                     "InnerConeAngle": 20.0,
                     "OuterConeAngle": 30.0,
                     "CastShadows": false
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Flicker",
+                    "ScriptFields": "{\"Strength\": 0.3, \"Speed\": 1.0, \"Seed\": 4.0}"
                 }
             ]
         }
