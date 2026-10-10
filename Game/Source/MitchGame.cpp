@@ -1,5 +1,6 @@
 #include "MitchGame.h"
 #include "Engine/Engine.h"
+#include "Core/CommandLine.h"
 #include "ECS/Component.h"
 #include "Engine/Clock.h"
 #include "Components/Transform.h"
@@ -33,7 +34,11 @@ MitchGame::~MitchGame()
 
 void MitchGame::OnStart()
 {
-    GetEngine().LoadScene( "Assets/SceneGraphTest.lvl" );
+    // --scene (automation, the editor) picks the scene; don't load the heavy default first.
+    if( !CommandLine::Has( "--scene" ) )
+    {
+        GetEngine().LoadScene( "Assets/SceneGraphTest.lvl" );
+    }
     return;
     auto GameWorld = GetEngine().GetWorld().lock();
 
@@ -87,7 +92,10 @@ void MitchGame::OnInitialize()
     NewSceneEvent evt;
     evt.Fire();
     GetEngine().GetWorld().lock()->Start();
-    GetEngine().LoadScene( "Assets/Scenes/SceneGraphTest.lvl" );
+    if( !CommandLine::Has( "--scene" ) )
+    {
+        GetEngine().LoadScene( "Assets/Scenes/SceneGraphTest.lvl" );
+    }
     GetEngine().GetWorld().lock()->Simulate();
     GetEngine().GetWorld().lock()->Start();
 }
