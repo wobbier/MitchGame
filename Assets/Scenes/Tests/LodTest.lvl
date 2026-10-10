@@ -1,0 +1,293 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "63f13fa8c66ec576",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        1.6,
+                        -4.0
+                    ],
+                    "Rotation": [
+                        8.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Procedural",
+                    "ClearColor": [
+                        0.3,
+                        0.4,
+                        0.55
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 400.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "GUID": "fa3cd5d5898039c5",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        10.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        50.0,
+                        -30.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.9
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "e717454715505b45",
+            "Name": "Ground",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        60.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        60.0,
+                        1.0,
+                        80.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.45,
+                            0.47,
+                            0.5
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "19f4cfbfcdc006f9",
+            "Name": "Plinth 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.6,
+                        0.0,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Plinth_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "12e6a9e7cc3d6415",
+            "Name": "Plinth 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.6,
+                        0.0,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        20.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Plinth_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "a1720f786a64c87a",
+            "Name": "Plinth 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        0.0,
+                        14.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        40.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Plinth_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "bf3c329670696443",
+            "Name": "Plinth 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.5,
+                        0.0,
+                        28.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        60.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Plinth_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "054bb39ec5455d9c",
+            "Name": "Plinth 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.0,
+                        0.0,
+                        55.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        80.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Plinth_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "9ce1d9649211db66",
+            "Name": "Plinth 5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8.0,
+                        0.0,
+                        100.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        100.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Plinth_01.fbx"
+                }
+            ]
+        }
+    ]
+}
