@@ -1,0 +1,41 @@
+# C# scripting regression script (run with ScriptTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/ScriptTest.lvl --editor-exec Assets/Scenes/Tests/ScriptFlows.edscript
+# Assets/Scripts/Tests/ScriptProbe.cs makes every effect visible on the Probe's Transform.
+wait 20
+mark-count
+
+# Edit mode: the script exists (fields loaded) but doesn't run
+assert-field Probe | Transform.Position | [0.0, 1.0, 0.0]
+assert-field Probe | Transform.Scale | [1.0, 1.0, 1.0]
+wait 30
+assert-field Probe | Transform.Position | [0.0, 1.0, 0.0]
+
+# Play: OnStart raycasts to the Ground by name (scale 2), OnUpdate rises, OnFixedUpdate turns
+play
+wait 60
+assert-playing 1
+assert-field Probe | Transform.Scale | [2.0, 2.0, 2.0]
+assert-field Probe | Transform.Position.1 | != 1.0
+assert-field Probe | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
+screenshot .tmp/overhaul/shots/script_play.png
+
+# Hot reload while playing: change the probe's code; the new code runs and fields carry over
+assert-field Reloader | Transform.Scale | [1.0, 1.0, 1.0]
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f; | float version = 3.0f;
+wait-log Scripts: hot reloaded | 3600
+wait 5
+assert-field Reloader | Transform.Scale | [3.0, 3.0, 3.0]
+assert-field Reloader | Transform.Position.0 | 0.5 ~ 0.495
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 3.0f; | float version = 1.0f;
+wait-log Scripts: hot reloaded | 3600
+wait 5
+assert-field Reloader | Transform.Scale | [1.0, 1.0, 1.0]
+
+# Stop restores the scene
+stop
+wait 5
+assert-playing 0
+assert-field Probe | Transform.Position | [0.0, 1.0, 0.0]
+assert-field Probe | Transform.Scale | [1.0, 1.0, 1.0]
+assert-field Reloader | Transform.Position | [0.0, 3.0, 0.0]
+assert-count-delta 0

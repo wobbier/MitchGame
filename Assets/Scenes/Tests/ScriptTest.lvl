@@ -1,0 +1,204 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3,
+                        -10
+                    ],
+                    "Rotation": [
+                        10,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.25,
+                        0.3,
+                        0.4
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "Name": "Sun",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        10,
+                        -5
+                    ],
+                    "Rotation": [
+                        45,
+                        -30,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1,
+                        0.96,
+                        0.9
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 40.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        20,
+                        1,
+                        20
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4,
+                            0.4,
+                            0.42
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        1.0,
+                        0.02,
+                        1.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Probe",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.5,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "ScriptProbe",
+                    "ScriptFields": "{\"RiseSpeed\": 0.5, \"FixedSteps\": 0, \"GroundName\": \"\"}"
+                }
+            ]
+        },
+        {
+            "Name": "Reloader",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.6,
+                            1.0
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "HotReloadProbe"
+                }
+            ]
+        }
+    ]
+}

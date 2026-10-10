@@ -121,7 +121,8 @@
             export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$(pwd)/Engine/ThirdParty/Optick:$(pwd)/Engine/ThirdParty/fmod/api/core/lib/x86_64"
             export DOTNET_ROOT="${dotnet}/share/dotnet"
 
-            _DOTNET_NATIVE=$(find ${dotnet}/share/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64 -mindepth 3 -maxdepth 3 -name "native" -type d 2>/dev/null | head -1)
+            # packs/Microsoft.NETCore.App.Host.linux-x64/<version>/runtimes/linux-x64/native
+            _DOTNET_NATIVE=$(find ${dotnet}/share/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64 -path "*/runtimes/linux-x64/native" -type d 2>/dev/null | head -1)
             if [ -n "$_DOTNET_NATIVE" ]; then
               export DOTNET_LINUX_NATIVE_DIR="$_DOTNET_NATIVE"
             fi

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Command-line build of the game's scripts (every .cs under Assets) against ScriptCore; the engine
+    runs it on Linux / macOS and for hot reload. Visual Studio uses the Sharpmake-generated project.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Game.Script</AssemblyName>
+    <Nullable>annotations</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Assets/**/*.cs" />
+    <ProjectReference Include="../Engine/Modules/ScriptCore/ScriptCore.csproj" />
+  </ItemGroup>
+</Project>
