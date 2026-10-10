@@ -72,3 +72,22 @@ load .tmp/overhaul/AnimationPreviewSave.lvl
 wait 5
 assert-field Bender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
 assert-field Blender/Root/Mid | Transform.Rotation | [0.0, 0.0, 0.0, 1.0]
+
+# IK: in play, the Waver's tip bone reaches a target beside it, after its animation has posed it
+create IKTarget | Waver
+select Waver/IKTarget
+set Transform.Position [1.0, 1.2, 0.0]
+select Waver
+add-component TwoBoneIK
+set-ref TwoBoneIK.Tip | Waver/Root/Mid/Tip
+set-ref TwoBoneIK.Target | Waver/IKTarget
+# Undo / redo of a reference keeps it (the redone state resolves its GUIDs)
+undo
+redo
+play
+wait 30
+assert-near Waver/Root/Mid/Tip | Waver/IKTarget | 0.01
+screenshot .tmp/overhaul/shots/animation_ik.png
+stop
+wait 5
+assert-field Waver/Root/Mid/Tip | Transform.Position | [0.0, 1.0, 0.0]
