@@ -12,6 +12,8 @@ assert-field Probe | Transform.Position | [0.0, 1.0, 0.0]
 
 # Play: OnStart raycasts to the Ground by name (scale 2), OnUpdate rises, OnFixedUpdate turns
 play
+# Renamed script class and field ([FormerName]) still load from the old names
+wait-log RenameProbe: started with Value 7 | 600
 # Physics callbacks: the Dropper falls through the Gate trigger and lands on the Ground
 wait-log TriggerProbe: Dropper entered | 600
 wait-log TriggerProbe: Dropper left | 600
