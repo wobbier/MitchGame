@@ -2724,7 +2724,7 @@
                     "Range": 9.0,
                     "InnerConeAngle": 20.0,
                     "OuterConeAngle": 30.0,
-                    "CastShadows": false
+                    "CastShadows": true
                 },
                 {
                     "Type": "ScriptComponent",
