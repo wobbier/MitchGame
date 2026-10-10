@@ -49,7 +49,8 @@
                     "AORadius": 0.6,
                     "AOIntensity": 1.2,
                     "VignetteIntensity": 0.35,
-                    "FXAA": true
+                    "FXAA": false,
+                    "TemporalAA": true
                 }
             ]
         },

@@ -4,7 +4,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 
 | Scene | What it shows |
 |-------|---------------|
-| `Lighting.lvl` | PBR metallic / roughness sphere grid, textured exhibits, neon emissives with bloom, coloured point lights on bobbing orbs, a shadowed spot light, a fire with soft particles, SSAO, procedural sky ambient |
+| `Lighting.lvl` | PBR metallic / roughness sphere grid, textured exhibits, neon emissives with bloom, coloured point lights on bobbing orbs, a shadowed spot light, a fire with soft particles, SSAO, procedural sky ambient, temporal anti-aliasing |
 | `Playground.lvl` | Playable: third-person `CharacterController` (Move / Look / Jump / Sprint actions), orbit follow camera, crate stacks, a domino run, a kinematic sweeper in a ball pit, a wrecking ball on a distance joint, a camp fire with 3D audio, Synty props, and three `NavMeshAgent` chasers that path to the player |
 | `Fog.lvl` | Volumetric height fog at dusk: a low sun shining through a slatted wall towards the camera (light shafts and shadowed volumes), a street lamp's shadowed spot cone, lanterns glowing in the haze, fogged transparents |
 | `Physics2D.lvl` | Box2D: a 55-box pyramid, a motorised windmill with balls dropping on it, a hinged rope bridge with crates; orthographic camera |
