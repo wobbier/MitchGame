@@ -1,0 +1,40 @@
+# Navigation editor regression script (run with NavTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/NavTest.lvl --editor-exec Assets/Scenes/Tests/NavFlows.edscript
+# Assets/Scripts/Tests/NavProbe.cs sends each agent to its Target and logs when it arrives.
+wait 20
+mark-count
+
+# Edit mode: bake from the editor; the navmesh is saved next to the scene and drawn with View > Navigation
+action Navigation.BakeAll
+wait-log NavMesh baked: 'NavSurface' | 1200
+action View.Navigation
+action View.Top
+focus-window World View
+wait 30
+screenshot .tmp/overhaul/shots/nav_edit.png
+
+# Play: the walker zigzags round both walls to the Goal; the jumper takes the link onto the platform
+play
+# (the jumper's route is much shorter, so it arrives first)
+wait-log NavProbe: Jumper arrived | 6000
+wait-log NavProbe: Walker arrived | 6000
+assert-playing 1
+assert-field Walker | Transform.Position | [0.0, 1.0, 10.0] ~ 0.3
+assert-field Jumper | Transform.Position.1 | 3.0 ~ 0.1
+assert-field Jumper | Transform.Position.0 | 10.5 ~ 0.3
+# Agents turn to face where they walk, about Y only
+assert-field Walker | Transform.Rotation.0 | 0.0 ~ 0.01
+assert-field Walker | Transform.Rotation.2 | 0.0 ~ 0.01
+assert-field Walker | Transform.Rotation.3 | != 1.0
+assert-field Jumper | Transform.Rotation.0 | 0.0 ~ 0.01
+assert-field Jumper | Transform.Rotation.2 | 0.0 ~ 0.01
+screenshot .tmp/overhaul/shots/nav_play.png
+action View.Navigation
+
+# Stop restores the edit-time positions
+stop
+wait 5
+assert-playing 0
+assert-field Walker | Transform.Position | [0.0, 1.0, -9.0]
+assert-field Jumper | Transform.Position | [3.0, 1.0, -9.0]
+assert-count-delta 0

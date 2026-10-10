@@ -1,0 +1,558 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        26,
+                        -21
+                    ],
+                    "Rotation": [
+                        50,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.32,
+                        0.42,
+                        0.55
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 300.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "Name": "Sun",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        20,
+                        0
+                    ],
+                    "Rotation": [
+                        50,
+                        -30,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.88
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 60.0
+                }
+            ]
+        },
+        {
+            "Name": "Ground",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        15,
+                        1,
+                        15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.5,
+                            0.52,
+                            0.55
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2.0,
+                        0.02,
+                        2.0
+                    ],
+                    "Center": [
+                        0.0,
+                        -0.01,
+                        0.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "WallA",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        9,
+                        1,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.55,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "WallB",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        1,
+                        6
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        9,
+                        1,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.55,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Platform",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10,
+                        1,
+                        -9
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        2.5,
+                        1,
+                        2.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.45,
+                            0.55,
+                            0.7
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "JumpLink",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "NavMeshLink",
+                    "StartPoint": [
+                        5.6,
+                        0.0,
+                        -9.0
+                    ],
+                    "EndPoint": [
+                        8.6,
+                        2.0,
+                        -9.0
+                    ],
+                    "Radius": 0.5,
+                    "Bidirectional": true,
+                    "Area": 2
+                }
+            ]
+        },
+        {
+            "Name": "Pit",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6,
+                        0.01,
+                        -6
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        2,
+                        1,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.08,
+                            0.08,
+                            0.1
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 1.0
+                    }
+                },
+                {
+                    "Type": "NavMeshModifierVolume",
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "Area": 1
+                }
+            ]
+        },
+        {
+            "Name": "NavSurface",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "NavMeshSurface",
+                    "AgentRadius": 0.5,
+                    "AgentHeight": 2.0,
+                    "AgentMaxClimb": 0.4,
+                    "AgentMaxSlope": 45.0,
+                    "Collect": "All",
+                    "UseGeometry": "Physics Colliders"
+                }
+            ]
+        },
+        {
+            "Name": "Goal",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.15,
+                        10
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.3,
+                        0.15,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.9,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "PlatformGoal",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.5,
+                        2.15,
+                        -9
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.3,
+                        0.15,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.6,
+                            0.15
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Walker",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        -9
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.75,
+                            0.35
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "NavMeshAgent",
+                    "Speed": 6.0,
+                    "Acceleration": 30.0,
+                    "Radius": 0.5,
+                    "Height": 2.0,
+                    "BaseOffset": 1.0
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "NavProbe",
+                    "ScriptFields": "{\"Target\": \"Goal\", \"Arrived\": false}"
+                }
+            ]
+        },
+        {
+            "Name": "Jumper",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3,
+                        1,
+                        -9
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.15
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "NavMeshAgent",
+                    "Speed": 5.0,
+                    "Acceleration": 30.0,
+                    "Radius": 0.5,
+                    "Height": 2.0,
+                    "BaseOffset": 1.0,
+                    "LinkJumpHeight": 1.0
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "NavProbe",
+                    "ScriptFields": "{\"Target\": \"PlatformGoal\", \"Arrived\": false}"
+                }
+            ]
+        }
+    ]
+}
