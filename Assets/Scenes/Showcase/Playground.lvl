@@ -1,0 +1,4510 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "fa2d8e78f78b2372",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        4.0,
+                        -9.0
+                    ],
+                    "Rotation": [
+                        20.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Procedural",
+                    "ClearColor": [
+                        0.3,
+                        0.4,
+                        0.55
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 500.0,
+                    "Zoom": 55.0
+                },
+                {
+                    "Type": "PostProcess",
+                    "AutoExposure": false,
+                    "ExposureCompensation": 0.4,
+                    "Bloom": true,
+                    "BloomIntensity": 0.08,
+                    "BloomThreshold": 1.2,
+                    "AmbientOcclusion": true,
+                    "AORadius": 0.6,
+                    "AOIntensity": 1.0,
+                    "VignetteIntensity": 0.25,
+                    "FXAA": true
+                },
+                {
+                    "Type": "AudioListener"
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "FollowCamera",
+                    "ScriptFields": "{\"Target\": \"Player\", \"Distance\": 11.0, \"Height\": 1.6, \"Yaw\": 30.0, \"Pitch\": 26.0}"
+                }
+            ]
+        },
+        {
+            "GUID": "02a79e36ee4604ef",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        30.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        42.0,
+                        -35.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.95,
+                        0.86
+                    ],
+                    "Intensity": 3.2,
+                    "Range": 10.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 70.0
+                }
+            ]
+        },
+        {
+            "GUID": "07d7cda4215bde6d",
+            "Name": "Ground",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        30.0,
+                        1.0,
+                        30.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.97,
+                            0.92
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                            }
+                        },
+                        "Tiling": [
+                            14,
+                            14
+                        ]
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        0.02,
+                        2
+                    ],
+                    "Center": [
+                        0,
+                        -0.01,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "a4a8007e7b4ea288",
+            "Name": "Wall North",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.75,
+                        30.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        30.0,
+                        0.75,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.78,
+                            0.74,
+                            0.68
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "79a38f76ed424068",
+            "Name": "Wall South",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.75,
+                        -30.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        30.0,
+                        0.75,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.78,
+                            0.74,
+                            0.68
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "5127f483d7b97e84",
+            "Name": "Wall East",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        30.0,
+                        0.75,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.75,
+                        30.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.78,
+                            0.74,
+                            0.68
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "bd8f96f480962476",
+            "Name": "Wall West",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -30.0,
+                        0.75,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.75,
+                        30.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.78,
+                            0.74,
+                            0.68
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "d3e20a79fb1c8de8",
+            "Name": "Player",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.15,
+                            0.55,
+                            0.95
+                        ],
+                        "Metallic": 0.1,
+                        "Roughness": 0.35
+                    }
+                },
+                {
+                    "Type": "CharacterController",
+                    "Radius": 0.45,
+                    "Height": 1.9,
+                    "MaxSpeed": 5.0,
+                    "JumpHeight": 1.4
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "PlayerController",
+                    "ScriptFields": "{\"CameraName\": \"Main Camera\", \"WalkSpeed\": 5.0, \"SprintSpeed\": 9.0, \"TurnHalfLife\": 0.06}"
+                }
+            ]
+        },
+        {
+            "GUID": "d6a65069e1d583d2",
+            "Name": "Player Visor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        1.55,
+                        0.36
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.08,
+                        0.06
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.06
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.15,
+                        "EmissiveColor": [
+                            0.3,
+                            0.9,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 4.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "10a617c068cba299",
+            "Name": "Deck",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        12.0,
+                        1.5,
+                        10.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        4.0,
+                        1.5,
+                        4.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.68,
+                            0.78
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "2d220c8454287972",
+            "Name": "Deck Ramp",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        12.0,
+                        1.4,
+                        3.1
+                    ],
+                    "Rotation": [
+                        -22.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        2.0,
+                        0.15,
+                        3.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.48,
+                            0.32
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.75
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "1098ec55b7b7711d",
+            "Name": "Crate 0-0-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.5,
+                        0.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "2fc56f149ae829f3",
+            "Name": "Crate 0-0-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.45,
+                        0.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "ae90204a01c2d768",
+            "Name": "Crate 0-1-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.5,
+                        1.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        7.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "dfab0e9f3fab059d",
+            "Name": "Crate 0-1-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.45,
+                        1.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        7.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "1104aa124d331520",
+            "Name": "Crate 0-2-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.5,
+                        2.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        14.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "a4f2a9af5ae5136e",
+            "Name": "Crate 0-2-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.45,
+                        2.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        14.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "459879bff3b43f4e",
+            "Name": "Crate 0-3-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.0,
+                        3.5,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        21.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "11df0fd349d7af1d",
+            "Name": "Crate 1-0-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.5,
+                        0.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "239dde9185a35cab",
+            "Name": "Crate 1-0-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.45,
+                        0.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "1d4adb7346a64346",
+            "Name": "Crate 1-1-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.5,
+                        1.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        7.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "c929a06ebf7c3fdf",
+            "Name": "Crate 1-1-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.45,
+                        1.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        7.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "ceb4571990857417",
+            "Name": "Crate 1-2-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.5,
+                        2.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        14.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "15329c6e695f88e3",
+            "Name": "Crate 1-2-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.45,
+                        2.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        14.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "3b5a51efe35982a8",
+            "Name": "Crate 1-3-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.0,
+                        3.5,
+                        11.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        21.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "6efdd4225e4fe310",
+            "Name": "Crate 2-0-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.5,
+                        0.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "ad950883dc4a9428",
+            "Name": "Crate 2-0-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5.45,
+                        0.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "61c4a511d50de4d4",
+            "Name": "Crate 2-1-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.5,
+                        1.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        7.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "b49f5ece095c19c8",
+            "Name": "Crate 2-1-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5.45,
+                        1.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        7.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "eb1d4badbab8e6e6",
+            "Name": "Crate 2-2-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.5,
+                        2.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        14.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "bdfc3db8aef78463",
+            "Name": "Crate 2-2-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5.45,
+                        2.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        14.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "af83b92fbed78e39",
+            "Name": "Crate 2-3-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.0,
+                        3.5,
+                        13.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        21.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.62,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "c7291f4ca16a9832",
+            "Name": "Domino 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.0,
+                        1.0,
+                        -8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "49373d663127f565",
+            "Name": "Domino 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.089409016370611,
+                        1.0,
+                        -6.884772553700278
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -9.167324722093172,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "a94666daee80c64a",
+            "Name": "Domino 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.355352073422914,
+                        1.0,
+                        -5.798034075687175
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -18.334649444186343,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "59e4913a0927fde1",
+            "Name": "Domino 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.7910355405450105,
+                        1.0,
+                        -4.76754577120962
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -27.501974166279513,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "c1f85b33c3298557",
+            "Name": "Domino 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.38532969480995,
+                        1.0,
+                        -3.8196319104632552
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -36.66929888837269,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "cb6fa4addeb065d9",
+            "Name": "Domino 5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.123053034569843,
+                        1.0,
+                        -2.978507363703341
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -45.836623610465864,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "10f1b50785d2efea",
+            "Name": "Domino 6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.985360097492803,
+                        1.0,
+                        -2.265659021893012
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -55.00394833255903,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "ebeea37920bf1268",
+            "Name": "Domino 7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.950222876063016,
+                        1.0,
+                        -1.6992969047644646
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -64.1712730546522,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "2a1bcb88930b0f2a",
+            "Name": "Domino 8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.99299353257631,
+                        1.0,
+                        -1.293888977975426
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -73.33859777674537,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "5cce3a1938b0ca0f",
+            "Name": "Domino 9",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -13.08703403883298,
+                        1.0,
+                        -1.0597915626581953
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -82.50592249883854,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "01204c554158fb18",
+            "Name": "Domino 10",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -14.204396656109022,
+                        1.0,
+                        -1.0029847787094646
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -91.67324722093173,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "b962149c4d0ee2b9",
+            "Name": "Domino 11",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -15.31653787225016,
+                        1.0,
+                        -1.124919780036671
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -100.84057194302488,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "86c6de0ba7075015",
+            "Name": "Domino 12",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -16.395047558056287,
+                        1.0,
+                        -1.422481684202726
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -110.00789666511805,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "2a81a13e8f858d36",
+            "Name": "Domino 13",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -17.412374716340516,
+                        1.0,
+                        -1.8880691434473853
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -119.17522138721124,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "5b05b627b89142da",
+            "Name": "Domino 14",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -18.342531284088757,
+                        1.0,
+                        -2.5097885244090614
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -128.3425461093044,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "43a5ffb8cd40b98f",
+            "Name": "Domino 15",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -19.161756008788718,
+                        1.0,
+                        -3.271757736141943
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -137.50987083139756,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.1,
+                        1.0,
+                        0.45
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.92,
+                            0.92,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "fdb8ccaba4339c0a",
+            "Name": "Domino Pusher",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.2,
+                        2.4,
+                        -8.6
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.15,
+                            0.1
+                        ],
+                        "Metallic": 0.6,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 4.0
+                }
+            ]
+        },
+        {
+            "GUID": "d81d53bb74992f26",
+            "Name": "Sweeper Hub",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.0,
+                        0.6,
+                        -12.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.2,
+                            0.22
+                        ],
+                        "Metallic": 0.8,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "81986bc9a71a888c",
+            "Name": "Sweeper",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.0,
+                        0.6,
+                        -12.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Kinematic"
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Spinner",
+                    "ScriptFields": "{\"DegreesPerSecond\": 60.0, \"Axis\": 1}"
+                }
+            ]
+        },
+        {
+            "GUID": "1a5ce62df9598bde",
+            "Name": "Sweeper Arm",
+            "Parent": "81986bc9a71a888c",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.5,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        3.2,
+                        0.25,
+                        0.2
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.75,
+                            0.1
+                        ],
+                        "Metallic": 0.4,
+                        "Roughness": 0.35
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "32fc55379e9cbe2a",
+            "Name": "Ball 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        12.0,
+                        0.5,
+                        -12.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.2,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "56c8c59a02a6835c",
+            "Name": "Ball 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8.009109919654888,
+                        1.1,
+                        -10.176169775449637
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.7,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "cb998f8c29fdaec4",
+            "Name": "Ball 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.297225585968816,
+                        1.7,
+                        -15.386983458927057
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.4,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "426db7268d45cb80",
+            "Name": "Ball 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        12.494630856211788,
+                        0.5,
+                        -8.74626109049358
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.8,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "0c6d2f7451557b90",
+            "Name": "Ball 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        5.273364469720005,
+                        1.1,
+                        -12.836012298889646
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.2,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "844fa2378cf4f79c",
+            "Name": "Ball 5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        11.687493254545057,
+                        1.7,
+                        -13.073483356119196
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.7,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "9aa5908dc0525f89",
+            "Name": "Ball 6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        9.299118904659453,
+                        0.5,
+                        -9.39255571676129
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.4,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "da697d138ecd12fd",
+            "Name": "Ball 7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8.43284790039568,
+                        1.1,
+                        -15.017289229872697
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.8,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "ceb35af028ce5f0b",
+            "Name": "Ball 8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        13.85125365347496,
+                        1.7,
+                        -10.593641120980928
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.2,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "a9a808eddbf1c003",
+            "Name": "Ball 9",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        5.563194568795264,
+                        0.5,
+                        -10.16840027144789
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.7,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "50f1cd705f36f099",
+            "Name": "Ball 10",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.84763348413507,
+                        1.1,
+                        -13.811495922317532
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.4,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "824f17c194d528e5",
+            "Name": "Ball 11",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.808157959719788,
+                        1.7,
+                        -9.423785584982967
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.8,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "49bc553efaa1ddd8",
+            "Name": "Ball 12",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        7.058215817102772,
+                        0.5,
+                        -13.704671763494568
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.2,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "8a3da3ccd7aef47d",
+            "Name": "Ball 13",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        14.004333705569211,
+                        1.1,
+                        -12.88051778769219
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.7,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.25
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0,
+                    "Restitution": 0.4
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 0.8
+                }
+            ]
+        },
+        {
+            "GUID": "d5525f08135e59ab",
+            "Name": "Gantry",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.0,
+                        3.2,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        3.0,
+                        0.15,
+                        0.15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.3,
+                            0.32
+                        ],
+                        "Metallic": 0.9,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "a48b2104dfdd8dac",
+            "Name": "Gantry Post -1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5.0,
+                        1.6,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.15,
+                        1.6,
+                        0.15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.3,
+                            0.32
+                        ],
+                        "Metallic": 0.9,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "5b2ffefa28f15fb0",
+            "Name": "Gantry Post 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.0,
+                        1.6,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.15,
+                        1.6,
+                        0.15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.3,
+                            0.32
+                        ],
+                        "Metallic": 0.9,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "4e73354d07d9a235",
+            "Name": "Wrecking Ball",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        1.2,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.12,
+                            0.12,
+                            0.13
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 1.0
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 20.0
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "Distance",
+                    "ConnectedAnchor": [
+                        -2.0,
+                        3.1,
+                        -16.0
+                    ],
+                    "Distance": 2.6
+                }
+            ]
+        },
+        {
+            "GUID": "f17c7b88db2cb291",
+            "Name": "Target Block 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.2,
+                        0.5,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.88
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "4ed23f2c2b43a496",
+            "Name": "Target Block 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.22,
+                        1.5,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.88
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "480fd6cf0f9b4119",
+            "Name": "Target Block 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.2,
+                        2.5,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.88
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "4823fc3ed98a91d1",
+            "Name": "Target Block 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.22,
+                        3.5,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.88
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "10960274102d5779",
+            "Name": "Target Block 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.2,
+                        4.5,
+                        -16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.88
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "Mass": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "524d72087211fa05",
+            "Name": "Camp Fire Stones",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.0,
+                        0.15,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.9,
+                        0.15,
+                        0.9
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.25,
+                            0.24,
+                            0.23
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "ca0a03b540a1d6bb",
+            "Name": "Camp Fire Fire",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.0,
+                        0.35,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 70.0,
+                    "Lifetime": [
+                        0.6,
+                        1.2
+                    ],
+                    "Speed": [
+                        0.8,
+                        1.7
+                    ],
+                    "Size": [
+                        0.25,
+                        0.45
+                    ],
+                    "EndSize": 0.3,
+                    "ShapeRadius": 0.35,
+                    "ConeAngle": 10.0,
+                    "Intensity": 5.0,
+                    "NoiseStrength": 1.2,
+                    "Gravity": -0.15,
+                    "SoftParticleDistance": 0.3
+                }
+            ]
+        },
+        {
+            "GUID": "1942063e57caaebc",
+            "Name": "Camp Fire Smoke",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.0,
+                        1.2,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "EmissionRate": 8.0,
+                    "Lifetime": [
+                        3.0,
+                        5.0
+                    ],
+                    "Speed": [
+                        0.5,
+                        0.9
+                    ],
+                    "Size": [
+                        0.4,
+                        0.7
+                    ],
+                    "EndSize": 3.0,
+                    "StartColor": [
+                        0.25,
+                        0.25,
+                        0.25
+                    ],
+                    "StartColor2": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ],
+                    "EndColor": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ],
+                    "StartAlpha": 0.35,
+                    "Intensity": 1.0,
+                    "Gravity": -0.03,
+                    "NoiseStrength": 0.3,
+                    "SoftParticleDistance": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "7871209695adc29b",
+            "Name": "Camp Fire Sparks",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.0,
+                        0.5,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Shape": "Cone",
+                    "ConeAngle": 30.0,
+                    "ShapeRadius": 0.3,
+                    "EmissionRate": 18.0,
+                    "Lifetime": [
+                        0.6,
+                        1.4
+                    ],
+                    "Speed": [
+                        2.0,
+                        4.0
+                    ],
+                    "Size": [
+                        0.02,
+                        0.04
+                    ],
+                    "EndSize": 0.5,
+                    "StartColor": [
+                        1.0,
+                        0.8,
+                        0.4
+                    ],
+                    "StartColor2": [
+                        1.0,
+                        0.95,
+                        0.7
+                    ],
+                    "EndColor": [
+                        1.0,
+                        0.3,
+                        0.05
+                    ],
+                    "Intensity": 8.0,
+                    "Gravity": 0.4,
+                    "Drag": 0.3,
+                    "NoiseStrength": 2.0,
+                    "Alignment": "Stretched",
+                    "StretchFactor": 0.08
+                }
+            ]
+        },
+        {
+            "GUID": "3369162dd0417026",
+            "Name": "Camp Fire Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.0,
+                        1.0,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.55,
+                        0.2
+                    ],
+                    "Intensity": 18.0,
+                    "Range": 9.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "fa2a80020ec373c6",
+            "Name": "Camp Fire Crackle",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.0,
+                        0.5,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "AudioSource",
+                    "FilePath": "Assets/Sounds/Test/Hum.wav",
+                    "Bus": "SFX",
+                    "Volume": 0.35,
+                    "Pitch": 0.6,
+                    "Mute": false,
+                    "PlayOnAwake": true,
+                    "Loop": true,
+                    "SpatialBlend": 1.0,
+                    "MinDistance": 1.5,
+                    "MaxDistance": 14.0,
+                    "Rolloff": "Inverse",
+                    "DopplerLevel": 0.0,
+                    "Priority": 128,
+                    "MaxOneShots": 4
+                }
+            ]
+        },
+        {
+            "GUID": "d089e9d4a4b44904",
+            "Name": "Car",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -16.0,
+                        0.0,
+                        16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        35.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Veh_4x4_Car_01.fbx"
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        200,
+                        170,
+                        440
+                    ],
+                    "Center": [
+                        0,
+                        85,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "2804101f402d5c82",
+            "Name": "Torch 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        0.0,
+                        18.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Torch_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "5cbb5658e2d6f3c0",
+            "Name": "Torch 0 Flame",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        1.1,
+                        18.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 40.0,
+                    "Lifetime": [
+                        0.3,
+                        0.6
+                    ],
+                    "Speed": [
+                        0.4,
+                        0.9
+                    ],
+                    "Size": [
+                        0.08,
+                        0.16
+                    ],
+                    "EndSize": 0.2,
+                    "ShapeRadius": 0.06,
+                    "ConeAngle": 8.0,
+                    "Intensity": 5.0,
+                    "NoiseStrength": 1.0,
+                    "Gravity": -0.1
+                }
+            ]
+        },
+        {
+            "GUID": "efbbf6763157ef58",
+            "Name": "Torch 0 Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        1.4,
+                        18.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.6,
+                        0.25
+                    ],
+                    "Intensity": 8.0,
+                    "Range": 6.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "d02e04ecef7ce665",
+            "Name": "Torch 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        0.0,
+                        18.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Torch_01.fbx"
+                }
+            ]
+        },
+        {
+            "GUID": "5143bc8992266db4",
+            "Name": "Torch 1 Flame",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        1.1,
+                        18.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 40.0,
+                    "Lifetime": [
+                        0.3,
+                        0.6
+                    ],
+                    "Speed": [
+                        0.4,
+                        0.9
+                    ],
+                    "Size": [
+                        0.08,
+                        0.16
+                    ],
+                    "EndSize": 0.2,
+                    "ShapeRadius": 0.06,
+                    "ConeAngle": 8.0,
+                    "Intensity": 5.0,
+                    "NoiseStrength": 1.0,
+                    "Gravity": -0.1
+                }
+            ]
+        },
+        {
+            "GUID": "afe66c72bb200e43",
+            "Name": "Torch 1 Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        1.4,
+                        18.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.6,
+                        0.25
+                    ],
+                    "Intensity": 8.0,
+                    "Range": 6.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "3d5527ff40715f99",
+            "Name": "NavSurface",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "NavMeshSurface",
+                    "AgentRadius": 0.45,
+                    "AgentHeight": 1.9,
+                    "AgentMaxClimb": 0.4,
+                    "AgentMaxSlope": 40.0,
+                    "Collect": "All",
+                    "UseGeometry": "Physics Colliders",
+                    "TileSize": 64
+                }
+            ]
+        },
+        {
+            "GUID": "e136ba651f7ef9b9",
+            "Name": "Chaser 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -20.0,
+                        0.95,
+                        -20.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.15
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "NavMeshAgent",
+                    "Speed": 3.0,
+                    "Acceleration": 12.0,
+                    "Radius": 0.45,
+                    "Height": 1.9,
+                    "BaseOffset": 0.95,
+                    "StoppingDistance": 1.6,
+                    "Avoidance": "High"
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Chaser",
+                    "ScriptFields": "{\"Target\": \"Player\", \"RepathInterval\": 0.3}"
+                }
+            ]
+        },
+        {
+            "GUID": "bd63ef9d675204d2",
+            "Name": "Chaser 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        0.95,
+                        -20.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.15
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "NavMeshAgent",
+                    "Speed": 3.4,
+                    "Acceleration": 12.0,
+                    "Radius": 0.45,
+                    "Height": 1.9,
+                    "BaseOffset": 0.95,
+                    "StoppingDistance": 1.6,
+                    "Avoidance": "High"
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Chaser",
+                    "ScriptFields": "{\"Target\": \"Player\", \"RepathInterval\": 0.3}"
+                }
+            ]
+        },
+        {
+            "GUID": "ebe0e705682f8118",
+            "Name": "Chaser 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        0.95,
+                        20.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.15
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "NavMeshAgent",
+                    "Speed": 3.8,
+                    "Acceleration": 12.0,
+                    "Radius": 0.45,
+                    "Height": 1.9,
+                    "BaseOffset": 0.95,
+                    "StoppingDistance": 1.6,
+                    "Avoidance": "High"
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Chaser",
+                    "ScriptFields": "{\"Target\": \"Player\", \"RepathInterval\": 0.3}"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2732 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "6de3de97a5516c5d",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        3.2,
+                        -12.5
+                    ],
+                    "Rotation": [
+                        12.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Procedural",
+                    "ClearColor": [
+                        0.3,
+                        0.4,
+                        0.55
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 300.0,
+                    "Zoom": 55.0
+                },
+                {
+                    "Type": "PostProcess",
+                    "AutoExposure": false,
+                    "ExposureCompensation": 0.3,
+                    "Bloom": true,
+                    "BloomIntensity": 0.12,
+                    "BloomThreshold": 1.0,
+                    "AmbientOcclusion": true,
+                    "AORadius": 0.6,
+                    "AOIntensity": 1.2,
+                    "VignetteIntensity": 0.35,
+                    "FXAA": true
+                }
+            ]
+        },
+        {
+            "GUID": "1571ef2d3204773b",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        20.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        18.0,
+                        -50.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.78,
+                        0.55
+                    ],
+                    "Intensity": 2.2,
+                    "Range": 10.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 50.0
+                }
+            ]
+        },
+        {
+            "GUID": "cabb08e53fd51990",
+            "Name": "Floor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        14.0,
+                        1.0,
+                        14.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.8,
+                            0.8
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.45,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Normal.png"
+                            }
+                        },
+                        "Tiling": [
+                            6,
+                            6
+                        ]
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        0.02,
+                        2
+                    ],
+                    "Center": [
+                        0,
+                        -0.01,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "40b79b2448d633c4",
+            "Name": "Back Wall",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        3.0,
+                        8.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        10.0,
+                        3.0,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                            }
+                        },
+                        "Tiling": [
+                            5,
+                            2
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "0e29f1781d8fe2a4",
+            "Name": "Sphere M1 R0.05 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.05
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e6162a49b7310cbb",
+            "Name": "Sphere M1 R0.20 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.2
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "300cb3d9216b27f6",
+            "Name": "Sphere M1 R0.35 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.5,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "2fc30fa82beb4916",
+            "Name": "Sphere M1 R0.50 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.49999999999999994
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "a071c80c5275a9a2",
+            "Name": "Sphere M1 R0.65 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.5,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.65
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "386da21877438f63",
+            "Name": "Sphere M1 R0.80 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "d3fcdffb86880d35",
+            "Name": "Sphere M1 R0.95 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.5,
+                        0.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.95,
+                            0.95
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "c38e59b36ecf0c59",
+            "Name": "Sphere M1 R0.05 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.05
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e33d0b162c9d0291",
+            "Name": "Sphere M1 R0.20 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.2
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e10627166d5874e3",
+            "Name": "Sphere M1 R0.35 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.5,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7a778dcaa20ac38c",
+            "Name": "Sphere M1 R0.50 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.49999999999999994
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "db5b2551d42368f9",
+            "Name": "Sphere M1 R0.65 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.5,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.65
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "469a573cb478ad91",
+            "Name": "Sphere M1 R0.80 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "8e8319c9985eaebc",
+            "Name": "Sphere M1 R0.95 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.5,
+                        1.85,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.64,
+                            0.54
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "2e240be333aef581",
+            "Name": "Sphere M1 R0.05 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.05
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "549d98de1a77b85e",
+            "Name": "Sphere M1 R0.20 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.2
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "227ad21945add284",
+            "Name": "Sphere M1 R0.35 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.5,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "f6bb42cdf194dff2",
+            "Name": "Sphere M1 R0.50 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.49999999999999994
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "d26d080eabded9ba",
+            "Name": "Sphere M1 R0.65 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.5,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.65
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "101a769a23b47100",
+            "Name": "Sphere M1 R0.80 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "bb2c22e2244ca238",
+            "Name": "Sphere M1 R0.95 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.5,
+                        3.1,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.78,
+                            0.34
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "001e8aa6b78c1d3d",
+            "Name": "Sphere M1 R0.05 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.05
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "83247df4e1f484b8",
+            "Name": "Sphere M1 R0.20 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.2
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e48e097d5569e941",
+            "Name": "Sphere M1 R0.35 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.5,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "bc8729bbf6b48f31",
+            "Name": "Sphere M1 R0.50 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.49999999999999994
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "8474dccc4679142d",
+            "Name": "Sphere M1 R0.65 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.5,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.65
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "4af3add922474152",
+            "Name": "Sphere M1 R0.80 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "fff8211ba110fbee",
+            "Name": "Sphere M1 R0.95 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.5,
+                        4.35,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.56,
+                            0.57,
+                            0.58
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "ba9e5758c597277d",
+            "Name": "Sphere M0 R0.05 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.5,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.05
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "109df8bcb23a81d8",
+            "Name": "Sphere M0 R0.20 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.2
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "f459f33a2f64a9a3",
+            "Name": "Sphere M0 R0.35 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.5,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "592071384a0adc48",
+            "Name": "Sphere M0 R0.50 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.49999999999999994
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "ec38e33b067d03d3",
+            "Name": "Sphere M0 R0.65 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.5,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.65
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e3999716ab778fbc",
+            "Name": "Sphere M0 R0.80 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.0,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "1fa42aa19d0362ac",
+            "Name": "Sphere M0 R0.95 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4.5,
+                        5.6,
+                        5.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.1,
+                            0.08
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "dbb7af7db5830a6e",
+            "Name": "Pedestal 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5.5,
+                        0.4,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.7,
+                        0.4,
+                        0.7
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.15,
+                            0.15,
+                            0.16
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "c98a169313f20549",
+            "Name": "Exhibit 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5.5,
+                        1.45,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.9,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Spinner",
+                    "ScriptFields": "{\"DegreesPerSecond\": 20.0, \"Axis\": 1}"
+                }
+            ]
+        },
+        {
+            "GUID": "3cc97e5ea1110950",
+            "Name": "Pedestal 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.0,
+                        0.4,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.7,
+                        0.4,
+                        0.7
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.15,
+                            0.15,
+                            0.16
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "723e807ba8ef4515",
+            "Name": "Exhibit 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.0,
+                        1.45,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        30.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.9,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Normal.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Spinner",
+                    "ScriptFields": "{\"DegreesPerSecond\": 20.0, \"Axis\": 1}"
+                }
+            ]
+        },
+        {
+            "GUID": "c204af04551a0204",
+            "Name": "Pedestal 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.0,
+                        0.4,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.7,
+                        0.4,
+                        0.7
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.15,
+                            0.15,
+                            0.16
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "c66fc9e4ed64bba1",
+            "Name": "Exhibit 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.0,
+                        1.45,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        60.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.9,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Normal.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Spinner",
+                    "ScriptFields": "{\"DegreesPerSecond\": 20.0, \"Axis\": 1}"
+                }
+            ]
+        },
+        {
+            "GUID": "9e3936428c2e8fb4",
+            "Name": "Pedestal 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        5.5,
+                        0.4,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.7,
+                        0.4,
+                        0.7
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.15,
+                            0.15,
+                            0.16
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "6b2b26e30f63c379",
+            "Name": "Exhibit 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        5.5,
+                        1.45,
+                        1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        90.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.9,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Spinner",
+                    "ScriptFields": "{\"DegreesPerSecond\": 20.0, \"Axis\": 1}"
+                }
+            ]
+        },
+        {
+            "GUID": "d0647094e4d26a15",
+            "Name": "Neon 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.0,
+                        4.8,
+                        7.6
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.6,
+                        0.06,
+                        0.06
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.02,
+                            0.02
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3,
+                        "EmissiveColor": [
+                            1.0,
+                            0.15,
+                            0.3
+                        ],
+                        "EmissiveIntensity": 12.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "d2baebc48e55cfeb",
+            "Name": "Neon 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        4.8,
+                        7.6
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.6,
+                        0.06,
+                        0.06
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.02,
+                            0.02
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3,
+                        "EmissiveColor": [
+                            0.1,
+                            0.9,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 12.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "6a26206a02bd6500",
+            "Name": "Neon 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.0,
+                        4.8,
+                        7.6
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.6,
+                        0.06,
+                        0.06
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.02,
+                            0.02
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3,
+                        "EmissiveColor": [
+                            0.6,
+                            0.2,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 12.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "d2876ad67c9ed5dc",
+            "Name": "Orb 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.5,
+                        2.6,
+                        -1.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Bobber",
+                    "ScriptFields": "{\"Amplitude\": 0.35, \"Frequency\": 0.4, \"Phase\": 0.0}"
+                }
+            ]
+        },
+        {
+            "GUID": "47f99671390a8ba5",
+            "Name": "Orb 0 Glow",
+            "Parent": "d2876ad67c9ed5dc",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.18,
+                        0.18
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.05
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.2,
+                        "EmissiveColor": [
+                            1.0,
+                            0.25,
+                            0.15
+                        ],
+                        "EmissiveIntensity": 20.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "3ae19b48ca512b89",
+            "Name": "Orb 0 Light",
+            "Parent": "d2876ad67c9ed5dc",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.25,
+                        0.15
+                    ],
+                    "Intensity": 14.0,
+                    "Range": 6.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "f57d834d35ae861a",
+            "Name": "Orb 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        2.6,
+                        -1.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Bobber",
+                    "ScriptFields": "{\"Amplitude\": 0.35, \"Frequency\": 0.4, \"Phase\": 0.33}"
+                }
+            ]
+        },
+        {
+            "GUID": "9e3e1964a9504fcf",
+            "Name": "Orb 1 Glow",
+            "Parent": "f57d834d35ae861a",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.18,
+                        0.18
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.05
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.2,
+                        "EmissiveColor": [
+                            0.2,
+                            1.0,
+                            0.35
+                        ],
+                        "EmissiveIntensity": 20.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "59c9151a3489c8c6",
+            "Name": "Orb 1 Light",
+            "Parent": "f57d834d35ae861a",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.2,
+                        1.0,
+                        0.35
+                    ],
+                    "Intensity": 14.0,
+                    "Range": 6.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "a2e80471c04e6e28",
+            "Name": "Orb 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.5,
+                        2.6,
+                        -1.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Bobber",
+                    "ScriptFields": "{\"Amplitude\": 0.35, \"Frequency\": 0.4, \"Phase\": 0.66}"
+                }
+            ]
+        },
+        {
+            "GUID": "85c1db391efd4fe9",
+            "Name": "Orb 2 Glow",
+            "Parent": "a2e80471c04e6e28",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.18,
+                        0.18,
+                        0.18
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.05
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.2,
+                        "EmissiveColor": [
+                            0.25,
+                            0.45,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 20.0
+                    },
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "82a77bbceaa6ea16",
+            "Name": "Orb 2 Light",
+            "Parent": "a2e80471c04e6e28",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.25,
+                        0.45,
+                        1.0
+                    ],
+                    "Intensity": 14.0,
+                    "Range": 6.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "ffce48a9822d1850",
+            "Name": "Spot",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        7.5,
+                        -3.0
+                    ],
+                    "Rotation": [
+                        65.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Spot",
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.9
+                    ],
+                    "Intensity": 70.0,
+                    "Range": 16.0,
+                    "InnerConeAngle": 18.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "ffb6d70770dc4c79",
+            "Name": "Brazier Stones",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.5,
+                        0.15,
+                        -2.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.7200000000000001,
+                        0.15,
+                        0.7200000000000001
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.25,
+                            0.24,
+                            0.23
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "c320b3c07ed69184",
+            "Name": "Brazier Fire",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.5,
+                        0.35,
+                        -2.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 70.0,
+                    "Lifetime": [
+                        0.6,
+                        1.2
+                    ],
+                    "Speed": [
+                        0.8,
+                        1.7
+                    ],
+                    "Size": [
+                        0.2,
+                        0.36000000000000004
+                    ],
+                    "EndSize": 0.24,
+                    "ShapeRadius": 0.27999999999999997,
+                    "ConeAngle": 10.0,
+                    "Intensity": 5.0,
+                    "NoiseStrength": 1.2,
+                    "Gravity": -0.15,
+                    "SoftParticleDistance": 0.3
+                }
+            ]
+        },
+        {
+            "GUID": "e2d436642970753d",
+            "Name": "Brazier Smoke",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.5,
+                        1.2,
+                        -2.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "EmissionRate": 8.0,
+                    "Lifetime": [
+                        3.0,
+                        5.0
+                    ],
+                    "Speed": [
+                        0.5,
+                        0.9
+                    ],
+                    "Size": [
+                        0.4,
+                        0.7
+                    ],
+                    "EndSize": 3.0,
+                    "StartColor": [
+                        0.25,
+                        0.25,
+                        0.25
+                    ],
+                    "StartColor2": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ],
+                    "EndColor": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ],
+                    "StartAlpha": 0.35,
+                    "Intensity": 1.0,
+                    "Gravity": -0.03,
+                    "NoiseStrength": 0.3,
+                    "SoftParticleDistance": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "8f566a0a2834a974",
+            "Name": "Brazier Sparks",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.5,
+                        0.5,
+                        -2.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Shape": "Cone",
+                    "ConeAngle": 30.0,
+                    "ShapeRadius": 0.3,
+                    "EmissionRate": 18.0,
+                    "Lifetime": [
+                        0.6,
+                        1.4
+                    ],
+                    "Speed": [
+                        2.0,
+                        4.0
+                    ],
+                    "Size": [
+                        0.02,
+                        0.04
+                    ],
+                    "EndSize": 0.5,
+                    "StartColor": [
+                        1.0,
+                        0.8,
+                        0.4
+                    ],
+                    "StartColor2": [
+                        1.0,
+                        0.95,
+                        0.7
+                    ],
+                    "EndColor": [
+                        1.0,
+                        0.3,
+                        0.05
+                    ],
+                    "Intensity": 8.0,
+                    "Gravity": 0.4,
+                    "Drag": 0.3,
+                    "NoiseStrength": 2.0,
+                    "Alignment": "Stretched",
+                    "StretchFactor": 0.08
+                }
+            ]
+        },
+        {
+            "GUID": "c08a7d3613de06b0",
+            "Name": "Brazier Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.5,
+                        1.0,
+                        -2.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.55,
+                        0.2
+                    ],
+                    "Intensity": 18.0,
+                    "Range": 9.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        }
+    ]
+}

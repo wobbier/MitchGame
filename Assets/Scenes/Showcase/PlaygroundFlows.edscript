@@ -1,0 +1,25 @@
+# Showcase playground regression script:
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/Playground.lvl --editor-exec Assets/Scenes/Showcase/PlaygroundFlows.edscript
+# Visuals are covered by Engine/Tools/ScreenshotRegression.py; this checks the gameplay scripts run.
+wait 20
+mark-count
+assert-field Chaser 0 | Transform.Position | [-20.0, 0.95, -20.0]
+
+# Play: chasers path to the player across the navmesh, the sweeper turns, the camera follows
+play
+wait 300
+assert-playing 1
+assert-field Chaser 0 | Transform.Position.0 | != -20.0
+assert-field Chaser 2 | Transform.Position.2 | != 20.0
+assert-field Sweeper | Transform.Rotation | != [0.0, 0.0, 0.0, 1.0]
+assert-field Main Camera | Transform.Position | != [0.0, 4.0, -9.0]
+assert-field Player | Transform.Position.1 | 1.0 ~ 0.1
+screenshot .tmp/overhaul/shots/playground_play.png
+
+# Stop restores the scene
+stop
+wait 5
+assert-playing 0
+assert-field Chaser 0 | Transform.Position | [-20.0, 0.95, -20.0]
+assert-field Main Camera | Transform.Position | [0.0, 4.0, -9.0]
+assert-count-delta 0

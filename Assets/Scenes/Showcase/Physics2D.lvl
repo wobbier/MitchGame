@@ -1,0 +1,4873 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "c146509d321b593d",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        6.0,
+                        -20.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Procedural",
+                    "ClearColor": [
+                        0.12,
+                        0.14,
+                        0.2
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 50.0,
+                    "Projection": "Orthographic",
+                    "OrthographicSize": 12.5
+                },
+                {
+                    "Type": "PostProcess",
+                    "AutoExposure": false,
+                    "ExposureCompensation": 0.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.1,
+                    "BloomThreshold": 1.2,
+                    "AmbientOcclusion": false,
+                    "AORadius": 0.6,
+                    "AOIntensity": 1.0,
+                    "VignetteIntensity": 0.3,
+                    "FXAA": true
+                }
+            ]
+        },
+        {
+            "GUID": "8a2601f295a3e4b1",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        20.0,
+                        -10.0
+                    ],
+                    "Rotation": [
+                        35.0,
+                        20.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.88
+                    ],
+                    "Intensity": 3.0,
+                    "Range": 10.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 60.0
+                }
+            ]
+        },
+        {
+            "GUID": "9e096b2fdf380be3",
+            "Name": "Backdrop",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        6.0,
+                        2.0
+                    ],
+                    "Rotation": [
+                        -90.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        40.0,
+                        1.0,
+                        24.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.55,
+                            0.6,
+                            0.7
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "b0c67fc314fe1671",
+            "Name": "Ground",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        -0.5,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        20.0,
+                        0.5,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.3,
+                            0.28
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "7d015e8bfed3d75e",
+            "Name": "Wall -1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -20.0,
+                        6.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        6.5,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.3,
+                            0.28
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "a25f1f62df04e2dd",
+            "Name": "Wall 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        6.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        6.5,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.3,
+                            0.28
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.9
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "cdff0b166594fe13",
+            "Name": "Pyramid 0-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -14.0,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "690f0e2f7c5f5db8",
+            "Name": "Pyramid 0-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -13.18,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "71db84896e63cc7d",
+            "Name": "Pyramid 0-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -12.36,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "0938fd153e726b3f",
+            "Name": "Pyramid 0-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.54,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "349ba6f339f18f7e",
+            "Name": "Pyramid 0-4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.72,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "78b16502a35b6103",
+            "Name": "Pyramid 0-5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.9,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "d3fad483324a4474",
+            "Name": "Pyramid 0-6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.08,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "2d780b1e2017822f",
+            "Name": "Pyramid 0-7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.260000000000002,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "91bfc7db9d960a2e",
+            "Name": "Pyramid 0-8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.44,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "3b85519b86bec437",
+            "Name": "Pyramid 0-9",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -6.62,
+                        0.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.55,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "e54900ea23cf0ad8",
+            "Name": "Pyramid 1-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -13.59,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "6246ce68396ab4f6",
+            "Name": "Pyramid 1-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -12.77,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "271b64208ea6491a",
+            "Name": "Pyramid 1-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.95,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "1c5bcac2dd77ea87",
+            "Name": "Pyramid 1-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.129999999999999,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "b0497d07a1d57710",
+            "Name": "Pyramid 1-4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.31,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "e47ea7b86d15354a",
+            "Name": "Pyramid 1-5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.49,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "c2c85852b4fcaed8",
+            "Name": "Pyramid 1-6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.67,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "debf912eb60bcc1c",
+            "Name": "Pyramid 1-7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.850000000000001,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "df38787bf84f2c76",
+            "Name": "Pyramid 1-8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.03,
+                        1.2000000000000002,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8899999999999999,
+                            0.5800000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "94f2cb1ce81792ee",
+            "Name": "Pyramid 2-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -13.18,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "15ed3f23240ebed6",
+            "Name": "Pyramid 2-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -12.36,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "db77bfb01e057e56",
+            "Name": "Pyramid 2-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.54,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "44218252e3562cd8",
+            "Name": "Pyramid 2-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.719999999999999,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "ca23ae25a948a87a",
+            "Name": "Pyramid 2-4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.9,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "e90b161107cf4fd3",
+            "Name": "Pyramid 2-5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.08,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "5741302a4c8c7331",
+            "Name": "Pyramid 2-6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.26,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "1caa10c7026fdefa",
+            "Name": "Pyramid 2-7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.440000000000001,
+                        2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.83,
+                            0.6100000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "7835a6b7ab66712d",
+            "Name": "Pyramid 3-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -12.77,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "d9635c206705a3d5",
+            "Name": "Pyramid 3-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.95,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "66b8c3896e13643f",
+            "Name": "Pyramid 3-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.129999999999999,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "e32e59615cbcd2df",
+            "Name": "Pyramid 3-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.309999999999999,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "af747d71d9a6a913",
+            "Name": "Pyramid 3-4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.49,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "42d1ee4bac48f707",
+            "Name": "Pyramid 3-5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.67,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "8ff30bf73b8118d3",
+            "Name": "Pyramid 3-6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.85,
+                        2.8000000000000003,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.77,
+                            0.64,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "0fb958edfa843f7b",
+            "Name": "Pyramid 4-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -12.36,
+                        3.6,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.71,
+                            0.67,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "3f0d571bcba4fdd7",
+            "Name": "Pyramid 4-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.54,
+                        3.6,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.71,
+                            0.67,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "4a494a56467a7a66",
+            "Name": "Pyramid 4-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.719999999999999,
+                        3.6,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.71,
+                            0.67,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "20bc3f591fecfd84",
+            "Name": "Pyramid 4-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.899999999999999,
+                        3.6,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.71,
+                            0.67,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "bfac4e3643525ed8",
+            "Name": "Pyramid 4-4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.08,
+                        3.6,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.71,
+                            0.67,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "36a4b2b8487bb7d2",
+            "Name": "Pyramid 4-5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.26,
+                        3.6,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.71,
+                            0.67,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "8eb3de45e8afc13a",
+            "Name": "Pyramid 5-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.95,
+                        4.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6499999999999999,
+                            0.7000000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "eed87829b09cf1df",
+            "Name": "Pyramid 5-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.129999999999999,
+                        4.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6499999999999999,
+                            0.7000000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "aa1cabe6c6f03abb",
+            "Name": "Pyramid 5-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.309999999999999,
+                        4.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6499999999999999,
+                            0.7000000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "40b893a704afddb4",
+            "Name": "Pyramid 5-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.489999999999998,
+                        4.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6499999999999999,
+                            0.7000000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "159e7e589802660b",
+            "Name": "Pyramid 5-4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.670000000000002,
+                        4.4,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6499999999999999,
+                            0.7000000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "7857dfb92f0058ed",
+            "Name": "Pyramid 6-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.54,
+                        5.200000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.59,
+                            0.73,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "100c4a8c2dab4a3c",
+            "Name": "Pyramid 6-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.719999999999999,
+                        5.200000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.59,
+                            0.73,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "cecaec714fef2d9f",
+            "Name": "Pyramid 6-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.899999999999999,
+                        5.200000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.59,
+                            0.73,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "2bd716c6e4835213",
+            "Name": "Pyramid 6-3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.079999999999998,
+                        5.200000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.59,
+                            0.73,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "4521c0b5b5f70a16",
+            "Name": "Pyramid 7-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -11.13,
+                        6.000000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.53,
+                            0.76,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "5ee36a47a445925f",
+            "Name": "Pyramid 7-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.31,
+                        6.000000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.53,
+                            0.76,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "902bdc4ce7f8bdff",
+            "Name": "Pyramid 7-2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.49,
+                        6.000000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.53,
+                            0.76,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "bc556a0e385e1863",
+            "Name": "Pyramid 8-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.72,
+                        6.800000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.47,
+                            0.79,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "c49a994ac117d1ba",
+            "Name": "Pyramid 8-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.9,
+                        6.800000000000001,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.47,
+                            0.79,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "94e043da992bfd8a",
+            "Name": "Pyramid 9-0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.31,
+                        7.6000000000000005,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4099999999999999,
+                            0.8200000000000001,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.6
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "97d7dafc87fdaf68",
+            "Name": "Mill",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.0,
+                        5.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        3.0,
+                        0.15,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.55,
+                            0.9
+                        ],
+                        "Metallic": 0.3,
+                        "Roughness": 0.4
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 4.0,
+                    "GravityScale": 0.0
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "UseMotor": true,
+                    "MotorSpeed": -90.0,
+                    "MaxMotorForce": 3000.0
+                }
+            ]
+        },
+        {
+            "GUID": "2ac23091ea392215",
+            "Name": "Ball 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.5,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "6fd453b82a9d1cc7",
+            "Name": "Ball 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.15,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.85,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "54ba865b66ad65e9",
+            "Name": "Ball 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.8,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "23d1e340aecd3e49",
+            "Name": "Ball 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.45,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "92ebfe49a001855a",
+            "Name": "Ball 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.1,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.85,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "674f6162360de8ef",
+            "Name": "Ball 5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.75,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "d1cc6b9ec5d8d505",
+            "Name": "Ball 6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.5,
+                        9.9,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "89d3d6d7f0fe191d",
+            "Name": "Ball 7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.15,
+                        9.9,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.85,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "2bfa78baea1d68a7",
+            "Name": "Ball 8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.8,
+                        9.9,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "ef3711a25d36f202",
+            "Name": "Ball 9",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.45,
+                        9.9,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "e1deeb82e1ff9b68",
+            "Name": "Ball 10",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.1,
+                        9.9,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.85,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "a9bc01c36d43f95c",
+            "Name": "Ball 11",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.75,
+                        9.9,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "a7176b684280f47e",
+            "Name": "Ball 12",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.5,
+                        10.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "27589236f4533ede",
+            "Name": "Ball 13",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.15,
+                        10.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.85,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "78125b1d8be38e05",
+            "Name": "Ball 14",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.8,
+                        10.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "b1e7cbc9bae9a035",
+            "Name": "Ball 15",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.45,
+                        10.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.3,
+                            0.25
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "1b8e5e0bb743dcc0",
+            "Name": "Ball 16",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.1,
+                        10.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.85,
+                            0.4
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "59f403f5ce171d6f",
+            "Name": "Ball 17",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.75,
+                        10.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.28,
+                        0.28,
+                        0.28
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.95,
+                            0.85,
+                            0.3
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.3
+                    }
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 1.0,
+                    "Restitution": 0.45
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.5
+                }
+            ]
+        },
+        {
+            "GUID": "8e8b8161e97bb11d",
+            "Name": "Bridge Post L",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8.0,
+                        3.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.3,
+                        3.0,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4,
+                            0.3,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "6733a9c3fbeb0cad",
+            "Name": "Bridge Post R",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        18.0,
+                        3.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.3,
+                        3.0,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4,
+                            0.3,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "4604ec27174259a1",
+            "Name": "Plank 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        8.8,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "a2320f83fdbdcd84",
+            "Name": "Plank 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        9.75,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "4604ec27174259a1"
+                }
+            ]
+        },
+        {
+            "GUID": "964ccceac3bfca7b",
+            "Name": "Plank 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.700000000000001,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "a2320f83fdbdcd84"
+                }
+            ]
+        },
+        {
+            "GUID": "d49e01db42525fc9",
+            "Name": "Plank 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        11.65,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "964ccceac3bfca7b"
+                }
+            ]
+        },
+        {
+            "GUID": "dd542d49622dbfac",
+            "Name": "Plank 4",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        12.600000000000001,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "d49e01db42525fc9"
+                }
+            ]
+        },
+        {
+            "GUID": "961e4e90bc98cb95",
+            "Name": "Plank 5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        13.55,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "dd542d49622dbfac"
+                }
+            ]
+        },
+        {
+            "GUID": "4be917d8e3001057",
+            "Name": "Plank 6",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        14.5,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "961e4e90bc98cb95"
+                }
+            ]
+        },
+        {
+            "GUID": "a5ae49814e1a5e51",
+            "Name": "Plank 7",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        15.45,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "4be917d8e3001057"
+                }
+            ]
+        },
+        {
+            "GUID": "1c14954b48d118e3",
+            "Name": "Plank 8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        16.4,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "a5ae49814e1a5e51"
+                }
+            ]
+        },
+        {
+            "GUID": "5a09276b17689545",
+            "Name": "Plank 9",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        17.35,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.45,
+                        0.08,
+                        0.4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.6,
+                            0.42,
+                            0.22
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.85
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 0.6
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "Anchor": [
+                        -1.05,
+                        0.0,
+                        0.0
+                    ],
+                    "ConnectedBody": "1c14954b48d118e3"
+                }
+            ]
+        },
+        {
+            "GUID": "16c668a4cd79127f",
+            "Name": "Bridge Anchor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        18.0,
+                        5.8,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "BodyType": "Static"
+                },
+                {
+                    "Type": "PhysicsJoint2D",
+                    "JointType": "Hinge",
+                    "ConnectedBody": "5a09276b17689545"
+                }
+            ]
+        },
+        {
+            "GUID": "6638de924be1cef0",
+            "Name": "Bridge Crate 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        10.0,
+                        8.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "81ef652329535c6c",
+            "Name": "Bridge Crate 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        12.0,
+                        8.5,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "fa389b0ec5c6cce9",
+            "Name": "Bridge Crate 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        14.0,
+                        9.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        40.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        },
+        {
+            "GUID": "09a5a2bedef212b1",
+            "Name": "Bridge Crate 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        16.0,
+                        9.5,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        60.0
+                    ],
+                    "Scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.85,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        }
+    ]
+}
