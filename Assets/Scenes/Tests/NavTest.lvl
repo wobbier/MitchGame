@@ -1,338 +1,488 @@
 {
     "Cores": [],
-    "Scene": [
+    "Entities": [
         {
-            "Name": "Main Camera",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        26,
-                        -21
+                        0.0,
+                        26.0,
+                        -21.0
                     ],
                     "Rotation": [
-                        50,
-                        0,
-                        0
+                        0.4226182699203491,
+                        0.0,
+                        0.0,
+                        0.9063077569007874
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Camera",
-                    "ClearType": "Color",
                     "ClearColor": [
-                        0.32,
-                        0.42,
-                        0.55
+                        0.3199999928474426,
+                        0.41999998688697815,
+                        0.550000011920929
                     ],
-                    "IsCurrent": true,
-                    "Near": 0.1,
+                    "ClearType": "Color",
                     "Far": 300.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "Projection": "Perspective",
+                    "Type": "Camera",
                     "Zoom": 55.0
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "3dd8d0c3d19fc56d",
+            "Name": "Main Camera"
         },
         {
-            "Name": "Sun",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        20,
-                        0
+                        0.0,
+                        20.0,
+                        0.0
                     ],
                     "Rotation": [
-                        50,
-                        -30,
-                        0
+                        0.4082179069519043,
+                        -0.23456971347332,
+                        0.10938165336847305,
+                        0.8754260540008545
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Directional",
+                    "CastShadows": true,
                     "Color": [
                         1.0,
-                        0.96,
-                        0.88
+                        0.9599999785423279,
+                        0.8799999952316284
                     ],
+                    "InnerConeAngle": 20.0,
                     "Intensity": 3.0,
-                    "CastShadows": true,
-                    "ShadowDistance": 60.0
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Range": 10.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 60.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "b47ca8f58ea453bb",
+            "Name": "Sun"
         },
         {
-            "Name": "Ground",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        15,
-                        1,
-                        15
-                    ]
+                        15.0,
+                        1.0,
+                        15.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Plane",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
                             0.5,
-                            0.52,
-                            0.55
+                            0.5199999809265137,
+                            0.550000011920929
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "BoxCollider",
-                    "Size": [
-                        2.0,
-                        0.02,
-                        2.0
-                    ],
                     "Center": [
                         0.0,
-                        -0.01,
+                        -0.009999999776482582,
                         0.0
-                    ]
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.0,
+                        0.019999999552965164,
+                        2.0
+                    ],
+                    "Type": "BoxCollider"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "780c2c3770e61917",
+            "Name": "Ground"
         },
         {
-            "Name": "WallA",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -3,
-                        1,
-                        0
+                        -6.014005661010742,
+                        1.0,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        9,
-                        1,
-                        0.3
-                    ]
+                        9.0,
+                        1.0,
+                        0.30000001192092896
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.7,
-                            0.55,
-                            0.4
+                            0.699999988079071,
+                            0.550000011920929,
+                            0.4000000059604645
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8500000238418579,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "BoxCollider",
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
                     "Size": [
                         2.0,
                         2.0,
                         2.0
-                    ]
+                    ],
+                    "Type": "BoxCollider"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "effa3691b1c4c2d7",
+            "Name": "WallA"
         },
         {
-            "Name": "WallB",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        3,
-                        1,
-                        6
+                        3.0,
+                        1.0,
+                        6.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        9,
-                        1,
-                        0.3
-                    ]
+                        9.0,
+                        1.0,
+                        0.30000001192092896
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.7,
-                            0.55,
-                            0.4
+                            0.699999988079071,
+                            0.550000011920929,
+                            0.4000000059604645
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8500000238418579,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "BoxCollider",
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
                     "Size": [
                         2.0,
                         2.0,
                         2.0
-                    ]
+                    ],
+                    "Type": "BoxCollider"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "e00050c99a9991a9",
+            "Name": "WallB"
         },
         {
-            "Name": "Platform",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        10,
-                        1,
-                        -9
+                        10.0,
+                        1.0,
+                        -9.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         2.5,
-                        1,
+                        1.0,
                         2.5
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.45,
-                            0.55,
-                            0.7
+                            0.44999998807907104,
+                            0.550000011920929,
+                            0.699999988079071
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8500000238418579,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "BoxCollider",
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
                     "Size": [
                         2.0,
                         2.0,
                         2.0
-                    ]
+                    ],
+                    "Type": "BoxCollider"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "4b79204000f391de",
+            "Name": "Platform"
         },
         {
-            "Name": "JumpLink",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "NavMeshLink",
-                    "StartPoint": [
-                        5.6,
-                        0.0,
-                        -9.0
-                    ],
+                    "Area": 2,
+                    "Bidirectional": true,
                     "EndPoint": [
-                        8.6,
+                        8.600000381469727,
                         2.0,
                         -9.0
                     ],
                     "Radius": 0.5,
-                    "Bidirectional": true,
-                    "Area": 2
+                    "StartPoint": [
+                        5.599999904632568,
+                        0.0,
+                        -9.0
+                    ],
+                    "Type": "NavMeshLink"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "cbf0800b9b095d06",
+            "Name": "JumpLink"
         },
         {
-            "Name": "Pit",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -6,
-                        0.01,
-                        -6
+                        -6.0,
+                        0.009999999776482582,
+                        -6.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        2,
-                        1,
-                        2
-                    ]
+                        2.0,
+                        1.0,
+                        2.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Plane",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.08,
-                            0.08,
-                            0.1
+                            0.07999999821186066,
+                            0.07999999821186066,
+                            0.10000000149011612
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 1.0
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 1.0,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "NavMeshModifierVolume",
+                    "Area": 1,
                     "Center": [
                         0.0,
                         0.0,
@@ -343,216 +493,344 @@
                         2.0,
                         2.0
                     ],
-                    "Area": 1
+                    "Type": "NavMeshModifierVolume"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "0863f4e7ed1c0ead",
+            "Name": "Pit"
         },
         {
-            "Name": "NavSurface",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "NavMeshSurface",
-                    "AgentRadius": 0.5,
                     "AgentHeight": 2.0,
-                    "AgentMaxClimb": 0.4,
+                    "AgentMaxClimb": 0.4000000059604645,
                     "AgentMaxSlope": 45.0,
+                    "AgentRadius": 0.5,
+                    "BakeOnLoad": false,
+                    "CellHeight": 0.0,
+                    "CellSize": 0.0,
                     "Collect": "All",
-                    "UseGeometry": "Physics Colliders"
+                    "DefaultArea": 0,
+                    "DetailSampleDistance": 6.0,
+                    "DetailSampleMaxError": 1.0,
+                    "EdgeMaxError": 1.2999999523162842,
+                    "EdgeMaxLength": 12.0,
+                    "IncludeLayers": 4294967295,
+                    "MergeRegionSize": 20.0,
+                    "MinRegionSize": 8.0,
+                    "NavMeshData": "",
+                    "Partition": "Watershed",
+                    "TileSize": 64,
+                    "Type": "NavMeshSurface",
+                    "UseGeometry": "Physics Colliders",
+                    "VolumeCenter": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "VolumeSize": [
+                        20.0,
+                        10.0,
+                        20.0
+                    ]
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "e1113680a886a142",
+            "Name": "NavSurface"
         },
         {
-            "Name": "Goal",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0.15,
-                        10
+                        0.0,
+                        0.15000000596046448,
+                        10.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.3,
-                        0.15,
-                        0.3
-                    ]
+                        0.30000001192092896,
+                        0.15000000596046448,
+                        0.30000001192092896
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.2,
-                            0.9,
-                            0.3
+                            0.20000000298023224,
+                            0.8999999761581421,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.4
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.4000000059604645,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "d618bff6ebf606db",
+            "Name": "Goal"
         },
         {
-            "Name": "PlatformGoal",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         10.5,
-                        2.15,
-                        -9
+                        2.1500000953674316,
+                        -9.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.3,
-                        0.15,
-                        0.3
-                    ]
+                        0.30000001192092896,
+                        0.15000000596046448,
+                        0.30000001192092896
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.949999988079071,
+                            0.6000000238418579,
+                            0.15000000596046448
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.4000000059604645,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
                     "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.6,
-                            0.15
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.4
-                    }
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "905896f26852f188",
+            "Name": "PlatformGoal"
         },
         {
-            "Name": "Walker",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        1,
-                        -9
+                        0.0,
+                        1.0,
+                        -9.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Capsule",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.2,
+                            0.20000000298023224,
                             0.75,
-                            0.35
+                            0.3499999940395355
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.5
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Capsule",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "NavMeshAgent",
-                    "Speed": 6.0,
                     "Acceleration": 30.0,
-                    "Radius": 0.5,
+                    "AngularSpeed": 360.0,
+                    "AreaMask": 65535,
+                    "Avoidance": "High",
+                    "BaseOffset": 1.0,
                     "Height": 2.0,
-                    "BaseOffset": 1.0
+                    "LinkJumpHeight": 1.0,
+                    "Radius": 0.5,
+                    "Speed": 6.0,
+                    "StoppingDistance": 0.0,
+                    "Type": "NavMeshAgent",
+                    "UpdatePosition": true,
+                    "UpdateRotation": true
                 },
                 {
-                    "Type": "ScriptComponent",
+                    "ScriptFields": "{\"Target\":\"Goal\",\"Arrived\":false}",
                     "ScriptName": "NavProbe",
-                    "ScriptFields": "{\"Target\": \"Goal\", \"Arrived\": false}"
+                    "Type": "ScriptComponent"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "1dfd826cc90e3b95",
+            "Name": "Walker"
         },
         {
-            "Name": "Jumper",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        3,
-                        1,
-                        -9
+                        3.0,
+                        1.0,
+                        -9.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Capsule",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.15
+                            0.949999988079071,
+                            0.550000011920929,
+                            0.15000000596046448
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.5
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Capsule",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "NavMeshAgent",
-                    "Speed": 5.0,
                     "Acceleration": 30.0,
-                    "Radius": 0.5,
-                    "Height": 2.0,
+                    "AngularSpeed": 360.0,
+                    "AreaMask": 65535,
+                    "Avoidance": "High",
                     "BaseOffset": 1.0,
-                    "LinkJumpHeight": 1.0
+                    "Height": 2.0,
+                    "LinkJumpHeight": 1.0,
+                    "Radius": 0.5,
+                    "Speed": 5.0,
+                    "StoppingDistance": 0.0,
+                    "Type": "NavMeshAgent",
+                    "UpdatePosition": true,
+                    "UpdateRotation": true
                 },
                 {
-                    "Type": "ScriptComponent",
+                    "ScriptFields": "{\"Target\":\"PlatformGoal\",\"Arrived\":false}",
                     "ScriptName": "NavProbe",
-                    "ScriptFields": "{\"Target\": \"PlatformGoal\", \"Arrived\": false}"
+                    "Type": "ScriptComponent"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "7c7751ebae3ba25f",
+            "Name": "Jumper"
         }
-    ]
+    ],
+    "Version": 2
 }
