@@ -2,6 +2,40 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "prepare-me-hub-assets",
+      "type": "process",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "bash",
+        "${workspaceFolder}/.vscode/prepare-hub-assets.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "build-me-hub-debug",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "HUB",
+        "config=editor_debug",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "dependsOn": "prepare-me-hub-assets",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
       "label": "build-havana-editor-debug",
       "type": "shell",
       "command": "${workspaceFolder}/.vscode/nix-env.sh",
