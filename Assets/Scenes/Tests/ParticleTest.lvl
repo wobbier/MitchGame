@@ -1,678 +1,1044 @@
 {
     "Cores": [],
-    "Scene": [
+    "Entities": [
         {
-            "Name": "Main Camera",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        2.6,
-                        -7
+                        0.0,
+                        2.5999999046325684,
+                        -7.0
                     ],
                     "Rotation": [
-                        14,
-                        0,
-                        0
+                        0.12186934798955917,
+                        0.0,
+                        0.0,
+                        0.9925461411476135
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": "Camera",
-                    "ClearType": "Color",
-                    "ClearColor": [
-                        0.03,
-                        0.035,
-                        0.06
-                    ],
-                    "IsCurrent": true,
-                    "Near": 0.1,
-                    "Far": 200.0,
-                    "Zoom": 50.0
-                }
-            ]
-        },
-        {
-            "Name": "Ground",
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        15,
-                        1,
-                        15
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Plane",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.4,
-                            0.38,
-                            0.35
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.95
-                    }
-                }
-            ]
-        },
-        {
-            "Name": "Moon",
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        0,
-                        10,
-                        0
-                    ],
-                    "Rotation": [
-                        45,
-                        -40,
-                        0
-                    ],
-                    "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": "Light",
-                    "LightType": "Directional",
-                    "Color": [
-                        0.55,
-                        0.65,
+                        1.0,
+                        1.0,
                         1.0
                     ],
-                    "Intensity": 0.4,
-                    "CastShadows": true
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.029999999329447746,
+                        0.03500000014901161,
+                        0.05999999865889549
+                    ],
+                    "ClearType": "Color",
+                    "Far": 200.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "Projection": "Perspective",
+                    "Type": "Camera",
+                    "Zoom": 50.0
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "b32f27dd056868dd",
+            "Name": "Main Camera"
         },
         {
-            "Name": "Stone 0",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0.7,
-                        0.12,
+                        0.0,
+                        0.0,
                         0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.18,
-                        0.14,
-                        0.22
-                    ]
+                        15.0,
+                        1.0,
+                        15.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.4000000059604645,
+                            0.3799999952316284,
+                            0.3499999940395355
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.949999988079071,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "6e90f3e17f73c3b3",
+            "Name": "Ground"
         },
         {
-            "Name": "Stone 1",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0.35000000000000003,
-                        0.12,
-                        0.606217782649107
+                        0.0,
+                        10.0,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        60,
-                        0
+                        0.3596048057079315,
+                        -0.31598538160324097,
+                        0.13088543713092804,
+                        0.8681627511978149
                     ],
                     "Scale": [
-                        0.18,
-                        0.14,
-                        0.22
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                    "CastShadows": true,
+                    "Color": [
+                        0.550000011920929,
+                        0.6499999761581421,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 0.4000000059604645,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Range": 10.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "1a400cafef0d229e",
+            "Name": "Moon"
         },
         {
-            "Name": "Stone 2",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -0.3499999999999998,
-                        0.12,
-                        0.6062177826491071
+                        0.699999988079071,
+                        0.11999999731779099,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        120,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.18,
-                        0.14,
-                        0.22
-                    ]
+                        0.18000000715255737,
+                        0.14000000059604645,
+                        0.2199999988079071
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "19df7b9f2bb0825a",
+            "Name": "Stone 0"
         },
         {
-            "Name": "Stone 3",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -0.7,
-                        0.12,
-                        8.572527594031472e-17
+                        0.3499999940395355,
+                        0.11999999731779099,
+                        0.6062178015708923
                     ],
                     "Rotation": [
-                        0,
-                        180,
-                        0
+                        0.0,
+                        0.5,
+                        0.0,
+                        0.8660253882408142
                     ],
                     "Scale": [
-                        0.18,
-                        0.14,
-                        0.22
-                    ]
+                        0.18000000715255737,
+                        0.14000000059604645,
+                        0.2199999988079071
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "927f8f071e954387",
+            "Name": "Stone 1"
         },
         {
-            "Name": "Stone 4",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -0.3500000000000003,
-                        0.12,
-                        -0.6062177826491069
+                        -0.3499999940395355,
+                        0.11999999731779099,
+                        0.6062178015708923
                     ],
                     "Rotation": [
-                        0,
-                        240,
-                        0
+                        0.0,
+                        0.866025447845459,
+                        0.0,
+                        0.4999999701976776
                     ],
                     "Scale": [
-                        0.18,
-                        0.14,
-                        0.22
-                    ]
+                        0.18000000715255737,
+                        0.14000000059604645,
+                        0.2199999988079071
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "58c33c3dd92eb54b",
+            "Name": "Stone 2"
         },
         {
-            "Name": "Stone 5",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0.35000000000000003,
-                        0.12,
-                        -0.606217782649107
+                        -0.699999988079071,
+                        0.11999999731779099,
+                        8.572527306351685e-17
                     ],
                     "Rotation": [
-                        0,
-                        300,
-                        0
+                        -0.0,
+                        1.0,
+                        -0.0,
+                        -4.371138828673793e-08
                     ],
                     "Scale": [
-                        0.18,
-                        0.14,
-                        0.22
-                    ]
+                        0.18000000715255737,
+                        0.14000000059604645,
+                        0.2199999988079071
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "ac0f3c4ba9362043",
+            "Name": "Stone 3"
         },
         {
-            "Name": "Fire",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0.1,
-                        0
+                        -0.3499999940395355,
+                        0.11999999731779099,
+                        -0.6062178015708923
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        -0.0,
+                        0.8660253882408142,
+                        -0.0,
+                        -0.5000000596046448
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        0.18000000715255737,
+                        0.14000000059604645,
+                        0.2199999988079071
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "ParticleSystem",
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "b953cfc886c5fc90",
+            "Name": "Stone 4"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.3499999940395355,
+                        0.11999999731779099,
+                        -0.6062178015708923
+                    ],
+                    "Rotation": [
+                        -0.0,
+                        0.5000000596046448,
+                        -0.0,
+                        -0.8660253882408142
+                    ],
+                    "Scale": [
+                        0.18000000715255737,
+                        0.14000000059604645,
+                        0.2199999988079071
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "56e2820271d75c54",
+            "Name": "Stone 5"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.10000000149011612,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Alignment": "Billboard",
+                    "AngularVelocity": [
+                        -45.0,
+                        45.0
+                    ],
+                    "Blend": "Additive",
+                    "BoxSize": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "BurstCount": 0,
+                    "ConeAngle": 10.0,
+                    "Drag": 0.5,
+                    "Duration": 5.0,
                     "EmissionRate": 60.0,
+                    "EmitFromShell": false,
+                    "EndAlpha": 0.0,
+                    "EndColor": [
+                        0.6000000238418579,
+                        0.15000000596046448,
+                        0.05000000074505806
+                    ],
+                    "EndSize": 0.30000001192092896,
+                    "FadeIn": 0.10000000149011612,
+                    "FlipbookColumns": 1,
+                    "FlipbookFps": 0.0,
+                    "FlipbookRows": 1,
+                    "Gravity": -0.15000000596046448,
+                    "Intensity": 4.0,
                     "Lifetime": [
-                        0.6,
-                        1.2
+                        0.6000000238418579,
+                        1.2000000476837158
                     ],
-                    "Speed": [
-                        0.8,
-                        1.6
+                    "Lit": false,
+                    "Looping": true,
+                    "MaxParticles": 1000,
+                    "NoiseFrequency": 1.0,
+                    "NoiseStrength": 1.2000000476837158,
+                    "Rotation": [
+                        0.0,
+                        360.0
                     ],
+                    "Shape": "Cone",
+                    "ShapeRadius": 0.3499999940395355,
+                    "SimulationSpace": "World",
                     "Size": [
                         0.25,
-                        0.45
+                        0.44999998807907104
                     ],
-                    "EndSize": 0.3,
-                    "ShapeRadius": 0.35,
-                    "ConeAngle": 10.0,
-                    "Intensity": 4.0,
-                    "NoiseStrength": 1.2,
-                    "Gravity": -0.15,
-                    "SoftParticleDistance": 0.3
+                    "SoftParticleDistance": 0.30000001192092896,
+                    "Speed": [
+                        0.800000011920929,
+                        1.600000023841858
+                    ],
+                    "StartAlpha": 1.0,
+                    "StartColor": [
+                        1.0,
+                        0.6000000238418579,
+                        0.20000000298023224
+                    ],
+                    "StartColor2": [
+                        1.0,
+                        0.8500000238418579,
+                        0.4000000059604645
+                    ],
+                    "StretchFactor": 0.10000000149011612,
+                    "Texture": "",
+                    "Type": "ParticleSystem"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "6108508f989124d8",
+            "Name": "Fire"
         },
         {
-            "Name": "Smoke",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        1.0,
-                        0
+                        0.0,
+                        0.6252647638320923,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "ParticleSystem",
+                    "Alignment": "Billboard",
+                    "AngularVelocity": [
+                        -45.0,
+                        45.0
+                    ],
                     "Blend": "Alpha",
+                    "BoxSize": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "BurstCount": 0,
+                    "ConeAngle": 20.0,
+                    "Drag": 0.5,
+                    "Duration": 5.0,
                     "EmissionRate": 10.0,
+                    "EmitFromShell": false,
+                    "EndAlpha": 0.0,
+                    "EndColor": [
+                        0.20000000298023224,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
+                    "EndSize": 3.0,
+                    "FadeIn": 0.10000000149011612,
+                    "FlipbookColumns": 1,
+                    "FlipbookFps": 0.0,
+                    "FlipbookRows": 1,
+                    "Gravity": -0.029999999329447746,
+                    "Intensity": 1.0,
                     "Lifetime": [
                         3.0,
                         5.0
                     ],
-                    "Speed": [
-                        0.4,
-                        0.8
+                    "Lit": true,
+                    "Looping": true,
+                    "MaxParticles": 1000,
+                    "NoiseFrequency": 1.0,
+                    "NoiseStrength": 0.30000001192092896,
+                    "Rotation": [
+                        0.0,
+                        360.0
                     ],
+                    "Shape": "Cone",
+                    "ShapeRadius": 0.25,
+                    "SimulationSpace": "World",
                     "Size": [
-                        0.4,
-                        0.7
+                        0.4000000059604645,
+                        0.699999988079071
                     ],
-                    "EndSize": 3.0,
+                    "SoftParticleDistance": 1.0,
+                    "Speed": [
+                        0.4000000059604645,
+                        0.800000011920929
+                    ],
+                    "StartAlpha": 0.44999998807907104,
                     "StartColor": [
                         0.25,
                         0.25,
                         0.25
                     ],
                     "StartColor2": [
-                        0.35,
-                        0.35,
-                        0.35
+                        0.3499999940395355,
+                        0.3499999940395355,
+                        0.3499999940395355
                     ],
-                    "EndColor": [
-                        0.2,
-                        0.2,
-                        0.2
-                    ],
-                    "StartAlpha": 0.45,
-                    "Intensity": 1.0,
-                    "Gravity": -0.03,
-                    "NoiseStrength": 0.3,
-                    "SoftParticleDistance": 1.0,
-                    "Lit": true
+                    "StretchFactor": 0.10000000149011612,
+                    "Texture": "",
+                    "Type": "ParticleSystem"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "ab33f6019eb79c0c",
+            "Name": "Smoke"
         },
         {
-            "Name": "Sparks",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0.2,
-                        0
+                        0.0,
+                        0.20000000298023224,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "ParticleSystem",
-                    "Shape": "Cone",
-                    "ConeAngle": 35.0,
-                    "ShapeRadius": 0.3,
-                    "EmissionRate": 25.0,
-                    "Lifetime": [
-                        0.6,
-                        1.4
+                    "Alignment": "Stretched",
+                    "AngularVelocity": [
+                        -45.0,
+                        45.0
                     ],
+                    "Blend": "Additive",
+                    "BoxSize": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "BurstCount": 0,
+                    "ConeAngle": 35.0,
+                    "Drag": 0.30000001192092896,
+                    "Duration": 5.0,
+                    "EmissionRate": 25.0,
+                    "EmitFromShell": false,
+                    "EndAlpha": 0.0,
+                    "EndColor": [
+                        1.0,
+                        0.30000001192092896,
+                        0.05000000074505806
+                    ],
+                    "EndSize": 0.5,
+                    "FadeIn": 0.10000000149011612,
+                    "FlipbookColumns": 1,
+                    "FlipbookFps": 0.0,
+                    "FlipbookRows": 1,
+                    "Gravity": 0.4000000059604645,
+                    "Intensity": 8.0,
+                    "Lifetime": [
+                        0.30000001192092896,
+                        0.800000011920929
+                    ],
+                    "Lit": false,
+                    "Looping": true,
+                    "MaxParticles": 1000,
+                    "NoiseFrequency": 1.0,
+                    "NoiseStrength": 2.0,
+                    "Rotation": [
+                        0.0,
+                        360.0
+                    ],
+                    "Shape": "Cone",
+                    "ShapeRadius": 0.30000001192092896,
+                    "SimulationSpace": "World",
+                    "Size": [
+                        0.019999999552965164,
+                        0.03999999910593033
+                    ],
+                    "SoftParticleDistance": 0.4000000059604645,
                     "Speed": [
                         2.0,
                         4.0
                     ],
-                    "Size": [
-                        0.02,
-                        0.04
-                    ],
-                    "EndSize": 0.5,
+                    "StartAlpha": 1.0,
                     "StartColor": [
                         1.0,
-                        0.8,
-                        0.4
+                        0.800000011920929,
+                        0.4000000059604645
                     ],
                     "StartColor2": [
                         1.0,
-                        0.95,
-                        0.7
+                        0.949999988079071,
+                        0.699999988079071
                     ],
-                    "EndColor": [
-                        1.0,
-                        0.3,
-                        0.05
-                    ],
-                    "Intensity": 8.0,
-                    "Gravity": 0.4,
-                    "Drag": 0.3,
-                    "NoiseStrength": 2.0,
-                    "Alignment": "Stretched",
-                    "StretchFactor": 0.08
+                    "StretchFactor": 0.07999999821186066,
+                    "Texture": "",
+                    "Type": "ParticleSystem"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "17f25dee74d113f1",
+            "Name": "Sparks"
         },
         {
-            "Name": "Fire Light",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        0,
-                        0.8,
-                        0
+                        0.0,
+                        0.4939801096916199,
+                        0.0
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Point",
+                    "CastShadows": true,
                     "Color": [
                         1.0,
-                        0.55,
-                        0.2
+                        0.550000011920929,
+                        0.20000000298023224
                     ],
+                    "InnerConeAngle": 20.0,
                     "Intensity": 18.0,
-                    "Range": 8.0
+                    "LightType": "Point",
+                    "OuterConeAngle": 30.0,
+                    "Range": 4.4029998779296875,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "c4ad73c90c1ed9d1",
+            "Name": "Fire Light"
         },
         {
-            "Name": "Pillar",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        2.6,
+                        2.5999999046325684,
                         1.5,
                         1.5
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.4,
+                        0.4000000059604645,
                         1.5,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cylinder",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.6,
-                            0.58,
-                            0.55
+                            0.6000000238418579,
+                            0.5799999833106995,
+                            0.550000011920929
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.7
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.699999988079071,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cylinder",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "32fa167823d1e51e",
+            "Name": "Pillar"
         },
         {
-            "Name": "Steam",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        2.6,
+                        2.5999999046325684,
                         0.0,
                         1.5
                     ],
                     "Rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        1,
-                        1,
-                        1
-                    ]
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "ParticleSystem",
+                    "Alignment": "Billboard",
+                    "AngularVelocity": [
+                        -45.0,
+                        45.0
+                    ],
                     "Blend": "Alpha",
-                    "Shape": "Sphere",
-                    "ShapeRadius": 0.6,
+                    "BoxSize": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "BurstCount": 0,
+                    "ConeAngle": 20.0,
+                    "Drag": 0.5,
+                    "Duration": 5.0,
                     "EmissionRate": 20.0,
+                    "EmitFromShell": false,
+                    "EndAlpha": 0.0,
+                    "EndColor": [
+                        0.699999988079071,
+                        0.75,
+                        0.800000011920929
+                    ],
+                    "EndSize": 2.0,
+                    "FadeIn": 0.10000000149011612,
+                    "FlipbookColumns": 1,
+                    "FlipbookFps": 0.0,
+                    "FlipbookRows": 1,
+                    "Gravity": -0.05000000074505806,
+                    "Intensity": 1.0,
                     "Lifetime": [
                         2.0,
                         3.0
                     ],
+                    "Lit": true,
+                    "Looping": true,
+                    "MaxParticles": 1000,
+                    "NoiseFrequency": 1.0,
+                    "NoiseStrength": 0.20000000298023224,
+                    "Rotation": [
+                        0.0,
+                        360.0
+                    ],
+                    "Shape": "Sphere",
+                    "ShapeRadius": 0.6000000238418579,
+                    "SimulationSpace": "World",
+                    "Size": [
+                        0.6000000238418579,
+                        1.0
+                    ],
+                    "SoftParticleDistance": 0.800000011920929,
                     "Speed": [
-                        0.2,
+                        0.20000000298023224,
                         0.5
                     ],
-                    "Size": [
-                        0.6,
-                        1.0
-                    ],
-                    "EndSize": 2.0,
+                    "StartAlpha": 0.3499999940395355,
                     "StartColor": [
-                        0.8,
-                        0.85,
-                        0.9
+                        0.800000011920929,
+                        0.8500000238418579,
+                        0.8999999761581421
                     ],
                     "StartColor2": [
-                        0.9,
-                        0.95,
+                        0.8999999761581421,
+                        0.949999988079071,
                         1.0
                     ],
-                    "EndColor": [
-                        0.7,
-                        0.75,
-                        0.8
-                    ],
-                    "StartAlpha": 0.35,
-                    "Intensity": 1.0,
-                    "Gravity": -0.05,
-                    "NoiseStrength": 0.2,
-                    "SoftParticleDistance": 0.8,
-                    "Lit": true
+                    "StretchFactor": 0.10000000149011612,
+                    "Texture": "",
+                    "Type": "ParticleSystem"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "d28dfb17ea567b18",
+            "Name": "Steam"
         },
         {
-            "Name": "Crate",
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -2.4,
+                        -2.4000000953674316,
                         0.5,
                         1.0
                     ],
                     "Rotation": [
-                        0,
-                        30,
-                        0
+                        0.0,
+                        0.258819043636322,
+                        0.0,
+                        0.9659258127212524
                     ],
                     "Scale": [
                         0.5,
                         0.5,
                         0.5
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.55,
-                            0.4,
+                            0.550000011920929,
+                            0.4000000059604645,
                             0.25
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.8
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.800000011920929,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "9b795d67c22d4701",
+            "Name": "Crate"
         }
-    ]
+    ],
+    "Version": 2
 }
