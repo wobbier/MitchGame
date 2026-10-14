@@ -2,12 +2,9 @@
     "Cores": [
         {
             "Type": "CharacterCore"
-        },
-        {
-            "Type": "PhysicsCore"
         }
     ],
-    "Scene": [
+    "Entities": [
         {
             "Components": [
                 {
@@ -18,8 +15,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         40.0,
@@ -29,40 +27,75 @@
                     "Type": "Transform"
                 },
                 {
+                    "CastShadows": true,
                     "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
                             1.0,
                             0.9999899864196777,
                             0.9999899864196777
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5070000290870667,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png",
+                                "Path": "Assets/Textures/TileGroundSand118/T_Stylized_Tile_Ground_Sand_118_4K_TGA_baseColor.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "Height": {
+                                "Path": "Assets/Textures/TileGroundSand118/T_Stylized_Tile_Ground_Sand_118_4K_TGA_height.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "MetallicRoughness": {
+                                "Path": "Assets/Textures/TileGroundSand118/T_Stylized_Tile_Ground_Sand_118_4K_TGA_roughness.tga",
                                 "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Marble/MarbleDark_Normal.png",
+                                "Path": "Assets/Textures/TileGroundSand118/T_Stylized_Tile_Ground_Sand_118_4K_TGA_normal.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "Occlusion": {
+                                "Path": "Assets/Textures/TileGroundSand118/T_Stylized_Tile_Ground_Sand_118_4K_TGA_ambientOcclusion.tga",
                                 "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            -4.0,
-                            4.0
+                            10.0,
+                            10.0
                         ],
-                        "Type": "DiffuseMaterial"
+                        "Type": "StandardMaterial"
                     },
                     "MeshType": "Model",
                     "Type": "Mesh"
                 },
                 {
-                    "ColliderType": "Box",
-                    "Mass": 0.0,
-                    "Scale": [
-                        40.0,
-                        1.0,
-                        40.0
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
                     ],
-                    "Type": "Rigidbody"
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "Type": "BoxCollider"
                 },
                 {
                     "ModelPath": "Assets/3D/Cube.fbx",
@@ -70,6 +103,7 @@
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "7e1ee15d30dd1b47",
             "Name": "Floor"
         },
         {
@@ -82,8 +116,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         40.0,
@@ -93,12 +128,28 @@
                     "Type": "Transform"
                 },
                 {
+                    "CastShadows": true,
                     "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
                             1.0,
                             0.9999899864196777,
                             0.9999899864196777
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
                         "Textures": {
                             "Diffuse": {
                                 "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
@@ -115,14 +166,21 @@
                     "Type": "Mesh"
                 },
                 {
-                    "ColliderType": "Box",
-                    "Mass": 0.0,
-                    "Scale": [
-                        40.0,
-                        1.0,
-                        1.0
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
                     ],
-                    "Type": "Rigidbody"
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "Type": "BoxCollider"
                 },
                 {
                     "ModelPath": "Assets/3D/Cube.fbx",
@@ -130,49 +188,10 @@
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "e3b831215f9657c8",
             "Name": "Wall"
         },
         {
-            "Children": [
-                {
-                    "Components": [
-                        {
-                            "ClearColor": [
-                                0.656862735748291,
-                                0.6568561792373657,
-                                0.6568561792373657
-                            ],
-                            "ClearType": "Procedural",
-                            "Far": 2000.0,
-                            "IsCurrent": true,
-                            "Near": 0.10000000149011612,
-                            "Skybox": "Assets/Textures/Skybox/Skybox.jpg",
-                            "Type": "Camera",
-                            "Zoom": 45.0
-                        },
-                        {
-                            "Position": [
-                                0.0,
-                                3.0,
-                                0.0
-                            ],
-                            "Rotation": [
-                                0.0,
-                                -0.0,
-                                0.0
-                            ],
-                            "Scale": [
-                                1.0,
-                                1.0,
-                                1.0
-                            ],
-                            "Type": "Transform"
-                        }
-                    ],
-                    "DestroyOnLoad": true,
-                    "Name": "Camera"
-                }
-            ],
             "Components": [
                 {
                     "Position": [
@@ -182,8 +201,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
@@ -193,19 +213,162 @@
                     "Type": "Transform"
                 },
                 {
-                    "Type": "Character"
+                    "Acceleration": 40.0,
+                    "AirControl": 0.30000001192092896,
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "GravityScale": 1.0,
+                    "GroundSnap": 0.25,
+                    "Height": 5.664999961853027,
+                    "JumpHeight": 1.2000000476837158,
+                    "MaxSpeed": 0.7369999885559082,
+                    "PushStrength": 1.0,
+                    "Radius": 1.222000002861023,
+                    "SlopeLimit": 50.0,
+                    "Type": "CharacterController"
                 },
                 {
-                    "Deceleration": 30.0,
-                    "JumpForce": 30.0,
-                    "JumpRechargeTime": 0.5,
-                    "MaxSpeed": 170.0,
-                    "StepHeight": 1.0,
-                    "Type": "CharacterController"
+                    "Type": "Character"
                 }
             ],
             "DestroyOnLoad": true,
-            "Name": "Example Character"
+            "GUID": "426c277f52712c69",
+            "Name": "FirstPersonController"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        3.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.656862735748291,
+                        0.6568561792373657,
+                        0.6568561792373657
+                    ],
+                    "ClearType": "Procedural",
+                    "Far": 2000.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 50.0,
+                    "Projection": "Perspective",
+                    "Skybox": "Assets/Textures/Skybox/Skybox.jpg",
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "da3ea80016d60bfd",
+            "Name": "Camera",
+            "Parent": "426c277f52712c69"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.01745174080133438,
+                        -0.00015229904965963215,
+                        0.008725207298994064,
+                        0.9998096227645874
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": false,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 20.0,
+                    "LightType": "Spot",
+                    "OuterConeAngle": 30.0,
+                    "Range": 15.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "8b9c8c64d07ece32",
+            "Name": "Spot Light",
+            "Parent": "da3ea80016d60bfd"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.4082179069519043,
+                        -0.23456971347332,
+                        0.10938165336847305,
+                        0.8754260540008545
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 3.0,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Range": 10.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 194.73699951171875,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "0f119ed95241aa7c",
+            "Name": "Directional Light",
+            "Parent": "da3ea80016d60bfd"
         },
         {
             "Components": [
@@ -217,8 +380,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
@@ -229,61 +393,15 @@
                 },
                 {
                     "FilePath": "Assets/UI/CharacterUI.html",
-                    "Type": "BasicUIView"
+                    "Type": "BasicUIView",
+                    "UIURL": ""
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "a6320d2a2a642a28",
             "Name": "UI"
         },
         {
-            "Children": [
-                {
-                    "Components": [
-                        {
-                            "Position": [
-                                0.0,
-                                0.0,
-                                0.0
-                            ],
-                            "Rotation": [
-                                0.0,
-                                -0.0,
-                                0.0
-                            ],
-                            "Scale": [
-                                1.0,
-                                1.0,
-                                1.0
-                            ],
-                            "Type": "Transform"
-                        },
-                        {
-                            "Material": {
-                                "DiffuseColor": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Textures": {
-                                    "Diffuse": {
-                                        "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png",
-                                        "RenderMode": "Opaque"
-                                    }
-                                },
-                                "Tiling": [
-                                    2.0,
-                                    2.0
-                                ],
-                                "Type": "DiffuseMaterial"
-                            },
-                            "MeshType": "Model",
-                            "Type": "Mesh"
-                        }
-                    ],
-                    "DestroyOnLoad": true,
-                    "Name": "Cube"
-                }
-            ],
             "Components": [
                 {
                     "Position": [
@@ -293,8 +411,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         0.10000000149011612,
@@ -309,7 +428,161 @@
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "47f6f35d19956a03",
             "Name": "Block"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Marble/MarbleDark_Diffuse.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            2.0,
+                            2.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "Center": [
+                        0.0,
+                        19.617042541503906,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        200.0,
+                        329.0428466796875,
+                        200.0
+                    ],
+                    "Type": "BoxCollider"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "2014b2bec53167bd",
+            "Name": "Cube",
+            "Parent": "47f6f35d19956a03"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -384.66864013671875,
+                        -58.05992889404297,
+                        163.72056579589844
+                    ],
+                    "Rotation": [
+                        -0.16907574236392975,
+                        -0.7558804154396057,
+                        -0.2721714675426483,
+                        0.5709473490715027
+                    ],
+                    "Scale": [
+                        100.00003814697266,
+                        100.0000228881836,
+                        100.00003051757813
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 19.18199920654297,
+                    "LightType": "Spot",
+                    "OuterConeAngle": 30.0,
+                    "Range": 14.133000373840332,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "31e939b2dc4ec673",
+            "Name": "Light",
+            "Parent": "47f6f35d19956a03"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        735.88916015625,
+                        495.8309326171875,
+                        -692.5791015625
+                    ],
+                    "Rotation": [
+                        -0.21255727112293243,
+                        0.9047969579696655,
+                        0.08438937366008759,
+                        -0.3592216968536377
+                    ],
+                    "Scale": [
+                        100.0,
+                        100.00000762939453,
+                        100.0
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "d398769d807e06aa",
+            "Name": "Camera",
+            "Parent": "47f6f35d19956a03"
         },
         {
             "Components": [
@@ -321,8 +594,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         40.0,
@@ -332,12 +606,28 @@
                     "Type": "Transform"
                 },
                 {
+                    "CastShadows": true,
                     "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
                             1.0,
                             0.9999899864196777,
                             0.9999899864196777
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
                         "Textures": {
                             "Diffuse": {
                                 "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
@@ -358,14 +648,21 @@
                     "Type": "Mesh"
                 },
                 {
-                    "ColliderType": "Box",
-                    "Mass": 0.0,
-                    "Scale": [
-                        40.0,
-                        1.0,
-                        1.0
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
                     ],
-                    "Type": "Rigidbody"
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.0,
+                        0.4000000059604645,
+                        2.0
+                    ],
+                    "Type": "BoxCollider"
                 },
                 {
                     "ModelPath": "Assets/3D/Cube.fbx",
@@ -373,35 +670,53 @@
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "f2617ae8870e4c09",
             "Name": "Wall"
         },
         {
             "Components": [
                 {
                     "Position": [
-                        -39.211395263671875,
-                        5.4771223068237305,
-                        0.3612750470638275
+                        -40.99842071533203,
+                        5.477121829986572,
+                        0.3612750172615051
                     ],
                     "Rotation": [
-                        -180.0,
-                        89.98021697998047,
-                        0.0
+                        0.7072288990020752,
+                        3.0903283487759836e-08,
+                        -0.7069846391677856,
+                        3.091395583965095e-08
                     ],
                     "Scale": [
                         39.99999237060547,
-                        4.999998569488525,
+                        4.999998092651367,
                         1.0
                     ],
                     "Type": "Transform"
                 },
                 {
+                    "CastShadows": true,
                     "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
                             1.0,
                             0.9999899864196777,
                             0.9999899864196777
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
                         "Textures": {
                             "Diffuse": {
                                 "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
@@ -418,74 +733,21 @@
                     "Type": "Mesh"
                 },
                 {
-                    "ColliderType": "Box",
-                    "Mass": 0.0,
-                    "Scale": [
-                        40.0,
-                        1.0,
-                        1.0
-                    ],
-                    "Type": "Rigidbody"
-                },
-                {
-                    "ModelPath": "Assets/3D/Cube.fbx",
-                    "Type": "Model"
-                }
-            ],
-            "DestroyOnLoad": true,
-            "Name": "Wall"
-        },
-        {
-            "Components": [
-                {
-                    "Position": [
-                        40.670814514160156,
-                        5.4771223068237305,
-                        0.3888590633869171
-                    ],
-                    "Rotation": [
+                    "Center": [
                         0.0,
-                        89.98021697998047,
+                        0.0,
                         0.0
                     ],
-                    "Scale": [
-                        39.999977111816406,
-                        4.999995708465576,
-                        1.0
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.000000476837158,
+                        0.40000012516975403,
+                        2.0
                     ],
-                    "Type": "Transform"
-                },
-                {
-                    "Material": {
-                        "DiffuseColor": [
-                            1.0,
-                            0.9999899864196777,
-                            0.9999899864196777
-                        ],
-                        "Textures": {
-                            "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
-                                "RenderMode": "Opaque"
-                            }
-                        },
-                        "Tiling": [
-                            1.399999976158142,
-                            5.800000190734863
-                        ],
-                        "Type": "DiffuseMaterial"
-                    },
-                    "MeshType": "Model",
-                    "Type": "Mesh"
-                },
-                {
-                    "ColliderType": "Box",
-                    "Mass": 0.0,
-                    "Scale": [
-                        40.0,
-                        1.0,
-                        1.0
-                    ],
-                    "Type": "Rigidbody"
+                    "Type": "BoxCollider"
                 },
                 {
                     "ModelPath": "Assets/3D/Cube.fbx",
@@ -493,57 +755,10 @@
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "0a5aca3af9dfec9c",
             "Name": "Wall"
         },
         {
-            "Children": [
-                {
-                    "Components": [
-                        {
-                            "Position": [
-                                0.0,
-                                0.0,
-                                0.0
-                            ],
-                            "Rotation": [
-                                0.0,
-                                -0.0,
-                                0.0
-                            ],
-                            "Scale": [
-                                1.0,
-                                1.0,
-                                1.0
-                            ],
-                            "Type": "Transform"
-                        },
-                        {
-                            "Material": {
-                                "DiffuseColor": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Textures": {
-                                    "Diffuse": {
-                                        "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
-                                        "RenderMode": "Opaque"
-                                    }
-                                },
-                                "Tiling": [
-                                    1.0,
-                                    1.0
-                                ],
-                                "Type": "DiffuseMaterial"
-                            },
-                            "MeshType": "Model",
-                            "Type": "Mesh"
-                        }
-                    ],
-                    "DestroyOnLoad": true,
-                    "Name": "Cube"
-                }
-            ],
             "Components": [
                 {
                     "Position": [
@@ -553,8 +768,9 @@
                     ],
                     "Rotation": [
                         0.0,
-                        -0.0,
-                        0.0
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         0.10000000149011612,
@@ -569,7 +785,238 @@
                 }
             ],
             "DestroyOnLoad": true,
+            "GUID": "680191eb1c7e56af",
             "Name": "Block"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                },
+                {
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Convex": true,
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Type": "MeshCollider"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "7e8bbce7c6326878",
+            "Name": "Cube",
+            "Parent": "680191eb1c7e56af"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        407.6245422363281,
+                        590.38623046875,
+                        100.54539489746094
+                    ],
+                    "Rotation": [
+                        0.16907572746276855,
+                        0.7558803558349609,
+                        0.2721713185310364,
+                        -0.570947527885437
+                    ],
+                    "Scale": [
+                        100.00000762939453,
+                        100.00000762939453,
+                        100.00000762939453
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "65e6c6bfbd7ceb17",
+            "Name": "Light",
+            "Parent": "680191eb1c7e56af"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        735.88916015625,
+                        495.8309326171875,
+                        -692.5791015625
+                    ],
+                    "Rotation": [
+                        -0.21255727112293243,
+                        0.9047969579696655,
+                        0.08438937366008759,
+                        -0.3592216968536377
+                    ],
+                    "Scale": [
+                        100.0,
+                        100.00000762939453,
+                        100.0
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "84ab5126c5bb1bf6",
+            "Name": "Camera",
+            "Parent": "680191eb1c7e56af"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        40.99755096435547,
+                        5.4789814949035645,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        4.999999523162842,
+                        39.999996185302734
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.800000011920929,
+                            0.800000011920929,
+                            0.800000011920929
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/BrickWall101/T_Brick_Wall_101_4K_TGA_BaseColor.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "Height": {
+                                "Path": "Assets/Textures/BrickWall101/T_Brick_Wall_101_4K_TGA_Height.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "MetallicRoughness": {
+                                "Path": "Assets/Textures/BrickWall101/T_Brick_Wall_101_4K_TGA_Roughness.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Textures/BrickWall101/T_Brick_Wall_101_4K_TGA_Normal.tga",
+                                "RenderMode": "Opaque"
+                            },
+                            "Occlusion": {
+                                "Path": "Assets/Textures/BrickWall101/T_Brick_Wall_101_4K_TGA_AmbientOcclusion.tga",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            8.899999618530273,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                },
+                {
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "Type": "BoxCollider"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "a0879c930bfcba2e",
+            "Name": "Cube"
         }
-    ]
+    ],
+    "Version": 2
 }
