@@ -1,51 +1,384 @@
 {
     "Cores": [],
-    "Scene": [
+    "Entities": [
         {
-            "Name": "Main Camera",
             "Components": [
-                { "Type": "Transform", "Position": [0.0, 4.0, -14.0], "Rotation": [15.0, 0.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
-                { "Type": "Camera", "ClearType": "Color", "ClearColor": [0.08, 0.09, 0.12], "IsCurrent": true, "Near": 0.1, "Far": 500.0, "Zoom": 45.0 }
-            ]
-        },
-        {
-            "Name": "Ground",
-            "Components": [
-                { "Type": "Transform", "Position": [0.0, -1.0, 0.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [10.0, 1.0, 10.0] },
-                { "Type": "Mesh", "MeshType": "Plane", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.35, 0.35, 0.38] } }
-            ]
-        },
-        {
-            "Name": "Parent",
-            "Components": [
-                { "Type": "Transform", "Position": [-3.0, 0.0, 0.0], "Rotation": [0.0, 45.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
-                { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.85, 0.25, 0.2] } }
-            ],
-            "Children": [
                 {
-                    "Name": "Child",
-                    "Components": [
-                        { "Type": "Transform", "Position": [0.0, 2.5, 0.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [0.5, 0.5, 0.5] },
-                        { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.2, 0.75, 0.3] } }
+                    "Position": [
+                        0.0,
+                        4.0,
+                        -14.0
                     ],
-                    "Children": [
-                        {
-                            "Name": "Grandchild",
-                            "Components": [
-                                { "Type": "Transform", "Position": [3.0, 0.0, 0.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
-                                { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.2, 0.4, 0.9] } }
-                            ]
-                        }
-                    ]
+                    "Rotation": [
+                        0.13052619993686676,
+                        0.0,
+                        0.0,
+                        0.9914448857307434
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.07999999821186066,
+                        0.09000000357627869,
+                        0.11999999731779099
+                    ],
+                    "ClearType": "Skybox",
+                    "Far": 500.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "Projection": "Perspective",
+                    "Skybox": "Assets/Textures/Skybox/Skybox.jpg",
+                    "Type": "Camera",
+                    "Zoom": 45.0
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "8b4b24c4c95871ff",
+            "Name": "Main Camera"
         },
         {
-            "Name": "Right Cube",
             "Components": [
-                { "Type": "Transform", "Position": [4.0, 0.0, 2.0], "Rotation": [0.0, 0.0, 0.0], "Scale": [1.0, 1.0, 1.0] },
-                { "Type": "Mesh", "MeshType": "Cube", "Material": { "Type": "DiffuseMaterial", "DiffuseColor": [0.9, 0.8, 0.25] } }
-            ]
+                {
+                    "Position": [
+                        0.0,
+                        -1.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        10.0,
+                        1.0,
+                        10.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.3499999940395355,
+                            0.3499999940395355,
+                            0.3799999952316284
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "b621444c4f88a233",
+            "Name": "Ground"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -3.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.3826834559440613,
+                        0.0,
+                        0.9238795042037964
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8500000238418579,
+                            0.25,
+                            0.20000000298023224
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "a959c26649e264ce",
+            "Name": "Parent"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        2.5,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.20000000298023224,
+                            0.75,
+                            0.30000001192092896
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "a0927081b682b1a7",
+            "Name": "Child",
+            "Parent": "a959c26649e264ce"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        3.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.20000000298023224,
+                            0.4000000059604645,
+                            0.8999999761581421
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "e12fce2b6d0671ab",
+            "Name": "Grandchild",
+            "Parent": "a0927081b682b1a7"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        4.0,
+                        0.0,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8999999761581421,
+                            0.800000011920929,
+                            0.25
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "DiffuseMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "a6084fd3235d3e3e",
+            "Name": "Right Cube"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.4082179069519043,
+                        -0.23456971347332,
+                        0.10938165336847305,
+                        0.8754260540008545
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 3.0,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Range": 10.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "a8189ef1623edd37",
+            "Name": "Directional Light"
         }
-    ]
+    ],
+    "Version": 2
 }
