@@ -17,7 +17,7 @@
                         -58.48525619506836
                     ],
                     "Rotation": [
-                        12.999996185302734,
+                        12.999995231628418,
                         -0.0,
                         0.0
                     ],
@@ -43,7 +43,11 @@
                     "Zoom": 45.0
                 },
                 {
-                    "ScriptFields": "{\"Aggression\":17.9,\"PatrolRadius\":10,\"EnemyType\":\"Grunt\",\"test\":false,\"testVec\":{\"x\":8.3,\"y\":30,\"z\":0}}",
+                    "FilePath": "Assets/UI/UIFuckup.html",
+                    "Type": "BasicUIView",
+                    "UIURL": ""
+                },
+                {
                     "ScriptName": "EnemyAI",
                     "Type": "ScriptComponent"
                 }
@@ -72,7 +76,6 @@
                     "Type": "Transform"
                 },
                 {
-                    "ScriptFields": "{\"MyTestBool\":false,\"blueAmount\":{\"x\":0,\"y\":0,\"z\":0}}",
                     "ScriptName": "ImGuiTest",
                     "Type": "ScriptComponent"
                 }
@@ -101,7 +104,6 @@
                     "Type": "Transform"
                 },
                 {
-                    "ScriptFields": "{\"MyTestBool\":false,\"totalTime\":0}",
                     "ScriptName": "TransformMover",
                     "Type": "ScriptComponent"
                 }
