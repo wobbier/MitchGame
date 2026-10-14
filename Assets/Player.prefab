@@ -1,0 +1,86 @@
+{
+    "Entities": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.15000000596046448,
+                            0.550000011920929,
+                            0.949999988079071
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.10000000149011612,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.3499999940395355,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Capsule",
+                    "Type": "Mesh"
+                },
+                {
+                    "Acceleration": 40.0,
+                    "AirControl": 0.30000001192092896,
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "GravityScale": 1.0,
+                    "GroundSnap": 0.25,
+                    "Height": 1.899999976158142,
+                    "JumpHeight": 1.399999976158142,
+                    "MaxSpeed": 5.0,
+                    "PushStrength": 1.0,
+                    "Radius": 0.44999998807907104,
+                    "SlopeLimit": 50.0,
+                    "Type": "CharacterController"
+                },
+                {
+                    "ScriptFields": "{\"CameraName\":\"Main Camera\",\"WalkSpeed\":5,\"SprintSpeed\":9,\"TurnHalfLife\":0.06}",
+                    "ScriptName": "PlayerController",
+                    "Type": "ScriptComponent"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "d3e20a79fb1c8de8",
+            "Name": "Player"
+        }
+    ],
+    "Version": 2
+}
