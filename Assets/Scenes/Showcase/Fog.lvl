@@ -1,119 +1,140 @@
 {
-    "Version": 2,
+    "AssetReferences": {
+        "46721d430f9615ab": "Assets/Textures/Concrete/ConcreteNormal.png",
+        "52b08b229bbb9b87": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+    },
     "Cores": [],
     "Entities": [
         {
-            "GUID": "5254327c6ded8f68",
-            "Name": "Main Camera",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
-                        2.2,
+                        2.200000047683716,
                         -11.0
                     ],
                     "Rotation": [
-                        4.0,
+                        0.03489949554204941,
                         0.0,
-                        0.0
+                        0.0,
+                        0.9993908405303955
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Camera",
-                    "ClearType": "Procedural",
                     "ClearColor": [
-                        0.3,
-                        0.4,
-                        0.55
+                        0.30000001192092896,
+                        0.4000000059604645,
+                        0.550000011920929
                     ],
-                    "IsCurrent": true,
-                    "Near": 0.1,
+                    "ClearType": "Procedural",
                     "Far": 250.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "Projection": "Perspective",
+                    "Type": "Camera",
                     "Zoom": 55.0
                 },
                 {
-                    "Type": "PostProcess",
-                    "AutoExposure": false,
-                    "ExposureCompensation": -0.2,
-                    "Bloom": true,
-                    "BloomIntensity": 0.08,
-                    "BloomThreshold": 1.2,
-                    "AmbientOcclusion": true,
-                    "AORadius": 0.6,
                     "AOIntensity": 1.0,
-                    "VignetteIntensity": 0.35,
+                    "AORadius": 0.6000000238418579,
+                    "AmbientOcclusion": true,
+                    "AutoExposure": false,
+                    "AutoExposureMaxEV": 8.0,
+                    "AutoExposureMinEV": -4.0,
+                    "AutoExposureSpeed": 2.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.07999999821186066,
+                    "BloomRadius": 1.0,
+                    "BloomThreshold": 1.2000000476837158,
+                    "Contrast": 1.0,
+                    "ExposureCompensation": -0.20000000298023224,
                     "FXAA": true,
                     "Fog": true,
+                    "FogAnisotropy": 0.6000000238418579,
                     "FogColor": [
-                        0.16,
-                        0.2,
-                        0.28
+                        0.1599999964237213,
+                        0.20000000298023224,
+                        0.2800000011920929
                     ],
-                    "FogDensity": 0.035,
+                    "FogDensity": 0.03500000014901161,
                     "FogHeight": 0.0,
-                    "FogHeightFalloff": 0.15,
-                    "FogSunIntensity": 1.6,
-                    "FogAnisotropy": 0.6,
-                    "VolumetricFog": true,
+                    "FogHeightFalloff": 0.15000000596046448,
+                    "FogMaxOpacity": 1.0,
+                    "FogStartDistance": 0.0,
+                    "FogSunIntensity": 1.600000023841858,
+                    "Gain": 1.0,
+                    "Gamma": 1.0,
+                    "Lift": 0.0,
+                    "Saturation": 1.0,
+                    "Temperature": 0.0,
+                    "Tint": 0.0,
+                    "Tonemapper": "ACES",
+                    "Type": "PostProcess",
+                    "VignetteIntensity": 0.3499999940395355,
+                    "VignetteSmoothness": 0.6000000238418579,
                     "VolumetricDistance": 45.0,
+                    "VolumetricFog": true,
                     "VolumetricSteps": 32
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "5254327c6ded8f68",
+            "Name": "Main Camera"
         },
         {
-            "GUID": "574e364b9899ffb1",
-            "Name": "Sun",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         20.0,
                         30.0
                     ],
                     "Rotation": [
-                        9.0,
-                        180.0,
-                        0.0
+                        -3.4295561945896225e-09,
+                        0.9969173073768616,
+                        -0.07845909893512726,
+                        -4.3576640962328383e-08
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Directional",
+                    "CastShadows": true,
                     "Color": [
                         1.0,
-                        0.72,
-                        0.45
+                        0.7200000286102295,
+                        0.44999998807907104
                     ],
-                    "Intensity": 3.0,
-                    "Range": 10.0,
                     "InnerConeAngle": 20.0,
+                    "Intensity": 3.0,
+                    "LightType": "Directional",
                     "OuterConeAngle": 30.0,
-                    "CastShadows": true,
-                    "ShadowDistance": 45.0
+                    "Range": 10.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 45.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "574e364b9899ffb1",
+            "Name": "Sun"
         },
         {
-            "GUID": "522cdd6c5e8d7d70",
-            "Name": "Ground",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -122,62 +143,83 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         30.0,
                         1.0,
                         30.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Plane",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.6,
-                            0.6,
-                            0.6
+                            0.6000000238418579,
+                            0.6000000238418579,
+                            0.6000000238418579
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.6,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            12,
-                            12
-                        ]
-                    }
+                            12.0,
+                            12.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
                 },
                 {
-                    "Type": "BoxCollider",
-                    "Size": [
-                        2,
-                        0.02,
-                        2
-                    ],
                     "Center": [
-                        0,
-                        -0.01,
-                        0
-                    ]
+                        0.0,
+                        -0.009999999776482582,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        2.0,
+                        0.019999999552965164,
+                        2.0
+                    ],
+                    "Type": "BoxCollider"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "522cdd6c5e8d7d70",
+            "Name": "Ground"
         },
         {
-            "GUID": "4bc734ac805c6ff3",
-            "Name": "Slat 0",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -12.0,
                         4.0,
@@ -186,49 +228,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "4bc734ac805c6ff3",
+            "Name": "Slat 0"
         },
         {
-            "GUID": "daaeb618358c57cd",
-            "Name": "Slat 1",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -9.0,
                         4.0,
@@ -237,49 +296,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "daaeb618358c57cd",
+            "Name": "Slat 1"
         },
         {
-            "GUID": "4f95fa21316895d1",
-            "Name": "Slat 2",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -6.0,
                         4.0,
@@ -288,49 +364,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "4f95fa21316895d1",
+            "Name": "Slat 2"
         },
         {
-            "GUID": "8def3c1ea7fd357d",
-            "Name": "Slat 3",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -3.0,
                         4.0,
@@ -339,49 +432,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "8def3c1ea7fd357d",
+            "Name": "Slat 3"
         },
         {
-            "GUID": "bd90bf80847f5377",
-            "Name": "Slat 4",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         4.0,
@@ -390,49 +500,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "bd90bf80847f5377",
+            "Name": "Slat 4"
         },
         {
-            "GUID": "4366f835ba7cd533",
-            "Name": "Slat 5",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         3.0,
                         4.0,
@@ -441,49 +568,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "4366f835ba7cd533",
+            "Name": "Slat 5"
         },
         {
-            "GUID": "bb12b0f344f772b0",
-            "Name": "Slat 6",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         6.0,
                         4.0,
@@ -492,49 +636,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "bb12b0f344f772b0",
+            "Name": "Slat 6"
         },
         {
-            "GUID": "b0804d5f9f3f757b",
-            "Name": "Slat 7",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         9.0,
                         4.0,
@@ -543,49 +704,66 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "b0804d5f9f3f757b",
+            "Name": "Slat 7"
         },
         {
-            "GUID": "263f87594fd27033",
-            "Name": "Slat 8",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         12.0,
                         4.0,
@@ -594,100 +772,134 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.8,
+                        0.800000011920929,
                         4.0,
-                        0.4
-                    ]
+                        0.4000000059604645
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            1,
-                            3
-                        ]
-                    }
+                            1.0,
+                            3.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "263f87594fd27033",
+            "Name": "Slat 8"
         },
         {
-            "GUID": "71e3a58103d054c9",
-            "Name": "Lintel",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
-                        8.4,
+                        8.399999618530273,
                         9.0
                     ],
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         14.0,
-                        0.4,
-                        0.6
-                    ]
+                        0.4000000059604645,
+                        0.6000000238418579
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.35,
-                            0.33,
-                            0.3
+                            0.3499999940395355,
+                            0.33000001311302185,
+                            0.30000001192092896
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.9,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.8999999761581421,
                         "Textures": {
                             "Diffuse": {
-                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+                                "RenderMode": "Opaque"
                             },
                             "Normal": {
-                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png"
+                                "Path": "Assets/Textures/Concrete/ConcreteNormal.png",
+                                "RenderMode": "Opaque"
                             }
                         },
                         "Tiling": [
-                            8,
-                            1
-                        ]
-                    }
+                            8.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "71e3a58103d054c9",
+            "Name": "Lintel"
         },
         {
-            "GUID": "c66e6f1acd9daa88",
-            "Name": "Lamp Post",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -5.0,
                         2.5,
@@ -696,187 +908,241 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.12,
+                        0.11999999731779099,
                         2.5,
-                        0.12
-                    ]
+                        0.11999999731779099
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cylinder",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.08,
-                            0.08,
-                            0.09
+                            0.07999999821186066,
+                            0.07999999821186066,
+                            0.09000000357627869
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 1.0,
-                        "Roughness": 0.4
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.4000000059604645,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cylinder",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "c66e6f1acd9daa88",
+            "Name": "Lamp Post"
         },
         {
-            "GUID": "95b1141e1b70e2dc",
-            "Name": "Lamp Head",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -5.0,
-                        5.1,
+                        5.099999904632568,
                         1.0
                     ],
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         0.5,
-                        0.15,
+                        0.15000000596046448,
                         0.5
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cylinder",
+                    "CastShadows": false,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.05,
-                            0.05,
-                            0.05
+                            0.05000000074505806,
+                            0.05000000074505806,
+                            0.05000000074505806
                         ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.5,
                         "EmissiveColor": [
                             1.0,
-                            0.85,
-                            0.6
+                            0.8500000238418579,
+                            0.6000000238418579
                         ],
-                        "EmissiveIntensity": 6.0
+                        "EmissiveIntensity": 6.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
                     },
-                    "CastShadows": false
+                    "MeshType": "Cylinder",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "95b1141e1b70e2dc",
+            "Name": "Lamp Head"
         },
         {
-            "GUID": "ad3f574c4b0b5f65",
-            "Name": "Lamp Light",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         -5.0,
-                        4.9,
+                        4.900000095367432,
                         1.0
                     ],
                     "Rotation": [
-                        90.0,
+                        0.7071067690849304,
                         0.0,
-                        0.0
+                        0.0,
+                        0.7071067690849304
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Spot",
+                    "CastShadows": true,
                     "Color": [
                         1.0,
-                        0.85,
-                        0.6
+                        0.8500000238418579,
+                        0.6000000238418579
                     ],
-                    "Intensity": 160.0,
-                    "Range": 12.0,
                     "InnerConeAngle": 20.0,
+                    "Intensity": 160.0,
+                    "LightType": "Spot",
                     "OuterConeAngle": 32.0,
-                    "CastShadows": true
+                    "Range": 12.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "ad3f574c4b0b5f65",
+            "Name": "Lamp Light"
         },
         {
-            "GUID": "db540caa0ba84aa1",
-            "Name": "Crate",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
-                        -4.2,
+                        -4.199999809265137,
                         0.5,
-                        1.6
+                        1.600000023841858
                     ],
                     "Rotation": [
                         0.0,
-                        20.0,
-                        0.0
+                        0.1736481785774231,
+                        0.0,
+                        0.9848077297210693
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.55,
-                            0.38,
-                            0.22
+                            0.550000011920929,
+                            0.3799999952316284,
+                            0.2199999988079071
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.7
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.699999988079071,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "db540caa0ba84aa1",
+            "Name": "Crate"
         },
         {
-            "GUID": "0a8210746db0f7c5",
-            "Name": "Lantern 0",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         3.5,
-                        1.2,
+                        1.2000000476837158,
                         -1.0
                     ],
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "0a8210746db0f7c5",
+            "Name": "Lantern 0"
         },
         {
-            "GUID": "f6d1dd48f95a4918",
-            "Name": "Lantern 0 Glow",
-            "Parent": "0a8210746db0f7c5",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -885,45 +1151,57 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.15,
-                        0.15,
-                        0.15
-                    ]
+                        0.15000000596046448,
+                        0.15000000596046448,
+                        0.15000000596046448
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": false,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.05,
-                            0.05,
-                            0.05
+                            0.05000000074505806,
+                            0.05000000074505806,
+                            0.05000000074505806
                         ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.2,
                         "EmissiveColor": [
                             1.0,
                             0.5,
-                            0.2
+                            0.20000000298023224
                         ],
-                        "EmissiveIntensity": 25.0
+                        "EmissiveIntensity": 25.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.20000000298023224,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
                     },
-                    "CastShadows": false
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "f6d1dd48f95a4918",
+            "Name": "Lantern 0 Glow",
+            "Parent": "0a8210746db0f7c5"
         },
         {
-            "GUID": "15605e4197cdbddd",
-            "Name": "Lantern 0 Light",
-            "Parent": "0a8210746db0f7c5",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -932,63 +1210,68 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Point",
+                    "CastShadows": false,
                     "Color": [
                         1.0,
-                        0.55,
+                        0.550000011920929,
                         0.25
                     ],
-                    "Intensity": 10.0,
-                    "Range": 5.0,
                     "InnerConeAngle": 20.0,
+                    "Intensity": 10.0,
+                    "LightType": "Point",
                     "OuterConeAngle": 30.0,
-                    "CastShadows": false
+                    "Range": 5.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "15605e4197cdbddd",
+            "Name": "Lantern 0 Light",
+            "Parent": "0a8210746db0f7c5"
         },
         {
-            "GUID": "eb69db55413f56ae",
-            "Name": "Lantern 1",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         6.0,
-                        1.2,
+                        1.2000000476837158,
                         3.0
                     ],
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "eb69db55413f56ae",
+            "Name": "Lantern 1"
         },
         {
-            "GUID": "cec3745f85b59947",
-            "Name": "Lantern 1 Glow",
-            "Parent": "eb69db55413f56ae",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -997,45 +1280,57 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.15,
-                        0.15,
-                        0.15
-                    ]
+                        0.15000000596046448,
+                        0.15000000596046448,
+                        0.15000000596046448
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": false,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.05,
-                            0.05,
-                            0.05
+                            0.05000000074505806,
+                            0.05000000074505806,
+                            0.05000000074505806
                         ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.2,
                         "EmissiveColor": [
                             1.0,
                             0.5,
-                            0.2
+                            0.20000000298023224
                         ],
-                        "EmissiveIntensity": 25.0
+                        "EmissiveIntensity": 25.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.20000000298023224,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
                     },
-                    "CastShadows": false
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "cec3745f85b59947",
+            "Name": "Lantern 1 Glow",
+            "Parent": "eb69db55413f56ae"
         },
         {
-            "GUID": "946be1784f69a1b8",
-            "Name": "Lantern 1 Light",
-            "Parent": "eb69db55413f56ae",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -1044,63 +1339,68 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Point",
+                    "CastShadows": false,
                     "Color": [
                         1.0,
-                        0.55,
+                        0.550000011920929,
                         0.25
                     ],
-                    "Intensity": 10.0,
-                    "Range": 5.0,
                     "InnerConeAngle": 20.0,
+                    "Intensity": 10.0,
+                    "LightType": "Point",
                     "OuterConeAngle": 30.0,
-                    "CastShadows": false
+                    "Range": 5.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "946be1784f69a1b8",
+            "Name": "Lantern 1 Light",
+            "Parent": "eb69db55413f56ae"
         },
         {
-            "GUID": "430c6f95ef0b6490",
-            "Name": "Lantern 2",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         2.0,
-                        1.2,
+                        1.2000000476837158,
                         5.0
                     ],
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "430c6f95ef0b6490",
+            "Name": "Lantern 2"
         },
         {
-            "GUID": "581fb3c468c4de8f",
-            "Name": "Lantern 2 Glow",
-            "Parent": "430c6f95ef0b6490",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -1109,45 +1409,57 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
-                        0.15,
-                        0.15,
-                        0.15
-                    ]
+                        0.15000000596046448,
+                        0.15000000596046448,
+                        0.15000000596046448
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
+                    "CastShadows": false,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.05,
-                            0.05,
-                            0.05
+                            0.05000000074505806,
+                            0.05000000074505806,
+                            0.05000000074505806
                         ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.2,
                         "EmissiveColor": [
                             1.0,
                             0.5,
-                            0.2
+                            0.20000000298023224
                         ],
-                        "EmissiveIntensity": 25.0
+                        "EmissiveIntensity": 25.0,
+                        "FaceMode": 0,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.20000000298023224,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
                     },
-                    "CastShadows": false
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "581fb3c468c4de8f",
+            "Name": "Lantern 2 Glow",
+            "Parent": "430c6f95ef0b6490"
         },
         {
-            "GUID": "ee41206037caf2b9",
-            "Name": "Lantern 2 Light",
-            "Parent": "430c6f95ef0b6490",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         0.0,
                         0.0,
@@ -1156,68 +1468,97 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Light",
-                    "LightType": "Point",
+                    "CastShadows": false,
                     "Color": [
                         1.0,
-                        0.55,
+                        0.550000011920929,
                         0.25
                     ],
-                    "Intensity": 10.0,
-                    "Range": 5.0,
                     "InnerConeAngle": 20.0,
+                    "Intensity": 10.0,
+                    "LightType": "Point",
                     "OuterConeAngle": 30.0,
-                    "CastShadows": false
+                    "Range": 5.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "ee41206037caf2b9",
+            "Name": "Lantern 2 Light",
+            "Parent": "430c6f95ef0b6490"
         },
         {
-            "GUID": "846212434f753621",
-            "Name": "Statue",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         1.5,
-                        1.2,
+                        1.2000000476837158,
                         2.0
                     ],
                     "Rotation": [
                         0.0,
-                        35.0,
-                        0.0
+                        0.30070579051971436,
+                        0.0,
+                        0.9537169337272644
                     ],
                     "Scale": [
-                        0.8,
-                        2.4,
-                        0.8
-                    ]
+                        0.800000011920929,
+                        2.4000000953674316,
+                        0.800000011920929
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Capsule",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.7,
-                            0.7,
-                            0.72
+                            0.699999988079071,
+                            0.699999988079071,
+                            0.7200000286102295
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 1.0,
-                        "Roughness": 0.35
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.3499999940395355,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Capsule",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "846212434f753621",
+            "Name": "Statue"
         }
-    ]
+    ],
+    "Version": 2
 }
