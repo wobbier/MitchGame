@@ -1,14 +1,9 @@
 {
-    "Version": 2,
     "Cores": [],
     "Entities": [
         {
-            "GUID": "51bdd6cdd5004e5e",
-            "Name": "Chunk Crate",
-            "DestroyOnLoad": true,
             "Components": [
                 {
-                    "Type": "Transform",
                     "Position": [
                         4.0,
                         0.5,
@@ -17,29 +12,53 @@
                     "Rotation": [
                         0.0,
                         0.0,
-                        0.0
+                        0.0,
+                        1.0
                     ],
                     "Scale": [
                         1.0,
                         1.0,
                         1.0
-                    ]
+                    ],
+                    "Type": "Transform"
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
+                    "CastShadows": true,
                     "Material": {
-                        "Type": "StandardMaterial",
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
                         "DiffuseColor": [
-                            0.8,
+                            0.800000011920929,
                             0.5,
-                            0.2
+                            0.20000000298023224
                         ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
                         "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
                 }
-            ]
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "51bdd6cdd5004e5e",
+            "Name": "Chunk Crate"
         }
-    ]
+    ],
+    "Version": 2
 }
