@@ -10,7 +10,10 @@
         "1dae1d20b9e4f26f": "Assets/Models/main_sponza/textures/ornament_01_Metalness.png",
         "26524e198a2868a4": "Assets/Models/main_sponza/textures/stone_trims_02_Metalness.png",
         "294c3e48307f6cf3": "Assets/Models/main_sponza/textures/door_stoneframe_02_Normal.png",
+        "2d5713ce7b481eab": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_D.png",
         "2df8a7e3b4df6712": "Assets/Models/main_sponza/textures/col_head_2ndfloor_02_Metalness.png",
+        "2f1f2c38af2b00ab": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/sword_rough_D.png",
+        "32c35460783a3c3d": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/sword_diffuse_C.png",
         "35ed7fabdfc4fb93": "Assets/Models/pkg_a_curtains/./textures/metal_door_01_BaseColor.png",
         "391df513b996829d": "Assets/Models/main_sponza/textures/door_stoneframe_01_Roughness.png",
         "3a09bee05f7d38db": "Assets/Models/main_sponza/textures/col_head_1stfloor_BaseColor.png",
@@ -35,12 +38,14 @@
         "5a14c65398a3a1de": "Assets/Models/main_sponza/textures/arch_stone_wall_01_Metalness.png",
         "628a7b9debc9630f": "Assets/Models/main_sponza/textures/ceiling_plaster_01_Roughness.png",
         "64942ff42298b359": "Assets/Models/main_sponza/textures/ornament_01_Normal.png",
+        "64a8869639c7e76a": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_normal_A.png",
         "64f9b45d7d581496": "Assets/Models/main_sponza/textures/floor_tiles_01_BaseColor.png",
         "67b23ee00a62254c": "Assets/Models/pkg_a_curtains/NewSponza_Curtains_FBX_YUp.fbx",
         "67c4b11481ee41eb": "Assets/Models/pkg_a_curtains/./textures/metal_door_01_Metalness.png",
         "6851ae6668709186": "Assets/Models/main_sponza/textures/stone_trims_01_BaseColor.png",
         "68bc463258f23c85": "Assets/Models/main_sponza/textures/roof_tiles_01_Metalness.png",
         "6d0854e70e26dbe4": "Assets/Models/main_sponza/textures/wood_tile_01_Metalness.png",
+        "6f1366999f5dbd28": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_F.png",
         "6f41a882bffc4bb1": "Assets/Models/main_sponza/textures/roof_tiles_01_Normal.png",
         "6ffe0a474780c554": "Assets/Models/main_sponza/textures/floor_tiles_01_Normal.png",
         "71ba43bef67bb74c": "Assets/Models/main_sponza/textures/stone_01_tile_Normal.png",
@@ -60,12 +65,15 @@
         "893c3c15789f6f37": "Assets/Models/main_sponza/textures/col_1stfloor_Roughness.png",
         "8a3d34af14257624": "Assets/Models/main_sponza/textures/arch_stone_wall_01_Normal.png",
         "8b6717579b0acb84": "Assets/Models/main_sponza/textures/metal_door_01_Roughness.png",
+        "958b5f0ecec0f761": "Assets/Models/pkg_d_10k_candles/NewSponza_4_Combined_FBX_YUp.fbx",
         "973af86d1dc56cc4": "Assets/Models/main_sponza/textures/brickwall_02_BaseColor.png",
+        "996b1ac523cd1273": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_diffuse_A.png",
         "996e44dedfb98efd": "Assets/Models/main_sponza/textures/ceiling_plaster_02_Roughness.png",
+        "9975a5f898208b62": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_H.png",
         "9a2f3f888b6f6e16": "Assets/Models/main_sponza/textures/ornament_01_Roughness.png",
         "9a41977ac937f752": "Assets/Models/main_sponza/textures/stones_2ndfloor_01_Roughness.png",
-        "9a4b997a9a67290b": "Assets/Models/pkg_e_knight_anim/Exports/FBX/Knight_USD_002.fbx",
         "9d8f09e6ca5b0176": "Assets/Models/main_sponza/textures/stone_trims_01_Roughness.png",
+        "9ec2b4ffc1e4e6d9": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/leather_diffuse_D.png",
         "a8ec585bf38d4412": "Assets/Models/main_sponza/textures/brickwall_02_Normal.png",
         "aa4dbe441b5c2126": "Assets/Models/main_sponza/textures/wood_tile_01_Normal.png",
         "ac6c7501a12fab83": "Assets/Models/main_sponza/textures/stone_trims_01_Metalness.png",
@@ -79,6 +87,7 @@
         "b3362f72c6d00c1d": "Assets/Models/pkg_a_curtains/./textures/curtain_fabric_Roughness.png",
         "b409d414a56c324a": "Assets/Models/main_sponza/textures/metal_door_01_BaseColor.png",
         "b519388c067c3e37": "Assets/Models/main_sponza/textures/roof_tiles_01_BaseColor.png",
+        "b68d49b62a81c957": "Assets/Models/pkg_e_knight_anim/Exports/Knight_Baked.obj",
         "b84916da53874321": "Assets/Models/main_sponza/textures/brickwall_02_Roughness.png",
         "b8f865d587fa0d62": "Assets/Models/main_sponza/textures/col_brickwall_01_Metalness.png",
         "bb8c53826496cdb9": "Assets/Models/main_sponza/textures/metal_door_01_Metalness.png",
@@ -91,6 +100,7 @@
         "c2b88be175fc355a": "Assets/Models/main_sponza/textures/ceiling_plaster_01_Metalness.png",
         "c6dc6b09c83f2784": "Assets/Models/pkg_a_curtains/./textures/curtain_fabric_blue_BaseColor.png",
         "c8e80a4adc8f3ec0": "Assets/Models/main_sponza/textures/door_stoneframe_02_BaseColor.png",
+        "ca850589736e7127": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/cloth_diffuse_D.png",
         "cbbcfff042ce6423": "Assets/Models/pkg_a_curtains/./textures/curtain_fabric_Normal.png",
         "d131c2bb4e7f530b": "Assets/Models/main_sponza/textures/col_1stfloor_Metalness.png",
         "d1bddef103fbfc17": "Assets/Models/main_sponza/textures/wood_door_01_Roughness.png",
@@ -100,6 +110,7 @@
         "e3f2016be585098d": "Assets/Models/pkg_a_curtains/./textures/curtain_fabric_red_BaseColor.png",
         "e41a6ab3da49f986": "Assets/Models/main_sponza/textures/dirt_decal_01_mask_gltf.png",
         "e4da15515ea493a2": "Assets/Models/main_sponza/textures/ceiling_plaster_01_BaseColor.png",
+        "e6106dd326da4f34": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/cloth_normal_D.png",
         "e8666de3265869fc": "Assets/Models/main_sponza/textures/wood_tile_01_BaseColor.png",
         "e9433cada091a300": "Assets/Models/main_sponza/textures/col_head_1stfloor_Roughness.png",
         "ea628e231c3ace2b": "Assets/Models/main_sponza/textures/stone_01_tile_BaseColor.png",
@@ -109,8 +120,7 @@
         "edbe79dcad4859eb": "Assets/Models/main_sponza/textures/dirt_decal_01.png",
         "f5d347b7e777010f": "Assets/Models/main_sponza/textures/col_1stfloor_BaseColor.png",
         "f75e861b1b54c765": "Assets/Models/main_sponza/textures/brickwall_01_BaseColor.png",
-        "f9b80e27fcc5c271": "Assets/Models/pkg_a_curtains/./textures/metal_door_01_Normal.png",
-        "b68d49b62a81c957": "Assets/Models/pkg_e_knight_anim/Exports/Knight_Baked.obj"
+        "f9b80e27fcc5c271": "Assets/Models/pkg_a_curtains/./textures/metal_door_01_Normal.png"
     },
     "Cores": [],
     "Entities": [
@@ -161,20 +171,20 @@
             "Components": [
                 {
                     "Position": [
-                        6.352655410766602,
-                        1.498649001121521,
-                        -0.5995621681213379
+                        -13.502318382263184,
+                        1.0795719623565674,
+                        1.107799768447876
                     ],
                     "Rotation": [
-                        -0.0823262482881546,
-                        -0.7022978663444519,
-                        -0.08232623338699341,
-                        0.7022979855537415
+                        0.11470284312963486,
+                        -0.12251005321741104,
+                        -0.04462704807519913,
+                        0.9848060607910156
                     ],
                     "Scale": [
-                        0.9999998211860657,
-                        1.000000238418579,
-                        1.0
+                        0.9999992847442627,
+                        1.0000004768371582,
+                        0.9999998211860657
                     ],
                     "Type": "Transform"
                 },
@@ -193,6 +203,50 @@
                     "Projection": "Perspective",
                     "Type": "Camera",
                     "Zoom": 45.0
+                },
+                {
+                    "AOIntensity": 0.5920000076293945,
+                    "AORadius": 0.5,
+                    "AmbientOcclusion": true,
+                    "AutoExposure": true,
+                    "AutoExposureMaxEV": 8.0,
+                    "AutoExposureMinEV": -4.0,
+                    "AutoExposureSpeed": 2.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.05000000074505806,
+                    "BloomRadius": 1.0,
+                    "BloomThreshold": 1.0,
+                    "Contrast": 1.0,
+                    "ExposureCompensation": 0.0,
+                    "FXAA": false,
+                    "Fog": true,
+                    "FogAnisotropy": 0.6000000238418579,
+                    "FogColor": [
+                        0.550000011920929,
+                        0.6200000047683716,
+                        0.7200000286102295
+                    ],
+                    "FogDensity": 0.019999999552965164,
+                    "FogHeight": 0.0,
+                    "FogHeightFalloff": 0.15000000596046448,
+                    "FogMaxOpacity": 1.0,
+                    "FogStartDistance": 0.0,
+                    "FogSunIntensity": 1.0,
+                    "Gain": 1.0,
+                    "Gamma": 1.0,
+                    "Lift": 0.0,
+                    "Saturation": 1.0,
+                    "Temperature": 0.0,
+                    "TemporalAA": true,
+                    "TemporalSharpness": 0.0,
+                    "Tint": 0.0,
+                    "Tonemapper": "ACES",
+                    "Type": "PostProcess",
+                    "VignetteIntensity": 0.20000000298023224,
+                    "VignetteSmoothness": 0.6000000238418579,
+                    "VolumetricDistance": 60.0,
+                    "VolumetricFog": true,
+                    "VolumetricSteps": 24
                 }
             ],
             "DestroyOnLoad": true,
@@ -205,7 +259,7 @@
                     "Position": [
                         0.0,
                         0.0,
-                        0.0
+                        0.48792317509651184
                     ],
                     "Rotation": [
                         0.0,
@@ -244,6 +298,845 @@
             "DestroyOnLoad": true,
             "GUID": "33bc2413c820cc9f",
             "Name": "Knight"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_F.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_F.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "200e9f4ba0e90aec",
+            "Name": "Baked_knight_rig_usdPreviewSurface4SG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6930000185966492,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/cloth_diffuse_D.png",
+                                "RenderMode": "Opaque"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/cloth_normal_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6930000185966492,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/cloth_diffuse_D.png",
+                                "RenderMode": "Opaque"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/cloth_normal_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "725f9c3d177e7f59",
+            "Name": "Baked_knight_rig_knight_USD_PREVIEW_SURFACE__spheres_002_rnd_usdPreviewSurface6SG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_H.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_H.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "7a9c556ccd660282",
+            "Name": "Baked_knight_rig_usdPreviewSurface_ShoulderSG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/brushed_metal_rough_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "47cc447938b8a6ca",
+            "Name": "Baked_knight_rig_usdPreviewSurface5SG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/leather_diffuse_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/leather_diffuse_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "bc57b622abd8821c",
+            "Name": "Baked_knight_rig_usdPreviewSurface2SG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            0.6985684633255005,
+                            0.37800002098083496
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.25,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            0.6985684633255005,
+                            0.37800002098083496
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.25,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "c93c8e74436f34df",
+            "Name": "Baked_knight_rig_usdPreviewSurface1SG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.25,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_diffuse_A.png",
+                                "RenderMode": "Opaque"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_normal_A.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.25,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_diffuse_A.png",
+                                "RenderMode": "Opaque"
+                            },
+                            "Normal": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_normal_A.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "39eca85d41dc0557",
+            "Name": "Baked_knight_rig_usdPreviewSurface_ShieldSG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "ImportedMaterialDefaults": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/sword_diffuse_C.png",
+                                "RenderMode": "Opaque"
+                            },
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/sword_rough_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.6000000238418579,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/sword_diffuse_C.png",
+                                "RenderMode": "Opaque"
+                            },
+                            "Roughness": {
+                                "Path": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/sword_rough_D.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Model",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "e4f735fe42afe523",
+            "Name": "Baked_knight_rig_usdPreviewSurface8SG",
+            "Parent": "33bc2413c820cc9f"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "0bbcc4e8c7952885",
+            "Name": "__VertexAnimationClock",
+            "Parent": "33bc2413c820cc9f"
         },
         {
             "Components": [
@@ -11388,7 +12281,7 @@
                     "Position": [
                         14.160347938537598,
                         2.496399402618408,
-                        -1.8342666625976562
+                        -1.8342666625976563
                     ],
                     "Rotation": [
                         0.0,
@@ -14428,7 +15321,7 @@
                         0.0,
                         0.0,
                         0.537299633026123,
-                        0.8433914184570312
+                        0.8433914184570313
                     ],
                     "Scale": [
                         1.0,
@@ -14795,6 +15688,50 @@
             "DestroyOnLoad": true,
             "GUID": "6df99fe92571ef12",
             "Name": "lamps_1stfloor_00_Mesh_2",
+            "Parent": "2154b45eb0e1e4cd"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -3.814697265625e-06,
+                        -6.67572021484375e-06,
+                        0.1418013572692871
+                    ],
+                    "Rotation": [
+                        6.217248937900877e-15,
+                        -1.0658141036401503e-14,
+                        6.626431603856499e-29,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        0.9999995231628418
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 14.187999725341797,
+                    "LightType": "Point",
+                    "OuterConeAngle": 24.874000549316406,
+                    "Range": 46.64899826049805,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "5c1943e901b2cb48",
+            "Name": "Point Light",
             "Parent": "2154b45eb0e1e4cd"
         },
         {
@@ -17224,7 +18161,7 @@
                     "Position": [
                         -7.47273063659668,
                         -0.040563277900218964,
-                        -2.2742691040039062
+                        -2.2742691040039063
                     ],
                     "Rotation": [
                         0.0,
@@ -38907,7 +39844,7 @@
             "Components": [
                 {
                     "Position": [
-                        -9.841567993164062,
+                        -9.841567993164063,
                         1.3582316637039185,
                         -0.5741466879844666
                     ],
@@ -43690,7 +44627,7 @@
                 {
                     "Position": [
                         -8.190279960632324,
-                        -2.6772537231445312,
+                        -2.6772537231445313,
                         0.8054968118667603
                     ],
                     "Rotation": [
@@ -48924,7 +49861,7 @@
                 {
                     "Position": [
                         1.3189157247543335,
-                        -2.9656753540039062,
+                        -2.9656753540039063,
                         1.4769995212554932
                     ],
                     "Rotation": [
@@ -53209,7 +54146,7 @@
                 {
                     "Position": [
                         -5.8483757972717285,
-                        9.285232543945312,
+                        9.285232543945313,
                         -4.665034294128418
                     ],
                     "Rotation": [
@@ -53317,7 +54254,7 @@
                 {
                     "Position": [
                         -9.765947341918945,
-                        9.285232543945312,
+                        9.285232543945313,
                         -4.742170810699463
                     ],
                     "Rotation": [
@@ -53425,7 +54362,7 @@
                 {
                     "Position": [
                         2.1614978313446045,
-                        9.285232543945312,
+                        9.285232543945313,
                         -4.665034294128418
                     ],
                     "Rotation": [
@@ -53533,7 +54470,7 @@
                 {
                     "Position": [
                         10.07526683807373,
-                        9.285232543945312,
+                        9.285232543945313,
                         -4.725813865661621
                     ],
                     "Rotation": [
@@ -53641,7 +54578,7 @@
                 {
                     "Position": [
                         10.07526683807373,
-                        9.285232543945312,
+                        9.285232543945313,
                         4.727108478546143
                     ],
                     "Rotation": [
@@ -53749,7 +54686,7 @@
                 {
                     "Position": [
                         2.0937211513519287,
-                        9.285232543945312,
+                        9.285232543945313,
                         4.654066562652588
                     ],
                     "Rotation": [
@@ -53857,7 +54794,7 @@
                 {
                     "Position": [
                         -5.847650051116943,
-                        9.285232543945312,
+                        9.285232543945313,
                         4.663136959075928
                     ],
                     "Rotation": [
@@ -53965,7 +54902,7 @@
                 {
                     "Position": [
                         -9.751104354858398,
-                        9.285232543945312,
+                        9.285232543945313,
                         4.729568958282471
                     ],
                     "Rotation": [
@@ -65683,11 +66620,16 @@
                         1.0
                     ],
                     "Scale": [
-                        1.0,
-                        1.0,
-                        1.0
+                        0.009999999776482582,
+                        0.009999999776482582,
+                        0.009999999776482582
                     ],
                     "Type": "Transform"
+                },
+                {
+                    "BakedImportScale": 1.0,
+                    "ModelPath": "Assets/Models/pkg_d_10k_candles/NewSponza_4_Combined_FBX_YUp.fbx",
+                    "Type": "Model"
                 }
             ],
             "DestroyOnLoad": true,
@@ -65698,9 +66640,9 @@
             "Components": [
                 {
                     "Position": [
-                        -1.2898889780044556,
-                        0.0,
-                        0.0
+                        -13.568679809570313,
+                        0.0332333967089653,
+                        1.8365763425827026
                     ],
                     "Rotation": [
                         0.0,
