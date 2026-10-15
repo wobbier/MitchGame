@@ -1,0 +1,44 @@
+# Decal editor regression script (run with Decals.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/Decals.lvl --editor-exec Assets/Scenes/Showcase/DecalFlows.edscript
+wait 20
+mark-count
+
+# The scene's decals load with their fields
+assert-field Floor Arrow | Decal.Albedo | "Assets/Textures/Decals/Arrow.png"
+assert-field Puddle | Decal.Roughness | 0.05 ~ 0.001
+assert-field Puddle Arrow | Decal.SortOrder | 1
+assert-field Wall Glyph | Decal.EmissiveIntensity | 4.0 ~ 0.001
+
+# Add one to a new entity, edit it, and undo/redo the edits
+create Sticker
+add-component Decal
+assert-field Sticker | Decal.Size | [1,1,1]
+set Decal.Albedo "Assets/Textures/Decals/Scorch.png"
+set Decal.AngleFade 45
+set Decal.Size [3,2,0.5]
+assert-field Sticker | Decal.Size | [3,2,0.5]
+undo
+assert-field Sticker | Decal.Size | [1,1,1]
+assert-field Sticker | Decal.Albedo | "Assets/Textures/Decals/Scorch.png"
+redo
+assert-field Sticker | Decal.Size | [3,2,0.5]
+assert-field Sticker | Decal.AngleFade | 45 ~ 0.001
+remove-component Decal
+undo
+assert-field Sticker | Decal.AngleFade | 45 ~ 0.001
+undo
+undo
+undo
+undo
+undo
+assert-missing Sticker
+assert-count-delta 0
+
+# Selected decals draw their projection box (this one tilted 45 degrees into the corner); framing
+# uses the box, and the capture shows the gizmo and the icons
+select Corner Scorch
+action View.FrameSelected
+wait 10
+screenshot .tmp/DecalFlows.png
+wait 5
+quit
