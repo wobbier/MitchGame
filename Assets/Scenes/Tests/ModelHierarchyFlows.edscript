@@ -1,0 +1,51 @@
+# Compact model hierarchy regression.
+# Havana --scene Assets/Scenes/Tests/ModelHierarchyTest.lvl
+# --editor-exec Assets/Scenes/Tests/ModelHierarchyFlows.edscript
+wait 30
+select ModelFixture
+focus-window World View
+action View.Front
+action View.FrameSelected
+wait 5
+mark-count
+model-compact
+wait 5
+assert-count-delta -2
+assert-children ModelFixture | 0
+select-none
+pick 0.5 0.5
+wait 5
+assert-active ModelFixture
+select ModelFixture
+model-expose Body
+wait 3
+assert-count-delta -1
+assert-children ModelFixture | 1
+rename CameraMount
+set Transform.Position [0.0, 1.0, 0.0]
+wait 3
+save-as .tmp/ModelHierarchySave.lvl
+undo
+wait 3
+assert-field ModelFixture/CameraMount | Transform.Position | [0.0, 0.0, 0.0]
+undo
+undo
+wait 3
+assert-count-delta -2
+undo
+wait 10
+assert-count-delta 0
+redo
+wait 5
+assert-count-delta -2
+load .tmp/ModelHierarchySave.lvl
+wait 30
+assert-count-delta -1
+assert-exists ModelFixture/CameraMount
+assert-field ModelFixture/CameraMount | Transform.Position | [0.0, 1.0, 0.0]
+select ModelFixture
+model-expose Body
+wait 3
+assert-count-delta -1
+assert-active CameraMount
+screenshot .tmp/ModelHierarchy.png

@@ -1,0 +1,122 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        4.0,
+                        -14.0
+                    ],
+                    "Rotation": [
+                        0.13052619993686676,
+                        0.0,
+                        0.0,
+                        0.9914448857307434
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.07999999821186066,
+                        0.09000000357627869,
+                        0.11999999731779099
+                    ],
+                    "ClearType": "Skybox",
+                    "Far": 500.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "Projection": "Perspective",
+                    "Skybox": "Assets/Textures/Skybox/Skybox.jpg",
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "8b4b24c4c95871ff",
+            "Name": "Main Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.4082179069519043,
+                        -0.23456971347332,
+                        0.10938165336847305,
+                        0.8754260540008545
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 3.0,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Range": 10.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "a8189ef1623edd37",
+            "Name": "Directional Light"
+        },
+        {
+            "GUID": "bb316abf6de68a12",
+            "Name": "ModelFixture",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Tests/CompactModel.obj",
+                    "Compact": false
+                }
+            ]
+        }
+    ]
+}

@@ -65,7 +65,6 @@
         "893c3c15789f6f37": "Assets/Models/main_sponza/textures/col_1stfloor_Roughness.png",
         "8a3d34af14257624": "Assets/Models/main_sponza/textures/arch_stone_wall_01_Normal.png",
         "8b6717579b0acb84": "Assets/Models/main_sponza/textures/metal_door_01_Roughness.png",
-        "958b5f0ecec0f761": "Assets/Models/pkg_d_10k_candles/NewSponza_4_Combined_FBX_YUp.fbx",
         "973af86d1dc56cc4": "Assets/Models/main_sponza/textures/brickwall_02_BaseColor.png",
         "996b1ac523cd1273": "Assets/Models/pkg_e_knight_anim/Exports/../Textures/shield_final_diffuse_A.png",
         "996e44dedfb98efd": "Assets/Models/main_sponza/textures/ceiling_plaster_02_Roughness.png",
@@ -154,104 +153,27 @@
                     ],
                     "InnerConeAngle": 20.0,
                     "Intensity": 27.354999542236328,
+                    "Length": 1.2000000476837158,
                     "LightType": "Directional",
                     "OuterConeAngle": 30.0,
+                    "Radius": 0.02500000037252903,
                     "Range": 269.92498779296875,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
                     "ShadowBias": 0.5,
                     "ShadowDistance": 80.0,
                     "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
                     "Type": "Light"
                 }
             ],
             "DestroyOnLoad": true,
             "GUID": "03867b591d1a92be",
             "Name": "Sun"
-        },
-        {
-            "Components": [
-                {
-                    "Position": [
-                        -13.502318382263184,
-                        1.0795719623565674,
-                        1.107799768447876
-                    ],
-                    "Rotation": [
-                        0.11470284312963486,
-                        -0.12251005321741104,
-                        -0.04462704807519913,
-                        0.9848060607910156
-                    ],
-                    "Scale": [
-                        0.9999992847442627,
-                        1.0000004768371582,
-                        0.9999998211860657
-                    ],
-                    "Type": "Transform"
-                },
-                {
-                    "ClearColor": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "ClearType": "Procedural",
-                    "Far": 87.0,
-                    "FieldOfView": 60.0,
-                    "IsCurrent": true,
-                    "Near": 0.029999999329447746,
-                    "OrthographicSize": 5.0,
-                    "Projection": "Perspective",
-                    "Type": "Camera",
-                    "Zoom": 45.0
-                },
-                {
-                    "AOIntensity": 0.5920000076293945,
-                    "AORadius": 0.5,
-                    "AmbientOcclusion": true,
-                    "AutoExposure": true,
-                    "AutoExposureMaxEV": 8.0,
-                    "AutoExposureMinEV": -4.0,
-                    "AutoExposureSpeed": 2.0,
-                    "Bloom": true,
-                    "BloomIntensity": 0.05000000074505806,
-                    "BloomRadius": 1.0,
-                    "BloomThreshold": 1.0,
-                    "Contrast": 1.0,
-                    "ExposureCompensation": 0.0,
-                    "FXAA": false,
-                    "Fog": true,
-                    "FogAnisotropy": 0.6000000238418579,
-                    "FogColor": [
-                        0.550000011920929,
-                        0.6200000047683716,
-                        0.7200000286102295
-                    ],
-                    "FogDensity": 0.019999999552965164,
-                    "FogHeight": 0.0,
-                    "FogHeightFalloff": 0.15000000596046448,
-                    "FogMaxOpacity": 1.0,
-                    "FogStartDistance": 0.0,
-                    "FogSunIntensity": 1.0,
-                    "Gain": 1.0,
-                    "Gamma": 1.0,
-                    "Lift": 0.0,
-                    "Saturation": 1.0,
-                    "Temperature": 0.0,
-                    "TemporalAA": true,
-                    "TemporalSharpness": 0.0,
-                    "Tint": 0.0,
-                    "Tonemapper": "ACES",
-                    "Type": "PostProcess",
-                    "VignetteIntensity": 0.20000000298023224,
-                    "VignetteSmoothness": 0.6000000238418579,
-                    "VolumetricDistance": 60.0,
-                    "VolumetricFog": true,
-                    "VolumetricSteps": 24
-                }
-            ],
-            "DestroyOnLoad": true,
-            "GUID": "77c4431ce9f585ce",
-            "Name": "Camera"
         },
         {
             "Components": [
@@ -275,6 +197,12 @@
                     "Type": "Transform"
                 },
                 {
+                    "BakedImportScale": 1.0,
+                    "Compact": false,
+                    "ModelPath": "Assets/Models/pkg_e_knight_anim/Exports/Knight_Baked.obj",
+                    "Type": "Model"
+                },
+                {
                     "ApplyRootMotion": false,
                     "ClipSource": "",
                     "DefaultState": "",
@@ -288,11 +216,6 @@
                     "States": [],
                     "Transitions": [],
                     "Type": "Animator"
-                },
-                {
-                    "BakedImportScale": 1.0,
-                    "ModelPath": "Assets/Models/pkg_e_knight_anim/Exports/Knight_Baked.obj",
-                    "Type": "Model"
                 }
             ],
             "DestroyOnLoad": true,
@@ -1161,6 +1084,7 @@
                 },
                 {
                     "BakedImportScale": 0.009999999776482582,
+                    "Compact": false,
                     "ModelPath": "Assets/Models/main_sponza/NewSponza_Main_Yup_003.fbx",
                     "Type": "Model"
                 }
@@ -15720,12 +15644,21 @@
                     ],
                     "InnerConeAngle": 20.0,
                     "Intensity": 14.187999725341797,
+                    "Length": 1.2000000476837158,
                     "LightType": "Point",
                     "OuterConeAngle": 24.874000549316406,
+                    "Radius": 0.02500000037252903,
                     "Range": 46.64899826049805,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
                     "ShadowBias": 0.5,
                     "ShadowDistance": 80.0,
                     "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
                     "Type": "Light"
                 }
             ],
@@ -59537,6 +59470,7 @@
                 },
                 {
                     "BakedImportScale": 0.009999999776482582,
+                    "Compact": false,
                     "ModelPath": "Assets/Models/pkg_a_curtains/NewSponza_Curtains_FBX_YUp.fbx",
                     "Type": "Model"
                 }
@@ -66609,37 +66543,6 @@
             "Components": [
                 {
                     "Position": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "Rotation": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Scale": [
-                        0.009999999776482582,
-                        0.009999999776482582,
-                        0.009999999776482582
-                    ],
-                    "Type": "Transform"
-                },
-                {
-                    "BakedImportScale": 1.0,
-                    "ModelPath": "Assets/Models/pkg_d_10k_candles/NewSponza_4_Combined_FBX_YUp.fbx",
-                    "Type": "Model"
-                }
-            ],
-            "DestroyOnLoad": true,
-            "GUID": "b0368b7a39d9f963",
-            "Name": "Candles"
-        },
-        {
-            "Components": [
-                {
-                    "Position": [
                         -13.568679809570313,
                         0.0332333967089653,
                         1.8365763425827026
@@ -66658,6 +66561,12 @@
                     "Type": "Transform"
                 },
                 {
+                    "BakedImportScale": 0.009999999776482582,
+                    "Compact": false,
+                    "ModelPath": "Assets/Models/Spartain/spartan-armour-mkv-halo-reach/source/Spartan_Sketchfab.fbx",
+                    "Type": "Model"
+                },
+                {
                     "ApplyRootMotion": false,
                     "ClipSource": "",
                     "DefaultState": "",
@@ -66671,11 +66580,6 @@
                     "States": [],
                     "Transitions": [],
                     "Type": "Animator"
-                },
-                {
-                    "BakedImportScale": 0.009999999776482582,
-                    "ModelPath": "Assets/Models/Spartain/spartan-armour-mkv-halo-reach/source/Spartan_Sketchfab.fbx",
-                    "Type": "Model"
                 }
             ],
             "DestroyOnLoad": true,
@@ -67215,6 +67119,111 @@
             "GUID": "911c6ae000cd7b8d",
             "Name": "Helmet_Mesh_0",
             "Parent": "c36d59d499d2c3f6"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0663614273071289,
+                        1.0463385581970215,
+                        -0.7287765741348267
+                    ],
+                    "Rotation": [
+                        0.11470284312963486,
+                        -0.12251005321741104,
+                        -0.04462704062461853,
+                        0.9848060607910156
+                    ],
+                    "Scale": [
+                        0.9999992847442627,
+                        1.0000004768371582,
+                        0.9999997615814209
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "ClearType": "Procedural",
+                    "Far": 87.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.029999999329447746,
+                    "OrthographicSize": 5.0,
+                    "ProceduralSky": {
+                        "CloudAltitude": 1500.0,
+                        "CloudCoverage": 0.4000000059604645,
+                        "CloudDensity": 1.0,
+                        "CloudThickness": 2500.0,
+                        "Latitude": -6.0,
+                        "Month": 5,
+                        "MoonBrightness": 1.0,
+                        "MoonPhase": 0.4000000059604645,
+                        "MoonSize": 3.0,
+                        "StarBrightness": 1.0,
+                        "SunSize": 1.5,
+                        "Time": 15.0,
+                        "TimeScale": 0.0,
+                        "Turbidity": 1.899999976158142,
+                        "WindDirection": 60.0,
+                        "WindSpeed": 8.0
+                    },
+                    "Projection": "Perspective",
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                },
+                {
+                    "AOIntensity": 0.5920000076293945,
+                    "AORadius": 0.5,
+                    "AmbientOcclusion": true,
+                    "AutoExposure": true,
+                    "AutoExposureMaxEV": 8.0,
+                    "AutoExposureMinEV": -4.0,
+                    "AutoExposureSpeed": 2.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.05000000074505806,
+                    "BloomRadius": 1.0,
+                    "BloomThreshold": 1.0,
+                    "Contrast": 1.0,
+                    "ExposureCompensation": 0.0,
+                    "FXAA": false,
+                    "Fog": true,
+                    "FogAnisotropy": 0.6000000238418579,
+                    "FogColor": [
+                        0.550000011920929,
+                        0.6200000047683716,
+                        0.7200000286102295
+                    ],
+                    "FogDensity": 0.019999999552965164,
+                    "FogHeight": 0.0,
+                    "FogHeightFalloff": 0.15000000596046448,
+                    "FogMaxOpacity": 1.0,
+                    "FogStartDistance": 0.0,
+                    "FogSunIntensity": 1.0,
+                    "Gain": 1.0,
+                    "Gamma": 1.0,
+                    "Lift": 0.0,
+                    "Saturation": 1.0,
+                    "Temperature": 0.0,
+                    "TemporalAA": true,
+                    "TemporalSharpness": 0.0,
+                    "Tint": 0.0,
+                    "Tonemapper": "ACES",
+                    "Type": "PostProcess",
+                    "VignetteIntensity": 0.20000000298023224,
+                    "VignetteSmoothness": 0.6000000238418579,
+                    "VolumetricDistance": 60.0,
+                    "VolumetricFog": true,
+                    "VolumetricSteps": 24
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "77c4431ce9f585ce",
+            "Name": "Camera",
+            "Parent": "911c6ae000cd7b8d"
         },
         {
             "Components": [
