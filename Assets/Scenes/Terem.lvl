@@ -1,14 +1,19 @@
 {
     "AssetReferences": {
-        "0103321cf86ecd01": "/tmp/blender_2DNln5/usd_textures_tmp/kust_diffuse_scale0.png",
+        "00269e2e3f8cf612": "/tmp/blender_2DNln5/usd_textures_tmp/pnl_on_emissive.jpg",
         "02fbed10376b8ab3": "Assets/Models/Terem/textures/pnl_light_off_2.png",
+        "0745c1bb1b97f673": "Assets/Models/Synty/Xmas/Textures/Polygon_Xmas_Texture_01_Emmision.png",
+        "07e041ab4526c844": "Assets/Models/Synty/Xmas/FBX_Export/SM_Xmas_Tree_01.fbx",
         "08a3bccdafef8dee": "Assets/Models/Terem/Terem_Fixed.fbx",
-        "0ca0a0d408c362c0": "/tmp/blender_2DNln5/usd_textures_tmp/flat_diffuse.png",
-        "609bb51823f7ed72": "/tmp/blender_2DNln5/usd_textures_tmp/pnl_on_emissive.jpg",
+        "14edfca46e1bccb6": "/tmp/blender_2DNln5/usd_textures_tmp/flat_diffuse.png",
+        "495faa3c62204f8a": "/tmp/blender_2DNln5/usd_textures_tmp/kust_diffuse_scale0.png",
+        "5d5382f2bc89020c": "Assets/Models/Synty/SnowKit/Characters/SK_Character_Snow_Male_01.fbx",
+        "7866560ec08f0d75": "Assets/Models/Synty/Xmas/Textures/Polygon_Xmas_Texture_01.png",
+        "81a7289934e3b1b5": "/tmp/blender_2DNln5/usd_textures_tmp/pnl_off_diffuse.jpg",
         "91c6b6c3cf9103e7": "Assets/Models/Terem/textures/alp.jpg",
+        "9202928e810759e3": "/tmp/blender_2DNln5/usd_textures_tmp/transformat_diffuse.jpg",
         "9f8adb19a3d4082e": "Assets/Models/Terem/Terem.fbx",
-        "b45a7f19b5bf2a47": "/tmp/blender_2DNln5/usd_textures_tmp/transformat_diffuse.jpg",
-        "c31d4254ce6884cb": "/tmp/blender_2DNln5/usd_textures_tmp/pnl_off_diffuse.jpg",
+        "bb15c7dc9793c25d": "Assets/Models/Synty/SnowKit/Textures/PolygonSnow_Texture_01_A.png",
         "c5eacd6d88e68471": "Assets/Models/Terem/textures/pnl_light_on.png"
     },
     "Cores": [],
@@ -19860,6 +19865,220 @@
             "DestroyOnLoad": true,
             "GUID": "290a538fc1e538a2",
             "Name": "Window Light Bay"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -2.983668327331543,
+                        -0.40124502778053284,
+                        -4.087350368499756
+                    ],
+                    "Rotation": [
+                        0.011704809963703156,
+                        -0.00021673105948138982,
+                        -0.018511967733502388,
+                        0.9997601509094238
+                    ],
+                    "Scale": [
+                        0.9999998807907104,
+                        0.9999998807907104,
+                        0.9999999403953552
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "BakedImportScale": 0.009999999776482582,
+                    "Compact": true,
+                    "ModelPath": "Assets/Models/Synty/Xmas/FBX_Export/SM_Xmas_Tree_01.fbx",
+                    "Nodes": {},
+                    "Parts": {
+                        "RootNode#0/SM_Xmas_Tree_01#0/@#0": {
+                            "CastShadows": true,
+                            "ImportedMaterialDefaults": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.800000011920929,
+                                    0.800000011920929,
+                                    0.800000011920929
+                                ],
+                                "EmissiveColor": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "EmissiveIntensity": 1.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "Material": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.800000011920929,
+                                    0.800000011920929,
+                                    0.800000011920929
+                                ],
+                                "EmissiveColor": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "EmissiveIntensity": 5.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/Xmas/Textures/Polygon_Xmas_Texture_01.png",
+                                        "RenderMode": "Opaque"
+                                    },
+                                    "Emissive": {
+                                        "Path": "Assets/Models/Synty/Xmas/Textures/Polygon_Xmas_Texture_01_Emmision.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                },
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "MeshType": "Model",
+                            "Type": "Mesh"
+                        }
+                    },
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "3b6afa71716b6e56",
+            "Name": "Tree"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -6.218801498413086,
+                        0.0,
+                        -1.084180474281311
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "BakedImportScale": 0.009999999776482582,
+                    "Compact": true,
+                    "ModelPath": "Assets/Models/Synty/SnowKit/Characters/SK_Character_Snow_Male_01.fbx",
+                    "Nodes": {},
+                    "Parts": {
+                        "RootNode#0/SK_Character_Snow_Male_01#0/@#0": {
+                            "CastShadows": true,
+                            "ImportedMaterialDefaults": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.800000011920929,
+                                    0.800000011920929,
+                                    0.800000011920929
+                                ],
+                                "EmissiveColor": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "EmissiveIntensity": 1.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/SnowKit/Textures/PolygonSnow_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                },
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "Material": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.800000011920929,
+                                    0.800000011920929,
+                                    0.800000011920929
+                                ],
+                                "EmissiveColor": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "EmissiveIntensity": 1.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/SnowKit/Textures/PolygonSnow_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                },
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "MeshType": "Model",
+                            "Type": "Mesh"
+                        }
+                    },
+                    "Type": "Model"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "e054e09bd27c03e0",
+            "Name": "New Entity"
         }
     ],
     "Version": 2
