@@ -46,6 +46,21 @@ sg-link blend:Out | out:Emission
 sg-assert-code Forward.frag | sgBlendScreen(
 
 # Saving writes the graph and its shaders
+# Live previews: one program for every node; constants are uniforms (no recompile)
+sg-wait-preview
+sg-assert-preview
+sg-mark-previews
+sg-default noise | Scale | 12
+sg-compile
+wait 10
+sg-assert-preview-programs 0
+sg-add sat | Saturate
+sg-link noise:Out | sat:In
+sg-compile
+sg-wait-preview
+sg-assert-preview
+sg-assert-preview-programs 1
+
 sg-frame
 wait 3
 sg-save
