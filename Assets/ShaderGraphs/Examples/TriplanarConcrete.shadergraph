@@ -1,0 +1,161 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "Lit"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Albedo",
+			"Type": "Texture2D",
+			"Exposed": true,
+			"Texture": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+			"DefaultTexture": "white"
+		},
+		{
+			"Id": "p2",
+			"Name": "Tint",
+			"Type": "Vec3",
+			"Exposed": true,
+			"Default": [
+				1.0,
+				0.95,
+				0.9,
+				1.0
+			],
+			"IsColor": true
+		},
+		{
+			"Id": "p3",
+			"Name": "Tiling",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				0.5,
+				0,
+				0,
+				0
+			],
+			"Range": [
+				0.05,
+				4.0
+			]
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				1200,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Property",
+			"Position": [
+				-1100,
+				0
+			],
+			"Settings": {
+				"Property": "p1"
+			}
+		},
+		{
+			"Id": 3,
+			"Type": "Property",
+			"Position": [
+				-880,
+				0
+			],
+			"Settings": {
+				"Property": "p2"
+			}
+		},
+		{
+			"Id": 4,
+			"Type": "Property",
+			"Position": [
+				-660,
+				0
+			],
+			"Settings": {
+				"Property": "p3"
+			}
+		},
+		{
+			"Id": 5,
+			"Type": "Triplanar",
+			"Position": [
+				-440,
+				0
+			],
+			"Defaults": {
+				"Blend": [
+					6,
+					6,
+					6,
+					6
+				]
+			}
+		},
+		{
+			"Id": 6,
+			"Type": "Multiply",
+			"Position": [
+				-220,
+				0
+			]
+		},
+		{
+			"Id": 7,
+			"Type": "Float",
+			"Position": [
+				0,
+				0
+			],
+			"Settings": {
+				"Value": 0.85
+			}
+		}
+	],
+	"Links": [
+		[
+			2,
+			"Out",
+			5,
+			"Texture"
+		],
+		[
+			4,
+			"Out",
+			5,
+			"Tile"
+		],
+		[
+			5,
+			"Out",
+			6,
+			"A"
+		],
+		[
+			3,
+			"Out",
+			6,
+			"B"
+		],
+		[
+			6,
+			"Out",
+			1,
+			"Base Color"
+		],
+		[
+			7,
+			"Out",
+			1,
+			"Roughness"
+		]
+	]
+}

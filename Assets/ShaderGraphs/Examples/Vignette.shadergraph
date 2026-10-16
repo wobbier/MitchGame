@@ -1,0 +1,188 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "PostProcess",
+		"Injection": "AfterTonemap"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Intensity",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				0.55,
+				0,
+				0,
+				0
+			],
+			"Range": [
+				0.0,
+				1.0
+			]
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				1200,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Property",
+			"Position": [
+				-1100,
+				0
+			],
+			"Settings": {
+				"Property": "p1"
+			}
+		},
+		{
+			"Id": 3,
+			"Type": "UV",
+			"Position": [
+				-880,
+				0
+			]
+		},
+		{
+			"Id": 4,
+			"Type": "Subtract",
+			"Position": [
+				-660,
+				0
+			],
+			"Defaults": {
+				"B": [
+					0.5,
+					0.5,
+					0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 5,
+			"Type": "Length",
+			"Position": [
+				-440,
+				0
+			]
+		},
+		{
+			"Id": 6,
+			"Type": "Smoothstep",
+			"Position": [
+				-220,
+				0
+			],
+			"Defaults": {
+				"Edge1": [
+					0.35,
+					0.35,
+					0.35,
+					0.35
+				],
+				"Edge2": [
+					0.85,
+					0.85,
+					0.85,
+					0.85
+				]
+			}
+		},
+		{
+			"Id": 7,
+			"Type": "Multiply",
+			"Position": [
+				0,
+				0
+			]
+		},
+		{
+			"Id": 8,
+			"Type": "OneMinus",
+			"Position": [
+				-1100,
+				200
+			]
+		},
+		{
+			"Id": 9,
+			"Type": "SceneColor",
+			"Position": [
+				-880,
+				200
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "Multiply",
+			"Position": [
+				-660,
+				200
+			]
+		}
+	],
+	"Links": [
+		[
+			3,
+			"Out",
+			4,
+			"A"
+		],
+		[
+			4,
+			"Out",
+			5,
+			"In"
+		],
+		[
+			5,
+			"Out",
+			6,
+			"In"
+		],
+		[
+			6,
+			"Out",
+			7,
+			"A"
+		],
+		[
+			2,
+			"Out",
+			7,
+			"B"
+		],
+		[
+			7,
+			"Out",
+			8,
+			"In"
+		],
+		[
+			9,
+			"Out",
+			10,
+			"A"
+		],
+		[
+			8,
+			"Out",
+			10,
+			"B"
+		],
+		[
+			10,
+			"Out",
+			1,
+			"Color"
+		]
+	]
+}

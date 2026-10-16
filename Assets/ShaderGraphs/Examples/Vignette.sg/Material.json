@@ -1,0 +1,37 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/Vignette.shadergraph",
+	"Injection": "AfterTonemap",
+	"Parameters": [
+		{
+			"Default": [
+				0.550000011920929,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Post/Fullscreen",
+			"Post"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "PostProcess",
+	"Textures": [],
+	"Version": 1
+}

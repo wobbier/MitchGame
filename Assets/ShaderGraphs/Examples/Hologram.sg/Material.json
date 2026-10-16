@@ -1,0 +1,38 @@
+{
+	"AlphaClip": false,
+	"Blend": "Additive",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/Hologram.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.20000000298023224,
+				0.75,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Tint",
+			"Slot": 0,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Transparent",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

@@ -79,6 +79,7 @@ The game-specific code lives in `Game/Source/` and the executable entry point in
 | Audio | `Engine/Source/Cores/AudioCore.cpp` + `AudioSource` / `AudioListener` (see `Engine/Docs/Audio.md`) | FMOD (optional); automated runs are silent |
 | UI | `Engine/Source/Cores/UI/` | Ultralight (HTML/CSS) |
 | Scripting | `Engine/Source/Scripting/` + `Engine/Modules/ScriptCore/` (see `Engine/Docs/Scripting-DotNet.md`); game scripts are any `.cs` under `Assets/`, built by `Project/Game.Script.csproj` | .NET 8 / C#, hot reload in the editor |
+| Shader graphs | `Engine/Source/ShaderGraph/` (compiler, nodes, targets) + `Engine/Modules/Havana/Source/Widgets/ShaderGraph/` (editor, previews) + `ShaderGraphMaterial` (see `Engine/Docs/ShaderGraph.md`); graphs are `.shadergraph` files with generated sources committed in `<Name>.sg/` (regenerate with `ME_SHADERGRAPH_UPDATE=1 MitchEngine_Tests -tc="*project graphs*"`) | bgfx shaderc (Lit, Unlit, Particle, Decal, Post Process targets) |
 | Editor | `Engine/Modules/Havana/` | Ultralight + ImGui |
 | Input | `Engine/Source/Engine/Input.h` + `Engine/Source/Input/` (actions, gamepads; see `Engine/Docs/Input.md`); the project map is `Assets/Config/Input.inputactions` | SDL2 |
 
@@ -103,7 +104,7 @@ Details:
 - Shader binaries load next to their resolved source.
 - `Engine/Tools/BuildShaders.sh` rebuilds everything, and the editor hot-reloads edited shaders and `.sh` includes.
 - Test scenes for verification live in `Assets/Scenes/Tests/` (HierarchyTest, LightingTest, ShadowTest, ParticleTest, LodTest). Models get simplified LODs from their import settings (`GenerateLODs`); `--lod-bias 0` forces the coarsest level in captures.
-- Showcase scenes (`Assets/Scenes/Showcase/`: Lighting, Playground, Physics2D, Fog) double as screenshot-regression references: `Engine/Tools/ScreenshotRegression.py --game .build/Game_linux_Debug/Game_EntryPoint_x64 --reference Assets/Scenes/Showcase/Reference Assets/Scenes/Showcase/*.lvl` (captures are deterministic via `--frame-time`; `--update` accepts new looks). See `Assets/Scenes/Showcase/README.md`.
+- Showcase scenes (`Assets/Scenes/Showcase/`: Lighting, Playground, Physics2D, Fog, Decals, ShaderGraph) double as screenshot-regression references: `Engine/Tools/ScreenshotRegression.py --game .build/Game_linux_Debug/Game_EntryPoint_x64 --reference Assets/Scenes/Showcase/Reference Assets/Scenes/Showcase/*.lvl` (captures are deterministic via `--frame-time`; `--update` accepts new looks). See `Assets/Scenes/Showcase/README.md`.
 - Full write-up: `Engine/Docs/Rendering-Pipeline.md` and `Engine/Docs/Materials-and-Shaders.md`.
 
 **Transform dirty flags:** `Transform` (`Engine/Source/Components/Transform.cpp`) tracks `IsLocalToWorldDirty` / `IsWorldToLocalDirty` separately. `SetDirty` propagates downward to children eagerly but early-outs when already dirty; matrix recompute is lazy and cached. A static (unmutated) scene therefore costs near-nothing per frame.

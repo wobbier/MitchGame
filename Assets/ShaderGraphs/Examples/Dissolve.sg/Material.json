@@ -1,0 +1,77 @@
+{
+	"AlphaClip": true,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/Dissolve.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.05999999865889549,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Edge Width",
+			"Range": [
+				0.0,
+				0.30000001192092896
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				1.0,
+				0.44999998807907104,
+				0.10000000149011612,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p3",
+			"Name": "Edge Color",
+			"Slot": 1,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.550000011920929,
+				0.5699999928474426,
+				0.6000000238418579,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Base Color",
+			"Slot": 2,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

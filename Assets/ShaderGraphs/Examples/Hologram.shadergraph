@@ -1,0 +1,451 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "Unlit",
+		"Surface": "Transparent",
+		"Blend": "Additive",
+		"RenderFace": "Both"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Tint",
+			"Type": "Vec3",
+			"Exposed": true,
+			"Default": [
+				0.2,
+				0.75,
+				1.0,
+				1.0
+			],
+			"IsColor": true,
+			"HDR": true
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				1200,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Property",
+			"Position": [
+				-1100,
+				0
+			],
+			"Settings": {
+				"Property": "p1"
+			}
+		},
+		{
+			"Id": 3,
+			"Type": "FresnelEffect",
+			"Position": [
+				-880,
+				0
+			],
+			"Defaults": {
+				"Power": [
+					2.5,
+					2.5,
+					2.5,
+					2.5
+				]
+			}
+		},
+		{
+			"Id": 4,
+			"Type": "Position",
+			"Position": [
+				-660,
+				0
+			],
+			"Settings": {
+				"Space": "World"
+			}
+		},
+		{
+			"Id": 5,
+			"Type": "Split",
+			"Position": [
+				-440,
+				0
+			]
+		},
+		{
+			"Id": 6,
+			"Type": "Time",
+			"Position": [
+				-220,
+				0
+			]
+		},
+		{
+			"Id": 7,
+			"Type": "Multiply",
+			"Position": [
+				0,
+				0
+			],
+			"Defaults": {
+				"B": [
+					0.6,
+					0.6,
+					0.6,
+					0.6
+				]
+			}
+		},
+		{
+			"Id": 8,
+			"Type": "Multiply",
+			"Position": [
+				-1100,
+				200
+			],
+			"Defaults": {
+				"B": [
+					24,
+					24,
+					24,
+					24
+				]
+			}
+		},
+		{
+			"Id": 9,
+			"Type": "Add",
+			"Position": [
+				-880,
+				200
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "Fraction",
+			"Position": [
+				-660,
+				200
+			]
+		},
+		{
+			"Id": 11,
+			"Type": "Step",
+			"Position": [
+				-440,
+				200
+			],
+			"Defaults": {
+				"A": [
+					0.5,
+					0.5,
+					0.5,
+					0.5
+				]
+			}
+		},
+		{
+			"Id": 12,
+			"Type": "Remap",
+			"Position": [
+				-220,
+				200
+			],
+			"Defaults": {
+				"In Min": [
+					0,
+					0,
+					0,
+					0
+				],
+				"In Max": [
+					1,
+					1,
+					1,
+					1
+				],
+				"Out Min": [
+					0.35,
+					0.35,
+					0.35,
+					0.35
+				],
+				"Out Max": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				]
+			}
+		},
+		{
+			"Id": 13,
+			"Type": "SimplexNoise",
+			"Position": [
+				0,
+				200
+			],
+			"Defaults": {
+				"Scale": [
+					1,
+					1,
+					1,
+					1
+				]
+			}
+		},
+		{
+			"Id": 14,
+			"Type": "Combine",
+			"Position": [
+				-1100,
+				400
+			]
+		},
+		{
+			"Id": 15,
+			"Type": "Multiply",
+			"Position": [
+				-880,
+				400
+			],
+			"Defaults": {
+				"B": [
+					8,
+					8,
+					0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 16,
+			"Type": "Remap",
+			"Position": [
+				-660,
+				400
+			],
+			"Defaults": {
+				"In Min": [
+					0,
+					0,
+					0,
+					0
+				],
+				"In Max": [
+					1,
+					1,
+					1,
+					1
+				],
+				"Out Min": [
+					0.7,
+					0.7,
+					0.7,
+					0.7
+				],
+				"Out Max": [
+					1.2,
+					1.2,
+					1.2,
+					1.2
+				]
+			}
+		},
+		{
+			"Id": 17,
+			"Type": "Add",
+			"Position": [
+				-440,
+				400
+			],
+			"Defaults": {
+				"B": [
+					0.15,
+					0.15,
+					0.15,
+					0.15
+				]
+			}
+		},
+		{
+			"Id": 18,
+			"Type": "Multiply",
+			"Position": [
+				-220,
+				400
+			]
+		},
+		{
+			"Id": 19,
+			"Type": "Multiply",
+			"Position": [
+				0,
+				400
+			]
+		},
+		{
+			"Id": 20,
+			"Type": "Multiply",
+			"Position": [
+				-1100,
+				600
+			]
+		},
+		{
+			"Id": 21,
+			"Type": "Multiply",
+			"Position": [
+				-880,
+				600
+			],
+			"Defaults": {
+				"B": [
+					2.5,
+					2.5,
+					2.5,
+					2.5
+				]
+			}
+		}
+	],
+	"Links": [
+		[
+			4,
+			"Out",
+			5,
+			"In"
+		],
+		[
+			6,
+			"Time",
+			7,
+			"A"
+		],
+		[
+			5,
+			"G",
+			8,
+			"A"
+		],
+		[
+			8,
+			"Out",
+			9,
+			"A"
+		],
+		[
+			7,
+			"Out",
+			9,
+			"B"
+		],
+		[
+			9,
+			"Out",
+			10,
+			"In"
+		],
+		[
+			10,
+			"Out",
+			11,
+			"B"
+		],
+		[
+			11,
+			"Out",
+			12,
+			"In"
+		],
+		[
+			6,
+			"Time",
+			14,
+			"R"
+		],
+		[
+			14,
+			"RG",
+			15,
+			"A"
+		],
+		[
+			15,
+			"Out",
+			13,
+			"UV"
+		],
+		[
+			13,
+			"Out",
+			16,
+			"In"
+		],
+		[
+			3,
+			"Out",
+			17,
+			"A"
+		],
+		[
+			17,
+			"Out",
+			18,
+			"A"
+		],
+		[
+			12,
+			"Out",
+			18,
+			"B"
+		],
+		[
+			18,
+			"Out",
+			19,
+			"A"
+		],
+		[
+			16,
+			"Out",
+			19,
+			"B"
+		],
+		[
+			2,
+			"Out",
+			20,
+			"A"
+		],
+		[
+			19,
+			"Out",
+			20,
+			"B"
+		],
+		[
+			20,
+			"Out",
+			21,
+			"A"
+		],
+		[
+			21,
+			"Out",
+			1,
+			"Color"
+		],
+		[
+			19,
+			"Out",
+			1,
+			"Alpha"
+		]
+	]
+}

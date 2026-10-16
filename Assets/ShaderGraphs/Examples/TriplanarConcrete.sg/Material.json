@@ -1,0 +1,64 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/TriplanarConcrete.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				1.0,
+				0.949999988079071,
+				0.8999999761581421,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Tint",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.5,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Tiling",
+			"Range": [
+				0.05000000074505806,
+				4.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [
+		{
+			"Asset": "Assets/Textures/Concrete/ConcreteDiffuse.png",
+			"Default": "white",
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Albedo",
+			"Slot": 0,
+			"Type": "Texture2D"
+		}
+	],
+	"Version": 1
+}

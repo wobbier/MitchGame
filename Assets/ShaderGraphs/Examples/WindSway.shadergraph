@@ -1,0 +1,356 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "Lit",
+		"RenderFace": "Both"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Strength",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				0.15,
+				0,
+				0,
+				0
+			],
+			"Range": [
+				0.0,
+				1.0
+			]
+		},
+		{
+			"Id": "p2",
+			"Name": "Speed",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				1.6,
+				0,
+				0,
+				0
+			],
+			"Range": [
+				0.0,
+				5.0
+			]
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				1200,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Property",
+			"Position": [
+				-1100,
+				0
+			],
+			"Settings": {
+				"Property": "p1"
+			}
+		},
+		{
+			"Id": 3,
+			"Type": "Property",
+			"Position": [
+				-880,
+				0
+			],
+			"Settings": {
+				"Property": "p2"
+			}
+		},
+		{
+			"Id": 4,
+			"Type": "Position",
+			"Position": [
+				-660,
+				0
+			],
+			"Settings": {
+				"Space": "Object"
+			}
+		},
+		{
+			"Id": 5,
+			"Type": "Split",
+			"Position": [
+				-440,
+				0
+			]
+		},
+		{
+			"Id": 6,
+			"Type": "Position",
+			"Position": [
+				-220,
+				0
+			],
+			"Settings": {
+				"Space": "World"
+			}
+		},
+		{
+			"Id": 7,
+			"Type": "Split",
+			"Position": [
+				0,
+				0
+			]
+		},
+		{
+			"Id": 8,
+			"Type": "Time",
+			"Position": [
+				-1100,
+				200
+			]
+		},
+		{
+			"Id": 9,
+			"Type": "Multiply",
+			"Position": [
+				-880,
+				200
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "Add",
+			"Position": [
+				-660,
+				200
+			]
+		},
+		{
+			"Id": 11,
+			"Type": "Sine",
+			"Position": [
+				-440,
+				200
+			]
+		},
+		{
+			"Id": 12,
+			"Type": "Saturate",
+			"Position": [
+				-220,
+				200
+			]
+		},
+		{
+			"Id": 13,
+			"Type": "Square",
+			"Position": [
+				0,
+				200
+			]
+		},
+		{
+			"Id": 14,
+			"Type": "Multiply",
+			"Position": [
+				-1100,
+				400
+			]
+		},
+		{
+			"Id": 15,
+			"Type": "Multiply",
+			"Position": [
+				-880,
+				400
+			]
+		},
+		{
+			"Id": 16,
+			"Type": "Combine",
+			"Position": [
+				-660,
+				400
+			]
+		},
+		{
+			"Id": 17,
+			"Type": "Vector3",
+			"Position": [
+				-440,
+				400
+			],
+			"Settings": {
+				"Value": [
+					0.08,
+					0.18,
+					0.04,
+					0
+				]
+			}
+		},
+		{
+			"Id": 18,
+			"Type": "Vector3",
+			"Position": [
+				-220,
+				400
+			],
+			"Settings": {
+				"Value": [
+					0.35,
+					0.55,
+					0.12,
+					0
+				]
+			}
+		},
+		{
+			"Id": 19,
+			"Type": "Lerp",
+			"Position": [
+				0,
+				400
+			]
+		},
+		{
+			"Id": 20,
+			"Type": "Float",
+			"Position": [
+				-1100,
+				600
+			],
+			"Settings": {
+				"Value": 0.7
+			}
+		}
+	],
+	"Links": [
+		[
+			4,
+			"Out",
+			5,
+			"In"
+		],
+		[
+			6,
+			"Out",
+			7,
+			"In"
+		],
+		[
+			8,
+			"Time",
+			9,
+			"A"
+		],
+		[
+			3,
+			"Out",
+			9,
+			"B"
+		],
+		[
+			9,
+			"Out",
+			10,
+			"A"
+		],
+		[
+			7,
+			"R",
+			10,
+			"B"
+		],
+		[
+			10,
+			"Out",
+			11,
+			"In"
+		],
+		[
+			5,
+			"G",
+			12,
+			"In"
+		],
+		[
+			12,
+			"Out",
+			13,
+			"In"
+		],
+		[
+			11,
+			"Out",
+			14,
+			"A"
+		],
+		[
+			2,
+			"Out",
+			14,
+			"B"
+		],
+		[
+			14,
+			"Out",
+			15,
+			"A"
+		],
+		[
+			13,
+			"Out",
+			15,
+			"B"
+		],
+		[
+			15,
+			"Out",
+			16,
+			"R"
+		],
+		[
+			16,
+			"RGB",
+			1,
+			"Position Offset"
+		],
+		[
+			17,
+			"Out",
+			19,
+			"A"
+		],
+		[
+			18,
+			"Out",
+			19,
+			"B"
+		],
+		[
+			12,
+			"Out",
+			19,
+			"T"
+		],
+		[
+			19,
+			"Out",
+			1,
+			"Base Color"
+		],
+		[
+			20,
+			"Out",
+			1,
+			"Roughness"
+		]
+	]
+}

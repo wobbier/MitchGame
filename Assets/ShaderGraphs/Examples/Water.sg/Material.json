@@ -1,0 +1,51 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/Water.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.019999999552965164,
+				0.09000000357627869,
+				0.14000000059604645,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Deep Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.10000000149011612,
+				0.3799999952316284,
+				0.44999998807907104,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Shallow Color",
+			"Slot": 1,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

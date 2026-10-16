@@ -1,0 +1,18 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/Scorch.shadergraph",
+	"Parameters": [],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Decal",
+			"Decal"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Decal",
+	"Textures": [],
+	"Version": 1
+}

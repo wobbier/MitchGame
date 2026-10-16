@@ -1,0 +1,65 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/WindSway.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.15000000596046448,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Strength",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.600000023841858,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Speed",
+			"Range": [
+				0.0,
+				5.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

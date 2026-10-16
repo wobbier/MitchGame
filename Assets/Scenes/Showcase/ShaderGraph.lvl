@@ -1,0 +1,442 @@
+{
+ "Version": 2,
+ "Cores": [],
+ "Entities": [
+  {
+   "GUID": "5c0a11e0000000a1",
+   "Name": "Camera",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      2.6,
+      -7.6
+     ],
+     "Rotation": [
+      15.0,
+      0.0,
+      0.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "Camera",
+     "ClearType": "Procedural",
+     "ClearColor": [
+      0.3,
+      0.4,
+      0.55
+     ],
+     "IsCurrent": true,
+     "Near": 0.1,
+     "Far": 200.0,
+     "Zoom": 55.0
+    },
+    {
+     "Type": "PostProcess",
+     "AutoExposure": false,
+     "ExposureCompensation": 0.0,
+     "Bloom": true,
+     "BloomIntensity": 0.1,
+     "BloomThreshold": 1.2,
+     "AmbientOcclusion": true,
+     "AORadius": 0.6,
+     "AOIntensity": 1.0,
+     "VignetteIntensity": 0.0,
+     "FXAA": true,
+     "Graphs": [
+      "Assets/ShaderGraphs/Examples/Vignette.shadergraph"
+     ]
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a2",
+   "Name": "Sun",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      6.0,
+      0.0
+     ],
+     "Rotation": [
+      48.0,
+      -35.0,
+      0.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "Light",
+     "LightType": "Directional",
+     "Color": [
+      1.0,
+      0.92,
+      0.82
+     ],
+     "Intensity": 2.6,
+     "CastShadows": true,
+     "ShadowDistance": 30.0
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a3",
+   "Name": "Floor",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0,
+      0,
+      1
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      12,
+      1,
+      10
+     ]
+    },
+    {
+     "Type": "Mesh",
+     "MeshType": "Plane",
+     "Material": {
+      "Type": "StandardMaterial",
+      "DiffuseColor": [
+       0.55,
+       0.55,
+       0.53
+      ],
+      "Metallic": 0.0,
+      "Roughness": 0.85
+     }
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a4",
+   "Name": "Water",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      2.7,
+      0.02,
+      -0.9
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      2.6,
+      1,
+      2.6
+     ]
+    },
+    {
+     "Type": "Mesh",
+     "MeshType": "Plane",
+     "Material": {
+      "Type": "ShaderGraphMaterial",
+      "Graph": "Assets/ShaderGraphs/Examples/Water.shadergraph",
+      "Params": {},
+      "Textures": {}
+     }
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a5",
+   "Name": "Dissolve Sphere",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      -3.0,
+      1.0,
+      0.6
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "Type": "Mesh",
+     "MeshType": "Sphere",
+     "Material": {
+      "Type": "ShaderGraphMaterial",
+      "Graph": "Assets/ShaderGraphs/Examples/Dissolve.shadergraph",
+      "Params": {},
+      "Textures": {}
+     }
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a6",
+   "Name": "Hologram",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      -1.1,
+      1.0,
+      -1.0
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      0.9,
+      0.9,
+      0.9
+     ]
+    },
+    {
+     "Type": "Mesh",
+     "MeshType": "Capsule",
+     "Material": {
+      "Type": "ShaderGraphMaterial",
+      "Graph": "Assets/ShaderGraphs/Examples/Hologram.shadergraph",
+      "Params": {},
+      "Textures": {}
+     }
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a7",
+   "Name": "Swaying Post",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      3.7,
+      1.5,
+      3.2
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      0.3,
+      3.0,
+      0.3
+     ]
+    },
+    {
+     "Type": "Mesh",
+     "MeshType": "Cylinder",
+     "Material": {
+      "Type": "ShaderGraphMaterial",
+      "Graph": "Assets/ShaderGraphs/Examples/WindSway.shadergraph",
+      "Params": {},
+      "Textures": {}
+     }
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a8",
+   "Name": "Triplanar Block",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      1.3,
+      0.6,
+      1.9
+     ],
+     "Rotation": [
+      0,
+      30,
+      0
+     ],
+     "Scale": [
+      1.2,
+      1.2,
+      1.2
+     ]
+    },
+    {
+     "Type": "Mesh",
+     "MeshType": "Cube",
+     "Material": {
+      "Type": "ShaderGraphMaterial",
+      "Graph": "Assets/ShaderGraphs/Examples/TriplanarConcrete.shadergraph",
+      "Params": {},
+      "Textures": {}
+     }
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000a9",
+   "Name": "Scorch",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      -0.4,
+      0.0,
+      -3.1
+     ],
+     "Rotation": [
+      90,
+      0,
+      0
+     ],
+     "Scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "Type": "Decal",
+     "Size": [
+      2.0,
+      2.0,
+      1.0
+     ],
+     "Graph": "Assets/ShaderGraphs/Examples/Scorch.shadergraph"
+    }
+   ]
+  },
+  {
+   "GUID": "5c0a11e0000000aa",
+   "Name": "Fire",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      3.6,
+      0.0,
+      -3.0
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "Alignment": "Billboard",
+     "AngularVelocity": [
+      -45.0,
+      45.0
+     ],
+     "Blend": "Additive",
+     "BoxSize": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "BurstCount": 0,
+     "ConeAngle": 10.0,
+     "Drag": 0.5,
+     "Duration": 5.0,
+     "EmissionRate": 60.0,
+     "EmitFromShell": false,
+     "EndAlpha": 0.0,
+     "EndColor": [
+      0.6000000238418579,
+      0.15000000596046448,
+      0.05000000074505806
+     ],
+     "EndSize": 0.30000001192092896,
+     "FadeIn": 0.10000000149011612,
+     "FlipbookColumns": 1,
+     "FlipbookFps": 0.0,
+     "FlipbookRows": 1,
+     "Gravity": -0.15000000596046448,
+     "Intensity": 4.0,
+     "Lifetime": [
+      0.6000000238418579,
+      1.2000000476837158
+     ],
+     "Lit": false,
+     "Looping": true,
+     "MaxParticles": 1000,
+     "NoiseFrequency": 1.0,
+     "NoiseStrength": 1.2000000476837158,
+     "Rotation": [
+      0.0,
+      360.0
+     ],
+     "Shape": "Cone",
+     "ShapeRadius": 0.3499999940395355,
+     "SimulationSpace": "World",
+     "Size": [
+      0.25,
+      0.44999998807907104
+     ],
+     "SoftParticleDistance": 0.30000001192092896,
+     "Speed": [
+      0.800000011920929,
+      1.600000023841858
+     ],
+     "StartAlpha": 1.0,
+     "StartColor": [
+      1.0,
+      0.6000000238418579,
+      0.20000000298023224
+     ],
+     "StartColor2": [
+      1.0,
+      0.8500000238418579,
+      0.4000000059604645
+     ],
+     "StretchFactor": 0.10000000149011612,
+     "Texture": "",
+     "Type": "ParticleSystem",
+     "Graph": "Assets/ShaderGraphs/Tests/FireParticle.shadergraph"
+    }
+   ]
+  }
+ ]
+}
