@@ -28,9 +28,9 @@ void main()
 	float sg_DeltaTime = u_time.x;
 
 	// Multiply #8
-	vec3 n8_Out = (sg_NormalObject) * (vec3_splat(u_sgParams[1].x));
+	vec3 n8_Out = sg_NormalObject * vec3_splat(u_sgParams[1].x);
 	// Multiply #9
-	vec3 n9_Out = (n8_Out) * (vec3_splat(sin(sg_Time)));
+	vec3 n9_Out = n8_Out * vec3_splat(sin(sg_Time));
 	// Outputs
 	vec3 sgOut_PositionOffset = n9_Out;
 

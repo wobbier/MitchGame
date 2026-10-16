@@ -21,13 +21,13 @@ void main()
 	vec3 sg_ViewDirectionWorld = sgSafeNormalize(sg_CameraPosition - v_worldPos);
 
 	// Checkerboard #2
-	vec3 n2_Out = sgCheckerboard((sg_UV0), (vec3(0.200000003, 0.200000003, 0.200000003)), (vec3(0.699999988, 0.699999988, 0.699999988)), (vec2(8.0, 8.0)));
+	vec3 n2_Out = sgCheckerboard(sg_UV0, vec3(0.200000003, 0.200000003, 0.200000003), vec3(0.699999988, 0.699999988, 0.699999988), vec2(8.0, 8.0));
 	// Multiply #4
-	vec3 n4_Out = (n2_Out) * (u_sgParams[0].xyz);
+	vec3 n4_Out = n2_Out * u_sgParams[0].xyz;
 	// Fresnel Effect #10
-	float n10_Out = pow(1.0 - clamp(dot(sgSafeNormalize((sg_NormalWorld)), sgSafeNormalize((sg_ViewDirectionWorld))), 0.0, 1.0), (5.0));
+	float n10_Out = pow(1.0 - clamp(dot(sgSafeNormalize(sg_NormalWorld), sgSafeNormalize(sg_ViewDirectionWorld)), 0.0, 1.0), 5.0);
 	// Multiply #12
-	vec3 n12_Out = (vec3_splat(n10_Out)) * (vec3(0.200000003, 0.600000024, 2.0));
+	vec3 n12_Out = vec3_splat(n10_Out) * vec3(0.200000003, 0.600000024, 2.0);
 	// Outputs
 	vec3 sgOut_BaseColor = n4_Out;
 	vec3 sgOut_Normal = vec3(0.0, 0.0, 1.0);

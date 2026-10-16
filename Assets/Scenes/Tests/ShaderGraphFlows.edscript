@@ -1,0 +1,55 @@
+# Shader graph editor regression script (run with ShaderGraphTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/ShaderGraphTest.lvl --editor-exec Assets/Scenes/Tests/ShaderGraphFlows.edscript
+wait 20
+
+# Build a small Lit graph: noise * tint into the base colour
+sg-new Lit | .tmp/ShaderGraphFlows/Flow.shadergraph
+wait 3
+sg-add noise | GradientNoise
+sg-add-property tint | Color | Tint
+sg-add mul | Multiply
+sg-link noise:Out | mul:A
+sg-link tint:Out | mul:B
+sg-link mul:Out | out:Base Color
+sg-assert-compiled
+sg-assert-code Forward.frag | sgGradientNoise(
+sg-assert-code Forward.frag | u_sgParams[0]
+sg-assert-links 3
+sg-assert-dirty true
+
+# Undo / redo are per graph
+sg-undo
+sg-assert-links 2
+sg-redo
+sg-assert-links 3
+
+# Inline input values (each scripted edit is its own undo step; UI drags merge into one)
+sg-default noise | Scale | 4
+sg-default noise | Scale | 6
+sg-assert-code Forward.frag | sgGradientNoise(sg_UV0, 6.0)
+sg-undo
+sg-assert-code Forward.frag | sgGradientNoise(sg_UV0, 4.0)
+sg-redo
+
+# A fragment-only node feeding the vertex stage is an error on that node
+sg-add ddx | DDX
+sg-link ddx:Out | out:Position Offset
+sg-assert-error ddx
+sg-delete ddx
+sg-assert-compiled
+sg-assert-no-code Forward.vert | dFdx
+
+# Settings drive the generated code
+sg-add blend | Blend
+sg-set blend | Mode | "Screen"
+sg-link blend:Out | out:Emission
+sg-assert-code Forward.frag | sgBlendScreen(
+
+# Saving writes the graph and its shaders
+sg-frame
+wait 3
+sg-save
+sg-assert-dirty false
+wait 5
+screenshot .tmp/ShaderGraphFlows/editor.png
+wait 5
