@@ -49,7 +49,11 @@
      "AORadius": 0.6,
      "AOIntensity": 1.0,
      "VignetteIntensity": 0.25,
-     "FXAA": true
+     "FXAA": true,
+     "Graphs": [
+      "Assets/ShaderGraphs/Tests/DepthScanPost.shadergraph",
+      "Assets/ShaderGraphs/Tests/ChromaticAberrationPost.shadergraph"
+     ]
     }
    ]
   },

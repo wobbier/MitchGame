@@ -1,0 +1,37 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Tests/ChromaticAberrationPost.shadergraph",
+	"Injection": "AfterTonemap",
+	"Parameters": [
+		{
+			"Default": [
+				0.012000000104308128,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Strength",
+			"Range": [
+				0.0,
+				0.05000000074505806
+			],
+			"Slot": 0,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Post/Fullscreen",
+			"Post"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "PostProcess",
+	"Textures": [],
+	"Version": 1
+}
