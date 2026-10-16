@@ -1,0 +1,228 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "Lit"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Tint",
+			"Type": "Vec3",
+			"Default": [
+				1.0,
+				0.45,
+				0.2,
+				1.0
+			],
+			"IsColor": true,
+			"Exposed": true
+		},
+		{
+			"Id": "p2",
+			"Name": "Wobble",
+			"Type": "Float",
+			"Default": [
+				0.06,
+				0,
+				0,
+				0
+			],
+			"Range": [
+				0.0,
+				0.3
+			],
+			"Exposed": true
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				600,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Checkerboard",
+			"Position": [
+				0,
+				0
+			],
+			"Defaults": {
+				"Frequency": [
+					8,
+					8,
+					0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 3,
+			"Type": "Property",
+			"Position": [
+				0,
+				200
+			],
+			"Settings": {
+				"Property": "p1"
+			}
+		},
+		{
+			"Id": 4,
+			"Type": "Multiply",
+			"Position": [
+				250,
+				50
+			]
+		},
+		{
+			"Id": 5,
+			"Type": "Time",
+			"Position": [
+				0,
+				400
+			]
+		},
+		{
+			"Id": 6,
+			"Type": "NormalVector",
+			"Position": [
+				0,
+				550
+			],
+			"Settings": {
+				"Space": "Object"
+			}
+		},
+		{
+			"Id": 7,
+			"Type": "Property",
+			"Position": [
+				0,
+				650
+			],
+			"Settings": {
+				"Property": "p2"
+			}
+		},
+		{
+			"Id": 8,
+			"Type": "Multiply",
+			"Position": [
+				250,
+				500
+			]
+		},
+		{
+			"Id": 9,
+			"Type": "Multiply",
+			"Position": [
+				400,
+				500
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "FresnelEffect",
+			"Position": [
+				0,
+				800
+			]
+		},
+		{
+			"Id": 11,
+			"Type": "Vector3",
+			"Position": [
+				0,
+				950
+			],
+			"Settings": {
+				"Value": [
+					0.2,
+					0.6,
+					2.0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 12,
+			"Type": "Multiply",
+			"Position": [
+				250,
+				850
+			]
+		}
+	],
+	"Links": [
+		[
+			2,
+			"Out",
+			4,
+			"A"
+		],
+		[
+			3,
+			"Out",
+			4,
+			"B"
+		],
+		[
+			4,
+			"Out",
+			1,
+			"Base Color"
+		],
+		[
+			6,
+			"Out",
+			8,
+			"A"
+		],
+		[
+			7,
+			"Out",
+			8,
+			"B"
+		],
+		[
+			8,
+			"Out",
+			9,
+			"A"
+		],
+		[
+			5,
+			"Sine Time",
+			9,
+			"B"
+		],
+		[
+			9,
+			"Out",
+			1,
+			"Position Offset"
+		],
+		[
+			10,
+			"Out",
+			12,
+			"A"
+		],
+		[
+			11,
+			"Out",
+			12,
+			"B"
+		],
+		[
+			12,
+			"Out",
+			1,
+			"Emission"
+		]
+	]
+}

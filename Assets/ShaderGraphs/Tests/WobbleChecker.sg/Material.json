@@ -1,0 +1,62 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Tests/WobbleChecker.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				1.0,
+				0.44999998807907104,
+				0.20000000298023224,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Tint",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.05999999865889549,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Wobble",
+			"Range": [
+				0.0,
+				0.30000001192092896
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}
