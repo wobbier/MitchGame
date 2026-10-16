@@ -1,0 +1,104 @@
+{
+	"AlphaClip": false,
+	"Blend": "Additive",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/RetroSun.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				2.4000000953674316,
+				1.2999999523162842,
+				0.11999999731779099,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Top Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				2.200000047683716,
+				0.05000000074505806,
+				0.699999988079071,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p2",
+			"Name": "Bottom Color",
+			"Slot": 1,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				9.0,
+				9.0,
+				9.0,
+				9.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Stripes",
+			"Range": [
+				1.0,
+				30.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Stripe Speed",
+			"Range": [
+				-3.0,
+				3.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.11999999731779099,
+				0.11999999731779099,
+				0.11999999731779099,
+				0.11999999731779099
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Halo",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 4,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Transparent",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

@@ -1,0 +1,1036 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "PostProcess",
+		"Surface": "Transparent",
+		"Injection": "BeforeTonemap"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Period",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				3.0,
+				3.0,
+				3.0,
+				3.0
+			],
+			"Range": [
+				0.5,
+				10.0
+			]
+		},
+		{
+			"Id": "p2",
+			"Name": "Strength",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				0.07,
+				0.07,
+				0.07,
+				0.07
+			],
+			"Range": [
+				0.0,
+				0.3
+			]
+		},
+		{
+			"Id": "p3",
+			"Name": "Width",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				0.12,
+				0.12,
+				0.12,
+				0.12
+			],
+			"Range": [
+				0.01,
+				0.5
+			]
+		},
+		{
+			"Id": "p4",
+			"Name": "Center",
+			"Type": "Vec2",
+			"Exposed": true,
+			"Default": [
+				0.5,
+				0.5,
+				0.0,
+				0.0
+			]
+		},
+		{
+			"Id": "p5",
+			"Name": "Flash Color",
+			"Type": "Vec3",
+			"Exposed": true,
+			"Default": [
+				0.6,
+				1.2,
+				2.5,
+				0.0
+			],
+			"IsColor": true,
+			"HDR": true
+		},
+		{
+			"Id": "p6",
+			"Name": "Fringe",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				0.6,
+				0.6,
+				0.6,
+				0.6
+			],
+			"Range": [
+				0.0,
+				2.0
+			]
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				0,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Property",
+			"Position": [
+				-6600,
+				230
+			],
+			"Settings": {
+				"Property": "p1"
+			}
+		},
+		{
+			"Id": 3,
+			"Type": "Property",
+			"Position": [
+				-2700,
+				-650
+			],
+			"Settings": {
+				"Property": "p2"
+			}
+		},
+		{
+			"Id": 4,
+			"Type": "Property",
+			"Position": [
+				-4500,
+				-50
+			],
+			"Settings": {
+				"Property": "p3"
+			}
+		},
+		{
+			"Id": 5,
+			"Type": "Property",
+			"Position": [
+				-5700,
+				-170
+			],
+			"Settings": {
+				"Property": "p4"
+			}
+		},
+		{
+			"Id": 6,
+			"Type": "Property",
+			"Position": [
+				-900,
+				300
+			],
+			"Settings": {
+				"Property": "p5"
+			}
+		},
+		{
+			"Id": 7,
+			"Type": "Property",
+			"Position": [
+				-3000,
+				-300
+			],
+			"Settings": {
+				"Property": "p6"
+			}
+		},
+		{
+			"Id": 8,
+			"Type": "UV",
+			"Position": [
+				-5700,
+				-460
+			]
+		},
+		{
+			"Id": 9,
+			"Type": "Subtract",
+			"Position": [
+				-5400,
+				-240
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "ScreenPosition",
+			"Position": [
+				-6600,
+				-70
+			]
+		},
+		{
+			"Id": 11,
+			"Type": "Divide",
+			"Position": [
+				-6300,
+				50
+			]
+		},
+		{
+			"Id": 12,
+			"Type": "Split",
+			"Position": [
+				-6000,
+				70
+			]
+		},
+		{
+			"Id": 13,
+			"Type": "Divide",
+			"Position": [
+				-5700,
+				130
+			]
+		},
+		{
+			"Id": 14,
+			"Type": "Combine",
+			"Position": [
+				-5400,
+				60
+			],
+			"Defaults": {
+				"G": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				],
+				"B": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				]
+			}
+		},
+		{
+			"Id": 15,
+			"Type": "Multiply",
+			"Position": [
+				-5100,
+				50
+			]
+		},
+		{
+			"Id": 16,
+			"Type": "Length",
+			"Position": [
+				-4800,
+				70
+			]
+		},
+		{
+			"Id": 17,
+			"Type": "Time",
+			"Position": [
+				-6600,
+				520
+			]
+		},
+		{
+			"Id": 18,
+			"Type": "Divide",
+			"Position": [
+				-6300,
+				340
+			]
+		},
+		{
+			"Id": 19,
+			"Type": "Fraction",
+			"Position": [
+				-6000,
+				360
+			]
+		},
+		{
+			"Id": 20,
+			"Type": "OneMinus",
+			"Position": [
+				-5700,
+				420
+			]
+		},
+		{
+			"Id": 21,
+			"Type": "Square",
+			"Position": [
+				-5400,
+				400
+			]
+		},
+		{
+			"Id": 22,
+			"Type": "OneMinus",
+			"Position": [
+				-5100,
+				340
+			]
+		},
+		{
+			"Id": 23,
+			"Type": "Multiply",
+			"Position": [
+				-4800,
+				360
+			],
+			"Defaults": {
+				"B": [
+					1.25,
+					1.25,
+					1.25,
+					1.25
+				]
+			}
+		},
+		{
+			"Id": 24,
+			"Type": "OneMinus",
+			"Position": [
+				-3300,
+				280
+			]
+		},
+		{
+			"Id": 25,
+			"Type": "Square",
+			"Position": [
+				-3000,
+				310
+			]
+		},
+		{
+			"Id": 26,
+			"Type": "Subtract",
+			"Position": [
+				-4500,
+				240
+			]
+		},
+		{
+			"Id": 27,
+			"Type": "Divide",
+			"Position": [
+				-4200,
+				110
+			]
+		},
+		{
+			"Id": 28,
+			"Type": "Absolute",
+			"Position": [
+				-3900,
+				-50
+			]
+		},
+		{
+			"Id": 29,
+			"Type": "Saturate",
+			"Position": [
+				-3600,
+				-30
+			]
+		},
+		{
+			"Id": 30,
+			"Type": "OneMinus",
+			"Position": [
+				-3300,
+				-10
+			]
+		},
+		{
+			"Id": 31,
+			"Type": "Smoothstep",
+			"Position": [
+				-3000,
+				-10
+			],
+			"Defaults": {
+				"Edge1": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				],
+				"Edge2": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				]
+			}
+		},
+		{
+			"Id": 32,
+			"Type": "Multiply",
+			"Position": [
+				-2700,
+				-350
+			]
+		},
+		{
+			"Id": 33,
+			"Type": "Multiply",
+			"Position": [
+				-2400,
+				-530
+			]
+		},
+		{
+			"Id": 34,
+			"Type": "Normalize",
+			"Position": [
+				-2400,
+				-240
+			]
+		},
+		{
+			"Id": 35,
+			"Type": "Multiply",
+			"Position": [
+				-2100,
+				-280
+			]
+		},
+		{
+			"Id": 36,
+			"Type": "Multiply",
+			"Position": [
+				-2700,
+				-60
+			],
+			"Defaults": {
+				"B": [
+					0.5,
+					0.5,
+					0.5,
+					0.5
+				]
+			}
+		},
+		{
+			"Id": 37,
+			"Type": "Add",
+			"Position": [
+				-2400,
+				60
+			],
+			"Defaults": {
+				"B": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				]
+			}
+		},
+		{
+			"Id": 38,
+			"Type": "Subtract",
+			"Position": [
+				-1500,
+				-540
+			]
+		},
+		{
+			"Id": 39,
+			"Type": "SceneColor",
+			"Position": [
+				-1200,
+				-520
+			]
+		},
+		{
+			"Id": 40,
+			"Type": "Multiply",
+			"Position": [
+				-1800,
+				-270
+			]
+		},
+		{
+			"Id": 41,
+			"Type": "Subtract",
+			"Position": [
+				-1500,
+				-250
+			]
+		},
+		{
+			"Id": 42,
+			"Type": "SceneColor",
+			"Position": [
+				-1200,
+				-230
+			]
+		},
+		{
+			"Id": 43,
+			"Type": "Multiply",
+			"Position": [
+				-2100,
+				10
+			]
+		},
+		{
+			"Id": 44,
+			"Type": "Multiply",
+			"Position": [
+				-1800,
+				30
+			]
+		},
+		{
+			"Id": 45,
+			"Type": "Subtract",
+			"Position": [
+				-1500,
+				50
+			]
+		},
+		{
+			"Id": 46,
+			"Type": "SceneColor",
+			"Position": [
+				-1200,
+				70
+			]
+		},
+		{
+			"Id": 47,
+			"Type": "Split",
+			"Position": [
+				-900,
+				-570
+			]
+		},
+		{
+			"Id": 48,
+			"Type": "Split",
+			"Position": [
+				-900,
+				-280
+			]
+		},
+		{
+			"Id": 49,
+			"Type": "Split",
+			"Position": [
+				-900,
+				10
+			]
+		},
+		{
+			"Id": 50,
+			"Type": "Combine",
+			"Position": [
+				-600,
+				-120
+			]
+		},
+		{
+			"Id": 51,
+			"Type": "Negate",
+			"Position": [
+				-1800,
+				320
+			]
+		},
+		{
+			"Id": 52,
+			"Type": "Saturate",
+			"Position": [
+				-1500,
+				340
+			]
+		},
+		{
+			"Id": 53,
+			"Type": "Multiply",
+			"Position": [
+				-1200,
+				360
+			]
+		},
+		{
+			"Id": 54,
+			"Type": "Multiply",
+			"Position": [
+				-900,
+				600
+			]
+		},
+		{
+			"Id": 55,
+			"Type": "Multiply",
+			"Position": [
+				-600,
+				220
+			]
+		},
+		{
+			"Id": 56,
+			"Type": "Add",
+			"Position": [
+				-300,
+				70
+			]
+		}
+	],
+	"Links": [
+		[
+			8,
+			"Out",
+			9,
+			"A"
+		],
+		[
+			5,
+			"Out",
+			9,
+			"B"
+		],
+		[
+			10,
+			"Pixel",
+			11,
+			"A"
+		],
+		[
+			10,
+			"UV",
+			11,
+			"B"
+		],
+		[
+			11,
+			"Out",
+			12,
+			"In"
+		],
+		[
+			12,
+			"R",
+			13,
+			"A"
+		],
+		[
+			12,
+			"G",
+			13,
+			"B"
+		],
+		[
+			13,
+			"Out",
+			14,
+			"R"
+		],
+		[
+			9,
+			"Out",
+			15,
+			"A"
+		],
+		[
+			14,
+			"RG",
+			15,
+			"B"
+		],
+		[
+			15,
+			"Out",
+			16,
+			"In"
+		],
+		[
+			17,
+			"Time",
+			18,
+			"A"
+		],
+		[
+			2,
+			"Out",
+			18,
+			"B"
+		],
+		[
+			18,
+			"Out",
+			19,
+			"In"
+		],
+		[
+			19,
+			"Out",
+			20,
+			"In"
+		],
+		[
+			20,
+			"Out",
+			21,
+			"In"
+		],
+		[
+			21,
+			"Out",
+			22,
+			"In"
+		],
+		[
+			22,
+			"Out",
+			23,
+			"A"
+		],
+		[
+			19,
+			"Out",
+			24,
+			"In"
+		],
+		[
+			24,
+			"Out",
+			25,
+			"In"
+		],
+		[
+			16,
+			"Out",
+			26,
+			"A"
+		],
+		[
+			23,
+			"Out",
+			26,
+			"B"
+		],
+		[
+			26,
+			"Out",
+			27,
+			"A"
+		],
+		[
+			4,
+			"Out",
+			27,
+			"B"
+		],
+		[
+			27,
+			"Out",
+			28,
+			"In"
+		],
+		[
+			28,
+			"Out",
+			29,
+			"In"
+		],
+		[
+			29,
+			"Out",
+			30,
+			"In"
+		],
+		[
+			30,
+			"Out",
+			31,
+			"In"
+		],
+		[
+			31,
+			"Out",
+			32,
+			"A"
+		],
+		[
+			25,
+			"Out",
+			32,
+			"B"
+		],
+		[
+			32,
+			"Out",
+			33,
+			"A"
+		],
+		[
+			3,
+			"Out",
+			33,
+			"B"
+		],
+		[
+			9,
+			"Out",
+			34,
+			"In"
+		],
+		[
+			34,
+			"Out",
+			35,
+			"A"
+		],
+		[
+			33,
+			"Out",
+			35,
+			"B"
+		],
+		[
+			7,
+			"Out",
+			36,
+			"A"
+		],
+		[
+			36,
+			"Out",
+			37,
+			"A"
+		],
+		[
+			8,
+			"Out",
+			38,
+			"A"
+		],
+		[
+			35,
+			"Out",
+			38,
+			"B"
+		],
+		[
+			38,
+			"Out",
+			39,
+			"UV"
+		],
+		[
+			35,
+			"Out",
+			40,
+			"A"
+		],
+		[
+			37,
+			"Out",
+			40,
+			"B"
+		],
+		[
+			8,
+			"Out",
+			41,
+			"A"
+		],
+		[
+			40,
+			"Out",
+			41,
+			"B"
+		],
+		[
+			41,
+			"Out",
+			42,
+			"UV"
+		],
+		[
+			37,
+			"Out",
+			43,
+			"A"
+		],
+		[
+			37,
+			"Out",
+			43,
+			"B"
+		],
+		[
+			35,
+			"Out",
+			44,
+			"A"
+		],
+		[
+			43,
+			"Out",
+			44,
+			"B"
+		],
+		[
+			8,
+			"Out",
+			45,
+			"A"
+		],
+		[
+			44,
+			"Out",
+			45,
+			"B"
+		],
+		[
+			45,
+			"Out",
+			46,
+			"UV"
+		],
+		[
+			39,
+			"Out",
+			47,
+			"In"
+		],
+		[
+			42,
+			"Out",
+			48,
+			"In"
+		],
+		[
+			46,
+			"Out",
+			49,
+			"In"
+		],
+		[
+			47,
+			"R",
+			50,
+			"R"
+		],
+		[
+			48,
+			"G",
+			50,
+			"G"
+		],
+		[
+			49,
+			"B",
+			50,
+			"B"
+		],
+		[
+			27,
+			"Out",
+			51,
+			"In"
+		],
+		[
+			51,
+			"Out",
+			52,
+			"In"
+		],
+		[
+			52,
+			"Out",
+			53,
+			"A"
+		],
+		[
+			31,
+			"Out",
+			53,
+			"B"
+		],
+		[
+			53,
+			"Out",
+			54,
+			"A"
+		],
+		[
+			25,
+			"Out",
+			54,
+			"B"
+		],
+		[
+			6,
+			"Out",
+			55,
+			"A"
+		],
+		[
+			54,
+			"Out",
+			55,
+			"B"
+		],
+		[
+			50,
+			"RGB",
+			56,
+			"A"
+		],
+		[
+			55,
+			"Out",
+			56,
+			"B"
+		],
+		[
+			56,
+			"Out",
+			1,
+			"Color"
+		]
+	]
+}

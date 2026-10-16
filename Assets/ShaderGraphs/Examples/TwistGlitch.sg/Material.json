@@ -1,0 +1,180 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/TwistGlitch.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				2.200000047683716,
+				2.200000047683716,
+				2.200000047683716,
+				2.200000047683716
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Twist",
+			"Range": [
+				0.0,
+				8.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.100000023841858,
+				1.100000023841858,
+				1.100000023841858,
+				1.100000023841858
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Twist Speed",
+			"Range": [
+				0.0,
+				6.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				16.0,
+				16.0,
+				16.0,
+				16.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Bands",
+			"Range": [
+				2.0,
+				64.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				10.0,
+				10.0,
+				10.0,
+				10.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Glitch Rate",
+			"Range": [
+				1.0,
+				30.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.18000000715255737,
+				0.18000000715255737,
+				0.18000000715255737,
+				0.18000000715255737
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Glitch Amount",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 4,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.30000001192092896,
+				0.30000001192092896,
+				0.30000001192092896,
+				0.30000001192092896
+			],
+			"Exposed": true,
+			"Id": "p6",
+			"Name": "Glitch Distance",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 5,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.2999999523162842,
+				1.2999999523162842,
+				1.2999999523162842,
+				1.2999999523162842
+			],
+			"Exposed": true,
+			"Id": "p7",
+			"Name": "Burst Rate",
+			"Range": [
+				0.10000000149011612,
+				6.0
+			],
+			"Slot": 6,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.20000000298023224,
+				3.0,
+				5.0,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p8",
+			"Name": "Glitch Color A",
+			"Slot": 7,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				5.0,
+				0.20000000298023224,
+				3.0,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p9",
+			"Name": "Glitch Color B",
+			"Slot": 8,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

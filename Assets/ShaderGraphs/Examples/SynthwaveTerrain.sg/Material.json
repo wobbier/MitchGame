@@ -1,0 +1,194 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/SynthwaveTerrain.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				7.0,
+				7.0,
+				7.0,
+				7.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Height",
+			"Range": [
+				0.0,
+				20.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				5.0,
+				5.0,
+				5.0,
+				5.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Valley Width",
+			"Range": [
+				0.0,
+				20.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.05999999865889549,
+				0.05999999865889549,
+				0.05999999865889549,
+				0.05999999865889549
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Noise Scale",
+			"Range": [
+				0.009999999776482582,
+				0.30000001192092896
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				6.0,
+				6.0,
+				6.0,
+				6.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Speed",
+			"Range": [
+				0.0,
+				30.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.004000000189989805,
+				0.004000000189989805,
+				0.004000000189989805,
+				0.004000000189989805
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Curvature",
+			"Range": [
+				0.0,
+				0.019999999552965164
+			],
+			"Slot": 4,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				2.0,
+				2.0,
+				2.0,
+				2.0
+			],
+			"Exposed": true,
+			"Id": "p6",
+			"Name": "Cell Size",
+			"Range": [
+				0.25,
+				8.0
+			],
+			"Slot": 5,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p7",
+			"Name": "Line Width",
+			"Range": [
+				0.25,
+				4.0
+			],
+			"Slot": 6,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				3.0,
+				0.11999999731779099,
+				1.7999999523162842,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p8",
+			"Name": "Low Color",
+			"Slot": 7,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.15000000596046448,
+				1.600000023841858,
+				3.200000047683716,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p9",
+			"Name": "High Color",
+			"Slot": 8,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.029999999329447746,
+				0.0,
+				0.07000000029802322,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p10",
+			"Name": "Fill Color",
+			"Slot": 9,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

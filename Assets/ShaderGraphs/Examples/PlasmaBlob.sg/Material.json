@@ -1,0 +1,162 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/PlasmaBlob.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.44999998807907104,
+				0.44999998807907104,
+				0.44999998807907104,
+				0.44999998807907104
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Amplitude",
+			"Range": [
+				0.0,
+				1.5
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				2.200000047683716,
+				2.200000047683716,
+				2.200000047683716,
+				2.200000047683716
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Noise Scale",
+			"Range": [
+				0.5,
+				8.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Flow Speed",
+			"Range": [
+				0.0,
+				3.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				2.0,
+				2.0,
+				2.0,
+				2.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Pulse Speed",
+			"Range": [
+				0.0,
+				10.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				3.0,
+				0.3499999940395355,
+				0.07999999821186066,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p5",
+			"Name": "Glow Color",
+			"Slot": 4,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p6",
+			"Name": "Glow",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Slot": 5,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.05999999865889549,
+				0.05999999865889549,
+				0.05999999865889549,
+				0.05999999865889549
+			],
+			"Exposed": true,
+			"Id": "p7",
+			"Name": "Hue Speed",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 6,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.019999999552965164,
+				0.019999999552965164,
+				0.029999999329447746,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p8",
+			"Name": "Crust Color",
+			"Slot": 7,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}
