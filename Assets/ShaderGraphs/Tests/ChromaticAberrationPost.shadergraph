@@ -1,153 +1,4 @@
 {
-	"Version": 1,
-	"Settings": {
-		"Target": "PostProcess",
-		"Surface": "Transparent",
-		"Injection": "AfterTonemap"
-	},
-	"Properties": [
-		{
-			"Id": "p1",
-			"Name": "Strength",
-			"Type": "Float",
-			"Default": [
-				0.012,
-				0,
-				0,
-				0
-			],
-			"Range": [
-				0.0,
-				0.05
-			],
-			"Exposed": true
-		}
-	],
-	"Nodes": [
-		{
-			"Id": 1,
-			"Type": "Output",
-			"Position": [
-				1100,
-				0
-			]
-		},
-		{
-			"Id": 2,
-			"Type": "UV",
-			"Position": [
-				-600,
-				0
-			]
-		},
-		{
-			"Id": 3,
-			"Type": "Subtract",
-			"Position": [
-				-400,
-				0
-			],
-			"Defaults": {
-				"B": [
-					0.5,
-					0.5,
-					0,
-					0
-				]
-			}
-		},
-		{
-			"Id": 14,
-			"Type": "Property",
-			"Position": [
-				-600,
-				200
-			],
-			"Settings": {
-				"Property": "p1"
-			}
-		},
-		{
-			"Id": 4,
-			"Type": "Multiply",
-			"Position": [
-				-200,
-				0
-			]
-		},
-		{
-			"Id": 5,
-			"Type": "Add",
-			"Position": [
-				0,
-				-100
-			]
-		},
-		{
-			"Id": 6,
-			"Type": "SceneColor",
-			"Position": [
-				200,
-				-100
-			]
-		},
-		{
-			"Id": 7,
-			"Type": "Split",
-			"Position": [
-				400,
-				-100
-			]
-		},
-		{
-			"Id": 8,
-			"Type": "Subtract",
-			"Position": [
-				0,
-				100
-			]
-		},
-		{
-			"Id": 9,
-			"Type": "SceneColor",
-			"Position": [
-				200,
-				100
-			]
-		},
-		{
-			"Id": 10,
-			"Type": "Split",
-			"Position": [
-				400,
-				100
-			]
-		},
-		{
-			"Id": 11,
-			"Type": "SceneColor",
-			"Position": [
-				200,
-				300
-			]
-		},
-		{
-			"Id": 12,
-			"Type": "Split",
-			"Position": [
-				400,
-				300
-			]
-		},
-		{
-			"Id": 13,
-			"Type": "Combine",
-			"Position": [
-				700,
-				0
-			]
-		}
-	],
 	"Links": [
 		[
 			2,
@@ -245,5 +96,164 @@
 			1,
 			"Color"
 		]
-	]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1100.0,
+				0.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-600.0,
+				0.0
+			],
+			"Type": "UV"
+		},
+		{
+			"Defaults": {
+				"B": [
+					0.5,
+					0.5,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 3,
+			"Position": [
+				-400.0,
+				0.0
+			],
+			"Type": "Subtract"
+		},
+		{
+			"Id": 14,
+			"Position": [
+				-600.0,
+				200.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-200.0,
+				0.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				0.0,
+				-100.0
+			],
+			"Type": "Add"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				200.0,
+				-100.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 7,
+			"Position": [
+				400.0,
+				-100.0
+			],
+			"Type": "Split"
+		},
+		{
+			"Id": 8,
+			"Position": [
+				0.0,
+				100.0
+			],
+			"Type": "Subtract"
+		},
+		{
+			"Id": 9,
+			"Position": [
+				200.0,
+				100.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 10,
+			"Position": [
+				400.0,
+				100.0
+			],
+			"Type": "Split"
+		},
+		{
+			"Id": 11,
+			"Position": [
+				200.0,
+				300.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 12,
+			"Position": [
+				400.0,
+				300.0
+			],
+			"Type": "Split"
+		},
+		{
+			"Id": 13,
+			"Position": [
+				700.0,
+				0.0
+			],
+			"Type": "Combine"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.012000000104308128,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p1",
+			"IsColor": false,
+			"Name": "Strength",
+			"Range": [
+				0.0,
+				0.05000000074505806
+			],
+			"Type": "Float"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": true,
+		"Fog": true,
+		"Injection": "AfterTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Transparent",
+		"Target": "PostProcess"
+	},
+	"Version": 1
 }
