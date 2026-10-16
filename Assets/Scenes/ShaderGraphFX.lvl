@@ -1,0 +1,538 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "5c0a11e000000101",
+            "Name": "Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        2.6,
+                        -6.5
+                    ],
+                    "Rotation": [
+                        6.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Procedural",
+                    "ClearColor": [
+                        0.02,
+                        0.0,
+                        0.05
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 300.0,
+                    "FieldOfView": 60.0,
+                    "Zoom": 55.0,
+                    "ProceduralSky": {
+                        "Time": 0.0,
+                        "TimeScale": 0.0,
+                        "Latitude": 35.0,
+                        "Month": 5,
+                        "MoonPhase": 0.5,
+                        "MoonSize": 6.0,
+                        "MoonBrightness": 1.5,
+                        "StarBrightness": 2.0,
+                        "CloudCoverage": 0.15,
+                        "Turbidity": 1.0
+                    }
+                },
+                {
+                    "Type": "PostProcess",
+                    "AutoExposure": false,
+                    "ExposureCompensation": 0.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.14,
+                    "BloomThreshold": 1.0,
+                    "AmbientOcclusion": true,
+                    "AORadius": 0.6,
+                    "AOIntensity": 1.0,
+                    "VignetteIntensity": 0.0,
+                    "FXAA": true,
+                    "Fog": true,
+                    "VolumetricFog": false,
+                    "FogColor": [
+                        0.06,
+                        0.005,
+                        0.09
+                    ],
+                    "FogDensity": 0.012,
+                    "FogHeight": 0.0,
+                    "FogHeightFalloff": 0.12,
+                    "FogMaxOpacity": 0.7,
+                    "FogStartDistance": 15.0,
+                    "FogSunIntensity": 0.0,
+                    "Graphs": [
+                        "Assets/ShaderGraphs/Examples/Shockwave.shadergraph",
+                        "Assets/ShaderGraphs/Examples/VHSGlitch.shadergraph",
+                        "Assets/ShaderGraphs/Examples/WarpLens.shadergraph"
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000102",
+            "Name": "Moon",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        8.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        32.0,
+                        25.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        0.55,
+                        0.62,
+                        1.0
+                    ],
+                    "Intensity": 0.6,
+                    "CastShadows": true,
+                    "ShadowDistance": 30.0
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000103",
+            "Name": "Terrain",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        22.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        40.0,
+                        1.0,
+                        40.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/ShaderGraph/Grid.obj",
+                    "Compact": true,
+                    "Nodes": {},
+                    "BakedImportScale": 1.0,
+                    "Parts": {
+                        "Grid.obj#0/Grid#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": false,
+                            "ImportedMaterialDefaults": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.6000000238418579,
+                                    0.6000000238418579,
+                                    0.6000000238418579
+                                ],
+                                "EmissiveColor": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "EmissiveIntensity": 1.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "Material": {
+                                "Type": "ShaderGraphMaterial",
+                                "Graph": "Assets/ShaderGraphs/Examples/SynthwaveTerrain.shadergraph",
+                                "Params": {},
+                                "Textures": {}
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000104",
+            "Name": "Plasma Blob",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.4,
+                        1.9,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.15,
+                        1.15,
+                        1.15
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/ShaderGraph/IcoSphere.obj",
+                    "Compact": true,
+                    "Nodes": {},
+                    "BakedImportScale": 1.0,
+                    "Parts": {
+                        "IcoSphere.obj#0/IcoSphere#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "ImportedMaterialDefaults": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.6000000238418579,
+                                    0.6000000238418579,
+                                    0.6000000238418579
+                                ],
+                                "EmissiveColor": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "EmissiveIntensity": 1.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "Material": {
+                                "Type": "ShaderGraphMaterial",
+                                "Graph": "Assets/ShaderGraphs/Examples/PlasmaBlob.shadergraph",
+                                "Params": {},
+                                "Textures": {}
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000105",
+            "Name": "Twist Glitch Knot",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.4,
+                        1.9,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.4,
+                        1.4,
+                        1.4
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/ShaderGraph/TorusKnot.obj",
+                    "Compact": true,
+                    "Nodes": {},
+                    "BakedImportScale": 1.0,
+                    "Parts": {
+                        "TorusKnot.obj#0/TorusKnot#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "ImportedMaterialDefaults": {
+                                "AlphaCutoff": 0.0,
+                                "BlendMode": 0,
+                                "DiffuseColor": [
+                                    0.6000000238418579,
+                                    0.6000000238418579,
+                                    0.6000000238418579
+                                ],
+                                "EmissiveColor": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "EmissiveIntensity": 1.0,
+                                "FaceMode": 0,
+                                "InvertRoughness": false,
+                                "Metallic": 0.0,
+                                "NormalStrength": 1.0,
+                                "OcclusionStrength": 1.0,
+                                "Opacity": 1.0,
+                                "RenderMode": 0,
+                                "Roughness": 0.5,
+                                "Tiling": [
+                                    1.0,
+                                    1.0
+                                ],
+                                "Type": "StandardMaterial"
+                            },
+                            "Material": {
+                                "Type": "ShaderGraphMaterial",
+                                "Graph": "Assets/ShaderGraphs/Examples/TwistGlitch.shadergraph",
+                                "Params": {},
+                                "Textures": {}
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000106",
+            "Name": "Retro Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        16.0,
+                        150.0
+                    ],
+                    "Rotation": [
+                        -90.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        45.0,
+                        1.0,
+                        45.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "ShaderGraphMaterial",
+                        "Graph": "Assets/ShaderGraphs/Examples/RetroSun.shadergraph",
+                        "Params": {},
+                        "Textures": {}
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000107",
+            "Name": "Blob Pedestal",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.4,
+                        0.25,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.7,
+                        0.25,
+                        0.7
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.07
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.18
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000108",
+            "Name": "Knot Pedestal",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.4,
+                        0.25,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.7,
+                        0.25,
+                        0.7
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.05,
+                            0.05,
+                            0.07
+                        ],
+                        "Metallic": 1.0,
+                        "Roughness": 0.18
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e000000109",
+            "Name": "Magenta Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.0,
+                        3.2,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.2,
+                        0.8
+                    ],
+                    "Intensity": 12.0,
+                    "Range": 7.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "5c0a11e00000010a",
+            "Name": "Cyan Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.2,
+                        3.0,
+                        -0.2
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.2,
+                        0.8,
+                        1.0
+                    ],
+                    "Intensity": 12.0,
+                    "Range": 7.0,
+                    "InnerConeAngle": 20.0,
+                    "OuterConeAngle": 30.0,
+                    "CastShadows": false
+                }
+            ]
+        }
+    ]
+}
