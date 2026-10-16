@@ -36,8 +36,7 @@ public class ScriptProbe : Script
     {
         FixedSteps++;
         // Turns 1 degree per fixed step about Y.
-        var rotation = transform.Rotation;
-        transform.Rotation = new Vector3(rotation.x, FixedSteps, rotation.z);
+        transform.Rotate(new Vector3(0, 1, 0));
     }
 
     public override void OnUpdate(float deltaTime)
