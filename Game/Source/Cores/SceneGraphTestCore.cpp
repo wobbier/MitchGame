@@ -4,7 +4,6 @@
 #include "Engine/Engine.h"
 #include "Mathf.h"
 #include "optick.h"
-#include "Work/Burst.h"
 #include "Jobs/JobSystem.h"
 #include "Components/Graphics/Mesh.h"
 #include "Graphics/Material.h"
