@@ -1,0 +1,34 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Tests/GlowRingDecal.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.25,
+				0.75,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Glow",
+			"Slot": 0,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Decal",
+			"Decal"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "Decal",
+	"Textures": [],
+	"Version": 1
+}

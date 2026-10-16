@@ -211,6 +211,137 @@
      }
     }
    ]
+  },
+  {
+   "GUID": "a1b2c3d4e5f60004",
+   "Name": "Graph Fire",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      2.6,
+      0.0,
+      -2.2
+     ],
+     "Rotation": [
+      0,
+      0,
+      0
+     ],
+     "Scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "Alignment": "Billboard",
+     "AngularVelocity": [
+      -45.0,
+      45.0
+     ],
+     "Blend": "Additive",
+     "BoxSize": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "BurstCount": 0,
+     "ConeAngle": 10.0,
+     "Drag": 0.5,
+     "Duration": 5.0,
+     "EmissionRate": 60.0,
+     "EmitFromShell": false,
+     "EndAlpha": 0.0,
+     "EndColor": [
+      0.6000000238418579,
+      0.15000000596046448,
+      0.05000000074505806
+     ],
+     "EndSize": 0.30000001192092896,
+     "FadeIn": 0.10000000149011612,
+     "FlipbookColumns": 1,
+     "FlipbookFps": 0.0,
+     "FlipbookRows": 1,
+     "Gravity": -0.15000000596046448,
+     "Intensity": 4.0,
+     "Lifetime": [
+      0.6000000238418579,
+      1.2000000476837158
+     ],
+     "Lit": false,
+     "Looping": true,
+     "MaxParticles": 1000,
+     "NoiseFrequency": 1.0,
+     "NoiseStrength": 1.2000000476837158,
+     "Rotation": [
+      0.0,
+      360.0
+     ],
+     "Shape": "Cone",
+     "ShapeRadius": 0.3499999940395355,
+     "SimulationSpace": "World",
+     "Size": [
+      0.25,
+      0.44999998807907104
+     ],
+     "SoftParticleDistance": 0.30000001192092896,
+     "Speed": [
+      0.800000011920929,
+      1.600000023841858
+     ],
+     "StartAlpha": 1.0,
+     "StartColor": [
+      1.0,
+      0.6000000238418579,
+      0.20000000298023224
+     ],
+     "StartColor2": [
+      1.0,
+      0.8500000238418579,
+      0.4000000059604645
+     ],
+     "StretchFactor": 0.10000000149011612,
+     "Texture": "",
+     "Type": "ParticleSystem",
+     "Graph": "Assets/ShaderGraphs/Tests/FireParticle.shadergraph"
+    }
+   ]
+  },
+  {
+   "GUID": "a1b2c3d4e5f60005",
+   "Name": "Graph Ring",
+   "DestroyOnLoad": true,
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "Rotation": [
+      90.0,
+      0.0,
+      0.0
+     ],
+     "Scale": [
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "Type": "Decal",
+     "Size": [
+      2.2,
+      2.2,
+      1.0
+     ],
+     "Graph": "Assets/ShaderGraphs/Tests/GlowRingDecal.shadergraph"
+    }
+   ]
   }
  ]
 }

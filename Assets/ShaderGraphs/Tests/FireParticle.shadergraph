@@ -1,0 +1,240 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "Particle",
+		"Surface": "Transparent"
+	},
+	"Properties": [],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Position": [
+				900,
+				0
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "ParticleTexture",
+			"Position": [
+				-400,
+				0
+			]
+		},
+		{
+			"Id": 3,
+			"Type": "SampleTexture2D",
+			"Position": [
+				-200,
+				0
+			]
+		},
+		{
+			"Id": 4,
+			"Type": "Particle",
+			"Position": [
+				-400,
+				250
+			]
+		},
+		{
+			"Id": 5,
+			"Type": "Panner",
+			"Position": [
+				-600,
+				450
+			],
+			"Defaults": {
+				"Speed": [
+					0.0,
+					-1.6,
+					0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 6,
+			"Type": "GradientNoise",
+			"Position": [
+				-400,
+				450
+			],
+			"Defaults": {
+				"Scale": [
+					5,
+					0,
+					0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 7,
+			"Type": "Remap",
+			"Position": [
+				-200,
+				450
+			],
+			"Defaults": {
+				"In Min": [
+					0,
+					0,
+					0,
+					0
+				],
+				"In Max": [
+					1,
+					0,
+					0,
+					0
+				],
+				"Out Min": [
+					0.4,
+					0,
+					0,
+					0
+				],
+				"Out Max": [
+					1.6,
+					0,
+					0,
+					0
+				]
+			}
+		},
+		{
+			"Id": 8,
+			"Type": "Multiply",
+			"Position": [
+				100,
+				0
+			]
+		},
+		{
+			"Id": 9,
+			"Type": "Multiply",
+			"Position": [
+				300,
+				0
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "Split",
+			"Position": [
+				-200,
+				250
+			]
+		},
+		{
+			"Id": 11,
+			"Type": "Multiply",
+			"Position": [
+				300,
+				250
+			]
+		},
+		{
+			"Id": 12,
+			"Type": "Multiply",
+			"Position": [
+				500,
+				250
+			]
+		}
+	],
+	"Links": [
+		[
+			2,
+			"Out",
+			3,
+			"Texture"
+		],
+		[
+			3,
+			"RGB",
+			8,
+			"A"
+		],
+		[
+			4,
+			"Color",
+			8,
+			"B"
+		],
+		[
+			8,
+			"Out",
+			9,
+			"A"
+		],
+		[
+			7,
+			"Out",
+			9,
+			"B"
+		],
+		[
+			9,
+			"Out",
+			1,
+			"Color"
+		],
+		[
+			4,
+			"Quad UV",
+			5,
+			"UV"
+		],
+		[
+			5,
+			"Out",
+			6,
+			"UV"
+		],
+		[
+			6,
+			"Out",
+			7,
+			"In"
+		],
+		[
+			4,
+			"Color",
+			10,
+			"In"
+		],
+		[
+			3,
+			"A",
+			11,
+			"A"
+		],
+		[
+			10,
+			"A",
+			11,
+			"B"
+		],
+		[
+			11,
+			"Out",
+			12,
+			"A"
+		],
+		[
+			6,
+			"Out",
+			12,
+			"B"
+		],
+		[
+			12,
+			"Out",
+			1,
+			"Alpha"
+		]
+	]
+}
