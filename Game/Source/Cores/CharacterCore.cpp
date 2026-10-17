@@ -11,6 +11,7 @@
 #include "Engine/World.h"
 #include "Mathf.h"
 #include "imgui.h"
+#include "Utils/HavanaUtils.h"
 #include "Components/Physics/CharacterController.h"
 #include "CLog.h"
 #include "Cores/PhysicsCore.h"
@@ -89,8 +90,10 @@ void CharacterCore::Update( const UpdateContext& inUpdateContext )
 void CharacterCore::OnEditorInspect()
 {
     Base::OnEditorInspect();
-    ImGui::DragFloat( "Movement Speed", &m_movementSpeed );
-    ImGui::DragFloat( "Look Sensitivity", &LookSensitivity );
+    HavanaUtils::Label( "Movement Speed" );
+    ImGui::DragFloat( "##MovementSpeed", &m_movementSpeed );
+    HavanaUtils::Label( "Look Sensitivity" );
+    ImGui::DragFloat( "##LookSensitivity", &LookSensitivity );
 }
 #endif
 

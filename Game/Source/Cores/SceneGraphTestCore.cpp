@@ -10,6 +10,7 @@
 
 #if USING( ME_EDITOR )
 #include "imgui.h"
+#include "Utils/HavanaUtils.h"
 #endif
 
 namespace
@@ -68,9 +69,12 @@ void SceneGraphTestCore::OnEditorInspect()
 {
     Base::OnEditorInspect();
 
-    ImGui::Checkbox( "Animate (rotate transforms)", &m_animate );
-    ImGui::Checkbox( "Animate Color (per level)", &m_animateColor );
-    ImGui::Text( "Entities: %zu", GetEntities().size() );
+    HavanaUtils::Label( "Animate (rotate transforms)" );
+    ImGui::Checkbox( "##Animate", &m_animate );
+    HavanaUtils::Label( "Animate Color (per level)" );
+    ImGui::Checkbox( "##AnimateColor", &m_animateColor );
+    HavanaUtils::Label( "Entities" );
+    ImGui::Text( "%zu", GetEntities().size() );
 }
 #endif
 

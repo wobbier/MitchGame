@@ -1,6 +1,7 @@
 #pragma once
 #include "imgui.h"
 #include "misc/cpp/imgui_stdlib.h"
+#include "Utils/HavanaUtils.h"
 #include "Engine/Engine.h"
 #include "ECS/EntityHandle.h"
 #include "Engine/World.h"
@@ -52,6 +53,11 @@ public:
 
     virtual void OnEditorInspect() final
     {
+        HavanaUtils::Label( "Import File" );
+        ImGui::InputText( "##ImportFile", &ImportPath );
+        HavanaUtils::Label( "Model Directory" );
+        ImGui::InputText( "##ModelDirectory", &ModelDirectory );
+        HavanaUtils::SkipLabel();
         if( ImGui::Button( "Import" ) )
         {
             Path filePath = Path( ImportPath );
@@ -68,9 +74,6 @@ public:
                 CreateChildRecursive( j, Parent );
             }
         }
-
-        ImGui::InputText( "Import File", &ImportPath );
-        ImGui::InputText( "Model Directory", &ModelDirectory );
     }
 #endif
 
