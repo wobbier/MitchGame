@@ -1,0 +1,165 @@
+{
+    "Cores": [],
+    "Entities": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -0.11024507880210876,
+                        2.2621302604675293,
+                        -7.556496620178223
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.28969624638557434,
+                        0.6715686321258545,
+                        0.6715686321258545
+                    ],
+                    "ClearType": "Color",
+                    "Far": 1000.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "ProceduralSky": {
+                        "CloudAltitude": 1500.0,
+                        "CloudCoverage": 0.4000000059604645,
+                        "CloudDensity": 1.0,
+                        "CloudThickness": 2500.0,
+                        "Latitude": -6.0,
+                        "Month": 5,
+                        "MoonAscendingNode": 125.08000183105469,
+                        "MoonBrightness": 1.0,
+                        "MoonOrbitInclination": 5.144999980926514,
+                        "MoonPhase": 0.4000000059604645,
+                        "MoonSize": 3.0,
+                        "StarBrightness": 1.0,
+                        "SunSize": 1.5,
+                        "Time": 15.0,
+                        "TimeScale": 0.0,
+                        "Turbidity": 1.899999976158142,
+                        "WindDirection": 60.0,
+                        "WindSpeed": 8.0
+                    },
+                    "Projection": "Perspective",
+                    "Type": "Camera",
+                    "Zoom": 45.0
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "352571a51453a51f",
+            "Name": "Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.20929282903671265,
+                        0.037840843200683594,
+                        -1.5791490077972412
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "Graph": "Assets/ShaderGraphs/MyTests/ScreenShader.shadergraph",
+                        "Params": {
+                            "ColorInput": [
+                                1.0,
+                                0.0,
+                                0.0,
+                                1.0
+                            ]
+                        },
+                        "Textures": {},
+                        "Type": "ShaderGraphMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "9ceb9d6132f743be",
+            "Name": "New Entity"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.07553082704544067,
+                        0.0,
+                        -4.677267074584961
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": false,
+                    "Color": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "DirectionalSource": "Automatic",
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 1.0,
+                    "Length": 1.2000000476837158,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Radius": 0.02500000037252903,
+                    "Range": 10.0,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "44ca2a9e2e5a790f",
+            "Name": "DirectionalLight"
+        }
+    ],
+    "Version": 2
+}

@@ -1,0 +1,75 @@
+{
+	"Links": [
+		[
+			2,
+			"Out",
+			1,
+			"Base Color"
+		]
+	],
+	"Nodes": [
+		{
+			"Defaults": {
+				"Emission": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				],
+				"Metallic": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 1,
+			"Position": [
+				216.0,
+				-154.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-165.0,
+				-166.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p1",
+			"IsColor": true,
+			"Name": "ColorInput",
+			"Type": "Vec4"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": true,
+		"Fog": true,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "World",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "Lit"
+	},
+	"Version": 1
+}
