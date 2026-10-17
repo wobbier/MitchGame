@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/Assimp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/Bullet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/ImGui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/JSON" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/Optick" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/SDL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/UltralightSDK" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/UltralightSDK/Source" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/bgfx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/bimg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/bx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/genie" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/glm" vcs="Git" />
+  </component>
+</project>
