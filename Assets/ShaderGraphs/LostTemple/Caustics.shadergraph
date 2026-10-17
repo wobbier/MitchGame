@@ -1,0 +1,465 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Decal"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Caustic Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                1.0,
+                0.85,
+                0.6,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                2.5,
+                2.5,
+                2.5,
+                2.5
+            ],
+            "Range": [
+                0.0,
+                20.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Scale",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.35,
+                0.35,
+                0.35,
+                0.35
+            ],
+            "Range": [
+                0.01,
+                4.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Speed",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.4,
+                0.4,
+                0.4,
+                0.4
+            ],
+            "Range": [
+                0.0,
+                4.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Base Color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Roughness": [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Position",
+            "Settings": {
+                "Space": "World"
+            },
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "xz"
+            },
+            "Position": [
+                -760,
+                80
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Time",
+            "Position": [
+                -760,
+                270
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "Caustics",
+                "Inputs": [
+                    {
+                        "Name": "Position",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Light",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "vec2 p = mod(Position * 6.2831853, vec2_splat(6.2831853)) - vec2_splat(250.0);\nvec2 i = p;\nfloat c = 1.0;\nfloat strength = 0.005;\nfor (int n = 0; n < 4; n++)\n{\n    float t = Time * (1.0 - (3.5 / float(n + 1)));\n    i = p + vec2(cos(t - i.x) + sin(t + i.y), sin(t - i.y) + cos(t + i.x));\n    c += 1.0 / length(vec2(p.x / (sin(i.x + t) / strength), p.y / (cos(i.y + t) / strength)));\n}\nc /= 4.0;\nc = 1.17 - pow(c, 1.4);\nLight = pow(abs(c), 8.0);"
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Decal",
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "xy"
+            },
+            "Position": [
+                -760,
+                460
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "Length",
+            "Position": [
+                -480,
+                80
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Smoothstep",
+            "Defaults": {
+                "Edge1": [
+                    0.36,
+                    0.36,
+                    0.36,
+                    0.36
+                ],
+                "Edge2": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "OneMinus",
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.6,
+                    1.6,
+                    1.6,
+                    1.6
+                ]
+            },
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Saturate",
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                80
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -110
+            ]
+        }
+    ],
+    "Links": [
+        [
+            6,
+            "Out",
+            7,
+            "In"
+        ],
+        [
+            7,
+            "Out",
+            8,
+            "A"
+        ],
+        [
+            4,
+            "Out",
+            8,
+            "B"
+        ],
+        [
+            9,
+            "Time",
+            10,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            10,
+            "B"
+        ],
+        [
+            8,
+            "Out",
+            11,
+            "Position"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "Time"
+        ],
+        [
+            12,
+            "Box Position",
+            13,
+            "In"
+        ],
+        [
+            13,
+            "Out",
+            14,
+            "In"
+        ],
+        [
+            14,
+            "Out",
+            15,
+            "In"
+        ],
+        [
+            15,
+            "Out",
+            16,
+            "In"
+        ],
+        [
+            11,
+            "Light",
+            17,
+            "A"
+        ],
+        [
+            12,
+            "Fade",
+            17,
+            "B"
+        ],
+        [
+            17,
+            "Out",
+            18,
+            "A"
+        ],
+        [
+            16,
+            "Out",
+            18,
+            "B"
+        ],
+        [
+            18,
+            "Out",
+            19,
+            "A"
+        ],
+        [
+            19,
+            "Out",
+            20,
+            "In"
+        ],
+        [
+            2,
+            "Out",
+            21,
+            "A"
+        ],
+        [
+            18,
+            "Out",
+            21,
+            "B"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            22,
+            "B"
+        ],
+        [
+            20,
+            "Out",
+            1,
+            "Alpha"
+        ],
+        [
+            22,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

@@ -1,0 +1,54 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LostTemple/SpiritWisp.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Swirl Speed",
+			"Range": [
+				0.0,
+				3.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				14.0,
+				14.0,
+				14.0,
+				14.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Core Tightness",
+			"Range": [
+				1.0,
+				60.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"ParticleLit": false,
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Particle",
+			"Particle"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "Particle",
+	"Textures": [],
+	"Version": 1
+}

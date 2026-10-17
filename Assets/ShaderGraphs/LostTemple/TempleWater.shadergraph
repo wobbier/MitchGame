@@ -1,0 +1,857 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit",
+        "Surface": "Transparent",
+        "Blend": "Alpha",
+        "CastShadows": false
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Deep Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.01,
+                0.05,
+                0.06,
+                1.0
+            ],
+            "IsColor": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Shallow Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.05,
+                0.22,
+                0.2,
+                1.0
+            ],
+            "IsColor": true
+        },
+        {
+            "Id": "p3",
+            "Name": "Foam Center",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Foam Radius",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                3.0,
+                3.0,
+                3.0,
+                3.0
+            ]
+        },
+        {
+            "Id": "p5",
+            "Name": "Clarity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.3,
+                0.3,
+                0.3,
+                0.3
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                -1600,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p5"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Position",
+            "Settings": {
+                "Space": "World"
+            },
+            "Position": [
+                -1600,
+                -110
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "xz"
+            },
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.18,
+                    0.18,
+                    0.18,
+                    0.18
+                ]
+            },
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Panner",
+            "Defaults": {
+                "Speed": [
+                    0.035,
+                    0.02,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "GradientNoise",
+            "Defaults": {
+                "Scale": [
+                    7.0,
+                    7.0,
+                    7.0,
+                    7.0
+                ]
+            },
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Panner",
+            "Defaults": {
+                "Speed": [
+                    -0.03,
+                    0.045,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "GradientNoise",
+            "Defaults": {
+                "Scale": [
+                    13.0,
+                    13.0,
+                    13.0,
+                    13.0
+                ]
+            },
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    0.6
+                ]
+            },
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            },
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Add",
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "NormalFromHeight",
+            "Defaults": {
+                "Strength": [
+                    0.14,
+                    0.14,
+                    0.14,
+                    0.14
+                ]
+            },
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "FresnelEffect",
+            "Defaults": {
+                "Power": [
+                    4.0,
+                    4.0,
+                    4.0,
+                    4.0
+                ]
+            },
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.9,
+                    0.9,
+                    0.9,
+                    0.9
+                ]
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Panner",
+            "Defaults": {
+                "Speed": [
+                    0.0,
+                    -0.35,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "GradientNoise",
+            "Defaults": {
+                "Scale": [
+                    4.0,
+                    4.0,
+                    4.0,
+                    4.0
+                ]
+            },
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "xz"
+            },
+            "Position": [
+                -1320,
+                -110
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "Distance",
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 24,
+            "Type": "Smoothstep",
+            "Defaults": {
+                "Edge1": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 25,
+            "Type": "OneMinus",
+            "Position": [
+                -480,
+                80
+            ]
+        },
+        {
+            "Id": 26,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.45,
+                    0.45,
+                    0.45,
+                    0.45
+                ]
+            },
+            "Position": [
+                -200,
+                270
+            ]
+        },
+        {
+            "Id": 27,
+            "Type": "Add",
+            "Position": [
+                80,
+                460
+            ]
+        },
+        {
+            "Id": 28,
+            "Type": "Smoothstep",
+            "Defaults": {
+                "Edge1": [
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35
+                ],
+                "Edge2": [
+                    0.7,
+                    0.7,
+                    0.7,
+                    0.7
+                ]
+            },
+            "Position": [
+                360,
+                460
+            ]
+        },
+        {
+            "Id": 29,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 30,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8
+                ]
+            },
+            "Position": [
+                360,
+                650
+            ]
+        },
+        {
+            "Id": 31,
+            "Type": "Lerp",
+            "Position": [
+                640,
+                80
+            ]
+        },
+        {
+            "Id": 32,
+            "Type": "Vector3",
+            "Settings": {
+                "Value": [
+                    0.85,
+                    0.9,
+                    0.9,
+                    0.0
+                ]
+            },
+            "Position": [
+                640,
+                270
+            ]
+        },
+        {
+            "Id": 33,
+            "Type": "Lerp",
+            "Position": [
+                920,
+                -110
+            ]
+        },
+        {
+            "Id": 34,
+            "Type": "OneMinus",
+            "Position": [
+                360,
+                840
+            ]
+        },
+        {
+            "Id": 35,
+            "Type": "Lerp",
+            "Defaults": {
+                "B": [
+                    0.96,
+                    0.96,
+                    0.96,
+                    0.96
+                ]
+            },
+            "Position": [
+                640,
+                460
+            ]
+        },
+        {
+            "Id": 36,
+            "Type": "Maximum",
+            "Position": [
+                920,
+                80
+            ]
+        },
+        {
+            "Id": 37,
+            "Type": "Lerp",
+            "Defaults": {
+                "A": [
+                    0.04,
+                    0.04,
+                    0.04,
+                    0.04
+                ],
+                "B": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                920,
+                270
+            ]
+        },
+        {
+            "Id": 38,
+            "Type": "Lerp",
+            "Defaults": {
+                "A": [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                "B": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                920,
+                460
+            ]
+        }
+    ],
+    "Links": [
+        [
+            7,
+            "Out",
+            8,
+            "In"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "A"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "UV"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "UV"
+        ],
+        [
+            9,
+            "Out",
+            12,
+            "UV"
+        ],
+        [
+            12,
+            "Out",
+            13,
+            "UV"
+        ],
+        [
+            11,
+            "Out",
+            14,
+            "A"
+        ],
+        [
+            13,
+            "Out",
+            15,
+            "A"
+        ],
+        [
+            14,
+            "Out",
+            16,
+            "A"
+        ],
+        [
+            15,
+            "Out",
+            16,
+            "B"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "In"
+        ],
+        [
+            8,
+            "Out",
+            19,
+            "A"
+        ],
+        [
+            19,
+            "Out",
+            20,
+            "UV"
+        ],
+        [
+            20,
+            "Out",
+            21,
+            "UV"
+        ],
+        [
+            4,
+            "Out",
+            22,
+            "In"
+        ],
+        [
+            8,
+            "Out",
+            23,
+            "A"
+        ],
+        [
+            22,
+            "Out",
+            23,
+            "B"
+        ],
+        [
+            5,
+            "Out",
+            24,
+            "Edge2"
+        ],
+        [
+            23,
+            "Out",
+            24,
+            "In"
+        ],
+        [
+            24,
+            "Out",
+            25,
+            "In"
+        ],
+        [
+            25,
+            "Out",
+            26,
+            "A"
+        ],
+        [
+            21,
+            "Out",
+            27,
+            "A"
+        ],
+        [
+            26,
+            "Out",
+            27,
+            "B"
+        ],
+        [
+            27,
+            "Out",
+            28,
+            "In"
+        ],
+        [
+            28,
+            "Out",
+            29,
+            "A"
+        ],
+        [
+            25,
+            "Out",
+            29,
+            "B"
+        ],
+        [
+            18,
+            "Out",
+            30,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            31,
+            "A"
+        ],
+        [
+            2,
+            "Out",
+            31,
+            "B"
+        ],
+        [
+            30,
+            "Out",
+            31,
+            "T"
+        ],
+        [
+            31,
+            "Out",
+            33,
+            "A"
+        ],
+        [
+            32,
+            "Out",
+            33,
+            "B"
+        ],
+        [
+            29,
+            "Out",
+            33,
+            "T"
+        ],
+        [
+            6,
+            "Out",
+            34,
+            "In"
+        ],
+        [
+            34,
+            "Out",
+            35,
+            "A"
+        ],
+        [
+            18,
+            "Out",
+            35,
+            "T"
+        ],
+        [
+            35,
+            "Out",
+            36,
+            "A"
+        ],
+        [
+            29,
+            "Out",
+            36,
+            "B"
+        ],
+        [
+            29,
+            "Out",
+            37,
+            "T"
+        ],
+        [
+            29,
+            "Out",
+            38,
+            "T"
+        ],
+        [
+            33,
+            "Out",
+            1,
+            "Base Color"
+        ],
+        [
+            17,
+            "Out",
+            1,
+            "Normal"
+        ],
+        [
+            37,
+            "Out",
+            1,
+            "Roughness"
+        ],
+        [
+            36,
+            "Out",
+            1,
+            "Alpha"
+        ],
+        [
+            38,
+            "Out",
+            1,
+            "Occlusion"
+        ]
+    ]
+}

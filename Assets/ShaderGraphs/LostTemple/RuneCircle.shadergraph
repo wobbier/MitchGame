@@ -1,0 +1,287 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Decal"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Glow Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.25,
+                1.0,
+                0.8,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Glow Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                8.0,
+                8.0,
+                8.0,
+                8.0
+            ],
+            "Range": [
+                0.0,
+                40.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Turn Speed",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.015,
+                0.015,
+                0.015,
+                0.015
+            ],
+            "Range": [
+                -0.2,
+                0.2
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Carving Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.05,
+                0.05,
+                0.045,
+                1.0
+            ],
+            "IsColor": true
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Roughness": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    0.6
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "UV",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Time",
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "RuneRing",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Speed",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Mask",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Glow",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "vec2 p = UV - vec2_splat(0.5);\nfloat r = length(p) * 2.0;\nfloat a = atan2(p.y, p.x) * 0.15915494 + 0.5;\nfloat ring = 1.0 - smoothstep(0.0, 0.012, abs(r - 0.94));\nring += 1.0 - smoothstep(0.0, 0.008, abs(r - 0.79));\nring += 1.0 - smoothstep(0.0, 0.01, abs(r - 0.43));\nring += (1.0 - smoothstep(0.0, 0.006, abs(r - 0.36))) * 0.6;\nfloat turn = a + Time * Speed;\nfloat cell = floor(turn * 28.0);\nfloat seg = fract(turn * 28.0);\nfloat h = fract(sin(cell * 91.7) * 4375.85);\nfloat h2 = fract(sin(cell * 17.3 + 4.1) * 2953.31);\nfloat band = step(0.815, r) * step(r, 0.915);\nfloat stroke = step(0.22, seg) * step(seg, 0.32 + h * 0.45);\nfloat bar = step(abs(r - (0.83 + h2 * 0.06)), 0.007) * step(0.2, seg) * step(seg, 0.8);\nfloat glyph = band * max(stroke * step(0.3, h), bar);\nfloat spin = a * 6.2831853 - Time * Speed * 2.5;\nvec2 q = vec2(cos(spin), sin(spin)) * r;\nfloat star = 0.0;\nfor (int i = 0; i < 6; i++)\n{\n    float k = float(i) * 1.0471976;\n    vec2 d = vec2(cos(k), sin(k));\n    star += 1.0 - smoothstep(0.0, 0.01, abs(dot(q, vec2(-d.y, d.x))));\n}\nstar *= step(r, 0.43) * step(0.12, r);\nfloat core = 1.0 - smoothstep(0.0, 0.1, r);\nfloat pulse = 0.65 + 0.35 * sin(Time * 2.2 - r * 9.0);\nMask = clamp(ring + glyph + star * 0.8 + core, 0.0, 1.0) * step(r, 1.0);\nGlow = Mask * pulse;"
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Decal",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -110
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                80
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                80
+            ]
+        }
+    ],
+    "Links": [
+        [
+            6,
+            "Out",
+            8,
+            "UV"
+        ],
+        [
+            7,
+            "Time",
+            8,
+            "Time"
+        ],
+        [
+            4,
+            "Out",
+            8,
+            "Speed"
+        ],
+        [
+            8,
+            "Mask",
+            10,
+            "A"
+        ],
+        [
+            9,
+            "Fade",
+            10,
+            "B"
+        ],
+        [
+            2,
+            "Out",
+            11,
+            "A"
+        ],
+        [
+            8,
+            "Glow",
+            11,
+            "B"
+        ],
+        [
+            11,
+            "Out",
+            12,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            12,
+            "B"
+        ],
+        [
+            5,
+            "Out",
+            1,
+            "Base Color"
+        ],
+        [
+            10,
+            "Out",
+            1,
+            "Alpha"
+        ],
+        [
+            12,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

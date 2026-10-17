@@ -1,0 +1,85 @@
+# Compile and preview the Lost Temple shader graphs, then smoke-test the scene in play.
+# Engine/Tools/Headless.sh .build/Editor_Debug/Havana --scene Assets/Scenes/LostTemple.lvl --editor-exec Assets/Scenes/LostTemple.edscript
+wait 30
+assert-exists Main Camera
+assert-exists Golden Idol
+assert-exists Expedition Leader
+assert-exists Surveyor
+sg-open Assets/ShaderGraphs/LostTemple/AncientStone.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/AncientStone.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/JungleFloor.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/JungleFloor.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/TempleWater.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/TempleWater.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/Waterfall.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/Waterfall.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/IdolGold.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/IdolGold.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/Foliage.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/Foliage.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/FoliageCutout.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/FoliageCutout.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/GlowMushroom.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/GlowMushroom.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/SpiritBeam.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/SpiritBeam.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/RuneCircle.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/RuneCircle.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/Caustics.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/Caustics.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/SpiritWisp.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/SpiritWisp.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/Flame.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/Flame.shadergraph
+sg-open Assets/ShaderGraphs/LostTemple/LensDirt.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LostTemple/LensDirt.shadergraph
+wait 10
+play
+wait 90
+assert-playing 1
+assert-field Main Camera | Transform.Position | != [12, 2.4, -9]
+stop
+assert-playing 0
+wait 10

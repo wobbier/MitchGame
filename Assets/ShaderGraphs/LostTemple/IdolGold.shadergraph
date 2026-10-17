@@ -1,0 +1,647 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Gold Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                1.0,
+                0.72,
+                0.3,
+                1.0
+            ],
+            "IsColor": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Glow Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.2,
+                1.0,
+                0.75,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        },
+        {
+            "Id": "p3",
+            "Name": "Glow Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                6.0,
+                6.0,
+                6.0,
+                6.0
+            ],
+            "Range": [
+                0.0,
+                30.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Pulse Speed",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                1.6,
+                1.6,
+                1.6,
+                1.6
+            ],
+            "Range": [
+                0.0,
+                10.0
+            ]
+        },
+        {
+            "Id": "p5",
+            "Name": "Vein Scale",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                28.0,
+                28.0,
+                28.0,
+                28.0
+            ],
+            "Range": [
+                1.0,
+                100.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Metallic": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p5"
+            },
+            "Position": [
+                -1320,
+                -110
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Position",
+            "Settings": {
+                "Space": "Object"
+            },
+            "Position": [
+                -2440,
+                -300
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Split",
+            "Position": [
+                -2160,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.7,
+                    0.7,
+                    0.7,
+                    0.7
+                ]
+            },
+            "Position": [
+                -1880,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Add",
+            "Position": [
+                -1600,
+                -300
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Combine",
+            "Defaults": {
+                "B": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "A": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -1320,
+                80
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "GradientNoise",
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    2.0,
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "Subtract",
+            "Defaults": {
+                "B": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Absolute",
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "OneMinus",
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Power",
+            "Defaults": {
+                "B": [
+                    12.0,
+                    12.0,
+                    12.0,
+                    12.0
+                ]
+            },
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Time",
+            "Position": [
+                -1320,
+                270
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Multiply",
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Sine",
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Add",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 24,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.7,
+                    0.7,
+                    0.7,
+                    0.7
+                ]
+            },
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 25,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            },
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 26,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 27,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -110
+            ]
+        },
+        {
+            "Id": 28,
+            "Type": "GradientNoise",
+            "Defaults": {
+                "Scale": [
+                    90.0,
+                    90.0,
+                    90.0,
+                    90.0
+                ]
+            },
+            "Position": [
+                360,
+                460
+            ]
+        },
+        {
+            "Id": 29,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.22,
+                    0.22,
+                    0.22,
+                    0.22
+                ]
+            },
+            "Position": [
+                640,
+                80
+            ]
+        },
+        {
+            "Id": 30,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                920,
+                80
+            ]
+        }
+    ],
+    "Links": [
+        [
+            7,
+            "Out",
+            8,
+            "In"
+        ],
+        [
+            8,
+            "B",
+            9,
+            "A"
+        ],
+        [
+            8,
+            "R",
+            10,
+            "A"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "B"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "R"
+        ],
+        [
+            8,
+            "G",
+            11,
+            "G"
+        ],
+        [
+            11,
+            "RG",
+            12,
+            "UV"
+        ],
+        [
+            6,
+            "Out",
+            12,
+            "Scale"
+        ],
+        [
+            12,
+            "Out",
+            13,
+            "A"
+        ],
+        [
+            13,
+            "Out",
+            14,
+            "A"
+        ],
+        [
+            14,
+            "Out",
+            15,
+            "In"
+        ],
+        [
+            15,
+            "Out",
+            16,
+            "In"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "A"
+        ],
+        [
+            18,
+            "Time",
+            19,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            19,
+            "B"
+        ],
+        [
+            19,
+            "Out",
+            20,
+            "In"
+        ],
+        [
+            20,
+            "Out",
+            21,
+            "A"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            23,
+            "A"
+        ],
+        [
+            17,
+            "Out",
+            23,
+            "B"
+        ],
+        [
+            22,
+            "Out",
+            24,
+            "A"
+        ],
+        [
+            24,
+            "Out",
+            25,
+            "B"
+        ],
+        [
+            4,
+            "Out",
+            26,
+            "A"
+        ],
+        [
+            25,
+            "Out",
+            26,
+            "B"
+        ],
+        [
+            23,
+            "Out",
+            27,
+            "A"
+        ],
+        [
+            26,
+            "Out",
+            27,
+            "B"
+        ],
+        [
+            11,
+            "RG",
+            28,
+            "UV"
+        ],
+        [
+            28,
+            "Out",
+            29,
+            "A"
+        ],
+        [
+            29,
+            "Out",
+            30,
+            "B"
+        ],
+        [
+            2,
+            "Out",
+            1,
+            "Base Color"
+        ],
+        [
+            30,
+            "Out",
+            1,
+            "Roughness"
+        ],
+        [
+            27,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

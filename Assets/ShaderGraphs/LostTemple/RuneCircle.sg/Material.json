@@ -1,0 +1,82 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LostTemple/RuneCircle.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.25,
+				1.0,
+				0.800000011920929,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Glow Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				8.0,
+				8.0,
+				8.0,
+				8.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Glow Intensity",
+			"Range": [
+				0.0,
+				40.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.014999999664723873,
+				0.014999999664723873,
+				0.014999999664723873,
+				0.014999999664723873
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Turn Speed",
+			"Range": [
+				-0.20000000298023224,
+				0.20000000298023224
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.05000000074505806,
+				0.05000000074505806,
+				0.04500000178813934,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Carving Color",
+			"Slot": 3,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Decal",
+			"Decal"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Decal",
+	"Textures": [],
+	"Version": 1
+}

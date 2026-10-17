@@ -1,0 +1,106 @@
+{
+	"AlphaClip": true,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LostTemple/FoliageCutout.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Tint",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.07999999821186066,
+				0.07999999821186066,
+				0.07999999821186066,
+				0.07999999821186066
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Wind Strength",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.2999999523162842,
+				1.2999999523162842,
+				1.2999999523162842,
+				1.2999999523162842
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Wind Speed",
+			"Range": [
+				0.0,
+				6.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				5.0,
+				5.0,
+				5.0,
+				5.0
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Sway Height",
+			"Range": [
+				-30.0,
+				30.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Shadow": [
+			"Forward",
+			"Shadow"
+		],
+		"ShadowSkinned": [
+			"Skinned",
+			"Shadow"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [
+		{
+			"Asset": "Assets/Models/Synty/ExplorerKit/Textures/Generic_Ivy.tga",
+			"Default": "white",
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Albedo",
+			"Slot": 0,
+			"Type": "Texture2D"
+		}
+	],
+	"Version": 1
+}

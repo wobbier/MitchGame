@@ -1,0 +1,593 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Albedo",
+            "Type": "Texture2D",
+            "Exposed": true,
+            "Texture": "Assets/Models/Synty/ExplorerKit/Textures/Alts/Generic_01_A.png",
+            "DefaultTexture": "white"
+        },
+        {
+            "Id": "p2",
+            "Name": "Glow Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.25,
+                0.85,
+                1.0,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        },
+        {
+            "Id": "p3",
+            "Name": "Glow Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                4.0,
+                4.0,
+                4.0,
+                4.0
+            ],
+            "Range": [
+                0.0,
+                20.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Cap Height",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.22,
+                0.22,
+                0.22,
+                0.22
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Roughness": [
+                    0.45,
+                    0.45,
+                    0.45,
+                    0.45
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Position",
+            "Settings": {
+                "Space": "Object"
+            },
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Split",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Position",
+            "Settings": {
+                "Space": "World"
+            },
+            "Position": [
+                -2160,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Split",
+            "Position": [
+                -1880,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Add",
+            "Defaults": {
+                "B": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Smoothstep",
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Time",
+            "Position": [
+                -1600,
+                -300
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.3,
+                    1.3,
+                    1.3,
+                    1.3
+                ]
+            },
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    2.1,
+                    2.1,
+                    2.1,
+                    2.1
+                ]
+            },
+            "Position": [
+                -1600,
+                -110
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.7,
+                    1.7,
+                    1.7,
+                    1.7
+                ]
+            },
+            "Position": [
+                -1600,
+                80
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Add",
+            "Position": [
+                -1320,
+                -110
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Add",
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Sine",
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Add",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "SampleTexture2D",
+            "Settings": {
+                "Type": "Color"
+            },
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    0.6
+                ]
+            },
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 24,
+            "Type": "Lerp",
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 25,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                80
+            ]
+        },
+        {
+            "Id": 26,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.65,
+                    0.65,
+                    0.65,
+                    0.65
+                ]
+            },
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 27,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35
+                ]
+            },
+            "Position": [
+                360,
+                460
+            ]
+        },
+        {
+            "Id": 28,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                270
+            ]
+        },
+        {
+            "Id": 29,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -110
+            ]
+        }
+    ],
+    "Links": [
+        [
+            6,
+            "Out",
+            7,
+            "In"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "In"
+        ],
+        [
+            5,
+            "Out",
+            10,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            11,
+            "Edge1"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "Edge2"
+        ],
+        [
+            7,
+            "G",
+            11,
+            "In"
+        ],
+        [
+            12,
+            "Time",
+            13,
+            "A"
+        ],
+        [
+            9,
+            "R",
+            14,
+            "A"
+        ],
+        [
+            9,
+            "B",
+            15,
+            "A"
+        ],
+        [
+            14,
+            "Out",
+            16,
+            "A"
+        ],
+        [
+            15,
+            "Out",
+            16,
+            "B"
+        ],
+        [
+            13,
+            "Out",
+            17,
+            "A"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "B"
+        ],
+        [
+            17,
+            "Out",
+            18,
+            "In"
+        ],
+        [
+            18,
+            "Out",
+            19,
+            "A"
+        ],
+        [
+            19,
+            "Out",
+            20,
+            "A"
+        ],
+        [
+            2,
+            "Out",
+            21,
+            "Texture"
+        ],
+        [
+            21,
+            "RGB",
+            22,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            22,
+            "B"
+        ],
+        [
+            11,
+            "Out",
+            23,
+            "A"
+        ],
+        [
+            21,
+            "RGB",
+            24,
+            "A"
+        ],
+        [
+            22,
+            "Out",
+            24,
+            "B"
+        ],
+        [
+            23,
+            "Out",
+            24,
+            "T"
+        ],
+        [
+            3,
+            "Out",
+            25,
+            "A"
+        ],
+        [
+            11,
+            "Out",
+            25,
+            "B"
+        ],
+        [
+            20,
+            "Out",
+            26,
+            "A"
+        ],
+        [
+            26,
+            "Out",
+            27,
+            "B"
+        ],
+        [
+            4,
+            "Out",
+            28,
+            "A"
+        ],
+        [
+            27,
+            "Out",
+            28,
+            "B"
+        ],
+        [
+            25,
+            "Out",
+            29,
+            "A"
+        ],
+        [
+            28,
+            "Out",
+            29,
+            "B"
+        ],
+        [
+            24,
+            "Out",
+            1,
+            "Base Color"
+        ],
+        [
+            29,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

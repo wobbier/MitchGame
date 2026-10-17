@@ -1,0 +1,94 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LostTemple/TempleWater.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.009999999776482582,
+				0.05000000074505806,
+				0.05999999865889549,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Deep Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.05000000074505806,
+				0.2199999988079071,
+				0.20000000298023224,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Shallow Color",
+			"Slot": 1,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Foam Center",
+			"Slot": 2,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				3.0,
+				3.0,
+				3.0,
+				3.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Foam Radius",
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.30000001192092896,
+				0.30000001192092896,
+				0.30000001192092896,
+				0.30000001192092896
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Clarity",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 4,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

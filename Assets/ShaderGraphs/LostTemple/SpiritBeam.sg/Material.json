@@ -1,0 +1,72 @@
+{
+	"AlphaClip": false,
+	"Blend": "Additive",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LostTemple/SpiritBeam.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.25,
+				1.0,
+				0.800000011920929,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Beam Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				1.600000023841858,
+				1.600000023841858,
+				1.600000023841858,
+				1.600000023841858
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				20.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Rise Speed",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Transparent",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

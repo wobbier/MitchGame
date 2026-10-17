@@ -1,0 +1,631 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "PostProcess",
+        "Injection": "BeforeTonemap"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Lens Dirt",
+            "Type": "Texture2D",
+            "Exposed": true,
+            "Texture": "Assets/Models/Synty/ExplorerKit/Textures/SyntyLensDirt_01.png",
+            "DefaultTexture": "black"
+        },
+        {
+            "Id": "p2",
+            "Name": "Dirt Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.35,
+                0.35,
+                0.35,
+                0.35
+            ],
+            "Range": [
+                0.0,
+                4.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Threshold",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                1.5,
+                1.5,
+                1.5,
+                1.5
+            ],
+            "Range": [
+                0.0,
+                10.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Fringe",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.0025,
+                0.0025,
+                0.0025,
+                0.0025
+            ],
+            "Range": [
+                0.0,
+                0.02
+            ]
+        },
+        {
+            "Id": "p5",
+            "Name": "Glow Focus",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                5.0,
+                5.0,
+                5.0,
+                5.0
+            ],
+            "Range": [
+                0.0,
+                30.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                -2440,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p5"
+            },
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "ScreenPosition",
+            "Position": [
+                -2160,
+                -300
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Subtract",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Add",
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "SceneColor",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Split",
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Subtract",
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "SceneColor",
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Split",
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "SceneColor",
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Split",
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Combine",
+            "Defaults": {
+                "A": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "BrightLight",
+                "Inputs": [
+                    {
+                        "Name": "Threshold",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Light",
+                        "Type": "Vec3"
+                    },
+                    {
+                        "Name": "Centre",
+                        "Type": "Vec2"
+                    }
+                ],
+                "Code": "// Samples the frame on a coarse grid (sgSceneColor is the target's scene-colour lookup): the light\n// above Threshold, its average colour and where on screen it sits. Fixed sample positions, so bright\n// points never leave ghost copies.\nvec3 sum = vec3_splat(0.0);\nvec2 centre = vec2_splat(0.0);\nfloat total = 0.0;\nfor (int y = 0; y < 4; y++)\n{\n    for (int x = 0; x < 6; x++)\n    {\n        vec2 uv = vec2((float(x) + 0.5) / 6.0, (float(y) + 0.5) / 4.0);\n        vec3 c = sgSceneColor(uv);\n        float l = max(dot(c, vec3(0.2126, 0.7152, 0.0722)) - Threshold, 0.0);\n        sum += c * l;\n        centre += uv * l;\n        total += l;\n    }\n}\nLight = sum / (24.0 * max(Threshold, 0.05));\nCentre = total > 0.0001 ? centre / total : vec2_splat(0.5);"
+            },
+            "Position": [
+                -2160,
+                -110
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Subtract",
+            "Position": [
+                -1880,
+                -300
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.78,
+                    1.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -1600,
+                -300
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "DotProduct",
+            "Position": [
+                -1320,
+                -110
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "Multiply",
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 24,
+            "Type": "Negate",
+            "Position": [
+                -760,
+                80
+            ]
+        },
+        {
+            "Id": 25,
+            "Type": "Exponential",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 26,
+            "Type": "SampleTexture2D",
+            "Settings": {
+                "Type": "Color"
+            },
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 27,
+            "Type": "Add",
+            "Defaults": {
+                "B": [
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25
+                ]
+            },
+            "Position": [
+                -200,
+                270
+            ]
+        },
+        {
+            "Id": 28,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                460
+            ]
+        },
+        {
+            "Id": 29,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                460
+            ]
+        },
+        {
+            "Id": 30,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 31,
+            "Type": "Add",
+            "Position": [
+                920,
+                -300
+            ]
+        }
+    ],
+    "Links": [
+        [
+            7,
+            "UV",
+            8,
+            "A"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            9,
+            "B"
+        ],
+        [
+            7,
+            "UV",
+            10,
+            "A"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "B"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "UV"
+        ],
+        [
+            11,
+            "Out",
+            12,
+            "In"
+        ],
+        [
+            7,
+            "UV",
+            13,
+            "A"
+        ],
+        [
+            9,
+            "Out",
+            13,
+            "B"
+        ],
+        [
+            13,
+            "Out",
+            14,
+            "UV"
+        ],
+        [
+            14,
+            "Out",
+            15,
+            "In"
+        ],
+        [
+            7,
+            "UV",
+            16,
+            "UV"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "In"
+        ],
+        [
+            12,
+            "R",
+            18,
+            "R"
+        ],
+        [
+            17,
+            "G",
+            18,
+            "G"
+        ],
+        [
+            15,
+            "B",
+            18,
+            "B"
+        ],
+        [
+            4,
+            "Out",
+            19,
+            "Threshold"
+        ],
+        [
+            7,
+            "UV",
+            20,
+            "A"
+        ],
+        [
+            19,
+            "Centre",
+            20,
+            "B"
+        ],
+        [
+            20,
+            "Out",
+            21,
+            "A"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "A"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "B"
+        ],
+        [
+            22,
+            "Out",
+            23,
+            "A"
+        ],
+        [
+            6,
+            "Out",
+            23,
+            "B"
+        ],
+        [
+            23,
+            "Out",
+            24,
+            "In"
+        ],
+        [
+            24,
+            "Out",
+            25,
+            "In"
+        ],
+        [
+            2,
+            "Out",
+            26,
+            "Texture"
+        ],
+        [
+            7,
+            "UV",
+            26,
+            "UV"
+        ],
+        [
+            25,
+            "Out",
+            27,
+            "A"
+        ],
+        [
+            27,
+            "Out",
+            28,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            28,
+            "B"
+        ],
+        [
+            19,
+            "Light",
+            29,
+            "A"
+        ],
+        [
+            28,
+            "Out",
+            29,
+            "B"
+        ],
+        [
+            26,
+            "RGB",
+            30,
+            "A"
+        ],
+        [
+            29,
+            "Out",
+            30,
+            "B"
+        ],
+        [
+            18,
+            "RGB",
+            31,
+            "A"
+        ],
+        [
+            30,
+            "Out",
+            31,
+            "B"
+        ],
+        [
+            31,
+            "Out",
+            1,
+            "Color"
+        ]
+    ]
+}

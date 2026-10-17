@@ -1,0 +1,81 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LostTemple/Waterfall.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.2199999988079071,
+				0.41999998688697815,
+				0.41999998688697815,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Water Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.9200000166893005,
+				0.949999988079071,
+				0.949999988079071,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Foam Color",
+			"Slot": 1,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.8999999761581421,
+				0.8999999761581421,
+				0.8999999761581421,
+				0.8999999761581421
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Fall Speed",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				-10.0,
+				-10.0,
+				-10.0,
+				-10.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Base Height",
+			"Slot": 3,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}
