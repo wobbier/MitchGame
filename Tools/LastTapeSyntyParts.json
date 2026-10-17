@@ -1,0 +1,122 @@
+{
+    "SM_Bld_House_Preset_02": [
+        "RootNode#0/SM_Bld_House_Preset_02#0/@#0",
+        "RootNode#0/SM_Bld_House_Preset_02#0/@#1",
+        "RootNode#0/SM_Bld_House_Preset_02#0/@#2"
+    ],
+    "SM_Bld_House_Preset_01": [
+        "RootNode#0/SM_Bld_House_Preset_01#0/@#0",
+        "RootNode#0/SM_Bld_House_Preset_01#0/@#1",
+        "RootNode#0/SM_Bld_House_Preset_01#0/@#2"
+    ],
+    "SM_Prop_Desk_01": [
+        "RootNode#0/SM_Prop_Desk_01#0/@#0"
+    ],
+    "SM_Prop_Computer_Screen_01": [
+        "RootNode#0/SM_Prop_Computer_Screen_01#0/@#0"
+    ],
+    "SM_Prop_Computer_Keyboard_01": [
+        "RootNode#0/SM_Prop_Computer_Keyboard_01#0/@#0"
+    ],
+    "SM_Prop_Computer_Mouse_01": [
+        "RootNode#0/SM_Prop_Computer_Mouse_01#0/@#0"
+    ],
+    "SM_Prop_DeskChair_01": [
+        "RootNode#0/SM_Prop_DeskChair_01#0/@#0"
+    ],
+    "SM_Item_Drink_01": [
+        "RootNode#0/SM_Item_Drink_01#0/@#0"
+    ],
+    "SM_Prop_Couch_01": [
+        "RootNode#0/SM_Prop_Couch_01#0/@#0"
+    ],
+    "SM_Prop_CoffeeTable_01": [
+        "RootNode#0/SM_Prop_CoffeeTable_01#0/@#0"
+    ],
+    "SM_Prop_Game_Console_01": [
+        "RootNode#0/SM_Prop_Game_Console_01#0/@#0"
+    ],
+    "SM_Prop_Game_Controller_01": [
+        "RootNode#0/SM_Prop_Game_Controller_01#0/@#0"
+    ],
+    "SM_Item_Pizza_Box_01": [
+        "RootNode#0/SM_Item_Pizza_Box_01#0/@#0",
+        "RootNode#0/SM_Item_Pizza_Box_01#0/SM_Item_Pizza_01_$AssimpFbx$_RotationPivot#0/SM_Item_Pizza_01_$AssimpFbx$_RotationPivotInverse#0/SM_Item_Pizza_01_$AssimpFbx$_ScalingPivot#0/SM_Item_Pizza_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Item_Pizza_01#0/@#0",
+        "RootNode#0/SM_Item_Pizza_Box_01#0/SM_Item_Pizza_Lid_e01_$AssimpFbx$_RotationPivot#0/SM_Item_Pizza_Lid_e01_$AssimpFbx$_RotationPivotInverse#0/SM_Item_Pizza_Lid_e01_$AssimpFbx$_ScalingPivot#0/SM_Item_Pizza_Lid_e01_$AssimpFbx$_ScalingPivotInverse#0/SM_Item_Pizza_Lid_e01#0/@#0",
+        "RootNode#0/SM_Item_Pizza_Box_01#0/SM_Item_Pizza_Slice_01_$AssimpFbx$_RotationPivot#0/SM_Item_Pizza_Slice_01_$AssimpFbx$_RotationPivotInverse#0/SM_Item_Pizza_Slice_01_$AssimpFbx$_ScalingPivot#0/SM_Item_Pizza_Slice_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Item_Pizza_Slice_01#0/@#0"
+    ],
+    "SM_Prop_Television_Old_01": [
+        "RootNode#0/SM_Prop_Television_Old_01#0/@#0",
+        "RootNode#0/SM_Prop_Television_Old_01#0/@#1"
+    ],
+    "SM_Prop_Stereo_01": [
+        "RootNode#0/SM_Prop_Stereo_01#0/@#0"
+    ],
+    "SM_Prop_Stereo_Speaker_Large_01": [
+        "RootNode#0/SM_Prop_Stereo_Speaker_Large_01#0/@#0"
+    ],
+    "SM_Prop_Deckchair_01": [
+        "RootNode#0/SM_Prop_Deckchair_01#0/@#0"
+    ],
+    "SM_Item_Drink_02": [
+        "RootNode#0/SM_Item_Drink_02#0/@#0"
+    ],
+    "SM_Veh_Convertable_01": [
+        "RootNode#0/SM_Veh_Convertable_01#0/@#0",
+        "RootNode#0/SM_Veh_Convertable_01#0/SM_Veh_Convertable_Glass#0/@#0",
+        "RootNode#0/SM_Veh_Convertable_01#0/SM_Veh_Convertable_SteeringW_$AssimpFbx$_RotationPivot#0/SM_Veh_Convertable_SteeringW_$AssimpFbx$_Rotation#0/SM_Veh_Convertable_SteeringW_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Convertable_SteeringW_$AssimpFbx$_ScalingPivot#0/SM_Veh_Convertable_SteeringW_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Convertable_SteeringW#0/@#0",
+        "RootNode#0/SM_Veh_Convertable_01#0/SM_Veh_Convertable_Wheel_fl_$AssimpFbx$_RotationPivot#0/SM_Veh_Convertable_Wheel_fl_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Convertable_Wheel_fl_$AssimpFbx$_ScalingPivot#0/SM_Veh_Convertable_Wheel_fl_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Convertable_Wheel_fl#0/@#0",
+        "RootNode#0/SM_Veh_Convertable_01#0/SM_Veh_Convertable_Wheel_fr_$AssimpFbx$_RotationPivot#0/SM_Veh_Convertable_Wheel_fr_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Convertable_Wheel_fr_$AssimpFbx$_ScalingPivot#0/SM_Veh_Convertable_Wheel_fr_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Convertable_Wheel_fr#0/@#0",
+        "RootNode#0/SM_Veh_Convertable_01#0/SM_Veh_Convertable_Wheel_rl_$AssimpFbx$_RotationPivot#0/SM_Veh_Convertable_Wheel_rl_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Convertable_Wheel_rl_$AssimpFbx$_ScalingPivot#0/SM_Veh_Convertable_Wheel_rl_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Convertable_Wheel_rl#0/@#0",
+        "RootNode#0/SM_Veh_Convertable_01#0/SM_Veh_Convertable_Wheel_rr_$AssimpFbx$_RotationPivot#0/SM_Veh_Convertable_Wheel_rr_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Convertable_Wheel_rr_$AssimpFbx$_ScalingPivot#0/SM_Veh_Convertable_Wheel_rr_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Convertable_Wheel_rr#0/@#0"
+    ],
+    "SM_Veh_Pickup_01": [
+        "RootNode#0/SM_Veh_Pickup_01#0/@#0",
+        "RootNode#0/SM_Veh_Pickup_01#0/SM_Veh_Pickup_Glass#0/@#0",
+        "RootNode#0/SM_Veh_Pickup_01#0/SM_Veh_Pickup_SteeringW_$AssimpFbx$_RotationPivot#0/SM_Veh_Pickup_SteeringW_$AssimpFbx$_Rotation#0/SM_Veh_Pickup_SteeringW_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Pickup_SteeringW_$AssimpFbx$_ScalingPivot#0/SM_Veh_Pickup_SteeringW_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Pickup_SteeringW#0/@#0",
+        "RootNode#0/SM_Veh_Pickup_01#0/SM_Veh_Pickup_Wheel_fl_$AssimpFbx$_RotationPivot#0/SM_Veh_Pickup_Wheel_fl_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Pickup_Wheel_fl_$AssimpFbx$_ScalingPivot#0/SM_Veh_Pickup_Wheel_fl_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Pickup_Wheel_fl#0/@#0",
+        "RootNode#0/SM_Veh_Pickup_01#0/SM_Veh_Pickup_Wheel_fr_$AssimpFbx$_RotationPivot#0/SM_Veh_Pickup_Wheel_fr_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Pickup_Wheel_fr_$AssimpFbx$_ScalingPivot#0/SM_Veh_Pickup_Wheel_fr_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Pickup_Wheel_fr#0/@#0",
+        "RootNode#0/SM_Veh_Pickup_01#0/SM_Veh_Pickup_Wheel_rl_$AssimpFbx$_RotationPivot#0/SM_Veh_Pickup_Wheel_rl_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Pickup_Wheel_rl_$AssimpFbx$_ScalingPivot#0/SM_Veh_Pickup_Wheel_rl_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Pickup_Wheel_rl#0/@#0",
+        "RootNode#0/SM_Veh_Pickup_01#0/SM_Veh_Pickup_Wheel_rr_$AssimpFbx$_RotationPivot#0/SM_Veh_Pickup_Wheel_rr_$AssimpFbx$_RotationPivotInverse#0/SM_Veh_Pickup_Wheel_rr_$AssimpFbx$_ScalingPivot#0/SM_Veh_Pickup_Wheel_rr_$AssimpFbx$_ScalingPivotInverse#0/SM_Veh_Pickup_Wheel_rr#0/@#0"
+    ],
+    "SM_Item_Ball_Soccer_01": [
+        "RootNode#0/SM_Item_Ball_Soccer_01#0/@#0"
+    ],
+    "SM_Prop_RubbishBin_01": [
+        "RootNode#0/SM_Prop_RubbishBin_01#0/@#0",
+        "RootNode#0/SM_Prop_RubbishBin_01#0/SM_Prop_RubbishBin_01_Lid_$AssimpFbx$_RotationPivot#0/SM_Prop_RubbishBin_01_Lid_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_RubbishBin_01_Lid_$AssimpFbx$_ScalingPivot#0/SM_Prop_RubbishBin_01_Lid_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_RubbishBin_01_Lid#0/@#0"
+    ],
+    "SM_Prop_TrashBag_01": [
+        "RootNode#0/SM_Prop_TrashBag_01#0/@#0"
+    ],
+    "SM_Prop_HoseReel_01": [
+        "RootNode#0/SM_Prop_HoseReel_01#0/@#0"
+    ],
+    "SM_Prop_Deckchair_03": [
+        "RootNode#0/SM_Prop_Deckchair_03#0/@#0"
+    ],
+    "SM_Prop_Outdoor_Table_01": [
+        "RootNode#0/SM_Prop_Outdoor_Table_01#0/@#0"
+    ],
+    "SM_Prop_Streetlamp_02": [
+        "RootNode#0/SM_Prop_Streetlamp_02#0/@#0"
+    ],
+    "SM_Env_Fence_White_Straight_01": [
+        "RootNode#0/SM_Env_Fence_White_Straight_01#0/@#0"
+    ],
+    "SM_Env_Tree_01": [
+        "RootNode#0/SM_Env_Tree_01#0/@#0"
+    ],
+    "SM_Env_Tree_03": [
+        "RootNode#0/SM_Env_Tree_03#0/@#0"
+    ],
+    "SM_Env_Bush_01": [
+        "RootNode#0/SM_Env_Bush_01#0/@#0"
+    ],
+    "SM_Env_Tree_Large_01": [
+        "RootNode#0/SM_Env_Tree_Large_01#0/@#0",
+        "RootNode#0/SM_Env_Tree_Large_01#0/SM_Env_Tree_House_01#0/@#0",
+        "RootNode#0/SM_Env_Tree_Large_01#0/SM_Env_Tree_Leaves_01#0/@#0",
+        "RootNode#0/SM_Env_Tree_Large_01#0/SM_Env_Tree_Swing_01_$AssimpFbx$_RotationPivot#0/SM_Env_Tree_Swing_01_$AssimpFbx$_RotationPivotInverse#0/SM_Env_Tree_Swing_01_$AssimpFbx$_ScalingPivot#0/SM_Env_Tree_Swing_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Env_Tree_Swing_01#0/@#0"
+    ]
+}

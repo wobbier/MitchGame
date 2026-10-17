@@ -1,0 +1,40 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LastTape/DampAsphalt.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.6200000047683716,
+				0.6200000047683716,
+				0.6200000047683716,
+				0.6200000047683716
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Dampness",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

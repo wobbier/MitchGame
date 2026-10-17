@@ -1,0 +1,170 @@
+{
+	"Links": [
+		[
+			2,
+			"Out",
+			6,
+			"UV"
+		],
+		[
+			3,
+			"Time",
+			6,
+			"Clock"
+		],
+		[
+			4,
+			"Out",
+			6,
+			"Tint"
+		],
+		[
+			5,
+			"Out",
+			6,
+			"Gain"
+		],
+		[
+			6,
+			"Color",
+			1,
+			"Color"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1800.0,
+				0.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-1000.0,
+				-100.0
+			],
+			"Type": "UV"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				-1000.0,
+				150.0
+			],
+			"Type": "Time"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-1000.0,
+				400.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				-1000.0,
+				600.0
+			],
+			"Settings": {
+				"Property": "p2"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				-350.0,
+				0.0
+			],
+			"Settings": {
+				"Code": "vec2 p = UV - vec2_splat(0.5);\nfloat border = 1.0-smoothstep(0.44,0.5,max(abs(p.x),abs(p.y)));\nfloat lines = .78 + .22*sin(UV.y*190.0*3.14159265);\nfloat roll = 1.0-smoothstep(0.0,0.075,abs(UV.y-fract(Clock*.12)));\nfloat n = fract(sin(dot(floor(UV*vec2(240.0,180.0)),vec2(12.9898,78.233))+floor(Clock*24.0))*43758.5453);\n// Abstract terminal windows and cursor, with no extra screen texture.\nfloat window = step(abs(UV.x-.5),.36)*step(abs(UV.y-.42),.28);\nfloat textRows = step(.77,fract(UV.y*22.0))*step(UV.x,.7)*step(.2,UV.x)*step(.19,UV.y)*step(UV.y,.59);\nfloat cursor = step(abs(UV.x-.3),.035)*step(abs(UV.y-.64),.008)*step(.3,fract(Clock));\nvec3 display = Tint*(.10 + window*.13 + textRows*.30 + cursor*.7 + roll*.1 + n*.035);\nColor = display*lines*border*Gain;",
+				"Inputs": [
+					{
+						"Name": "UV",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Clock",
+						"Type": "Float"
+					},
+					{
+						"Name": "Tint",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Gain",
+						"Type": "Float"
+					}
+				],
+				"Name": "NoSignal",
+				"Outputs": [
+					{
+						"Name": "Color",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.11999999731779099,
+				0.800000011920929,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p1",
+			"IsColor": false,
+			"Name": "Phosphor",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				2.799999952316284,
+				2.799999952316284,
+				2.799999952316284,
+				2.799999952316284
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p2",
+			"IsColor": false,
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				8.0
+			],
+			"Type": "Float"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": false,
+		"Fog": true,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "Unlit"
+	},
+	"Version": 1
+}

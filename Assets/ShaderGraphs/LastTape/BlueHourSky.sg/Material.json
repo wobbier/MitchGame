@@ -1,0 +1,22 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LastTape/BlueHourSky.shadergraph",
+	"Parameters": [],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Opaque",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

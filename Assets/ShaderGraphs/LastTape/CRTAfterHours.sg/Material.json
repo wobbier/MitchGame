@@ -1,0 +1,57 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LastTape/CRTAfterHours.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.11999999731779099,
+				0.800000011920929,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Phosphor",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				2.799999952316284,
+				2.799999952316284,
+				2.799999952316284,
+				2.799999952316284
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				8.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

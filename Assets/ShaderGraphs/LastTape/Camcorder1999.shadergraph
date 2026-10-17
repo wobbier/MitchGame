@@ -1,0 +1,654 @@
+{
+	"Links": [
+		[
+			2,
+			"Out",
+			10,
+			"UV"
+		],
+		[
+			3,
+			"Time",
+			10,
+			"Clock"
+		],
+		[
+			4,
+			"Out",
+			10,
+			"Wear"
+		],
+		[
+			6,
+			"Out",
+			10,
+			"Bleed"
+		],
+		[
+			10,
+			"Center",
+			11,
+			"UV"
+		],
+		[
+			10,
+			"Red",
+			12,
+			"UV"
+		],
+		[
+			10,
+			"Blue",
+			13,
+			"UV"
+		],
+		[
+			10,
+			"Soft",
+			14,
+			"UV"
+		],
+		[
+			11,
+			"Out",
+			15,
+			"Center"
+		],
+		[
+			12,
+			"Out",
+			15,
+			"Red"
+		],
+		[
+			13,
+			"Out",
+			15,
+			"Blue"
+		],
+		[
+			14,
+			"Out",
+			15,
+			"Soft"
+		],
+		[
+			2,
+			"Out",
+			15,
+			"UV"
+		],
+		[
+			3,
+			"Time",
+			15,
+			"Clock"
+		],
+		[
+			4,
+			"Out",
+			15,
+			"Wear"
+		],
+		[
+			5,
+			"Out",
+			15,
+			"Grain"
+		],
+		[
+			9,
+			"Out",
+			15,
+			"Vignette"
+		],
+		[
+			2,
+			"Out",
+			16,
+			"UV"
+		],
+		[
+			3,
+			"Time",
+			16,
+			"Clock"
+		],
+		[
+			7,
+			"Out",
+			16,
+			"Frame"
+		],
+		[
+			17,
+			"Out",
+			18,
+			"Texture"
+		],
+		[
+			16,
+			"GlyphUV",
+			18,
+			"UV"
+		],
+		[
+			15,
+			"Color",
+			19,
+			"Image"
+		],
+		[
+			18,
+			"R",
+			19,
+			"Glyph"
+		],
+		[
+			16,
+			"Active",
+			19,
+			"Active"
+		],
+		[
+			16,
+			"FrameMask",
+			19,
+			"Mask"
+		],
+		[
+			16,
+			"Dot",
+			19,
+			"Dot"
+		],
+		[
+			16,
+			"Battery",
+			19,
+			"Battery"
+		],
+		[
+			8,
+			"Out",
+			19,
+			"OSD"
+		],
+		[
+			19,
+			"Color",
+			1,
+			"Color"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1800.0,
+				0.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-1600.0,
+				-200.0
+			],
+			"Type": "UV"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				-1600.0,
+				50.0
+			],
+			"Type": "Time"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-1600.0,
+				300.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				-400.0,
+				600.0
+			],
+			"Settings": {
+				"Property": "p2"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				-1600.0,
+				500.0
+			],
+			"Settings": {
+				"Property": "p3"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 7,
+			"Position": [
+				650.0,
+				700.0
+			],
+			"Settings": {
+				"Property": "p4"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 8,
+			"Position": [
+				650.0,
+				900.0
+			],
+			"Settings": {
+				"Property": "p5"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 9,
+			"Position": [
+				-400.0,
+				800.0
+			],
+			"Settings": {
+				"Property": "p6"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 10,
+			"Position": [
+				-1250.0,
+				-200.0
+			],
+			"Settings": {
+				"Code": "// 480-line capture, mild lens bow and horizontal transport instability.\nfloat frame = floor(Clock * 29.97);\nfloat row = floor(UV.y * 480.0);\nfloat rowNoise = fract(sin(row * 12.9898 + frame * 4.1414) * 43758.5453) - 0.5;\nfloat tracking = smoothstep(0.972, 0.998, UV.y);\nfloat splice = step(0.987, fract(Clock * 0.071));\nvec2 p = UV - vec2_splat(0.5);\nvec2 warped = UV + p * dot(p,p) * 0.032 * Wear;\nwarped.x += Wear * (rowNoise * 0.00065 + sin(Clock*1.7) * 0.00018\n             + tracking * rowNoise * 0.006 + splice * sin(row*.14) * 0.002);\nfloat aspect = u_viewRect.z / max(u_viewRect.w, 1.0);\nvec2 raster = vec2(480.0 * aspect, 480.0);\nvec2 lowRes = (floor(warped * raster) + vec2_splat(0.5)) / raster;\nCenter = mix(UV, lowRes, Wear * 0.78);\nRed = Center + vec2(Bleed * Wear / raster.x, 0.0);\nBlue = Center - vec2(Bleed * Wear * 0.65 / raster.x, 0.0);\nSoft = Center + vec2(3.5 * Wear / raster.x, 0.0);",
+				"Inputs": [
+					{
+						"Name": "UV",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Clock",
+						"Type": "Float"
+					},
+					{
+						"Name": "Wear",
+						"Type": "Float"
+					},
+					{
+						"Name": "Bleed",
+						"Type": "Float"
+					}
+				],
+				"Name": "TapeTransport",
+				"Outputs": [
+					{
+						"Name": "Center",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Red",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Blue",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Soft",
+						"Type": "Vec2"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 11,
+			"Position": [
+				-850.0,
+				-350.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 12,
+			"Position": [
+				-850.0,
+				-140.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 13,
+			"Position": [
+				-850.0,
+				70.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 14,
+			"Position": [
+				-850.0,
+				280.0
+			],
+			"Type": "SceneColor"
+		},
+		{
+			"Id": 15,
+			"Position": [
+				-350.0,
+				-150.0
+			],
+			"Settings": {
+				"Code": "vec3 signal = vec3(Red.r, Center.g, Blue.b);\nfloat luma = dot(signal, vec3(0.299, 0.587, 0.114));\nfloat softLuma = dot(Soft, vec3(0.299, 0.587, 0.114));\nvec3 chroma = Soft - vec3_splat(softLuma);\nsignal = mix(signal, vec3_splat(luma) + chroma * 0.78, Wear * 0.32);\n// A consumer CCD: soft highlight knee, lifted blacks and a green/cyan bias.\nsignal = pow(max(signal, vec3_splat(0.0)), vec3_splat(0.96));\nsignal = signal * vec3(0.98, 1.01, 1.025) + vec3(0.008, 0.012, 0.014) * Wear;\nfloat frame = floor(Clock * 29.97);\nvec2 pixel = floor(UV * vec2(640.0,480.0));\nfloat noise = fract(sin(dot(pixel,vec2(12.9898,78.233)) + frame*3.119) * 43758.5453) - 0.5;\nfloat chromaNoise = fract(sin(dot(pixel,vec2(39.346,11.135)) + frame*1.719) * 47453.5453) - 0.5;\nsignal += (vec3_splat(noise) + vec3(chromaNoise,0.0,-chromaNoise)*0.25) * Grain * (1.4-luma*.65) * Wear;\nfloat scan = sin(UV.y*480.0*3.14159265 + mod(frame,2.0)*3.14159265);\nsignal *= 1.0 - (0.014 + scan*0.009) * Wear;\nvec2 p = (UV - vec2_splat(0.5)) * vec2(1.12,1.0);\nsignal *= 1.0 - smoothstep(0.18,0.72,length(p)) * Vignette;\n// A narrow head-switching band, kept below the picture and away from faces.\nfloat tracking = smoothstep(0.976,0.999,UV.y);\nsignal = mix(signal, vec3_splat(0.10+noise*.16), tracking*Wear*.32);\nColor = clamp(signal,vec3_splat(0.0),vec3_splat(1.0));",
+				"Inputs": [
+					{
+						"Name": "Center",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Red",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Blue",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Soft",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "UV",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Clock",
+						"Type": "Float"
+					},
+					{
+						"Name": "Wear",
+						"Type": "Float"
+					},
+					{
+						"Name": "Grain",
+						"Type": "Float"
+					},
+					{
+						"Name": "Vignette",
+						"Type": "Float"
+					}
+				],
+				"Name": "Hi8Signal",
+				"Outputs": [
+					{
+						"Name": "Color",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 16,
+			"Position": [
+				300.0,
+				350.0
+			],
+			"Settings": {
+				"Code": "float aspect = u_viewRect.z / max(u_viewRect.w,1.0);\nvec2 fit = vec2(max(1.0,aspect/(4.0/3.0)),max(1.0,(4.0/3.0)/aspect));\nvec2 frameUV = (UV - vec2_splat(0.5)) * mix(vec2_splat(1.0),fit,Frame) + vec2_splat(0.5);\nFrameMask = step(0.0,frameUV.x)*step(frameUV.x,1.0)*step(0.0,frameUV.y)*step(frameUV.y,1.0);\nvec2 pixel = floor(frameUV * vec2(640.0,480.0));\nfloat glyph = 32.0;\nfloat inkActive = 0.0;\nvec2 local = vec2_splat(0.0);\nvec2 line0 = (pixel - vec2(38.0, 30.0)) / 2.0;\nif (line0.x >= 0.0 && line0.x < 18.0 && line0.y >= 0.0 && line0.y < 7.0)\n{\n    float index = floor(line0.x / 6.0);\n    local = vec2(mod(floor(line0.x),6.0),floor(line0.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 82.0;\n    if (index == 1.0) glyph = 69.0;\n    if (index == 2.0) glyph = 67.0;\n}\nvec2 line1 = (pixel - vec2(513.0, 30.0)) / 2.0;\nif (line1.x >= 0.0 && line1.x < 12.0 && line1.y >= 0.0 && line1.y < 7.0)\n{\n    float index = floor(line1.x / 6.0);\n    local = vec2(mod(floor(line1.x),6.0),floor(line1.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 83.0;\n    if (index == 1.0) glyph = 80.0;\n}\nvec2 line2 = (pixel - vec2(38.0, 422.0)) / 2.0;\nif (line2.x >= 0.0 && line2.x < 66.0 && line2.y >= 0.0 && line2.y < 7.0)\n{\n    float index = floor(line2.x / 6.0);\n    local = vec2(mod(floor(line2.x),6.0),floor(line2.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 49.0;\n    if (index == 1.0) glyph = 49.0;\n    if (index == 2.0) glyph = 58.0;\n    if (index == 3.0) glyph = 53.0;\n    if (index == 4.0) glyph = 56.0;\n    if (index == 5.0) glyph = 58.0;\n    if (index == 6.0) glyph = 48.0 + floor(mod(Clock,60.0)/10.0);\n    if (index == 7.0) glyph = 48.0 + floor(mod(Clock,10.0));\n    if (index == 8.0) glyph = 32.0;\n    if (index == 9.0) glyph = 80.0;\n    if (index == 10.0) glyph = 77.0;\n}\nvec2 line3 = (pixel - vec2(38.0, 446.0)) / 2.0;\nif (line3.x >= 0.0 && line3.x < 72.0 && line3.y >= 0.0 && line3.y < 7.0)\n{\n    float index = floor(line3.x / 6.0);\n    local = vec2(mod(floor(line3.x),6.0),floor(line3.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 74.0;\n    if (index == 1.0) glyph = 85.0;\n    if (index == 2.0) glyph = 76.0;\n    if (index == 3.0) glyph = 46.0;\n    if (index == 4.0) glyph = 32.0;\n    if (index == 5.0) glyph = 48.0;\n    if (index == 6.0) glyph = 51.0;\n    if (index == 7.0) glyph = 32.0;\n    if (index == 8.0) glyph = 49.0;\n    if (index == 9.0) glyph = 57.0;\n    if (index == 10.0) glyph = 57.0;\n    if (index == 11.0) glyph = 57.0;\n}\nvec2 line4 = (pixel - vec2(490.0, 446.0)) / 2.0;\nif (line4.x >= 0.0 && line4.x < 48.0 && line4.y >= 0.0 && line4.y < 7.0)\n{\n    float index = floor(line4.x / 6.0);\n    local = vec2(mod(floor(line4.x),6.0),floor(line4.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 72.0;\n    if (index == 1.0) glyph = 73.0;\n    if (index == 2.0) glyph = 56.0;\n    if (index == 3.0) glyph = 32.0;\n    if (index == 4.0) glyph = 47.0;\n    if (index == 5.0) glyph = 32.0;\n    if (index == 6.0) glyph = 48.0;\n    if (index == 7.0) glyph = 49.0;\n}\nGlyphUV = (vec2(mod(glyph,16.0)*6.0, floor(glyph/16.0)*8.0) + local + vec2_splat(0.5)) / vec2(96.0,64.0);\nActive = inkActive;\nDot = step(length(pixel-vec2(25.0,36.0)),4.0) * step(0.18,fract(Clock*.8));\nvec2 b = abs(pixel-vec2(581.0,36.0));\nfloat outer = step(b.x,20.0)*step(b.y,8.0);\nfloat inner = step(b.x,18.0)*step(b.y,6.0);\nfloat fill = step(pixel.x,584.0)*step(b.x,15.0)*step(b.y,4.0);\nBattery = max(outer-inner,fill);\nBattery = max(Battery,step(abs(pixel.x-604.0),2.0)*step(b.y,3.0));",
+				"Inputs": [
+					{
+						"Name": "UV",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Clock",
+						"Type": "Float"
+					},
+					{
+						"Name": "Frame",
+						"Type": "Float"
+					}
+				],
+				"Name": "CameraDisplay",
+				"Outputs": [
+					{
+						"Name": "GlyphUV",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Active",
+						"Type": "Float"
+					},
+					{
+						"Name": "FrameMask",
+						"Type": "Float"
+					},
+					{
+						"Name": "Dot",
+						"Type": "Float"
+					},
+					{
+						"Name": "Battery",
+						"Type": "Float"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 17,
+			"Position": [
+				300.0,
+				1100.0
+			],
+			"Settings": {
+				"Texture": "Assets/Textures/LastTape/CameraFont.png"
+			},
+			"Type": "Texture2DAsset"
+		},
+		{
+			"Id": 18,
+			"Position": [
+				750.0,
+				350.0
+			],
+			"Settings": {
+				"Type": "Data"
+			},
+			"Type": "SampleTexture2D"
+		},
+		{
+			"Id": 19,
+			"Position": [
+				1250.0,
+				0.0
+			],
+			"Settings": {
+				"Code": "float white = max(Glyph*Active,Battery)*OSD;\nvec3 image = mix(Image,vec3(0.91,0.96,0.93),white*.9);\nimage = mix(image,vec3(0.94,0.13,0.08),Dot*OSD);\nColor = image * Mask;",
+				"Inputs": [
+					{
+						"Name": "Image",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Glyph",
+						"Type": "Float"
+					},
+					{
+						"Name": "Active",
+						"Type": "Float"
+					},
+					{
+						"Name": "Mask",
+						"Type": "Float"
+					},
+					{
+						"Name": "Dot",
+						"Type": "Float"
+					},
+					{
+						"Name": "Battery",
+						"Type": "Float"
+					},
+					{
+						"Name": "OSD",
+						"Type": "Float"
+					}
+				],
+				"Name": "RecordToTape",
+				"Outputs": [
+					{
+						"Name": "Color",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.7200000286102295,
+				0.7200000286102295,
+				0.7200000286102295,
+				0.7200000286102295
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p1",
+			"IsColor": false,
+			"Name": "Tape Wear",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.02800000086426735,
+				0.02800000086426735,
+				0.02800000086426735,
+				0.02800000086426735
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p2",
+			"IsColor": false,
+			"Name": "Sensor Grain",
+			"Range": [
+				0.0,
+				0.11999999731779099
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.350000023841858,
+				1.350000023841858,
+				1.350000023841858,
+				1.350000023841858
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p3",
+			"IsColor": false,
+			"Name": "Chroma Bleed",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p4",
+			"IsColor": false,
+			"Name": "4:3 Frame",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p5",
+			"IsColor": false,
+			"Name": "Camera OSD",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3199999928474426,
+				0.3199999928474426,
+				0.3199999928474426,
+				0.3199999928474426
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p6",
+			"IsColor": false,
+			"Name": "Lens Vignette",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": true,
+		"Fog": true,
+		"Injection": "AfterTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "PostProcess"
+	},
+	"Version": 1
+}

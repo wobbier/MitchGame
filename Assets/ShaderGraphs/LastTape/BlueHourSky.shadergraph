@@ -1,0 +1,76 @@
+{
+	"Links": [
+		[
+			2,
+			"Out",
+			3,
+			"View"
+		],
+		[
+			3,
+			"Color",
+			1,
+			"Color"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1800.0,
+				0.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-900.0,
+				-100.0
+			],
+			"Settings": {
+				"Space": "World"
+			},
+			"Type": "ViewDirection"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				-300.0,
+				0.0
+			],
+			"Settings": {
+				"Code": "vec3 direction = -View;\nfloat elevation = clamp(direction.y,0.0,1.0);\nvec3 dusk = mix(vec3(.075,.055,.12),vec3(.008,.019,.055),pow(elevation,.45));\nvec2 spherical = vec2(atan2(direction.z,direction.x)/6.2831853+.5,asin(direction.y)/3.14159265+.5);\nvec2 cell = floor(spherical*vec2(650.0,325.0));\nvec2 within = fract(spherical*vec2(650.0,325.0))-vec2_splat(.5);\nfloat seed = fract(sin(dot(cell,vec2(12.9898,78.233)))*43758.5453);\nfloat stars = step(.996,seed)*(1.0-smoothstep(.02,.14,length(within)))*smoothstep(.05,.4,elevation);\nvec3 moonDirection = normalize(vec3(.15,.32,.94));\nfloat separation = length(direction-moonDirection);\nfloat moon = 1.0-smoothstep(.017,.018,separation);\nfloat halo = exp(-separation*38.0)*.03;\nfloat haze = sgValueNoise(spherical*vec2(34.0,100.0),1.0)*(1.0-smoothstep(.0,.4,elevation))*.009;\nColor = dusk + vec3_splat(stars*.28+halo+haze) + vec3(.62,.71,.79)*moon;",
+				"Inputs": [
+					{
+						"Name": "View",
+						"Type": "Vec3"
+					}
+				],
+				"Name": "LastLightOfSummer",
+				"Outputs": [
+					{
+						"Name": "Color",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		}
+	],
+	"Properties": [],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": false,
+		"Fog": false,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Both",
+		"Surface": "Opaque",
+		"Target": "Unlit"
+	},
+	"Version": 1
+}

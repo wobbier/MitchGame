@@ -1,0 +1,131 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LastTape/Camcorder1999.shadergraph",
+	"Injection": "AfterTonemap",
+	"Parameters": [
+		{
+			"Default": [
+				0.7200000286102295,
+				0.7200000286102295,
+				0.7200000286102295,
+				0.7200000286102295
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Tape Wear",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.02800000086426735,
+				0.02800000086426735,
+				0.02800000086426735,
+				0.02800000086426735
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Sensor Grain",
+			"Range": [
+				0.0,
+				0.11999999731779099
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.350000023841858,
+				1.350000023841858,
+				1.350000023841858,
+				1.350000023841858
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Chroma Bleed",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "4:3 Frame",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Camera OSD",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 4,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3199999928474426,
+				0.3199999928474426,
+				0.3199999928474426,
+				0.3199999928474426
+			],
+			"Exposed": true,
+			"Id": "p6",
+			"Name": "Lens Vignette",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 5,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Post/Fullscreen",
+			"Post"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "PostProcess",
+	"Textures": [
+		{
+			"Asset": "Assets/Textures/LastTape/CameraFont.png",
+			"Default": "white",
+			"Exposed": false,
+			"Name": "Assets/Textures/LastTape/CameraFont.png",
+			"Slot": 0,
+			"Type": "Texture2D"
+		}
+	],
+	"Version": 1
+}

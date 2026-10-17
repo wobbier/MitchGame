@@ -1,0 +1,38 @@
+# Compile and preview the three authored graphs, then smoke-test the scene.
+# Engine/Tools/Headless.sh .build/Editor_Debug/Havana --scene Assets/Scenes/LastTape1999.lvl --editor-exec Assets/Scenes/LastTape1999.edscript
+wait 30
+assert-exists Camcorder - July 1999
+assert-exists Garage sign - LAN PARTY summer 99
+assert-exists Summer convertible
+sg-open Assets/ShaderGraphs/LastTape/Camcorder1999.shadergraph
+sg-assert-compiled
+sg-save
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LastTape/Camcorder1999.shadergraph
+sg-open Assets/ShaderGraphs/LastTape/CRTAfterHours.shadergraph
+sg-assert-compiled
+sg-save
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LastTape/CRTAfterHours.shadergraph
+sg-open Assets/ShaderGraphs/LastTape/DampAsphalt.shadergraph
+sg-assert-compiled
+sg-save
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LastTape/DampAsphalt.shadergraph
+sg-open Assets/ShaderGraphs/LastTape/BlueHourSky.shadergraph
+sg-assert-compiled
+sg-save
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LastTape/BlueHourSky.shadergraph
+wait 10
+play
+wait 90
+assert-playing 1
+assert-field Camcorder - July 1999 | Transform.Position.1 | 2.2 ~ 0.1
+stop
+assert-playing 0
+wait 10

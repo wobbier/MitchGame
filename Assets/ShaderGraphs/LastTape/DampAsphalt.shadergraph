@@ -1,0 +1,136 @@
+{
+	"Links": [
+		[
+			2,
+			"Out",
+			4,
+			"World"
+		],
+		[
+			3,
+			"Out",
+			4,
+			"Wet"
+		],
+		[
+			4,
+			"Albedo",
+			1,
+			"Base Color"
+		],
+		[
+			4,
+			"Roughness",
+			1,
+			"Roughness"
+		],
+		[
+			4,
+			"Normal",
+			1,
+			"Normal"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1800.0,
+				0.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-1000.0,
+				-100.0
+			],
+			"Settings": {
+				"Space": "World"
+			},
+			"Type": "Position"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				-1000.0,
+				250.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-350.0,
+				0.0
+			],
+			"Settings": {
+				"Code": "vec2 p = World.xz;\nfloat grit = fract(sin(dot(floor(p*160.0),vec2(12.9898,78.233)))*43758.5453);\nfloat wetPatch = sgValueNoise(p*.37,1.0);\nfloat damp = smoothstep(.36,.68,wetPatch)*Wet;\nAlbedo = mix(vec3(.055,.068,.083),vec3(.022,.033,.044),damp) * (.82+grit*.3);\nRoughness = mix(.88,.23,damp);\nNormal = normalize(vec3((grit-.5)*.045,(wetPatch-.5)*.045,1.0));",
+				"Inputs": [
+					{
+						"Name": "World",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Wet",
+						"Type": "Float"
+					}
+				],
+				"Name": "SummerRain",
+				"Outputs": [
+					{
+						"Name": "Albedo",
+						"Type": "Vec3"
+					},
+					{
+						"Name": "Roughness",
+						"Type": "Float"
+					},
+					{
+						"Name": "Normal",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.6200000047683716,
+				0.6200000047683716,
+				0.6200000047683716,
+				0.6200000047683716
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p1",
+			"IsColor": false,
+			"Name": "Dampness",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": false,
+		"Fog": true,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "Lit"
+	},
+	"Version": 1
+}
