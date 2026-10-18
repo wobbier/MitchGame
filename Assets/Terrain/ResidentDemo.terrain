@@ -1,0 +1,48 @@
+{
+  "Format": "MitchTerrain",
+  "Version": 1,
+  "AssetGUID": "7465727261696e01",
+  "Settings": {
+    "TileQuads": 32,
+    "PatchQuads": 16,
+    "SampleSpacing": 1,
+    "HeightBase": -512,
+    "HeightRange": 1024,
+    "MinTile": [
+      -1,
+      -1
+    ],
+    "TilesX": 2,
+    "TilesZ": 2
+  },
+  "Pages": [
+    {
+      "Tile": [
+        -1,
+        -1
+      ],
+      "Source": "ResidentDemo.source/-1_-1.thp"
+    },
+    {
+      "Tile": [
+        -1,
+        0
+      ],
+      "Source": "ResidentDemo.source/-1_0.thp"
+    },
+    {
+      "Tile": [
+        0,
+        -1
+      ],
+      "Source": "ResidentDemo.source/0_-1.thp"
+    },
+    {
+      "Tile": [
+        0,
+        0
+      ],
+      "Source": "ResidentDemo.source/0_0.thp"
+    }
+  ]
+}

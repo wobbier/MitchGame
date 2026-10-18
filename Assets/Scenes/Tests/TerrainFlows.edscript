@@ -1,0 +1,44 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Resident terrain: one scene entity, reflected settings, undo, save/reopen, Play/Stop.
+wait 5
+# Complete resident collision before viewport assertions, independently of background import timing.
+play
+wait 2
+stop
+wait 5
+mark-count
+assert-children Terrain | 0
+select Terrain
+action View.Top
+action View.FrameSelected
+wait 45
+screenshot .tmp/TerrainEditorPick.png
+select-none
+pick 0.5 0.65
+wait 10
+assert-active Terrain
+select Terrain
+assert-field Terrain | Terrain.Asset | "Assets/Terrain/ResidentDemo.terrain"
+set Terrain.Collision false
+assert-field Terrain | Terrain.Collision | false
+undo
+assert-field Terrain | Terrain.Collision | true
+set Terrain.Color [0.2,0.45,0.15]
+undo
+assert-field Terrain | Terrain.Color | [0.32,0.52,0.2]
+save-as .tmp/Tests/TerrainSaved.lvl
+load .tmp/Tests/TerrainSaved.lvl
+wait 30
+assert-count-delta 0
+assert-children Terrain | 0
+assert-field Terrain | Terrain.Asset | "Assets/Terrain/ResidentDemo.terrain"
+play
+wait 120
+assert-count-delta 0
+assert-children Terrain | 0
+stop
+wait 30
+assert-count-delta 0
+assert-children Terrain | 0
+assert-field Terrain | Terrain.Collision | true
+quit
