@@ -3,6 +3,7 @@
 wait 5
 terrain-fixture
 terrain-bind Terrain
+terrain-layout
 focus-window Terrain
 terrain-mark
 terrain-assert-dirty false

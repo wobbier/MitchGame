@@ -1,0 +1,67 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Independent terrain assets, RAW Float32 exchange, and the import/export dialogs.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+terrain-layout
+terrain-stroke {"From":[-4,-4],"To":[4,4],"Radius":5,"Strength":0.8}
+terrain-save
+terrain-mark
+create TerrainTwin
+select TerrainTwin
+add-component Terrain
+terrain-bind TerrainTwin
+set Transform.Position [75,0,0]
+select Terrain
+mark-count
+terrain-unique
+wait 5
+terrain-assert-preview Terrain
+undo
+wait 3
+terrain-assert-independent Terrain
+redo
+wait 3
+terrain-assert-preview Terrain
+terrain-assert-independent TerrainTwin
+terrain-assert-mark
+terrain-stroke {"From":[0,0],"To":[0,0],"Radius":4,"Strength":2}
+wait 5
+terrain-assert-marked-instance TerrainTwin
+terrain-save
+terrain-mark
+terrain-export-fixture
+terrain-import-fixture
+terrain-assert-mark
+terrain-assert-dirty false
+terrain-bind Terrain
+wait 5
+terrain-assert-preview Terrain
+terrain-assert-independent TerrainTwin
+focus-window Terrain
+action Terrain.Import
+wait 3
+screenshot .tmp/TerrainAuthoring-Import.png
+terrain-escape true
+wait 2
+terrain-escape false
+wait 2
+action Terrain.Export
+wait 3
+screenshot .tmp/TerrainAuthoring-Export.png
+terrain-escape true
+wait 2
+terrain-escape false
+wait 2
+save-as .tmp/Tests/TerrainHeightmapScene.lvl
+play
+wait 30
+terrain-assert-preview Terrain
+terrain-assert-independent TerrainTwin
+stop
+wait 10
+assert-count-delta 0
+terrain-assert-preview Terrain
+assert-children Terrain | 0
+assert-children TerrainTwin | 0
+quit
