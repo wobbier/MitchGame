@@ -1,0 +1,53 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# First process: timed autosave preserves dirty assets without publishing their source files.
+wait 5
+terrain-recovery-reset
+terrain-recovery-create SourceA
+terrain-bind Terrain
+terrain-layout
+preference Autosave.IntervalSeconds | 0.01
+terrain-stroke {"From":[0,0],"To":[0,0],"Radius":2,"Strength":1,"Falloff":0}
+wait 8
+terrain-recovery-assert-count 1
+terrain-recovery-source-sample 0 0 0
+terrain-assert-dirty true
+terrain-recovery-defer-stroke
+terrain-assert-sample 0 0 1
+# Undo to the saved state must remove the obsolete recovery snapshot.
+focus-window Terrain
+action Edit.Undo
+wait 3
+terrain-recovery-assert-count 0
+action Edit.Redo
+wait 8
+terrain-recovery-assert-count 1
+terrain-recovery-create SourceB
+terrain-stroke {"From":[0,0],"To":[0,0],"Radius":2,"Strength":2,"Falloff":0}
+wait 8
+terrain-recovery-assert-count 2
+preference Terrain.Autosave | false
+terrain-recovery-discard 0
+terrain-recovery-assert-count 1
+terrain-assert-sample 0 0 2
+terrain-recovery-save-now
+terrain-recovery-assert-count 2
+preference Terrain.Autosave | true
+terrain-recovery-source-sample 0 0 0
+terrain-assert-dirty true
+action Terrain.Recovery
+wait 3
+screenshot .tmp/TerrainRecovery-Manager.png
+terrain-escape true
+wait 2
+terrain-escape false
+wait 2
+# Play/Stop preserves dirty authoring buffers and their snapshots.
+play
+wait 10
+stop
+wait 5
+terrain-assert-sample 0 0 2
+terrain-assert-dirty true
+terrain-recovery-assert-count 2
+# Automation exits without the interactive save prompt; recovery must survive this exit.
+quit

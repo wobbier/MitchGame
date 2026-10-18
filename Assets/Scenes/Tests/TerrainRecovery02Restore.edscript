@@ -1,0 +1,60 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Second process: restore saved snapshots, protect external changes and rescue a copy.
+# Run after TerrainRecovery01Write (RunEditorFlows --only TerrainRecovery runs both in order).
+wait 5
+terrain-recovery-configure
+terrain-recovery-assert-count 2
+# Startup recovery waits for the current modal and opens once it has been dismissed.
+action Terrain.New
+wait 2
+terrain-recovery-request-startup
+wait 2
+terrain-recovery-assert-popup New Terrain
+terrain-escape true
+terrain-escape false
+wait 3
+terrain-recovery-assert-popup Terrain Recovery
+terrain-escape true
+terrain-escape false
+wait 3
+terrain-recovery-restore SourceA
+terrain-layout
+terrain-assert-sample 0 0 1
+terrain-assert-dirty true
+terrain-recovery-source-sample 0 0 0
+terrain-recovery-reject-dirty
+terrain-bind Terrain
+wait 3
+terrain-assert-preview Terrain
+terrain-save
+terrain-assert-dirty false
+terrain-recovery-source-sample 0 0 1
+terrain-recovery-assert-count 1
+terrain-recovery-restore SourceB
+terrain-assert-sample 0 0 2
+terrain-recovery-source-sample 0 0 0
+terrain-recovery-external-edit 7
+terrain-recovery-expect-conflict
+terrain-recovery-source-sample 0 0 7
+terrain-assert-sample 0 0 2
+terrain-recovery-assert-count 1
+terrain-recovery-external-identity
+terrain-recovery-expect-conflict
+terrain-recovery-copy
+terrain-recovery-source-sample 0 0 7
+terrain-reload
+terrain-assert-sample 0 0 7
+terrain-assert-dirty false
+terrain-recovery-assert-count 0
+terrain-bind Terrain
+wait 3
+terrain-assert-preview Terrain
+mark-count
+play
+wait 15
+stop
+wait 5
+assert-count-delta 0
+assert-children Terrain | 0
+terrain-assert-preview Terrain
+quit
