@@ -1,0 +1,96 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Terrain documents: four-tile sculpting, asset undo, safe save/reopen and shared previews.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+focus-window Terrain
+terrain-mark
+terrain-assert-dirty false
+terrain-stroke {"From":[-4,-4],"To":[4,4],"Radius":5,"Strength":0.8}
+terrain-assert-dirty true
+action Edit.Undo
+terrain-assert-mark
+terrain-assert-dirty false
+action Edit.Redo
+terrain-assert-dirty true
+terrain-mark
+terrain-save
+terrain-assert-dirty false
+terrain-reload
+terrain-assert-mark
+terrain-stroke {"Tool":"Lower","From":[0,0],"To":[5,0],"Radius":3,"Strength":1,"Cancel":true}
+terrain-assert-mark
+terrain-assert-dirty false
+terrain-stroke {"Tool":"Smooth","From":[0,0],"To":[3,3],"Radius":3,"Strength":0.25}
+action Edit.Undo
+terrain-assert-mark
+terrain-stroke {"Tool":"Flatten","From":[0,0],"To":[3,3],"Radius":3,"Strength":0.25}
+action Edit.Undo
+terrain-assert-mark
+terrain-assert-dirty false
+wait 5
+terrain-assert-preview Terrain
+create TerrainTwin
+select TerrainTwin
+add-component Terrain
+terrain-bind TerrainTwin
+set Transform.Position [75,0,0]
+wait 5
+terrain-assert-preview Terrain
+terrain-assert-preview TerrainTwin
+mark-count
+assert-children Terrain | 0
+assert-children TerrainTwin | 0
+select Terrain
+action View.Top
+action View.FrameSelected
+wait 30
+terrain-brush true
+terrain-mark
+terrain-pointer -8 -8 hover
+wait 3
+terrain-pointer -8 -8 down
+wait 3
+terrain-pointer 8 8 hover
+wait 3
+screenshot .tmp/TerrainAuthoring-Brush.png
+terrain-pointer 8 8 up
+wait 3
+focus-window Terrain
+terrain-assert-dirty true
+action Edit.Undo
+terrain-assert-mark
+terrain-assert-dirty false
+terrain-brush false
+screenshot .tmp/TerrainAuthoring-Sculpt.png
+terrain-mode Paint
+wait 2
+screenshot .tmp/TerrainAuthoring-Paint.png
+terrain-mode Tiles
+wait 2
+screenshot .tmp/TerrainAuthoring-Tiles.png
+terrain-mode Foliage
+wait 2
+terrain-mode Splines
+wait 2
+terrain-mode Inspect
+wait 2
+screenshot .tmp/TerrainAuthoring-Inspect.png
+terrain-mode Sculpt
+preference Appearance.FontSize | 28
+wait 5
+screenshot .tmp/TerrainAuthoring-LargeFont.png
+preference Appearance.FontSize | 18
+save-as .tmp/Tests/TerrainAuthoringScene.lvl
+play
+wait 30
+terrain-assert-preview Terrain
+terrain-assert-preview TerrainTwin
+stop
+wait 10
+terrain-assert-preview Terrain
+terrain-assert-preview TerrainTwin
+assert-count-delta 0
+assert-children Terrain | 0
+assert-children TerrainTwin | 0
+quit
