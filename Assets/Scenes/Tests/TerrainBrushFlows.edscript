@@ -1,0 +1,94 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Tool preferences participate in terrain undo, preserving height save points and live previews.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+terrain-layout
+focus-window Terrain
+terrain-brush-setting Radius 4
+terrain-discard-history
+terrain-brush-setting Radius 10
+terrain-brush-assert Radius 10
+terrain-assert-dirty false
+action Edit.Undo
+terrain-brush-assert Radius 4
+terrain-assert-dirty false
+action Edit.Redo
+terrain-brush-assert Radius 10
+terrain-stroke {"From":[-8,-8],"To":[-8,-8],"Radius":1,"Strength":1,"Falloff":0}
+terrain-assert-rebuilt 1 1
+terrain-assert-sample -8 -8 1
+terrain-brush-setting Radius 12
+action Edit.Undo
+terrain-brush-assert Radius 10
+terrain-assert-sample -8 -8 1
+terrain-assert-dirty true
+action Edit.Undo
+terrain-assert-sample -8 -8 0
+terrain-assert-dirty false
+action Edit.Redo
+terrain-save
+terrain-assert-dirty false
+action Edit.Redo
+terrain-brush-assert Radius 12
+terrain-assert-dirty false
+action Edit.Undo
+terrain-assert-dirty false
+action Edit.Undo
+terrain-assert-dirty true
+action Edit.Redo
+terrain-assert-dirty false
+# Replacing redo consisting only of a brush setting must retain the height save point.
+terrain-brush-setting Strength 2
+terrain-assert-dirty false
+action Edit.Undo
+terrain-assert-dirty false
+terrain-reload
+terrain-brush-setting Radius 4
+terrain-discard-history
+wait 3
+# A real multi-frame drag produces one undo step, including preference restoration.
+terrain-brush-pointer Radius 0 hover
+wait 2
+terrain-brush-pointer Radius 0 down
+wait 2
+terrain-brush-pointer Radius 20 hover
+wait 2
+terrain-brush-pointer Radius 40 hover
+wait 2
+terrain-brush-pointer Radius 40 up
+wait 3
+terrain-assert-history 1
+terrain-assert-dirty false
+terrain-history-key undo true
+wait 2
+terrain-history-key undo false
+wait 2
+terrain-brush-assert Radius 4
+terrain-assert-dirty false
+terrain-history-key redo true
+wait 2
+terrain-history-key redo false
+wait 2
+terrain-brush-assert Radius 8
+terrain-assert-history 1
+screenshot .tmp/TerrainBrush-Undo.png
+play
+wait 10
+stop
+wait 5
+terrain-assert-preview Terrain
+terrain-assert-dirty false
+# Restore the exact inherited preference when switching to a finer sample spacing.
+terrain-brush-setting Radius 64
+terrain-fixture 0.1
+wait 3
+focus-window Terrain
+terrain-brush-setting Radius 2
+terrain-assert-dirty false
+action Edit.Undo
+terrain-brush-assert Radius 64
+action Edit.Redo
+terrain-brush-assert Radius 2
+terrain-assert-dirty false
+quit
