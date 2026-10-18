@@ -58,6 +58,7 @@ terrain-brush-pointer Radius 40 hover
 wait 2
 terrain-brush-pointer Radius 40 up
 wait 3
+terrain-brush-mark Radius
 terrain-assert-history 1
 terrain-assert-dirty false
 terrain-history-key undo true
@@ -70,7 +71,7 @@ terrain-history-key redo true
 wait 2
 terrain-history-key redo false
 wait 2
-terrain-brush-assert Radius 8
+terrain-brush-assert-mark Radius
 terrain-assert-history 1
 screenshot .tmp/TerrainBrush-Undo.png
 play

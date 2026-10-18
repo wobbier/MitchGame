@@ -1,0 +1,62 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Real browser duplicate/rename/move operations preserve source pages, documents and references.
+wait 5
+terrain-file-fixture
+terrain-bind Terrain
+terrain-layout
+focus-window Terrain
+terrain-stroke {"From":[0,0],"To":[0,0],"Radius":2,"Strength":2,"Falloff":0}
+terrain-assert-dirty true
+terrain-recovery-save-now
+terrain-file-duplicate
+terrain-file-rename Renamed.terrain
+wait 3
+terrain-file-assert-moved 0
+terrain-file-assert-recovery
+terrain-assert-sample 0 0 2
+terrain-assert-preview Terrain
+action Edit.Undo
+terrain-assert-sample 0 0 0
+terrain-assert-dirty false
+action Edit.Redo
+terrain-assert-sample 0 0 2
+terrain-file-move
+wait 3
+terrain-file-assert-moved 0
+terrain-file-assert-recovery
+terrain-file-folder
+wait 3
+terrain-file-assert-moved 0
+terrain-file-assert-recovery
+terrain-assert-preview Terrain
+terrain-file-rescan-refs
+terrain-file-alias
+wait 3
+terrain-assert-preview Terrain
+terrain-file-reject-trash asset
+terrain-file-reject-trash folder
+terrain-file-request-trash
+wait 3
+terrain-file-confirm true
+wait 2
+terrain-file-confirm false
+wait 2
+terrain-file-assert-error
+screenshot .tmp/TerrainFile-Unsaved.png
+focus-window Terrain
+terrain-save
+terrain-file-assert-moved 2
+terrain-recovery-assert-count 0
+terrain-assert-dirty false
+play
+wait 10
+stop
+wait 5
+terrain-assert-preview Terrain
+terrain-file-trash
+wait 3
+# Duplicated terrain is independent of the original and still contains its saved heights.
+terrain-file-reopen-copy
+terrain-assert-sample 0 0 0
+terrain-assert-dirty false
+quit

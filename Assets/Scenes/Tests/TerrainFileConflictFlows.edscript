@@ -1,0 +1,19 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Relocating a document must preserve a source conflict that already existed before the move.
+wait 5
+terrain-file-fixture
+terrain-bind Terrain
+terrain-layout
+terrain-stroke {"From":[0,0],"To":[0,0],"Radius":2,"Strength":2,"Falloff":0}
+terrain-recovery-save-now
+terrain-file-external
+terrain-file-rename Conflict.terrain
+wait 3
+terrain-file-assert-moved 9
+terrain-file-save-conflict
+terrain-file-assert-recovery
+terrain-assert-sample 0 0 2
+terrain-reload
+terrain-assert-sample 0 0 9
+terrain-assert-dirty false
+quit
