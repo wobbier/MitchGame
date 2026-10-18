@@ -1,0 +1,68 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Common LOD topology across cameras and passes, with canonical collision and stable vertices.
+wait 5
+terrain-lod-fixture
+terrain-bind Terrain
+terrain-layout
+terrain-mode Inspect
+wait 8
+terrain-lod-pointer Patches hover
+wait 2
+terrain-lod-pointer Patches down
+wait 2
+terrain-lod-pointer Patches up
+wait 2
+terrain-lod-pointer LODs hover
+wait 2
+terrain-lod-pointer LODs down
+wait 2
+terrain-lod-pointer LODs up
+wait 2
+terrain-lod-assert-debug
+terrain-lod-assert-mixed
+terrain-lod-mark
+terrain-lod-render
+terrain-lod-collision
+screenshot .tmp/TerrainLOD-Auto.png
+terrain-lod-wire true
+wait 3
+terrain-lod-render
+screenshot .tmp/TerrainLOD-Seams.png
+terrain-lod-wire false
+terrain-lod-force 0
+wait 3
+terrain-lod-assert-level 0
+terrain-lod-assert-mark
+terrain-lod-collision
+terrain-lod-force 3
+wait 3
+terrain-lod-assert-level 3
+terrain-lod-assert-reduced
+terrain-lod-assert-mark
+terrain-lod-collision
+terrain-lod-force -1
+wait 5
+terrain-lod-mark
+terrain-lod-aux true
+wait 5
+terrain-lod-assert-union
+terrain-lod-assert-mark
+terrain-lod-aux false
+wait 5
+terrain-lod-camera far
+wait 5
+terrain-lod-assert-reduced
+terrain-lod-assert-mark
+terrain-lod-render
+terrain-lod-collision
+terrain-lod-serialize
+screenshot .tmp/TerrainLOD-Far.png
+terrain-lod-debug false
+play
+wait 15
+stop
+wait 6
+terrain-assert-preview Terrain
+terrain-lod-render
+terrain-lod-collision
+quit
