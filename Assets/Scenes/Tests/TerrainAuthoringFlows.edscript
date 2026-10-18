@@ -82,6 +82,17 @@ preference Appearance.FontSize | 28
 wait 5
 screenshot .tmp/TerrainAuthoring-LargeFont.png
 preference Appearance.FontSize | 18
+# Releasing old history must retain the dirty state of earlier, unsaved strokes.
+terrain-stroke {"From":[0,0],"To":[0,0],"Radius":3,"Strength":0.25}
+terrain-mark
+terrain-discard-history
+terrain-assert-dirty true
+terrain-stroke {"From":[8,8],"To":[8,8],"Radius":3,"Strength":0.5}
+action Edit.Undo
+terrain-assert-mark
+terrain-assert-dirty true
+terrain-save
+terrain-assert-dirty false
 save-as .tmp/Tests/TerrainAuthoringScene.lvl
 play
 wait 30
