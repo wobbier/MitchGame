@@ -1,0 +1,34 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# 1,681 tiles use metadata plus a small paged horizon, within a shared 1 MiB allowance.
+wait 5
+terrain-stream-paged-fixture
+terrain-stream-paged-cook-wait
+terrain-stream-paged-bind
+terrain-layout
+terrain-mode Inspect
+wait 180
+terrain-stream-paged-wait
+wait 60
+terrain-stream-paged-assert
+screenshot .tmp/TerrainPaging-Near.png
+terrain-stream-paged-camera -32
+wait 100
+terrain-stream-paged-assert
+terrain-stream-paged-coarse-only
+wait 80
+terrain-stream-paged-assert
+terrain-stream-paged-save
+play
+wait 100
+terrain-stream-paged-assert
+terrain-stream-paged-mark
+terrain-stream-paged-teleport 168
+wait 180
+terrain-stream-paged-wait
+wait 60
+terrain-stream-paged-evicted
+screenshot .tmp/TerrainPaging-Far.png
+stop
+wait 150
+terrain-stream-paged-assert
+quit
