@@ -67,7 +67,7 @@
             "Components": [
                 {
                     "Position": [
-                        0.20929282903671265,
+                        0.0,
                         0.037840843200683594,
                         -1.5791490077972412
                     ],
@@ -87,12 +87,12 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/MyTests/ScreenShader.shadergraph",
+                        "Graph": "Assets/ShaderGraphs/Examples/PlasmaBlob.shadergraph",
                         "Params": {
                             "ColorInput": [
-                                1.0,
-                                0.0,
-                                0.0,
+                                0.6129032373428345,
+                                0.5404093265533447,
+                                0.5404093265533447,
                                 1.0
                             ]
                         },

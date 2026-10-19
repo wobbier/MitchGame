@@ -1,230 +1,4 @@
 {
-	"Version": 1,
-	"Settings": {
-		"Target": "Lit",
-		"AlphaClip": true
-	},
-	"Properties": [
-		{
-			"Id": "p2",
-			"Name": "Edge Width",
-			"Type": "Float",
-			"Exposed": true,
-			"Default": [
-				0.06,
-				0,
-				0,
-				0
-			],
-			"Range": [
-				0.0,
-				0.3
-			]
-		},
-		{
-			"Id": "p3",
-			"Name": "Edge Color",
-			"Type": "Vec3",
-			"Exposed": true,
-			"Default": [
-				1.0,
-				0.45,
-				0.1,
-				1.0
-			],
-			"IsColor": true,
-			"HDR": true
-		},
-		{
-			"Id": "p4",
-			"Name": "Base Color",
-			"Type": "Vec3",
-			"Exposed": true,
-			"Default": [
-				0.55,
-				0.57,
-				0.6,
-				1.0
-			],
-			"IsColor": true
-		}
-	],
-	"Nodes": [
-		{
-			"Id": 1,
-			"Type": "Output",
-			"Position": [
-				1200,
-				0
-			],
-			"Defaults": {
-				"Alpha Clip Threshold": [
-					0,
-					0,
-					0,
-					0
-				]
-			}
-		},
-		{
-			"Id": 2,
-			"Type": "GradientNoise",
-			"Position": [
-				-1100,
-				0
-			],
-			"Defaults": {
-				"Scale": [
-					6,
-					6,
-					6,
-					6
-				]
-			}
-		},
-		{
-			"Id": 4,
-			"Type": "Property",
-			"Position": [
-				-660,
-				0
-			],
-			"Settings": {
-				"Property": "p2"
-			}
-		},
-		{
-			"Id": 5,
-			"Type": "Property",
-			"Position": [
-				-440,
-				0
-			],
-			"Settings": {
-				"Property": "p3"
-			}
-		},
-		{
-			"Id": 6,
-			"Type": "Property",
-			"Position": [
-				-220,
-				0
-			],
-			"Settings": {
-				"Property": "p4"
-			}
-		},
-		{
-			"Id": 7,
-			"Type": "Time",
-			"Position": [
-				0,
-				0
-			]
-		},
-		{
-			"Id": 8,
-			"Type": "Remap",
-			"Position": [
-				-1100,
-				200
-			],
-			"Defaults": {
-				"In Min": [
-					-1,
-					-1,
-					-1,
-					-1
-				],
-				"In Max": [
-					1,
-					1,
-					1,
-					1
-				],
-				"Out Min": [
-					0.05,
-					0.05,
-					0.05,
-					0.05
-				],
-				"Out Max": [
-					0.5,
-					0.5,
-					0.5,
-					0.5
-				]
-			}
-		},
-		{
-			"Id": 9,
-			"Type": "Subtract",
-			"Position": [
-				-880,
-				200
-			]
-		},
-		{
-			"Id": 10,
-			"Type": "Smoothstep",
-			"Position": [
-				-660,
-				200
-			],
-			"Defaults": {
-				"Edge1": [
-					0.0,
-					0.0,
-					0.0,
-					0.0
-				]
-			}
-		},
-		{
-			"Id": 11,
-			"Type": "OneMinus",
-			"Position": [
-				-440,
-				200
-			]
-		},
-		{
-			"Id": 12,
-			"Type": "Multiply",
-			"Position": [
-				-220,
-				200
-			]
-		},
-		{
-			"Id": 13,
-			"Type": "Multiply",
-			"Position": [
-				0,
-				200
-			],
-			"Defaults": {
-				"B": [
-					6,
-					6,
-					6,
-					6
-				]
-			}
-		},
-		{
-			"Id": 14,
-			"Type": "Float",
-			"Position": [
-				-1100,
-				400
-			],
-			"Settings": {
-				"Value": 0.35
-			}
-		}
-	],
 	"Links": [
 		[
 			7,
@@ -304,5 +78,243 @@
 			1,
 			"Roughness"
 		]
-	]
+	],
+	"Nodes": [
+		{
+			"Defaults": {
+				"Alpha Clip Threshold": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 1,
+			"Position": [
+				1200.0,
+				0.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Defaults": {
+				"Scale": [
+					6.0,
+					6.0,
+					6.0,
+					6.0
+				]
+			},
+			"Id": 2,
+			"Position": [
+				-201.0,
+				-63.0
+			],
+			"Type": "GradientNoise"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				54.0,
+				241.0
+			],
+			"Settings": {
+				"Property": "p2"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				440.0,
+				-7.0
+			],
+			"Settings": {
+				"Property": "p3"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				660.0,
+				-7.0
+			],
+			"Settings": {
+				"Property": "p4"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 7,
+			"Position": [
+				880.0,
+				-7.0
+			],
+			"Type": "Time"
+		},
+		{
+			"Defaults": {
+				"In Max": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				],
+				"In Min": [
+					-1.0,
+					-1.0,
+					-1.0,
+					-1.0
+				],
+				"Out Max": [
+					0.5,
+					0.5,
+					0.5,
+					0.5
+				],
+				"Out Min": [
+					0.05000000074505806,
+					0.05000000074505806,
+					0.05000000074505806,
+					0.05000000074505806
+				]
+			},
+			"Id": 8,
+			"Position": [
+				-206.0,
+				193.0
+			],
+			"Type": "Remap"
+		},
+		{
+			"Id": 9,
+			"Position": [
+				53.0,
+				-15.0
+			],
+			"Type": "Subtract"
+		},
+		{
+			"Defaults": {
+				"Edge1": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 10,
+			"Position": [
+				220.0,
+				193.0
+			],
+			"Type": "Smoothstep"
+		},
+		{
+			"Id": 11,
+			"Position": [
+				440.0,
+				193.0
+			],
+			"Type": "OneMinus"
+		},
+		{
+			"Id": 12,
+			"Position": [
+				660.0,
+				193.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Defaults": {
+				"B": [
+					6.400000095367432,
+					6.0,
+					6.0,
+					6.0
+				]
+			},
+			"Id": 13,
+			"Position": [
+				880.0,
+				193.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 14,
+			"Position": [
+				902.0,
+				-223.0
+			],
+			"Settings": {
+				"Value": 0.35
+			},
+			"Type": "Float"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.05999999865889549,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p2",
+			"IsColor": false,
+			"Name": "Edge Width",
+			"Range": [
+				0.0,
+				0.30000001192092896
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				0.44999998807907104,
+				0.10000000149011612,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p3",
+			"IsColor": true,
+			"Name": "Edge Color",
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.550000011920929,
+				0.5699999928474426,
+				0.6000000238418579,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p4",
+			"IsColor": true,
+			"Name": "Base Color",
+			"Type": "Vec3"
+		}
+	],
+	"Settings": {
+		"AlphaClip": true,
+		"Blend": "Alpha",
+		"CastShadows": true,
+		"Fog": true,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "Lit"
+	},
+	"Version": 1
 }

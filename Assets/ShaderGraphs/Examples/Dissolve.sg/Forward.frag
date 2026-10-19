@@ -34,7 +34,7 @@ void main()
 	// Multiply #12
 	vec3 n12_Out = u_sgParams[1].xyz * vec3_splat(n11_Out);
 	// Multiply #13
-	vec3 n13_Out = n12_Out * vec3(6.0, 6.0, 6.0);
+	vec3 n13_Out = n12_Out * vec3(6.4000001, 6.0, 6.0);
 	// Outputs
 	vec3 sgOut_BaseColor = u_sgParams[2].xyz;
 	vec3 sgOut_Normal = vec3(0.0, 0.0, 1.0);

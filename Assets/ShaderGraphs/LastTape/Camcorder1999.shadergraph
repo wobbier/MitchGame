@@ -185,8 +185,8 @@
 		{
 			"Id": 1,
 			"Position": [
-				1800.0,
-				0.0
+				1176.0,
+				-15.0
 			],
 			"Type": "Output"
 		},
@@ -242,8 +242,8 @@
 		{
 			"Id": 7,
 			"Position": [
-				650.0,
-				700.0
+				-204.0,
+				410.0
 			],
 			"Settings": {
 				"Property": "p4"
@@ -253,8 +253,8 @@
 		{
 			"Id": 8,
 			"Position": [
-				650.0,
-				900.0
+				788.0,
+				298.0
 			],
 			"Settings": {
 				"Property": "p5"
@@ -411,8 +411,8 @@
 		{
 			"Id": 16,
 			"Position": [
-				300.0,
-				350.0
+				-24.0,
+				309.0
 			],
 			"Settings": {
 				"Code": "float aspect = u_viewRect.z / max(u_viewRect.w,1.0);\nvec2 fit = vec2(max(1.0,aspect/(4.0/3.0)),max(1.0,(4.0/3.0)/aspect));\nvec2 frameUV = (UV - vec2_splat(0.5)) * mix(vec2_splat(1.0),fit,Frame) + vec2_splat(0.5);\nFrameMask = step(0.0,frameUV.x)*step(frameUV.x,1.0)*step(0.0,frameUV.y)*step(frameUV.y,1.0);\nvec2 pixel = floor(frameUV * vec2(640.0,480.0));\nfloat glyph = 32.0;\nfloat inkActive = 0.0;\nvec2 local = vec2_splat(0.0);\nvec2 line0 = (pixel - vec2(38.0, 30.0)) / 2.0;\nif (line0.x >= 0.0 && line0.x < 18.0 && line0.y >= 0.0 && line0.y < 7.0)\n{\n    float index = floor(line0.x / 6.0);\n    local = vec2(mod(floor(line0.x),6.0),floor(line0.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 82.0;\n    if (index == 1.0) glyph = 69.0;\n    if (index == 2.0) glyph = 67.0;\n}\nvec2 line1 = (pixel - vec2(513.0, 30.0)) / 2.0;\nif (line1.x >= 0.0 && line1.x < 12.0 && line1.y >= 0.0 && line1.y < 7.0)\n{\n    float index = floor(line1.x / 6.0);\n    local = vec2(mod(floor(line1.x),6.0),floor(line1.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 83.0;\n    if (index == 1.0) glyph = 80.0;\n}\nvec2 line2 = (pixel - vec2(38.0, 422.0)) / 2.0;\nif (line2.x >= 0.0 && line2.x < 66.0 && line2.y >= 0.0 && line2.y < 7.0)\n{\n    float index = floor(line2.x / 6.0);\n    local = vec2(mod(floor(line2.x),6.0),floor(line2.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 49.0;\n    if (index == 1.0) glyph = 49.0;\n    if (index == 2.0) glyph = 58.0;\n    if (index == 3.0) glyph = 53.0;\n    if (index == 4.0) glyph = 56.0;\n    if (index == 5.0) glyph = 58.0;\n    if (index == 6.0) glyph = 48.0 + floor(mod(Clock,60.0)/10.0);\n    if (index == 7.0) glyph = 48.0 + floor(mod(Clock,10.0));\n    if (index == 8.0) glyph = 32.0;\n    if (index == 9.0) glyph = 80.0;\n    if (index == 10.0) glyph = 77.0;\n}\nvec2 line3 = (pixel - vec2(38.0, 446.0)) / 2.0;\nif (line3.x >= 0.0 && line3.x < 72.0 && line3.y >= 0.0 && line3.y < 7.0)\n{\n    float index = floor(line3.x / 6.0);\n    local = vec2(mod(floor(line3.x),6.0),floor(line3.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 74.0;\n    if (index == 1.0) glyph = 85.0;\n    if (index == 2.0) glyph = 76.0;\n    if (index == 3.0) glyph = 46.0;\n    if (index == 4.0) glyph = 32.0;\n    if (index == 5.0) glyph = 48.0;\n    if (index == 6.0) glyph = 51.0;\n    if (index == 7.0) glyph = 32.0;\n    if (index == 8.0) glyph = 49.0;\n    if (index == 9.0) glyph = 57.0;\n    if (index == 10.0) glyph = 57.0;\n    if (index == 11.0) glyph = 57.0;\n}\nvec2 line4 = (pixel - vec2(490.0, 446.0)) / 2.0;\nif (line4.x >= 0.0 && line4.x < 48.0 && line4.y >= 0.0 && line4.y < 7.0)\n{\n    float index = floor(line4.x / 6.0);\n    local = vec2(mod(floor(line4.x),6.0),floor(line4.y));\n    inkActive = 1.0;\n    if (index == 0.0) glyph = 72.0;\n    if (index == 1.0) glyph = 73.0;\n    if (index == 2.0) glyph = 56.0;\n    if (index == 3.0) glyph = 32.0;\n    if (index == 4.0) glyph = 47.0;\n    if (index == 5.0) glyph = 32.0;\n    if (index == 6.0) glyph = 48.0;\n    if (index == 7.0) glyph = 49.0;\n}\nGlyphUV = (vec2(mod(glyph,16.0)*6.0, floor(glyph/16.0)*8.0) + local + vec2_splat(0.5)) / vec2(96.0,64.0);\nActive = inkActive;\nDot = step(length(pixel-vec2(25.0,36.0)),4.0) * step(0.18,fract(Clock*.8));\nvec2 b = abs(pixel-vec2(581.0,36.0));\nfloat outer = step(b.x,20.0)*step(b.y,8.0);\nfloat inner = step(b.x,18.0)*step(b.y,6.0);\nfloat fill = step(pixel.x,584.0)*step(b.x,15.0)*step(b.y,4.0);\nBattery = max(outer-inner,fill);\nBattery = max(Battery,step(abs(pixel.x-604.0),2.0)*step(b.y,3.0));",
@@ -459,8 +459,8 @@
 		{
 			"Id": 17,
 			"Position": [
-				300.0,
-				1100.0
+				36.0,
+				684.0
 			],
 			"Settings": {
 				"Texture": "Assets/Textures/LastTape/CameraFont.png"
@@ -470,8 +470,8 @@
 		{
 			"Id": 18,
 			"Position": [
-				750.0,
-				350.0
+				444.0,
+				311.0
 			],
 			"Settings": {
 				"Type": "Data"
@@ -481,8 +481,8 @@
 		{
 			"Id": 19,
 			"Position": [
-				1250.0,
-				0.0
+				944.0,
+				-39.0
 			],
 			"Settings": {
 				"Code": "float white = max(Glyph*Active,Battery)*OSD;\nvec3 image = mix(Image,vec3(0.91,0.96,0.93),white*.9);\nimage = mix(image,vec3(0.94,0.13,0.08),Dot*OSD);\nColor = image * Mask;",
