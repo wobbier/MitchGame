@@ -1,0 +1,30 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Two independently cooked assets compete within one world allowance, including Play/Stop.
+wait 5
+terrain-stream-fixture
+terrain-stream-cook
+terrain-stream-cook-wait
+terrain-stream-bind
+terrain-stream-world-add
+terrain-layout
+terrain-mode Inspect
+wait 180
+terrain-stream-wait
+wait 60
+terrain-stream-world-assert
+screenshot .tmp/TerrainWorldBudgets.png
+play
+wait 150
+terrain-stream-world-assert
+terrain-stream-world-teleport
+wait 180
+terrain-stream-wait
+wait 60
+terrain-stream-world-assert
+stop
+wait 150
+terrain-stream-world-assert
+terrain-stream-world-remove
+wait 100
+terrain-stream-world-remaining
+quit
