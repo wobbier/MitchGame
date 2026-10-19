@@ -80,6 +80,176 @@
       "problemMatcher": [
         "$gcc"
       ]
+    },
+    {
+      "label": "build-me-hub-release",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "HUB",
+        "config=editor_release",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "dependsOn": "prepare-me-hub-assets",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build-havana-editor-release",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "Havana",
+        "config=editor_release",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build-havana-game-release",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "Game_EntryPoint",
+        "config=game_linux_release",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "dependsOn": "build-game-scripts-release"
+    },
+    {
+      "label": "build-game-scripts-release",
+      "type": "process",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "dotnet",
+        "build",
+        "Project/Game.Script.csproj",
+        "-c",
+        "Release",
+        "-o",
+        ".build/Game_linux_Release",
+        "--artifacts-path",
+        ".tmp/dotnet",
+        "--nologo"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "build-me-hub-retail",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "HUB",
+        "config=editor_retail",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "dependsOn": "prepare-me-hub-assets",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build-havana-editor-retail",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "Havana",
+        "config=editor_retail",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build-havana-game-retail",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "make",
+        "-f",
+        "MitchGame.make",
+        "Game_EntryPoint",
+        "config=game_linux_retail",
+        "-j$(nproc)"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "dependsOn": "build-game-scripts-retail"
+    },
+    {
+      "label": "build-game-scripts-retail",
+      "type": "process",
+      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "args": [
+        "dotnet",
+        "build",
+        "Project/Game.Script.csproj",
+        "-c",
+        "Release",
+        "-o",
+        ".build/Game_linux_Retail",
+        "--artifacts-path",
+        ".tmp/dotnet",
+        "--nologo"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
     }
   ]
 }

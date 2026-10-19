@@ -90,6 +90,186 @@
         }
       ],
       "preLaunchTask": "build-havana-game-debug"
+    },
+    {
+      "name": "ME HUB (Release, Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/Editor_Release/HUB",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Engine/Tools/HUB",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Skip all files under /nix/store (stdlib, libc, etc.)",
+          "text": "-interpreter-exec console \"skip -rfi /nix/store/.*\"",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set pagination off",
+          "text": "-interpreter-exec console \"set pagination off\"",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build-me-hub-release"
+    },
+    {
+      "name": "Havana (Editor_Release, Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/Editor_Release/Havana",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Skip all files under /nix/store (stdlib, libc, etc.)",
+          "text": "-interpreter-exec console \"skip -rfi /nix/store/.*\"",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set pagination off",
+          "text": "-interpreter-exec console \"set pagination off\"",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build-havana-editor-release"
+    },
+    {
+      "name": "MitchGame (Release, Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/Game_linux_Release/Game_EntryPoint_x64",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Skip all files under /nix/store (stdlib, libc, etc.)",
+          "text": "-interpreter-exec console \"skip -rfi /nix/store/.*\"",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set pagination off",
+          "text": "-interpreter-exec console \"set pagination off\"",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build-havana-game-release"
+    },
+    {
+      "name": "ME HUB (Retail, Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/Editor_Retail/HUB",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Engine/Tools/HUB",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Skip all files under /nix/store (stdlib, libc, etc.)",
+          "text": "-interpreter-exec console \"skip -rfi /nix/store/.*\"",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set pagination off",
+          "text": "-interpreter-exec console \"set pagination off\"",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build-me-hub-retail"
+    },
+    {
+      "name": "Havana (Editor_Retail, Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/Editor_Retail/Havana",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Skip all files under /nix/store (stdlib, libc, etc.)",
+          "text": "-interpreter-exec console \"skip -rfi /nix/store/.*\"",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set pagination off",
+          "text": "-interpreter-exec console \"set pagination off\"",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build-havana-editor-retail"
+    },
+    {
+      "name": "MitchGame (Retail, Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/Game_linux_Retail/Game_EntryPoint_x64",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Skip all files under /nix/store (stdlib, libc, etc.)",
+          "text": "-interpreter-exec console \"skip -rfi /nix/store/.*\"",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set pagination off",
+          "text": "-interpreter-exec console \"set pagination off\"",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build-havana-game-retail"
     }
   ]
 }
