@@ -1,0 +1,10 @@
+{
+    "ConvertUnits": true,
+    "FileType": "fbx",
+    "GUID": "6a3a9b743184caed",
+    "GenerateLODs": true,
+    "LODLevels": 2,
+    "LODMaxError": 0.02,
+    "LODReduction": 0.5,
+    "LODTransition": 0.3
+}

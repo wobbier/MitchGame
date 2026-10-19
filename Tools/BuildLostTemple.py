@@ -361,7 +361,7 @@ def build_temple(scene):
         EndColor=[0.4, 0.7, 1.0], Intensity=3.0, Gravity=-0.012, NoiseStrength=0.7, NoiseFrequency=0.6, FadeIn=0.3,
         EndSize=0.6)], shrine)
     scene.entity("Shrine Glow", [transform((0, 1.7, -sd / 2 + 0.2), 180.0),
-                                 light("Rectangle", (1.0, 0.62, 0.3), 3.0, 7.0, RectangleWidth=door - 0.1, RectangleHeight=2.2)], shrine)
+                                 light("Rectangle", (1.0, 0.62, 0.3), 10.0, 7.0, RectangleWidth=door - 0.1, RectangleHeight=2.2)], shrine)
     scene.entity("Rune Wall", [transform((0, 1.7, sd / 2 - t - 0.05), 0.0, 0.0), decal((2.6, 2.6, 0.5), graph_name="RuneCircle",
                                                                                    params={"Glow Intensity": 5.0})], shrine)
     # Guardian statues at the foot of the stairs and pillars at the shrine door.

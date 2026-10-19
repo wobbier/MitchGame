@@ -3,7 +3,6 @@ $output v_worldPos, v_normal, v_tangent, v_bitangent, v_texcoord0, v_viewPos, v_
 
 // Generated from Assets/ShaderGraphs/LostTemple/SpiritBeam.shadergraph by the shader graph compiler: edit the graph, not this file.
 #define SG_TRANSPARENT 1
-#define SG_FOG 1
 #define SG_SKINNED 1
 
 #include "Common.sh"

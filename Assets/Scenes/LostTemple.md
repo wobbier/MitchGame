@@ -82,7 +82,7 @@ All graphs are in `Assets/ShaderGraphs/LostTemple/`, with their generated source
 | `Caustics` | Decal | Animated water caustics on the pool bed, faded to a round pool. The pattern is a Custom Function. |
 | `SpiritWisp` | Particle | A hot core in a torn, swirling halo. |
 | `Flame` | Particle | The flame texture torn by rising noise, hotter in the core. |
-| `LensDirt` | Post Process (before tonemap) | Light from the frame's brightest region catches on lens dirt, strongest around that region. Also adds slight chromatic fringing. A Custom Function samples the scene on a coarse grid, so bright points leave no ghosts. |
+| `LensDirt` | Post Process (before tonemap) | Filtered scene light catches on lens dirt, with a soft brightness threshold and slight chromatic fringing. A mip chain covers the full frame so small lights do not flash as the camera moves. The response is exposed for the actual Synty dirt texture, clearest when facing the sun (shot 7); `Dirt Intensity` controls its strength and `Glow Focus` its spread. |
 
 ## The explorers
 
@@ -122,9 +122,10 @@ Engine/Tools/Headless.sh .build/Editor_Debug/Havana --scene Assets/Scenes/LostTe
 - **Orientation.** The import mirrors FBX Z, so Synty models face -Z in the engine. The waterfall
   mesh therefore curves out along -Z, and the explorers face -Z in model space.
 
-## Known issue
+## Vulkan program reuse
 
-On Vulkan, the scene sometimes crashes in its first frames, in `bgfx::vk::getDescriptorSet`. A
-graph program can reuse a destroyed program's slot, and bgfx then keeps that program's sampler
-bindings for stages the new program doesn't declare. This is the bgfx issue recorded for
-ShaderGraphFX. The fix is a one-line change in `ProgramVK::create`.
+Vulkan program slots must clear sampler bindings when reused. Otherwise a shader graph can
+inherit bindings for stages it doesn't declare and crash in `bgfx::vk::getDescriptorSet`.
+`Engine/ThirdParty/Patches/bgfx-vulkan-program-samplers.patch` fixes `ProgramVK::create`;
+the Linux Debug and Release archives include it, and `GenerateSolutions.sh --build-bgfx`
+applies it before rebuilding. LostTemple's repeated Play/Stop regression passes with the fix.

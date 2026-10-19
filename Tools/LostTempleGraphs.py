@@ -519,33 +519,49 @@ def flame():
 
 
 BRIGHT_LIGHT_CODE = """
-// Samples the frame on a coarse grid (sgSceneColor is the target's scene-colour lookup): the light
-// above Threshold, its average colour and where on screen it sits. Fixed sample positions, so bright
-// points never leave ghost copies.
-vec3 sum = vec3_splat(0.0);
-vec2 centre = vec2_splat(0.0);
-float total = 0.0;
+// SceneColorMips supplies the scene's bright light, thresholded before filtering. Each tap covers a region
+// of the frame instead of one isolated full-resolution pixel, so small lights cannot fall between
+// taps as the camera moves. Never jitter these samples: this pass runs after temporal AA.
+vec2 size = max(u_viewRect.zw, vec2_splat(1.0));
+#ifdef SHADER_GRAPH_PREVIEW_SH
+vec2 mipSize = size;
+#else
+vec2 mipSize = max(u_sgSceneColorMipSize.xy, vec2_splat(1.0));
+#endif
+float lod = max(ceil(log2(max(mipSize.x / 8.0, mipSize.y / 4.0))), 0.0);
+float aspect = size.x / size.y;
+Light = vec3_splat(0.0);
 for (int y = 0; y < 4; y++)
 {
-    for (int x = 0; x < 6; x++)
+    for (int x = 0; x < 8; x++)
     {
-        vec2 uv = vec2((float(x) + 0.5) / 6.0, (float(y) + 0.5) / 4.0);
+        vec2 uv = vec2((float(x) + 0.5) / 8.0, (float(y) + 0.5) / 4.0);
+#ifdef SHADER_GRAPH_PREVIEW_SH
         vec3 c = sgSceneColor(uv);
-        float l = max(dot(c, vec3(0.2126, 0.7152, 0.0722)) - Threshold, 0.0);
-        sum += c * l;
-        centre += uv * l;
-        total += l;
+        float threshold = max(Threshold, 0.0);
+        float knee = max(threshold * 0.5, 0.0001);
+        float luminance = dot(c, vec3(0.2126, 0.7152, 0.0722));
+        float soft = clamp(luminance - threshold + knee, 0.0, 2.0 * knee);
+        soft = soft * soft / (4.0 * knee);
+        c *= max(luminance - threshold, soft) / max(luminance, 0.0001);
+#else
+        vec3 c = texture2DLod(s_sgSceneColorMips, uv, lod).rgb;
+#endif
+        // Add the glow from each region separately; a single brightest-light centroid can jump
+        // across the image when two lights trade dominance. Keep the response linear in HDR light.
+        vec2 away = (UV - uv) * vec2(aspect, 1.0);
+        float spread = 0.25 + exp(-dot(away, away) * max(Focus, 0.0));
+        // Artistic lens exposure (128x the frame average), calibrated with the actual dirt mask
+        // in LostTemple. Keep the gain linear: weighting brightness twice makes highlights flash.
+        Light += c * (spread * 4.0);
     }
 }
-Light = sum / (24.0 * max(Threshold, 0.05));
-Centre = total > 0.0001 ? centre / total : vec2_splat(0.5);
 """
 
 
 def lens_dirt():
-    """Before tonemapping: light from the frame's brightest region catching on a dirty lens (strongest
-    around that region), plus a touch of chromatic fringing towards the edges."""
-    g = Graph("PostProcess", Injection="BeforeTonemap")
+    """Before tonemapping: filtered scene light catching on a dirty lens, plus chromatic fringing."""
+    g = Graph("PostProcess", Injection="BeforeTonemap", SceneColorMips=True, SceneColorMipThreshold="p3")
     dirt_tex = g.prop("Lens Dirt", "Texture2D", texture=LENS_DIRT, fallback="black")
     intensity = g.prop("Dirt Intensity", "Float", 0.35, rng=(0, 4))
     threshold = g.prop("Threshold", "Float", 1.5, rng=(0, 10))
@@ -559,12 +575,10 @@ def lens_dirt():
     green = g.split(g.node("SceneColor", {"UV": uv}))["G"]
     scene = g.combine(red, green, blue)["RGB"]
 
-    bright = g.custom("BrightLight", [("Threshold", "Float")], [("Light", "Vec3"), ("Centre", "Vec2")], BRIGHT_LIGHT_CODE,
-                      {"Threshold": threshold})
-    away = g.mul(g.sub(uv, bright["Centre"]), [1.78, 1.0])
-    near = g.node("Exponential", {"In": g.node("Negate", {"In": g.mul(g.node("DotProduct", {"A": away, "B": away}), focus)})})
+    bright = g.custom("BrightLight", [("Threshold", "Float"), ("UV", "Vec2"), ("Focus", "Float")], [("Light", "Vec3")], BRIGHT_LIGHT_CODE,
+                      {"Threshold": threshold, "UV": uv, "Focus": focus})
     dirt = g.sample(dirt_tex, uv)["RGB"]
-    glow = g.mul(bright["Light"], g.mul(g.add(near, 0.25), intensity))
+    glow = g.mul(bright["Light"], intensity)
     g.outputs(Color=g.add(scene, g.mul(dirt, glow)))
     return g
 

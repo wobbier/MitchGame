@@ -1,572 +1,613 @@
 {
-    "Version": 1,
-    "Settings": {
-        "Target": "Unlit",
-        "Surface": "Transparent",
-        "Blend": "Additive",
-        "RenderFace": "Both",
-        "CastShadows": false
-    },
-    "Properties": [
-        {
-            "Id": "p1",
-            "Name": "Beam Color",
-            "Type": "Vec3",
-            "Exposed": true,
-            "Default": [
-                0.25,
-                1.0,
-                0.8,
-                1.0
-            ],
-            "IsColor": true,
-            "HDR": true
-        },
-        {
-            "Id": "p2",
-            "Name": "Intensity",
-            "Type": "Float",
-            "Exposed": true,
-            "Default": [
-                1.6,
-                1.6,
-                1.6,
-                1.6
-            ],
-            "Range": [
-                0.0,
-                20.0
-            ]
-        },
-        {
-            "Id": "p3",
-            "Name": "Rise Speed",
-            "Type": "Float",
-            "Exposed": true,
-            "Default": [
-                0.35,
-                0.35,
-                0.35,
-                0.35
-            ],
-            "Range": [
-                0.0,
-                4.0
-            ]
-        }
-    ],
-    "Nodes": [
-        {
-            "Id": 1,
-            "Type": "Output",
-            "Position": [
-                1200,
-                -300
-            ]
-        },
-        {
-            "Id": 2,
-            "Type": "Property",
-            "Settings": {
-                "Property": "p1"
-            },
-            "Position": [
-                640,
-                -300
-            ]
-        },
-        {
-            "Id": 3,
-            "Type": "Property",
-            "Settings": {
-                "Property": "p2"
-            },
-            "Position": [
-                80,
-                -300
-            ]
-        },
-        {
-            "Id": 4,
-            "Type": "Property",
-            "Settings": {
-                "Property": "p3"
-            },
-            "Position": [
-                -1320,
-                -300
-            ]
-        },
-        {
-            "Id": 5,
-            "Type": "Position",
-            "Settings": {
-                "Space": "Object"
-            },
-            "Position": [
-                -1600,
-                -300
-            ]
-        },
-        {
-            "Id": 6,
-            "Type": "Split",
-            "Position": [
-                -1320,
-                -110
-            ]
-        },
-        {
-            "Id": 7,
-            "Type": "Add",
-            "Defaults": {
-                "B": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
-            "Position": [
-                -1040,
-                -300
-            ]
-        },
-        {
-            "Id": 8,
-            "Type": "Multiply",
-            "Defaults": {
-                "B": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    0.5
-                ]
-            },
-            "Position": [
-                -760,
-                -300
-            ]
-        },
-        {
-            "Id": 9,
-            "Type": "Saturate",
-            "Position": [
-                -480,
-                -300
-            ]
-        },
-        {
-            "Id": 10,
-            "Type": "FresnelEffect",
-            "Defaults": {
-                "Power": [
-                    1.5,
-                    1.5,
-                    1.5,
-                    1.5
-                ]
-            },
-            "Position": [
-                -480,
-                -110
-            ]
-        },
-        {
-            "Id": 11,
-            "Type": "OneMinus",
-            "Position": [
-                -200,
-                -300
-            ]
-        },
-        {
-            "Id": 12,
-            "Type": "Arctangent2",
-            "Position": [
-                -760,
-                -110
-            ]
-        },
-        {
-            "Id": 13,
-            "Type": "Multiply",
-            "Defaults": {
-                "B": [
-                    1.5,
-                    1.5,
-                    1.5,
-                    1.5
-                ]
-            },
-            "Position": [
-                -1040,
-                -110
-            ]
-        },
-        {
-            "Id": 14,
-            "Type": "Time",
-            "Position": [
-                -1320,
-                80
-            ]
-        },
-        {
-            "Id": 15,
-            "Type": "Multiply",
-            "Position": [
-                -1040,
-                80
-            ]
-        },
-        {
-            "Id": 16,
-            "Type": "Subtract",
-            "Position": [
-                -760,
-                80
-            ]
-        },
-        {
-            "Id": 17,
-            "Type": "Combine",
-            "Defaults": {
-                "B": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "A": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
-            "Position": [
-                -480,
-                80
-            ]
-        },
-        {
-            "Id": 18,
-            "Type": "GradientNoise",
-            "Defaults": {
-                "Scale": [
-                    3.0,
-                    3.0,
-                    3.0,
-                    3.0
-                ]
-            },
-            "Position": [
-                -200,
-                -110
-            ]
-        },
-        {
-            "Id": 19,
-            "Type": "OneMinus",
-            "Position": [
-                -200,
-                80
-            ]
-        },
-        {
-            "Id": 20,
-            "Type": "Smoothstep",
-            "Defaults": {
-                "Edge1": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Edge2": [
-                    0.08,
-                    0.08,
-                    0.08,
-                    0.08
-                ]
-            },
-            "Position": [
-                -200,
-                270
-            ]
-        },
-        {
-            "Id": 21,
-            "Type": "Multiply",
-            "Position": [
-                80,
-                -110
-            ]
-        },
-        {
-            "Id": 22,
-            "Type": "Multiply",
-            "Position": [
-                80,
-                80
-            ]
-        },
-        {
-            "Id": 23,
-            "Type": "Add",
-            "Defaults": {
-                "A": [
-                    0.35,
-                    0.35,
-                    0.35,
-                    0.35
-                ]
-            },
-            "Position": [
-                80,
-                270
-            ]
-        },
-        {
-            "Id": 24,
-            "Type": "Multiply",
-            "Position": [
-                360,
-                -300
-            ]
-        },
-        {
-            "Id": 25,
-            "Type": "Multiply",
-            "Position": [
-                360,
-                -110
-            ]
-        },
-        {
-            "Id": 26,
-            "Type": "Multiply",
-            "Position": [
-                640,
-                -110
-            ]
-        },
-        {
-            "Id": 27,
-            "Type": "Multiply",
-            "Position": [
-                920,
-                -300
-            ]
-        },
-        {
-            "Id": 28,
-            "Type": "Saturate",
-            "Position": [
-                920,
-                -110
-            ]
-        }
-    ],
-    "Links": [
-        [
-            5,
-            "Out",
-            6,
-            "In"
-        ],
-        [
-            6,
-            "G",
-            7,
-            "A"
-        ],
-        [
-            7,
-            "Out",
-            8,
-            "A"
-        ],
-        [
-            8,
-            "Out",
-            9,
-            "In"
-        ],
-        [
-            10,
-            "Out",
-            11,
-            "In"
-        ],
-        [
-            6,
-            "R",
-            12,
-            "A"
-        ],
-        [
-            6,
-            "B",
-            12,
-            "B"
-        ],
-        [
-            6,
-            "G",
-            13,
-            "A"
-        ],
-        [
-            14,
-            "Time",
-            15,
-            "A"
-        ],
-        [
-            4,
-            "Out",
-            15,
-            "B"
-        ],
-        [
-            13,
-            "Out",
-            16,
-            "A"
-        ],
-        [
-            15,
-            "Out",
-            16,
-            "B"
-        ],
-        [
-            12,
-            "Out",
-            17,
-            "R"
-        ],
-        [
-            16,
-            "Out",
-            17,
-            "G"
-        ],
-        [
-            17,
-            "RG",
-            18,
-            "UV"
-        ],
-        [
-            9,
-            "Out",
-            19,
-            "In"
-        ],
-        [
-            9,
-            "Out",
-            20,
-            "In"
-        ],
-        [
-            19,
-            "Out",
-            21,
-            "A"
-        ],
-        [
-            20,
-            "Out",
-            21,
-            "B"
-        ],
-        [
-            11,
-            "Out",
-            22,
-            "A"
-        ],
-        [
-            11,
-            "Out",
-            22,
-            "B"
-        ],
-        [
-            18,
-            "Out",
-            23,
-            "B"
-        ],
-        [
-            22,
-            "Out",
-            24,
-            "A"
-        ],
-        [
-            23,
-            "Out",
-            24,
-            "B"
-        ],
-        [
-            21,
-            "Out",
-            25,
-            "A"
-        ],
-        [
-            3,
-            "Out",
-            25,
-            "B"
-        ],
-        [
-            24,
-            "Out",
-            26,
-            "A"
-        ],
-        [
-            25,
-            "Out",
-            26,
-            "B"
-        ],
-        [
-            2,
-            "Out",
-            27,
-            "A"
-        ],
-        [
-            26,
-            "Out",
-            27,
-            "B"
-        ],
-        [
-            26,
-            "Out",
-            28,
-            "In"
-        ],
-        [
-            27,
-            "Out",
-            1,
-            "Color"
-        ],
-        [
-            28,
-            "Out",
-            1,
-            "Alpha"
-        ]
-    ]
+	"Links": [
+		[
+			5,
+			"Out",
+			6,
+			"In"
+		],
+		[
+			6,
+			"G",
+			7,
+			"A"
+		],
+		[
+			7,
+			"Out",
+			8,
+			"A"
+		],
+		[
+			8,
+			"Out",
+			9,
+			"In"
+		],
+		[
+			10,
+			"Out",
+			11,
+			"In"
+		],
+		[
+			6,
+			"R",
+			12,
+			"A"
+		],
+		[
+			6,
+			"B",
+			12,
+			"B"
+		],
+		[
+			6,
+			"G",
+			13,
+			"A"
+		],
+		[
+			14,
+			"Time",
+			15,
+			"A"
+		],
+		[
+			4,
+			"Out",
+			15,
+			"B"
+		],
+		[
+			13,
+			"Out",
+			16,
+			"A"
+		],
+		[
+			15,
+			"Out",
+			16,
+			"B"
+		],
+		[
+			12,
+			"Out",
+			17,
+			"R"
+		],
+		[
+			16,
+			"Out",
+			17,
+			"G"
+		],
+		[
+			17,
+			"RG",
+			18,
+			"UV"
+		],
+		[
+			9,
+			"Out",
+			19,
+			"In"
+		],
+		[
+			9,
+			"Out",
+			20,
+			"In"
+		],
+		[
+			19,
+			"Out",
+			21,
+			"A"
+		],
+		[
+			20,
+			"Out",
+			21,
+			"B"
+		],
+		[
+			11,
+			"Out",
+			22,
+			"A"
+		],
+		[
+			11,
+			"Out",
+			22,
+			"B"
+		],
+		[
+			18,
+			"Out",
+			23,
+			"B"
+		],
+		[
+			22,
+			"Out",
+			24,
+			"A"
+		],
+		[
+			23,
+			"Out",
+			24,
+			"B"
+		],
+		[
+			21,
+			"Out",
+			25,
+			"A"
+		],
+		[
+			3,
+			"Out",
+			25,
+			"B"
+		],
+		[
+			24,
+			"Out",
+			26,
+			"A"
+		],
+		[
+			25,
+			"Out",
+			26,
+			"B"
+		],
+		[
+			2,
+			"Out",
+			27,
+			"A"
+		],
+		[
+			26,
+			"Out",
+			27,
+			"B"
+		],
+		[
+			26,
+			"Out",
+			28,
+			"In"
+		],
+		[
+			27,
+			"Out",
+			1,
+			"Color"
+		],
+		[
+			30,
+			"Out",
+			29,
+			"B"
+		],
+		[
+			28,
+			"Out",
+			29,
+			"A"
+		],
+		[
+			29,
+			"Out",
+			1,
+			"Alpha"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1200.0,
+				-300.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				640.0,
+				-300.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				80.0,
+				-300.0
+			],
+			"Settings": {
+				"Property": "p2"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-1320.0,
+				-300.0
+			],
+			"Settings": {
+				"Property": "p3"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				-1600.0,
+				-300.0
+			],
+			"Settings": {
+				"Space": "Object"
+			},
+			"Type": "Position"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				-1320.0,
+				-110.0
+			],
+			"Type": "Split"
+		},
+		{
+			"Defaults": {
+				"B": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				]
+			},
+			"Id": 7,
+			"Position": [
+				-1040.0,
+				-300.0
+			],
+			"Type": "Add"
+		},
+		{
+			"Defaults": {
+				"B": [
+					0.5,
+					0.5,
+					0.5,
+					0.5
+				]
+			},
+			"Id": 8,
+			"Position": [
+				-760.0,
+				-300.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 9,
+			"Position": [
+				-480.0,
+				-300.0
+			],
+			"Type": "Saturate"
+		},
+		{
+			"Defaults": {
+				"Power": [
+					1.5,
+					1.5,
+					1.5,
+					1.5
+				]
+			},
+			"Id": 10,
+			"Position": [
+				-480.0,
+				-110.0
+			],
+			"Type": "FresnelEffect"
+		},
+		{
+			"Id": 11,
+			"Position": [
+				-200.0,
+				-300.0
+			],
+			"Type": "OneMinus"
+		},
+		{
+			"Id": 12,
+			"Position": [
+				-760.0,
+				-110.0
+			],
+			"Type": "Arctangent2"
+		},
+		{
+			"Defaults": {
+				"B": [
+					1.5,
+					1.5,
+					1.5,
+					1.5
+				]
+			},
+			"Id": 13,
+			"Position": [
+				-1040.0,
+				-110.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 14,
+			"Position": [
+				-1320.0,
+				80.0
+			],
+			"Type": "Time"
+		},
+		{
+			"Id": 15,
+			"Position": [
+				-1040.0,
+				80.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 16,
+			"Position": [
+				-760.0,
+				80.0
+			],
+			"Type": "Subtract"
+		},
+		{
+			"Defaults": {
+				"A": [
+					1.0,
+					1.0,
+					1.0,
+					1.0
+				],
+				"B": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 17,
+			"Position": [
+				-480.0,
+				80.0
+			],
+			"Type": "Combine"
+		},
+		{
+			"Defaults": {
+				"Scale": [
+					3.0,
+					3.0,
+					3.0,
+					3.0
+				]
+			},
+			"Id": 18,
+			"Position": [
+				-200.0,
+				-110.0
+			],
+			"Type": "GradientNoise"
+		},
+		{
+			"Id": 19,
+			"Position": [
+				-200.0,
+				80.0
+			],
+			"Type": "OneMinus"
+		},
+		{
+			"Defaults": {
+				"Edge1": [
+					0.0,
+					0.0,
+					0.0,
+					0.0
+				],
+				"Edge2": [
+					0.07999999821186066,
+					0.07999999821186066,
+					0.07999999821186066,
+					0.07999999821186066
+				]
+			},
+			"Id": 20,
+			"Position": [
+				-200.0,
+				270.0
+			],
+			"Type": "Smoothstep"
+		},
+		{
+			"Id": 21,
+			"Position": [
+				80.0,
+				-110.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 22,
+			"Position": [
+				80.0,
+				80.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Defaults": {
+				"A": [
+					0.3499999940395355,
+					0.3499999940395355,
+					0.3499999940395355,
+					0.3499999940395355
+				]
+			},
+			"Id": 23,
+			"Position": [
+				80.0,
+				270.0
+			],
+			"Type": "Add"
+		},
+		{
+			"Id": 24,
+			"Position": [
+				360.0,
+				-300.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 25,
+			"Position": [
+				360.0,
+				-110.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 26,
+			"Position": [
+				640.0,
+				-110.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 27,
+			"Position": [
+				920.0,
+				-300.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 28,
+			"Position": [
+				904.0,
+				-79.0
+			],
+			"Type": "Saturate"
+		},
+		{
+			"Id": 29,
+			"Position": [
+				1093.0,
+				122.0
+			],
+			"Type": "Multiply"
+		},
+		{
+			"Id": 30,
+			"Position": [
+				733.0,
+				130.0
+			],
+			"Settings": {
+				"Shape": "Vertical"
+			},
+			"Type": "Gradient"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.25,
+				1.0,
+				0.800000011920929,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"IsColor": true,
+			"Name": "Beam Color",
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				1.600000023841858,
+				1.600000023841858,
+				1.600000023841858,
+				1.600000023841858
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p2",
+			"IsColor": false,
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				20.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p3",
+			"IsColor": false,
+			"Name": "Rise Speed",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Type": "Float"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Additive",
+		"CastShadows": false,
+		"Fog": false,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Both",
+		"Surface": "Transparent",
+		"Target": "Unlit"
+	},
+	"Version": 1
 }

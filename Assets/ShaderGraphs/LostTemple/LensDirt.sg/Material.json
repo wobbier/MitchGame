@@ -81,6 +81,8 @@
 		]
 	},
 	"RenderFace": "Front",
+	"SceneColorMipThresholdSlot": 1,
+	"SceneColorMips": true,
 	"Surface": "Opaque",
 	"Target": "PostProcess",
 	"Textures": [

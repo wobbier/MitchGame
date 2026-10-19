@@ -2,7 +2,6 @@ $input v_worldPos, v_normal, v_tangent, v_bitangent, v_texcoord0, v_viewPos, v_o
 
 // Generated from Assets/ShaderGraphs/LostTemple/SpiritBeam.shadergraph by the shader graph compiler: edit the graph, not this file.
 #define SG_TRANSPARENT 1
-#define SG_FOG 1
 
 #include "Common.sh"
 #include "Lighting.sh"
@@ -19,6 +18,7 @@ void main()
 {
 	vec4 sg_fragCoord = gl_FragCoord;
 	bool sg_frontFacing = gl_FrontFacing;
+	vec2 sg_UV0 = v_texcoord0;
 	vec3 sg_PositionObject = v_objectPos;
 	vec3 sg_NormalWorld = sgSafeNormalize(v_normal);
 	vec3 sg_CameraPosition = mul(u_invView, vec4(0.0, 0.0, 0.0, 1.0)).xyz;
@@ -70,9 +70,14 @@ void main()
 	vec3 n27_Out = u_sgParams[0].xyz * vec3_splat(n26_Out);
 	// Saturate #28
 	float n28_Out = clamp(n26_Out, 0.0, 1.0);
+	// Gradient #30
+	float n30_T = (sg_UV0).y;
+	vec3 n30_Out = mix(vec3(0.0, 0.0, 0.0), vec3(1.0, 1.0, 1.0), vec3_splat(n30_T));
+	// Multiply #29
+	vec3 n29_Out = vec3_splat(n28_Out) * n30_Out;
 	// Outputs
 	vec3 sgOut_Color = n27_Out;
-	float sgOut_Alpha = n28_Out;
+	float sgOut_Alpha = (n29_Out).x;
 	float sgOut_AlphaClipThreshold = 0.5;
 
 #if SG_ALPHA_CLIP
