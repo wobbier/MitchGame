@@ -1,0 +1,44 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Bounded streaming across a dataset much larger than the CPU/GPU/collision reservations.
+wait 5
+terrain-stream-fixture
+terrain-stream-cook
+terrain-stream-cook-wait
+terrain-stream-bind
+terrain-layout
+terrain-mode Inspect
+wait 120
+terrain-stream-wait
+wait 30
+terrain-stream-assert
+terrain-stream-collision
+screenshot .tmp/TerrainStreaming-Near.png
+terrain-stream-mark
+terrain-stream-teleport 56
+wait 120
+terrain-stream-wait
+wait 30
+terrain-stream-assert-evicted
+terrain-stream-collision
+screenshot .tmp/TerrainStreaming-Far.png
+# A spectator camera can leave while canonical ground stays pinned at the player.
+terrain-stream-camera -40
+wait 80
+terrain-stream-collision
+terrain-stream-assert
+terrain-stream-save
+play
+wait 80
+terrain-stream-collision
+terrain-stream-mark
+terrain-stream-teleport 8
+wait 120
+terrain-stream-wait
+wait 30
+terrain-stream-assert-evicted
+terrain-stream-collision
+stop
+wait 100
+terrain-stream-collision
+terrain-stream-assert
+quit
