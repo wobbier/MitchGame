@@ -1,0 +1,92 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Native layer dialog, texture packing/sharing, save/recovery, reload failure, LOD and Play/Stop.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+terrain-layout
+terrain-mode Paint
+terrain-texture-fixture
+terrain-save
+wait 10
+terrain-paint-mark
+terrain-texture-mark-vertices
+terrain-texture-dialog
+wait 3
+terrain-texture-field 0 down
+wait 2
+terrain-texture-field 0 up
+terrain-texture-type 0
+wait 2
+terrain-texture-field 1 down
+wait 2
+terrain-texture-field 1 up
+terrain-texture-type 1
+wait 2
+terrain-texture-field 2 down
+wait 2
+terrain-texture-field 2 up
+terrain-texture-type 2
+wait 2
+terrain-assert-dirty false
+screenshot .tmp/TerrainTextures-Dialog.png
+terrain-texture-apply down
+wait 2
+terrain-texture-apply up
+wait 45
+terrain-texture-assert-references
+terrain-assert-dirty true
+terrain-texture-assert-ready
+terrain-texture-assert-vertices
+focus-window Terrain
+action Edit.Undo
+terrain-paint-assert-mark
+terrain-assert-dirty false
+action Edit.Redo
+wait 30
+terrain-texture-assert-references
+terrain-texture-assert-ready
+terrain-paint-mark
+terrain-paint-recovery-save
+terrain-reload
+terrain-paint-recovery-restore
+terrain-paint-assert-mark
+terrain-save
+terrain-reload
+wait 30
+terrain-texture-assert-references
+terrain-texture-assert-ready
+terrain-texture-mark-vertices
+terrain-texture-change
+wait 120
+terrain-texture-assert-changed
+terrain-texture-assert-vertices
+terrain-texture-break
+wait 120
+terrain-texture-assert-retained
+terrain-texture-repair
+wait 120
+terrain-texture-assert-changed
+terrain-texture-assert-vertices
+create TerrainTwin
+select TerrainTwin
+add-component Terrain
+terrain-bind TerrainTwin
+set Transform.Position [75,0,0]
+wait 20
+terrain-texture-assert-ready
+select Terrain
+set Terrain.ForcedLod 3
+wait 10
+terrain-texture-assert-ready
+terrain-save
+screenshot .tmp/TerrainTextures-Editor.png
+save-as .tmp/Tests/TerrainTextureScene.lvl
+play
+wait 30
+terrain-assert-preview Terrain
+terrain-assert-preview TerrainTwin
+terrain-texture-assert-ready
+stop
+wait 10
+terrain-texture-assert-ready
+quit
