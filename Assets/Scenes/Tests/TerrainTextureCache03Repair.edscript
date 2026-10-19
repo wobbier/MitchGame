@@ -1,0 +1,13 @@
+# --scene .tmp/Tests/TerrainTextureCacheScene.lvl
+# Rebuild the damaged disk pack on restart and preserve sharing through Play/Stop.
+wait 60
+terrain-texture-cache-open
+terrain-texture-assert-ready
+terrain-texture-cache-assert repaired
+play
+wait 30
+terrain-texture-assert-ready
+stop
+wait 20
+terrain-texture-assert-ready
+quit

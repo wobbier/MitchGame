@@ -1,0 +1,9 @@
+# --scene .tmp/Tests/TerrainTextureCacheScene.lvl
+# A new process must reuse the disk pack; damaging that file leaves live GPU maps usable.
+wait 60
+terrain-texture-cache-open
+terrain-texture-assert-ready
+terrain-texture-cache-assert hit
+terrain-texture-cache-corrupt
+terrain-texture-assert-ready
+quit

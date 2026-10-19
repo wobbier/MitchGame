@@ -1,0 +1,15 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Create one unique packed surface and leave it for a fresh editor process.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+terrain-texture-cache-fixture
+terrain-layout
+terrain-mode Paint
+wait 60
+terrain-texture-assert-ready
+terrain-texture-cache-assert stored
+terrain-save
+save-as .tmp/Tests/TerrainTextureCacheScene.lvl
+terrain-texture-cache-record
+quit
