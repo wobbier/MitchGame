@@ -1,0 +1,81 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Four-layer surfaces: native viewport painting, shared previews, asset undo, save and recovery.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+terrain-layout
+focus-window Terrain
+terrain-mode Paint
+terrain-paint-mark
+terrain-paint-fill 1
+terrain-assert-dirty true
+terrain-paint-assert-weights 0 0 0 255 0 0
+terrain-paint-assert-geometry
+action Edit.Undo
+terrain-paint-assert-mark
+terrain-assert-dirty false
+action Edit.Redo
+terrain-paint-assert-weights 0 0 0 255 0 0
+terrain-paint-palette {"Layer":1,"Name":"Red clay","Color":[0.65,0.2,0.08],"Roughness":0.35}
+terrain-paint-fill 0
+terrain-paint-mark
+terrain-paint-layer 1
+terrain-brush-setting Radius 5
+terrain-brush-setting Strength 1
+terrain-brush-setting Falloff 0
+terrain-brush true
+select Terrain
+action View.Top
+action View.FrameSelected
+wait 30
+terrain-pointer -8 -8 hover
+wait 3
+terrain-pointer -8 -8 down
+wait 3
+terrain-pointer 8 8 hover
+wait 3
+terrain-pointer 8 8 up
+wait 3
+terrain-paint-assert-weights 0 0 0 255 0 0
+terrain-paint-assert-geometry
+focus-window Terrain
+action Edit.Undo
+terrain-paint-assert-mark
+action Edit.Redo
+terrain-paint-assert-weights 0 0 0 255 0 0
+terrain-brush false
+terrain-paint-mark
+terrain-save
+terrain-reload
+terrain-paint-assert-mark
+terrain-assert-dirty false
+terrain-paint-fill 3
+terrain-paint-mark
+terrain-paint-recovery-save
+terrain-reload
+terrain-paint-recovery-restore
+terrain-paint-assert-mark
+terrain-assert-dirty true
+terrain-save
+terrain-paint-disable
+action Edit.Undo
+terrain-paint-assert-mark
+terrain-assert-dirty false
+terrain-paint-fill 0
+terrain-paint-layer 1
+terrain-stroke {"Tool":"Paint","Layer":1,"From":[-16,-8],"To":[16,8],"Radius":6,"Strength":1,"Falloff":0.5}
+terrain-paint-layer 2
+terrain-stroke {"Tool":"Paint","Layer":2,"From":[-16,12],"To":[16,12],"Radius":5,"Strength":1,"Falloff":0.5}
+terrain-paint-layer 3
+terrain-stroke {"Tool":"Paint","Layer":3,"From":[12,-16],"To":[12,0],"Radius":4,"Strength":1,"Falloff":0.5}
+terrain-save
+wait 15
+screenshot .tmp/TerrainPaint-Palette.png
+save-as .tmp/Tests/TerrainPaintScene.lvl
+play
+wait 30
+terrain-assert-preview Terrain
+stop
+wait 10
+terrain-assert-preview Terrain
+quit
