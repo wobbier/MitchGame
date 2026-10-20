@@ -1,0 +1,59 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Version 5 canonical reads also feed navigation independently of visual residency.
+# Canonical source/streamed baking, paint/LOD stability, sculpt undo, agent travel and load retry.
+wait 5
+terrain-nav-fixture
+terrain-layout
+wait 10
+terrain-nav-bake
+terrain-nav-wait
+terrain-nav-assert
+terrain-nav-mark
+select Terrain
+set Terrain.ForcedLod 3
+wait 10
+terrain-nav-stable
+terrain-stroke {"Tool":"Paint","Layer":2,"From":[-3,0],"To":[3,0],"Radius":3,"Strength":0.8}
+wait 5
+terrain-nav-stable
+terrain-stroke {"Tool":"Raise","From":[0,0],"To":[0,0],"Radius":2,"Strength":2}
+wait 5
+terrain-nav-stale
+focus-window Terrain
+action Edit.Undo
+wait 5
+terrain-nav-stable
+terrain-save
+screenshot .tmp/TerrainNavigation-Resident.png
+play
+wait 10
+terrain-nav-go
+wait 450
+terrain-nav-arrived
+stop
+wait 10
+terrain-nav-cook compressed
+terrain-nav-cook-wait
+terrain-nav-bind-stream
+wait 100
+terrain-nav-bake
+terrain-nav-wait
+terrain-nav-assert
+terrain-nav-auto-reload
+wait 100
+terrain-nav-wait
+terrain-nav-assert
+terrain-nav-camera-home
+wait 80
+save-as .tmp/Tests/TerrainNavigationScene.lvl
+play
+wait 10
+terrain-nav-go
+wait 240
+terrain-nav-arrived
+terrain-nav-assert
+screenshot .tmp/TerrainNavigation-Streamed.png
+stop
+wait 10
+terrain-nav-assert
+quit
