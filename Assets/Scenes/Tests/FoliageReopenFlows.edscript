@@ -1,0 +1,16 @@
+# --scene .tmp/Tests/FoliageScene.lvl
+# Run after FoliageFlows: a fresh process loads scene-owned records and engine starter models.
+wait 20
+foliage-open
+terrain-layout
+wait 160
+foliage-assert
+foliage-mark
+play
+wait 40
+foliage-assert
+stop
+wait 20
+foliage-assert-mark
+foliage-assert
+quit

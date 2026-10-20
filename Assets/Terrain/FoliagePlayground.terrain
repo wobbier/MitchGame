@@ -1,0 +1,48 @@
+{
+  "AssetGUID": "e042ed92451eb432",
+  "Format": "MitchTerrain",
+  "Pages": [
+    {
+      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/-1_-1.thp",
+      "Tile": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/-1_0.thp",
+      "Tile": [
+        -1,
+        0
+      ]
+    },
+    {
+      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/0_-1.thp",
+      "Tile": [
+        0,
+        -1
+      ]
+    },
+    {
+      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/0_0.thp",
+      "Tile": [
+        0,
+        0
+      ]
+    }
+  ],
+  "Settings": {
+    "HeightBase": -512.0,
+    "HeightRange": 1024.0,
+    "MinTile": [
+      -1,
+      -1
+    ],
+    "PatchQuads": 16,
+    "SampleSpacing": 1.0,
+    "TileQuads": 32,
+    "TilesX": 2,
+    "TilesZ": 2
+  },
+  "Version": 1
+}
