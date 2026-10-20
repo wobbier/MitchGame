@@ -1,0 +1,39 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Version 6 parents preserve complete distant coverage, refinement, seam topology and canonical collision.
+wait 5
+terrain-stream-paged-fixture hierarchical-painted
+terrain-stream-paged-cook-wait
+terrain-stream-paged-bind
+terrain-layout
+terrain-mode Inspect
+wait 180
+terrain-stream-paged-wait
+wait 60
+terrain-stream-paged-assert
+terrain-stream-paged-assert-hierarchy
+screenshot .tmp/TerrainHierarchy-Near.png
+terrain-stream-paged-camera -32
+wait 100
+terrain-stream-paged-assert
+terrain-stream-paged-assert-hierarchy
+terrain-stream-paged-coarse-only
+wait 80
+terrain-stream-paged-assert
+terrain-stream-paged-assert-hierarchy
+terrain-stream-paged-save
+play
+wait 100
+terrain-stream-paged-assert
+terrain-stream-paged-assert-hierarchy
+terrain-stream-paged-mark
+terrain-stream-paged-teleport 168
+wait 180
+terrain-stream-paged-wait
+wait 60
+terrain-stream-paged-evicted
+screenshot .tmp/TerrainHierarchy-Far.png
+stop
+wait 150
+terrain-stream-paged-assert
+terrain-stream-paged-assert-hierarchy
+quit
