@@ -1,0 +1,39 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# CPU look-ahead stays optional under tight budgets and promotes without a second canonical read.
+wait 5
+terrain-stream-fixture
+terrain-stream-cook paged
+terrain-stream-cook-wait
+terrain-stream-bind
+terrain-stream-prefetch-start
+terrain-layout
+terrain-mode Inspect
+wait 120
+terrain-stream-wait
+wait 30
+terrain-stream-prefetch-assert
+screenshot .tmp/TerrainPrefetch-Editor.png
+play
+terrain-stream-prefetch-start
+wait 120
+terrain-stream-wait
+wait 20
+terrain-stream-prefetch-assert
+terrain-stream-prefetch-fell
+terrain-stream-collision
+terrain-stream-prefetch-promote
+wait 60
+terrain-stream-wait
+wait 20
+terrain-stream-prefetch-promoted
+terrain-stream-collision
+screenshot .tmp/TerrainPrefetch-Promoted.png
+stop
+wait 20
+terrain-stream-prefetch-start
+wait 80
+terrain-stream-wait
+wait 20
+terrain-stream-prefetch-assert
+terrain-stream-save
+quit
