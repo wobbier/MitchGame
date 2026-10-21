@@ -1,0 +1,53 @@
+{
+    "Name": "Portal Ball",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                0.15,
+                0.15,
+                0.15
+            ]
+        },
+        {
+            "Type": "Mesh",
+            "MeshType": "Sphere",
+            "Material": {
+                "Type": "StandardMaterial",
+                "DiffuseColor": [
+                    0.95,
+                    0.95,
+                    0.98
+                ],
+                "Metallic": 0.0,
+                "Roughness": 0.2,
+                "EmissiveColor": [
+                    0.4,
+                    0.9,
+                    1.0
+                ],
+                "EmissiveIntensity": 2.0
+            }
+        },
+        {
+            "Type": "SphereCollider",
+            "Radius": 1.0,
+            "Restitution": 0.6
+        },
+        {
+            "Type": "Rigidbody",
+            "Mass": 0.5,
+            "ContinuousCollision": true
+        }
+    ]
+}
