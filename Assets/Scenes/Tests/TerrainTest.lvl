@@ -1,256 +1,454 @@
 {
-  "Cores": [],
-  "Scene": [
-    {
-      "Name": "Main Camera",
-      "Components": [
-        {
-          "Type": "Transform",
-          "Position": [
-            0,
-            25,
-            -42
-          ],
-          "Rotation": [
-            28,
-            0,
-            0
-          ],
-          "Scale": [
-            1,
-            1,
-            1
-          ]
-        },
-        {
-          "Type": "Camera",
-          "ClearType": "Color",
-          "ClearColor": [
-            0.15,
-            0.22,
-            0.32
-          ],
-          "IsCurrent": true,
-          "Near": 0.1,
-          "Far": 250,
-          "Zoom": 55
-        }
-      ]
+    "AssetReferences": {
+        "7465727261696e01": "Assets/Terrain/ResidentDemo.terrain"
     },
-    {
-      "Name": "Terrain",
-      "Components": [
+    "Cores": [],
+    "Entities": [
         {
-          "Type": "Transform",
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Rotation": [
-            0,
-            0,
-            0
-          ],
-          "Scale": [
-            1,
-            1,
-            1
-          ]
-        },
-        {
-          "Type": "Terrain",
-          "Asset": "Assets/Terrain/ResidentDemo.terrain",
-          "Color": [
-            0.32,
-            0.52,
-            0.2
-          ],
-          "Roughness": 0.9,
-          "CastShadows": true,
-          "Collision": true,
-          "Friction": 0.6,
-          "Restitution": 0
-        }
-      ]
-    },
-    {
-      "Name": "Sun",
-      "Components": [
-        {
-          "Type": "Transform",
-          "Position": [
-            0,
-            15,
-            0
-          ],
-          "Rotation": [
-            50,
-            -30,
-            0
-          ],
-          "Scale": [
-            1,
-            1,
-            1
-          ]
-        },
-        {
-          "Type": "Light",
-          "LightType": "Directional",
-          "Color": [
-            1,
-            0.93,
-            0.78
-          ],
-          "Intensity": 3,
-          "CastShadows": true
-        }
-      ]
-    },
-    {
-      "Name": "Terrain Box 1",
-      "Components": [
-        {
-          "Type": "Transform",
-          "Position": [
-            -5,
-            3.0723980499132337,
-            0
-          ],
-          "Rotation": [
-            0,
-            0,
-            0
-          ],
-          "Scale": [
-            1,
-            1,
-            1
-          ]
-        },
-        {
-          "Type": "Mesh",
-          "MeshType": "Cube",
-          "Material": {
-            "Type": "StandardMaterial",
-            "DiffuseColor": [
-              0.85,
-              0.32,
-              0.1
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        25.0,
+                        -42.0
+                    ],
+                    "Rotation": [
+                        0.24192190170288086,
+                        0.0,
+                        0.0,
+                        0.9702957272529602
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.15000000596046448,
+                        0.2199999988079071,
+                        0.3199999928474426
+                    ],
+                    "ClearType": "Color",
+                    "Far": 250.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "ProceduralSky": {
+                        "CloudAltitude": 1500.0,
+                        "CloudCoverage": 0.4000000059604645,
+                        "CloudDensity": 1.0,
+                        "CloudThickness": 2500.0,
+                        "Latitude": -6.0,
+                        "Month": 5,
+                        "MoonAscendingNode": 125.08000183105469,
+                        "MoonBrightness": 1.0,
+                        "MoonOrbitInclination": 5.144999980926514,
+                        "MoonPhase": 0.4000000059604645,
+                        "MoonSize": 3.0,
+                        "StarBrightness": 1.0,
+                        "SunSize": 1.5,
+                        "Time": 15.0,
+                        "TimeScale": 0.0,
+                        "Turbidity": 1.899999976158142,
+                        "WindDirection": 60.0,
+                        "WindSpeed": 8.0
+                    },
+                    "Projection": "Perspective",
+                    "Type": "Camera",
+                    "Zoom": 55.0
+                }
             ],
-            "Roughness": 0.55
-          }
+            "DestroyOnLoad": true,
+            "GUID": "1cc9d4df0ba0358c",
+            "Name": "Main Camera"
         },
         {
-          "Type": "Rigidbody",
-          "Mass": 1
-        },
-        {
-          "Type": "BoxCollider",
-          "Size": [
-            1,
-            1,
-            1
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Terrain Box 2",
-      "Components": [
-        {
-          "Type": "Transform",
-          "Position": [
-            0,
-            4.5,
-            0
-          ],
-          "Rotation": [
-            0,
-            0,
-            0
-          ],
-          "Scale": [
-            1,
-            1,
-            1
-          ]
-        },
-        {
-          "Type": "Mesh",
-          "MeshType": "Cube",
-          "Material": {
-            "Type": "StandardMaterial",
-            "DiffuseColor": [
-              0.85,
-              0.32,
-              0.1
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Asset": "Assets/Terrain/ResidentDemo.terrain",
+                    "CastShadows": true,
+                    "Collision": true,
+                    "CollisionBudgetMiB": 512,
+                    "CollisionDistance": 8.0,
+                    "Color": [
+                        0.3199999928474426,
+                        0.5199999809265137,
+                        0.20000000298023224
+                    ],
+                    "CoverageDistance": 1024.0,
+                    "CpuBudgetMiB": 256,
+                    "Friction": 0.6000000238418579,
+                    "GpuBudgetMiB": 128,
+                    "LodHysteresis": 0.20000000298023224,
+                    "LodPixelError": 2.0,
+                    "Restitution": 0.0,
+                    "Roughness": 0.8999999761581421,
+                    "StreamDetail": true,
+                    "StreamDistance": 384.0,
+                    "Type": "Terrain",
+                    "UploadKiB": 1024,
+                    "UploadMilliseconds": 2.0
+                }
             ],
-            "Roughness": 0.55
-          }
+            "DestroyOnLoad": true,
+            "GUID": "c0a8f99f44fc26a0",
+            "Name": "Terrain"
         },
         {
-          "Type": "Rigidbody",
-          "Mass": 1
-        },
-        {
-          "Type": "BoxCollider",
-          "Size": [
-            1,
-            1,
-            1
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Terrain Box 3",
-      "Components": [
-        {
-          "Type": "Transform",
-          "Position": [
-            5,
-            5.287957267121352,
-            0
-          ],
-          "Rotation": [
-            0,
-            0,
-            0
-          ],
-          "Scale": [
-            1,
-            1,
-            1
-          ]
-        },
-        {
-          "Type": "Mesh",
-          "MeshType": "Cube",
-          "Material": {
-            "Type": "StandardMaterial",
-            "DiffuseColor": [
-              0.85,
-              0.32,
-              0.1
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        15.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.4082179069519043,
+                        -0.23456971347332,
+                        0.10938165336847305,
+                        0.8754260540008545
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        0.9300000071525574,
+                        0.7799999713897705
+                    ],
+                    "DirectionalSource": "Automatic",
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 3.0,
+                    "Length": 1.2000000476837158,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Radius": 0.02500000037252903,
+                    "Range": 10.0,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
+                    "Type": "Light"
+                }
             ],
-            "Roughness": 0.55
-          }
+            "DestroyOnLoad": true,
+            "GUID": "7b8967df6e078e34",
+            "Name": "Sun"
         },
         {
-          "Type": "Rigidbody",
-          "Mass": 1
+            "Components": [
+                {
+                    "Position": [
+                        -5.0,
+                        3.0723979473114014,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8500000238418579,
+                            0.3199999928474426,
+                            0.10000000149011612
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.550000011920929,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                },
+                {
+                    "AngularDamping": 0.05000000074505806,
+                    "BodyType": "Dynamic",
+                    "CanSleep": true,
+                    "ContinuousCollision": false,
+                    "GravityScale": 1.0,
+                    "Interpolate": true,
+                    "LinearDamping": 0.0,
+                    "LockPositionX": false,
+                    "LockPositionY": false,
+                    "LockPositionZ": false,
+                    "LockRotationX": false,
+                    "LockRotationY": false,
+                    "LockRotationZ": false,
+                    "Mass": 1.0,
+                    "Type": "Rigidbody"
+                },
+                {
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "BoxCollider"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "cde93daf5bbffb24",
+            "Name": "Terrain Box 1"
         },
         {
-          "Type": "BoxCollider",
-          "Size": [
-            1,
-            1,
-            1
-          ]
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        4.5,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8500000238418579,
+                            0.3199999928474426,
+                            0.10000000149011612
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.550000011920929,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                },
+                {
+                    "AngularDamping": 0.05000000074505806,
+                    "BodyType": "Dynamic",
+                    "CanSleep": true,
+                    "ContinuousCollision": false,
+                    "GravityScale": 1.0,
+                    "Interpolate": true,
+                    "LinearDamping": 0.0,
+                    "LockPositionX": false,
+                    "LockPositionY": false,
+                    "LockPositionZ": false,
+                    "LockRotationX": false,
+                    "LockRotationY": false,
+                    "LockRotationZ": false,
+                    "Mass": 1.0,
+                    "Type": "Rigidbody"
+                },
+                {
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "BoxCollider"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "d2ecfce2af4eb7cf",
+            "Name": "Terrain Box 2"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        5.0,
+                        5.287957191467285,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8500000238418579,
+                            0.3199999928474426,
+                            0.10000000149011612
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.550000011920929,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                },
+                {
+                    "AngularDamping": 0.05000000074505806,
+                    "BodyType": "Dynamic",
+                    "CanSleep": true,
+                    "ContinuousCollision": false,
+                    "GravityScale": 1.0,
+                    "Interpolate": true,
+                    "LinearDamping": 0.0,
+                    "LockPositionX": false,
+                    "LockPositionY": false,
+                    "LockPositionZ": false,
+                    "LockRotationX": false,
+                    "LockRotationY": false,
+                    "LockRotationZ": false,
+                    "Mass": 1.0,
+                    "Type": "Rigidbody"
+                },
+                {
+                    "Center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Density": 1.0,
+                    "Friction": 0.6000000238418579,
+                    "IsTrigger": false,
+                    "Restitution": 0.0,
+                    "Size": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "BoxCollider"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "ab48427ed4f952be",
+            "Name": "Terrain Box 3"
         }
-      ]
-    }
-  ]
+    ],
+    "Version": 2
 }

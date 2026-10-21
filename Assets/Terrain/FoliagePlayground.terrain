@@ -3,28 +3,28 @@
   "Format": "MitchTerrain",
   "Pages": [
     {
-      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/-1_-1.thp",
+      "Source": "FoliagePlayground.terrain-data/b5fe8b7b5aa2285e/-1_-1.thp",
       "Tile": [
         -1,
         -1
       ]
     },
     {
-      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/-1_0.thp",
+      "Source": "FoliagePlayground.terrain-data/b5fe8b7b5aa2285e/-1_0.thp",
       "Tile": [
         -1,
         0
       ]
     },
     {
-      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/0_-1.thp",
+      "Source": "FoliagePlayground.terrain-data/b5fe8b7b5aa2285e/0_-1.thp",
       "Tile": [
         0,
         -1
       ]
     },
     {
-      "Source": "FoliagePlayground.terrain-data/9bb50f418c2e6838/0_0.thp",
+      "Source": "FoliagePlayground.terrain-data/b5fe8b7b5aa2285e/0_0.thp",
       "Tile": [
         0,
         0
@@ -44,5 +44,6 @@
     "TilesX": 2,
     "TilesZ": 2
   },
-  "Version": 1
+  "Surface": "FoliagePlayground.terrain-data/b5fe8b7b5aa2285e/Surface.tsurface",
+  "Version": 2
 }

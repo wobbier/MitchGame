@@ -1,0 +1,132 @@
+{
+  "AssetGUID": "048be4b076db2788",
+  "Format": "MitchTerrain",
+  "Pages": [
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/0_0.thp",
+      "Tile": [
+        0,
+        0
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/0_1.thp",
+      "Tile": [
+        0,
+        1
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/0_2.thp",
+      "Tile": [
+        0,
+        2
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/0_3.thp",
+      "Tile": [
+        0,
+        3
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/1_0.thp",
+      "Tile": [
+        1,
+        0
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/1_1.thp",
+      "Tile": [
+        1,
+        1
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/1_2.thp",
+      "Tile": [
+        1,
+        2
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/1_3.thp",
+      "Tile": [
+        1,
+        3
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/2_0.thp",
+      "Tile": [
+        2,
+        0
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/2_1.thp",
+      "Tile": [
+        2,
+        1
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/2_2.thp",
+      "Tile": [
+        2,
+        2
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/2_3.thp",
+      "Tile": [
+        2,
+        3
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/3_0.thp",
+      "Tile": [
+        3,
+        0
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/3_1.thp",
+      "Tile": [
+        3,
+        1
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/3_2.thp",
+      "Tile": [
+        3,
+        2
+      ]
+    },
+    {
+      "Source": "SplitScreenTest.terrain-data/d04b3be6f33491a4/3_3.thp",
+      "Tile": [
+        3,
+        3
+      ]
+    }
+  ],
+  "Settings": {
+    "HeightBase": -512.0,
+    "HeightRange": 1024.0,
+    "MinTile": [
+      0,
+      0
+    ],
+    "PatchQuads": 32,
+    "SampleSpacing": 1.0,
+    "TileQuads": 32,
+    "TilesX": 4,
+    "TilesZ": 4
+  },
+  "Version": 1
+}

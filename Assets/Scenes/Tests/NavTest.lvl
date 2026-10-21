@@ -1,4 +1,7 @@
 {
+    "AssetReferences": {
+        "048be4b076db2788": "Assets/ShaderGraphs/SplitScreenTest.terrain"
+    },
     "Cores": [],
     "Entities": [
         {
@@ -34,8 +37,34 @@
                     "IsCurrent": true,
                     "Near": 0.10000000149011612,
                     "OrthographicSize": 5.0,
+                    "ProceduralSky": {
+                        "CloudAltitude": 1500.0,
+                        "CloudCoverage": 0.4000000059604645,
+                        "CloudDensity": 1.0,
+                        "CloudThickness": 2500.0,
+                        "Latitude": -6.0,
+                        "Month": 5,
+                        "MoonAscendingNode": 125.08000183105469,
+                        "MoonBrightness": 1.0,
+                        "MoonOrbitInclination": 5.144999980926514,
+                        "MoonPhase": 0.4000000059604645,
+                        "MoonSize": 3.0,
+                        "StarBrightness": 1.0,
+                        "SunSize": 1.5,
+                        "Time": 15.0,
+                        "TimeScale": 0.0,
+                        "Turbidity": 1.899999976158142,
+                        "WindDirection": 60.0,
+                        "WindSpeed": 8.0
+                    },
                     "Projection": "Perspective",
                     "Type": "Camera",
+                    "Viewport": [
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.0
+                    ],
                     "Zoom": 55.0
                 }
             ],
@@ -71,14 +100,24 @@
                         0.9599999785423279,
                         0.8799999952316284
                     ],
+                    "DirectionalSource": "Automatic",
                     "InnerConeAngle": 20.0,
                     "Intensity": 3.0,
+                    "Length": 1.2000000476837158,
                     "LightType": "Directional",
                     "OuterConeAngle": 30.0,
+                    "Radius": 0.02500000037252903,
                     "Range": 10.0,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
                     "ShadowBias": 0.5,
                     "ShadowDistance": 60.0,
                     "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
                     "Type": "Light"
                 }
             ],
@@ -124,6 +163,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -199,6 +239,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -274,6 +315,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -349,6 +391,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -466,6 +509,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -526,6 +570,7 @@
                     "AgentMaxClimb": 0.4000000059604645,
                     "AgentMaxSlope": 45.0,
                     "AgentRadius": 0.5,
+                    "AgentType": 0,
                     "BakeOnLoad": false,
                     "CellHeight": 0.0,
                     "CellSize": 0.0,
@@ -563,9 +608,9 @@
             "Components": [
                 {
                     "Position": [
-                        0.0,
-                        0.15000000596046448,
-                        10.0
+                        3.9272193908691406,
+                        0.15000194311141968,
+                        24.18305206298828
                     ],
                     "Rotation": [
                         0.0,
@@ -574,9 +619,9 @@
                         1.0
                     ],
                     "Scale": [
-                        0.30000001192092896,
-                        0.15000000596046448,
-                        0.30000001192092896
+                        0.29999998211860657,
+                        0.14999999105930328,
+                        0.29999998211860657
                     ],
                     "Type": "Transform"
                 },
@@ -597,6 +642,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -655,6 +701,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -713,6 +760,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -730,6 +778,7 @@
                 },
                 {
                     "Acceleration": 30.0,
+                    "AgentType": 0,
                     "AngularSpeed": 360.0,
                     "AreaMask": 65535,
                     "Avoidance": "High",
@@ -791,6 +840,7 @@
                         ],
                         "EmissiveIntensity": 1.0,
                         "FaceMode": 0,
+                        "InvertRoughness": false,
                         "Metallic": 0.0,
                         "NormalStrength": 1.0,
                         "OcclusionStrength": 1.0,
@@ -808,6 +858,7 @@
                 },
                 {
                     "Acceleration": 30.0,
+                    "AgentType": 0,
                     "AngularSpeed": 360.0,
                     "AreaMask": 65535,
                     "Avoidance": "High",
@@ -830,6 +881,91 @@
             "DestroyOnLoad": true,
             "GUID": "7c7751ebae3ba25f",
             "Name": "Jumper"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -24.208314895629883,
+                        0.0,
+                        -23.352096557617188
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Asset": "Assets/ShaderGraphs/SplitScreenTest.terrain",
+                    "CastShadows": true,
+                    "Collision": true,
+                    "CollisionBudgetMiB": 512,
+                    "CollisionDistance": 8.0,
+                    "Color": [
+                        0.30000001192092896,
+                        0.47999998927116394,
+                        0.20000000298023224
+                    ],
+                    "CoverageDistance": 1024.0,
+                    "CpuBudgetMiB": 256,
+                    "Friction": 0.6000000238418579,
+                    "GpuBudgetMiB": 128,
+                    "LodHysteresis": 0.20000000298023224,
+                    "LodPixelError": 2.0,
+                    "Restitution": 0.0,
+                    "Roughness": 0.8999999761581421,
+                    "StreamDetail": true,
+                    "StreamDistance": 384.0,
+                    "Type": "Terrain",
+                    "UploadKiB": 1024,
+                    "UploadMilliseconds": 2.0
+                },
+                {
+                    "AgentHeight": 2.0,
+                    "AgentMaxClimb": 0.5,
+                    "AgentMaxSlope": 45.0,
+                    "AgentRadius": 0.5,
+                    "AgentType": 0,
+                    "BakeOnLoad": false,
+                    "CellHeight": 0.0,
+                    "CellSize": 0.0,
+                    "Collect": "All",
+                    "DefaultArea": 0,
+                    "DetailSampleDistance": 6.0,
+                    "DetailSampleMaxError": 1.0,
+                    "EdgeMaxError": 1.2999999523162842,
+                    "EdgeMaxLength": 12.0,
+                    "IncludeLayers": 4294967295,
+                    "MergeRegionSize": 20.0,
+                    "MinRegionSize": 8.0,
+                    "NavMeshData": "",
+                    "Partition": "Watershed",
+                    "TileSize": 64,
+                    "Type": "NavMeshSurface",
+                    "UseGeometry": "Physics Colliders",
+                    "VolumeCenter": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "VolumeSize": [
+                        20.0,
+                        10.0,
+                        20.0
+                    ]
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "8761ab4271b01256",
+            "Name": "SplitScreenTest"
         }
     ],
     "Version": 2

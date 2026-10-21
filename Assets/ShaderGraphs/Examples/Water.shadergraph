@@ -1,199 +1,4 @@
 {
-	"Version": 1,
-	"Settings": {
-		"Target": "Lit"
-	},
-	"Properties": [
-		{
-			"Id": "p1",
-			"Name": "Deep Color",
-			"Type": "Vec3",
-			"Exposed": true,
-			"Default": [
-				0.02,
-				0.09,
-				0.14,
-				1.0
-			],
-			"IsColor": true
-		},
-		{
-			"Id": "p2",
-			"Name": "Shallow Color",
-			"Type": "Vec3",
-			"Exposed": true,
-			"Default": [
-				0.1,
-				0.38,
-				0.45,
-				1.0
-			],
-			"IsColor": true
-		}
-	],
-	"Nodes": [
-		{
-			"Id": 1,
-			"Type": "Output",
-			"Position": [
-				1200,
-				0
-			]
-		},
-		{
-			"Id": 2,
-			"Type": "Property",
-			"Position": [
-				-1100,
-				0
-			],
-			"Settings": {
-				"Property": "p1"
-			}
-		},
-		{
-			"Id": 3,
-			"Type": "Property",
-			"Position": [
-				-880,
-				0
-			],
-			"Settings": {
-				"Property": "p2"
-			}
-		},
-		{
-			"Id": 4,
-			"Type": "UV",
-			"Position": [
-				-660,
-				0
-			]
-		},
-		{
-			"Id": 5,
-			"Type": "Panner",
-			"Position": [
-				-440,
-				0
-			],
-			"Defaults": {
-				"Speed": [
-					0.04,
-					0.02,
-					0,
-					0
-				]
-			}
-		},
-		{
-			"Id": 6,
-			"Type": "Panner",
-			"Position": [
-				-220,
-				0
-			],
-			"Defaults": {
-				"Speed": [
-					-0.03,
-					0.05,
-					0,
-					0
-				]
-			}
-		},
-		{
-			"Id": 7,
-			"Type": "GradientNoise",
-			"Position": [
-				0,
-				0
-			],
-			"Defaults": {
-				"Scale": [
-					14,
-					14,
-					14,
-					14
-				]
-			}
-		},
-		{
-			"Id": 8,
-			"Type": "GradientNoise",
-			"Position": [
-				-1100,
-				200
-			],
-			"Defaults": {
-				"Scale": [
-					23,
-					23,
-					23,
-					23
-				]
-			}
-		},
-		{
-			"Id": 9,
-			"Type": "Add",
-			"Position": [
-				-880,
-				200
-			]
-		},
-		{
-			"Id": 10,
-			"Type": "NormalFromHeight",
-			"Position": [
-				-660,
-				200
-			],
-			"Defaults": {
-				"Strength": [
-					0.06,
-					0.06,
-					0.06,
-					0.06
-				]
-			}
-		},
-		{
-			"Id": 11,
-			"Type": "FresnelEffect",
-			"Position": [
-				-440,
-				200
-			],
-			"Defaults": {
-				"Power": [
-					3,
-					3,
-					3,
-					3
-				]
-			}
-		},
-		{
-			"Id": 12,
-			"Type": "Lerp",
-			"Position": [
-				-220,
-				200
-			]
-		},
-		{
-			"Id": 13,
-			"Type": "Float",
-			"Position": [
-				0,
-				200
-			],
-			"Settings": {
-				"Value": 0.06
-			}
-		}
-	],
 	"Links": [
 		[
 			4,
@@ -273,5 +78,212 @@
 			1,
 			"Roughness"
 		]
-	]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				1072.0,
+				16.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				678.0,
+				-294.0
+			],
+			"Settings": {
+				"Property": "p1"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				486.0,
+				-294.0
+			],
+			"Settings": {
+				"Property": "p2"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-538.0,
+				1.0
+			],
+			"Type": "UV"
+		},
+		{
+			"Defaults": {
+				"Speed": [
+					0.03999999910593033,
+					0.019999999552965164,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 5,
+			"Position": [
+				-376.0,
+				-230.0
+			],
+			"Type": "Panner"
+		},
+		{
+			"Defaults": {
+				"Speed": [
+					-0.029999999329447746,
+					0.05000000074505806,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 6,
+			"Position": [
+				-106.0,
+				26.0
+			],
+			"Type": "Panner"
+		},
+		{
+			"Defaults": {
+				"Scale": [
+					14.0,
+					14.0,
+					14.0,
+					14.0
+				]
+			},
+			"Id": 7,
+			"Position": [
+				-88.0,
+				-223.0
+			],
+			"Type": "GradientNoise"
+		},
+		{
+			"Defaults": {
+				"Scale": [
+					23.0,
+					23.0,
+					23.0,
+					23.0
+				]
+			},
+			"Id": 8,
+			"Position": [
+				167.0,
+				26.0
+			],
+			"Type": "GradientNoise"
+		},
+		{
+			"Id": 9,
+			"Position": [
+				453.0,
+				-47.0
+			],
+			"Type": "Add"
+		},
+		{
+			"Defaults": {
+				"Strength": [
+					0.05999999865889549,
+					0.05999999865889549,
+					0.05999999865889549,
+					0.05999999865889549
+				]
+			},
+			"Id": 10,
+			"Position": [
+				648.0,
+				186.0
+			],
+			"Type": "NormalFromHeight"
+		},
+		{
+			"Defaults": {
+				"Power": [
+					3.0,
+					3.0,
+					3.0,
+					3.0
+				]
+			},
+			"Id": 11,
+			"Position": [
+				150.0,
+				346.0
+			],
+			"Type": "FresnelEffect"
+		},
+		{
+			"Id": 12,
+			"Position": [
+				789.0,
+				-77.0
+			],
+			"Type": "Lerp"
+		},
+		{
+			"Id": 13,
+			"Position": [
+				886.0,
+				378.0
+			],
+			"Settings": {
+				"Value": 0.06
+			},
+			"Type": "Float"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				0.019999999552965164,
+				0.09000000357627869,
+				0.14000000059604645,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p1",
+			"IsColor": true,
+			"Name": "Deep Color",
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.10000000149011612,
+				0.3799999952316284,
+				0.44999998807907104,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "p2",
+			"IsColor": true,
+			"Name": "Shallow Color",
+			"Type": "Vec3"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": true,
+		"Fog": true,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "Lit"
+	},
+	"Version": 1
 }
