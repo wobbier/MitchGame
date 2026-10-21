@@ -1,0 +1,37 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Background previews preserve canonical edits, save/undo/reload and Play readiness.
+wait 5
+terrain-fixture
+terrain-bind Terrain
+terrain-layout
+focus-window Terrain
+terrain-stroke {"From":[-8,-8],"To":[-8,-8],"Radius":1,"Strength":1,"Falloff":0}
+terrain-save
+terrain-assert-dirty false
+terrain-stroke {"From":[-8,-8],"To":[-8,-8],"Radius":1,"Strength":1,"Falloff":0}
+action Edit.Undo
+terrain-assert-sample -8 -8 1
+action Edit.Redo
+terrain-assert-sample -8 -8 2
+terrain-stroke {"Tool":"Lower","From":[-8,-8],"To":[-8,-8],"Radius":2,"Strength":4,"Cancel":true}
+terrain-assert-sample -8 -8 2
+terrain-save
+terrain-stroke {"From":[-8,-8],"To":[-8,-8],"Radius":1,"Strength":1,"Falloff":0}
+terrain-reload
+terrain-assert-sample -8 -8 2
+terrain-preview-wait
+wait 3
+terrain-assert-preview Terrain
+terrain-stroke {"From":[-8,-8],"To":[-8,-8],"Radius":1,"Strength":1,"Falloff":0}
+play
+wait 15
+terrain-assert-preview Terrain
+terrain-assert-sample -8 -8 3
+stop
+wait 5
+terrain-assert-preview Terrain
+terrain-assert-dirty true
+terrain-save
+terrain-assert-dirty false
+screenshot .tmp/TerrainPreview-Ready.png
+quit
