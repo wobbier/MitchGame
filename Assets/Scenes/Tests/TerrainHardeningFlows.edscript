@@ -1,0 +1,57 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# Repeated authoring/preview replacement, limits, foliage, shared instances and Play/Stop.
+wait 5
+foliage-fixture
+terrain-layout
+terrain-harden-limits
+create TerrainTwin
+select TerrainTwin
+add-component Terrain
+terrain-bind TerrainTwin
+set Transform.Position [75,0,0]
+terrain-mode Sculpt
+terrain-harden-cycle 64
+wait 5
+terrain-assert-preview Terrain
+terrain-assert-preview TerrainTwin
+terrain-harden-ready
+terrain-harden-cycle 64
+terrain-harden-idle-mark
+wait 30
+terrain-harden-idle-assert
+select Terrain
+terrain-mode Foliage
+foliage-stroke {"From":[-15,-10],"To":[12,8],"Species":0,"Radius":6,"Density":0.1,"Spacing":2}
+foliage-stroke {"From":[-18,10],"To":[15,12],"Species":1,"Radius":5,"Density":0.18,"Spacing":1}
+foliage-mark
+terrain-mode Sculpt
+terrain-stroke {"From":[-5,-5],"To":[5,5],"Radius":10,"Strength":1}
+focus-window Terrain
+action Edit.Undo
+terrain-harden-hide
+wait 30
+terrain-harden-ready
+terrain-assert-preview Terrain
+terrain-assert-preview TerrainTwin
+action View.Terrain
+terrain-mode Foliage
+foliage-assert-mark
+wait 60
+foliage-assert
+save-as .tmp/Tests/TerrainHardeningScene.lvl
+play
+wait 30
+foliage-assert
+terrain-assert-preview Terrain
+stop
+wait 10
+foliage-assert-mark
+terrain-harden-ready
+play
+wait 30
+stop
+wait 10
+terrain-harden-ready
+foliage-assert
+screenshot .tmp/TerrainHardening-Ready.png
+quit
