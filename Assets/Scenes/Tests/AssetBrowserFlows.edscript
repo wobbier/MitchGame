@@ -1,0 +1,32 @@
+# Original asset browser layout and shader graph inspector regression:
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/AssetBrowserFlows.edscript
+show-asset Assets/ShaderGraphs/Examples/PlasmaBlob.shadergraph
+assert-browser-layout Project
+assert-browser-asset Assets/ShaderGraphs/Examples/RetroSun.shadergraph
+assert-browser-asset Engine/Assets/Havana/UI/Image.png
+wait-asset-preview
+screenshot .tmp/AssetBrowserFlows/lit.png
+
+# A graph document and the asset inspector use different render views and compile folders.
+sg-open Assets/ShaderGraphs/Examples/RetroSun.shadergraph
+sg-wait-preview
+show-asset Assets/ShaderGraphs/Examples/PlasmaBlob.shadergraph
+wait-asset-preview
+
+# Each supported target can render in the inspector.
+show-asset Assets/ShaderGraphs/Tests/FireParticle.shadergraph
+wait-asset-preview
+show-asset Assets/ShaderGraphs/Tests/GlowRingDecal.shadergraph
+wait-asset-preview
+show-asset Assets/ShaderGraphs/Tests/DepthScanPost.shadergraph
+wait-asset-preview
+screenshot .tmp/AssetBrowserFlows/post-process.png
+# Change selection while a compile may still be running; the latest asset must render.
+show-asset Assets/ShaderGraphs/Tests/FireParticle.shadergraph
+show-asset Assets/ShaderGraphs/Examples/RetroSun.shadergraph
+wait-asset-preview
+screenshot .tmp/AssetBrowserFlows/unlit.png
+show-asset Engine/Assets/Havana/UI/Image.png
+wait 10
+screenshot .tmp/AssetBrowserFlows/texture-import.png
+quit
