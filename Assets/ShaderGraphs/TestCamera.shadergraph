@@ -1,0 +1,71 @@
+{
+	"Links": [
+		[
+			2,
+			"Out",
+			1,
+			"Color"
+		],
+		[
+			3,
+			"Out",
+			2,
+			"In"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Position": [
+				552.0,
+				-127.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Defaults": {
+				"Range": [
+					0.10999999940395355,
+					0.0,
+					0.0,
+					0.0
+				],
+				"To": [
+					0.6600000262260437,
+					0.0,
+					0.0,
+					0.0
+				]
+			},
+			"Id": 2,
+			"Position": [
+				232.0,
+				-111.0
+			],
+			"Type": "ReplaceColor"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				-48.0,
+				-159.0
+			],
+			"Type": "SceneColor"
+		}
+	],
+	"Properties": [],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": true,
+		"Fog": true,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Transparent",
+		"Target": "PostProcess"
+	},
+	"Version": 1
+}
