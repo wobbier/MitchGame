@@ -1,0 +1,63 @@
+# Depth of field regression: inspector, undo, serialization, near/middle/far focus and bypasses.
+# ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/DepthOfFieldTest.lvl --editor-exec Assets/Scenes/Tests/DepthOfFieldFlows.edscript
+wait 25
+assert-field Main Camera | PostProcess.DepthOfField | true
+assert-field Main Camera | PostProcess.DoFFocusDistance | 8 ~ 0.001
+select Main Camera
+set PostProcess.DoFFocusDistance 3.5
+assert-field Main Camera | PostProcess.DoFFocusDistance | 3.5 ~ 0.001
+undo
+assert-field Main Camera | PostProcess.DoFFocusDistance | 8 ~ 0.001
+redo
+assert-field Main Camera | PostProcess.DoFFocusDistance | 3.5 ~ 0.001
+set PostProcess.DoFFocusDistance 8
+save-as .tmp/DepthOfFieldRoundTrip.lvl
+load .tmp/DepthOfFieldRoundTrip.lvl
+wait 25
+assert-field Main Camera | PostProcess.DepthOfField | true
+assert-field Main Camera | PostProcess.DoFAperture | 1 ~ 0.001
+assert-field Main Camera | PostProcess.DoFSensorHeight | 24 ~ 0.001
+assert-field Main Camera | PostProcess.DoFMaxBlurRadius | 24 ~ 0.001
+play
+wait 35
+assert-playing true
+screenshot .tmp/DepthOfFieldFlows/middle.png
+select Main Camera
+set PostProcess.DoFFocusDistance 3.5
+wait 12
+screenshot .tmp/DepthOfFieldFlows/near.png
+set PostProcess.DoFFocusDistance 18
+wait 12
+screenshot .tmp/DepthOfFieldFlows/far.png
+set PostProcess.DoFFocusDistance 8
+set PostProcess.DoFDebugCoC true
+wait 12
+screenshot .tmp/DepthOfFieldFlows/coc.png
+set PostProcess.DoFDebugCoC false
+set PostProcess.DepthOfField false
+wait 12
+screenshot .tmp/DepthOfFieldFlows/disabled.png
+set PostProcess.DepthOfField true
+set PostProcess.TemporalAA true
+wait 20
+screenshot .tmp/DepthOfFieldFlows/taa.png
+# Changing the viewport recreates both TAA and DoF targets while they are active.
+set Camera.Viewport [0,0,0.75,1]
+wait 12
+screenshot .tmp/DepthOfFieldFlows/resized.png
+set Camera.Viewport [0,0,1,1]
+wait 12
+set PostProcess.DoFMaxBlurRadius 0
+wait 8
+set PostProcess.DoFMaxBlurRadius 32
+set Camera.Projection "Orthographic"
+wait 8
+set Camera.Projection "Perspective"
+set PostProcess.TemporalAA false
+set PostProcess.DoFMaxBlurRadius 24
+stop
+wait 12
+assert-playing false
+assert-field Main Camera | PostProcess.DoFFocusDistance | 8 ~ 0.001
+assert-field Main Camera | PostProcess.DepthOfField | true
+quit
