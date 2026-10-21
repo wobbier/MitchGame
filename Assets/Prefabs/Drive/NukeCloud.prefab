@@ -1,0 +1,152 @@
+{
+    "Name": "Nuke Cloud",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Cloud Smoke",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": true,
+                    "EmissionRate": 120.0,
+                    "MaxParticles": 2500,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 14.0,
+                    "EmitFromShell": true,
+                    "SimulationSpace": "Local",
+                    "Blend": "Alpha",
+                    "Lifetime": [
+                        6.0,
+                        9.0
+                    ],
+                    "Speed": [
+                        1.0,
+                        4.0
+                    ],
+                    "Size": [
+                        10.0,
+                        16.0
+                    ],
+                    "EndSize": 1.8,
+                    "StartColor": [
+                        0.55,
+                        0.45,
+                        0.4
+                    ],
+                    "StartColor2": [
+                        0.75,
+                        0.6,
+                        0.5
+                    ],
+                    "EndColor": [
+                        0.45,
+                        0.42,
+                        0.4
+                    ],
+                    "StartAlpha": 0.8,
+                    "Intensity": 1.0,
+                    "Gravity": -0.02,
+                    "NoiseStrength": 1.2,
+                    "Lit": true
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Cloud Fire",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": true,
+                    "EmissionRate": 60.0,
+                    "MaxParticles": 800,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 9.0,
+                    "SimulationSpace": "Local",
+                    "Lifetime": [
+                        1.5,
+                        3.0
+                    ],
+                    "Speed": [
+                        0.5,
+                        2.0
+                    ],
+                    "Size": [
+                        8.0,
+                        12.0
+                    ],
+                    "EndSize": 0.6,
+                    "Intensity": 6.0,
+                    "StartColor": [
+                        1.0,
+                        0.55,
+                        0.15
+                    ],
+                    "EndColor": [
+                        0.6,
+                        0.12,
+                        0.02
+                    ],
+                    "Gravity": 0.0,
+                    "NoiseStrength": 1.0
+                }
+            ],
+            "Children": []
+        }
+    ]
+}

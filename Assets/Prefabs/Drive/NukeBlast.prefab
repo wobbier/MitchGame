@@ -1,0 +1,238 @@
+{
+    "Name": "Nuke Blast",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "ScriptComponent",
+            "ScriptName": "NukeBlast",
+            "ScriptFields": "{}"
+        },
+        {
+            "Type": "Light",
+            "LightType": "Point",
+            "Color": [
+                1.0,
+                0.75,
+                0.45
+            ],
+            "Intensity": 4000.0,
+            "Range": 300.0,
+            "CastShadows": false
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Nuke Fireball",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": false,
+                    "Duration": 0.3,
+                    "EmissionRate": 0.0,
+                    "BurstCount": 300,
+                    "MaxParticles": 600,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 6.0,
+                    "Lifetime": [
+                        1.5,
+                        3.5
+                    ],
+                    "Speed": [
+                        10.0,
+                        35.0
+                    ],
+                    "Size": [
+                        5.0,
+                        10.0
+                    ],
+                    "EndSize": 2.5,
+                    "Intensity": 14.0,
+                    "Drag": 1.5,
+                    "Gravity": -0.2,
+                    "StartColor": [
+                        1.0,
+                        0.85,
+                        0.5
+                    ],
+                    "EndColor": [
+                        0.9,
+                        0.2,
+                        0.02
+                    ]
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Nuke Dust",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": false,
+                    "Duration": 0.5,
+                    "EmissionRate": 0.0,
+                    "BurstCount": 250,
+                    "MaxParticles": 400,
+                    "Shape": "Hemisphere",
+                    "ShapeRadius": 8.0,
+                    "Blend": "Alpha",
+                    "Lifetime": [
+                        4.0,
+                        8.0
+                    ],
+                    "Speed": [
+                        25.0,
+                        60.0
+                    ],
+                    "Size": [
+                        6.0,
+                        10.0
+                    ],
+                    "EndSize": 3.0,
+                    "StartColor": [
+                        0.55,
+                        0.45,
+                        0.35
+                    ],
+                    "StartColor2": [
+                        0.4,
+                        0.33,
+                        0.25
+                    ],
+                    "EndColor": [
+                        0.45,
+                        0.4,
+                        0.35
+                    ],
+                    "StartAlpha": 0.6,
+                    "Intensity": 1.0,
+                    "Drag": 1.2,
+                    "Gravity": 0.05,
+                    "Lit": true
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Nuke Stem",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": true,
+                    "EmissionRate": 90.0,
+                    "MaxParticles": 1500,
+                    "Shape": "Cone",
+                    "ConeAngle": 6.0,
+                    "ShapeRadius": 5.0,
+                    "Blend": "Alpha",
+                    "Lifetime": [
+                        5.0,
+                        7.0
+                    ],
+                    "Speed": [
+                        12.0,
+                        16.0
+                    ],
+                    "Size": [
+                        6.0,
+                        9.0
+                    ],
+                    "EndSize": 1.8,
+                    "StartColor": [
+                        0.95,
+                        0.55,
+                        0.25
+                    ],
+                    "StartColor2": [
+                        0.6,
+                        0.4,
+                        0.3
+                    ],
+                    "EndColor": [
+                        0.4,
+                        0.36,
+                        0.33
+                    ],
+                    "StartAlpha": 0.75,
+                    "Intensity": 2.0,
+                    "Drag": 0.4,
+                    "Gravity": 0.0,
+                    "NoiseStrength": 1.0,
+                    "Lit": true
+                }
+            ],
+            "Children": []
+        }
+    ]
+}

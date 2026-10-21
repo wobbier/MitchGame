@@ -1,0 +1,237 @@
+{
+    "Name": "Rocket",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "ScriptComponent",
+            "ScriptName": "Missile",
+            "ScriptFields": "{\"StartSpeed\": 25.0, \"MaxSpeed\": 55.0, \"Thrust\": 45.0, \"TurnDegreesPerSecond\": 220.0, \"Lifetime\": 6.0, \"BlastRadius\": 4.0, \"BlastImpulse\": 14.0, \"ExplosionPrefab\": \"Assets/Prefabs/Drive/SmallExplosion.prefab\", \"GuidanceDelay\": 0.45, \"Wobble\": 2.5, \"ScorchSize\": 1.6}"
+        },
+        {
+            "Type": "Light",
+            "LightType": "Point",
+            "Color": [
+                1.0,
+                0.55,
+                0.2
+            ],
+            "Intensity": 2.5,
+            "Range": 3.0,
+            "CastShadows": false
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Rocket Body",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.054,
+                        0.27,
+                        0.054
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.8,
+                            0.78
+                        ],
+                        "Metallic": 0.6,
+                        "Roughness": 0.35
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Rocket Tip",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.27
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.054,
+                        0.054,
+                        0.072
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.05
+                        ],
+                        "Roughness": 0.4
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Rocket Exhaust",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.3
+                    ],
+                    "Rotation": [
+                        0,
+                        180,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 90.0,
+                    "Lifetime": [
+                        0.15,
+                        0.3
+                    ],
+                    "Speed": [
+                        3.0,
+                        6.0
+                    ],
+                    "Size": [
+                        0.12,
+                        0.25
+                    ],
+                    "EndSize": 0.4,
+                    "ConeAngle": 8.0,
+                    "ShapeRadius": 0.05,
+                    "Intensity": 8.0,
+                    "Gravity": 0.0,
+                    "StartColor": [
+                        1.0,
+                        0.7,
+                        0.3
+                    ],
+                    "EndColor": [
+                        1.0,
+                        0.2,
+                        0.05
+                    ],
+                    "MaxParticles": 200
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Rocket Smoke",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -0.36
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "EmissionRate": 30.0,
+                    "Lifetime": [
+                        0.6,
+                        1.1
+                    ],
+                    "Speed": [
+                        0.1,
+                        0.4
+                    ],
+                    "Size": [
+                        0.3,
+                        0.5
+                    ],
+                    "EndSize": 2.0,
+                    "ShapeRadius": 0.05,
+                    "StartColor": [
+                        0.8,
+                        0.8,
+                        0.8
+                    ],
+                    "StartColor2": [
+                        0.65,
+                        0.65,
+                        0.65
+                    ],
+                    "EndColor": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ],
+                    "StartAlpha": 0.45,
+                    "Intensity": 1.0,
+                    "Gravity": -0.02,
+                    "NoiseStrength": 0.4,
+                    "Lit": true,
+                    "MaxParticles": 200
+                }
+            ],
+            "Children": []
+        }
+    ]
+}

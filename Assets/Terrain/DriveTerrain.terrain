@@ -1,0 +1,133 @@
+{
+  "AssetGUID": "6472697665746572",
+  "Format": "MitchTerrain",
+  "Pages": [
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-2_-2.thp",
+      "Tile": [
+        -2,
+        -2
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-2_-1.thp",
+      "Tile": [
+        -2,
+        -1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-2_0.thp",
+      "Tile": [
+        -2,
+        0
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-2_1.thp",
+      "Tile": [
+        -2,
+        1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-1_-2.thp",
+      "Tile": [
+        -1,
+        -2
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-1_-1.thp",
+      "Tile": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-1_0.thp",
+      "Tile": [
+        -1,
+        0
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/-1_1.thp",
+      "Tile": [
+        -1,
+        1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/0_-2.thp",
+      "Tile": [
+        0,
+        -2
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/0_-1.thp",
+      "Tile": [
+        0,
+        -1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/0_0.thp",
+      "Tile": [
+        0,
+        0
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/0_1.thp",
+      "Tile": [
+        0,
+        1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/1_-2.thp",
+      "Tile": [
+        1,
+        -2
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/1_-1.thp",
+      "Tile": [
+        1,
+        -1
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/1_0.thp",
+      "Tile": [
+        1,
+        0
+      ]
+    },
+    {
+      "Source": "DriveTerrain.terrain-data/92a481cb059814c9/1_1.thp",
+      "Tile": [
+        1,
+        1
+      ]
+    }
+  ],
+  "Settings": {
+    "HeightBase": -512.0,
+    "HeightRange": 1024.0,
+    "MinTile": [
+      -2,
+      -2
+    ],
+    "PatchQuads": 32,
+    "SampleSpacing": 2.0,
+    "TileQuads": 64,
+    "TilesX": 4,
+    "TilesZ": 4
+  },
+  "Surface": "DriveTerrain.terrain-data/92a481cb059814c9/Surface.tsurface",
+  "Version": 2
+}

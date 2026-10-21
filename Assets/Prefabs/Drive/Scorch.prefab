@@ -1,0 +1,33 @@
+{
+    "Name": "Scorch",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "Decal",
+            "Size": [
+                3.0,
+                3.0,
+                1.5
+            ],
+            "Albedo": "Assets/Textures/Decals/Scorch.png"
+        }
+    ],
+    "Children": []
+}

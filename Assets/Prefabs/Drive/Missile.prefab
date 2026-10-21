@@ -1,0 +1,235 @@
+{
+    "Name": "Missile",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "ScriptComponent",
+            "ScriptName": "Missile",
+            "ScriptFields": "{}"
+        },
+        {
+            "Type": "Light",
+            "LightType": "Point",
+            "Color": [
+                1.0,
+                0.55,
+                0.2
+            ],
+            "Intensity": 6.0,
+            "Range": 6.0,
+            "CastShadows": false
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Missile Body",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.09,
+                        0.45,
+                        0.09
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.8,
+                            0.78
+                        ],
+                        "Metallic": 0.6,
+                        "Roughness": 0.35
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Missile Tip",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.45
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.09,
+                        0.09,
+                        0.12
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.1,
+                            0.05
+                        ],
+                        "Roughness": 0.4
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Missile Exhaust",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        -0.5
+                    ],
+                    "Rotation": [
+                        0,
+                        180,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 180.0,
+                    "Lifetime": [
+                        0.15,
+                        0.3
+                    ],
+                    "Speed": [
+                        3.0,
+                        6.0
+                    ],
+                    "Size": [
+                        0.12,
+                        0.25
+                    ],
+                    "EndSize": 0.4,
+                    "ConeAngle": 8.0,
+                    "ShapeRadius": 0.05,
+                    "Intensity": 8.0,
+                    "Gravity": 0.0,
+                    "StartColor": [
+                        1.0,
+                        0.7,
+                        0.3
+                    ],
+                    "EndColor": [
+                        1.0,
+                        0.2,
+                        0.05
+                    ]
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Missile Smoke",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        -0.6
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "EmissionRate": 60.0,
+                    "Lifetime": [
+                        1.0,
+                        1.8
+                    ],
+                    "Speed": [
+                        0.1,
+                        0.4
+                    ],
+                    "Size": [
+                        0.3,
+                        0.5
+                    ],
+                    "EndSize": 4.0,
+                    "ShapeRadius": 0.05,
+                    "StartColor": [
+                        0.8,
+                        0.8,
+                        0.8
+                    ],
+                    "StartColor2": [
+                        0.65,
+                        0.65,
+                        0.65
+                    ],
+                    "EndColor": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ],
+                    "StartAlpha": 0.45,
+                    "Intensity": 1.0,
+                    "Gravity": -0.02,
+                    "NoiseStrength": 0.4,
+                    "Lit": true
+                }
+            ],
+            "Children": []
+        }
+    ]
+}

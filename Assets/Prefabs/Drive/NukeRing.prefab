@@ -1,0 +1,45 @@
+{
+    "Name": "Nuke Ring",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                0.6,
+                1
+            ]
+        },
+        {
+            "Type": "Mesh",
+            "MeshType": "Cylinder",
+            "Material": {
+                "Type": "StandardMaterial",
+                "DiffuseColor": [
+                    0.1,
+                    0.05,
+                    0.02
+                ],
+                "Roughness": 0.5,
+                "Metallic": 0.0,
+                "EmissiveColor": [
+                    1.0,
+                    0.55,
+                    0.2
+                ],
+                "EmissiveIntensity": 6.0
+            },
+            "CastShadows": false
+        }
+    ],
+    "Children": []
+}

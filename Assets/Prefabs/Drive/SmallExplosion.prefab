@@ -1,0 +1,169 @@
+{
+    "Name": "Small Explosion",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "ScriptComponent",
+            "ScriptName": "Explosion",
+            "ScriptFields": "{\"FlashIntensity\": 20.0, \"FlashTime\": 0.25, \"Lifetime\": 2.0}"
+        },
+        {
+            "Type": "Light",
+            "LightType": "Point",
+            "Color": [
+                1.0,
+                0.6,
+                0.25
+            ],
+            "Intensity": 20.0,
+            "Range": 8.0,
+            "CastShadows": false
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Fireball",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": false,
+                    "Duration": 0.2,
+                    "EmissionRate": 0.0,
+                    "BurstCount": 30,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 0.3,
+                    "Lifetime": [
+                        0.3,
+                        0.7
+                    ],
+                    "Speed": [
+                        2.0,
+                        5.5
+                    ],
+                    "Size": [
+                        0.3,
+                        0.7
+                    ],
+                    "EndSize": 2.0,
+                    "Intensity": 10.0,
+                    "Gravity": -0.3,
+                    "Drag": 3.0,
+                    "StartColor": [
+                        1.0,
+                        0.75,
+                        0.3
+                    ],
+                    "EndColor": [
+                        0.9,
+                        0.2,
+                        0.03
+                    ]
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Explosion Smoke",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Looping": false,
+                    "Duration": 0.2,
+                    "EmissionRate": 0.0,
+                    "BurstCount": 13,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 0.5,
+                    "Blend": "Alpha",
+                    "Lifetime": [
+                        1.5,
+                        2.6
+                    ],
+                    "Speed": [
+                        0.5,
+                        2.0
+                    ],
+                    "Size": [
+                        0.6,
+                        1.1
+                    ],
+                    "EndSize": 3.0,
+                    "StartColor": [
+                        0.25,
+                        0.24,
+                        0.22
+                    ],
+                    "StartColor2": [
+                        0.4,
+                        0.38,
+                        0.35
+                    ],
+                    "EndColor": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ],
+                    "StartAlpha": 0.7,
+                    "Intensity": 1.0,
+                    "Gravity": -0.08,
+                    "Drag": 2.0,
+                    "NoiseStrength": 0.6,
+                    "Lit": true
+                }
+            ],
+            "Children": []
+        }
+    ]
+}
