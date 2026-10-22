@@ -1,7 +1,4 @@
 {
-    "AssetReferences": {
-        "048be4b076db2788": "Assets/ShaderGraphs/SplitScreenTest.terrain"
-    },
     "Cores": [],
     "Entities": [
         {
@@ -608,9 +605,9 @@
             "Components": [
                 {
                     "Position": [
-                        3.9272193908691406,
-                        0.15000194311141968,
-                        24.18305206298828
+                        0.0,
+                        0.15000000596046448,
+                        10.0
                     ],
                     "Rotation": [
                         0.0,
@@ -619,9 +616,9 @@
                         1.0
                     ],
                     "Scale": [
-                        0.29999998211860657,
-                        0.14999999105930328,
-                        0.29999998211860657
+                        0.30000001192092896,
+                        0.15000000596046448,
+                        0.30000001192092896
                     ],
                     "Type": "Transform"
                 },
@@ -881,91 +878,6 @@
             "DestroyOnLoad": true,
             "GUID": "7c7751ebae3ba25f",
             "Name": "Jumper"
-        },
-        {
-            "Components": [
-                {
-                    "Position": [
-                        -24.208314895629883,
-                        0.0,
-                        -23.352096557617188
-                    ],
-                    "Rotation": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Scale": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "Type": "Transform"
-                },
-                {
-                    "Asset": "Assets/ShaderGraphs/SplitScreenTest.terrain",
-                    "CastShadows": true,
-                    "Collision": true,
-                    "CollisionBudgetMiB": 512,
-                    "CollisionDistance": 8.0,
-                    "Color": [
-                        0.30000001192092896,
-                        0.47999998927116394,
-                        0.20000000298023224
-                    ],
-                    "CoverageDistance": 1024.0,
-                    "CpuBudgetMiB": 256,
-                    "Friction": 0.6000000238418579,
-                    "GpuBudgetMiB": 128,
-                    "LodHysteresis": 0.20000000298023224,
-                    "LodPixelError": 2.0,
-                    "Restitution": 0.0,
-                    "Roughness": 0.8999999761581421,
-                    "StreamDetail": true,
-                    "StreamDistance": 384.0,
-                    "Type": "Terrain",
-                    "UploadKiB": 1024,
-                    "UploadMilliseconds": 2.0
-                },
-                {
-                    "AgentHeight": 2.0,
-                    "AgentMaxClimb": 0.5,
-                    "AgentMaxSlope": 45.0,
-                    "AgentRadius": 0.5,
-                    "AgentType": 0,
-                    "BakeOnLoad": false,
-                    "CellHeight": 0.0,
-                    "CellSize": 0.0,
-                    "Collect": "All",
-                    "DefaultArea": 0,
-                    "DetailSampleDistance": 6.0,
-                    "DetailSampleMaxError": 1.0,
-                    "EdgeMaxError": 1.2999999523162842,
-                    "EdgeMaxLength": 12.0,
-                    "IncludeLayers": 4294967295,
-                    "MergeRegionSize": 20.0,
-                    "MinRegionSize": 8.0,
-                    "NavMeshData": "",
-                    "Partition": "Watershed",
-                    "TileSize": 64,
-                    "Type": "NavMeshSurface",
-                    "UseGeometry": "Physics Colliders",
-                    "VolumeCenter": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "VolumeSize": [
-                        20.0,
-                        10.0,
-                        20.0
-                    ]
-                }
-            ],
-            "DestroyOnLoad": true,
-            "GUID": "8761ab4271b01256",
-            "Name": "SplitScreenTest"
         }
     ],
     "Version": 2
