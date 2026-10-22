@@ -1,0 +1,428 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit",
+        "Surface": "Transparent",
+        "Blend": "Alpha",
+        "CastShadows": false,
+        "RenderFace": "Both"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Tint",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.05,
+                0.07,
+                0.09,
+                1.0
+            ],
+            "IsColor": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Scale",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "Range": [
+                0.1,
+                4.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Opacity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Drop Glint",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.1,
+                0.11,
+                0.14,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Roughness": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.05
+                ],
+                "Metallic": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Position",
+            "Settings": {
+                "Space": "World"
+            },
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Split",
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Split",
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Add",
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Split",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Combine",
+            "Defaults": {
+                "B": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "A": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Time",
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "RainDrops",
+                "Inputs": [
+                    {
+                        "Name": "P",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Scale",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Height",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "vec2 p = P * Scale;\nfloat h = 0.0;\n{\n    vec2 uv = p * 22.0;\n    vec2 id = floor(uv);\n    vec2 fp = fract(uv) - vec2_splat(0.5);\n    float n = fract(sin(dot(id, vec2(12.9898, 78.233))) * 43758.5453);\n    vec2 o = vec2(fract(n * 13.1), fract(n * 71.7)) - vec2_splat(0.5);\n    float r = 0.1 + 0.16 * fract(n * 7.3);\n    float life = fract(Time * (0.05 + 0.1 * fract(n * 3.7)) + n);\n    float d = length(fp - o * 0.5);\n    h = max(h, (1.0 - smoothstep(r * 0.4, r, d)) * step(0.72, n) * smoothstep(1.0, 0.7, life));\n}\n{\n    float cw = 0.16;\n    float colx = floor(p.x / cw);\n    float n = fract(sin(colx * 78.233 + 1.3) * 43758.5453);\n    float x = (fract(p.x / cw) - 0.5) * cw + sin(p.y * 6.0 + n * 6.28) * 0.012;\n    float s = p.y / 0.9 + Time * (0.18 + 0.3 * n) + n * 7.0;\n    float cycle = floor(s);\n    float dy = (fract(s) - 0.5) * 0.9;\n    float m = fract(sin((cycle + colx * 13.0) * 12.9898) * 43758.5453);\n    float head = 1.0 - smoothstep(0.008, 0.016, length(vec2(x, dy * 0.75)));\n    float trailMask = step(0.0, dy) * (1.0 - smoothstep(0.0, 0.32, dy));\n    float trail = (1.0 - smoothstep(0.002, 0.005, abs(x))) * trailMask;\n    float bead = fract(dy * 26.0);\n    float beads = (1.0 - smoothstep(0.003, 0.007, length(vec2(x, (bead - 0.5) / 26.0)))) * trailMask * step(0.45, fract(sin(floor(dy * 26.0) + m * 40.0) * 917.3));\n    h = max(h, (head + max(trail * 0.35, beads * 0.8)) * step(0.3, m));\n}\nHeight = h;"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "NormalFromHeight",
+            "Defaults": {
+                "Strength": [
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8
+                ]
+            },
+            "Position": [
+                920,
+                -110
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                80
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Add",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Saturate",
+            "Position": [
+                920,
+                270
+            ]
+        }
+    ],
+    "Links": [
+        [
+            5,
+            "Out",
+            6,
+            "In"
+        ],
+        [
+            5,
+            "Out",
+            7,
+            "In"
+        ],
+        [
+            6,
+            "R",
+            8,
+            "A"
+        ],
+        [
+            7,
+            "B",
+            8,
+            "B"
+        ],
+        [
+            5,
+            "Out",
+            9,
+            "In"
+        ],
+        [
+            8,
+            "Out",
+            10,
+            "R"
+        ],
+        [
+            9,
+            "G",
+            10,
+            "G"
+        ],
+        [
+            10,
+            "RG",
+            12,
+            "P"
+        ],
+        [
+            11,
+            "Time",
+            12,
+            "Time"
+        ],
+        [
+            3,
+            "Out",
+            12,
+            "Scale"
+        ],
+        [
+            12,
+            "Height",
+            14,
+            "In"
+        ],
+        [
+            13,
+            "Out",
+            15,
+            "A"
+        ],
+        [
+            12,
+            "Height",
+            15,
+            "B"
+        ],
+        [
+            12,
+            "Height",
+            16,
+            "A"
+        ],
+        [
+            4,
+            "Out",
+            17,
+            "A"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "B"
+        ],
+        [
+            17,
+            "Out",
+            18,
+            "In"
+        ],
+        [
+            2,
+            "Out",
+            1,
+            "Base Color"
+        ],
+        [
+            14,
+            "Out",
+            1,
+            "Normal"
+        ],
+        [
+            15,
+            "Out",
+            1,
+            "Emission"
+        ],
+        [
+            18,
+            "Out",
+            1,
+            "Alpha"
+        ]
+    ]
+}

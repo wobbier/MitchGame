@@ -1,0 +1,1389 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Brightness",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                1.8,
+                1.8,
+                1.8,
+                1.8
+            ],
+            "Range": [
+                0.0,
+                20.0
+            ]
+        },
+        {
+            "Id": "p2",
+            "Name": "UV Rect",
+            "Type": "Vec4",
+            "Exposed": true,
+            "Default": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Flip",
+            "Type": "Vec2",
+            "Exposed": true,
+            "Default": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Base Color": [
+                    0.01,
+                    0.01,
+                    0.012,
+                    0.0
+                ],
+                "Roughness": [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ],
+                "Metallic": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Occlusion": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                -4120,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                -3000,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "xy"
+            },
+            "Position": [
+                -3840,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "zw"
+            },
+            "Position": [
+                -3840,
+                -110
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "UV",
+            "Position": [
+                -3840,
+                80
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Subtract",
+            "Position": [
+                -3560,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Subtract",
+            "Position": [
+                -3560,
+                -110
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Divide",
+            "Position": [
+                -3280,
+                -300
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Subtract",
+            "Defaults": {
+                "A": [
+                    1.0,
+                    1.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -3000,
+                -110
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Lerp",
+            "Position": [
+                -2720,
+                -300
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Time",
+            "Position": [
+                -2160,
+                -300
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "Feed",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Hot",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "FireAmount",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Gray",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Fire",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Backing",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "float t = Time;\nfloat roll = fract(UV.y * 0.9 - t * 0.17);\nfloat band = smoothstep(0.0, 0.05, roll) * (1.0 - smoothstep(0.05, 0.12, roll));\nfloat n = fract(sin(dot(floor(UV * vec2(320.0, 240.0)) + floor(t * 24.0) * 1.37, vec2(12.9898, 78.233))) * 43758.5453);\nfloat shade = 0.025 + 0.11 * smoothstep(1.0, 0.25, UV.y) + 0.04 * step(0.62, UV.y);\nvec2 c = (UV - Hot) * vec2(1.6, 1.0);\nfloat flicker = 0.75 + 0.25 * sin(t * 13.0) * sin(t * 7.3);\nfloat flame = (exp(-dot(c, c) * 22.0) * 1.6 + exp(-dot(c, c) * 4.0) * 0.35) * flicker;\nfloat rack = step(0.5, fract(UV.x * 9.0)) * step(0.3, UV.y) * step(UV.y, 0.8);\nfloat leds = rack * step(0.82, fract(sin(dot(floor(UV * vec2(36.0, 40.0)), vec2(7.13, 3.71))) * 917.13)) * 0.22;\nGray = shade * (1.0 - rack * 0.6) + leds + n * 0.05 + band * 0.07;\nFire = flame * FireAmount;\nBacking = FireAmount * step(0.19, UV.x) * step(UV.x, 0.81) * step(0.69, UV.y) * step(UV.y, 0.84);"
+            },
+            "Defaults": {
+                "Hot": [
+                    0.62,
+                    0.5,
+                    0.0,
+                    0.0
+                ],
+                "FireAmount": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "Overlay",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Mask1",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Mask2",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Mask3",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "Mask1 = 0.0;\nMask2 = 0.0;\nMask3 = 0.0;\n{\n    vec2 q = vec2((UV.x - 0.05) / 0.038668, (UV.y - 0.06) / 0.06);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 12.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 34350.0; ghi = 14881.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 1033774.0; ghi = 17969.0; }\n        if (ci > 1.5 && ci < 2.5) { glo = 710513.0; ghi = 17969.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 714286.0; ghi = 14899.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 135364.0; ghi = 14468.0; }\n        if (ci > 6.5 && ci < 7.5) { glo = 33825.0; ghi = 31777.0; }\n        if (ci > 7.5 && ci < 8.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 8.5 && ci < 9.5) { glo = 509487.0; ghi = 15921.0; }\n        if (ci > 9.5 && ci < 10.5) { glo = 509487.0; ghi = 15921.0; }\n        if (ci > 10.5 && ci < 11.5) { glo = 141873.0; ghi = 4228.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.62) / 0.038668, (UV.y - 0.06) / 0.06);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 8.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > 1.5 && ci < 2.5) { glo = 6336.0; ghi = 198.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 6336.0; ghi = 198.0; }\n        if (ci > -0.5 && ci < 0.5)\n        {\n            float dv = clamp(floor(mod((13632.0 + Time) / 36000.0, 10.0)), 0.0, 9.0);\n            if (dv > -0.5 && dv < 0.5) { glo = 714286.0; ghi = 14899.0; }\n            if (dv > 0.5 && dv < 1.5) { glo = 135364.0; ghi = 14468.0; }\n            if (dv > 1.5 && dv < 2.5) { glo = 279086.0; ghi = 31812.0; }\n            if (dv > 2.5 && dv < 3.5) { glo = 266527.0; ghi = 14896.0; }\n            if (dv > 3.5 && dv < 4.5) { glo = 305544.0; ghi = 8479.0; }\n            if (dv > 4.5 && dv < 5.5) { glo = 539711.0; ghi = 14896.0; }\n            if (dv > 5.5 && dv < 6.5) { glo = 492620.0; ghi = 14897.0; }\n            if (dv > 6.5 && dv < 7.5) { glo = 139807.0; ghi = 2114.0; }\n            if (dv > 7.5 && dv < 8.5) { glo = 476718.0; ghi = 14897.0; }\n            if (dv > 8.5 && dv < 9.5) { glo = 1001006.0; ghi = 6416.0; }\n        }\n        if (ci > 0.5 && ci < 1.5)\n        {\n            float dv = clamp(floor(mod((13632.0 + Time) / 3600.0, 10.0)), 0.0, 9.0);\n            if (dv > -0.5 && dv < 0.5) { glo = 714286.0; ghi = 14899.0; }\n            if (dv > 0.5 && dv < 1.5) { glo = 135364.0; ghi = 14468.0; }\n            if (dv > 1.5 && dv < 2.5) { glo = 279086.0; ghi = 31812.0; }\n            if (dv > 2.5 && dv < 3.5) { glo = 266527.0; ghi = 14896.0; }\n            if (dv > 3.5 && dv < 4.5) { glo = 305544.0; ghi = 8479.0; }\n            if (dv > 4.5 && dv < 5.5) { glo = 539711.0; ghi = 14896.0; }\n            if (dv > 5.5 && dv < 6.5) { glo = 492620.0; ghi = 14897.0; }\n            if (dv > 6.5 && dv < 7.5) { glo = 139807.0; ghi = 2114.0; }\n            if (dv > 7.5 && dv < 8.5) { glo = 476718.0; ghi = 14897.0; }\n            if (dv > 8.5 && dv < 9.5) { glo = 1001006.0; ghi = 6416.0; }\n        }\n        if (ci > 2.5 && ci < 3.5)\n        {\n            float dv = clamp(floor(mod((13632.0 + Time), 3600.0) / 600.0), 0.0, 9.0);\n            if (dv > -0.5 && dv < 0.5) { glo = 714286.0; ghi = 14899.0; }\n            if (dv > 0.5 && dv < 1.5) { glo = 135364.0; ghi = 14468.0; }\n            if (dv > 1.5 && dv < 2.5) { glo = 279086.0; ghi = 31812.0; }\n            if (dv > 2.5 && dv < 3.5) { glo = 266527.0; ghi = 14896.0; }\n            if (dv > 3.5 && dv < 4.5) { glo = 305544.0; ghi = 8479.0; }\n            if (dv > 4.5 && dv < 5.5) { glo = 539711.0; ghi = 14896.0; }\n            if (dv > 5.5 && dv < 6.5) { glo = 492620.0; ghi = 14897.0; }\n            if (dv > 6.5 && dv < 7.5) { glo = 139807.0; ghi = 2114.0; }\n            if (dv > 7.5 && dv < 8.5) { glo = 476718.0; ghi = 14897.0; }\n            if (dv > 8.5 && dv < 9.5) { glo = 1001006.0; ghi = 6416.0; }\n        }\n        if (ci > 3.5 && ci < 4.5)\n        {\n            float dv = clamp(floor(mod(mod((13632.0 + Time), 3600.0) / 60.0, 10.0)), 0.0, 9.0);\n            if (dv > -0.5 && dv < 0.5) { glo = 714286.0; ghi = 14899.0; }\n            if (dv > 0.5 && dv < 1.5) { glo = 135364.0; ghi = 14468.0; }\n            if (dv > 1.5 && dv < 2.5) { glo = 279086.0; ghi = 31812.0; }\n            if (dv > 2.5 && dv < 3.5) { glo = 266527.0; ghi = 14896.0; }\n            if (dv > 3.5 && dv < 4.5) { glo = 305544.0; ghi = 8479.0; }\n            if (dv > 4.5 && dv < 5.5) { glo = 539711.0; ghi = 14896.0; }\n            if (dv > 5.5 && dv < 6.5) { glo = 492620.0; ghi = 14897.0; }\n            if (dv > 6.5 && dv < 7.5) { glo = 139807.0; ghi = 2114.0; }\n            if (dv > 7.5 && dv < 8.5) { glo = 476718.0; ghi = 14897.0; }\n            if (dv > 8.5 && dv < 9.5) { glo = 1001006.0; ghi = 6416.0; }\n        }\n        if (ci > 5.5 && ci < 6.5)\n        {\n            float dv = clamp(floor(mod((13632.0 + Time), 60.0) / 10.0), 0.0, 9.0);\n            if (dv > -0.5 && dv < 0.5) { glo = 714286.0; ghi = 14899.0; }\n            if (dv > 0.5 && dv < 1.5) { glo = 135364.0; ghi = 14468.0; }\n            if (dv > 1.5 && dv < 2.5) { glo = 279086.0; ghi = 31812.0; }\n            if (dv > 2.5 && dv < 3.5) { glo = 266527.0; ghi = 14896.0; }\n            if (dv > 3.5 && dv < 4.5) { glo = 305544.0; ghi = 8479.0; }\n            if (dv > 4.5 && dv < 5.5) { glo = 539711.0; ghi = 14896.0; }\n            if (dv > 5.5 && dv < 6.5) { glo = 492620.0; ghi = 14897.0; }\n            if (dv > 6.5 && dv < 7.5) { glo = 139807.0; ghi = 2114.0; }\n            if (dv > 7.5 && dv < 8.5) { glo = 476718.0; ghi = 14897.0; }\n            if (dv > 8.5 && dv < 9.5) { glo = 1001006.0; ghi = 6416.0; }\n        }\n        if (ci > 6.5 && ci < 7.5)\n        {\n            float dv = clamp(floor(mod((13632.0 + Time), 10.0)), 0.0, 9.0);\n            if (dv > -0.5 && dv < 0.5) { glo = 714286.0; ghi = 14899.0; }\n            if (dv > 0.5 && dv < 1.5) { glo = 135364.0; ghi = 14468.0; }\n            if (dv > 1.5 && dv < 2.5) { glo = 279086.0; ghi = 31812.0; }\n            if (dv > 2.5 && dv < 3.5) { glo = 266527.0; ghi = 14896.0; }\n            if (dv > 3.5 && dv < 4.5) { glo = 305544.0; ghi = 8479.0; }\n            if (dv > 4.5 && dv < 5.5) { glo = 539711.0; ghi = 14896.0; }\n            if (dv > 5.5 && dv < 6.5) { glo = 492620.0; ghi = 14897.0; }\n            if (dv > 6.5 && dv < 7.5) { glo = 139807.0; ghi = 2114.0; }\n            if (dv > 7.5 && dv < 8.5) { glo = 476718.0; ghi = 14897.0; }\n            if (dv > 8.5 && dv < 9.5) { glo = 1001006.0; ghi = 6416.0; }\n        }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.12) / 0.038668, (UV.y - 0.88) / 0.06);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 3.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 509487.0; ghi = 17701.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 1.5 && ci < 2.5) { glo = 34350.0; ghi = 14881.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask2 = max(Mask2, hit);\n    }\n}"
+            },
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.1,
+                    1.1,
+                    1.1,
+                    1.1
+                ]
+            },
+            "Position": [
+                -1880,
+                -300
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Fraction",
+            "Position": [
+                -1600,
+                -300
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Step",
+            "Defaults": {
+                "A": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Subtract",
+            "Defaults": {
+                "B": [
+                    0.075,
+                    0.91,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -2440,
+                -300
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.33,
+                    1.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -2160,
+                -110
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "Length",
+            "Position": [
+                -1880,
+                -110
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Smoothstep",
+            "Defaults": {
+                "Edge1": [
+                    0.012,
+                    0.012,
+                    0.012,
+                    0.012
+                ],
+                "Edge2": [
+                    0.022,
+                    0.022,
+                    0.022,
+                    0.022
+                ]
+            },
+            "Position": [
+                -1600,
+                -110
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "OneMinus",
+            "Position": [
+                -1320,
+                -110
+            ]
+        },
+        {
+            "Id": 24,
+            "Type": "Multiply",
+            "Position": [
+                -1040,
+                80
+            ]
+        },
+        {
+            "Id": 25,
+            "Type": "Combine",
+            "Defaults": {
+                "A": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 26,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.8,
+                    0.95,
+                    0.85,
+                    0.0
+                ]
+            },
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 27,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    2.4,
+                    1.1,
+                    0.3,
+                    1.0
+                ],
+                "HDR": true
+            },
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 28,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 29,
+            "Type": "Add",
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 30,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.85,
+                    0.85,
+                    0.85,
+                    0.85
+                ]
+            },
+            "Position": [
+                -480,
+                80
+            ]
+        },
+        {
+            "Id": 31,
+            "Type": "OneMinus",
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 32,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 33,
+            "Type": "Add",
+            "Position": [
+                -760,
+                80
+            ]
+        },
+        {
+            "Id": 34,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                270
+            ]
+        },
+        {
+            "Id": 35,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.9,
+                    0.95,
+                    0.9,
+                    1.0
+                ],
+                "HDR": true
+            },
+            "Position": [
+                -760,
+                270
+            ]
+        },
+        {
+            "Id": 36,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                460
+            ]
+        },
+        {
+            "Id": 37,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    1.6,
+                    0.12,
+                    0.06,
+                    1.0
+                ],
+                "HDR": true
+            },
+            "Position": [
+                -760,
+                460
+            ]
+        },
+        {
+            "Id": 38,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                650
+            ]
+        },
+        {
+            "Id": 39,
+            "Type": "Add",
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 40,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    2.6,
+                    0.2,
+                    0.1,
+                    1.0
+                ],
+                "HDR": true
+            },
+            "Position": [
+                -480,
+                840
+            ]
+        },
+        {
+            "Id": 41,
+            "Type": "Multiply",
+            "Position": [
+                -200,
+                270
+            ]
+        },
+        {
+            "Id": 42,
+            "Type": "Add",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 43,
+            "Type": "Add",
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 44,
+            "Type": "Split",
+            "Position": [
+                -1040,
+                270
+            ]
+        },
+        {
+            "Id": 45,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    900.0,
+                    900.0,
+                    900.0,
+                    900.0
+                ]
+            },
+            "Position": [
+                -760,
+                650
+            ]
+        },
+        {
+            "Id": 46,
+            "Type": "Sine",
+            "Position": [
+                -480,
+                1030
+            ]
+        },
+        {
+            "Id": 47,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                -200,
+                460
+            ]
+        },
+        {
+            "Id": 48,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.88,
+                    0.88,
+                    0.88,
+                    0.88
+                ]
+            },
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 49,
+            "Type": "Subtract",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -760,
+                840
+            ]
+        },
+        {
+            "Id": 50,
+            "Type": "Length",
+            "Position": [
+                -480,
+                1220
+            ]
+        },
+        {
+            "Id": 51,
+            "Type": "Remap",
+            "Defaults": {
+                "In Min": [
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35
+                ],
+                "In Max": [
+                    0.75,
+                    0.75,
+                    0.75,
+                    0.75
+                ],
+                "Out Min": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Out Max": [
+                    0.55,
+                    0.55,
+                    0.55,
+                    0.55
+                ]
+            },
+            "Position": [
+                -200,
+                650
+            ]
+        },
+        {
+            "Id": 52,
+            "Type": "Saturate",
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 53,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 54,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 55,
+            "Type": "Split",
+            "Position": [
+                -480,
+                1410
+            ]
+        },
+        {
+            "Id": 56,
+            "Type": "Step",
+            "Defaults": {
+                "A": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -200,
+                840
+            ]
+        },
+        {
+            "Id": 57,
+            "Type": "Step",
+            "Defaults": {
+                "B": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -200,
+                1030
+            ]
+        },
+        {
+            "Id": 58,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                460
+            ]
+        },
+        {
+            "Id": 59,
+            "Type": "Step",
+            "Defaults": {
+                "A": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -200,
+                1220
+            ]
+        },
+        {
+            "Id": 60,
+            "Type": "Step",
+            "Defaults": {
+                "B": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -200,
+                1410
+            ]
+        },
+        {
+            "Id": 61,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                650
+            ]
+        },
+        {
+            "Id": 62,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 63,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 64,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -300
+            ]
+        }
+    ],
+    "Links": [
+        [
+            3,
+            "Out",
+            5,
+            "In"
+        ],
+        [
+            3,
+            "Out",
+            6,
+            "In"
+        ],
+        [
+            7,
+            "Out",
+            8,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            8,
+            "B"
+        ],
+        [
+            6,
+            "Out",
+            9,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            9,
+            "B"
+        ],
+        [
+            8,
+            "Out",
+            10,
+            "A"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "B"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "B"
+        ],
+        [
+            10,
+            "Out",
+            12,
+            "A"
+        ],
+        [
+            11,
+            "Out",
+            12,
+            "B"
+        ],
+        [
+            4,
+            "Out",
+            12,
+            "T"
+        ],
+        [
+            12,
+            "Out",
+            14,
+            "UV"
+        ],
+        [
+            13,
+            "Time",
+            14,
+            "Time"
+        ],
+        [
+            12,
+            "Out",
+            15,
+            "UV"
+        ],
+        [
+            13,
+            "Time",
+            15,
+            "Time"
+        ],
+        [
+            13,
+            "Time",
+            16,
+            "A"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "In"
+        ],
+        [
+            17,
+            "Out",
+            18,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            19,
+            "A"
+        ],
+        [
+            19,
+            "Out",
+            20,
+            "A"
+        ],
+        [
+            20,
+            "Out",
+            21,
+            "In"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "In"
+        ],
+        [
+            22,
+            "Out",
+            23,
+            "In"
+        ],
+        [
+            23,
+            "Out",
+            24,
+            "A"
+        ],
+        [
+            18,
+            "Out",
+            24,
+            "B"
+        ],
+        [
+            14,
+            "Gray",
+            25,
+            "R"
+        ],
+        [
+            14,
+            "Gray",
+            25,
+            "G"
+        ],
+        [
+            14,
+            "Gray",
+            25,
+            "B"
+        ],
+        [
+            25,
+            "RGB",
+            26,
+            "A"
+        ],
+        [
+            14,
+            "Fire",
+            28,
+            "A"
+        ],
+        [
+            27,
+            "Out",
+            28,
+            "B"
+        ],
+        [
+            26,
+            "Out",
+            29,
+            "A"
+        ],
+        [
+            28,
+            "Out",
+            29,
+            "B"
+        ],
+        [
+            14,
+            "Backing",
+            30,
+            "A"
+        ],
+        [
+            30,
+            "Out",
+            31,
+            "In"
+        ],
+        [
+            29,
+            "Out",
+            32,
+            "A"
+        ],
+        [
+            31,
+            "Out",
+            32,
+            "B"
+        ],
+        [
+            15,
+            "Mask2",
+            33,
+            "A"
+        ],
+        [
+            24,
+            "Out",
+            33,
+            "B"
+        ],
+        [
+            15,
+            "Mask3",
+            34,
+            "A"
+        ],
+        [
+            18,
+            "Out",
+            34,
+            "B"
+        ],
+        [
+            15,
+            "Mask1",
+            36,
+            "A"
+        ],
+        [
+            35,
+            "Out",
+            36,
+            "B"
+        ],
+        [
+            33,
+            "Out",
+            38,
+            "A"
+        ],
+        [
+            37,
+            "Out",
+            38,
+            "B"
+        ],
+        [
+            36,
+            "Out",
+            39,
+            "A"
+        ],
+        [
+            38,
+            "Out",
+            39,
+            "B"
+        ],
+        [
+            34,
+            "Out",
+            41,
+            "A"
+        ],
+        [
+            40,
+            "Out",
+            41,
+            "B"
+        ],
+        [
+            39,
+            "Out",
+            42,
+            "A"
+        ],
+        [
+            41,
+            "Out",
+            42,
+            "B"
+        ],
+        [
+            32,
+            "Out",
+            43,
+            "A"
+        ],
+        [
+            42,
+            "Out",
+            43,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            44,
+            "In"
+        ],
+        [
+            44,
+            "G",
+            45,
+            "A"
+        ],
+        [
+            45,
+            "Out",
+            46,
+            "In"
+        ],
+        [
+            46,
+            "Out",
+            47,
+            "A"
+        ],
+        [
+            47,
+            "Out",
+            48,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            49,
+            "A"
+        ],
+        [
+            49,
+            "Out",
+            50,
+            "In"
+        ],
+        [
+            50,
+            "Out",
+            51,
+            "In"
+        ],
+        [
+            51,
+            "Out",
+            52,
+            "In"
+        ],
+        [
+            48,
+            "Out",
+            53,
+            "A"
+        ],
+        [
+            52,
+            "Out",
+            53,
+            "B"
+        ],
+        [
+            43,
+            "Out",
+            54,
+            "A"
+        ],
+        [
+            53,
+            "Out",
+            54,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            55,
+            "In"
+        ],
+        [
+            55,
+            "R",
+            56,
+            "B"
+        ],
+        [
+            55,
+            "R",
+            57,
+            "A"
+        ],
+        [
+            56,
+            "Out",
+            58,
+            "A"
+        ],
+        [
+            57,
+            "Out",
+            58,
+            "B"
+        ],
+        [
+            55,
+            "G",
+            59,
+            "B"
+        ],
+        [
+            55,
+            "G",
+            60,
+            "A"
+        ],
+        [
+            59,
+            "Out",
+            61,
+            "A"
+        ],
+        [
+            60,
+            "Out",
+            61,
+            "B"
+        ],
+        [
+            58,
+            "Out",
+            62,
+            "A"
+        ],
+        [
+            61,
+            "Out",
+            62,
+            "B"
+        ],
+        [
+            2,
+            "Out",
+            63,
+            "A"
+        ],
+        [
+            62,
+            "Out",
+            63,
+            "B"
+        ],
+        [
+            54,
+            "Out",
+            64,
+            "A"
+        ],
+        [
+            63,
+            "Out",
+            64,
+            "B"
+        ],
+        [
+            64,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

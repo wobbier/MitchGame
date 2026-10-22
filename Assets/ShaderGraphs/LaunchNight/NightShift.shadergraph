@@ -1,0 +1,470 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "PostProcess",
+        "Injection": "AfterTonemap"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Grain",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.035,
+                0.035,
+                0.035,
+                0.035
+            ],
+            "Range": [
+                0.0,
+                0.3
+            ]
+        },
+        {
+            "Id": "p2",
+            "Name": "Fringe",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.0025,
+                0.0025,
+                0.0025,
+                0.0025
+            ],
+            "Range": [
+                0.0,
+                0.02
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Alarm",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.06,
+                0.06,
+                0.06,
+                0.06
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "ScreenPosition",
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Subtract",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Multiply",
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Add",
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "SceneColor",
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Split",
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "SceneColor",
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Split",
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Subtract",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "SceneColor",
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Split",
+            "Position": [
+                80,
+                460
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Combine",
+            "Defaults": {
+                "A": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Time",
+            "Position": [
+                -200,
+                270
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "NightShift",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Grain",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Alarm",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "float n = fract(sin(dot(floor(UV * vec2(960.0, 540.0)) + vec2_splat(fract(Time * 7.0) * 113.0), vec2(12.9898, 78.233))) * 43758.5453);\nvec2 c = UV - vec2_splat(0.5);\nfloat edge = smoothstep(0.25, 0.75, length(c * vec2(1.3, 1.0)));\nfloat pulse = 0.5 + 0.5 * sin(Time * 4.4);\nGrain = (n - 0.5);\nAlarm = edge * pulse * pulse;"
+            },
+            "Position": [
+                80,
+                650
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1.0,
+                    0.05,
+                    0.02,
+                    0.0
+                ]
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Add",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "Add",
+            "Position": [
+                920,
+                -300
+            ]
+        }
+    ],
+    "Links": [
+        [
+            5,
+            "UV",
+            6,
+            "A"
+        ],
+        [
+            6,
+            "Out",
+            7,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            7,
+            "B"
+        ],
+        [
+            5,
+            "UV",
+            8,
+            "A"
+        ],
+        [
+            7,
+            "Out",
+            8,
+            "B"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "UV"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "In"
+        ],
+        [
+            5,
+            "UV",
+            11,
+            "UV"
+        ],
+        [
+            11,
+            "Out",
+            12,
+            "In"
+        ],
+        [
+            5,
+            "UV",
+            13,
+            "A"
+        ],
+        [
+            7,
+            "Out",
+            13,
+            "B"
+        ],
+        [
+            13,
+            "Out",
+            14,
+            "UV"
+        ],
+        [
+            14,
+            "Out",
+            15,
+            "In"
+        ],
+        [
+            10,
+            "R",
+            16,
+            "R"
+        ],
+        [
+            12,
+            "G",
+            16,
+            "G"
+        ],
+        [
+            15,
+            "B",
+            16,
+            "B"
+        ],
+        [
+            5,
+            "UV",
+            18,
+            "UV"
+        ],
+        [
+            17,
+            "Time",
+            18,
+            "Time"
+        ],
+        [
+            18,
+            "Alarm",
+            19,
+            "A"
+        ],
+        [
+            4,
+            "Out",
+            19,
+            "B"
+        ],
+        [
+            19,
+            "Out",
+            20,
+            "A"
+        ],
+        [
+            18,
+            "Grain",
+            21,
+            "A"
+        ],
+        [
+            2,
+            "Out",
+            21,
+            "B"
+        ],
+        [
+            16,
+            "RGB",
+            22,
+            "A"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "B"
+        ],
+        [
+            22,
+            "Out",
+            23,
+            "A"
+        ],
+        [
+            20,
+            "Out",
+            23,
+            "B"
+        ],
+        [
+            23,
+            "Out",
+            1,
+            "Color"
+        ]
+    ]
+}

@@ -27,6 +27,7 @@ its subject, then eases over 4.5 s into the next shot.
 | --- | --- |
 | 1-7 | Go to a shot: the camp and temple; the camp fire; up the stairs; the shrine door; the pool and falls; high over the gorge; into the sun |
 | T | Toggle the tour |
+| P | Start/pause the eight-second dolly zoom (subject holds size as background perspective changes) |
 | WASD, Q / E | Fly (leaves the tour) |
 | Arrow keys | Look |
 | Left Shift | Fly faster |
@@ -34,6 +35,16 @@ its subject, then eases over 4.5 s into the next shot.
 
 `Shot` (the starting shot, 0-6), `Hold`, `Blend`, `Sway`, `FlySpeed` and `LookSpeed` are script fields. The shot table is
 generated into `Assets/Scripts/LostTemple/LostTempleShots.cs` together with the scene.
+
+The active Main Camera also has a **Sequence** named **Camera Dolly Zoom**. Open **View >
+Sequencer** with that camera selected to scrub or edit its transform and FieldOfView keys in
+edit mode. Its animation lives in `Assets/Animations/LostTempleDollyZoom.sequence`; the player
+binds the asset's **Camera** slot to Main Camera. Use **Clip... > Save clip** to persist key edits to the
+asset. It is off by default so the tour still starts normally. **P** starts its loop in Play.
+FOV compensates for the distance to the foreground subject while focus distance follows the
+camera. Press **P** again to resume manual control at the current camera pose. The standalone primitive
+demo is `Assets/Scenes/Tests/SequenceTest.lvl`; see `Engine/Docs/Sequences.md` for authoring and
+script controls.
 
 ### Adding a camera graph (camcorder)
 

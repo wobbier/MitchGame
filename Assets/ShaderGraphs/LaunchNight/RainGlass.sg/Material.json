@@ -1,0 +1,86 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/RainGlass.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.05000000074505806,
+				0.07000000029802322,
+				0.09000000357627869,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Tint",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Scale",
+			"Range": [
+				0.10000000149011612,
+				4.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.10000000149011612,
+				0.10000000149011612,
+				0.10000000149011612,
+				0.10000000149011612
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Opacity",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.10000000149011612,
+				0.10999999940395355,
+				0.14000000059604645,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p4",
+			"Name": "Drop Glint",
+			"Slot": 3,
+			"Type": "Vec3"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Transparent",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

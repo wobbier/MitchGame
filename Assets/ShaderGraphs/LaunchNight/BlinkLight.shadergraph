@@ -1,0 +1,295 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                1.0,
+                0.05,
+                0.02,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                20.0,
+                20.0,
+                20.0,
+                20.0
+            ],
+            "Range": [
+                0.0,
+                200.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Rate",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "Range": [
+                0.0,
+                10.0
+            ]
+        },
+        {
+            "Id": "p4",
+            "Name": "Duty",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.15,
+                0.15,
+                0.15,
+                0.15
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "Id": "p5",
+            "Name": "Phase",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Base Color": [
+                    0.05,
+                    0.02,
+                    0.02,
+                    0.0
+                ],
+                "Roughness": [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p4"
+            },
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p5"
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Time",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Multiply",
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Add",
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Fraction",
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Step",
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -300
+            ]
+        }
+    ],
+    "Links": [
+        [
+            7,
+            "Time",
+            8,
+            "A"
+        ],
+        [
+            4,
+            "Out",
+            8,
+            "B"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "A"
+        ],
+        [
+            6,
+            "Out",
+            9,
+            "B"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "In"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            11,
+            "B"
+        ],
+        [
+            2,
+            "Out",
+            12,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            12,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            13,
+            "A"
+        ],
+        [
+            11,
+            "Out",
+            13,
+            "B"
+        ],
+        [
+            13,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

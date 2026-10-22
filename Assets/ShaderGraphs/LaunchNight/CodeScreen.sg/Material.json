@@ -1,0 +1,114 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/CodeScreen.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.6000000238418579,
+				0.6000000238418579,
+				0.6000000238418579,
+				0.6000000238418579
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Scroll Speed",
+			"Range": [
+				0.0,
+				10.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Seed",
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				2.200000047683716,
+				2.200000047683716,
+				2.200000047683716,
+				2.200000047683716
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				20.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Color": true,
+			"Default": [
+				0.02500000037252903,
+				0.029999999329447746,
+				0.04500000178813934,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Background",
+			"Slot": 3,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "UV Rect",
+			"Slot": 4,
+			"Type": "Vec4"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p6",
+			"Name": "Flip",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 5,
+			"Type": "Vec2"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

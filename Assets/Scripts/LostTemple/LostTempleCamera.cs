@@ -2,7 +2,7 @@ using ScriptCore;
 
 // The Lost Temple's camera: a slow cinematic tour through seven framed shots, or free flight.
 //   1-7 jump to a shot, T toggles the tour, Space the hand-held sway,
-//   WASD / Q E fly, arrows look, Left Shift is faster. Any movement key leaves the tour.
+//   P toggles the authored dolly zoom. WASD / Q E fly, arrows look, Left Shift is faster.
 public class LostTempleCamera : Script
 {
     public bool Tour = true;
@@ -26,15 +26,19 @@ public class LostTempleCamera : Script
     private float yaw, pitch;
     private float clock;
     private bool handheld = true;
+    private bool sequencing;
+    private Sequence pushPull;
 
     public override void OnStart()
     {
+        pushPull = GetComponent<Sequence>();
         Cut(Shot);
     }
 
     // A reload makes a new instance: ease back into the current shot from wherever the camera is.
     public override void OnReload()
     {
+        pushPull = GetComponent<Sequence>();
         position = transform.WorldPosition;
         Vector3 forward = transform.Forward;
         yaw = Mathf.Atan2(forward.x, forward.z) * Mathf.Rad2Deg;
@@ -87,6 +91,25 @@ public class LostTempleCamera : Script
 
     public override void OnUpdate(float deltaTime)
     {
+        Sequence sequence = pushPull;
+        if (sequence != null && Input.WasKeyPressed(KeyCode.P))
+        {
+            if (sequence.IsPlaying) sequence.Pause();
+            else { sequencing = sequence.Play("DollyZoom"); }
+        }
+        if (sequence != null && sequence.IsPlaying) return;
+        if (sequencing)
+        {
+            // Resume manual control at the sequencse's current pose.
+            position = transform.WorldPosition;
+            Vector3 forwardAtStop = transform.Forward;
+            yaw = Mathf.Atan2(forwardAtStop.x, forwardAtStop.z) * Mathf.Rad2Deg;
+            pitch = -Mathf.Atan2(forwardAtStop.y, Mathf.Sqrt(forwardAtStop.x * forwardAtStop.x + forwardAtStop.z * forwardAtStop.z)) * Mathf.Rad2Deg;
+            Tour = false;
+            shotTime = Hold;
+            blendTime = -1f;
+            sequencing = false;
+        }
         clock += deltaTime;
         KeyCode[] keys = { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7 };
         for (int i = 0; i < keys.Length; ++i)

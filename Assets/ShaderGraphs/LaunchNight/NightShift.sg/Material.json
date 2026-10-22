@@ -1,0 +1,71 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/NightShift.shadergraph",
+	"Injection": "AfterTonemap",
+	"Parameters": [
+		{
+			"Default": [
+				0.03500000014901161,
+				0.03500000014901161,
+				0.03500000014901161,
+				0.03500000014901161
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Grain",
+			"Range": [
+				0.0,
+				0.30000001192092896
+			],
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.0024999999441206455,
+				0.0024999999441206455,
+				0.0024999999441206455,
+				0.0024999999441206455
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Fringe",
+			"Range": [
+				0.0,
+				0.019999999552965164
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.05999999865889549,
+				0.05999999865889549,
+				0.05999999865889549,
+				0.05999999865889549
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Alarm",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Post/Fullscreen",
+			"Post"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "PostProcess",
+	"Textures": [],
+	"Version": 1
+}

@@ -1,0 +1,1371 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Brightness",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                1.6,
+                1.6,
+                1.6,
+                1.6
+            ],
+            "Range": [
+                0.0,
+                20.0
+            ]
+        },
+        {
+            "Id": "p2",
+            "Name": "UV Rect",
+            "Type": "Vec4",
+            "Exposed": true,
+            "Default": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Flip",
+            "Type": "Vec2",
+            "Exposed": true,
+            "Default": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "Range": [
+                0.0,
+                1.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Base Color": [
+                    0.01,
+                    0.01,
+                    0.012,
+                    0.0
+                ],
+                "Roughness": [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ],
+                "Metallic": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Occlusion": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                -3560,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                -2440,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "xy"
+            },
+            "Position": [
+                -3280,
+                -300
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Swizzle",
+            "Settings": {
+                "Mask": "zw"
+            },
+            "Position": [
+                -3280,
+                -110
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "UV",
+            "Position": [
+                -3280,
+                80
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Subtract",
+            "Position": [
+                -3000,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Subtract",
+            "Position": [
+                -3000,
+                -110
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Divide",
+            "Position": [
+                -2720,
+                -300
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Subtract",
+            "Defaults": {
+                "A": [
+                    1.0,
+                    1.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -2440,
+                -110
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Lerp",
+            "Position": [
+                -2160,
+                -300
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "Slide",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Mask1",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Mask2",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Mask3",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "Mask1 = 0.0;\nMask2 = 0.0;\nMask3 = 0.0;\n{\n    vec2 q = vec2((UV.x - 0.07) / 0.074176, (UV.y - 0.08) / 0.09);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 10.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 575022.0; ghi = 22837.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 305544.0; ghi = 8479.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 509487.0; ghi = 17701.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 1033774.0; ghi = 17969.0; }\n        if (ci > 5.5 && ci < 6.5) { glo = 575023.0; ghi = 15921.0; }\n        if (ci > 6.5 && ci < 7.5) { glo = 710513.0; ghi = 17969.0; }\n        if (ci > 7.5 && ci < 8.5) { glo = 1033774.0; ghi = 17969.0; }\n        if (ci > 8.5 && ci < 9.5) { glo = 509487.0; ghi = 1057.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.07) / 0.037088, (UV.y - 0.3) / 0.045);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 16.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 135364.0; ghi = 14468.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 0.0; ghi = 6336.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 459838.0; ghi = 15888.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 1033777.0; ghi = 17969.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 135310.0; ghi = 14468.0; }\n        if (ci > 5.5 && ci < 6.5) { glo = 509487.0; ghi = 1057.0; }\n        if (ci > 7.5 && ci < 8.5) { glo = 710513.0; ghi = 17969.0; }\n        if (ci > 8.5 && ci < 9.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 9.5 && ci < 10.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 10.5 && ci < 11.5) { glo = 708145.0; ghi = 17977.0; }\n        if (ci > 11.5 && ci < 12.5) { glo = 459838.0; ghi = 15888.0; }\n        if (ci > 12.5 && ci < 13.5) { glo = 1033777.0; ghi = 17969.0; }\n        if (ci > 13.5 && ci < 14.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 14.5 && ci < 15.5) { glo = 135327.0; ghi = 4228.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.07) / 0.037088, (UV.y - 0.4) / 0.045);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 6.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 279086.0; ghi = 31812.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 0.0; ghi = 6336.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 279086.0; ghi = 4100.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 279086.0; ghi = 4100.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 279086.0; ghi = 4100.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.07) / 0.037088, (UV.y - 0.5) / 0.045);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 9.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 266527.0; ghi = 14896.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 0.0; ghi = 6336.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 509487.0; ghi = 1057.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 509487.0; ghi = 17701.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 5.5 && ci < 6.5) { glo = 492607.0; ghi = 1057.0; }\n        if (ci > 6.5 && ci < 7.5) { glo = 135310.0; ghi = 14468.0; }\n        if (ci > 7.5 && ci < 8.5) { glo = 135327.0; ghi = 4228.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.07) / 0.037088, (UV.y - 0.6) / 0.045);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 8.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 305544.0; ghi = 8479.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 0.0; ghi = 6336.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 459838.0; ghi = 15888.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 33825.0; ghi = 31777.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 5.5 && ci < 6.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 6.5 && ci < 7.5) { glo = 509487.0; ghi = 1057.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask3 = max(Mask3, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.53) / 0.024725, (UV.y - 0.5) / 0.03);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 11.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 706097.0; ghi = 10933.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 1033774.0; ghi = 17969.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 509487.0; ghi = 17701.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 6.5 && ci < 7.5) { glo = 1033777.0; ghi = 17969.0; }\n        if (ci > 7.5 && ci < 8.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 8.5 && ci < 9.5) { glo = 509487.0; ghi = 17701.0; }\n        if (ci > 9.5 && ci < 10.5) { glo = 492607.0; ghi = 31777.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask2 = max(Mask2, hit);\n    }\n}\n{\n    vec2 q = vec2((UV.x - 0.07) / 0.020604, (UV.y - 0.93) / 0.025);\n    if (q.y >= 0.0 && q.y < 1.0 && q.x >= 0.0 && q.x < 31.0)\n    {\n        float ci = floor(q.x);\n        float px = floor(fract(q.x) * 6.0);\n        float py = floor(q.y * 7.0);\n        float glo = 0.0;\n        float ghi = 0.0;\n        if (ci > -0.5 && ci < 0.5) { glo = 34350.0; ghi = 14881.0; }\n        if (ci > 0.5 && ci < 1.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 1.5 && ci < 2.5) { glo = 708145.0; ghi = 17977.0; }\n        if (ci > 2.5 && ci < 3.5) { glo = 492607.0; ghi = 1057.0; }\n        if (ci > 3.5 && ci < 4.5) { glo = 135310.0; ghi = 14468.0; }\n        if (ci > 4.5 && ci < 5.5) { glo = 575023.0; ghi = 15921.0; }\n        if (ci > 5.5 && ci < 6.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 6.5 && ci < 7.5) { glo = 708145.0; ghi = 17977.0; }\n        if (ci > 7.5 && ci < 8.5) { glo = 135327.0; ghi = 4228.0; }\n        if (ci > 8.5 && ci < 9.5) { glo = 135310.0; ghi = 14468.0; }\n        if (ci > 9.5 && ci < 10.5) { glo = 1033774.0; ghi = 17969.0; }\n        if (ci > 10.5 && ci < 11.5) { glo = 33825.0; ghi = 31777.0; }\n        if (ci > 12.5 && ci < 13.5) { glo = 1015808.0; ghi = 0.0; }\n        if (ci > 14.5 && ci < 15.5) { glo = 575023.0; ghi = 15921.0; }\n        if (ci > 15.5 && ci < 16.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 17.5 && ci < 18.5) { glo = 708145.0; ghi = 17977.0; }\n        if (ci > 18.5 && ci < 19.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 19.5 && ci < 20.5) { glo = 135327.0; ghi = 4228.0; }\n        if (ci > 21.5 && ci < 22.5) { glo = 459838.0; ghi = 15888.0; }\n        if (ci > 22.5 && ci < 23.5) { glo = 1033777.0; ghi = 17969.0; }\n        if (ci > 23.5 && ci < 24.5) { glo = 575022.0; ghi = 14897.0; }\n        if (ci > 24.5 && ci < 25.5) { glo = 706097.0; ghi = 10933.0; }\n        if (ci > 26.5 && ci < 27.5) { glo = 135327.0; ghi = 4228.0; }\n        if (ci > 27.5 && ci < 28.5) { glo = 492607.0; ghi = 31777.0; }\n        if (ci > 28.5 && ci < 29.5) { glo = 1033774.0; ghi = 17969.0; }\n        if (ci > 29.5 && ci < 30.5) { glo = 710513.0; ghi = 17969.0; }\n        float hit = 0.0;\n        if (px < 5.0)\n\n        {\n            float b = py * 5.0 + px;\n            float word = b < 20.0 ? glo : ghi;\n            float shift = b < 20.0 ? b : b - 20.0;\n            hit = mod(floor(word / exp2(shift)), 2.0);\n        }\n        \n        Mask1 = max(Mask1, hit);\n    }\n}"
+            },
+            "Position": [
+                -1880,
+                -300
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "Chart",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Axes",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Curve",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Here",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "vec2 p = (UV - vec2(0.52, 0.86)) / vec2(0.42, -0.5);\nfloat axis = (step(abs(p.x), 0.006) + step(abs(p.y), 0.012)) * step(-0.02, p.x) * step(p.x, 1.0) * step(-0.02, p.y) * step(p.y, 1.0);\nfloat curve = 0.06 + 0.02 * sin(p.x * 30.0) + pow(max(p.x - 0.55, 0.0) * 2.2, 3.0);\nfloat stroke = 1.0 - smoothstep(0.012, 0.03, abs(p.y - curve));\nstroke *= step(0.0, p.x) * step(p.x, 0.98);\nfloat here = 1.0 - smoothstep(0.018, 0.03, length((p - vec2(0.2, 0.08)) * vec2(1.0, 0.8)));\nfloat arrow = step(abs(p.x - 0.2), 0.008) * step(0.12, p.y) * step(p.y, 0.32);\nAxes = clamp(axis, 0.0, 1.0);\nCurve = stroke;\nHere = max(here, arrow);"
+            },
+            "Position": [
+                -1880,
+                -110
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Split",
+            "Position": [
+                -1600,
+                -300
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Step",
+            "Defaults": {
+                "B": [
+                    0.21,
+                    0.21,
+                    0.21,
+                    0.21
+                ]
+            },
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Step",
+            "Defaults": {
+                "A": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            },
+            "Position": [
+                -1320,
+                -110
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Multiply",
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.92,
+                    0.93,
+                    0.95,
+                    1.0
+                ]
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 20,
+            "Type": "Add",
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 21,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.1,
+                    0.16,
+                    0.36,
+                    1.0
+                ]
+            },
+            "Position": [
+                -1040,
+                80
+            ]
+        },
+        {
+            "Id": 22,
+            "Type": "Multiply",
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 23,
+            "Type": "Add",
+            "Position": [
+                -1320,
+                80
+            ]
+        },
+        {
+            "Id": 24,
+            "Type": "Maximum",
+            "Position": [
+                -1040,
+                270
+            ]
+        },
+        {
+            "Id": 25,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.9,
+                    0.12,
+                    0.1,
+                    1.0
+                ]
+            },
+            "Position": [
+                -1040,
+                460
+            ]
+        },
+        {
+            "Id": 26,
+            "Type": "Multiply",
+            "Position": [
+                -760,
+                80
+            ]
+        },
+        {
+            "Id": 27,
+            "Type": "Add",
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 28,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.55,
+                    0.55,
+                    0.6,
+                    1.0
+                ]
+            },
+            "Position": [
+                -760,
+                270
+            ]
+        },
+        {
+            "Id": 29,
+            "Type": "Multiply",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 30,
+            "Type": "Add",
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 31,
+            "Type": "Add",
+            "Position": [
+                -1320,
+                270
+            ]
+        },
+        {
+            "Id": 32,
+            "Type": "Add",
+            "Position": [
+                -1600,
+                -110
+            ]
+        },
+        {
+            "Id": 33,
+            "Type": "Add",
+            "Position": [
+                -1600,
+                80
+            ]
+        },
+        {
+            "Id": 34,
+            "Type": "Add",
+            "Position": [
+                -1320,
+                460
+            ]
+        },
+        {
+            "Id": 35,
+            "Type": "Add",
+            "Position": [
+                -1040,
+                650
+            ]
+        },
+        {
+            "Id": 36,
+            "Type": "Saturate",
+            "Position": [
+                -760,
+                460
+            ]
+        },
+        {
+            "Id": 37,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.1,
+                    0.25,
+                    0.6,
+                    1.0
+                ]
+            },
+            "Position": [
+                -760,
+                650
+            ]
+        },
+        {
+            "Id": 38,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -760,
+                840
+            ]
+        },
+        {
+            "Id": 39,
+            "Type": "Lerp",
+            "Position": [
+                -480,
+                80
+            ]
+        },
+        {
+            "Id": 40,
+            "Type": "OneMinus",
+            "Position": [
+                -480,
+                270
+            ]
+        },
+        {
+            "Id": 41,
+            "Type": "Multiply",
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 42,
+            "Type": "Add",
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 43,
+            "Type": "Color",
+            "Settings": {
+                "Value": [
+                    0.0,
+                    0.25,
+                    0.65,
+                    1.0
+                ]
+            },
+            "Position": [
+                -200,
+                80
+            ]
+        },
+        {
+            "Id": 44,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 45,
+            "Type": "Add",
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 46,
+            "Type": "Split",
+            "Position": [
+                -1040,
+                840
+            ]
+        },
+        {
+            "Id": 47,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    900.0,
+                    900.0,
+                    900.0,
+                    900.0
+                ]
+            },
+            "Position": [
+                -760,
+                1030
+            ]
+        },
+        {
+            "Id": 48,
+            "Type": "Sine",
+            "Position": [
+                -480,
+                460
+            ]
+        },
+        {
+            "Id": 49,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            },
+            "Position": [
+                -200,
+                270
+            ]
+        },
+        {
+            "Id": 50,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.88,
+                    0.88,
+                    0.88,
+                    0.88
+                ]
+            },
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 51,
+            "Type": "Subtract",
+            "Defaults": {
+                "B": [
+                    0.5,
+                    0.5,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -760,
+                1220
+            ]
+        },
+        {
+            "Id": 52,
+            "Type": "Length",
+            "Position": [
+                -480,
+                650
+            ]
+        },
+        {
+            "Id": 53,
+            "Type": "Remap",
+            "Defaults": {
+                "In Min": [
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35
+                ],
+                "In Max": [
+                    0.75,
+                    0.75,
+                    0.75,
+                    0.75
+                ],
+                "Out Min": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Out Max": [
+                    0.55,
+                    0.55,
+                    0.55,
+                    0.55
+                ]
+            },
+            "Position": [
+                -200,
+                460
+            ]
+        },
+        {
+            "Id": 54,
+            "Type": "Saturate",
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 55,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                80
+            ]
+        },
+        {
+            "Id": 56,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 57,
+            "Type": "Split",
+            "Position": [
+                -480,
+                840
+            ]
+        },
+        {
+            "Id": 58,
+            "Type": "Step",
+            "Defaults": {
+                "A": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -200,
+                650
+            ]
+        },
+        {
+            "Id": 59,
+            "Type": "Step",
+            "Defaults": {
+                "B": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -200,
+                840
+            ]
+        },
+        {
+            "Id": 60,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                460
+            ]
+        },
+        {
+            "Id": 61,
+            "Type": "Step",
+            "Defaults": {
+                "A": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                -200,
+                1030
+            ]
+        },
+        {
+            "Id": 62,
+            "Type": "Step",
+            "Defaults": {
+                "B": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "Position": [
+                -200,
+                1220
+            ]
+        },
+        {
+            "Id": 63,
+            "Type": "Multiply",
+            "Position": [
+                80,
+                650
+            ]
+        },
+        {
+            "Id": 64,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                270
+            ]
+        },
+        {
+            "Id": 65,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 66,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -300
+            ]
+        }
+    ],
+    "Links": [
+        [
+            3,
+            "Out",
+            5,
+            "In"
+        ],
+        [
+            3,
+            "Out",
+            6,
+            "In"
+        ],
+        [
+            7,
+            "Out",
+            8,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            8,
+            "B"
+        ],
+        [
+            6,
+            "Out",
+            9,
+            "A"
+        ],
+        [
+            5,
+            "Out",
+            9,
+            "B"
+        ],
+        [
+            8,
+            "Out",
+            10,
+            "A"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "B"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "B"
+        ],
+        [
+            10,
+            "Out",
+            12,
+            "A"
+        ],
+        [
+            11,
+            "Out",
+            12,
+            "B"
+        ],
+        [
+            4,
+            "Out",
+            12,
+            "T"
+        ],
+        [
+            12,
+            "Out",
+            13,
+            "UV"
+        ],
+        [
+            12,
+            "Out",
+            14,
+            "UV"
+        ],
+        [
+            12,
+            "Out",
+            15,
+            "In"
+        ],
+        [
+            15,
+            "G",
+            16,
+            "A"
+        ],
+        [
+            15,
+            "G",
+            17,
+            "B"
+        ],
+        [
+            16,
+            "Out",
+            18,
+            "A"
+        ],
+        [
+            17,
+            "Out",
+            18,
+            "B"
+        ],
+        [
+            13,
+            "Mask1",
+            20,
+            "A"
+        ],
+        [
+            14,
+            "Axes",
+            20,
+            "B"
+        ],
+        [
+            20,
+            "Out",
+            22,
+            "A"
+        ],
+        [
+            21,
+            "Out",
+            22,
+            "B"
+        ],
+        [
+            14,
+            "Curve",
+            23,
+            "A"
+        ],
+        [
+            14,
+            "Here",
+            23,
+            "B"
+        ],
+        [
+            13,
+            "Mask2",
+            24,
+            "A"
+        ],
+        [
+            23,
+            "Out",
+            24,
+            "B"
+        ],
+        [
+            24,
+            "Out",
+            26,
+            "A"
+        ],
+        [
+            25,
+            "Out",
+            26,
+            "B"
+        ],
+        [
+            22,
+            "Out",
+            27,
+            "A"
+        ],
+        [
+            26,
+            "Out",
+            27,
+            "B"
+        ],
+        [
+            13,
+            "Mask3",
+            29,
+            "A"
+        ],
+        [
+            28,
+            "Out",
+            29,
+            "B"
+        ],
+        [
+            27,
+            "Out",
+            30,
+            "A"
+        ],
+        [
+            29,
+            "Out",
+            30,
+            "B"
+        ],
+        [
+            13,
+            "Mask1",
+            31,
+            "A"
+        ],
+        [
+            13,
+            "Mask2",
+            31,
+            "B"
+        ],
+        [
+            13,
+            "Mask3",
+            32,
+            "A"
+        ],
+        [
+            14,
+            "Axes",
+            32,
+            "B"
+        ],
+        [
+            14,
+            "Curve",
+            33,
+            "A"
+        ],
+        [
+            14,
+            "Here",
+            33,
+            "B"
+        ],
+        [
+            32,
+            "Out",
+            34,
+            "A"
+        ],
+        [
+            33,
+            "Out",
+            34,
+            "B"
+        ],
+        [
+            31,
+            "Out",
+            35,
+            "A"
+        ],
+        [
+            34,
+            "Out",
+            35,
+            "B"
+        ],
+        [
+            35,
+            "Out",
+            36,
+            "In"
+        ],
+        [
+            18,
+            "Out",
+            38,
+            "A"
+        ],
+        [
+            19,
+            "Out",
+            39,
+            "A"
+        ],
+        [
+            37,
+            "Out",
+            39,
+            "B"
+        ],
+        [
+            38,
+            "Out",
+            39,
+            "T"
+        ],
+        [
+            36,
+            "Out",
+            40,
+            "In"
+        ],
+        [
+            39,
+            "Out",
+            41,
+            "A"
+        ],
+        [
+            40,
+            "Out",
+            41,
+            "B"
+        ],
+        [
+            41,
+            "Out",
+            42,
+            "A"
+        ],
+        [
+            30,
+            "Out",
+            42,
+            "B"
+        ],
+        [
+            18,
+            "Out",
+            44,
+            "A"
+        ],
+        [
+            43,
+            "Out",
+            44,
+            "B"
+        ],
+        [
+            42,
+            "Out",
+            45,
+            "A"
+        ],
+        [
+            44,
+            "Out",
+            45,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            46,
+            "In"
+        ],
+        [
+            46,
+            "G",
+            47,
+            "A"
+        ],
+        [
+            47,
+            "Out",
+            48,
+            "In"
+        ],
+        [
+            48,
+            "Out",
+            49,
+            "A"
+        ],
+        [
+            49,
+            "Out",
+            50,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            51,
+            "A"
+        ],
+        [
+            51,
+            "Out",
+            52,
+            "In"
+        ],
+        [
+            52,
+            "Out",
+            53,
+            "In"
+        ],
+        [
+            53,
+            "Out",
+            54,
+            "In"
+        ],
+        [
+            50,
+            "Out",
+            55,
+            "A"
+        ],
+        [
+            54,
+            "Out",
+            55,
+            "B"
+        ],
+        [
+            45,
+            "Out",
+            56,
+            "A"
+        ],
+        [
+            55,
+            "Out",
+            56,
+            "B"
+        ],
+        [
+            12,
+            "Out",
+            57,
+            "In"
+        ],
+        [
+            57,
+            "R",
+            58,
+            "B"
+        ],
+        [
+            57,
+            "R",
+            59,
+            "A"
+        ],
+        [
+            58,
+            "Out",
+            60,
+            "A"
+        ],
+        [
+            59,
+            "Out",
+            60,
+            "B"
+        ],
+        [
+            57,
+            "G",
+            61,
+            "B"
+        ],
+        [
+            57,
+            "G",
+            62,
+            "A"
+        ],
+        [
+            61,
+            "Out",
+            63,
+            "A"
+        ],
+        [
+            62,
+            "Out",
+            63,
+            "B"
+        ],
+        [
+            60,
+            "Out",
+            64,
+            "A"
+        ],
+        [
+            63,
+            "Out",
+            64,
+            "B"
+        ],
+        [
+            2,
+            "Out",
+            65,
+            "A"
+        ],
+        [
+            64,
+            "Out",
+            65,
+            "B"
+        ],
+        [
+            56,
+            "Out",
+            66,
+            "A"
+        ],
+        [
+            65,
+            "Out",
+            66,
+            "B"
+        ],
+        [
+            66,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

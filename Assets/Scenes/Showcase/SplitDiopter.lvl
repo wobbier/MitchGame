@@ -1,0 +1,3205 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "009517aae12da99f",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.45,
+                        1.6,
+                        -2.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.24192189559966773,
+                        0.0,
+                        0.9702957262759965
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "IsCurrent": true,
+                    "Projection": "Perspective",
+                    "FieldOfView": 28,
+                    "Near": 0.05,
+                    "Far": 40,
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.075,
+                        0.1,
+                        0.14
+                    ]
+                },
+                {
+                    "Type": "PostProcess",
+                    "DepthOfField": true,
+                    "DoFFocusDistance": 1.83,
+                    "DoFSplitDiopter": true,
+                    "DoFSplitFocusDistance": 8.36,
+                    "DoFSplitPosition": 0.47,
+                    "DoFSplitFeather": 0.018,
+                    "DoFAperture": 0.8,
+                    "DoFSensorHeight": 36,
+                    "DoFMaxBlurRadius": 28,
+                    "DoFDebugCoC": false,
+                    "AutoExposure": false,
+                    "ExposureCompensation": 0.2,
+                    "Bloom": true,
+                    "BloomIntensity": 0.035,
+                    "BloomThreshold": 1.4,
+                    "AmbientOcclusion": true,
+                    "AORadius": 0.3,
+                    "AOIntensity": 0.75,
+                    "TemporalAA": false,
+                    "FXAA": true,
+                    "VignetteIntensity": 0.16
+                }
+            ]
+        },
+        {
+            "GUID": "b96dc3a61f3711b5",
+            "Name": "Employee - doorway - left focus",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.08,
+                        0,
+                        -0.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.24192189559966773,
+                        0.0,
+                        0.9702957262759965
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/Characters/SK_Chr_Business_Male_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SK_Chr_Business_Male_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Nodes": {
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.0030091,
+                                0.1035566,
+                                -0.6067536,
+                                0.7881098
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.0030087,
+                                0.1035568,
+                                -0.6067553,
+                                0.7881085
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0/lowerarm_l_$AssimpFbx$_Translation#0/lowerarm_l_$AssimpFbx$_PreRotation#0/lowerarm_l_$AssimpFbx$_PostRotation#0/lowerarm_l#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.0001118,
+                                0.0789868,
+                                -0.0794766,
+                                0.9937024
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0/lowerarm_r_$AssimpFbx$_Translation#0/lowerarm_r_$AssimpFbx$_PreRotation#0/lowerarm_r_$AssimpFbx$_PostRotation#0/lowerarm_r#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.0001118,
+                                0.0789867,
+                                -0.0794744,
+                                0.9937026
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "9871f5f55a1b1548",
+            "Name": "Boss - office - right focus",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.8,
+                        0,
+                        5.9
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.17364817766693033,
+                        0.0,
+                        0.984807753012208
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/Characters/SK_Chr_Boss_Male_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SK_Chr_Boss_Male_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Nodes": {
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.0030091,
+                                0.1035566,
+                                -0.6067536,
+                                0.7881098
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.0030087,
+                                0.1035568,
+                                -0.6067553,
+                                0.7881085
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0/lowerarm_l_$AssimpFbx$_Translation#0/lowerarm_l_$AssimpFbx$_PreRotation#0/lowerarm_l_$AssimpFbx$_PostRotation#0/lowerarm_l#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.000407,
+                                0.1889298,
+                                -0.2893439,
+                                0.9383951
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        },
+                        "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0/lowerarm_r_$AssimpFbx$_Translation#0/lowerarm_r_$AssimpFbx$_PreRotation#0/lowerarm_r_$AssimpFbx$_PostRotation#0/lowerarm_r#0": {
+                            "Position": [
+                                0.0,
+                                0.0,
+                                -0.0
+                            ],
+                            "Rotation": [
+                                0.000407,
+                                0.1889298,
+                                -0.2893418,
+                                0.9383958
+                            ],
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "Type": "Transform"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "abd21f832ab0471b",
+            "Name": "Doorway wall",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_Door_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_Door_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "fa84f71b00cc9751",
+            "Name": "Doorway trim",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Trim_Door_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Trim_Door_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "f59695816b2b2eb6",
+            "Name": "Doorway skirting",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Baseboard_Door_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Baseboard_Door_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "a509a32355fe6bbe",
+            "Name": "Open office door",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.75,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.7372773368101241,
+                        0.0,
+                        0.6755902076156602
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Door_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Door_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        },
+                        "RootNode#0/SM_Bld_Door_01#0/SM_Bld_Door_01_Glass#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.12,
+                                    0.19,
+                                    0.19
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Opacity": 0.24,
+                                "RenderMode": 1,
+                                "FaceMode": 2
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "fb27f589653158be",
+            "Name": "Manager nameplate",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.08,
+                        1.55,
+                        0.105
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Manager_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Sign_Manager_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "0942c83a6accacfe",
+            "Name": "Corridor entrance wall -5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "3aa7064f138cc26d",
+            "Name": "Corridor entrance wall -2.5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "d981ba2d8e515ada",
+            "Name": "Corridor entrance wall 2.5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "1386379f70e21202",
+            "Name": "Carpet -2.5 2.8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        -0.004,
+                        2.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "d4ae70d5b12af1e3",
+            "Name": "Carpet -2.5 5.3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        -0.004,
+                        5.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "39dd42dd3884bc5c",
+            "Name": "Carpet -2.5 7.8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        -0.004,
+                        7.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "f7994325ae2e4a7a",
+            "Name": "Carpet 0 2.8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.004,
+                        2.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "2e52765e21782782",
+            "Name": "Carpet 0 5.3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.004,
+                        5.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "50c994da922737fe",
+            "Name": "Carpet 0 7.8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.004,
+                        7.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "fb4fbff322b52b9e",
+            "Name": "Corridor carpet -5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -5,
+                        -0.004,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e78a25ee5e155d06",
+            "Name": "Corridor carpet -2.5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        -0.004,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e0fc6132d4f629f1",
+            "Name": "Corridor carpet 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.004,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "4f062bb6faced3c3",
+            "Name": "Corridor carpet 2.5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        -0.004,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e2cfaeeb93e2c434",
+            "Name": "Left wall 0.3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        0,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.7071067811865475,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "e26f5ed842521064",
+            "Name": "Right wall 0.3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        0,
+                        2.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.7071067811865475,
+                        -0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "320023831e0bee99",
+            "Name": "Left wall 2.8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        0,
+                        2.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.7071067811865475,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "a6dea517a8380b62",
+            "Name": "Right wall 2.8",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        0,
+                        5.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.7071067811865475,
+                        -0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "a72953abfb19950d",
+            "Name": "Left wall 5.3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        0,
+                        5.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.7071067811865475,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "02693892b4395918",
+            "Name": "Right wall 5.3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.5,
+                        0,
+                        7.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.7071067811865475,
+                        -0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "15b9f828cb2a4dec",
+            "Name": "Back wall -2.5",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        0,
+                        7.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "9a553f1626114af3",
+            "Name": "Back wall 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        7.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "21f122bcde9750fc",
+            "Name": "Ceiling",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3.05,
+                        4
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        2.5,
+                        0.05,
+                        4
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.48,
+                            0.49,
+                            0.46
+                        ],
+                        "Roughness": 0.72,
+                        "Metallic": 0,
+                        "EmissiveColor": [
+                            1,
+                            1,
+                            1
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "b04a871603450b0a",
+            "Name": "Corridor ceiling",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3.05,
+                        -0.95
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        5,
+                        0.05,
+                        1.25
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.48,
+                            0.49,
+                            0.46
+                        ],
+                        "Roughness": 0.72,
+                        "Metallic": 0,
+                        "EmissiveColor": [
+                            1,
+                            1,
+                            1
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "3da48b18a9b609c7",
+            "Name": "Executive desk",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.9,
+                        0,
+                        4.95
+                    ],
+                    "Rotation": [
+                        0.0,
+                        1.0,
+                        -0.0,
+                        6.123233995736766e-17
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Desk_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "81ec16c962dde9f8",
+            "Name": "Boss chair",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.8,
+                        0,
+                        6.65
+                    ],
+                    "Rotation": [
+                        0.0,
+                        1.0,
+                        -0.0,
+                        6.123233995736766e-17
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_05.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Chair_05#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "cdbf65d013cbfd87",
+            "Name": "Desk monitor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.43,
+                        0.75,
+                        5.06
+                    ],
+                    "Rotation": [
+                        0.0,
+                        1.0,
+                        -0.0,
+                        6.123233995736766e-17
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Computer_Monitor_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        },
+                        "RootNode#0/SM_Prop_Computer_Monitor_01#0/@#1": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0.35,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_Sceen_01.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "fd9c6e9c5956dfbf",
+            "Name": "Desk keyboard",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.37,
+                        0.75,
+                        5.32
+                    ],
+                    "Rotation": [
+                        0.0,
+                        1.0,
+                        -0.0,
+                        6.123233995736766e-17
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Keyboard_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Computer_Keyboard_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "bbacf74c41ccb3bf",
+            "Name": "Desk telephone",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.22,
+                        0.75,
+                        4.95
+                    ],
+                    "Rotation": [
+                        0.0,
+                        1.0,
+                        -0.0,
+                        6.123233995736766e-17
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Phone_Desk_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Phone_Desk_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "0558220264a1977c",
+            "Name": "Desk coffee",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.71,
+                        0.75,
+                        4.72
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Cup_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "56ae4f7975ee5a9e",
+            "Name": "Desk photograph",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.25,
+                        0.75,
+                        5.25
+                    ],
+                    "Rotation": [
+                        0.0,
+                        1.0,
+                        -0.0,
+                        6.123233995736766e-17
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Photo_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Photo_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "308e5a9ab77db118",
+            "Name": "Desk task lamp",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.75,
+                        0.75,
+                        5.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.17364817766693033,
+                        -0.0,
+                        0.984807753012208
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_DeskLamp_05.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_DeskLamp_05#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        },
+                        "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        },
+                        "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        },
+                        "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Lamp_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "262252b45ae09186",
+            "Name": "Bookshelf",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.3,
+                        0,
+                        7.38
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Shelf_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Shelf_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "4c7d6a2ddb3679c0",
+            "Name": "Shelf books",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.3,
+                        1.12,
+                        7.34
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Book_Group_02.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Book_Group_02#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5e75206820f379a0",
+            "Name": "Office plant",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.0,
+                        0,
+                        7.05
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.6,
+                        1.6,
+                        1.6
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Plant_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "b6dbf9d5abde08d9",
+            "Name": "Hall plant",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        3.6,
+                        0,
+                        -0.25
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.25,
+                        1.25,
+                        1.25
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Prop_Plant_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "06b9b8418f253a67",
+            "Name": "Window recess",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.25,
+                        1.75,
+                        7.61
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.66,
+                        0.7,
+                        0.035
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.16,
+                            0.27,
+                            0.36
+                        ],
+                        "Roughness": 0.72,
+                        "Metallic": 0,
+                        "EmissiveColor": [
+                            1,
+                            1,
+                            1
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "deef92c809c4e6f5",
+            "Name": "Window blinds",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2.5,
+                        0,
+                        7.62
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Window_Blinds_Open_01.fbx",
+                    "Compact": true,
+                    "BakedImportScale": 0.01,
+                    "Parts": {
+                        "RootNode#0/SM_Bld_Wall_Window_Blinds_Open_01#0/@#0": {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": true,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "Roughness": 0.72,
+                                "Metallic": 0,
+                                "EmissiveColor": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "EmissiveIntensity": 0,
+                                "Textures": {
+                                    "Diffuse": {
+                                        "Path": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_01_A.png",
+                                        "RenderMode": "Opaque"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "f598da60dc09ee40",
+            "Name": "Window daylight",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        4,
+                        2
+                    ],
+                    "Rotation": [
+                        0.3144746886074361,
+                        -0.24471821486331075,
+                        0.08426323885239127,
+                        0.913300811407433
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        0.78,
+                        0.86,
+                        1
+                    ],
+                    "Intensity": 2.3,
+                    "Range": 10,
+                    "CastShadows": true,
+                    "ShadowDistance": 22,
+                    "ShadowBias": 0.5,
+                    "ShadowNormalBias": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "c559d70904722a06",
+            "Name": "Hall portrait key",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.05,
+                        2.15,
+                        -1.8
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1,
+                        0.83,
+                        0.66
+                    ],
+                    "Intensity": 10,
+                    "Range": 4.5,
+                    "CastShadows": false,
+                    "ShadowDistance": 22,
+                    "ShadowBias": 0.5,
+                    "ShadowNormalBias": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "8b2f594a71a43f58",
+            "Name": "Office ceiling fill",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.3,
+                        2.65,
+                        4.4
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1,
+                        0.9,
+                        0.74
+                    ],
+                    "Intensity": 22,
+                    "Range": 7,
+                    "CastShadows": false,
+                    "ShadowDistance": 22,
+                    "ShadowBias": 0.5,
+                    "ShadowNormalBias": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "b066781d48f38764",
+            "Name": "Boss face key",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.3,
+                        2.2,
+                        4.4
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1,
+                        0.84,
+                        0.65
+                    ],
+                    "Intensity": 10,
+                    "Range": 3.5,
+                    "CastShadows": false,
+                    "ShadowDistance": 22,
+                    "ShadowBias": 0.5,
+                    "ShadowNormalBias": 1.5
+                }
+            ]
+        },
+        {
+            "GUID": "f2c8cb916e966755",
+            "Name": "Window cool fill",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -1.25,
+                        2.0,
+                        7.1
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.5,
+                        0.72,
+                        1
+                    ],
+                    "Intensity": 9,
+                    "Range": 4,
+                    "CastShadows": false,
+                    "ShadowDistance": 22,
+                    "ShadowBias": 0.5,
+                    "ShadowNormalBias": 1.5
+                }
+            ]
+        }
+    ]
+}

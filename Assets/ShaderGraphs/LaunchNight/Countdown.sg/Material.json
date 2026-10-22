@@ -1,0 +1,83 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/Countdown.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				767.0,
+				767.0,
+				767.0,
+				767.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Start Seconds",
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				6.0,
+				6.0,
+				6.0,
+				6.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				40.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "UV Rect",
+			"Slot": 2,
+			"Type": "Vec4"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Flip",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 3,
+			"Type": "Vec2"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

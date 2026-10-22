@@ -1,0 +1,833 @@
+{
+	"Links": [
+		[
+			1,
+			"Out",
+			3,
+			"UV"
+		],
+		[
+			10,
+			"Out",
+			3,
+			"Center"
+		],
+		[
+			11,
+			"Out",
+			3,
+			"Zoom"
+		],
+		[
+			3,
+			"C",
+			4,
+			"C"
+		],
+		[
+			12,
+			"Out",
+			4,
+			"Iterations"
+		],
+		[
+			4,
+			"Field",
+			5,
+			"Field"
+		],
+		[
+			3,
+			"PixelSize",
+			5,
+			"PixelSize"
+		],
+		[
+			3,
+			"LoopPhase",
+			5,
+			"LoopPhase"
+		],
+		[
+			13,
+			"Out",
+			5,
+			"PalettePhase"
+		],
+		[
+			14,
+			"Out",
+			5,
+			"PaletteCycles"
+		],
+		[
+			15,
+			"Out",
+			5,
+			"ContourDensity"
+		],
+		[
+			16,
+			"Out",
+			5,
+			"Glow"
+		],
+		[
+			17,
+			"Out",
+			5,
+			"Brightness"
+		],
+		[
+			2,
+			"Time",
+			3,
+			"Time"
+		],
+		[
+			18,
+			"Out",
+			3,
+			"ZoomSpeed"
+		],
+		[
+			3,
+			"Active",
+			4,
+			"Active"
+		],
+		[
+			3,
+			"NextC",
+			21,
+			"C"
+		],
+		[
+			12,
+			"Out",
+			21,
+			"Iterations"
+		],
+		[
+			3,
+			"NextActive",
+			21,
+			"Active"
+		],
+		[
+			21,
+			"Field",
+			22,
+			"Field"
+		],
+		[
+			3,
+			"NextPixelSize",
+			22,
+			"PixelSize"
+		],
+		[
+			5,
+			"Color",
+			23,
+			"A"
+		],
+		[
+			22,
+			"Color",
+			23,
+			"B"
+		],
+		[
+			3,
+			"Blend",
+			23,
+			"T"
+		],
+		[
+			23,
+			"Out",
+			6,
+			"Color"
+		],
+		[
+			3,
+			"LoopPhase",
+			22,
+			"LoopPhase"
+		],
+		[
+			13,
+			"Out",
+			22,
+			"PalettePhase"
+		],
+		[
+			14,
+			"Out",
+			22,
+			"PaletteCycles"
+		],
+		[
+			15,
+			"Out",
+			22,
+			"ContourDensity"
+		],
+		[
+			16,
+			"Out",
+			22,
+			"Glow"
+		],
+		[
+			17,
+			"Out",
+			22,
+			"Brightness"
+		],
+		[
+			3,
+			"PixelSize",
+			4,
+			"PixelSize"
+		],
+		[
+			3,
+			"NextPixelSize",
+			21,
+			"PixelSize"
+		],
+		[
+			3,
+			"MuBias",
+			5,
+			"MuBias"
+		],
+		[
+			3,
+			"NextMuBias",
+			22,
+			"MuBias"
+		],
+		[
+			3,
+			"ViewAngle",
+			4,
+			"ViewAngle"
+		],
+		[
+			3,
+			"NextViewAngle",
+			21,
+			"ViewAngle"
+		],
+		[
+			3,
+			"CoreFade",
+			5,
+			"CoreFade"
+		],
+		[
+			3,
+			"CoreFade",
+			22,
+			"CoreFade"
+		]
+	],
+	"Nodes": [
+		{
+			"Id": 10,
+			"Position": [
+				-1300.0,
+				0.0
+			],
+			"Settings": {
+				"Property": "center"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 11,
+			"Position": [
+				-1300.0,
+				190.0
+			],
+			"Settings": {
+				"Property": "zoom"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 12,
+			"Position": [
+				-1300.0,
+				380.0
+			],
+			"Settings": {
+				"Property": "iterations"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 13,
+			"Position": [
+				-950.0,
+				450.0
+			],
+			"Settings": {
+				"Property": "phase"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 14,
+			"Position": [
+				-950.0,
+				640.0
+			],
+			"Settings": {
+				"Property": "speed"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 15,
+			"Position": [
+				-950.0,
+				830.0
+			],
+			"Settings": {
+				"Property": "density"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 16,
+			"Position": [
+				-950.0,
+				1020.0
+			],
+			"Settings": {
+				"Property": "glow"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 17,
+			"Position": [
+				-950.0,
+				1210.0
+			],
+			"Settings": {
+				"Property": "brightness"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 1,
+			"Position": [
+				-1300.0,
+				-240.0
+			],
+			"Type": "UV"
+		},
+		{
+			"Id": 2,
+			"Position": [
+				-1350.0,
+				-650.0
+			],
+			"Type": "Time"
+		},
+		{
+			"Id": 3,
+			"Position": [
+				-950.0,
+				-350.0
+			],
+			"Settings": {
+				"Code": "// The selected critical orbit lands on a repelling fixed point.\n// Three iterations scale local detail by |lambda^3| and rotate it by arg(lambda^3).\n// Repeat a smooth log-radius tile. Time only translates this fixed field;\n// there is no camera reset, screen-space transition or layer handoff.\nfloat loopStops = 1.228841185211;\nfloat loopAngle = -0.023399272963;\nfloat dx = max(abs(dFdx(UV.x)), 0.000001);\nfloat dy = max(abs(dFdy(UV.y)), 0.000001);\nfloat aspect = dy / dx;\nvec2 plane = vec2((UV.x - 0.5) * aspect, 0.5 - UV.y) * max(2.7, 3.6 / aspect);\nfloat screenPixel = dy * max(2.7, 3.6 / aspect);\nfloat baseZoom = clamp(Zoom, 0.25, 12000.0);\nfloat speed = clamp(ZoomSpeed, 0.0, 1.0);\nfloat period = loopStops / max(speed, 0.0001);\nLoopPhase = speed > 0.0 ? fract(max(Time, 0.0) / period) : 0.0;\nfloat radius = max(length(plane), screenPixel * 0.25);\nvec2 direction = plane / radius;\nfloat tile = fract(log2(radius / 0.25) / loopStops - LoopPhase);\nfloat scaleA = 0.25 * exp2(tile * loopStops) / baseZoom;\nfloat scaleB = scaleA * 0.4266600140686584;\nViewAngle = tile * loopAngle;\nNextViewAngle = (tile - 1.0) * loopAngle;\nfloat ca = cos(ViewAngle);\nfloat sa = sin(ViewAngle);\nfloat cb = cos(NextViewAngle);\nfloat sb = sin(NextViewAngle);\nC = Center + vec2(ca * direction.x - sa * direction.y, sa * direction.x + ca * direction.y) * scaleA;\nNextC = Center + vec2(cb * direction.x - sb * direction.y, sb * direction.x + cb * direction.y) * scaleB;\n// Include the radial shear's largest singular value in the pixel footprint.\nPixelSize = max(screenPixel * scaleA / radius * 1.015, 0.00000001);\nNextPixelSize = max(screenPixel * scaleB / radius * 1.015, 0.00000001);\n// At either edge the surviving sample has exactly the same complex\n// coordinate, orientation and potential bias. Values and slopes join.\nBlend = smoothstep(0.15, 0.85, tile);\nMuBias = tile * 3.0;\nNextMuBias = (tile - 1.0) * 3.0;\nCoreFade = smoothstep(screenPixel * 0.5, screenPixel * 2.5, radius);\nif (speed <= 0.0)\n{\n    C = Center + plane / baseZoom;\n    NextC = C;\n    PixelSize = max(screenPixel / baseZoom, 0.00000001);\n    NextPixelSize = PixelSize;\n    Blend = 0.0;\n    MuBias = 0.0;\n    NextMuBias = 0.0;\n    ViewAngle = 0.0;\n    NextViewAngle = 0.0;\n    CoreFade = 1.0;\n}\nActive = 1.0 - Blend;\nNextActive = Blend;",
+				"Inputs": [
+					{
+						"Name": "UV",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Center",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Zoom",
+						"Type": "Float"
+					},
+					{
+						"Name": "Time",
+						"Type": "Float"
+					},
+					{
+						"Name": "ZoomSpeed",
+						"Type": "Float"
+					}
+				],
+				"Name": "Scale Periodic Coordinates",
+				"Outputs": [
+					{
+						"Name": "C",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "PixelSize",
+						"Type": "Float"
+					},
+					{
+						"Name": "NextC",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "NextPixelSize",
+						"Type": "Float"
+					},
+					{
+						"Name": "Blend",
+						"Type": "Float"
+					},
+					{
+						"Name": "Active",
+						"Type": "Float"
+					},
+					{
+						"Name": "NextActive",
+						"Type": "Float"
+					},
+					{
+						"Name": "MuBias",
+						"Type": "Float"
+					},
+					{
+						"Name": "NextMuBias",
+						"Type": "Float"
+					},
+					{
+						"Name": "ViewAngle",
+						"Type": "Float"
+					},
+					{
+						"Name": "NextViewAngle",
+						"Type": "Float"
+					},
+					{
+						"Name": "LoopPhase",
+						"Type": "Float"
+					},
+					{
+						"Name": "CoreFade",
+						"Type": "Float"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				-400.0,
+				-350.0
+			],
+			"Settings": {
+				"Code": "// Skip samples outside the fixed spatial tile overlap.\nField = vec4(0.0, 0.0, 0.0, 0.0);\nif (Active <= 0.0) return;\n// Analytic rejection of the main cardioid and period-two bulb.\nfloat cy2 = C.y * C.y;\nfloat cx = C.x - 0.25;\nfloat q = cx * cx + cy2;\nif (q * (q + cx) < 0.25 * cy2 || (C.x + 1.0) * (C.x + 1.0) + cy2 < 0.0625)\n{\n    return;\n}\nvec2 z = vec2(0.0, 0.0);\nvec2 dz = vec2(0.0, 0.0);\nfloat limit = floor(clamp(Iterations, 32.0, 512.0));\nfor (int i = 0; i < 512; ++i)\n{\n    if (float(i) >= limit) break;\n    dz = 2.0 * vec2(z.x * dz.x - z.y * dz.y, z.x * dz.y + z.y * dz.x) + vec2(1.0, 0.0);\n    z = vec2(z.x * z.x - z.y * z.y, 2.0 * z.x * z.y) + C;\n    float r2 = dot(z, z);\n    if (r2 > 256.0)\n    {\n        // Continuous potential removes escape-count banding. dz/dc gives an\n        // exterior distance estimate and a normal for the engraved relief.\n        float mu = float(i) + 1.0 - log2(0.5 * log2(r2));\n        float distance = 0.5 * log(r2) * sqrt(r2) / max(length(dz), 0.000001);\n        vec2 normal = vec2(z.x * dz.x + z.y * dz.y, z.y * dz.x - z.x * dz.y);\n        normal /= max(length(normal), 0.000001);\n        // Rotate the gradient into the view so repeated levels share lighting.\n        float ca = cos(ViewAngle);\n        float sa = sin(ViewAngle);\n        normal = vec2(ca * normal.x + sa * normal.y, -sa * normal.x + ca * normal.y);\n        float light = 0.5 + 0.5 * dot(normal, vec2(-0.6, 0.8));\n        // Features narrower than a pixel receive fractional coverage,\n        // preventing isolated escape samples from flashing at full brightness.\n        float coverage = 0.5 + 0.5 * smoothstep(0.0, max(PixelSize, 0.00000001) * 0.8, distance);\n        Field = vec4(mu, distance, light, coverage);\n        break;\n    }\n}",
+				"Inputs": [
+					{
+						"Name": "C",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Iterations",
+						"Type": "Float"
+					},
+					{
+						"Name": "Active",
+						"Type": "Float"
+					},
+					{
+						"Name": "PixelSize",
+						"Type": "Float"
+					},
+					{
+						"Name": "ViewAngle",
+						"Type": "Float"
+					}
+				],
+				"Name": "Mandelbrot Distance",
+				"Outputs": [
+					{
+						"Name": "Field",
+						"Type": "Vec4"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				150.0,
+				-350.0
+			],
+			"Settings": {
+				"Code": "float mu = Field.x + MuBias;\nfloat phase = mu * clamp(ContourDensity, 0.005, 0.15) + PalettePhase + LoopPhase * floor(clamp(PaletteCycles, 0.0, 4.0) + 0.5);\n// The distance estimate gives |gradient(mu)| = 1 / (ln(2) * distance).\n// This stays stable through the escape loop and repeated scales.\nfloat footprint = 1.442695 * PixelSize / max(Field.y, PixelSize * 0.01);\nfloat paletteWidth = 6.2831853 * clamp(ContourDensity, 0.005, 0.15) * footprint;\nfloat wave = 0.5 + 0.5 * cos(6.2831853 * phase) * exp2(-0.06 * paletteWidth * paletteWidth);\nvec3 ink = vec3(0.004, 0.012, 0.035);\nvec3 teal = vec3(0.015, 0.46, 0.58);\nvec3 gold = vec3(1.2, 0.48, 0.075);\nvec3 pearl = vec3(1.55, 1.25, 0.72);\nvec3 palette = mix(ink, teal, smoothstep(0.04, 0.5, wave));\npalette = mix(palette, gold, smoothstep(0.5, 0.82, wave));\npalette = mix(palette, pearl, smoothstep(0.86, 1.0, wave));\n// Filter contour bands and relief when their details become subpixel.\nfloat bands = 0.88 + 0.12 * cos(2.4 * mu) * exp2(-footprint * footprint);\nfloat relief = 0.48 + 0.72 * mix(0.5, Field.z, exp2(-0.05 * footprint * footprint));\nfloat edge = exp(-sqrt(max(Field.y, 0.0) / max(PixelSize, 0.00000001)) * 0.7);\nfloat atmosphere = exp(-sqrt(max(Field.y, 0.0) / max(PixelSize, 0.00000001)) * 0.085);\nvec3 exterior = mix(ink * 0.35, palette * bands * relief, atmosphere);\nexterior += vec3(0.05, 0.52, 0.7) * edge * clamp(Glow, 0.0, 3.0);\n// The unescaped set stays velvet-dark, including points at the iteration cap.\nvec3 interior = vec3(0.0015, 0.003, 0.009);\nColor = mix(interior, exterior, Field.w) * clamp(Brightness, 0.0, 4.0) * CoreFade;",
+				"Inputs": [
+					{
+						"Name": "Field",
+						"Type": "Vec4"
+					},
+					{
+						"Name": "PixelSize",
+						"Type": "Float"
+					},
+					{
+						"Name": "LoopPhase",
+						"Type": "Float"
+					},
+					{
+						"Name": "PalettePhase",
+						"Type": "Float"
+					},
+					{
+						"Name": "PaletteCycles",
+						"Type": "Float"
+					},
+					{
+						"Name": "ContourDensity",
+						"Type": "Float"
+					},
+					{
+						"Name": "Glow",
+						"Type": "Float"
+					},
+					{
+						"Name": "Brightness",
+						"Type": "Float"
+					},
+					{
+						"Name": "MuBias",
+						"Type": "Float"
+					},
+					{
+						"Name": "CoreFade",
+						"Type": "Float"
+					}
+				],
+				"Name": "Gilded Contours",
+				"Outputs": [
+					{
+						"Name": "Color",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				1100.0,
+				-350.0
+			],
+			"Type": "Output"
+		},
+		{
+			"Id": 21,
+			"Position": [
+				-400.0,
+				250.0
+			],
+			"Settings": {
+				"Code": "// Skip samples outside the fixed spatial tile overlap.\nField = vec4(0.0, 0.0, 0.0, 0.0);\nif (Active <= 0.0) return;\n// Analytic rejection of the main cardioid and period-two bulb.\nfloat cy2 = C.y * C.y;\nfloat cx = C.x - 0.25;\nfloat q = cx * cx + cy2;\nif (q * (q + cx) < 0.25 * cy2 || (C.x + 1.0) * (C.x + 1.0) + cy2 < 0.0625)\n{\n    return;\n}\nvec2 z = vec2(0.0, 0.0);\nvec2 dz = vec2(0.0, 0.0);\nfloat limit = floor(clamp(Iterations, 32.0, 512.0));\nfor (int i = 0; i < 512; ++i)\n{\n    if (float(i) >= limit) break;\n    dz = 2.0 * vec2(z.x * dz.x - z.y * dz.y, z.x * dz.y + z.y * dz.x) + vec2(1.0, 0.0);\n    z = vec2(z.x * z.x - z.y * z.y, 2.0 * z.x * z.y) + C;\n    float r2 = dot(z, z);\n    if (r2 > 256.0)\n    {\n        // Continuous potential removes escape-count banding. dz/dc gives an\n        // exterior distance estimate and a normal for the engraved relief.\n        float mu = float(i) + 1.0 - log2(0.5 * log2(r2));\n        float distance = 0.5 * log(r2) * sqrt(r2) / max(length(dz), 0.000001);\n        vec2 normal = vec2(z.x * dz.x + z.y * dz.y, z.y * dz.x - z.x * dz.y);\n        normal /= max(length(normal), 0.000001);\n        // Rotate the gradient into the view so repeated levels share lighting.\n        float ca = cos(ViewAngle);\n        float sa = sin(ViewAngle);\n        normal = vec2(ca * normal.x + sa * normal.y, -sa * normal.x + ca * normal.y);\n        float light = 0.5 + 0.5 * dot(normal, vec2(-0.6, 0.8));\n        // Features narrower than a pixel receive fractional coverage,\n        // preventing isolated escape samples from flashing at full brightness.\n        float coverage = 0.5 + 0.5 * smoothstep(0.0, max(PixelSize, 0.00000001) * 0.8, distance);\n        Field = vec4(mu, distance, light, coverage);\n        break;\n    }\n}",
+				"Inputs": [
+					{
+						"Name": "C",
+						"Type": "Vec2"
+					},
+					{
+						"Name": "Iterations",
+						"Type": "Float"
+					},
+					{
+						"Name": "Active",
+						"Type": "Float"
+					},
+					{
+						"Name": "PixelSize",
+						"Type": "Float"
+					},
+					{
+						"Name": "ViewAngle",
+						"Type": "Float"
+					}
+				],
+				"Name": "Mandelbrot Distance",
+				"Outputs": [
+					{
+						"Name": "Field",
+						"Type": "Vec4"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 22,
+			"Position": [
+				150.0,
+				400.0
+			],
+			"Settings": {
+				"Code": "float mu = Field.x + MuBias;\nfloat phase = mu * clamp(ContourDensity, 0.005, 0.15) + PalettePhase + LoopPhase * floor(clamp(PaletteCycles, 0.0, 4.0) + 0.5);\n// The distance estimate gives |gradient(mu)| = 1 / (ln(2) * distance).\n// This stays stable through the escape loop and repeated scales.\nfloat footprint = 1.442695 * PixelSize / max(Field.y, PixelSize * 0.01);\nfloat paletteWidth = 6.2831853 * clamp(ContourDensity, 0.005, 0.15) * footprint;\nfloat wave = 0.5 + 0.5 * cos(6.2831853 * phase) * exp2(-0.06 * paletteWidth * paletteWidth);\nvec3 ink = vec3(0.004, 0.012, 0.035);\nvec3 teal = vec3(0.015, 0.46, 0.58);\nvec3 gold = vec3(1.2, 0.48, 0.075);\nvec3 pearl = vec3(1.55, 1.25, 0.72);\nvec3 palette = mix(ink, teal, smoothstep(0.04, 0.5, wave));\npalette = mix(palette, gold, smoothstep(0.5, 0.82, wave));\npalette = mix(palette, pearl, smoothstep(0.86, 1.0, wave));\n// Filter contour bands and relief when their details become subpixel.\nfloat bands = 0.88 + 0.12 * cos(2.4 * mu) * exp2(-footprint * footprint);\nfloat relief = 0.48 + 0.72 * mix(0.5, Field.z, exp2(-0.05 * footprint * footprint));\nfloat edge = exp(-sqrt(max(Field.y, 0.0) / max(PixelSize, 0.00000001)) * 0.7);\nfloat atmosphere = exp(-sqrt(max(Field.y, 0.0) / max(PixelSize, 0.00000001)) * 0.085);\nvec3 exterior = mix(ink * 0.35, palette * bands * relief, atmosphere);\nexterior += vec3(0.05, 0.52, 0.7) * edge * clamp(Glow, 0.0, 3.0);\n// The unescaped set stays velvet-dark, including points at the iteration cap.\nvec3 interior = vec3(0.0015, 0.003, 0.009);\nColor = mix(interior, exterior, Field.w) * clamp(Brightness, 0.0, 4.0) * CoreFade;",
+				"Inputs": [
+					{
+						"Name": "Field",
+						"Type": "Vec4"
+					},
+					{
+						"Name": "PixelSize",
+						"Type": "Float"
+					},
+					{
+						"Name": "LoopPhase",
+						"Type": "Float"
+					},
+					{
+						"Name": "PalettePhase",
+						"Type": "Float"
+					},
+					{
+						"Name": "PaletteCycles",
+						"Type": "Float"
+					},
+					{
+						"Name": "ContourDensity",
+						"Type": "Float"
+					},
+					{
+						"Name": "Glow",
+						"Type": "Float"
+					},
+					{
+						"Name": "Brightness",
+						"Type": "Float"
+					},
+					{
+						"Name": "MuBias",
+						"Type": "Float"
+					},
+					{
+						"Name": "CoreFade",
+						"Type": "Float"
+					}
+				],
+				"Name": "Gilded Contours",
+				"Outputs": [
+					{
+						"Name": "Color",
+						"Type": "Vec3"
+					}
+				]
+			},
+			"Type": "CustomFunction"
+		},
+		{
+			"Id": 18,
+			"Position": [
+				-1350.0,
+				570.0
+			],
+			"Settings": {
+				"Property": "zoomspeed"
+			},
+			"Type": "Property"
+		},
+		{
+			"Id": 23,
+			"Position": [
+				700.0,
+				-350.0
+			],
+			"Type": "Lerp"
+		}
+	],
+	"Properties": [
+		{
+			"Default": [
+				-0.10109636187553406,
+				0.9562864899635315,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "center",
+			"IsColor": false,
+			"Name": "Center",
+			"Type": "Vec2"
+		},
+		{
+			"Default": [
+				64.0,
+				64.0,
+				64.0,
+				64.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "zoom",
+			"IsColor": false,
+			"Name": "Zoom",
+			"Range": [
+				0.25,
+				20000.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				512.0,
+				512.0,
+				512.0,
+				512.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "iterations",
+			"IsColor": false,
+			"Name": "Iterations",
+			"Range": [
+				32.0,
+				512.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3799999952316284,
+				0.3799999952316284,
+				0.3799999952316284,
+				0.3799999952316284
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "phase",
+			"IsColor": false,
+			"Name": "Palette Phase",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "speed",
+			"IsColor": false,
+			"Name": "Palette Cycles",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.03500000014901161,
+				0.03500000014901161,
+				0.03500000014901161,
+				0.03500000014901161
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "density",
+			"IsColor": false,
+			"Name": "Contour Density",
+			"Range": [
+				0.004999999888241291,
+				0.15000000596046448
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.6499999761581421,
+				0.6499999761581421,
+				0.6499999761581421,
+				0.6499999761581421
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "glow",
+			"IsColor": false,
+			"Name": "Glow",
+			"Range": [
+				0.0,
+				3.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "brightness",
+			"IsColor": false,
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				4.0
+			],
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.2199999988079071,
+				0.2199999988079071,
+				0.2199999988079071,
+				0.2199999988079071
+			],
+			"Exposed": true,
+			"HDR": false,
+			"Id": "zoomspeed",
+			"IsColor": false,
+			"Name": "Zoom Speed",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Type": "Float"
+		}
+	],
+	"Settings": {
+		"AlphaClip": false,
+		"Blend": "Alpha",
+		"CastShadows": false,
+		"Fog": false,
+		"Injection": "BeforeTonemap",
+		"NormalSpace": "Tangent",
+		"OffsetSpace": "Object",
+		"ParticleLit": false,
+		"RenderFace": "Front",
+		"Surface": "Opaque",
+		"Target": "PostProcess"
+	},
+	"Version": 1
+}

@@ -1,0 +1,54 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/FishTankWater.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.019999999552965164,
+				0.2199999988079071,
+				0.25,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Water Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				0.6000000238418579,
+				0.6000000238418579,
+				0.6000000238418579,
+				0.6000000238418579
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Glow",
+			"Range": [
+				0.0,
+				10.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

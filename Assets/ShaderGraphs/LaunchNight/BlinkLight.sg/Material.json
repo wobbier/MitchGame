@@ -1,0 +1,106 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/BlinkLight.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				1.0,
+				0.05000000074505806,
+				0.019999999552965164,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				20.0,
+				20.0,
+				20.0,
+				20.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				200.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Rate",
+			"Range": [
+				0.0,
+				10.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.15000000596046448,
+				0.15000000596046448,
+				0.15000000596046448,
+				0.15000000596046448
+			],
+			"Exposed": true,
+			"Id": "p4",
+			"Name": "Duty",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 3,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p5",
+			"Name": "Phase",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 4,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

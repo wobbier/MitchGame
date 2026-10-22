@@ -1,0 +1,106 @@
+{
+ "Version": 1,
+ "Name": "Ceiling Fan",
+ "FrameRate": 30,
+ "DurationFrames": 60,
+ "Tracks": [
+  {
+   "Binding": "Ceiling Fan",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 8,
+     "Value": [
+      0.0,
+      0.92388,
+      0.0,
+      -0.38268
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 15,
+     "Value": [
+      0.0,
+      0.70711,
+      0.0,
+      -0.70711
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 22,
+     "Value": [
+      0.0,
+      0.38268,
+      0.0,
+      -0.92388
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 30,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 38,
+     "Value": [
+      0.0,
+      -0.38268,
+      0.0,
+      -0.92388
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 45,
+     "Value": [
+      0.0,
+      -0.70711,
+      0.0,
+      -0.70711
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 52,
+     "Value": [
+      0.0,
+      -0.92388,
+      0.0,
+      -0.38268
+     ],
+     "Interpolation": "Linear"
+    },
+    {
+     "Frame": 60,
+     "Value": [
+      0.0,
+      -1.0,
+      0.0,
+      -0.0
+     ],
+     "Interpolation": "Linear"
+    }
+   ]
+  }
+ ]
+}

@@ -10,6 +10,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 | `Physics2D.lvl` | Box2D: a 55-box pyramid, a motorised windmill with balls dropping on it, a hinged rope bridge with crates; orthographic camera |
 | `ShaderGraph.lvl` | Shader graphs (`Assets/ShaderGraphs/Examples/`): a dissolving sphere (alpha clip with an emissive edge, also in its shadow), a hologram (unlit additive fresnel and scan lines), a wind-swayed post (vertex offset with matching shadows), triplanar concrete, water from scrolling noise normals, a graph scorch decal, a graph fire particle system and a vignette post pass |
 | `Decals.lvl` | Projected decals: a scorch wrapping a wall corner and a ball (angle fade where surfaces turn away), road arrows on the floor and a ramp, a glossy normal-mapped puddle with an arrow sorted on top, an emissive glyph with bloom, an untextured paint swatch |
+| `SplitDiopter.lvl` | Synty Office Pack doorway shot: a near employee on the left and his boss behind a desk on the right stay sharp at independent focus depths; [setup and comparisons](SplitDiopter.md) |
 
 Scripts live in `Assets/Scripts/Showcase/` (`PlayerController`, `FollowCamera`, `Chaser`, `Spinner`, `Bobber`). The playground's navmesh is baked to `Playground.NavSurface.navmesh` (select NavSurface > Bake, or Navigation.BakeAll).
 

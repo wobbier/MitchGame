@@ -1,0 +1,64 @@
+# Split diopter office regression: controls, undo, serialization, lens toggles and target recreation.
+# ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/SplitDiopter.lvl --editor-exec Assets/Scenes/Showcase/SplitDiopterFlows.edscript
+wait 40
+assert-field Main Camera | PostProcess.DoFSplitDiopter | true
+assert-field Main Camera | Camera.FieldOfView | 28 ~ 0.001
+assert-field Main Camera | PostProcess.DoFFocusDistance | 1.83 ~ 0.001
+assert-field Main Camera | PostProcess.DoFSplitFocusDistance | 8.36 ~ 0.001
+select Main Camera
+set PostProcess.DoFSplitFeather 0.05
+undo
+assert-field Main Camera | PostProcess.DoFSplitFeather | 0.018 ~ 0.001
+redo
+assert-field Main Camera | PostProcess.DoFSplitFeather | 0.05 ~ 0.001
+set PostProcess.DoFSplitFeather 0.018
+set PostProcess.DoFSplitFocusDistance 8.5
+undo
+assert-field Main Camera | PostProcess.DoFSplitFocusDistance | 8.36 ~ 0.001
+save-as .tmp/SplitDiopterRoundTrip.lvl
+load .tmp/SplitDiopterRoundTrip.lvl
+wait 30
+assert-field Main Camera | PostProcess.DoFSplitDiopter | true
+assert-field Main Camera | PostProcess.DoFSplitPosition | 0.47 ~ 0.001
+assert-field Main Camera | PostProcess.DoFSplitFeather | 0.018 ~ 0.001
+assert-field Main Camera | PostProcess.DoFSplitFocusDistance | 8.36 ~ 0.001
+play
+wait 35
+assert-playing true
+screenshot .tmp/SplitDiopterFlows/split.png
+select Main Camera
+set PostProcess.DoFSplitDiopter false
+wait 12
+screenshot .tmp/SplitDiopterFlows/near.png
+set PostProcess.DoFFocusDistance 8.36
+wait 12
+screenshot .tmp/SplitDiopterFlows/far.png
+set PostProcess.DoFFocusDistance 1.83
+set PostProcess.DoFSplitDiopter true
+set PostProcess.DoFDebugCoC true
+wait 12
+screenshot .tmp/SplitDiopterFlows/coc.png
+set PostProcess.DoFDebugCoC false
+set PostProcess.TemporalAA true
+set Camera.Viewport [0,0,0.75,1]
+wait 20
+screenshot .tmp/SplitDiopterFlows/resized.png
+set Camera.Viewport [0,0,1,1]
+wait 12
+set PostProcess.DoFSplitDiopter false
+wait 8
+set PostProcess.DoFSplitDiopter true
+set PostProcess.DoFMaxBlurRadius 0
+wait 8
+set PostProcess.DoFMaxBlurRadius 28
+set Camera.Projection "Orthographic"
+wait 8
+set Camera.Projection "Perspective"
+wait 12
+stop
+wait 12
+assert-playing false
+assert-field Main Camera | PostProcess.DoFSplitDiopter | true
+assert-field Main Camera | PostProcess.DoFFocusDistance | 1.83 ~ 0.001
+assert-field Main Camera | PostProcess.DoFSplitFocusDistance | 8.36 ~ 0.001
+quit

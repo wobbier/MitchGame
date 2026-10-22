@@ -1,0 +1,46 @@
+{
+ "Version": 1,
+ "Name": "Beanbag Breathing",
+ "FrameRate": 30,
+ "DurationFrames": 156,
+ "Tracks": [
+  {
+   "Binding": "Beanbag spine_01",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 66,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 156,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  }
+ ]
+}

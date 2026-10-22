@@ -1,0 +1,122 @@
+{
+ "Version": 1,
+ "Name": "Breathing",
+ "FrameRate": 30,
+ "DurationFrames": 135,
+ "Tracks": [
+  {
+   "Binding": "Sleeper spine_01",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.0,
+      -0.0,
+      -0.25882,
+      0.96593
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 54,
+     "Value": [
+      0.0,
+      -0.0,
+      -0.27983,
+      0.96005
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 135,
+     "Value": [
+      0.0,
+      -0.0,
+      -0.25882,
+      0.96593
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  },
+  {
+   "Binding": "Sleeper spine_02",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      -0.0,
+      0.0,
+      0.20791,
+      0.97815
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 54,
+     "Value": [
+      -0.0,
+      0.0,
+      0.19723,
+      0.98036
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 135,
+     "Value": [
+      -0.0,
+      0.0,
+      0.20791,
+      0.97815
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  },
+  {
+   "Binding": "Sleeper spine_03",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.0,
+      -0.0,
+      -0.10453,
+      0.99452
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 54,
+     "Value": [
+      0.0,
+      -0.0,
+      -0.09367,
+      0.9956
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 135,
+     "Value": [
+      0.0,
+      -0.0,
+      -0.10453,
+      0.99452
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  }
+ ]
+}

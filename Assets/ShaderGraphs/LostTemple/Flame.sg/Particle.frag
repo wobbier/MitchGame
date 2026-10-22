@@ -62,9 +62,9 @@ void main()
 	// Subtract #10
 	float n10_Out = n9_Out - 0.5;
 	// Multiply #11
-	float n11_Out = n10_Out * 0.159999996;
+	vec2 n11_Out = vec2_splat(n10_Out) * vec2(0.159999996, 0.0799999982);
 	// Add #12
-	vec2 n12_Out = sg_ParticleQuadUV + vec2_splat(n11_Out);
+	vec2 n12_Out = sg_ParticleQuadUV + n11_Out;
 	// Sample Texture 2D #14
 	vec4 n14_RGBA = toLinear(texture2D(sgParticleTexture, n12_Out));
 	// Split #15

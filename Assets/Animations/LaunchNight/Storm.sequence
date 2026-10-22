@@ -1,0 +1,598 @@
+{
+ "Version": 1,
+ "Name": "Storm",
+ "FrameRate": 30,
+ "DurationFrames": 690,
+ "Tracks": [
+  {
+   "Binding": "Lightning Flash",
+   "Component": "Light",
+   "Property": "Intensity",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 89,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 90,
+     "Value": [
+      2500.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 92,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 95,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 96,
+     "Value": [
+      1250.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 98,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 100,
+     "Value": [
+      2000.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 104,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 419,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 420,
+     "Value": [
+      1750.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 423,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 427,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 428,
+     "Value": [
+      2500.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 436,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 440,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 441,
+     "Value": [
+      1000.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 443,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 690,
+     "Value": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    }
+   ]
+  },
+  {
+   "Binding": "Camera",
+   "Component": "PostProcess",
+   "Property": "ExposureCompensation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 90,
+     "Value": [
+      1.7,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 92,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 96,
+     "Value": [
+      1.15,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 98,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 100,
+     "Value": [
+      1.48,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 104,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 420,
+     "Value": [
+      1.37,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 423,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 428,
+     "Value": [
+      1.7,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 436,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 441,
+     "Value": [
+      1.04,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 443,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 690,
+     "Value": [
+      0.6,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    }
+   ]
+  },
+  {
+   "Binding": "Bolt 1",
+   "Component": "Transform",
+   "Property": "Scale",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 90,
+     "Value": [
+      31.2,
+      1.0,
+      130.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 92,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 96,
+     "Value": [
+      31.2,
+      1.0,
+      130.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 98,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 100,
+     "Value": [
+      31.2,
+      1.0,
+      130.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 104,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 690,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    }
+   ]
+  },
+  {
+   "Binding": "Bolt 2",
+   "Component": "Transform",
+   "Property": "Scale",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 420,
+     "Value": [
+      36.0,
+      1.0,
+      150.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 423,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 428,
+     "Value": [
+      36.0,
+      1.0,
+      150.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 436,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 441,
+     "Value": [
+      36.0,
+      1.0,
+      150.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 443,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 690,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    }
+   ]
+  },
+  {
+   "Binding": "Bolt 3",
+   "Component": "Transform",
+   "Property": "Scale",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 420,
+     "Value": [
+      26.4,
+      1.0,
+      110.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 423,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 428,
+     "Value": [
+      26.4,
+      1.0,
+      110.0,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 436,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    },
+    {
+     "Frame": 690,
+     "Value": [
+      0.001,
+      0.001,
+      0.001,
+      0.0
+     ],
+     "Interpolation": "Hold"
+    }
+   ]
+  }
+ ]
+}

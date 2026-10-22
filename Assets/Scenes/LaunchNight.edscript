@@ -1,0 +1,134 @@
+# Compile and preview the Launch Night shader graphs, then play the scene: the tour must move the camera.
+# Engine/Tools/Headless.sh .build/Editor_Debug/Havana --scene Assets/Scenes/LaunchNight.lvl --editor-exec Assets/Scenes/LaunchNight.edscript
+wait 30
+assert-exists Main Camera
+assert-exists The Last Developer
+assert-exists Asleep On The Keyboard
+assert-exists Compiling In The Beanbag
+assert-exists Security Guard (Asleep)
+assert-exists The Boss (On The Phone)
+assert-exists Cleaner (Mopping)
+assert-exists BUILD-01
+assert-exists Camera Tour
+sg-open Assets/ShaderGraphs/LaunchNight/CodeScreen.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/CodeScreen.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/Countdown.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/Countdown.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/BuildStatus.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/BuildStatus.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/BlueScreen.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/BlueScreen.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/Screensaver.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/Screensaver.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/Compiling.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/Compiling.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/CCTVServerRoom.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/CCTVServerRoom.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/CCTVLobby.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/CCTVLobby.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/RoadmapSlide.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/RoadmapSlide.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/ArcadeScreen.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/ArcadeScreen.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/ServerLEDs.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/ServerLEDs.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/RainGlass.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/RainGlass.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/CityWindows.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/CityWindows.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/BlinkLight.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/BlinkLight.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/Neon.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/Neon.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/FishTankWater.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/FishTankWater.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/FloodWater.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/FloodWater.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/Whiteboard.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/Whiteboard.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/Lightning.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/Lightning.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/PaperSheet.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/PaperSheet.shadergraph
+sg-open Assets/ShaderGraphs/LaunchNight/NightShift.shadergraph
+sg-assert-compiled
+sg-wait-preview
+sg-assert-preview
+sg-close Assets/ShaderGraphs/LaunchNight/NightShift.shadergraph
+wait 10
+play
+wait 120
+assert-playing 1
+assert-audio Storm Sound | 1
+assert-audio Room Tone | 1
+assert-audio Fire Sound | 1
+assert-audio Fire Alarm | 1
+assert-audio Typing Sound | 1
+assert-audio Snoring | 1
+assert-audio Coffee Sound | 1
+assert-audio Panel Buzz | 1
+assert-field Main Camera | Transform.Position | != [14.2, 2, 19.6]
+stop
+assert-playing 0
+assert-audio Storm Sound | 0
+wait 10

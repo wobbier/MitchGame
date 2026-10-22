@@ -1,0 +1,54 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/CityWindows.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.05999999865889549,
+				0.06499999761581421,
+				0.07500000298023224,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Facade",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				4.0,
+				4.0,
+				4.0,
+				4.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				40.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}

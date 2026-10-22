@@ -24,6 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import LostTempleGraphs  # noqa: E402
+from CameraSequences import push_pull, as_asset, asset_references  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 SCENE = "Assets/Scenes/LostTemple.lvl"
@@ -166,6 +167,7 @@ class Scene:
     def __init__(self):
         self.entities = []
         self.names = {}
+        self.assets = {}
 
     def entity(self, name, components, parent=None):
         count = self.names.get(name, 0)
@@ -277,8 +279,17 @@ def build_camera(scene):
             "Graphs": [GRAPHS + "LensDirt.shadergraph"]}
     camera = {"Type": "Camera", "ClearType": "Procedural", "ClearColor": [0.3, 0.35, 0.45], "Far": 900.0, "Near": 0.1,
               "FieldOfView": 52.0, "IsCurrent": True, "Projection": "Perspective", "OrthographicSize": 5.0, "ProceduralSky": sky}
-    scene.entity("Main Camera", [transform(HERO_CAMERA, yaw, pitch), camera, post,
-                                 script("LostTempleCamera")])
+    camera_entity = scene.entity("Main Camera", [transform(HERO_CAMERA, yaw, pitch), camera, post,
+                                                script("LostTempleCamera")])
+    direction = [b - a for a, b in zip(HERO_CAMERA, HERO_TARGET)]
+    length = math.sqrt(sum(v * v for v in direction))
+    sequence = push_pull(camera_entity["GUID"], HERO_CAMERA, quat(yaw, pitch),
+                                                [v / length for v in direction], subject_distance=length,
+                                                distance=4.5, autoplay=False)
+    asset_path = "Assets/Animations/LostTempleDollyZoom.sequence"
+    asset, player = as_asset(sequence, asset_path, {camera_entity["GUID"]: "Camera"})
+    scene.assets[asset_path] = asset
+    camera_entity["Components"].append(player)
 
 
 def build_sun(scene):
@@ -801,8 +812,12 @@ def build(write=True):
     build_camp(scene)
     build_explorers(scene)
     build_atmosphere(scene)
-    document = {"Version": 2, "Cores": [], "Entities": scene.entities}
+    document = {"Version": 2, "Cores": [], "Entities": scene.entities,
+                "AssetReferences": asset_references(scene.assets, ROOT)}
     if write:
+        for asset_path, asset in scene.assets.items():
+            (ROOT / asset_path).parent.mkdir(parents=True, exist_ok=True)
+            (ROOT / asset_path).write_text(json.dumps(asset, indent=4) + "\n")
         (ROOT / SCENE).write_text(json.dumps(document, indent=1) + "\n")
     return document
 

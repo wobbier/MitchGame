@@ -1,0 +1,198 @@
+{
+ "Version": 1,
+ "Name": "Mopping",
+ "FrameRate": 30,
+ "DurationFrames": 72,
+ "Tracks": [
+  {
+   "Binding": "Cleaner spine_02",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      -0.05232,
+      0.00146,
+      -0.0,
+      0.99863
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 36,
+     "Value": [
+      0.05232,
+      -0.00146,
+      0.0,
+      0.99863
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 72,
+     "Value": [
+      -0.05232,
+      0.00146,
+      -0.0,
+      0.99863
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  },
+  {
+   "Binding": "Cleaner UpperArm_R",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.00312,
+      0.29652,
+      -0.43945,
+      0.84791
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 36,
+     "Value": [
+      0.00436,
+      0.4915,
+      -0.53594,
+      0.68642
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 72,
+     "Value": [
+      0.00312,
+      0.29652,
+      -0.43945,
+      0.84791
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  },
+  {
+   "Binding": "Cleaner lowerarm_r",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.00032,
+      0.57798,
+      -0.23037,
+      0.78286
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 36,
+     "Value": [
+      0.00033,
+      0.38908,
+      -0.2365,
+      0.89033
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 72,
+     "Value": [
+      0.00032,
+      0.57798,
+      -0.23037,
+      0.78286
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  },
+  {
+   "Binding": "Cleaner UpperArm_L",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.00479,
+      0.6248,
+      -0.50113,
+      0.59871
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 36,
+     "Value": [
+      0.00432,
+      0.57423,
+      -0.44081,
+      0.68988
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 72,
+     "Value": [
+      0.00479,
+      0.6248,
+      -0.50113,
+      0.59871
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  },
+  {
+   "Binding": "Cleaner lowerarm_l",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      7e-05,
+      -0.0124,
+      -0.05195,
+      0.99857
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 36,
+     "Value": [
+      7e-05,
+      -0.01042,
+      -0.04674,
+      0.99885
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 72,
+     "Value": [
+      7e-05,
+      -0.0124,
+      -0.05195,
+      0.99857
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  }
+ ]
+}

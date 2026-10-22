@@ -1,0 +1,67 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/FloodWater.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.014999999664723873,
+				0.01600000075995922,
+				0.017999999225139618,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Water Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				1.0,
+				1.0,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Ripples",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355,
+				0.3499999940395355
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Edge Noise",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Decal",
+			"Decal"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Decal",
+	"Textures": [],
+	"Version": 1
+}

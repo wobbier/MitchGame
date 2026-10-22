@@ -63,6 +63,18 @@ def main():
         "sharp_hdr_dark": {"DepthOfField": False, "Width": 1600, "Height": 900, "DarkHighlights": True},
         "far_bright_backdrop": {"DoFFocusDistance": 18.0, "DarkHighlights": True, "BrightBackdrop": True},
     }
+    split = {"DoFSplitDiopter": True, "DoFFocusDistance": 3.5, "DoFSplitFocusDistance": 18.0,
+             "DoFSplitPosition": 0.5, "DoFSplitFeather": 0.02}
+    variants.update({
+        "split": split,
+        "split_hard": dict(split, DoFSplitFeather=0),
+        "split_left_edge": dict(split, DoFSplitPosition=0),
+        "split_right_edge": dict(split, DoFSplitPosition=1),
+        "split_equal": dict(split, DoFSplitFocusDistance=3.5),
+        "split_feather": dict(split, DoFSplitFeather=0.25),
+        "split_taa": dict(split, TemporalAA=True),
+        "split_odd": dict(split, Width=961, Height=541),
+    })
     images = {}
     for name, changes in variants.items():
         image_path = output / f"{name}.png"
@@ -126,6 +138,29 @@ def main():
     check(images["ortho"] == images["ortho_sharp"], "orthographic bypass exactly matches disabled DoF")
     check(contrast(images["taa"], 0.5) > contrast(images["sharp"], 0.5) * 0.75, "TAA retains sharp focused detail")
     check(contrast(images["odd"], 0.5) > contrast(images["sharp"], 0.5) * 0.75, "odd resolution retains sharp focused detail")
+
+    def max_error(a, b, left=0.0, right=1.0):
+        width, height, rows = a
+        return max(abs(rows[y][x] - b[2][y][x]) for y in range(height)
+                   for x in range(int(left * width) * 3, int(right * width) * 3))
+
+    for name in ("split", "split_hard", "split_feather"):
+        check(max_error(images[name], images["near"], 0, 0.35) <= 1,
+              f"{name} left side matches independently rendered near lens")
+        check(max_error(images[name], images["far"], 0.65, 1) <= 1,
+              f"{name} right side matches independently rendered far lens")
+    check(max_error(images["split_hard"], images["near"], 0, 0.5) <= 1
+          and max_error(images["split_hard"], images["far"], 0.5, 1) <= 1,
+          "zero feather is a hard split without cross-lens blur contamination")
+    for name, reference in (("split_left_edge", "far"), ("split_right_edge", "near"), ("split_equal", "near")):
+        check(max_error(images[name], images[reference]) <= 1, f"{name} matches the corresponding ordinary lens")
+    blurred_middle = max(contrast(images["near"], 0.5), contrast(images["far"], 0.5))
+    check(contrast(images["split_feather"], 0.5) < blurred_middle * 1.1,
+          "feather blends blurred images without a false focused strip from signed CoC cancellation")
+    for name in ("split", "split_taa", "split_odd"):
+        for label, x in (("near", 0.172), ("far", 0.775)):
+            check(contrast(images[name], x) > contrast(images["sharp"], x) * 0.75,
+                  f"{name} retains the {label} subject's focused detail")
 
     def highlight_ghosts(focused, dark, sharp, sharp_dark):
         width, height, rows = focused

@@ -1,0 +1,19 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/PaperSheet.shadergraph",
+	"Parameters": [],
+	"ParticleLit": false,
+	"Programs": {
+		"Forward": [
+			"@Assets/Shaders/Particle",
+			"Particle"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Transparent",
+	"Target": "Particle",
+	"Textures": [],
+	"Version": 1
+}

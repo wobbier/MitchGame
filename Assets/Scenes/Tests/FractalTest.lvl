@@ -1,0 +1,133 @@
+{
+    "Cores": [],
+    "Entities": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.0015,
+                        0.003,
+                        0.009
+                    ],
+                    "ClearType": "Color",
+                    "Far": 100.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "MatchMainCamera": false,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "ProceduralSky": {
+                        "CloudAltitude": 1500.0,
+                        "CloudCoverage": 0.4000000059604645,
+                        "CloudDensity": 1.0,
+                        "CloudThickness": 2500.0,
+                        "Latitude": -6.0,
+                        "Month": 5,
+                        "MoonAscendingNode": 125.08000183105469,
+                        "MoonBrightness": 1.0,
+                        "MoonOrbitInclination": 5.144999980926514,
+                        "MoonPhase": 0.4000000059604645,
+                        "MoonSize": 3.0,
+                        "StarBrightness": 1.0,
+                        "SunSize": 1.5,
+                        "Time": 15.0,
+                        "TimeScale": 0.0,
+                        "Turbidity": 1.899999976158142,
+                        "WindDirection": 60.0,
+                        "WindSpeed": 8.0
+                    },
+                    "Projection": "Perspective",
+                    "Type": "Camera",
+                    "Viewport": [
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Zoom": 45.0
+                },
+                {
+                    "AOIntensity": 1.0,
+                    "AORadius": 0.5,
+                    "AmbientOcclusion": false,
+                    "AutoExposure": false,
+                    "AutoExposureMaxEV": 8.0,
+                    "AutoExposureMinEV": -4.0,
+                    "AutoExposureSpeed": 2.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.12,
+                    "BloomRadius": 0.8,
+                    "BloomThreshold": 0.9,
+                    "Contrast": 1.04,
+                    "DepthOfField": false,
+                    "DoFAperture": 2.799999952316284,
+                    "DoFDebugCoC": false,
+                    "DoFFocusDistance": 8.0,
+                    "DoFMaxBlurRadius": 16.0,
+                    "DoFSensorHeight": 24.0,
+                    "DoFSplitDiopter": false,
+                    "DoFSplitFeather": 0.014999999664723873,
+                    "DoFSplitFocusDistance": 18.0,
+                    "DoFSplitPosition": 0.5,
+                    "ExposureCompensation": 0.0,
+                    "FXAA": true,
+                    "Fog": false,
+                    "FogAnisotropy": 0.6000000238418579,
+                    "FogColor": [
+                        0.550000011920929,
+                        0.6200000047683716,
+                        0.7200000286102295
+                    ],
+                    "FogDensity": 0.019999999552965164,
+                    "FogHeight": 0.0,
+                    "FogHeightFalloff": 0.15000000596046448,
+                    "FogMaxOpacity": 1.0,
+                    "FogStartDistance": 0.0,
+                    "FogSunIntensity": 1.0,
+                    "Gain": 1.0,
+                    "Gamma": 1.0,
+                    "GraphParams": {},
+                    "Graphs": [
+                        "Assets/ShaderGraphs/Mandelbrot.shadergraph"
+                    ],
+                    "Lift": 0.0,
+                    "Saturation": 1.06,
+                    "Temperature": 0.0,
+                    "TemporalAA": false,
+                    "TemporalSharpness": 0.25,
+                    "Tint": 0.0,
+                    "Tonemapper": "ACES",
+                    "Type": "PostProcess",
+                    "VignetteIntensity": 0.18,
+                    "VignetteSmoothness": 0.75,
+                    "VolumetricDistance": 60.0,
+                    "VolumetricFog": false,
+                    "VolumetricSteps": 24
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "e7f051f45eeebb0d",
+            "Name": "Mandelbrot Camera"
+        }
+    ],
+    "Version": 2
+}

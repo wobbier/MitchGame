@@ -1,0 +1,56 @@
+{
+ "Version": 1,
+ "Name": "Boss On The Phone",
+ "FrameRate": 30,
+ "DurationFrames": 270,
+ "Tracks": [
+  {
+   "Binding": "Boss spine_02",
+   "Component": "Transform",
+   "Property": "Rotation",
+   "Enabled": true,
+   "Keys": [
+    {
+     "Frame": 0,
+     "Value": [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 105,
+     "Value": [
+      0.12056,
+      0.0178,
+      0.0,
+      0.99255
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 180,
+     "Value": [
+      -0.06901,
+      -0.01019,
+      -0.0,
+      0.99757
+     ],
+     "Interpolation": "SmoothStep"
+    },
+    {
+     "Frame": 270,
+     "Value": [
+      0.0,
+      -0.0,
+      0.0,
+      1.0
+     ],
+     "Interpolation": "SmoothStep"
+    }
+   ]
+  }
+ ]
+}

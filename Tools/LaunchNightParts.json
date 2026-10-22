@@ -1,0 +1,1987 @@
+{
+ "SM_Bld_Ceiling_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Ceiling_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Ceiling_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Ceiling_Panel_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Ceiling_Panel_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Ceiling_Panel_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Ceiling_Panel_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Ceiling_Panel_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Ceiling_Panel_02#0/@#0"
+  ]
+ },
+ "SM_Bld_Ceiling_Panel_Light_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Ceiling_Panel_Light_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Ceiling_Panel_Light_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Ceiling_Panel_Light_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Ceiling_Panel_Light_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Ceiling_Panel_Light_02#0/@#0"
+  ]
+ },
+ "SM_Bld_Ceiling_Aircon_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Ceiling_Aircon_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Ceiling_Aircon_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Door_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Door_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Door_01#0/@#0",
+   "RootNode#0/SM_Bld_Door_01#0/SM_Bld_Door_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Door_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Door_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Door_02#0/@#0"
+  ]
+ },
+ "SM_Bld_Door_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Door_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Door_03#0/@#0"
+  ]
+ },
+ "SM_Bld_Elevator_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Elevator_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Elevator_01#0/@#0",
+   "RootNode#0/SM_Bld_Elevator_01#0/SM_Bld_Elevator_01_Door_L_$AssimpFbx$_RotationPivot#0/SM_Bld_Elevator_01_Door_L_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Elevator_01_Door_L_$AssimpFbx$_ScalingPivot#0/SM_Bld_Elevator_01_Door_L_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Elevator_01_Door_L#0/@#0",
+   "RootNode#0/SM_Bld_Elevator_01#0/SM_Bld_Elevator_01_Door_R_$AssimpFbx$_RotationPivot#0/SM_Bld_Elevator_01_Door_R_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Elevator_01_Door_R_$AssimpFbx$_ScalingPivot#0/SM_Bld_Elevator_01_Door_R_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Elevator_01_Door_R#0/@#0"
+  ]
+ },
+ "SM_Bld_Floor_Carpet_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Floor_Concrete_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Concrete_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Floor_Concrete_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Floor_Panel_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Panel_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Floor_Panel_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Floor_Tiles_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Tiles_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Floor_Tiles_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Floor_Wood_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Wood_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Floor_Wood_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Pillar_Interior_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Pillar_Interior_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Pillar_Interior_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Pillar_Interior_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Pillar_Interior_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Pillar_Interior_02#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Baseboard_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Baseboard_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Baseboard_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Baseboard_Door_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Baseboard_Door_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Baseboard_Door_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Baseboard_Elevator_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Baseboard_Elevator_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Baseboard_Elevator_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Baseboard_Elevator_01#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_L_$AssimpFbx$_RotationPivot#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_L_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_L_$AssimpFbx$_ScalingPivot#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_L_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_L#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Baseboard_Elevator_01#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_R_$AssimpFbx$_RotationPivot#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_R_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_R_$AssimpFbx$_ScalingPivot#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_R_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Wall_Baseboard_Elevator_01_Door_R#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Baseboard_Window_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Baseboard_Window_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Baseboard_Window_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Baseboard_Window_01#0/SM_Bld_Wall_Baseboard_Window_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Blank_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Blank_Door_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_Door_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Blank_Door_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Blank_Elevator_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_Elevator_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Blank_Elevator_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Blank_Elevator_01#0/SM_Bld_Wall_Blank_Elevator_01_Door_L_$AssimpFbx$_RotationPivot#0/SM_Bld_Wall_Blank_Elevator_01_Door_L_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Wall_Blank_Elevator_01_Door_L_$AssimpFbx$_ScalingPivot#0/SM_Bld_Wall_Blank_Elevator_01_Door_L_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Wall_Blank_Elevator_01_Door_L#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Blank_Elevator_01#0/SM_Bld_Wall_Blank_Elevator_01_Door_R_$AssimpFbx$_RotationPivot#0/SM_Bld_Wall_Blank_Elevator_01_Door_R_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Wall_Blank_Elevator_01_Door_R_$AssimpFbx$_ScalingPivot#0/SM_Bld_Wall_Blank_Elevator_01_Door_R_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Wall_Blank_Elevator_01_Door_R#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Blank_Window_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_Window_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Blank_Window_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Blank_Window_01#0/SM_Bld_Wall_Blank_Window_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Brick_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Brick_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Brick_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Glass_01#0/SM_Bld_Wall_Glass_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Door_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Door_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Door_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Glass_Door_01#0/SM_Bld_Glass_Door_01_$AssimpFbx$_RotationPivot#0/SM_Bld_Glass_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Glass_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Bld_Glass_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Glass_Door_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Glass_Door_01#0/SM_Bld_Glass_Door_01_$AssimpFbx$_RotationPivot#0/SM_Bld_Glass_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Glass_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Bld_Glass_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Glass_Door_01#0/SM_Bld_Glass_Door_01_Glass_$AssimpFbx$_RotationPivot#0/SM_Bld_Glass_Door_01_Glass_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Glass_Door_01_Glass_$AssimpFbx$_ScalingPivot#0/SM_Bld_Glass_Door_01_Glass_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Glass_Door_01_Glass#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Glass_Door_01#0/SM_Bld_Wall_Glass_Door_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Pillar_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Pillar_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Pillar_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Window_Blinds_Down_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Window_Blinds_Down_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Window_Blinds_Down_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Window_Blinds_Closed_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Window_Blinds_Closed_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Window_Blinds_Closed_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Window_Blinds_Open_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Window_Blinds_Open_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Window_Blinds_Open_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Large_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Large_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Large_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Glass_Large_01#0/SM_Bld_Wall_Glass_Large_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Glass_Large_Door_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Glass_Large_Door_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Glass_Large_Door_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Glass_Large_Door_01#0/SM_Bld_Wall_Glass_Large_Door_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Trim_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Trim_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Trim_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Trim_Door_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Trim_Door_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Trim_Door_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Trim_Elevator_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Trim_Elevator_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Trim_Elevator_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Trim_Elevator_01#0/SM_Bld_Wall_Trim_Elevator_01_Door_L_$AssimpFbx$_RotationPivot#0/SM_Bld_Wall_Trim_Elevator_01_Door_L_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Wall_Trim_Elevator_01_Door_L_$AssimpFbx$_ScalingPivot#0/SM_Bld_Wall_Trim_Elevator_01_Door_L_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Wall_Trim_Elevator_01_Door_L#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Trim_Elevator_01#0/SM_Bld_Wall_Trim_Elevator_01_Door_R_$AssimpFbx$_RotationPivot#0/SM_Bld_Wall_Trim_Elevator_01_Door_R_$AssimpFbx$_RotationPivotInverse#0/SM_Bld_Wall_Trim_Elevator_01_Door_R_$AssimpFbx$_ScalingPivot#0/SM_Bld_Wall_Trim_Elevator_01_Door_R_$AssimpFbx$_ScalingPivotInverse#0/SM_Bld_Wall_Trim_Elevator_01_Door_R#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Trim_Window_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Trim_Window_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Trim_Window_01#0/@#0",
+   "RootNode#0/SM_Bld_Wall_Trim_Window_01#0/SM_Bld_Wall_Trim_Window_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Window_Blinds_Closed_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Window_Blinds_Closed_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Window_Blinds_Closed_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Window_Blinds_Down_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Window_Blinds_Down_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Window_Blinds_Down_01#0/@#0"
+  ]
+ },
+ "SM_Bld_Wall_Window_Blinds_Open_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Window_Blinds_Open_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_Wall_Window_Blinds_Open_01#0/@#0"
+  ]
+ },
+ "SM_Bld_FeatureWall_Wood_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_FeatureWall_Wood_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Bld_FeatureWall_Wood_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Air_Horn_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Air_Horn_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Air_Horn_01#0/@#0"
+  ]
+ },
+ "SM_Prop_AirVent_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_AirVent_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_AirVent_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Alcohol_Bottle_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Alcohol_Bottle_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Alcohol_Bottle_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Alcohol_Glass_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Alcohol_Glass_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Alcohol_Glass_01#0/@#0"
+  ]
+ },
+ "SM_Prop_ArcadeMachine_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_ArcadeMachine_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_ArcadeMachine_01#0/@#0",
+   "RootNode#0/SM_Prop_ArcadeMachine_01#0/@#1",
+   "RootNode#0/SM_Prop_ArcadeMachine_01#0/SM_Prop_ArcadeMachine_01_Stick_01_$AssimpFbx$_RotationPivot#0/SM_Prop_ArcadeMachine_01_Stick_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_ArcadeMachine_01_Stick_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_ArcadeMachine_01_Stick_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_ArcadeMachine_01_Stick_01#0/@#0",
+   "RootNode#0/SM_Prop_ArcadeMachine_01#0/SM_Prop_ArcadeMachine_01_Stick_02_$AssimpFbx$_RotationPivot#0/SM_Prop_ArcadeMachine_01_Stick_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_ArcadeMachine_01_Stick_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_ArcadeMachine_01_Stick_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_ArcadeMachine_01_Stick_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Balloon_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Balloon_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Balloon_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Balloon_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Balloon_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Balloon_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Bin_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bin_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bin_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Bin_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bin_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bin_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Bin_Rubbish_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bin_Rubbish_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bin_Rubbish_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Blackboard_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Blackboard_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Blackboard_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Book_Group_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Book_Group_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Book_Group_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Book_Group_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Book_Group_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Book_Group_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Book_Group_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Book_Group_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Book_Group_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Book_Magazine_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Book_Magazine_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Book_Magazine_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Bottle_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bottle_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bottle_01#0/@#0",
+   "RootNode#0/SM_Prop_Bottle_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Box_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Box_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Box_01#0/@#0",
+   "RootNode#0/SM_Prop_Box_01#0/SM_Prop_Box_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Briefcase_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Briefcase_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Briefcase_01#0/@#0",
+   "RootNode#0/SM_Prop_Briefcase_01#0/SM_Prop_Briefcase_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Broom_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Broom_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Broom_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Bucket_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bucket_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bucket_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Bunting_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bunting_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bunting_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Bunting_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Bunting_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Bunting_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Cabinets_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cabinets_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cabinets_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cabinets_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cabinets_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cabinets_02#0/@#0"
+  ]
+ },
+ "SM_Prop_CableTray_01_Long": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CableTray_01_Long.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CableTray_01_Long#0/@#0"
+  ]
+ },
+ "SM_Prop_CableTray_01_Short": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CableTray_01_Short.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CableTray_01_Short#0/@#0"
+  ]
+ },
+ "SM_Prop_CableTray_01_Cable_End_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CableTray_01_Cable_End_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CableTray_01_Cable_End_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cake_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cake_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cake_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Calculator_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Calculator_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Calculator_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Calender_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Calender_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Calender_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Camera_Tripod_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Camera_Tripod_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Camera_Tripod_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Can_Soda_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Can_Soda_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Can_Soda_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CardboardBox_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CardboardBox_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CardboardBox_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CardboardBox_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CardboardBox_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CardboardBox_02#0/@#0"
+  ]
+ },
+ "SM_Prop_CardboardBox_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CardboardBox_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CardboardBox_03#0/@#0"
+  ]
+ },
+ "SM_Prop_CardboardBox_Stack_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CardboardBox_Stack_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CardboardBox_Stack_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cart_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cart_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cart_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CeilingFan_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CeilingFan_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CeilingFan_01#0/@#0",
+   "RootNode#0/SM_Prop_CeilingFan_01#0/SM_Prop_CeilingFan_01_Blades_01_$AssimpFbx$_RotationPivot#0/SM_Prop_CeilingFan_01_Blades_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_CeilingFan_01_Blades_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_CeilingFan_01_Blades_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_CeilingFan_01_Blades_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cellphone_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cellphone_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cellphone_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Certificate_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Certificate_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Certificate_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_04": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_04.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_04#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_05": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_05.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_05#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_06": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_06.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_06#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_08": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_08.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_08#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_09": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_09.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_09#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_BeanBag_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_BeanBag_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_BeanBag_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_BeanBag_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_BeanBag_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_BeanBag_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Chair_BeanBag_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_BeanBag_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Chair_BeanBag_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Clipboard_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Clipboard_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Clipboard_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Clock_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Clock_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Clock_01#0/@#0",
+   "RootNode#0/SM_Prop_Clock_01#0/SM_Prop_Clock_01_Hand_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Clock_01_Hand_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Clock_01_Hand_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Clock_01_Hand_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Clock_01_Hand_01#0/@#0",
+   "RootNode#0/SM_Prop_Clock_01#0/SM_Prop_Clock_01_Hand_02_$AssimpFbx$_RotationPivot#0/SM_Prop_Clock_01_Hand_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Clock_01_Hand_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_Clock_01_Hand_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Clock_01_Hand_02#0/@#0"
+  ]
+ },
+ "SM_Prop_CoatRack_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CoatRack_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CoatRack_01#0/@#0",
+   "RootNode#0/SM_Prop_CoatRack_01#0/SM_Prop_CoatRack_Clothes_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CoffeeMachine_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CoffeeMachine_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CoffeeMachine_01#0/@#0",
+   "RootNode#0/SM_Prop_CoffeeMachine_01#0/SM_Prop_CoffeeMachine_01_Handle_01_$AssimpFbx$_RotationPivot#0/SM_Prop_CoffeeMachine_01_Handle_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_CoffeeMachine_01_Handle_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_CoffeeMachine_01_Handle_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_CoffeeMachine_01_Handle_01#0/@#0",
+   "RootNode#0/SM_Prop_CoffeeMachine_01#0/SM_Prop_CoffeeMachine_01_Handle_02_$AssimpFbx$_RotationPivot#0/SM_Prop_CoffeeMachine_01_Handle_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_CoffeeMachine_01_Handle_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_CoffeeMachine_01_Handle_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_CoffeeMachine_01_Handle_02#0/@#0"
+  ]
+ },
+ "SM_Prop_CoffeeMachine_Dripper_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CoffeeMachine_Dripper_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CoffeeMachine_Dripper_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CoffeeMachine_Dripper_01_Pot_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CoffeeMachine_Dripper_01_Pot_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CoffeeMachine_Dripper_01_Pot_01#0/@#0",
+   "RootNode#0/SM_Prop_CoffeeMachine_Dripper_01_Pot_01#0/SM_Prop_CoffeeMachine_Dripper_01_Glass#0/@#0",
+   "RootNode#0/SM_Prop_CoffeeMachine_Dripper_01_Pot_01#0/SM_Prop_CoffeeMachine_Dripper_01_Lid_$AssimpFbx$_RotationPivot#0/SM_Prop_CoffeeMachine_Dripper_01_Lid_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_CoffeeMachine_Dripper_01_Lid_$AssimpFbx$_ScalingPivot#0/SM_Prop_CoffeeMachine_Dripper_01_Lid_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_CoffeeMachine_Dripper_01_Lid#0/@#0"
+  ]
+ },
+ "SM_Prop_CoffeeMachine_Small_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CoffeeMachine_Small_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CoffeeMachine_Small_01#0/@#0",
+   "RootNode#0/SM_Prop_CoffeeMachine_Small_01#0/SM_Prop_CoffeeMachine_Small_01_Handle_01_$AssimpFbx$_RotationPivot#0/SM_Prop_CoffeeMachine_Small_01_Handle_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_CoffeeMachine_Small_01_Handle_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_CoffeeMachine_Small_01_Handle_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_CoffeeMachine_Small_01_Handle_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CoffeeTable_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CoffeeTable_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CoffeeTable_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Computer_Keyboard_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Keyboard_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Keyboard_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Computer_Keyboard_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Keyboard_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Keyboard_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Computer_Monitor_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Monitor_01#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Monitor_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Computer_Monitor_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Monitor_02#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Monitor_02#0/@#1"
+  ]
+ },
+ "SM_Prop_Computer_Monitor_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Monitor_03#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Monitor_03#0/@#1"
+  ]
+ },
+ "SM_Prop_Computer_Monitor_Curved_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_Curved_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Monitor_Curved_01#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Monitor_Curved_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Computer_Monitor_Double_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_Double_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Monitor_Double_01#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Monitor_Double_01#0/@#1",
+   "RootNode#0/SM_Prop_Computer_Monitor_Double_01#0/@#2"
+  ]
+ },
+ "SM_Prop_Computer_Monitor_Triple_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_Triple_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Monitor_Triple_01#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Monitor_Triple_01#0/@#1",
+   "RootNode#0/SM_Prop_Computer_Monitor_Triple_01#0/@#2",
+   "RootNode#0/SM_Prop_Computer_Monitor_Triple_01#0/@#3"
+  ]
+ },
+ "SM_Prop_Computer_Mouse_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Mouse_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Mouse_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Computer_Mousepad_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Mousepad_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Mousepad_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Computer_Setup_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Setup_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Setup_01#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Setup_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Computer_Tower_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Tower_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Tower_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Computer_Tower_Modern_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Tower_Modern_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Computer_Tower_Modern_01#0/@#0",
+   "RootNode#0/SM_Prop_Computer_Tower_Modern_01#0/SM_Prop_Computer_Tower_Modern_Glass_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Computer_Tower_Modern_Glass_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Computer_Tower_Modern_Glass_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Computer_Tower_Modern_Glass_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Computer_Tower_Modern_Glass_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Controller_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Controller_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Controller_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Console_PlayBox_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Console_PlayBox_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Console_PlayBox_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cord_Pile_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cord_Pile_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cord_Pile_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cord_Desk_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cord_Desk_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cord_Desk_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CorkBoard_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CorkBoard_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CorkBoard_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Couch_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Couch_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Couch_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Couch_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Couch_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Couch_03#0/@#0",
+   "RootNode#0/SM_Prop_Couch_03#0/SM_Prop_Couch_Pillows_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Couch_Pillows_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Couch_Pillows_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Couch_Pillows_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Couch_Pillows_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CubicalWall_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CubicalWall_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CubicalWall_01#0/@#0"
+  ]
+ },
+ "SM_Prop_CubicalWall_01_Half": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CubicalWall_01_Half.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CubicalWall_01_Half#0/@#0"
+  ]
+ },
+ "SM_Prop_CubicalWall_Pillar_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_CubicalWall_Pillar_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_CubicalWall_Pillar_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_Boss_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_Boss_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_Boss_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_Coffee_Disposable_Closed_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_Coffee_Disposable_Closed_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_Coffee_Disposable_Closed_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_Coffee_Disposable_Open_Full_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_Coffee_Disposable_Open_Full_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_Coffee_Disposable_Open_Full_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_Paper_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_Paper_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_Paper_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_Styrofoam_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_Styrofoam_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_Styrofoam_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Cup_Pens_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_Pens_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Cup_Pens_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Desk_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desk_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Desk_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desk_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Desk_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desk_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Desk_04": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_04.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desk_04#0/@#0"
+  ]
+ },
+ "SM_Prop_Desk_05": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_05.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desk_05#0/@#0"
+  ]
+ },
+ "SM_Prop_Desk_06": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_06.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desk_06#0/@#0"
+  ]
+ },
+ "SM_Prop_Desklamp_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desklamp_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desklamp_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Desklamp_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desklamp_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Desklamp_02#0/@#0"
+  ]
+ },
+ "SM_Prop_DeskLamp_05": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_DeskLamp_05.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_DeskLamp_05#0/@#0",
+   "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/@#0",
+   "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02#0/@#0",
+   "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Lamp_01#0/@#0"
+  ]
+ },
+ "SM_Prop_DeskLamp_06": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_DeskLamp_06.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_DeskLamp_06#0/@#0"
+  ]
+ },
+ "SM_Prop_DeskToy_NewtownsCradle_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_DeskToy_NewtownsCradle_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_DeskToy_NewtownsCradle_01#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_NewtownsCradle_01#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_01#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_NewtownsCradle_01#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_02#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_NewtownsCradle_01#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_03_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_03_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_03_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_03_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_03#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_NewtownsCradle_01#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_04_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_04_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_04_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_04_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_04#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_NewtownsCradle_01#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_05_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_05_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_05_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_05_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_NewtownsCradle_01_Ball_05#0/@#0"
+  ]
+ },
+ "SM_Prop_DeskToy_Orbiter_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_DeskToy_Orbiter_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_DeskToy_Orbiter_01#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_Orbiter_01#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_Orbiter_01_Piece_01#0/@#0",
+   "RootNode#0/SM_Prop_DeskToy_Orbiter_01#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_Orbiter_01_Piece_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_Orbiter_01_Piece_01#0/SM_Prop_DeskToy_Orbiter_01_Piece_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskToy_Orbiter_01_Piece_02_$AssimpFbx$_Rotation#0/SM_Prop_DeskToy_Orbiter_01_Piece_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskToy_Orbiter_01_Piece_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskToy_Orbiter_01_Piece_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskToy_Orbiter_01_Piece_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Dishes_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Dishes_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Dishes_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Dishes_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Dishes_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Dishes_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Divider_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Divider_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Divider_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Divider_Half_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Divider_Half_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Divider_Half_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Donut_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Donut_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Donut_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Donut_Box_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Donut_Box_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Donut_Box_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Donut_Choc_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Donut_Choc_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Donut_Choc_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Donut_Pink_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Donut_Pink_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Donut_Pink_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Emergency_Axe_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Emergency_Axe_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Emergency_Axe_01#0/@#0"
+  ]
+ },
+ "SM_Prop_EnergyDrink_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_EnergyDrink_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_EnergyDrink_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fan_Desk_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fan_Desk_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fan_Desk_01#0/@#0",
+   "RootNode#0/SM_Prop_Fan_Desk_01#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_RotationPivot#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fan_Desk_01_Top#0/@#0",
+   "RootNode#0/SM_Prop_Fan_Desk_01#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_RotationPivot#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fan_Desk_01_Top_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fan_Desk_01_Top#0/SM_Prop_Fan_Desk_01_Blades_$AssimpFbx$_RotationPivot#0/SM_Prop_Fan_Desk_01_Blades_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fan_Desk_01_Blades_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fan_Desk_01_Blades_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fan_Desk_01_Blades#0/@#0"
+  ]
+ },
+ "SM_Prop_Fan_Pedistal_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fan_Pedistal_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fan_Pedistal_01#0/@#0",
+   "RootNode#0/SM_Prop_Fan_Pedistal_01#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_RotationPivot#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_ScalingPivot#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top#0/@#0",
+   "RootNode#0/SM_Prop_Fan_Pedistal_01#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_RotationPivot#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_ScalingPivot#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_SM_Prop_Fan_Pedistal_01_Top#0/SM_Prop_Fan_Pedistal_01_Blades_$AssimpFbx$_RotationPivot#0/SM_Prop_Fan_Pedistal_01_Blades_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fan_Pedistal_01_Blades_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fan_Pedistal_01_Blades_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fan_Pedistal_01_Blades#0/@#0"
+  ]
+ },
+ "SM_Prop_FaxMachine_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_FaxMachine_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_FaxMachine_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Figure_Goblin_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Figure_Goblin_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Figure_Goblin_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Figure_Knight_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Figure_Knight_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Figure_Knight_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fire_Extinguisher_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fire_Extinguisher_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fire_Extinguisher_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fire_Detector_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fire_Detector_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fire_Detector_01#0/@#0"
+  ]
+ },
+ "SM_Prop_FireAlarm_Switch_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_FireAlarm_Switch_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_FireAlarm_Switch_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fish_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fish_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fish_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fishtank_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fishtank_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fishtank_01#0/@#0",
+   "RootNode#0/SM_Prop_Fishtank_01#0/SM_Prop_Fishtank_FX_01#0/@#0",
+   "RootNode#0/SM_Prop_Fishtank_01#0/SM_Prop_Fishtank_Glass_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fishtank_FX_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fishtank_FX_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fishtank_FX_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Flowers_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Flowers_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Flowers_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Folder_Holder_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Folder_Holder_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Folder_Holder_01#0/@#0"
+  ]
+ },
+ "SM_Prop_FolderTray_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_FolderTray_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_FolderTray_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Fridge_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fridge_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fridge_01#0/@#0",
+   "RootNode#0/SM_Prop_Fridge_01#0/SM_Prop_Fridge_01_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Fridge_01_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fridge_01_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fridge_01_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fridge_01_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_Fridge_01#0/SM_Prop_Fridge_01_Door_02_$AssimpFbx$_RotationPivot#0/SM_Prop_Fridge_01_Door_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fridge_01_Door_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fridge_01_Door_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fridge_01_Door_02#0/@#0",
+   "RootNode#0/SM_Prop_Fridge_01#0/SM_Prop_Fridge_01_Door_03_$AssimpFbx$_RotationPivot#0/SM_Prop_Fridge_01_Door_03_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fridge_01_Door_03_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fridge_01_Door_03_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fridge_01_Door_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Fridge_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Fridge_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Fridge_02#0/@#0",
+   "RootNode#0/SM_Prop_Fridge_02#0/SM_Prop_Fridge_02_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Fridge_02_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fridge_02_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fridge_02_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fridge_02_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_Fridge_02#0/SM_Prop_Fridge_02_Door_02_$AssimpFbx$_RotationPivot#0/SM_Prop_Fridge_02_Door_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Fridge_02_Door_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_Fridge_02_Door_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Fridge_02_Door_02#0/@#0"
+  ]
+ },
+ "SM_Prop_FruitBowl_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_FruitBowl_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_FruitBowl_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Globe_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Globe_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Globe_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Guillotine_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Guillotine_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Guillotine_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Guillotine_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Guillotine_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Guillotine_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Guillotine_01#0/@#0",
+   "RootNode#0/SM_Prop_Guillotine_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Guillotine_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Guillotine_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Guillotine_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Guillotine_01#0/SM_Prop_Guillotine_01_Blade_$AssimpFbx$_RotationPivot#0/SM_Prop_Guillotine_01_Blade_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Guillotine_01_Blade_$AssimpFbx$_ScalingPivot#0/SM_Prop_Guillotine_01_Blade_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Guillotine_01_Blade#0/@#0"
+  ]
+ },
+ "SM_Prop_Headphones_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Headphones_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Headphones_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Headset_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Headset_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Headset_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Jukebox_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Jukebox_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Jukebox_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Janitor_Bucket_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Janitor_Bucket_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Janitor_Bucket_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Janitor_Cart_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Janitor_Cart_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Janitor_Cart_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Kettle_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Kettle_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Kettle_01#0/@#0",
+   "RootNode#0/SM_Prop_Kettle_01#0/SM_Prop_Kettle_01_Lid_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Kettle_01_Lid_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kettle_01_Lid_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kettle_01_Lid_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kettle_01_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Kitchen_Cabinet_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Kitchen_Cabinet_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Kitchen_Cabinet_01#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_Cabinet_01#0/SM_Prop_Kitchen_Cabinet_01_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_Cabinet_01_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_Cabinet_01_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_Cabinet_01_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_Cabinet_01_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_Cabinet_01#0/SM_Prop_Kitchen_Cabinet_01_Door_02_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_Cabinet_01_Door_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_Cabinet_01_Door_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_Cabinet_01_Door_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_Cabinet_01_Door_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Kitchen_Counter_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Kitchen_Counter_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Kitchen_Counter_01#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_Counter_01#0/SM_Prop_Kitchen_Counter_01_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_Counter_01_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_Counter_01_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_Counter_01_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_Counter_01_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_Counter_01#0/SM_Prop_Kitchen_Counter_01_Door_02_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_Counter_01_Door_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_Counter_01_Door_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_Counter_01_Door_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_Counter_01_Door_02#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_Counter_01#0/SM_Prop_Kitchen_Counter_01_Drawer_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_Counter_01_Drawer_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_Counter_01_Drawer_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_Counter_01_Drawer_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_Counter_01_Drawer_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Kitchen_CounterSink_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Kitchen_CounterSink_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Kitchen_CounterSink_01#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_CounterSink_01#0/SM_Prop_Kitchen_CounterSink_01_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_CounterSink_01_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_CounterSink_01_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_CounterSink_01_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_CounterSink_01_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_Kitchen_CounterSink_01#0/SM_Prop_Kitchen_CounterSink_01_Door_02_$AssimpFbx$_RotationPivot#0/SM_Prop_Kitchen_CounterSink_01_Door_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Kitchen_CounterSink_01_Door_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_Kitchen_CounterSink_01_Door_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Kitchen_CounterSink_01_Door_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Kitchen_CounterSink_Dishes_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Kitchen_CounterSink_Dishes_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Kitchen_CounterSink_Dishes_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Laptop_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Laptop_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Laptop_01#0/@#0",
+   "RootNode#0/SM_Prop_Laptop_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Laptop_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Laptop_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Laptop_02#0/@#0",
+   "RootNode#0/SM_Prop_Laptop_02#0/@#1"
+  ]
+ },
+ "SM_Prop_Light_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Light_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Light_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Light_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Light_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Light_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Light_Fluorescent_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Light_Fluorescent_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Light_Fluorescent_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Lunchbox_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Lunchbox_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Lunchbox_01#0/@#0",
+   "RootNode#0/SM_Prop_Lunchbox_01#0/SM_Prop_Lunchbox_Food_01#0/@#0",
+   "RootNode#0/SM_Prop_Lunchbox_01#0/SM_Prop_Lunchbox_Lid_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Lunchbox_Lid_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Lunchbox_Lid_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Lunchbox_Lid_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Lunchbox_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Microwave_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Microwave_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Microwave_01#0/@#0",
+   "RootNode#0/SM_Prop_Microwave_01#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Microwave_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_Microwave_01#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Microwave_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Microwave_Door_01#0/SM_Prop_Microwave_Door_Glass_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Microwave_Door_Glass_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Microwave_Door_Glass_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Microwave_Door_Glass_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Microwave_Door_Glass_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Milk_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Milk_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Milk_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Milk_Claimed_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Milk_Claimed_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Milk_Claimed_01#0/@#0"
+  ]
+ },
+ "SM_Prop_MiniFridge_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_MiniFridge_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_MiniFridge_01#0/@#0",
+   "RootNode#0/SM_Prop_MiniFridge_01#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_MiniFridge_Door_01#0/@#0",
+   "RootNode#0/SM_Prop_MiniFridge_01#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_RotationPivot#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_MiniFridge_Door_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_MiniFridge_Door_01#0/SM_Prop_MiniFridge_Door_Glass_01_$AssimpFbx$_RotationPivot#0/SM_Prop_MiniFridge_Door_Glass_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_MiniFridge_Door_Glass_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_MiniFridge_Door_Glass_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_MiniFridge_Door_Glass_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Minigolf_Ball_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Minigolf_Ball_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Minigolf_Ball_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Minigolf_Club_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Minigolf_Club_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Minigolf_Club_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Minigolf_Flag_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Minigolf_Flag_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Minigolf_Flag_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Minigolf_Green_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Minigolf_Green_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Minigolf_Green_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Mop_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Mop_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Mop_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Mop_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Mop_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Mop_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Monitor_Crt_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Monitor_Crt_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Monitor_Crt_01#0/@#0",
+   "RootNode#0/SM_Prop_Monitor_Crt_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Mints_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Mints_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Mints_01#0/@#0"
+  ]
+ },
+ "SM_Prop_NamePlate_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_NamePlate_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_NamePlate_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Neon_Cactus_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Neon_Cactus_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Neon_Cactus_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Note_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Note_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Note_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Note_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Note_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Note_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Note_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Note_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Note_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Note_04": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Note_04.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Note_04#0/@#0"
+  ]
+ },
+ "SM_Prop_Note_05": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Note_05.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Note_05#0/@#0"
+  ]
+ },
+ "SM_Prop_NotePad_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_NotePad_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_NotePad_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Paper_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Paper_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Paper_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Paper_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Paper_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Paper_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Paper_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Paper_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Paper_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Paper_Pile_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Paper_Pile_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Paper_Pile_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Paper_Pile_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Paper_Pile_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Paper_Pile_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Paper_Plane_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Paper_Plane_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Paper_Plane_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Papers_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Papers_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Papers_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Papers_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Papers_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Papers_02#0/@#0"
+  ]
+ },
+ "SM_Prop_PaperShredder_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_PaperShredder_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_PaperShredder_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Party_Hat_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Party_Hat_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Party_Hat_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Party_Hat_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Party_Hat_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Party_Hat_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Party_Hat_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Party_Hat_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Party_Hat_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Pen_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Pen_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Pen_01#0/@#0"
+  ]
+ },
+ "SM_Prop_PencilCup_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_PencilCup_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_PencilCup_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Phone_Desk_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Phone_Desk_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Phone_Desk_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Phone_Conference_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Phone_Conference_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Phone_Conference_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Photo_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Photo_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Photo_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Photo_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Photo_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Photo_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Photocopier_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Photocopier_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Photocopier_01#0/@#0",
+   "RootNode#0/SM_Prop_Photocopier_01#0/@#1",
+   "RootNode#0/SM_Prop_Photocopier_01#0/SM_Prop_Photocopier_01_Lid_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Photocopier_01_Lid_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Photocopier_01_Lid_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Photocopier_01_Lid_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Photocopier_01_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Photocopier_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Photocopier_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Photocopier_02#0/@#0",
+   "RootNode#0/SM_Prop_Photocopier_02#0/@#1",
+   "RootNode#0/SM_Prop_Photocopier_02#0/SM_Prop_Photocopier_02_Lid_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Photocopier_02_Lid_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Photocopier_02_Lid_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Photocopier_02_Lid_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Photocopier_02_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Pills_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Pills_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Pills_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_05": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_05.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_05#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_07": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_07.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_07#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_09": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_09.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_09#0/@#0"
+  ]
+ },
+ "SM_Prop_Plant_11": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_11.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Plant_11#0/@#0"
+  ]
+ },
+ "SM_Prop_Pot_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Pot_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Pot_01#0/@#0",
+   "RootNode#0/SM_Prop_Pot_01#0/SM_Prop_Pot_Lid_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Pot_Lid_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Pot_Lid_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Pot_Lid_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Pot_Lid_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Pot_Spilled_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Pot_Spilled_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Pot_Spilled_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Poster_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Poster_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Poster_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Poster_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Poster_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Poster_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Poster_Stocks_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Poster_Stocks_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Poster_Stocks_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Presentation_Chart_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Presentation_Chart_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Presentation_Chart_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Printer_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Printer_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Printer_01#0/@#0",
+   "RootNode#0/SM_Prop_Printer_01#0/pCube275_$AssimpFbx$_RotationPivot#0/pCube275_$AssimpFbx$_RotationPivotInverse#0/pCube275_$AssimpFbx$_ScalingPivot#0/pCube275_$AssimpFbx$_ScalingPivotInverse#0/pCube275#0/@#0"
+  ]
+ },
+ "SM_Prop_Projector_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Projector_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Projector_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Projector_01_Ceiling": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Projector_01_Ceiling.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Projector_01_Ceiling#0/@#0"
+  ]
+ },
+ "SM_Prop_ProjectorScreen_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_ProjectorScreen_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_ProjectorScreen_01#0/@#0",
+   "RootNode#0/SM_Prop_ProjectorScreen_01#0/@#1"
+  ]
+ },
+ "SM_Prop_ProjectorScreen_02_Down": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_ProjectorScreen_02_Down.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_ProjectorScreen_02_Down#0/@#0",
+   "RootNode#0/SM_Prop_ProjectorScreen_02_Down#0/@#1"
+  ]
+ },
+ "SM_Prop_PuzzleCube_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_PuzzleCube_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_PuzzleCube_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Radio_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Radio_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Radio_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Rubbish_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Rubbish_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Rubbish_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Rubbish_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Rubbish_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Rubbish_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Rug_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Rug_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Rug_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Rug_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Rug_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Rug_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Sandwich_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sandwich_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sandwich_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Security_Camera_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Security_Camera_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Security_Camera_01#0/@#0",
+   "RootNode#0/SM_Prop_Security_Camera_01#0/SM_Prop_Security_Camera_Head_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Security_Camera_Head_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Security_Camera_Head_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Security_Camera_Head_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Security_Camera_Head_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Security_Camera_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Security_Camera_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Security_Camera_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Server_Cabinet_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Server_Cabinet_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Server_Cabinet_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Server_Cabinet_01_Full": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Server_Cabinet_01_Full.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Server_Cabinet_01_Full#0/@#0"
+  ]
+ },
+ "SM_Prop_Server_Cabinet_02_Full": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Server_Cabinet_02_Full.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Server_Cabinet_02_Full#0/@#0"
+  ]
+ },
+ "SM_Prop_Server_Cabinet_03_Full": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Server_Cabinet_03_Full.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Server_Cabinet_03_Full#0/@#0"
+  ]
+ },
+ "SM_Prop_Server_Node_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Server_Node_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Server_Node_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Shelf_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Shelf_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Shelf_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Shelf_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Shelf_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Shelf_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Shelf_05": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Shelf_05.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Shelf_05#0/@#0"
+  ]
+ },
+ "SM_Prop_Shelf_Wall_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Shelf_Wall_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Shelf_Wall_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sign_Director_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Director_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sign_Director_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sign_Exit_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Exit_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sign_Exit_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sign_Kitchen_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Kitchen_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sign_Kitchen_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sign_OutofOrder_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_OutofOrder_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sign_OutofOrder_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sign_Wetfloor_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Wetfloor_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sign_Wetfloor_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sign_Manager_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Manager_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sign_Manager_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Snack_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Snack_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Snack_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Snack_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Snack_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Snack_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Snack_03": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Snack_03.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Snack_03#0/@#0"
+  ]
+ },
+ "SM_Prop_Socket_Wall_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Socket_Wall_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Socket_Wall_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Spaceship_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Spaceship_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Spaceship_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Speaker_Bluetooth_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Speaker_Bluetooth_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Speaker_Bluetooth_01#0/@#0"
+  ]
+ },
+ "SM_Prop_SprayBottle_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_SprayBottle_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_SprayBottle_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Sprinkler": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sprinkler.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Sprinkler#0/@#0"
+  ]
+ },
+ "SM_Prop_Stapler_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Stapler_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Stapler_01#0/@#0",
+   "RootNode#0/SM_Prop_Stapler_01#0/SM_Prop_Stapler_01_Lever_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Stapler_01_Lever_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Stapler_01_Lever_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Stapler_01_Lever_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Stapler_01_Lever_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Streamer_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Streamer_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Streamer_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Streamer_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Streamer_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Streamer_02#0/@#0"
+  ]
+ },
+ "SM_Prop_SwissBall_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_SwissBall_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_SwissBall_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Table_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Table_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Table_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Table_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Table_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Table_02#0/@#0"
+  ]
+ },
+ "SM_Prop_Table_Conference_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Table_Conference_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Table_Conference_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Table_Round_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Table_Round_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Table_Round_01#0/@#0"
+  ]
+ },
+ "SM_Prop_TableFootball_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_TableFootball_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_TableFootball_01#0/@#0",
+   "RootNode#0/SM_Prop_TableFootball_01#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_Translation#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_RotationPivot#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_ScalingOffset#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_Scaling#0/SM_Prop_TableFootball_Pole_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_TableFootball_Pole_01#0/@#0",
+   "RootNode#0/SM_Prop_TableFootball_01#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_Translation#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_RotationPivot#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_ScalingOffset#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_Scaling#0/SM_Prop_TableFootball_Pole_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_TableFootball_Pole_02#0/@#0",
+   "RootNode#0/SM_Prop_TableFootball_01#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_Translation#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_RotationPivot#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_ScalingOffset#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_ScalingPivot#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_Scaling#0/SM_Prop_TableFootball_Pole_03_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_TableFootball_Pole_03#0/@#0",
+   "RootNode#0/SM_Prop_TableFootball_01#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_Translation#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_RotationPivot#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_ScalingOffset#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_ScalingPivot#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_Scaling#0/SM_Prop_TableFootball_Pole_04_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_TableFootball_Pole_04#0/@#0",
+   "RootNode#0/SM_Prop_TableFootball_01#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_Translation#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_RotationPivot#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_ScalingOffset#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_ScalingPivot#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_Scaling#0/SM_Prop_TableFootball_Pole_05_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_TableFootball_Pole_05#0/@#0",
+   "RootNode#0/SM_Prop_TableFootball_01#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_Translation#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_RotationPivot#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_ScalingOffset#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_ScalingPivot#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_Scaling#0/SM_Prop_TableFootball_Pole_06_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_TableFootball_Pole_06#0/@#0"
+  ]
+ },
+ "SM_Prop_Toaster_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Toaster_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Toaster_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Trashbin_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Trashbin_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Trashbin_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Trophy_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Trophy_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Trophy_01#0/@#0"
+  ]
+ },
+ "SM_Prop_TV_Wall_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_TV_Wall_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_TV_Wall_01#0/@#0",
+   "RootNode#0/SM_Prop_TV_Wall_01#0/@#1"
+  ]
+ },
+ "SM_Prop_Typewriter_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Typewriter_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Typewriter_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Vacuum_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Vacuum_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Vacuum_01#0/@#0"
+  ]
+ },
+ "SM_Prop_VendingMachine_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_VendingMachine_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_VendingMachine_01#0/@#0",
+   "RootNode#0/SM_Prop_VendingMachine_01#0/SM_Prop_VendingMachine_01_Glass#0/@#0"
+  ]
+ },
+ "SM_Prop_WallDressing_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_WallDressing_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_WallDressing_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Wall_Electronics_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Wall_Electronics_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Wall_Electronics_01#0/@#0"
+  ]
+ },
+ "SM_Prop_WaterCooler_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_WaterCooler_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_WaterCooler_01#0/@#0",
+   "RootNode#0/SM_Prop_WaterCooler_01#0/SM_Prop_WaterCooler_Glass_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Webcam_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Webcam_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Webcam_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Whiteboard_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Whiteboard_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Whiteboard_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Whiteboard_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Whiteboard_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Whiteboard_02#0/@#0",
+   "RootNode#0/SM_Prop_Whiteboard_02#0/SM_Prop_Whiteboard_02_Board_01_$AssimpFbx$_RotationPivot#0/SM_Prop_Whiteboard_02_Board_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_Whiteboard_02_Board_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_Whiteboard_02_Board_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_Whiteboard_02_Board_01#0/@#0"
+  ]
+ },
+ "SM_Prop_Xmas_Tree_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Xmas_Tree_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Prop_Xmas_Tree_01#0/@#0"
+  ]
+ },
+ "SM_Wep_ToyGun_Rifle_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Wep_ToyGun_Rifle_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Wep_ToyGun_Rifle_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_Rifle_01#0/SM_Wep_ToyGun_Rifle_01_Bolt_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_Rifle_01_Bolt_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_Rifle_01_Bolt_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_Rifle_01_Bolt_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_Rifle_01_Bolt_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_Rifle_01#0/SM_Wep_ToyGun_Rifle_01_Scope_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_Rifle_01_Scope_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_Rifle_01_Scope_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_Rifle_01_Scope_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_Rifle_01_Scope_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_Rifle_01#0/SM_Wep_ToyGun_Rifle_01_Trigger_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_Rifle_01_Trigger_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_Rifle_01_Trigger_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_Rifle_01_Trigger_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_Rifle_01_Trigger_01#0/@#0"
+  ]
+ },
+ "SM_Wep_ToyGun_SMG_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Wep_ToyGun_SMG_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Wep_ToyGun_SMG_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_SMG_01#0/SM_Wep_ToyGun_SMG_01_Magazine_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_SMG_01_Magazine_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_SMG_01_Magazine_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_SMG_01_Magazine_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_SMG_01_Magazine_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_SMG_01#0/SM_Wep_ToyGun_SMG_01_Slide_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_SMG_01_Slide_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_SMG_01_Slide_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_SMG_01_Slide_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_SMG_01_Slide_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_SMG_01#0/SM_Wep_ToyGun_SMG_01_Trigger_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_SMG_01_Trigger_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_SMG_01_Trigger_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_SMG_01_Trigger_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_SMG_01_Trigger_01#0/@#0"
+  ]
+ },
+ "SM_Wep_ToyGun_OneShot_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Wep_ToyGun_OneShot_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Wep_ToyGun_OneShot_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_OneShot_01#0/SM_Wep_ToyGun_OneShot_01_Barrel_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_OneShot_01_Barrel_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_OneShot_01_Barrel_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_OneShot_01_Barrel_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_OneShot_01_Barrel_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_OneShot_01#0/SM_Wep_ToyGun_OneShot_01_Hammer_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_OneShot_01_Hammer_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_OneShot_01_Hammer_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_OneShot_01_Hammer_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_OneShot_01_Hammer_01#0/@#0",
+   "RootNode#0/SM_Wep_ToyGun_OneShot_01#0/SM_Wep_ToyGun_OneShot_01_Trigger_01_$AssimpFbx$_RotationPivot#0/SM_Wep_ToyGun_OneShot_01_Trigger_01_$AssimpFbx$_RotationPivotInverse#0/SM_Wep_ToyGun_OneShot_01_Trigger_01_$AssimpFbx$_ScalingPivot#0/SM_Wep_ToyGun_OneShot_01_Trigger_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Wep_ToyGun_OneShot_01_Trigger_01#0/@#0"
+  ]
+ },
+ "SM_Chr_Attachment_Headset_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Chr_Attachment_Headset_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Chr_Attachment_Headset_01#0/@#0"
+  ]
+ },
+ "SM_Chr_Attachment_Headset_02": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Chr_Attachment_Headset_02.fbx",
+  "Parts": [
+   "RootNode#0/SM_Chr_Attachment_Headset_02#0/@#0"
+  ]
+ },
+ "SM_Chr_Attachment_Identity_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Chr_Attachment_Identity_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Chr_Attachment_Identity_01#0/@#0"
+  ]
+ },
+ "SM_Chr_Attachment_Nametag_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Chr_Attachment_Nametag_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Chr_Attachment_Nametag_01#0/@#0"
+  ]
+ },
+ "SM_Chr_Attachment_Pens_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Chr_Attachment_Pens_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Chr_Attachment_Pens_01#0/@#0"
+  ]
+ },
+ "SM_Chr_Attachment_Antlers_01": {
+  "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Chr_Attachment_Antlers_01.fbx",
+  "Parts": [
+   "RootNode#0/SM_Chr_Attachment_Antlers_01#0/@#0"
+  ]
+ }
+}

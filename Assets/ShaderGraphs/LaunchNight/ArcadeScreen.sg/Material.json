@@ -1,0 +1,50 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/ArcadeScreen.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				2.5,
+				2.5,
+				2.5,
+				2.5
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				20.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [
+		{
+			"Asset": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_Sceen_Arcade_01.png",
+			"Default": "white",
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Screen",
+			"Slot": 0,
+			"Type": "Texture2D"
+		}
+	],
+	"Version": 1
+}

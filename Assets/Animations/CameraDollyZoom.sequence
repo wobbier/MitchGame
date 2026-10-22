@@ -1,0 +1,258 @@
+{
+    "Version": 1,
+    "Name": "Camera Dolly Zoom",
+    "FrameRate": 30,
+    "DurationFrames": 240,
+    "Tracks": [
+        {
+            "Component": "Transform",
+            "Property": "Position",
+            "Enabled": true,
+            "Keys": [
+                {
+                    "Frame": 0,
+                    "Value": [
+                        0,
+                        2,
+                        -12,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 90,
+                    "Value": [
+                        0.0,
+                        2.0,
+                        -6.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 120,
+                    "Value": [
+                        0.0,
+                        2.0,
+                        -6.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 210,
+                    "Value": [
+                        0,
+                        2,
+                        -12,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 240,
+                    "Value": [
+                        0,
+                        2,
+                        -12,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothStep"
+                }
+            ],
+            "Binding": "Camera"
+        },
+        {
+            "Component": "Transform",
+            "Property": "Rotation",
+            "Enabled": true,
+            "Keys": [
+                {
+                    "Frame": 0,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 90,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 120,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 210,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 240,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                }
+            ],
+            "Binding": "Camera"
+        },
+        {
+            "Component": "Camera",
+            "Property": "FieldOfView",
+            "Enabled": true,
+            "Keys": [
+                {
+                    "Frame": 0,
+                    "Value": [
+                        52.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothFocalLength"
+                },
+                {
+                    "Frame": 90,
+                    "Value": [
+                        88.57687237868183,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothFocalLength"
+                },
+                {
+                    "Frame": 120,
+                    "Value": [
+                        88.57687237868183,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothFocalLength"
+                },
+                {
+                    "Frame": 210,
+                    "Value": [
+                        52.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothFocalLength"
+                },
+                {
+                    "Frame": 240,
+                    "Value": [
+                        52.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Interpolation": "SmoothFocalLength"
+                }
+            ],
+            "Binding": "Camera"
+        },
+        {
+            "Component": "Transform",
+            "Property": "Rotation",
+            "Enabled": true,
+            "Keys": [
+                {
+                    "Frame": 0,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 120,
+                    "Value": [
+                        0,
+                        0.70710678,
+                        0,
+                        0.70710678
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 240,
+                    "Value": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Interpolation": "SmoothStep"
+                }
+            ],
+            "Binding": "Animated Cube"
+        },
+        {
+            "Component": "Transform",
+            "Property": "Scale",
+            "Enabled": true,
+            "Keys": [
+                {
+                    "Frame": 0,
+                    "Value": [
+                        0.7,
+                        0.7,
+                        0.7,
+                        0
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 120,
+                    "Value": [
+                        0.9,
+                        1.1,
+                        0.9,
+                        0
+                    ],
+                    "Interpolation": "SmoothStep"
+                },
+                {
+                    "Frame": 240,
+                    "Value": [
+                        0.7,
+                        0.7,
+                        0.7,
+                        0
+                    ],
+                    "Interpolation": "SmoothStep"
+                }
+            ],
+            "Binding": "Animated Cube"
+        }
+    ]
+}

@@ -1,24 +1,54 @@
 {
 	"Links": [
 		[
-			2,
-			"Out",
-			1,
-			"Color"
-		],
-		[
 			3,
 			"Out",
 			2,
 			"In"
+		],
+		[
+			2,
+			"Out",
+			9,
+			"A"
+		],
+		[
+			9,
+			"Out",
+			8,
+			"In"
+		],
+		[
+			5,
+			"Out",
+			3,
+			"UV"
+		],
+		[
+			10,
+			"Sine Time",
+			5,
+			"Strength"
+		],
+		[
+			6,
+			"Out",
+			5,
+			"UV"
+		],
+		[
+			8,
+			"Out",
+			1,
+			"Color"
 		]
 	],
 	"Nodes": [
 		{
 			"Id": 1,
 			"Position": [
-				552.0,
-				-127.0
+				776.0,
+				-79.0
 			],
 			"Type": "Output"
 		},
@@ -39,18 +69,85 @@
 			},
 			"Id": 2,
 			"Position": [
-				232.0,
-				-111.0
+				104.0,
+				-148.0
 			],
 			"Type": "ReplaceColor"
 		},
 		{
 			"Id": 3,
 			"Position": [
-				-48.0,
-				-159.0
+				-54.0,
+				-127.0
 			],
 			"Type": "SceneColor"
+		},
+		{
+			"Id": 4,
+			"Position": [
+				232.0,
+				226.0
+			],
+			"Type": "Add"
+		},
+		{
+			"Id": 5,
+			"Position": [
+				-316.0,
+				-124.0
+			],
+			"Type": "Twirl"
+		},
+		{
+			"Id": 6,
+			"Position": [
+				-522.0,
+				-95.0
+			],
+			"Type": "UV"
+		},
+		{
+			"Id": 8,
+			"Position": [
+				595.0,
+				-255.0
+			],
+			"Type": "Absolute"
+		},
+		{
+			"Defaults": {
+				"B": [
+					0.10000000149011612,
+					0.10000000149011612,
+					0.10000000149011612,
+					0.0
+				]
+			},
+			"Id": 9,
+			"Position": [
+				384.0,
+				-47.0
+			],
+			"Type": "Step"
+		},
+		{
+			"Id": 10,
+			"Position": [
+				-584.0,
+				138.0
+			],
+			"Type": "Time"
+		},
+		{
+			"Id": 11,
+			"Position": [
+				-218.0,
+				243.0
+			],
+			"Settings": {
+				"Space": "World"
+			},
+			"Type": "Position"
 		}
 	],
 	"Properties": [],

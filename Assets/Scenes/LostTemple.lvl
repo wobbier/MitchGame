@@ -38,6 +38,7 @@
         "4c4035a4a4622132": "Assets/Models/Synty/ExplorerKit/Models/SM_Gen_Env_Bush_Large_01.fbx",
         "4df2be3af7ba38ca": "Assets/Models/Synty/ExplorerKit/Models/SM_Gen_Env_Cliff_01.fbx",
         "52a1d3c23fac3310": "Assets/Models/Synty/ExplorerKit/FBX/SM_Prop_Idle_01.fbx",
+        "538efe01f451d890": "Assets/Animations/LostTempleDollyZoom.sequence",
         "543ea663846a0e47": "Assets/Models/Synty/ExplorerKit/Models/SM_Gen_Env_Root_02.fbx",
         "5fb038d6a9b83bf4": "Assets/Models/Synty/ExplorerKit/Models/SM_Gen_Prop_Coin_Pile_02.fbx",
         "6120c1233cedbb37": "Assets/Models/Synty/ExplorerKit/Textures/FX/Generic_Candle_Flame_01.png",
@@ -128,15 +129,15 @@
             "Components": [
                 {
                     "Position": [
-                        12.0,
-                        2.4000000953674316,
-                        -9.0
+                        7.338848114013672,
+                        1.547773838043213,
+                        3.4507923126220703
                     ],
                     "Rotation": [
-                        -0.04557399824261665,
-                        -0.24270099401474,
-                        -0.011415000073611736,
-                        0.9689630270004272
+                        -0.0031793222296983004,
+                        0.9951443672180176,
+                        0.034317295998334885,
+                        0.0921950414776802
                     ],
                     "Scale": [
                         1.0,
@@ -155,6 +156,7 @@
                     "Far": 900.0,
                     "FieldOfView": 52.0,
                     "IsCurrent": true,
+                    "MatchMainCamera": false,
                     "Near": 0.10000000149011612,
                     "OrthographicSize": 5.0,
                     "ProceduralSky": {
@@ -179,7 +181,32 @@
                     },
                     "Projection": "Perspective",
                     "Type": "Camera",
+                    "Viewport": [
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.0
+                    ],
                     "Zoom": 45.0
+                },
+                {
+                    "Bindings": [
+                        {
+                            "Slot": "Camera",
+                            "Target": "bb91954f9d6fe225"
+                        }
+                    ],
+                    "Clip": "Assets/Animations/LostTempleDollyZoom.sequence",
+                    "Clips": [
+                        {
+                            "Clip": "Assets/Animations/LostTempleDollyZoom.sequence",
+                            "Name": "DollyZoom"
+                        }
+                    ],
+                    "Loop": true,
+                    "PlayOnStart": false,
+                    "Speed": 1.0,
+                    "Type": "Sequence"
                 },
                 {
                     "ScriptFields": "{\"Tour\":true,\"Shot\":0,\"Hold\":9,\"Blend\":4.5,\"Sway\":0.18,\"FlySpeed\":4,\"LookSpeed\":45}",
@@ -199,8 +226,14 @@
                     "BloomRadius": 1.0,
                     "BloomThreshold": 1.0,
                     "Contrast": 1.100000023841858,
+                    "DepthOfField": true,
+                    "DoFAperture": 1.7319999933242798,
+                    "DoFDebugCoC": false,
+                    "DoFFocusDistance": 0.7279999852180481,
+                    "DoFMaxBlurRadius": 32.0,
+                    "DoFSensorHeight": 70.0,
                     "ExposureCompensation": 0.3499999940395355,
-                    "FXAA": false,
+                    "FXAA": true,
                     "Fog": true,
                     "FogAnisotropy": 0.5,
                     "FogColor": [
@@ -441,17 +474,27 @@
                     "Asset": "Assets/ShaderGraphs/Temple.terrain",
                     "CastShadows": true,
                     "Collision": true,
+                    "CollisionBudgetMiB": 512,
+                    "CollisionDistance": 8.0,
+                    "CollisionPrefetchSeconds": 0.5,
                     "Color": [
                         0.30000001192092896,
                         0.47999998927116394,
                         0.20000000298023224
                     ],
+                    "CoverageDistance": 1024.0,
+                    "CpuBudgetMiB": 256,
                     "Friction": 0.6000000238418579,
+                    "GpuBudgetMiB": 128,
                     "LodHysteresis": 0.20000000298023224,
                     "LodPixelError": 2.0,
                     "Restitution": 0.0,
                     "Roughness": 0.8999999761581421,
-                    "Type": "Terrain"
+                    "StreamDetail": true,
+                    "StreamDistance": 384.0,
+                    "Type": "Terrain",
+                    "UploadKiB": 1024,
+                    "UploadMilliseconds": 2.0
                 },
                 {
                     "AgentHeight": 2.0,
@@ -58661,6 +58704,7 @@
                     "Far": 300.0,
                     "FieldOfView": 60.0,
                     "IsCurrent": false,
+                    "MatchMainCamera": false,
                     "Near": 0.10000000149011612,
                     "OrthographicSize": 5.0,
                     "ProceduralSky": {
@@ -58685,6 +58729,12 @@
                     },
                     "Projection": "Perspective",
                     "Type": "Camera",
+                    "Viewport": [
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.0
+                    ],
                     "Zoom": 55.0
                 }
             ],
@@ -58717,17 +58767,27 @@
                     "Asset": "",
                     "CastShadows": true,
                     "Collision": true,
+                    "CollisionBudgetMiB": 512,
+                    "CollisionDistance": 8.0,
+                    "CollisionPrefetchSeconds": 0.5,
                     "Color": [
                         0.30000001192092896,
                         0.47999998927116394,
                         0.20000000298023224
                     ],
+                    "CoverageDistance": 1024.0,
+                    "CpuBudgetMiB": 256,
                     "Friction": 0.6000000238418579,
+                    "GpuBudgetMiB": 128,
                     "LodHysteresis": 0.20000000298023224,
                     "LodPixelError": 2.0,
                     "Restitution": 0.0,
                     "Roughness": 0.8999999761581421,
-                    "Type": "Terrain"
+                    "StreamDetail": true,
+                    "StreamDistance": 384.0,
+                    "Type": "Terrain",
+                    "UploadKiB": 1024,
+                    "UploadMilliseconds": 2.0
                 }
             ],
             "DestroyOnLoad": true,

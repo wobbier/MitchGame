@@ -1,0 +1,289 @@
+{
+  "SM_Bld_Wall_Blank_Door_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_Door_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Wall_Blank_Door_01#0/@#0"
+    ]
+  },
+  "SM_Bld_Wall_Trim_Door_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Trim_Door_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Wall_Trim_Door_01#0/@#0"
+    ]
+  },
+  "SM_Bld_Wall_Baseboard_Door_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Baseboard_Door_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Wall_Baseboard_Door_01#0/@#0"
+    ]
+  },
+  "SM_Bld_Door_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Door_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Door_01#0/@#0",
+      "RootNode#0/SM_Bld_Door_01#0/SM_Bld_Door_01_Glass#0/@#0"
+    ]
+  },
+  "SM_Bld_Wall_Blank_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Blank_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Wall_Blank_01#0/@#0"
+    ]
+  },
+  "SM_Bld_Floor_Carpet_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Floor_Carpet_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Floor_Carpet_01#0/@#0"
+    ]
+  },
+  "SM_Bld_Wall_Window_Blinds_Open_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Bld_Wall_Window_Blinds_Open_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Bld_Wall_Window_Blinds_Open_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Desk_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Desk_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Desk_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Chair_05": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Chair_05.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Chair_05#0/@#0"
+    ]
+  },
+  "SM_Prop_Plant_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Plant_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Plant_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Shelf_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Shelf_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Shelf_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Computer_Monitor_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Monitor_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Computer_Monitor_01#0/@#0",
+      "RootNode#0/SM_Prop_Computer_Monitor_01#0/@#1"
+    ]
+  },
+  "SM_Prop_Computer_Keyboard_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Computer_Keyboard_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Computer_Keyboard_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Phone_Desk_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Phone_Desk_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Phone_Desk_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Book_Group_02": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Book_Group_02.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Book_Group_02#0/@#0"
+    ]
+  },
+  "SM_Prop_Cup_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Cup_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Cup_01#0/@#0"
+    ]
+  },
+  "SM_Prop_DeskLamp_05": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_DeskLamp_05.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_DeskLamp_05#0/@#0",
+      "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/@#0",
+      "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02#0/@#0",
+      "RootNode#0/SM_Prop_DeskLamp_05#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_01#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Arm_02_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Arm_02#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_RotationPivot#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_RotationPivotInverse#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_ScalingPivot#0/SM_Prop_DeskLamp_05_Lamp_01_$AssimpFbx$_ScalingPivotInverse#0/SM_Prop_DeskLamp_05_Lamp_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Sign_Manager_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Sign_Manager_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Sign_Manager_01#0/@#0"
+    ]
+  },
+  "SM_Prop_Photo_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/FBX/SM_Prop_Photo_01.fbx",
+    "Parts": [
+      "RootNode#0/SM_Prop_Photo_01#0/@#0"
+    ]
+  },
+  "SK_Chr_Business_Male_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/Characters/SK_Chr_Business_Male_01.fbx",
+    "Parts": [
+      "RootNode#0/SK_Chr_Business_Male_01#0/@#0"
+    ],
+    "Nodes": {
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.0030091,
+          0.1035566,
+          -0.6067536,
+          0.7881098
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      },
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.0030087,
+          0.1035568,
+          -0.6067553,
+          0.7881085
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      },
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0/lowerarm_l_$AssimpFbx$_Translation#0/lowerarm_l_$AssimpFbx$_PreRotation#0/lowerarm_l_$AssimpFbx$_PostRotation#0/lowerarm_l#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.0001118,
+          0.0789868,
+          -0.0794766,
+          0.9937024
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      },
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0/lowerarm_r_$AssimpFbx$_Translation#0/lowerarm_r_$AssimpFbx$_PreRotation#0/lowerarm_r_$AssimpFbx$_PostRotation#0/lowerarm_r#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.0001118,
+          0.0789867,
+          -0.0794744,
+          0.9937026
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      }
+    }
+  },
+  "SK_Chr_Boss_Male_01": {
+    "ModelPath": "Assets/Models/Synty/OfficePack/Characters/SK_Chr_Boss_Male_01.fbx",
+    "Parts": [
+      "RootNode#0/SK_Chr_Boss_Male_01#0/@#0"
+    ],
+    "Nodes": {
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.0030091,
+          0.1035566,
+          -0.6067536,
+          0.7881098
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      },
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.0030087,
+          0.1035568,
+          -0.6067553,
+          0.7881085
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      },
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_l_$AssimpFbx$_Translation#0/clavicle_l_$AssimpFbx$_PreRotation#0/clavicle_l_$AssimpFbx$_PostRotation#0/clavicle_l#0/UpperArm_L_$AssimpFbx$_Translation#0/UpperArm_L_$AssimpFbx$_PreRotation#0/UpperArm_L_$AssimpFbx$_PostRotation#0/UpperArm_L#0/lowerarm_l_$AssimpFbx$_Translation#0/lowerarm_l_$AssimpFbx$_PreRotation#0/lowerarm_l_$AssimpFbx$_PostRotation#0/lowerarm_l#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.000407,
+          0.1889298,
+          -0.2893439,
+          0.9383951
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      },
+      "RootNode#0/Root#0/Pelvis_$AssimpFbx$_Translation#0/Pelvis_$AssimpFbx$_PreRotation#0/Pelvis_$AssimpFbx$_PostRotation#0/Pelvis#0/spine_01_$AssimpFbx$_Translation#0/spine_01_$AssimpFbx$_PreRotation#0/spine_01_$AssimpFbx$_PostRotation#0/spine_01#0/spine_02_$AssimpFbx$_Translation#0/spine_02_$AssimpFbx$_PreRotation#0/spine_02_$AssimpFbx$_PostRotation#0/spine_02#0/spine_03_$AssimpFbx$_Translation#0/spine_03_$AssimpFbx$_PreRotation#0/spine_03_$AssimpFbx$_PostRotation#0/spine_03#0/clavicle_r_$AssimpFbx$_Translation#0/clavicle_r_$AssimpFbx$_PreRotation#0/clavicle_r#0/UpperArm_R_$AssimpFbx$_Translation#0/UpperArm_R_$AssimpFbx$_PreRotation#0/UpperArm_R_$AssimpFbx$_PostRotation#0/UpperArm_R#0/lowerarm_r_$AssimpFbx$_Translation#0/lowerarm_r_$AssimpFbx$_PreRotation#0/lowerarm_r_$AssimpFbx$_PostRotation#0/lowerarm_r#0": {
+        "Position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "Rotation": [
+          0.000407,
+          0.1889298,
+          -0.2893418,
+          0.9383958
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "Type": "Transform"
+      }
+    }
+  }
+}

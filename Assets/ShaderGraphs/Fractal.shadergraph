@@ -1,0 +1,40 @@
+{
+  "Links": [
+    [1, "Out", 2, "In"],
+    [2, "Out", 3, "Color"]
+  ],
+  "Nodes": [
+    {
+      "Id": 1,
+      "Position": [-400, 0],
+      "Type": "GradientNoise",
+      "Defaults": [0.5, 0.0, 0.0, 0.0]
+    },
+    {
+      "Id": 2,
+      "Position": [0, 0],
+      "Type": "FractalNoise",
+      "Defaults": [10.0, 0.0, 0.0, 0.0]
+    },
+    {
+      "Id": 3,
+      "Position": [200, 0],
+      "Type": "Output"
+    }
+  ],
+  "Properties": [],
+  "Settings": {
+    "AlphaClip": false,
+    "Blend": "Alpha",
+    "CastShadows": true,
+    "Fog": true,
+    "Injection": "BeforeTonemap",
+    "NormalSpace": "Tangent",
+    "OffsetSpace": "Object",
+    "ParticleLit": false,
+    "RenderFace": "Front",
+    "Surface": "Transparent",
+    "Target": "PostProcess"
+  },
+  "Version": 1
+}

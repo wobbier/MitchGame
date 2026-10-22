@@ -1,0 +1,104 @@
+# Object/property sequence regression:
+#   Havana --scene Assets/Scenes/Tests/SequenceTest.lvl --editor-exec Assets/Scenes/Tests/SequenceFlows.edscript
+wait 20
+mark-count
+select Main Camera
+show-window Sequencer
+wait 3
+assert-field Main Camera | Transform.Position | [0, 2, -12]
+assert-field Main Camera | Camera.FieldOfView | 52
+assert-field Animated Cube | Transform.Scale | [0.7, 0.7, 0.7]
+assert-dirty 0
+
+# Seeking previews transforms, rotation/scale on another object, and a reflected camera field.
+action Sequence.PreviewMiddle
+wait 3
+assert-playing 0
+assert-field Main Camera | Transform.Position | [0, 2, -6]
+assert-field Main Camera | Camera.FieldOfView | 88.5768724
+assert-field Dolly Zoom Subject | Transform.Scale | [0.7, 0.9, 0.04]
+assert-field Animated Cube | Transform.Scale | [0.9, 1.1, 0.9]
+assert-field Animated Cube | Transform.Rotation | != [0, 0, 0, 1]
+assert-dirty 0
+screenshot .tmp/overhaul/shots/sequence_preview.png
+
+# Saving a preview writes the authored scene, then resumes the preview.
+save-as .tmp/overhaul/SequencePreviewSave.lvl
+wait 3
+assert-field Main Camera | Transform.Position | [0, 2, -6]
+action Sequence.StopPreviews
+wait 3
+assert-field Main Camera | Transform.Position | [0, 2, -12]
+assert-field Main Camera | Camera.FieldOfView | 52
+assert-field Animated Cube | Transform.Scale | [0.7, 0.7, 0.7]
+assert-field Animated Cube | Transform.Rotation | [0, 0, 0, 1]
+
+# Clip edits have their own undo/save state; scene bindings stay clean.
+seq-length 300
+seq-assert-dirty 1
+assert-dirty 0
+seq-undo
+seq-assert-dirty 0
+seq-redo
+seq-assert-dirty 1
+seq-undo
+
+# One marquee selects two keys on each of three tracks. Move them together, then undo once.
+seq-box-select 85 | 125 | 0 | 2
+seq-assert-selected 6
+seq-move-keys 10
+seq-assert-key 0 | 100
+seq-assert-key 0 | 130
+seq-assert-key 2 | 100
+seq-assert-no-key 0 | 90
+seq-assert-dirty 1
+assert-dirty 0
+seq-undo
+seq-assert-key 0 | 90
+seq-assert-key 2 | 120
+seq-assert-dirty 0
+seq-redo
+seq-assert-key 0 | 100
+seq-undo
+
+# Export a reusable copy, save edits there, and keep scene and asset save points independent.
+seq-export .tmp/overhaul/SequenceCopy.sequence
+seq-assert-dirty 0
+save-as .tmp/overhaul/SequenceAssetSave.lvl
+seq-length 300
+seq-save
+seq-assert-dirty 0
+assert-dirty 0
+seq-undo
+seq-assert-dirty 1
+seq-save
+seq-assert-dirty 0
+
+# Entering play ends edit previews; stopping restores the complete authored snapshot.
+action Sequence.PreviewMiddle
+wait 2
+play
+wait-log SequenceClipProbe: named playback, resume and binding passed | 600
+wait 60
+assert-playing 1
+assert-field Main Camera | Transform.Position | != [0, 2, -12]
+assert-field Main Camera | Camera.FieldOfView | != 52
+screenshot .tmp/overhaul/shots/sequence_play.png
+stop
+wait 5
+assert-field Main Camera | Transform.Position | [0, 2, -12]
+assert-field Main Camera | Camera.FieldOfView | 52
+assert-field Animated Cube | Transform.Scale | [0.7, 0.7, 0.7]
+assert-count-delta 0
+
+# Reload proves the save made during preview kept the authored values and target GUIDs.
+load .tmp/overhaul/SequencePreviewSave.lvl
+wait 5
+select Main Camera
+assert-field Main Camera | Transform.Position | [0, 2, -12]
+assert-field Main Camera | Camera.FieldOfView | 52
+action Sequence.PreviewMiddle
+wait 3
+assert-field Main Camera | Transform.Position | [0, 2, -6]
+assert-field Animated Cube | Transform.Scale | [0.9, 1.1, 0.9]
+action Sequence.StopPreviews

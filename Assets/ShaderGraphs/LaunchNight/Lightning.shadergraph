@@ -1,0 +1,231 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Unlit",
+        "Surface": "Transparent",
+        "Blend": "Additive",
+        "RenderFace": "Both",
+        "CastShadows": false
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Bolt Color",
+            "Type": "Vec3",
+            "Exposed": true,
+            "Default": [
+                0.75,
+                0.82,
+                1.0,
+                1.0
+            ],
+            "IsColor": true,
+            "HDR": true
+        },
+        {
+            "Id": "p2",
+            "Name": "Intensity",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                60.0,
+                60.0,
+                60.0,
+                60.0
+            ],
+            "Range": [
+                0.0,
+                400.0
+            ]
+        },
+        {
+            "Id": "p3",
+            "Name": "Seed",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                3.0,
+                3.0,
+                3.0,
+                3.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p3"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "UV",
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "Time",
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "CustomFunction",
+            "Settings": {
+                "Name": "Bolt",
+                "Inputs": [
+                    {
+                        "Name": "UV",
+                        "Type": "Vec2"
+                    },
+                    {
+                        "Name": "Time",
+                        "Type": "Float"
+                    },
+                    {
+                        "Name": "Seed",
+                        "Type": "Float"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Name": "Glow",
+                        "Type": "Float"
+                    }
+                ],
+                "Code": "float y = UV.y;\nfloat path = 0.0;\nfloat amp = 0.16;\nfloat freq = 3.0;\nfor (int i = 0; i < 5; i++)\n{\n    float fi = float(i);\n    float k = y * freq + Seed * (fi + 1.0) * 1.7;\n    float a = fract(sin(floor(k) * 12.9898 + fi * 4.1 + Seed) * 43758.5453) - 0.5;\n    float b = fract(sin((floor(k) + 1.0) * 12.9898 + fi * 4.1 + Seed) * 43758.5453) - 0.5;\n    path += mix(a, b, fract(k)) * amp;\n    amp *= 0.5;\n    freq *= 2.3;\n}\nfloat d = abs(UV.x - 0.5 - path);\nfloat branchY = clamp((y - 0.35) / 0.3, 0.0, 1.0);\nfloat branch = abs(UV.x - 0.5 - path - branchY * 0.12 - sin(y * 47.0 + Seed) * 0.01);\nbranch = (1.0 - smoothstep(0.0, 0.004, branch)) * step(0.35, y) * step(y, 0.65) * (1.0 - branchY);\nfloat core = 1.0 - smoothstep(0.0, 0.005, d);\nfloat halo = exp(-d * 45.0) * 0.45;\nfloat ends = smoothstep(0.0, 0.04, y) * smoothstep(1.0, 0.94, y);\nfloat flick = 0.55 + 0.45 * step(0.4, fract(Time * 19.0));\nGlow = (core + halo + branch) * ends * flick;"
+            },
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Saturate",
+            "Position": [
+                920,
+                -110
+            ]
+        }
+    ],
+    "Links": [
+        [
+            5,
+            "Out",
+            7,
+            "UV"
+        ],
+        [
+            6,
+            "Time",
+            7,
+            "Time"
+        ],
+        [
+            4,
+            "Out",
+            7,
+            "Seed"
+        ],
+        [
+            7,
+            "Glow",
+            8,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            8,
+            "B"
+        ],
+        [
+            2,
+            "Out",
+            9,
+            "A"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "B"
+        ],
+        [
+            8,
+            "Out",
+            10,
+            "In"
+        ],
+        [
+            9,
+            "Out",
+            1,
+            "Color"
+        ],
+        [
+            10,
+            "Out",
+            1,
+            "Alpha"
+        ]
+    ]
+}

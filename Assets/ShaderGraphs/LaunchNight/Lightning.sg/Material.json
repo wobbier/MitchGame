@@ -1,0 +1,68 @@
+{
+	"AlphaClip": false,
+	"Blend": "Additive",
+	"CastShadows": false,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/Lightning.shadergraph",
+	"Parameters": [
+		{
+			"Color": true,
+			"Default": [
+				0.75,
+				0.8199999928474426,
+				1.0,
+				1.0
+			],
+			"Exposed": true,
+			"HDR": true,
+			"Id": "p1",
+			"Name": "Bolt Color",
+			"Slot": 0,
+			"Type": "Vec3"
+		},
+		{
+			"Default": [
+				60.0,
+				60.0,
+				60.0,
+				60.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				400.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				3.0,
+				3.0,
+				3.0,
+				3.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Seed",
+			"Slot": 2,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Both",
+	"Surface": "Transparent",
+	"Target": "Unlit",
+	"Textures": [],
+	"Version": 1
+}

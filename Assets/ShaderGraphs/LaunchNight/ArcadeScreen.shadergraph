@@ -1,0 +1,381 @@
+{
+    "Version": 1,
+    "Settings": {
+        "Target": "Lit"
+    },
+    "Properties": [
+        {
+            "Id": "p1",
+            "Name": "Screen",
+            "Type": "Texture2D",
+            "Exposed": true,
+            "Texture": "Assets/Models/Synty/OfficePack/Textures/PolygonOffice_Texture_Sceen_Arcade_01.png",
+            "DefaultTexture": "white"
+        },
+        {
+            "Id": "p2",
+            "Name": "Brightness",
+            "Type": "Float",
+            "Exposed": true,
+            "Default": [
+                2.5,
+                2.5,
+                2.5,
+                2.5
+            ],
+            "Range": [
+                0.0,
+                20.0
+            ]
+        }
+    ],
+    "Nodes": [
+        {
+            "Id": 1,
+            "Type": "Output",
+            "Defaults": {
+                "Base Color": [
+                    0.02,
+                    0.02,
+                    0.02,
+                    0.0
+                ],
+                "Roughness": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            },
+            "Position": [
+                1200,
+                -300
+            ]
+        },
+        {
+            "Id": 2,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p1"
+            },
+            "Position": [
+                80,
+                -300
+            ]
+        },
+        {
+            "Id": 3,
+            "Type": "Property",
+            "Settings": {
+                "Property": "p2"
+            },
+            "Position": [
+                640,
+                -300
+            ]
+        },
+        {
+            "Id": 4,
+            "Type": "UV",
+            "Position": [
+                -1320,
+                -300
+            ]
+        },
+        {
+            "Id": 5,
+            "Type": "Panner",
+            "Defaults": {
+                "Speed": [
+                    0.0,
+                    0.03,
+                    0.0,
+                    0.0
+                ]
+            },
+            "Position": [
+                80,
+                -110
+            ]
+        },
+        {
+            "Id": 6,
+            "Type": "SampleTexture2D",
+            "Settings": {
+                "Type": "Color"
+            },
+            "Position": [
+                360,
+                -300
+            ]
+        },
+        {
+            "Id": 7,
+            "Type": "Time",
+            "Position": [
+                -1040,
+                -300
+            ]
+        },
+        {
+            "Id": 8,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    37.0,
+                    37.0,
+                    37.0,
+                    37.0
+                ]
+            },
+            "Position": [
+                -760,
+                -300
+            ]
+        },
+        {
+            "Id": 9,
+            "Type": "Sine",
+            "Position": [
+                -480,
+                -300
+            ]
+        },
+        {
+            "Id": 10,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.06,
+                    0.06,
+                    0.06,
+                    0.06
+                ]
+            },
+            "Position": [
+                -200,
+                -300
+            ]
+        },
+        {
+            "Id": 11,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.9,
+                    0.9,
+                    0.9,
+                    0.9
+                ]
+            },
+            "Position": [
+                80,
+                80
+            ]
+        },
+        {
+            "Id": 12,
+            "Type": "Split",
+            "Position": [
+                -1040,
+                -110
+            ]
+        },
+        {
+            "Id": 13,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    1400.0,
+                    1400.0,
+                    1400.0,
+                    1400.0
+                ]
+            },
+            "Position": [
+                -760,
+                -110
+            ]
+        },
+        {
+            "Id": 14,
+            "Type": "Sine",
+            "Position": [
+                -480,
+                -110
+            ]
+        },
+        {
+            "Id": 15,
+            "Type": "Multiply",
+            "Defaults": {
+                "B": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            },
+            "Position": [
+                -200,
+                -110
+            ]
+        },
+        {
+            "Id": 16,
+            "Type": "Add",
+            "Defaults": {
+                "A": [
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8
+                ]
+            },
+            "Position": [
+                80,
+                270
+            ]
+        },
+        {
+            "Id": 17,
+            "Type": "Multiply",
+            "Position": [
+                360,
+                -110
+            ]
+        },
+        {
+            "Id": 18,
+            "Type": "Multiply",
+            "Position": [
+                640,
+                -110
+            ]
+        },
+        {
+            "Id": 19,
+            "Type": "Multiply",
+            "Position": [
+                920,
+                -300
+            ]
+        }
+    ],
+    "Links": [
+        [
+            4,
+            "Out",
+            5,
+            "UV"
+        ],
+        [
+            2,
+            "Out",
+            6,
+            "Texture"
+        ],
+        [
+            5,
+            "Out",
+            6,
+            "UV"
+        ],
+        [
+            7,
+            "Time",
+            8,
+            "A"
+        ],
+        [
+            8,
+            "Out",
+            9,
+            "In"
+        ],
+        [
+            9,
+            "Out",
+            10,
+            "A"
+        ],
+        [
+            10,
+            "Out",
+            11,
+            "B"
+        ],
+        [
+            4,
+            "Out",
+            12,
+            "In"
+        ],
+        [
+            12,
+            "G",
+            13,
+            "A"
+        ],
+        [
+            13,
+            "Out",
+            14,
+            "In"
+        ],
+        [
+            14,
+            "Out",
+            15,
+            "A"
+        ],
+        [
+            15,
+            "Out",
+            16,
+            "B"
+        ],
+        [
+            16,
+            "Out",
+            17,
+            "A"
+        ],
+        [
+            11,
+            "Out",
+            17,
+            "B"
+        ],
+        [
+            6,
+            "RGB",
+            18,
+            "A"
+        ],
+        [
+            17,
+            "Out",
+            18,
+            "B"
+        ],
+        [
+            18,
+            "Out",
+            19,
+            "A"
+        ],
+        [
+            3,
+            "Out",
+            19,
+            "B"
+        ],
+        [
+            19,
+            "Out",
+            1,
+            "Emission"
+        ]
+    ]
+}

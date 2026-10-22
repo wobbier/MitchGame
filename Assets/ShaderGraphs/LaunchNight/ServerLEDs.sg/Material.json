@@ -1,0 +1,70 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/LaunchNight/ServerLEDs.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Seed",
+			"Slot": 0,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Alarm",
+			"Range": [
+				0.0,
+				1.0
+			],
+			"Slot": 1,
+			"Type": "Float"
+		},
+		{
+			"Default": [
+				6.0,
+				6.0,
+				6.0,
+				6.0
+			],
+			"Exposed": true,
+			"Id": "p3",
+			"Name": "Intensity",
+			"Range": [
+				0.0,
+				40.0
+			],
+			"Slot": 2,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [],
+	"Version": 1
+}
