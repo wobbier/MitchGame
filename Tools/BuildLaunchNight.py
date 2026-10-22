@@ -212,13 +212,24 @@ def particles(**fields):
     return data
 
 
-def sound(scene, name, clip, pos, parent, volume=1.0, near=1.0, far=10.0, spatial=1.0):
+def sound(scene, name, clip, pos, parent, volume=1.0, near=1.0, far=10.0, spatial=1.0, occlusion=0.6):
     """A looping ambient AudioSource (clips from Tools/LaunchNightAudio.py). 3D sources fade out to
-    silence at `far`, so the quiet ones don't pile up across the floor."""
+    silence at `far`, so the quiet ones don't pile up across the floor; `occlusion` is how much each
+    room's walls (build_acoustics) between the source and the listener muffle it."""
     return scene.entity(name, [transform(pos), {
         "Type": "AudioSource", "FilePath": LaunchNightAudio.path(clip), "Bus": "SFX", "Volume": volume, "Pitch": 1.0,
-        "Mute": False, "PlayOnAwake": True, "Loop": True, "SpatialBlend": spatial, "MinDistance": near, "MaxDistance": far,
+        "Mute": False, "PlayOnAwake": True, "Loop": True, "Occlusion": True, "OcclusionAmount": occlusion, "ReverbMix": 1.0,
+        "SpatialBlend": spatial, "MinDistance": near, "MaxDistance": far,
         "Rolloff": "LinearSquare", "DopplerLevel": 0.0, "Priority": 128, "MaxOneShots": 1}], parent)
+
+
+def reverb_zone(preset, near, far):
+    return {"Type": "AudioReverbZone", "Preset": preset, "MinDistance": near, "MaxDistance": far}
+
+
+def box_collider(size):
+    return {"Type": "BoxCollider", "Center": [0.0, 0.0, 0.0], "IsTrigger": False, "Friction": 0.6, "Restitution": 0.0,
+            "Density": 1.0, "Size": r3(size)}
 
 
 def decal(size, albedo="", graph_name="", color=(1, 1, 1), roughness=0.6, opacity=1.0, sort=0, angle_fade=70.0, params=None):
@@ -725,6 +736,31 @@ def build_shell(scene):
     return shell
 
 
+# Rooms for the sound: each closed room gets invisible static boxes along its walls (audio occlusion
+# rays from the listener to a 3D source hit them) and a reverb zone. The occlusion query counts
+# hierarchy roots, so each room is its own root: leaving a room through any of its walls (or a
+# closed door) counts once. The open floor has no walls, only its reverb.
+ROOMS = [
+    # name, preset, reverb centre (x, z), full reverb within, none beyond, wall lines ((x0, z0), (x1, z1))
+    ("Boss Office", "Living Room", (3.75, 15.1), 2.0, 4.0, [((0.0, 12.65), (7.5, 12.65)), ((7.35, 12.65), (7.35, D))]),
+    ("Server Room", "Stone Room", (21.25, 15.1), 2.0, 4.0, [((17.5, 12.65), (W, 12.65)), ((17.5, 12.65), (17.5, D))]),
+    ("Conference Room", "Room", (21.25, 3.75), 2.5, 4.5, [((17.5, 7.5), (W, 7.5)), ((17.5, 0.0), (17.5, 7.5))]),
+    ("Corridor", "Hallway", (21.25, 10.1), 1.5, 3.5, []),
+    ("Open Plan", "Room", (11.0, 8.0), 5.0, 10.0, []),
+]
+WALL_THICKNESS = 0.15
+ALARM_AT = (21.25, 2.72, 12.85)
+
+
+def build_acoustics(scene):
+    for name, preset, (x, z), near, far, lines in ROOMS:
+        acoustics = scene.group(name + " Acoustics")
+        scene.entity("Reverb Zone", [transform((x, 1.5, z)), reverb_zone(preset, near, far)], acoustics)
+        for (x0, z0), (x1, z1) in lines:
+            size = (abs(x1 - x0) + WALL_THICKNESS, CEILING, abs(z1 - z0) + WALL_THICKNESS)
+            scene.entity("Wall Collider", [transform(((x0 + x1) / 2, CEILING / 2, (z0 + z1) / 2)), box_collider(size)], acoustics)
+
+
 def ceiling_light(scene, name, x, z, parent, on=0.0, color=(1.0, 0.96, 0.9), intensity=6.0, flicker=None):
     """A recessed panel; on = its brightness (0 off). Returns the light entity if lit."""
     put(scene, name + " Panel", "SM_Bld_Ceiling_Panel_Light_01", (x, CEILING - 0.035, z), parent=parent, shadows=False,
@@ -1089,7 +1125,9 @@ def build_server_room(scene):
     sound(scene, "Fire Sound", "Fire", (0, -0.4, -0.3), fire, volume=1.0, near=1.5, far=16.0)
     sound(scene, "Server Hum", "ServerHum", (21.3, 1.2, 15.8), room, volume=0.55, near=2.0, far=12.0)
     sound(scene, "Sprinkler Sound", "Sprinklers", (21.0, 2.0, 14.5), room, volume=0.6, near=1.5, far=11.0)
-    sound(scene, "Fire Alarm", "Alarm", (21.25, 2.72, 12.5), room, volume=0.4, near=3.0, far=32.0)
+    # The sounder is on the server room's side of its glass: through two walls (the boss's office) it's
+    # muffled, but fire alarms are built to carry, so each wall takes less than the default.
+    sound(scene, "Fire Alarm", "Alarm", ALARM_AT, room, volume=0.4, near=3.0, far=32.0, occlusion=0.35)
     fire_light = scene.entity("Fire Light", [transform((0, 0.2, -0.7)), light("Point", (1.0, 0.45, 0.15), 18.0, 10.0, shadows=True)], fire)
     clip.track(fire_light, "Light", "Intensity", flicker_keys(5.0, 18.0, 0.55, 1.15, 0.08, seed=5))
     # The smoke pours out under the door frame into the pit, along the ceiling.
@@ -1793,6 +1831,7 @@ def build(write=True):
     scene = Scene()
     camera = build_camera(scene)
     build_shell(scene)
+    build_acoustics(scene)
     ceiling_lights = build_lighting(scene)
     outside, storm = build_outside(scene)
     pit, pit_info = build_pit(scene, ceiling_lights)
@@ -1837,6 +1876,12 @@ def write_flow():
     # The ambience loops start with Play.
     lines += ["assert-audio %s | 1" % name for name in ("Storm Sound", "Room Tone", "Fire Sound", "Fire Alarm", "Typing Sound", "Snoring",
                                                          "Coffee Sound", "Panel Buzz")]
+    # Occlusion: a listener in the boss's office hears the alarm through two rooms' walls, in the
+    # corridor through one, and in the server room directly.
+    lines += ["create AudioProbe", "select AudioProbe", "add-component AudioListener"]
+    for where, occlusion in (((3.75, 1.6, 15.0), 0.7), ((21.25, 1.6, 10.5), 0.35), ((21.0, 1.6, 15.0), 0.0)):
+        lines += ["set Transform.Position [%s]" % ", ".join("%g" % v for v in where), "wait 60",
+                  "assert-occlusion Fire Alarm | %g ~ 0.05" % occlusion]
     lines += ["assert-field Main Camera | Transform.Position | != [%s]" % ", ".join("%g" % v for v in first),
               "stop", "assert-playing 0", "assert-audio Storm Sound | 0", "wait 10", ""]
     path = ROOT / "Assets/Scenes/LaunchNight.edscript"

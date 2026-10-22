@@ -127,6 +127,18 @@ assert-audio Typing Sound | 1
 assert-audio Snoring | 1
 assert-audio Coffee Sound | 1
 assert-audio Panel Buzz | 1
+create AudioProbe
+select AudioProbe
+add-component AudioListener
+set Transform.Position [3.75, 1.6, 15]
+wait 60
+assert-occlusion Fire Alarm | 0.7 ~ 0.05
+set Transform.Position [21.25, 1.6, 10.5]
+wait 60
+assert-occlusion Fire Alarm | 0.35 ~ 0.05
+set Transform.Position [21, 1.6, 15]
+wait 60
+assert-occlusion Fire Alarm | 0 ~ 0.05
 assert-field Main Camera | Transform.Position | != [14.2, 2, 19.6]
 stop
 assert-playing 0

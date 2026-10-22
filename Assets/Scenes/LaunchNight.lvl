@@ -16790,6 +16790,549 @@
    "Parent": "e4fd7dcbf4cc2473"
   },
   {
+   "Name": "Boss Office Acoustics",
+   "GUID": "6fd124e2fb51ed7a",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "Name": "Reverb Zone",
+   "GUID": "f0b91eb588ae24ea",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      3.75,
+      1.5,
+      15.1
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "AudioReverbZone",
+     "Preset": "Living Room",
+     "MinDistance": 2.0,
+     "MaxDistance": 4.0
+    }
+   ],
+   "Parent": "6fd124e2fb51ed7a"
+  },
+  {
+   "Name": "Wall Collider",
+   "GUID": "5bcae025d3e1eb73",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      3.75,
+      1.5,
+      12.65
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "BoxCollider",
+     "Center": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "IsTrigger": false,
+     "Friction": 0.6,
+     "Restitution": 0.0,
+     "Density": 1.0,
+     "Size": [
+      7.65,
+      3.0,
+      0.15
+     ]
+    }
+   ],
+   "Parent": "6fd124e2fb51ed7a"
+  },
+  {
+   "Name": "Wall Collider",
+   "GUID": "2fc9e65f9741b518",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      7.35,
+      1.5,
+      15.075
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "BoxCollider",
+     "Center": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "IsTrigger": false,
+     "Friction": 0.6,
+     "Restitution": 0.0,
+     "Density": 1.0,
+     "Size": [
+      0.15,
+      3.0,
+      5.0
+     ]
+    }
+   ],
+   "Parent": "6fd124e2fb51ed7a"
+  },
+  {
+   "Name": "Server Room Acoustics",
+   "GUID": "4b7442f93c4a47ba",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "Name": "Reverb Zone",
+   "GUID": "a08e976c30af1a10",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      21.25,
+      1.5,
+      15.1
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "AudioReverbZone",
+     "Preset": "Stone Room",
+     "MinDistance": 2.0,
+     "MaxDistance": 4.0
+    }
+   ],
+   "Parent": "4b7442f93c4a47ba"
+  },
+  {
+   "Name": "Wall Collider",
+   "GUID": "78b0c66e04be6916",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      21.25,
+      1.5,
+      12.65
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "BoxCollider",
+     "Center": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "IsTrigger": false,
+     "Friction": 0.6,
+     "Restitution": 0.0,
+     "Density": 1.0,
+     "Size": [
+      7.65,
+      3.0,
+      0.15
+     ]
+    }
+   ],
+   "Parent": "4b7442f93c4a47ba"
+  },
+  {
+   "Name": "Wall Collider",
+   "GUID": "0af7650d76d250c1",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      17.5,
+      1.5,
+      15.075
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "BoxCollider",
+     "Center": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "IsTrigger": false,
+     "Friction": 0.6,
+     "Restitution": 0.0,
+     "Density": 1.0,
+     "Size": [
+      0.15,
+      3.0,
+      5.0
+     ]
+    }
+   ],
+   "Parent": "4b7442f93c4a47ba"
+  },
+  {
+   "Name": "Conference Room Acoustics",
+   "GUID": "765e97d4f7bc68ab",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "Name": "Reverb Zone",
+   "GUID": "705c0f8204200b5a",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      21.25,
+      1.5,
+      3.75
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "AudioReverbZone",
+     "Preset": "Room",
+     "MinDistance": 2.5,
+     "MaxDistance": 4.5
+    }
+   ],
+   "Parent": "765e97d4f7bc68ab"
+  },
+  {
+   "Name": "Wall Collider",
+   "GUID": "63f8cb32bbbe97a6",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      21.25,
+      1.5,
+      7.5
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "BoxCollider",
+     "Center": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "IsTrigger": false,
+     "Friction": 0.6,
+     "Restitution": 0.0,
+     "Density": 1.0,
+     "Size": [
+      7.65,
+      3.0,
+      0.15
+     ]
+    }
+   ],
+   "Parent": "765e97d4f7bc68ab"
+  },
+  {
+   "Name": "Wall Collider",
+   "GUID": "f83b7fc1f3917b68",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      17.5,
+      1.5,
+      3.75
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "BoxCollider",
+     "Center": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "IsTrigger": false,
+     "Friction": 0.6,
+     "Restitution": 0.0,
+     "Density": 1.0,
+     "Size": [
+      0.15,
+      3.0,
+      7.65
+     ]
+    }
+   ],
+   "Parent": "765e97d4f7bc68ab"
+  },
+  {
+   "Name": "Corridor Acoustics",
+   "GUID": "e9e2a9c563e2e967",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "Name": "Reverb Zone",
+   "GUID": "32179045bd6dd35d",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      21.25,
+      1.5,
+      10.1
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "AudioReverbZone",
+     "Preset": "Hallway",
+     "MinDistance": 1.5,
+     "MaxDistance": 3.5
+    }
+   ],
+   "Parent": "e9e2a9c563e2e967"
+  },
+  {
+   "Name": "Open Plan Acoustics",
+   "GUID": "59d4118e357efb8a",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "Name": "Reverb Zone",
+   "GUID": "2bc187cd6ce62896",
+   "Components": [
+    {
+     "Type": "Transform",
+     "Position": [
+      11.0,
+      1.5,
+      8.0
+     ],
+     "Rotation": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "Scale": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "Type": "AudioReverbZone",
+     "Preset": "Room",
+     "MinDistance": 5.0,
+     "MaxDistance": 10.0
+    }
+   ],
+   "Parent": "59d4118e357efb8a"
+  },
+  {
    "Name": "Ceiling Lights",
    "GUID": "9fbd2f20269efbf5",
    "Components": [
@@ -27546,6 +28089,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 0.0,
      "MinDistance": 1.0,
      "MaxDistance": 10.0,
@@ -27589,6 +28135,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 0.0,
      "MinDistance": 1.0,
      "MaxDistance": 10.0,
@@ -43860,6 +44409,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 1.5,
      "MaxDistance": 16.0,
@@ -43903,6 +44455,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 2.0,
      "MaxDistance": 12.0,
@@ -43946,6 +44501,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 1.5,
      "MaxDistance": 11.0,
@@ -43966,7 +44524,7 @@
      "Position": [
       21.25,
       2.72,
-      12.5
+      12.85
      ],
      "Rotation": [
       0.0,
@@ -43989,6 +44547,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.35,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 3.0,
      "MaxDistance": 32.0,
@@ -48674,6 +49235,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 1.0,
      "MaxDistance": 5.0,
@@ -50984,6 +51548,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.5,
      "MaxDistance": 6.0,
@@ -51325,6 +51892,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.6,
      "MaxDistance": 6.0,
@@ -55394,6 +55964,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 1.0,
      "MaxDistance": 8.0,
@@ -56347,6 +56920,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.5,
      "MaxDistance": 4.5,
@@ -60761,6 +61337,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.6,
      "MaxDistance": 9.0,
@@ -60804,6 +61383,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.8,
      "MaxDistance": 8.0,
@@ -67507,6 +68089,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.6,
      "MaxDistance": 7.0,
@@ -83228,6 +83813,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.6,
      "MaxDistance": 8.0,
@@ -93871,6 +94459,9 @@
      "Mute": false,
      "PlayOnAwake": true,
      "Loop": true,
+     "Occlusion": true,
+     "OcclusionAmount": 0.6,
+     "ReverbMix": 1.0,
      "SpatialBlend": 1.0,
      "MinDistance": 0.5,
      "MaxDistance": 6.0,

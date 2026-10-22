@@ -103,7 +103,7 @@ mix changes as the tour moves.
 | Storm | everywhere (2D) | Rain and drops on the glass, wind gusts, and thunder after the Storm clip's flashes (same 23 s loop) |
 | Room Tone | everywhere (2D) | The air handling, very low |
 | Fire, Server Hum, Sprinklers | the server room | Roar and crackle, fans and mains hum, hiss and spatter |
-| Fire Alarm | over the server room door | Temporal-three beeps in the Server Room Alarm clip's 5 s |
+| Fire Alarm | over the server room door, on the room's side | Temporal-three beeps in the Server Room Alarm clip's 5 s; each wall muffles it by only 0.35 (alarms carry) |
 | Typing | the last developer's keyboard | In step with the Typing clip, pauses included |
 | Panel Buzz | his failing ceiling panel | Cuts out and crackles where Office Life flickers it |
 | Sparks, Copier | the corridor | The fallen cable arcing; the jammed photocopier |
@@ -114,6 +114,15 @@ mix changes as the tour moves.
 
 The loops are seamless (beds crossfade their tail into their head; events wrap round the end), and
 the timed ones share their Sequence's length, so they stay in step when both start on Play.
+Each closed room (the boss's office, the server room, the conference room) is a top-level
+`<Room> Acoustics` group of invisible static `BoxCollider`s along its walls and doors plus an
+`AudioReverbZone`; the corridor and the open floor have only reverb. A wall between the listener and
+a 3D source muffles it (`OcclusionAmount`, 0.6 per room by default). Occlusion counts top-level
+objects, so a room's walls count once together. From the boss's office the alarm is muffled 0.7
+(two rooms' walls), from the corridor 0.35 and in the server room not at all, which the editor flow
+checks with an `AudioListener` probe and `assert-occlusion`. Occlusion is a straight ray, so sound
+doesn't come round through an open doorway.
+
 Automated runs are silent; open the scene in Havana and press Play to hear it.
 
 ## Rebuilding
