@@ -1,0 +1,380 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "7472656500000001",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        7.5,
+                        -34.0
+                    ],
+                    "Rotation": [
+                        0.0697564737441253,
+                        0.0,
+                        0.0,
+                        0.9975640502598242
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "IsCurrent": true,
+                    "ClearType": "Procedural",
+                    "FieldOfView": 55.0,
+                    "Near": 0.1,
+                    "Far": 400.0,
+                    "ProceduralSky": {
+                        "Time": 16.5,
+                        "Turbidity": 2.2,
+                        "CloudCoverage": 0.25
+                    }
+                },
+                {
+                    "Type": "PostProcess",
+                    "Bloom": true,
+                    "BloomIntensity": 0.08,
+                    "FXAA": true,
+                    "AmbientOcclusion": true,
+                    "Tonemapper": "ACES"
+                }
+            ]
+        },
+        {
+            "GUID": "7472656500000002",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        20.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.26288001850209247,
+                        -0.2890569668099657,
+                        0.08288575145419454,
+                        0.9167715735213627
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "DirectionalSource": "Automatic",
+                    "Color": [
+                        1.0,
+                        0.92,
+                        0.8
+                    ],
+                    "Intensity": 3.0,
+                    "CastShadows": true,
+                    "ShadowDistance": 90.0
+                }
+            ]
+        },
+        {
+            "GUID": "7472656500000003",
+            "Name": "Lawn",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        6.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        40.0,
+                        1.0,
+                        30.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.23,
+                            0.33,
+                            0.14
+                        ],
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "747265650000000a",
+            "Name": "Oak",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -21.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Oak.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "747265650000000b",
+            "Name": "Maple",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -7.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.31730465640509214,
+                        0.0,
+                        0.9483236552061993
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Maple.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "747265650000000c",
+            "Name": "Birch",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        7.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.6018150231520483,
+                        0.0,
+                        0.7986355100472928
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Birch.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "747265650000000d",
+            "Name": "Pine",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        21.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.8241261886220157,
+                        0.0,
+                        0.5664062369248328
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Pine.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "747265650000000e",
+            "Name": "Spruce",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -14.0,
+                        0.0,
+                        16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.9612616959383189,
+                        0.0,
+                        0.27563735581699916
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Spruce.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "747265650000000f",
+            "Name": "Palm",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.9990482215818578,
+                        0.0,
+                        -0.04361938736533589
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Palm.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "7472656500000010",
+            "Name": "DeadSnag",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        14.0,
+                        0.0,
+                        16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.9335804264972017,
+                        0.0,
+                        -0.35836794954530027
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/DeadSnag.mtree",
+                    "Compact": true
+                }
+            ]
+        },
+        {
+            "GUID": "7472656500000011",
+            "Name": "Bush",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        28.0,
+                        0.0,
+                        16.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.7716245833877199,
+                        0.0,
+                        -0.6360782202777641
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Trees/Presets/Bush.mtree",
+                    "Compact": true
+                }
+            ]
+        }
+    ]
+}

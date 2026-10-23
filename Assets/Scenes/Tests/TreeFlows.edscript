@@ -1,0 +1,56 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# MitchTree assets as models: presets placed in the scene, recipe edits regenerating live instances,
+# save/reopen, Play/Stop, and a tree as a terrain foliage species.
+wait 5
+tree-new Oak | .tmp/Tests/Trees/FlowOak.mtree
+tree-new Palm | .tmp/Tests/Trees/FlowPalm.mtree
+tree-new DeadSnag | .tmp/Tests/Trees/FlowSnag.mtree
+tree-place .tmp/Tests/Trees/FlowOak.mtree | Flow Oak | -6 | 4
+tree-place .tmp/Tests/Trees/FlowPalm.mtree | Flow Palm | 6 | 4
+tree-place .tmp/Tests/Trees/FlowSnag.mtree | Flow Snag | 0 | 10
+tree-wait Flow Oak
+tree-wait Flow Palm
+tree-wait Flow Snag
+wait 5
+tree-assert Flow Oak | 2
+tree-assert Flow Palm | 2
+tree-assert Flow Snag | 1
+undo
+wait 3
+assert-missing Flow Snag
+redo
+tree-wait Flow Snag
+wait 3
+tree-assert Flow Snag | 1
+# Editing the recipe regenerates every instance in place.
+tree-mark Flow Oak
+tree-set .tmp/Tests/Trees/FlowOak.mtree | Seed | 99
+tree-wait Flow Oak
+wait 3
+tree-assert-regenerated Flow Oak
+tree-assert Flow Oak | 2
+screenshot .tmp/Trees-Editor.png
+save-as .tmp/Tests/TreeScene.lvl
+load .tmp/Tests/TreeScene.lvl
+wait 5
+tree-wait Flow Oak
+tree-wait Flow Palm
+wait 5
+tree-assert Flow Oak | 2
+tree-assert Flow Palm | 2
+play
+wait 60
+tree-assert Flow Oak | 2
+stop
+wait 30
+tree-wait Flow Oak
+wait 3
+tree-assert Flow Oak | 2
+# Trees as terrain foliage.
+foliage-fixture
+tree-foliage .tmp/Tests/Trees/FlowSnag.mtree
+foliage-stroke {"From":[-12,-12],"To":[12,12],"Species":3,"Radius":8,"Density":0.1,"Spacing":2}
+wait 90
+foliage-assert
+screenshot .tmp/Trees-Foliage.png
+quit
