@@ -1,0 +1,57 @@
+# --scene Assets/Scenes/Tests/TerrainTest.lvl
+# The MitchTree editor: a recipe open with its live preview (its own render group, so the terrain
+# scene stays out of it), undoable edits, presets, forced levels of detail, preview captures, and
+# saving regenerating a placed instance.
+wait 5
+tree-new Oak | .tmp/Tests/Trees/EditorOak.mtree
+tree-place .tmp/Tests/Trees/EditorOak.mtree | Editor Oak | 0 | 6
+tree-wait Editor Oak
+tree-open .tmp/Tests/Trees/EditorOak.mtree
+tree-wait-preview
+tree-assert-dirty 0
+tree-assert-stats 1000 | 400000
+tree-screenshot .tmp/MitchTree-Oak.png
+# Edits are undoable and mark the document unsaved.
+tree-edit Trunk.Height | 18
+tree-wait-preview
+tree-assert-dirty 1
+tree-undo
+tree-wait-preview
+tree-assert-dirty 0
+tree-redo
+tree-wait-preview
+tree-assert-dirty 1
+tree-preset Pine
+tree-wait-preview
+tree-assert-stats 500 | 400000
+tree-screenshot .tmp/MitchTree-Pine.png
+tree-preview lod | 2
+wait 3
+tree-assert-lod 2
+tree-screenshot .tmp/MitchTree-Pine-LOD2.png
+tree-preview lod | -1
+tree-preview wireframe | 1
+wait 3
+tree-screenshot .tmp/MitchTree-Pine-Wire.png
+tree-preview wireframe | 0
+# Saving regenerates the placed instance.
+tree-mark Editor Oak
+tree-save
+tree-assert-dirty 0
+tree-wait Editor Oak
+wait 3
+tree-assert-regenerated Editor Oak
+tree-assert Editor Oak | 2
+screenshot .tmp/MitchTree-Editor.png
+tree-close .tmp/Tests/Trees/EditorOak.mtree
+# The Terrain panel's Trees workspace lists the project's recipes.
+terrain-fixture
+terrain-bind Terrain
+terrain-layout
+focus-window Terrain
+terrain-mode Trees
+wait 3
+screenshot .tmp/MitchTree-TerrainTrees.png
+terrain-mode Sculpt
+wait 3
+quit
