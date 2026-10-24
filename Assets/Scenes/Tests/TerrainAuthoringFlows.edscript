@@ -72,8 +72,12 @@ wait 2
 screenshot .tmp/TerrainAuthoring-Tiles.png
 terrain-mode Foliage
 wait 2
+# Splines has only planned tools: hidden unless Preferences shows planned tools.
+preference Editor.ShowPlannedTools | true
 terrain-mode Splines
 wait 2
+screenshot .tmp/TerrainAuthoring-Splines.png
+preference Editor.ShowPlannedTools | false
 terrain-mode Inspect
 wait 2
 screenshot .tmp/TerrainAuthoring-Inspect.png
