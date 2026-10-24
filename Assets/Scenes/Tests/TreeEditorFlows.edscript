@@ -21,6 +21,26 @@ tree-assert-dirty 0
 tree-redo
 tree-wait-preview
 tree-assert-dirty 1
+# Branch levels from the side panel: add, switch off and remove, each one undo step.
+tree-assert-levels 3 | 3
+tree-level add
+tree-assert-levels 4 | 4
+tree-level toggle | 4
+tree-assert-levels 4 | 3
+tree-page Branches | 4
+tree-wait-preview
+screenshot .tmp/MitchTree-Branches.png
+tree-level remove | 4
+tree-assert-levels 3 | 3
+tree-undo
+tree-assert-levels 4 | 3
+tree-undo
+tree-undo
+tree-assert-levels 3 | 3
+tree-page Leaf Texture
+wait 2
+screenshot .tmp/MitchTree-LeafTexture.png
+tree-page Tree
 tree-preset Pine
 tree-wait-preview
 tree-assert-stats 500 | 400000
@@ -44,12 +64,19 @@ tree-assert-regenerated Editor Oak
 tree-assert Editor Oak | 2
 screenshot .tmp/MitchTree-Editor.png
 tree-close .tmp/Tests/Trees/EditorOak.mtree
-# The Terrain panel's Trees workspace lists the project's recipes.
+tree-assert-open .tmp/Tests/Trees/EditorOak.mtree | 0
+# A placed tree opens from the selection (the hierarchy's and View > MitchTree's Edit Selected Tree).
+select Editor Oak
+action Tree.EditSelected
+tree-assert-open .tmp/Tests/Trees/EditorOak.mtree | 1
+tree-wait-preview
+tree-close .tmp/Tests/Trees/EditorOak.mtree
+# The Terrain panel's Trees workspace lists the project's recipes (View > MitchTree > Trees Workspace).
 terrain-fixture
 terrain-bind Terrain
 terrain-layout
 focus-window Terrain
-terrain-mode Trees
+action View.TreesWorkspace
 wait 3
 screenshot .tmp/MitchTree-TerrainTrees.png
 terrain-mode Sculpt
