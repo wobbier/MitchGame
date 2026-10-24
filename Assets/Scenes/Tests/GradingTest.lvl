@@ -1,0 +1,196 @@
+{
+    "Entities": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        2.2,
+                        -7.0
+                    ],
+                    "Rotation": [
+                        10,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "ClearColor": [
+                        0.3,
+                        0.4,
+                        0.55
+                    ],
+                    "ClearType": "Procedural",
+                    "Far": 300.0,
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Type": "Camera",
+                    "Zoom": 55.0
+                },
+                {
+                    "Bloom": true,
+                    "Lut": "Assets/Textures/LUTs/TealOrange.cube",
+                    "LutContribution": 1.0,
+                    "Tonemapper": "ACES",
+                    "Type": "PostProcess"
+                }
+            ],
+            "GUID": "ac17d0b1e51dcb01",
+            "Name": "Main Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0,
+                        10,
+                        0
+                    ],
+                    "Rotation": [
+                        55,
+                        30,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        0.96,
+                        0.9
+                    ],
+                    "DirectionalSource": "Automatic",
+                    "Intensity": 2.0,
+                    "LightType": "Directional",
+                    "Type": "Light"
+                }
+            ],
+            "GUID": "ac17d0b1e51dcb02",
+            "Name": "Sun"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        10,
+                        1,
+                        10
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "DiffuseColor": [
+                            0.5,
+                            0.5,
+                            0.52
+                        ],
+                        "Roughness": 0.9,
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
+                }
+            ],
+            "GUID": "ac17d0b1e51dcb04",
+            "Name": "Ground"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -1.6,
+                        1.0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "DiffuseColor": [
+                            0.9,
+                            0.35,
+                            0.25
+                        ],
+                        "Roughness": 0.35,
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "GUID": "ac17d0b1e51dcb05",
+            "Name": "Sphere"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        1.8,
+                        1.0,
+                        0.5
+                    ],
+                    "Rotation": [
+                        0,
+                        25,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "Material": {
+                        "DiffuseColor": [
+                            0.3,
+                            0.5,
+                            0.85
+                        ],
+                        "Roughness": 0.6,
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "GUID": "ac17d0b1e51dcb06",
+            "Name": "Cube"
+        }
+    ],
+    "Version": 2
+}
