@@ -47,6 +47,17 @@ wait-log Scripts: hot reloaded | 3600
 wait 5
 assert-field Reloader | Transform.Scale | [1.0, 1.0, 1.0]
 
+# An exception reaches the Log with its whole stack, down to the throwing line
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | public int Ticks = 0; | public int Ticks = 0; static bool s_thrown;
+wait-log Scripts: hot reloaded | 3600
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | Ticks++; | Ticks++; if( !s_thrown ) { s_thrown = true; throw new System.InvalidOperationException( "probe throw" ); }
+wait-log probe throw | 3600
+wait-log HotReloadProbe.cs:line 11 | 600
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | Ticks++; if( !s_thrown ) { s_thrown = true; throw new System.InvalidOperationException( "probe throw" ); } | Ticks++;
+wait-log Scripts: hot reloaded | 3600
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | public int Ticks = 0; static bool s_thrown; | public int Ticks = 0;
+wait-log Scripts: hot reloaded | 3600
+
 # Stop restores the scene
 stop
 wait 5
@@ -57,3 +68,19 @@ assert-field Reloader | Transform.Position | [0.0, 3.0, 0.0]
 assert-field Sun | Light.Intensity | 3.0
 assert-field Dropper | Transform.Position | [4.0, 4.0, 0.0]
 assert-count-delta 0
+
+# A compile error is logged per line (file:line, clickable), and Play waits until the scripts build
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f; | float version = 1.0f
+wait-log Assets/Scripts/Tests/HotReloadProbe.cs:12: | 3600
+wait-log error CS1002 | 600
+play
+wait 5
+assert-playing 0
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f | float version = 1.0f;
+wait-log Scripts: hot reloaded | 3600
+play
+wait 5
+assert-playing 1
+stop
+wait 5
+assert-playing 0
