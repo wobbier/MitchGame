@@ -221,7 +221,7 @@ void Foo::Baz()
 
 ## Optick Profiling
 
-Captures are triggered at runtime with **F9** (toggle start/stop/save). `startup.opt` is saved automatically after the first 10 frames. Files land in the working directory.
+Captures are triggered at runtime with **F9** (records 10 frames). `--capture-startup` records the first 10 frames as `startup`. Files land in `.tmp/Captures/` (newest 5 F9 captures kept); on Linux the tracer writes Chrome Trace `.json` instead of `.opt`.
 
 ### Parsing `.opt` files with Python
 
