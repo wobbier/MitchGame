@@ -1,0 +1,58 @@
+name: Checks
+
+# Everything Engine/Tools/RunChecks.sh guards, on a fresh checkout: builds the editor, the game and
+# the unit tests, runs the unit tests, every editor flow and the showcase screenshot regression,
+# headless (Xvfb + lavapipe, through the engine's Nix environment).
+on:
+  push:
+    branches: [master, overhaul]
+  pull_request:
+    branches: [master, overhaul]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Check out the project and the engine
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      # The dev shell compiles through ccache (Engine/Docs/Development-Environment.md).
+      - name: Restore the compiler cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-mitchgame-checks-${{ github.sha }}
+          restore-keys: ccache-mitchgame-checks-
+
+      - name: Generate the project
+        run: bash Engine/Tools/GenerateProject.sh
+
+      - name: Build and run the checks
+        run: bash Engine/Tools/NixEnv.sh Engine/Tools/RunChecks.sh
+
+      - name: Keep the logs and captures
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: checks-${{ github.run_number }}
+          path: |
+            .tmp/RunChecks.*.log
+            .tmp/EditorFlows
+            .tmp/ScreenshotRegression
+          if-no-files-found: ignore
