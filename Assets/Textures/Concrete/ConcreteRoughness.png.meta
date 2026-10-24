@@ -1,6 +1,7 @@
 {
     "FileType": "png",
-    "Format": "None",
+    "Format": "Auto",
+    "GUID": "7af889c300dd39cc",
     "MIPs": true,
     "Quality": "d",
     "Type": "Default"
