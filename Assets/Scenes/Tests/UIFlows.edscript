@@ -1,0 +1,25 @@
+# RmlUi document regression (UI-2): click actions, assertions, hot reload.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/UITest.lvl --editor-exec Assets/Scenes/Tests/UIFlows.edscript
+# Assets/UI/Tests/UITest.rml carries the elements; edits here hot reload, so this flow skips
+# while another Havana is open.
+wait-log UI: loaded Assets/UI/Tests/UITest.rml | 600
+
+# A click changes state through the inline set-text action.
+ui-assert-text #click-result | Unclicked
+ui-click #press-me
+wait 2
+ui-assert-text #click-result | Clicked!
+
+# An .rcss edit reloads the stylesheet while the document keeps running.
+replace-in-file Assets/UI/Tests/UITest.rcss | background-color: #3A86FF; | background-color: #FF006E;
+wait-log UI: reloaded | 600
+screenshot .tmp/EditorFlows/UIFlows_reloaded.png
+wait 5
+
+# Restore the stylesheet; the reload fires again.
+replace-in-file Assets/UI/Tests/UITest.rcss | background-color: #FF006E; | background-color: #3A86FF;
+wait-log UI: reloaded | 600
+
+# The click result survived both reloads.
+ui-assert-text #click-result | Clicked!
+quit

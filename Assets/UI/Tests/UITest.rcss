@@ -80,3 +80,24 @@ p {
 	transform: rotate(6deg);
 	color: #FFFFFF;
 }
+
+#press-me {
+	position: absolute;
+	left: 24px;
+	top: 310px;
+	padding: 10px 18px;
+	background-color: #3A86FF;
+	border-radius: 6px;
+	color: #FFFFFF;
+}
+
+#press-me:hover {
+	background-color: #5E9BFF;
+}
+
+#click-result {
+	position: absolute;
+	left: 160px;
+	top: 320px;
+	color: #B8C2D9;
+}

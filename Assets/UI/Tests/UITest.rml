@@ -13,6 +13,8 @@
 		</div>
 		<img id="star" src="../Drive/Star.png"/>
 		<div id="tilted">transform: rotate</div>
+		<button id="press-me" onclick="set-text:#click-result|Clicked!">Press me</button>
+		<span id="click-result">Unclicked</span>
 	</div>
 </body>
 </rml>
