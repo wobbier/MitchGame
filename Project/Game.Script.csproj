@@ -15,4 +15,6 @@
     <Compile Include="../Assets/**/*.cs" />
     <ProjectReference Include="../Engine/Modules/ScriptCore/ScriptCore.csproj" />
   </ItemGroup>
+  <!-- The CS-9 source generator: schemas + serializers for [GenerateSchema] scripts. -->
+  <Import Project="../Engine/Modules/ScriptCore/Generators/MitchEngine.Generators.targets" />
 </Project>

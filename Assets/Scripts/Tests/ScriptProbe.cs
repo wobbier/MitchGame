@@ -1,8 +1,12 @@
 using ScriptCore;
+using ScriptCore.Generation;
 
 // Drives ScriptTest.lvl / ScriptFlows.edscript: every effect is visible on the entity's Transform,
 // so the editor script can assert the lifecycle and the engine API from outside.
-public class ScriptProbe : Script
+// [GenerateSchema] + partial: the CS-9 source generator emits Schema/SaveFields/LoadFields for it
+// at compile time, and OnStart logs the schema so the flow proves generation ran in a real build.
+[GenerateSchema]
+public partial class ScriptProbe : Script
 {
     public float RiseSpeed = 1.0f;
     public int FixedSteps = 0;
@@ -24,6 +28,7 @@ public class ScriptProbe : Script
             }
         }
         Debug.Log($"ScriptProbe started on {Entity.Name}, ground '{GroundName}'");
+        Debug.Log($"ScriptProbe schema: {Schema.Fields.Count} fields, hash 0x{Schema.Hash:X16}");
 
         // Generic component access: double the sun through its reflected Light fields.
         var sun = World.Find("Sun");
