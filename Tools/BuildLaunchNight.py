@@ -637,28 +637,21 @@ def wall_run(scene, keys, x, z, direction, parent, overrides=None):
     return out
 
 
-RIGHT = {"E": (0.0, -1.0), "N": (1.0, 0.0), "W": (0.0, 1.0), "S": (-1.0, 0.0)}
 STEP = {"E": (2.5, 0.0), "N": (0.0, 2.5), "W": (-2.5, 0.0), "S": (0.0, -2.5)}
-OPPOSITE = {"E": "W", "W": "E", "N": "S", "S": "N"}
 
 
 def partition(scene, keys, x, z, direction, parent, blinds=False):
-    """An interior glass wall seen from both rooms. Synty walls render one face only (their right), so
-    each segment gets a mirrored twin facing the other room; blinds=True hangs blinds in both."""
-    (dx, dz), (rx, rz) = STEP[direction], RIGHT[direction]
+    """An interior glass wall seen from both rooms: the glass wall models import double-sided
+    (DoubleSided in their .fbx.meta), so one segment reads from either room. blinds=True hangs
+    blinds on it."""
+    dx, dz = STEP[direction]
     for i, key in enumerate(keys):
         if not key:
             continue
         start = (x + dx * i, z + dz * i)
-        thickness = -bounds(key)[0][2]
-        twin = (start[0] + dx + rx * thickness, start[1] + dz + rz * thickness)
         wall(scene, key, start[0], start[1], direction, parent)
-        # The twin's glass is nearly clear, so the two panes don't double the tint.
-        twin_glass = {i: glass(opacity=0.05) for i, part in enumerate(PARTS[key]["Parts"]) if "Glass" in part_slot(key, part)}
-        wall(scene, key, twin[0], twin[1], OPPOSITE[direction], parent, overrides=twin_glass)
         if blinds:
-            for (bx, bz), d in ((start, direction), (twin, OPPOSITE[direction])):
-                wall(scene, "SM_Bld_Wall_Glass_Window_Blinds_Down_01", bx, bz, d, parent)
+            wall(scene, "SM_Bld_Wall_Glass_Window_Blinds_Down_01", start[0], start[1], direction, parent)
 
 
 def build_shell(scene):

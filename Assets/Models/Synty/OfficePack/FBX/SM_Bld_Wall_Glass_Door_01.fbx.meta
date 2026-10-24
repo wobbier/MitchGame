@@ -1,5 +1,6 @@
 {
     "ConvertUnits": true,
+    "DoubleSided": true,
     "FileType": "fbx",
     "GUID": "f809d3f67d6b04e6"
 }
