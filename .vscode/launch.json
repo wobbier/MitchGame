@@ -11,7 +11,7 @@
       "cwd": "${workspaceFolder}/Engine/Tools/HUB",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -29,7 +29,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-me-hub-debug"
+      "preLaunchTask": "build-me-hub-debug",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "Havana (Editor_Debug, Linux)",
@@ -41,7 +42,7 @@
       "cwd": "${workspaceFolder}",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -59,7 +60,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-havana-editor-debug"
+      "preLaunchTask": "build-havana-editor-debug",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "Havana (Debug, Linux)",
@@ -71,7 +73,7 @@
       "cwd": "${workspaceFolder}",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -89,7 +91,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-havana-game-debug"
+      "preLaunchTask": "build-havana-game-debug",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "ME HUB (Release, Linux)",
@@ -101,7 +104,7 @@
       "cwd": "${workspaceFolder}/Engine/Tools/HUB",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -119,7 +122,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-me-hub-release"
+      "preLaunchTask": "build-me-hub-release",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "Havana (Editor_Release, Linux)",
@@ -131,7 +135,7 @@
       "cwd": "${workspaceFolder}",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -149,7 +153,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-havana-editor-release"
+      "preLaunchTask": "build-havana-editor-release",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "MitchGame (Release, Linux)",
@@ -161,7 +166,7 @@
       "cwd": "${workspaceFolder}",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -179,7 +184,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-havana-game-release"
+      "preLaunchTask": "build-havana-game-release",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "ME HUB (Retail, Linux)",
@@ -191,7 +197,7 @@
       "cwd": "${workspaceFolder}/Engine/Tools/HUB",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -209,7 +215,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-me-hub-retail"
+      "preLaunchTask": "build-me-hub-retail",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "Havana (Editor_Retail, Linux)",
@@ -221,7 +228,7 @@
       "cwd": "${workspaceFolder}",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -239,7 +246,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-havana-editor-retail"
+      "preLaunchTask": "build-havana-editor-retail",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     },
     {
       "name": "MitchGame (Retail, Linux)",
@@ -251,7 +259,7 @@
       "cwd": "${workspaceFolder}",
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "${workspaceFolder}/.vscode/nix-gdb.sh",
+      "miDebuggerPath": "${workspaceFolder}/Engine/Tools/NixGdb.sh",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -269,7 +277,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build-havana-game-retail"
+      "preLaunchTask": "build-havana-game-retail",
+      "miDebuggerArgs": "--project \"${workspaceFolder}\""
     }
   ]
 }

@@ -1,3 +1,20 @@
 {
-    "C_Cpp.default.compilerPath": "/usr/bin/g++"
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "git.ignoredRepositories": [
+        "Engine/ThirdParty/Assimp",
+        "Engine/ThirdParty/ImGuizmo",
+        "Engine/ThirdParty/JSON",
+        "Engine/ThirdParty/Optick",
+        "Engine/ThirdParty/SDL",
+        "Engine/ThirdParty/bgfx",
+        "Engine/ThirdParty/bimg",
+        "Engine/ThirdParty/box2d",
+        "Engine/ThirdParty/box3d",
+        "Engine/ThirdParty/bx",
+        "Engine/ThirdParty/doctest",
+        "Engine/ThirdParty/genie",
+        "Engine/ThirdParty/glm",
+        "Engine/ThirdParty/imgui-node-editor",
+        "Engine/ThirdParty/recastnavigation"
+    ]
 }

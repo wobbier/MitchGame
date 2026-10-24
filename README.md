@@ -14,21 +14,21 @@ Getting Started
 Linux builds
 ------------
 
-Enter `nix develop`, then run `Project/GenerateSolution.sh` to generate the makefiles. Editor configs are `editor_debug`, `editor_release`, and `editor_retail`; game configs are `game_linux_debug`, `game_linux_release`, and `game_linux_retail`.
+Open the project in VS Code and press F5 with Nix and the C/C++ extension installed. Build tasks enter the engine-owned environment and regenerate the makefiles automatically. For a terminal, run `Engine/Tools/DevShell.sh`. Editor configs are `editor_debug`, `editor_release`, and `editor_retail`; game configs are `game_linux_debug`, `game_linux_release`, and `game_linux_retail`.
 
 ```bash
 make -f MitchGame.make Havana config=editor_release -j"$(nproc)"
 make -f MitchGame.make Game_EntryPoint config=game_linux_retail -j"$(nproc)"
 ```
 
-Run the binaries inside `nix develop` too. From a regular terminal at the project root, use:
+Run the binaries inside `Engine/Tools/DevShell.sh` too. From a regular terminal at the project root, use:
 
 ```bash
-nix develop --command ./.build/Editor_Release/Havana
-nix develop --command ./.build/Game_linux_Retail/Game_EntryPoint_x64
+Engine/Tools/NixEnv.sh ./.build/Editor_Release/Havana
+Engine/Tools/NixEnv.sh ./.build/Game_linux_Retail/Game_EntryPoint_x64
 ```
 
-The development shell supplies the shared-library paths for fontconfig, Wayland, Ultralight's GTK dependencies, and the graphics loaders. Launching the executable directly outside that shell can fail with `libfontconfig.so.1: cannot open shared object file` or another missing-library error. VS Code's launch configurations already run through the Nix environment.
+The engine owns the package lock and shared environment. Optional private project dependencies go in `devshell.nix`; see [the environment guide](Engine/Docs/Development-Environment.md). The development shell supplies the shared-library paths for fontconfig, Wayland, Ultralight's GTK dependencies, and the graphics loaders. Launching the executable directly outside that shell can fail with `libfontconfig.so.1: cannot open shared object file` or another missing-library error. VS Code's launch configurations already run through the Nix environment.
 
 VS Code's build tasks and Run and Debug menu include Debug, Release, and Retail for Havana, MitchGame, and ME HUB. The Release and Retail game tasks also compile the C# scripts into the corresponding output folder. When building the Retail game directly with make, build its scripts separately before running it; see [the build-system guide](Engine/Docs/Build-System.md#generating-and-building).
 

@@ -4,8 +4,10 @@
     {
       "label": "prepare-me-hub-assets",
       "type": "process",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "command": "${workspaceFolder}/Engine/Tools/NixEnv.sh",
       "args": [
+        "--project",
+        "${workspaceFolder}",
         "bash",
         "${workspaceFolder}/.vscode/prepare-hub-assets.sh"
       ],
@@ -16,15 +18,11 @@
     },
     {
       "label": "build-me-hub-debug",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "HUB",
-        "config=editor_debug",
-        "-j$(nproc)"
+        "editor_debug"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -37,15 +35,11 @@
     },
     {
       "label": "build-havana-editor-debug",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "Havana",
-        "config=editor_debug",
-        "-j$(nproc)"
+        "editor_debug"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -60,38 +54,27 @@
     },
     {
       "label": "build-havana-game-debug",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "Game_EntryPoint",
-        "config=game_linux_debug",
-        "-j$(nproc)"
+        "game_linux_debug"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "group": "build",
       "problemMatcher": [
         "$gcc"
       ]
     },
     {
       "label": "build-me-hub-release",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "HUB",
-        "config=editor_release",
-        "-j$(nproc)"
+        "editor_release"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -104,15 +87,11 @@
     },
     {
       "label": "build-havana-editor-release",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "Havana",
-        "config=editor_release",
-        "-j$(nproc)"
+        "editor_release"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -124,15 +103,11 @@
     },
     {
       "label": "build-havana-game-release",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "Game_EntryPoint",
-        "config=game_linux_release",
-        "-j$(nproc)"
+        "game_linux_release"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -146,8 +121,10 @@
     {
       "label": "build-game-scripts-release",
       "type": "process",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "command": "${workspaceFolder}/Engine/Tools/NixEnv.sh",
       "args": [
+        "--project",
+        "${workspaceFolder}",
         "dotnet",
         "build",
         "Project/Game.Script.csproj",
@@ -168,15 +145,11 @@
     },
     {
       "label": "build-me-hub-retail",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "HUB",
-        "config=editor_retail",
-        "-j$(nproc)"
+        "editor_retail"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -189,15 +162,11 @@
     },
     {
       "label": "build-havana-editor-retail",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "Havana",
-        "config=editor_retail",
-        "-j$(nproc)"
+        "editor_retail"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -209,15 +178,11 @@
     },
     {
       "label": "build-havana-game-retail",
-      "type": "shell",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "type": "process",
+      "command": "${workspaceFolder}/Engine/Tools/BuildProject.sh",
       "args": [
-        "make",
-        "-f",
-        "MitchGame.make",
         "Game_EntryPoint",
-        "config=game_linux_retail",
-        "-j$(nproc)"
+        "game_linux_retail"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -231,8 +196,10 @@
     {
       "label": "build-game-scripts-retail",
       "type": "process",
-      "command": "${workspaceFolder}/.vscode/nix-env.sh",
+      "command": "${workspaceFolder}/Engine/Tools/NixEnv.sh",
       "args": [
+        "--project",
+        "${workspaceFolder}",
         "dotnet",
         "build",
         "Project/Game.Script.csproj",
