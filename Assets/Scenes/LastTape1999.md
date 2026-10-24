@@ -15,8 +15,9 @@ nix develop --command .build/Game_linux_Debug/Game_EntryPoint_x64 \
   --scene Assets/Scenes/LastTape1999.lvl --no-debug-overlay
 ```
 
-`--no-debug-overlay` hides the game debug menu and profiler bar. It also works
-for screenshot captures; it leaves game UI and performance recording available.
+The game debug menu and profiler bar are hidden by default (F3 toggles them);
+`--no-debug-overlay` keeps them off even when F3 is pressed. It leaves game UI and
+performance recording available.
 
 ## Camera controls
 
