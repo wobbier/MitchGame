@@ -1,0 +1,82 @@
+body {
+	font-family: Inter;
+	font-size: 20px;
+	color: #F2F4F8;
+	width: 100%;
+	height: 100%;
+}
+
+#panel {
+	position: absolute;
+	left: 180px;
+	top: 80px;
+	width: 600px;
+	height: 380px;
+	background-color: #1B2433E6;
+	border-radius: 24px;
+	padding: 24px;
+}
+
+/* RmlUi ships no default stylesheet: block elements must say so. */
+h1 {
+	display: block;
+	font-size: 34px;
+	margin-bottom: 8px;
+	color: #FFD166;
+}
+
+p {
+	display: block;
+	margin-bottom: 20px;
+	color: #B8C2D9;
+}
+
+/* An oversized gradient block clipped by the rounded parent: exercises the stencil clip mask. */
+#clip-box {
+	position: absolute;
+	left: 24px;
+	top: 140px;
+	width: 240px;
+	height: 150px;
+	border-radius: 40px;
+	overflow: hidden;
+	background-color: #0D1117;
+}
+
+#clip-fill {
+	position: absolute;
+	left: -60px;
+	top: -40px;
+	width: 400px;
+	height: 120px;
+	background-color: #2EC4B6;
+	transform: rotate(-12deg);
+}
+
+#clip-label {
+	position: absolute;
+	left: 48px;
+	top: 108px;
+	color: #FFFFFF;
+}
+
+#star {
+	position: absolute;
+	left: 320px;
+	top: 150px;
+	width: 96px;
+	height: 96px;
+}
+
+#tilted {
+	position: absolute;
+	left: 300px;
+	top: 270px;
+	width: 220px;
+	height: 56px;
+	padding: 12px;
+	background-color: #EF476F;
+	border-radius: 8px;
+	transform: rotate(6deg);
+	color: #FFFFFF;
+}

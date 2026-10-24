@@ -1,0 +1,18 @@
+<rml>
+<head>
+	<title>UITest</title>
+	<link type="text/rcss" href="UITest.rcss"/>
+</head>
+<body>
+	<div id="panel">
+		<h1>MitchEngine × RmlUi</h1>
+		<p>Text shaped by FreeType, drawn by bgfx.</p>
+		<div id="clip-box">
+			<div id="clip-fill"/>
+			<span id="clip-label">rounded clip</span>
+		</div>
+		<img id="star" src="../Drive/Star.png"/>
+		<div id="tilted">transform: rotate</div>
+	</div>
+</body>
+</rml>
