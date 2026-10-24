@@ -229,7 +229,7 @@
                     "DepthOfField": true,
                     "DoFAperture": 1.7319999933242798,
                     "DoFDebugCoC": false,
-                    "DoFFocusDistance": 0.7279999852180481,
+                    "DoFFocusDistance": 0.742,
                     "DoFMaxBlurRadius": 32.0,
                     "DoFSensorHeight": 70.0,
                     "DoFSplitDiopter": false,
