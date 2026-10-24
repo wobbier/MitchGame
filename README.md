@@ -6,7 +6,7 @@ This is an example project to get you started making games in the [MitchEngine][
 Getting Started
 -----------------------
 
-1. Pull the repo and run GenerateSolution.bat or edit the project name using the methods shown below
+1. Pull the repo and run `Project/GenerateSolution.bat` (Windows) or `Project/GenerateSolution.command` (macOS), after setting the project name as shown below
 2. Run Engine/ThirdParty/GenerateSolutions.bat (Until I figure out a good way to remove this step)
 3. Open the generated solution in the root folder
 4. Build & Celebrate
@@ -37,10 +37,7 @@ Release retains development tools and debug symbols. Retail disables engine debu
 Editing the project name
 -----------------------
 
-Edit the GenerateSolution.bat file and change the --project-name property with your desired name.
-This is important since it will be used when searching for project files.
-
-Replace the word MitchGame on the folders MitchGame and MitchGame_EntryPoint with the same name as the --project-name. EX TestGame and TestGame_EntryPoint
+Set `Name` in `Game.sharpmake.cs` (both the project and the solution class) to your game's name. Generation writes it to `Project/Game.meproj` and names the solution and makefile after it (`<Name>.sln`, `<Name>.make`). The `Game` and `Game_EntryPoint` folders keep their names.
 
 Contact me
 ----------
