@@ -145,5 +145,10 @@
             "Cost": 1.0,
             "Name": ""
         }
-    ]
+    ],
+    "Product": {
+        "Name": "MitchGame",
+        "Org": "MitchEngine",
+        "StartupScene": "Assets/SceneGraphTest.lvl"
+    }
 }
