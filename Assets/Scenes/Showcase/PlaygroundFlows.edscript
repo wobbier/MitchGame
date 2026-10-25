@@ -2,6 +2,8 @@
 #   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/Playground.lvl --editor-exec Assets/Scenes/Showcase/PlaygroundFlows.edscript
 # Visuals are covered by Engine/Tools/ScreenshotRegression.py; this checks the gameplay scripts run.
 wait 20
+# Streamed models keep adding entities for a while on a cold machine; settle before the baseline.
+wait-count-stable 90 | 3600
 mark-count
 assert-field Chaser 0 | Transform.Position | [-20.0, 0.95, -20.0]
 

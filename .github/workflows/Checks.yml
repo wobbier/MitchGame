@@ -56,3 +56,5 @@ jobs:
             .tmp/EditorFlows
             .tmp/ScreenshotRegression
           if-no-files-found: ignore
+          # Everything above hides under .tmp/, which v4 skips by default.
+          include-hidden-files: true
