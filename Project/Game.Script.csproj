@@ -2,8 +2,12 @@
   <!--
     Command-line build of the game's scripts (every .cs under Assets) against ScriptCore; the engine
     runs it on Linux / macOS and for hot reload. Visual Studio uses the Sharpmake-generated project.
+    MitchEngineDir is the engine: the project's Engine/ unless the engine passes another (an editor
+    or Player from another checkout writes it to .tmp/MitchEngine.props too, for IDEs).
   -->
+  <Import Project="../.tmp/MitchEngine.props" Condition="'$(MitchEngineDir)' == '' And Exists('../.tmp/MitchEngine.props')" />
   <PropertyGroup>
+    <MitchEngineDir Condition="'$(MitchEngineDir)' == ''">$(MSBuildThisFileDirectory)../Engine/</MitchEngineDir>
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Game.Script</AssemblyName>
     <Nullable>annotations</Nullable>
@@ -13,8 +17,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="../Assets/**/*.cs" />
-    <ProjectReference Include="../Engine/Modules/ScriptCore/ScriptCore.csproj" />
+    <ProjectReference Include="$(MitchEngineDir)Modules/ScriptCore/ScriptCore.csproj" />
   </ItemGroup>
   <!-- The CS-9 source generator: schemas + serializers for [GenerateSchema] scripts. -->
-  <Import Project="../Engine/Modules/ScriptCore/Generators/MitchEngine.Generators.targets" />
+  <Import Project="$(MitchEngineDir)Modules/ScriptCore/Generators/MitchEngine.Generators.targets" />
 </Project>
