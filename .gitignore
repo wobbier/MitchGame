@@ -232,6 +232,8 @@ imgui.ini
 
 # Local tool output and import backups
 /.tmp/
+# Build Game outputs (Engine/Docs/Building.md)
+/Builds/
 __pycache__/
 *.py[cod]
 *.meta.invalid
