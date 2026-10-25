@@ -79,10 +79,11 @@ action Sequence.PreviewMiddle
 wait 2
 play
 wait-log SequenceClipProbe: named playback, resume and binding passed | 600
-wait 60
+# The camera clip starts on its own schedule (CI measured FOV 0.0008 off rest 60 frames in,
+# and it ends back at rest): wait for the animated state instead of counting frames.
+wait-field Main Camera | Transform.Position | != [0, 2, -12] | 900
+wait-field Main Camera | Camera.FieldOfView | != 52 | 900
 assert-playing 1
-assert-field Main Camera | Transform.Position | != [0, 2, -12]
-assert-field Main Camera | Camera.FieldOfView | != 52
 screenshot .tmp/overhaul/shots/sequence_play.png
 stop
 wait 5
