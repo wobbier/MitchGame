@@ -98,7 +98,7 @@ def slot_machine(x, z, ground_y, yaw=125.0):
         part(6, "Slot Tray", (0, 0.7, 1.05), (0.9, 0.12, 0.25), [mesh("Cube", (0.75, 0.6, 0.15), metallic=0.8, roughness=0.3)]),
         {"GUID": "d71e000000000060", "Name": "Slot UI", "DestroyOnLoad": True, "Components": [
             {"Type": "Transform", "Position": [0, 0, 0], "Rotation": [0, 0, 0], "Scale": [1, 1, 1]},
-            {"Type": "BasicUIView", "FilePath": "Assets/UI/Drive/Slots.html"}]},
+            {"Type": "UIDocument", "FilePath": "Assets/UI/Drive/Slots.rml"}]},
     ]
 
 
@@ -301,7 +301,7 @@ def main():
     # Roof mount the guided missiles launch from (MissileLauncher; Fire shoots).
     entity("Missile Launcher", [transform((0, 2.3, 0.4)), script("MissileLauncher", {})], body)
 
-    # Roadside slot machine (SlotMachine.cs, reels in Assets/UI/Drive/Slots.html): E to spin, three
+    # Roadside slot machine (SlotMachine.cs, reels in Assets/UI/Drive/Slots.rml): E to spin, three
     # radiation symbols drop a nuke.
     for record in slot_machine(-9.0, 8.0, height(-9.0, 8.0)):
         entities.append(record)

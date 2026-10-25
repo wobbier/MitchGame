@@ -28,7 +28,7 @@ Engine/Tools/NixEnv.sh ./.build/Editor_Release/Havana
 Engine/Tools/NixEnv.sh ./.build/Game_linux_Retail/Game_EntryPoint_x64
 ```
 
-The engine owns the package lock and shared environment. Optional private project dependencies go in `devshell.nix`; see [the environment guide](Engine/Docs/Development-Environment.md). The development shell supplies the shared-library paths for fontconfig, Wayland, Ultralight's GTK dependencies, and the graphics loaders. Launching the executable directly outside that shell can fail with `libfontconfig.so.1: cannot open shared object file` or another missing-library error. VS Code's launch configurations already run through the Nix environment.
+The engine owns the package lock and shared environment. Optional private project dependencies go in `devshell.nix`; see [the environment guide](Engine/Docs/Development-Environment.md). The development shell supplies the shared-library paths for Wayland, SDL2 and the graphics loaders. Launching the executable directly outside that shell can fail with a missing-library error. VS Code's launch configurations already run through the Nix environment.
 
 VS Code's build tasks and Run and Debug menu include Debug, Release, and Retail for Havana, MitchGame, and ME HUB. The Release and Retail game tasks also compile the C# scripts into the corresponding output folder. When building the Retail game directly with make, build its scripts separately before running it; see [the build-system guide](Engine/Docs/Build-System.md#generating-and-building).
 

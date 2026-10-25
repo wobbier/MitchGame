@@ -13,7 +13,7 @@
             "defines": [
                 "DEFINE_ME_PLATFORM_LINUX",
                 "DEFINE_ME_EDITOR",
-                "DEFINE_ME_ULTRALIGHT",
+                "DEFINE_ME_RMLUI",
                 "DEFINE_ME_FMOD",
                 "DEFINE_ME_OPTICK"
             ],

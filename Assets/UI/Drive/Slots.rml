@@ -1,0 +1,41 @@
+<rml>
+<head>
+	<title>Slots</title>
+	<link type="text/rcss" href="Slots.rcss"/>
+</head>
+<body>
+	<!-- Bound to SlotMachine.cs through UI.Model("slots"): the script owns every value. -->
+	<div id="root" data-model="slots">
+		<div id="prompt" data-if="prompt">Press E to play the slots</div>
+		<div id="machine" data-if="machine">
+			<div id="title">NUCLEAR SEVENS</div>
+			<div id="credits">Credits: {{ credits }}</div>
+			<div id="reels">
+				<div class="reel" id="r0" data-class-spinning="s0">
+					<span class="sym s0" data-if="r0 == 0">7</span>
+					<span class="sym s1" data-if="r0 == 1">BAR</span>
+					<span class="sym s2" data-if="r0 == 2">&#x2665;</span>
+					<img class="sym" src="Star.png" data-if="r0 == 3"/>
+					<img class="sym" src="Nuke.png" data-if="r0 == 4"/>
+				</div>
+				<div class="reel" id="r1" data-class-spinning="s1">
+					<span class="sym s0" data-if="r1 == 0">7</span>
+					<span class="sym s1" data-if="r1 == 1">BAR</span>
+					<span class="sym s2" data-if="r1 == 2">&#x2665;</span>
+					<img class="sym" src="Star.png" data-if="r1 == 3"/>
+					<img class="sym" src="Nuke.png" data-if="r1 == 4"/>
+				</div>
+				<div class="reel" id="r2" data-class-spinning="s2">
+					<span class="sym s0" data-if="r2 == 0">7</span>
+					<span class="sym s1" data-if="r2 == 1">BAR</span>
+					<span class="sym s2" data-if="r2 == 2">&#x2665;</span>
+					<img class="sym" src="Star.png" data-if="r2 == 3"/>
+					<img class="sym" src="Nuke.png" data-if="r2 == 4"/>
+				</div>
+			</div>
+			<div id="result" data-class-jackpot="jackpot">{{ result }}</div>
+			<div id="hint">E to spin &#xB7; three radiation symbols is the MAX WIN</div>
+		</div>
+	</div>
+</body>
+</rml>

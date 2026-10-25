@@ -1,0 +1,10 @@
+<rml>
+<head>
+	<title>CharacterUI</title>
+	<link type="text/rcss" href="CharacterUI.rcss"/>
+</head>
+<body>
+	<div id="example-title">HELLO</div>
+	<img id="crosshair" src="HUD/Crosshair.png"/>
+</body>
+</rml>

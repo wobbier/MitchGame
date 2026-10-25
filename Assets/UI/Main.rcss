@@ -1,0 +1,42 @@
+body {
+	font-family: Inter;
+	font-size: 20dp;
+	color: #FFFFFF;
+	width: 100%;
+	height: 100%;
+}
+
+/* Centred horizontally (320 + 2 x 24 padding = 368 wide). */
+#menu {
+	position: absolute;
+	left: 50%;
+	margin-left: -184px;
+	top: 26%;
+	width: 320px;
+	padding: 24px;
+	background-color: #10141CE0;
+	border-radius: 14px;
+}
+
+h1 {
+	display: block;
+	font-size: 34dp;
+	margin-bottom: 18dp;
+	color: #FFD166;
+}
+
+/* Mouse, Tab and the dpad all reach every button (nav: auto moves spatially). */
+button {
+	display: block;
+	padding: 10dp 16dp;
+	margin-bottom: 10px;
+	background-color: #2B3440;
+	border-radius: 6px;
+	cursor: pointer;
+	tab-index: auto;
+	nav: auto;
+}
+
+button:hover, button:focus {
+	background-color: #44536A;
+}

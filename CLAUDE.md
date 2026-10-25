@@ -77,11 +77,11 @@ The game-specific code lives in `Game/Source/` and the executable entry point in
 | Animation | `Engine/Source/Cores/AnimationCore.cpp` + `Animator` component (see `Engine/Docs/Animation.md`) | Assimp clips, GPU skinning |
 | Navigation | `Engine/Source/Cores/NavigationCore.cpp` + `Engine/Source/Navigation/` + `NavMeshSurface` / `NavMeshAgent` (see `Engine/Docs/Navigation.md`); baked `.navmesh` files sit next to their scene | Recast / Detour (DetourCrowd) |
 | Audio | `Engine/Source/Cores/AudioCore.cpp` + `AudioSource` / `AudioListener` (see `Engine/Docs/Audio.md`) | FMOD (optional); automated runs are silent |
-| UI | `Engine/Source/Cores/UI/` | Ultralight (HTML/CSS), being replaced by RmlUi behind `ME_RMLUI` (`UIDocument` + `RmlUiCore` + `Engine/Source/UI/Rml/`; C# view models via `UI.Model("name")` bind `data-model` documents and survive hot reloads; see `Engine/Docs/UI-Ultralight-and-ImGui.md`) |
+| UI | `Engine/Source/Cores/UI/` | RmlUi (HTML/CSS) behind `ME_RMLUI`: `UIDocument` + `RmlUiCore` + `Engine/Source/UI/Rml/`; inline actions (`onclick="load-scene:..."`) and C# view models via `UI.Model("name")` bind `data-model` documents and survive hot reloads; Ultralight was removed in UI-5 (see `Engine/Docs/UI-RmlUi-and-ImGui.md`) |
 | Scripting | `Engine/Source/Scripting/` + `Engine/Modules/ScriptCore/` (see `Engine/Docs/Scripting-DotNet.md`); game scripts are any `.cs` under `Assets/`, built by `Project/Game.Script.csproj`; `[GenerateSchema]` scripts get compile-time field schemas/serializers from `Engine/Modules/ScriptCore/Generators/` | .NET 8 / C#, hot reload in the editor |
 | VFS | `Engine/Modules/Dementia/Source/VFS/` behind `Path`/`File` (see `Engine/Docs/VFS.md`); game root over engine root as a priority overlay; `user://` is the per-user writable root (OS pref dir in shipped builds, `.tmp/User` in dev and automation); `--pak file.mpak` mounts an archive over the roots (`pack-assets` builds one); `--record-deps file` records every path a run reads. The dependency cooker `Havana --cook --scene X.lvl --out .tmp/Cook [--pak X.mpak]` ships what scenes need in runtime form only, with sources and `.meta` files stripped (`AssetRegistry.json` stands in for them; see `Engine/Docs/Cooking.md`) | DirectoryMount + PakMount (.mpak) |
 | Shader graphs | `Engine/Source/ShaderGraph/` (compiler, nodes, targets) + `Engine/Modules/Havana/Source/Widgets/ShaderGraph/` (editor, previews) + `ShaderGraphMaterial` (see `Engine/Docs/ShaderGraph.md`); graphs are `.shadergraph` files with generated sources committed in `<Name>.sg/` (regenerate with `ME_SHADERGRAPH_UPDATE=1 MitchEngine_Tests -tc="*project graphs*"`) | bgfx shaderc (Lit, Unlit, Particle, Decal, Post Process targets) |
-| Editor | `Engine/Modules/Havana/` | Ultralight + ImGui |
+| Editor | `Engine/Modules/Havana/` | ImGui |
 | Input | `Engine/Source/Engine/Input.h` + `Engine/Source/Input/` (actions, gamepads; see `Engine/Docs/Input.md`); the project map is `Assets/Config/Input.inputactions` | SDL2 |
 
 The `Engine` class (singleton-like, `Engine/Source/Engine/Engine.h`) owns the main loop and provides access to the `World`, renderer, input, and job system.
@@ -161,7 +161,7 @@ Composite features use `USE_IF(expr)` which takes a boolean expression of `USING
 | `ME_HEADLESS` | No window / no rendering |
 | `ME_PHYSICS_3D` | 3D physics (always on; Box3D) |
 | `ME_DOTNET` / `ME_SCRIPTING` | C# scripting via .NET 8 (`ME_SCRIPTING` is `USE_IF(USING(ME_DOTNET))`) |
-| `ME_ULTRALIGHT` / `ME_UI` | Ultralight HTML UI |
+| `ME_RMLUI` | RmlUi game UI (always on) |
 | `ME_FMOD` | FMOD audio (disabled in headless) |
 | `ME_OPTICK` / `ME_PROFILING` | Profiling support |
 | `ME_IMGUI` | ImGui (editor, tools, or profiling builds) |

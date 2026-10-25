@@ -1,0 +1,15 @@
+<rml>
+<head>
+	<title>MainMenu</title>
+	<link type="text/rcss" href="Main.rcss"/>
+</head>
+<body>
+	<div id="menu">
+		<h1 id="title">MitchGame</h1>
+		<button id="scene-graph" onclick="load-scene:Assets/SceneGraphTest.lvl">Scene Graph Test</button>
+		<button id="physics" onclick="load-scene:Assets/Scenes/PhysicsTest.lvl">Physics Test</button>
+		<button id="sound" onclick="play-sound:Assets/Sounds/Test/Chime.wav">Play a Sound</button>
+		<button id="quit" onclick="quit">Quit</button>
+	</div>
+</body>
+</rml>

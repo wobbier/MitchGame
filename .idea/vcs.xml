@@ -9,8 +9,6 @@
     <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/JSON" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/Optick" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/SDL" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/UltralightSDK" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/UltralightSDK/Source" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/bgfx" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/bimg" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Engine/ThirdParty/bx" vcs="Git" />

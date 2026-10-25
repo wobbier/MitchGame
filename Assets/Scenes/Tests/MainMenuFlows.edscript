@@ -1,0 +1,23 @@
+# Main menu (UI-5): the Ultralight menu ported to RmlUi. Its buttons are inline engine actions,
+# so a click loads a scene with no controller code.
+#   ./.build/Editor_Debug/Havana --scene Assets/Main.lvl --editor-exec Assets/Scenes/Tests/MainMenuFlows.edscript
+wait-log UI: loaded Assets/UI/Main.rml | 600
+wait 10
+ui-assert-text #title | MitchGame
+ui-assert-text #physics | Physics Test
+screenshot .tmp/EditorFlows/MainMenu.png
+assert-exists ImGuiCSTest
+
+# Keyboard focus reaches the buttons too (the dpad uses the same nav chain).
+input-press Key/Tab
+ui-assert-focused #scene-graph
+input-press Key/Down
+ui-assert-focused #physics
+
+# The click queues the load; the menu scene (and its UI entity) gives way to the physics test.
+ui-click #physics
+wait-log UI: load-scene Assets/Scenes/PhysicsTest.lvl | 60
+wait 30
+assert-missing ImGuiCSTest
+assert-missing UI
+assert-exists Camera

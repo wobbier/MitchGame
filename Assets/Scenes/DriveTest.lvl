@@ -135953,7 +135953,7 @@
                     "IsTrigger": true
                 },
                 {
-                    "ScriptFields": "{\"UIName\": \"Slot UI\", \"VehicleName\": \"Vehicle\", \"NukePrefab\": \"Assets/Prefabs/Drive/Nuke.prefab\", \"SpinTime\": 2.4, \"Credits\": 100, \"Bet\": 10, \"JackpotChance\": 0.1, \"TripleChance\": 0.12, \"PairChance\": 0.3, \"NukeDistance\": 70, \"NukeDropHeight\": 180, \"TestSpin\": false, \"TestJackpot\": false}",
+                    "ScriptFields": "{\"VehicleName\": \"Vehicle\", \"NukePrefab\": \"Assets/Prefabs/Drive/Nuke.prefab\", \"SpinTime\": 2.4, \"Credits\": 100, \"Bet\": 10, \"JackpotChance\": 0.1, \"TripleChance\": 0.12, \"PairChance\": 0.3, \"NukeDistance\": 70, \"NukeDropHeight\": 180, \"TestSpin\": false, \"TestJackpot\": false}",
                     "ScriptName": "SlotMachine",
                     "Type": "ScriptComponent"
                 },
@@ -136371,9 +136371,8 @@
                     "Type": "Transform"
                 },
                 {
-                    "FilePath": "Assets/UI/Drive/Slots.html",
-                    "Type": "BasicUIView",
-                    "UIURL": ""
+                    "FilePath": "Assets/UI/Drive/Slots.rml",
+                    "Type": "UIDocument"
                 }
             ],
             "DestroyOnLoad": true,

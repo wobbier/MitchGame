@@ -392,9 +392,8 @@
                     "Type": "Transform"
                 },
                 {
-                    "FilePath": "Assets/UI/CharacterUI.html",
-                    "Type": "BasicUIView",
-                    "UIURL": ""
+                    "FilePath": "Assets/UI/CharacterUI.rml",
+                    "Type": "UIDocument"
                 }
             ],
             "DestroyOnLoad": true,

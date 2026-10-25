@@ -3,9 +3,9 @@ using ScriptCore;
 // A roadside slot machine: drive into its trigger sphere (a SphereCollider with IsTrigger on this
 // entity) and press Interact (E) to spin. Three radiation symbols
 // is the max win, which drops a nuke on the map a little way ahead of the car.
+// The reels are Assets/UI/Drive/Slots.rml, bound to the "slots" view model this script fills.
 public class SlotMachine : Script
 {
-    public string UIName = "Slot UI";
     public string VehicleName = "Vehicle";
     public string NukePrefab = "Assets/Prefabs/Drive/Nuke.prefab";
     public float SpinTime = 2.4f;
@@ -22,9 +22,11 @@ public class SlotMachine : Script
     public bool TestJackpot = false;
 
     private const int Nuke = 4;
+    private const int SymbolCount = 5;
+    private const float ReelTick = 0.06f;
     private static readonly int[] Payouts = { 50, 20, 10, 5 };
 
-    private Entity ui;
+    private UIModel slots;
     private Entity vehicle;
     private readonly System.Random random = new System.Random();
     private bool nearby;
@@ -34,13 +36,26 @@ public class SlotMachine : Script
     private bool machineShown;
     private string resultText = "";
     private bool resultJackpot;
-    private float syncTimer;
     private float age;
+    // The running spin: reels stop one after another, flickering random symbols until then.
+    private float spinElapsed;
+    private float reelTimer;
+    private readonly bool[] reelStopped = new bool[3];
 
     public override void OnStart()
     {
-        ui = World.Find(UIName);
         vehicle = World.Find(VehicleName);
+        // Values live engine-side, so a hot reload (which calls OnStart again) keeps the screen.
+        slots = UI.Model("slots");
+        if (spinLeft < 0f)
+        {
+            for (int i = 0; i < 3; ++i)
+            {
+                slots.Set("r" + i, result[i]);
+                slots.Set("s" + i, false);
+            }
+        }
+        SyncUI();
     }
 
     public override void OnReload()
@@ -51,15 +66,9 @@ public class SlotMachine : Script
     public override void OnUpdate(float deltaTime)
     {
         age += deltaTime;
-        if (!nearby && spinLeft < 0f && (hideTimer += deltaTime) > 1.5f)
+        if (machineShown && !nearby && spinLeft < 0f && (hideTimer += deltaTime) > 1.5f)
         {
             machineShown = false;
-        }
-
-        // The page loads asynchronously and can reload, so its display state is re-sent regularly.
-        if ((syncTimer -= deltaTime) <= 0f)
-        {
-            syncTimer = 0.5f;
             SyncUI();
         }
 
@@ -68,9 +77,13 @@ public class SlotMachine : Script
             TestSpin = false;
             StartSpin();
         }
-        if (spinLeft >= 0f && (spinLeft -= deltaTime) < 0f)
+        if (spinLeft >= 0f)
         {
-            FinishSpin();
+            AnimateReels(deltaTime);
+            if ((spinLeft -= deltaTime) < 0f)
+            {
+                FinishSpin();
+            }
         }
     }
 
@@ -128,8 +141,43 @@ public class SlotMachine : Script
                 (result[1], result[2]) = (result[2], result[1]);
             }
         }
-        Js($"spin({result[0]}, {result[1]}, {result[2]}, {SpinTime.ToString(System.Globalization.CultureInfo.InvariantCulture)})");
+        spinElapsed = 0f;
+        reelTimer = 0f;
+        for (int i = 0; i < 3; ++i)
+        {
+            reelStopped[i] = false;
+            slots.Set("s" + i, true);
+        }
         spinLeft = SpinTime + 0.1f;
+        SyncUI();
+    }
+
+    // Reel i stops on its final symbol at SpinTime * (0.45 + 0.275 * i); until then it flickers.
+    private void AnimateReels(float deltaTime)
+    {
+        spinElapsed += deltaTime;
+        bool tick = (reelTimer -= deltaTime) <= 0f;
+        if (tick)
+        {
+            reelTimer = ReelTick;
+        }
+        for (int i = 0; i < 3; ++i)
+        {
+            if (reelStopped[i])
+            {
+                continue;
+            }
+            if (spinElapsed >= SpinTime * (0.45f + 0.275f * i))
+            {
+                reelStopped[i] = true;
+                slots.Set("r" + i, result[i]);
+                slots.Set("s" + i, false);
+            }
+            else if (tick)
+            {
+                slots.Set("r" + i, random.Next(0, SymbolCount));
+            }
+        }
     }
 
     private void FinishSpin()
@@ -166,14 +214,12 @@ public class SlotMachine : Script
 
     private void SyncUI()
     {
-        Js($"setCredits({Credits}); setMachine({Bool(machineShown)}); setPrompt({Bool(nearby && spinLeft < 0f)});");
-        if (spinLeft < 0f)
-        {
-            Js($"setResult('{resultText}', {Bool(resultJackpot)});");
-        }
+        slots.Set("credits", Credits);
+        slots.Set("machine", machineShown);
+        slots.Set("prompt", nearby && spinLeft < 0f);
+        slots.Set("result", spinLeft < 0f ? resultText : "");
+        slots.Set("jackpot", spinLeft < 0f && resultJackpot);
     }
-
-    private static string Bool(bool value) => value ? "true" : "false";
 
     private void DropNuke()
     {
@@ -185,15 +231,6 @@ public class SlotMachine : Script
         {
             nuke.Transform.WorldPosition = new Vector3(target.x, origin.y + NukeDropHeight, target.z);
             nuke.Transform.LookAt(nuke.Transform.WorldPosition - Vector3.Up);
-        }
-    }
-
-    private void Js(string code)
-    {
-        if (ui && ui.TryGetComponent<BasicUIView>(out var view))
-        {
-            // Calls made before the page's script has run are skipped (SyncUI repeats them).
-            view.ExecuteJS($"if (window.spin) {{ {code} }}");
         }
     }
 }

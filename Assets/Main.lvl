@@ -63,12 +63,11 @@
                     "Type": "Transform"
                 },
                 {
-                    "FilePath": "Assets/UI/Main.html",
-                    "Type": "MenuController",
-                    "UIURL": ""
+                    "FilePath": "Assets/UI/Main.rml",
+                    "Type": "UIDocument"
                 }
             ],
-            "DestroyOnLoad": false,
+            "DestroyOnLoad": true,
             "Name": "UI"
         },
         {

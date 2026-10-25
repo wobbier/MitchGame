@@ -43,11 +43,6 @@
                     "Zoom": 45.0
                 },
                 {
-                    "FilePath": "Assets/UI/UIFuckup.html",
-                    "Type": "BasicUIView",
-                    "UIURL": ""
-                },
-                {
                     "ScriptName": "EnemyAI",
                     "Type": "ScriptComponent"
                 }

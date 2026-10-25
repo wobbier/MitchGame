@@ -6,7 +6,6 @@
 #include "Cores/CharacterCore.h"
 #include "Cores/SplitScreenPlayerCore.h"
 
-#include "Components/MenuController.h"
 #include "Components/Character.h"
 #include "Components/SplitScreenPlayer.h"
 #include "Components/SyntyUnityImporter.h"
