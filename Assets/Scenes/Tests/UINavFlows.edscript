@@ -1,0 +1,40 @@
+# RmlUi navigation, text scale and localization (UI-4).
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/UINavTest.lvl --editor-exec Assets/Scenes/Tests/UINavFlows.edscript
+wait-log UI: loaded Assets/UI/Tests/UINav.rml | 600
+wait 10
+
+# Tab enters the focus chain, the dpad moves spatially, ShiftTab goes back.
+input-press Key/Tab
+ui-assert-focused #first
+input-press Gamepad/DPadDown
+ui-assert-focused #second
+input-press Gamepad/DPadDown
+ui-assert-focused #third
+input-press Key/ShiftTab
+ui-assert-focused #second
+
+# South activates the focused button (the inline action writes the proof).
+ui-assert-text #result | none
+input-press Gamepad/South
+wait 5
+ui-assert-text #result | second
+
+# Text scale 1.5: dp-sized text grows; the capture keeps the look.
+ui-set-text-scale 1.5
+wait 10
+screenshot .tmp/EditorFlows/UINavFlows_scale150.png
+ui-set-text-scale 1.0
+wait 5
+
+# A language switch reloads the documents with the translated strings.
+ui-assert-text #title | nav.title
+ui-set-language es
+wait-log UI: language 'es' | 600
+wait 10
+ui-assert-text #title | Navegación
+ui-assert-text #first | Primero
+screenshot .tmp/EditorFlows/UINavFlows_spanish.png
+ui-set-language
+wait 10
+ui-assert-text #title | nav.title
+quit

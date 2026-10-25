@@ -1,0 +1,16 @@
+<rml>
+<head>
+	<title>UINavTest</title>
+	<link type="text/rcss" href="UINav.rcss"/>
+</head>
+<body>
+	<div id="panel">
+		<h1 id="title">nav.title</h1>
+		<p id="hint">nav.hint</p>
+		<button id="first" onclick="set-text:#result|first">nav.first</button>
+		<button id="second" onclick="set-text:#result|second">nav.second</button>
+		<button id="third" onclick="set-text:#result|third">nav.third</button>
+		<span id="result">none</span>
+	</div>
+</body>
+</rml>
