@@ -1,0 +1,96 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.08,
+                        0.1,
+                        0.09
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "Name": "HUD",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "UIDocument",
+                    "FilePath": "Assets/UI/Tests/UIModel.rml",
+                    "Visible": true
+                }
+            ]
+        },
+        {
+            "Name": "Probe",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "UIProbe"
+                }
+            ]
+        }
+    ]
+}

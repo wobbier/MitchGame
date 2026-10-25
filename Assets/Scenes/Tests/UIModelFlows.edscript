@@ -1,0 +1,35 @@
+# RmlUi MVC bindings (UI-3): a script-owned model renders, a click raises a data-event the
+# script answers, and a C# hot reload keeps the value while running the new logic.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/UIModelTest.lvl --editor-exec Assets/Scenes/Tests/UIModelFlows.edscript
+# Edits UIProbe.cs for the reload leg, so it self-skips while another Havana is open.
+wait-log dotnet ready | 7200
+wait 30
+
+# Scripts run in Play; OnStart creates the model, the document rebinds to it.
+play
+wait-log UIProbe: score 0 | 600
+wait-log UI: rebound | 600
+wait 10
+ui-assert-text #title | Model online
+ui-assert-text #score | Score: 0
+
+# A click raises the data-event; the script increments and pushes the new value.
+ui-click #bump
+wait 10
+ui-assert-text #score | Score: 1
+
+# Hot reload: the new logic (x10) runs against the kept value.
+replace-in-file Assets/Scripts/Tests/UIProbe.cs | Count += Delta; | Count += Delta * 10;
+wait-log Scripts: hot reloaded | 7200
+wait 10
+ui-assert-text #score | Score: 1
+ui-click #bump
+wait 10
+ui-assert-text #score | Score: 11
+
+# Restore the script; the reload fires again before the flow ends.
+replace-in-file Assets/Scripts/Tests/UIProbe.cs | Count += Delta * 10; | Count += Delta;
+wait-log Scripts: hot reloaded | 7200
+stop
+wait 5
+quit

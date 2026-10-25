@@ -1,0 +1,13 @@
+<rml>
+<head>
+	<title>UIModelTest</title>
+	<link type="text/rcss" href="UIModel.rcss"/>
+</head>
+<body>
+	<div id="panel" data-model="probe">
+		<h1 id="title">{{ title }}</h1>
+		<p id="score">Score: {{ score }}</p>
+		<button id="bump" data-event-click="increment">Bump</button>
+	</div>
+</body>
+</rml>
