@@ -1,0 +1,59 @@
+<rml>
+<head>
+	<title>Tarot</title>
+	<link type="text/rcss" href="Tarot.rcss"/>
+</head>
+<body>
+	<!-- Bound to TarotDeck.cs through UI.Model("tarot"): the script owns every value. -->
+	<div id="root" data-model="tarot">
+		<div id="hand" data-if="hud">
+			<img id="deck" src="Tarot/Back.png" data-class-ready="ready"/>
+			<div id="handtext">
+				<div id="count">{{ left }} / 22 cards</div>
+				<div id="prompt" data-class-ready="ready"><span class="key">Q</span> Draw a card</div>
+				<div id="coolbar"><div id="coolfill" data-style-width="cool"></div></div>
+				<div id="weapon" data-class-card="wkind">Fire: {{ weapon }} <span id="charges">{{ charges }}</span></div>
+			</div>
+		</div>
+		<div id="effects" data-if="hud">
+			<div class="effect" data-if="e0" data-class-weapon="e0k == 0" data-class-blessing="e0k == 1" data-class-curse="e0k == 2">
+				<div class="ename">{{ e0n }}<span class="etime">{{ e0t }}</span></div>
+				<div class="ebar"><div class="efill" data-style-width="e0w"></div></div>
+			</div>
+			<div class="effect" data-if="e1" data-class-weapon="e1k == 0" data-class-blessing="e1k == 1" data-class-curse="e1k == 2">
+				<div class="ename">{{ e1n }}<span class="etime">{{ e1t }}</span></div>
+				<div class="ebar"><div class="efill" data-style-width="e1w"></div></div>
+			</div>
+			<div class="effect" data-if="e2" data-class-weapon="e2k == 0" data-class-blessing="e2k == 1" data-class-curse="e2k == 2">
+				<div class="ename">{{ e2n }}<span class="etime">{{ e2t }}</span></div>
+				<div class="ebar"><div class="efill" data-style-width="e2w"></div></div>
+			</div>
+			<div class="effect" data-if="e3" data-class-weapon="e3k == 0" data-class-blessing="e3k == 1" data-class-curse="e3k == 2">
+				<div class="ename">{{ e3n }}<span class="etime">{{ e3t }}</span></div>
+				<div class="ebar"><div class="efill" data-style-width="e3w"></div></div>
+			</div>
+			<div class="effect" data-if="e4" data-class-weapon="e4k == 0" data-class-blessing="e4k == 1" data-class-curse="e4k == 2">
+				<div class="ename">{{ e4n }}<span class="etime">{{ e4t }}</span></div>
+				<div class="ebar"><div class="efill" data-style-width="e4w"></div></div>
+			</div>
+			<div class="effect" data-if="e5" data-class-weapon="e5k == 0" data-class-blessing="e5k == 1" data-class-curse="e5k == 2">
+				<div class="ename">{{ e5n }}<span class="etime">{{ e5t }}</span></div>
+				<div class="ebar"><div class="efill" data-style-width="e5w"></div></div>
+			</div>
+		</div>
+		<div id="reveal" data-if="reveal" data-class-weapon="rkind == 0" data-class-blessing="rkind == 1" data-class-curse="rkind == 2" data-class-fade="rfade">
+			<div id="rnum">{{ rnum }}</div>
+			<div id="art"><img id="ricon" src="Tarot/Back.png" data-attr-src="ricon"/></div>
+			<div id="rname">{{ rname }}</div>
+			<div id="rkind">{{ rkindname }}</div>
+			<div id="rtitle">{{ rtitle }}</div>
+			<div id="rtext">{{ rtext }}</div>
+		</div>
+		<div id="warn" data-if="warn" data-class-safe="warnsafe">
+			<div id="warntitle">{{ warntitle }}</div>
+			<div id="warntext">{{ warntext }}</div>
+		</div>
+		<div id="toast" data-if="toast != ''">{{ toast }}</div>
+	</div>
+</body>
+</rml>

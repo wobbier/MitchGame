@@ -162,6 +162,25 @@
                     ]
                 },
                 {
+                    "Name": "DrawCard",
+                    "Type": "Button",
+                    "PressThreshold": 0.5,
+                    "Bindings": [
+                        {
+                            "Kind": "Control",
+                            "Control": "Keyboard/Q",
+                            "Scale": 1.0,
+                            "InvertY": false
+                        },
+                        {
+                            "Kind": "Control",
+                            "Control": "Gamepad/North",
+                            "Scale": 1.0,
+                            "InvertY": false
+                        }
+                    ]
+                },
+                {
                     "Name": "Pause",
                     "Type": "Button",
                     "PressThreshold": 0.5,

@@ -23,6 +23,9 @@ public class MissileLauncher : Script
     // Shared with Missile: where the player is aiming and which entity fired.
     public static Vector3 AimPoint;
     public static Entity Shooter;
+    // The launcher in the scene, and whether a card weapon (TarotDeck) has taken over Fire.
+    public static MissileLauncher Active;
+    public static bool FireTaken;
 
     private Entity cameraEntity;
     private float reload;
@@ -35,11 +38,20 @@ public class MissileLauncher : Script
     {
         cameraEntity = World.Find(CameraName);
         Shooter = World.Find(VehicleName);
+        Active = this;
     }
 
     public override void OnReload()
     {
         OnStart();
+    }
+
+    public override void OnDestroy()
+    {
+        if (Active == this)
+        {
+            Active = null;
+        }
     }
 
     public override void OnUpdate(float deltaTime)
@@ -60,7 +72,7 @@ public class MissileLauncher : Script
         Debug.DrawSphere(AimPoint, Mathf.Clamp(distance * 0.008f, 0.08f, 2.0f), new Vector3(1f, 0.25f, 0.1f));
 
         reload -= deltaTime;
-        if (reload <= 0f && ((CockpitCamera.Aiming && Input.IsActionPressed("Fire")) || TestFire))
+        if (reload <= 0f && !FireTaken && ((CockpitCamera.Aiming && Input.IsActionPressed("Fire")) || TestFire))
         {
             reload = Cooldown;
             Vector3 start = transform.WorldPosition;

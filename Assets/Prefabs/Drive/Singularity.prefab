@@ -1,0 +1,199 @@
+{
+    "Name": "Singularity",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "Light",
+            "LightType": "Point",
+            "Color": [
+                0.55,
+                0.2,
+                1.0
+            ],
+            "Intensity": 60.0,
+            "Range": 28.0,
+            "CastShadows": false
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Singularity Core",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.1,
+                        1.1,
+                        1.1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "Roughness": 0.05
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Singularity Infall",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 260.0,
+                    "MaxParticles": 2000,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 9.0,
+                    "EmitFromShell": true,
+                    "Lifetime": [
+                        0.55,
+                        0.8
+                    ],
+                    "Speed": [
+                        -14.0,
+                        -10.0
+                    ],
+                    "Size": [
+                        0.12,
+                        0.3
+                    ],
+                    "EndSize": 0.2,
+                    "Intensity": 12.0,
+                    "Gravity": 0.0,
+                    "Alignment": "Stretched",
+                    "StretchFactor": 0.12,
+                    "StartColor": [
+                        0.75,
+                        0.45,
+                        1.0
+                    ],
+                    "StartColor2": [
+                        1.0,
+                        0.55,
+                        0.9
+                    ],
+                    "EndColor": [
+                        0.35,
+                        0.1,
+                        1.0
+                    ],
+                    "FadeIn": 0.3,
+                    "EndAlpha": 0.0
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Singularity Disc",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 120.0,
+                    "Shape": "Sphere",
+                    "ShapeRadius": 2.6,
+                    "EmitFromShell": true,
+                    "Lifetime": [
+                        0.4,
+                        0.7
+                    ],
+                    "Speed": [
+                        0.2,
+                        0.6
+                    ],
+                    "Size": [
+                        0.6,
+                        1.2
+                    ],
+                    "EndSize": 0.3,
+                    "Intensity": 6.0,
+                    "Alignment": "Horizontal",
+                    "NoiseStrength": 3.0,
+                    "StartColor": [
+                        0.6,
+                        0.25,
+                        1.0
+                    ],
+                    "EndColor": [
+                        0.15,
+                        0.0,
+                        0.4
+                    ],
+                    "EndAlpha": 0.0
+                }
+            ],
+            "Children": []
+        }
+    ]
+}

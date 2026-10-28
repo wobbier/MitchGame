@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using ScriptCore;
 
-// A guided missile: accelerates along its heading while turning toward MissileLauncher.AimPoint at
-// a limited rate, and explodes on the first thing it touches (or when its fuel runs out),
-// shoving every rigidbody in the blast radius.
+// A guided missile: accelerates along its heading while turning toward MissileLauncher.AimPoint (or
+// the point it was given in Targets) at a limited rate, and explodes on the first thing it touches
+// (or when its fuel runs out), shoving every rigidbody in the blast radius.
 public class Missile : Script
 {
     public float StartSpeed = 18.0f;
@@ -24,6 +24,8 @@ public class Missile : Script
     public float ScorchSize = 3.0f;
     public static int MaxScorches = 150;
     private static readonly Queue<Entity> scorches = new Queue<Entity>();
+    // Missiles listed here (by whoever spawned them) home on a fixed point instead of the aim.
+    public static readonly Dictionary<Entity, Vector3> Targets = new Dictionary<Entity, Vector3>();
 
     private static readonly System.Random random = new System.Random();
     private float delay;
@@ -32,6 +34,8 @@ public class Missile : Script
     private Vector3 direction;
     private float speed;
     private float age;
+    private bool hasTarget;
+    private Vector3 target;
 
     public override void OnStart()
     {
@@ -47,8 +51,13 @@ public class Missile : Script
         age += dt;
         Vector3 position = transform.WorldPosition;
 
+        if (!hasTarget && Targets.Remove(Entity, out target))
+        {
+            hasTarget = true;
+        }
+
         // Turn toward the aim point, no faster than the turn rate (after a short boost phase).
-        Vector3 desired = (MissileLauncher.AimPoint - position).Normalized();
+        Vector3 desired = ((hasTarget ? target : MissileLauncher.AimPoint) - position).Normalized();
         if (age > delay && desired.LengthSquared() > 0.5f)
         {
             float maxTurn = TurnDegreesPerSecond * Mathf.Deg2Rad * dt;

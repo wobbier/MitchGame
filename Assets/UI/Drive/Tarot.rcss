@@ -1,0 +1,293 @@
+body {
+	font-family: Inter;
+	font-size: 16px;
+	color: #FFFFFF;
+	width: 100%;
+	height: 100%;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+/* The deck in hand, bottom left: cards left, the draw prompt and its cooldown, the Fire weapon. */
+#hand {
+	display: block;
+	position: absolute;
+	left: 28px;
+	bottom: 28px;
+	width: 360px;
+	height: 112px;
+	font-effect: shadow( 1px 1px #000000 );
+}
+
+#deck {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 66px;
+	height: 106px;
+	opacity: 0.55;
+}
+
+#deck.ready {
+	opacity: 1;
+	animation: 1.4s sine-in-out infinite alternate breathe;
+}
+
+@keyframes breathe {
+	from { transform: scale(1.0); }
+	to { transform: scale(1.06); }
+}
+
+#handtext {
+	display: block;
+	position: absolute;
+	left: 82px;
+	right: 0;
+	bottom: 0;
+}
+
+#count {
+	display: block;
+	font-size: 14px;
+	color: #CDB8F5;
+}
+
+#prompt {
+	display: block;
+	font-size: 21px;
+	color: #8D7BB0;
+	margin-top: 2px;
+}
+
+#prompt.ready {
+	color: #F6D58A;
+}
+
+.key {
+	padding: 0 7px;
+	border: 2px #F6D58A;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+#coolbar {
+	display: block;
+	width: 210px;
+	height: 4px;
+	margin: 5px 0 6px;
+	background-color: #FFFFFF30;
+}
+
+#coolfill {
+	display: block;
+	height: 4px;
+	background-color: #F6D58A;
+}
+
+#weapon {
+	display: block;
+	font-size: 15px;
+	color: #DDDDDD;
+}
+
+#weapon.card {
+	color: #FFA266;
+}
+
+#charges {
+	color: #FFFFFF;
+}
+
+/* Running blessings and curses, above the deck, each with the time it has left. */
+#effects {
+	display: block;
+	position: absolute;
+	left: 28px;
+	bottom: 150px;
+	width: 250px;
+	font-effect: shadow( 1px 1px #000000 );
+}
+
+.effect {
+	display: block;
+	margin-top: 8px;
+	padding: 6px 10px 7px;
+	border-left: 4px #F6D58A;
+	border-radius: 0 6px 6px 0;
+	background-color: #0B0518B0;
+}
+
+.effect.curse { border-left-color: #B57BFF; }
+.effect.weapon { border-left-color: #FF8A4A; }
+
+.ename {
+	display: block;
+	font-size: 15px;
+}
+
+.etime {
+	float: right;
+	color: #CCCCCC;
+}
+
+.ebar {
+	display: block;
+	height: 3px;
+	margin-top: 5px;
+	background-color: #FFFFFF26;
+}
+
+.efill {
+	display: block;
+	height: 3px;
+	background-color: #F6D58A;
+}
+
+.curse .efill { background-color: #B57BFF; }
+
+/* The drawn card: flies in from the dash, flips open, glows in its kind's colour, then fades. */
+#reveal {
+	display: block;
+	position: absolute;
+	right: 5%;
+	top: 11%;
+	width: 270px;
+	padding: 14px 16px 18px;
+	border: 5px #F6D58A;
+	border-radius: 16px;
+	decorator: vertical-gradient( #3B2170 #12082A );
+	text-align: center;
+	opacity: 1;
+	transition: opacity 0.45s cubic-in;
+	animation: 0.55s cubic-out 1 deal-in;
+}
+
+#reveal.weapon {
+	border-color: #FF8A4A;
+	decorator: vertical-gradient( #6E1E10 #1E0805 );
+}
+
+#reveal.blessing {
+	border-color: #F6D58A;
+	decorator: vertical-gradient( #6B5216 #1B1304 );
+}
+
+#reveal.curse {
+	border-color: #B57BFF;
+	decorator: vertical-gradient( #3A1460 #0B0418 );
+}
+
+#reveal.fade {
+	opacity: 0;
+}
+
+@keyframes deal-in {
+	0% { transform: translate(-520px, 420px) rotate(-35deg) scale(0.25, 0.25); }
+	55% { transform: translate(0px, 0px) rotate(4deg) scale(0.04, 1.05); }
+	100% { transform: translate(0px, 0px) rotate(0deg) scale(1, 1); }
+}
+
+#rnum {
+	display: block;
+	font-size: 26px;
+	letter-spacing: 3px;
+	color: #F6D58A;
+}
+
+#art {
+	display: block;
+	width: 196px;
+	height: 196px;
+	margin: 8px auto 10px;
+	border: 2px #F6D58A80;
+	border-radius: 98px;
+	background-color: #00000040;
+}
+
+#ricon {
+	width: 176px;
+	height: 176px;
+	margin-top: 10px;
+}
+
+#rname {
+	display: block;
+	font-size: 24px;
+	letter-spacing: 3px;
+	white-space: nowrap;
+}
+
+#rkind {
+	display: block;
+	font-size: 12px;
+	letter-spacing: 4px;
+	color: #F6D58A;
+	margin-top: 2px;
+}
+
+#reveal.weapon #rkind { color: #FFA266; }
+#reveal.curse #rkind { color: #C9A2FF; }
+
+#rtitle {
+	display: block;
+	font-size: 22px;
+	color: #F6D58A;
+	margin-top: 10px;
+}
+
+#rtext {
+	display: block;
+	font-size: 15px;
+	color: #E8DDF8;
+	margin-top: 6px;
+}
+
+/* The Tower's nuke on the way down. */
+#warn {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 22%;
+	text-align: center;
+	font-effect: glow( 3px #000000 );
+}
+
+#warntitle {
+	display: block;
+	font-size: 40px;
+	letter-spacing: 6px;
+	color: #FF3A2A;
+	animation: 0.18s infinite alternate blink;
+}
+
+#warntext {
+	display: block;
+	font-size: 22px;
+	color: #FFD0C0;
+}
+
+#warn.safe #warntitle {
+	color: #7DFF6A;
+	animation: none;
+}
+
+@keyframes blink {
+	from { opacity: 1; }
+	to { opacity: 0.3; }
+}
+
+#toast {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 16%;
+	text-align: center;
+	font-size: 22px;
+	color: #F6D58A;
+	font-effect: glow( 2px #000000 );
+}

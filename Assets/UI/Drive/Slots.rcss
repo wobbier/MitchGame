@@ -108,3 +108,60 @@ img.sym {
 	font-size: 13px;
 	color: #F6CFCF;
 }
+
+/* A running spin rattles the cabinet; a max win sends it into a rainbow fever. */
+#machine.spinning {
+	animation: 0.09s infinite alternate rattle;
+}
+
+#machine.fever {
+	animation: 0.05s infinite alternate quake, 0.6s infinite fever-border;
+}
+
+#machine.fever #title {
+	animation: 0.4s infinite rainbow;
+}
+
+@keyframes rattle {
+	from { transform: translate(-3px, 1px) rotate(-0.6deg); }
+	to { transform: translate(3px, -1px) rotate(0.6deg); }
+}
+
+@keyframes quake {
+	from { transform: translate(-9px, 4px) rotate(-1.5deg) scale(1.03); }
+	to { transform: translate(9px, -4px) rotate(1.5deg) scale(0.98); }
+}
+
+@keyframes fever-border {
+	0% { border-color: #FF2020; }
+	25% { border-color: #FFE020; }
+	50% { border-color: #20FF60; }
+	75% { border-color: #20A0FF; }
+	100% { border-color: #FF20E0; }
+}
+
+@keyframes rainbow {
+	0% { color: #FF3030; }
+	25% { color: #FFF030; }
+	50% { color: #30FF70; }
+	75% { color: #30B0FF; }
+	100% { color: #FF30F0; }
+}
+
+#tension {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -34px;
+	font-size: 24px;
+	color: #FF3A2A;
+	font-effect: glow( 3px #000000 );
+	animation: 0.12s infinite alternate flash;
+}
+
+.reel.tension {
+	opacity: 1;
+	border-color: #FF2A1A;
+	animation: 0.06s infinite alternate rattle;
+}

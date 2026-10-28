@@ -1,0 +1,213 @@
+body {
+	font-family: Inter;
+	font-size: 16px;
+	color: #FFFFFF;
+	width: 100%;
+	height: 100%;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+/* The impact: a white flash that fades out. */
+#flash {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #FFFFFF;
+	opacity: 0;
+	animation: 0.4s cubic-out 1 flash-out;
+}
+
+@keyframes flash-out {
+	from { opacity: 0.9; }
+	to { opacity: 0; }
+}
+
+#table {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 9%;
+	width: 640px;
+	margin-left: -320px;
+	padding: 16px 24px 20px;
+	decorator: vertical-gradient( #136B33 #0A3D1C );
+	border: 6px #C9A13B;
+	border-radius: 26px;
+	text-align: center;
+	animation: 0.35s back-out 1 deal-in;
+}
+
+@keyframes deal-in {
+	from { transform: translate(0px, -60px) scale(0.85); opacity: 0; }
+	to { transform: translate(0px, 0px) scale(1); opacity: 1; }
+}
+
+#table.win { border-color: #7DFF6A; }
+#table.lose { border-color: #FF3A2A; }
+
+#title {
+	display: block;
+	font-size: 32px;
+	color: #FFD84A;
+	letter-spacing: 5px;
+	font-effect: shadow( 0px 2px #000000 );
+}
+
+#subtitle {
+	display: block;
+	font-size: 15px;
+	color: #CFE8D3;
+	margin: 2px 0 10px;
+}
+
+.label {
+	display: block;
+	text-align: left;
+	font-size: 17px;
+	color: #E8F5E0;
+	margin: 6px 0 4px 6px;
+}
+
+.total {
+	color: #FFD84A;
+	font-size: 20px;
+	margin-left: 8px;
+}
+
+.hand {
+	display: block;
+	height: 132px;
+	text-align: left;
+}
+
+.card {
+	display: inline-block;
+	width: 86px;
+	height: 122px;
+	margin: 0 6px;
+	decorator: vertical-gradient( #FFFFFF #EDEDED );
+	border: 2px #222222;
+	border-radius: 9px;
+	color: #1A1A1A;
+	text-align: left;
+	animation: 0.22s back-out 1 card-in;
+}
+
+@keyframes card-in {
+	from { transform: translate(140px, -90px) rotate(18deg); opacity: 0; }
+	to { transform: translate(0px, 0px) rotate(0deg); opacity: 1; }
+}
+
+.card.red { color: #D01818; }
+
+.rank {
+	display: block;
+	font-size: 30px;
+	line-height: 34px;
+	margin: 4px 0 0 8px;
+	height: 34px;
+}
+
+img.pip {
+	display: block;
+	width: 56px;
+	height: 56px;
+	margin: 10px 0 0 15px;
+}
+
+.card.back {
+	decorator: vertical-gradient( #8B1010 #4A0606 );
+	border-color: #F2C230;
+	color: #F2C230;
+	text-align: center;
+}
+
+.pattern {
+	display: block;
+	font-size: 64px;
+	line-height: 118px;
+}
+
+#actions {
+	display: block;
+	margin-top: 12px;
+}
+
+button.action {
+	display: inline-block;
+	width: 170px;
+	padding: 10px 0;
+	margin: 0 12px;
+	font-size: 22px;
+	color: #1A1A1A;
+	decorator: vertical-gradient( #FFE27A #E0A020 );
+	border: 3px #5A3A00;
+	border-radius: 12px;
+	text-align: center;
+	cursor: pointer;
+}
+
+button.action:hover {
+	decorator: vertical-gradient( #FFF2B0 #F0B840 );
+}
+
+#result {
+	display: block;
+	height: 40px;
+	margin-top: 14px;
+	font-size: 26px;
+	color: #FFF3A0;
+	white-space: nowrap;
+}
+
+#table.win #result { color: #7DFF6A; }
+#table.lose #result { color: #FF5A4A; }
+
+/* The verdict once the body lands. */
+#survived, #wasted {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 38%;
+	padding: 18px 0 22px;
+	text-align: center;
+	animation: 0.6s cubic-out 1 verdict-in;
+}
+
+#survived { background-color: #0A3D1CB0; }
+#wasted { background-color: #000000C0; }
+
+.big {
+	display: block;
+	font-size: 72px;
+	letter-spacing: 8px;
+}
+
+#survived .big {
+	color: #7DFF6A;
+	font-effect: glow( 3px #000000 );
+}
+
+#wasted .big {
+	color: #E8241A;
+	font-effect: glow( 4px #000000 );
+}
+
+.small {
+	display: block;
+	font-size: 22px;
+	color: #F0F0F0;
+}
+
+@keyframes verdict-in {
+	from { transform: scale(1.6); opacity: 0; }
+	to { transform: scale(1); opacity: 1; }
+}

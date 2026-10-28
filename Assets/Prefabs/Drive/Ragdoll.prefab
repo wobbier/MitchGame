@@ -1,0 +1,1458 @@
+{
+    "Entities": [
+        {
+            "GUID": "c4a5000000000000",
+            "Name": "Ragdoll",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000001",
+            "Name": "Ragdoll Pelvis",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 12,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        0.34,
+                        0.2,
+                        0.24
+                    ],
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                }
+            ]
+        },
+        {
+            "GUID": "c4a500000000006e",
+            "Name": "Ragdoll Pelvis Mesh",
+            "Parent": "c4a5000000000001",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.17,
+                        0.1,
+                        0.12
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.16,
+                            0.24,
+                            0.42
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000002",
+            "Name": "Ragdoll Chest",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.36
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 20,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        0.4,
+                        0.22,
+                        0.44
+                    ],
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "BallSocket",
+                    "ConnectedBody": "c4a5000000000001",
+                    "Anchor": [
+                        0,
+                        0,
+                        -0.22
+                    ],
+                    "CollideConnected": false,
+                    "UseLimits": true,
+                    "UpperLimit": 25
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000078",
+            "Name": "Ragdoll Chest Mesh",
+            "Parent": "c4a5000000000002",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.2,
+                        0.11,
+                        0.22
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.72,
+                            0.16,
+                            0.13
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000003",
+            "Name": "Ragdoll Head",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.01,
+                        0.74
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 5,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "SphereCollider",
+                    "Radius": 0.12,
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "BallSocket",
+                    "ConnectedBody": "c4a5000000000002",
+                    "Anchor": [
+                        0,
+                        0,
+                        -0.16
+                    ],
+                    "CollideConnected": false,
+                    "UseLimits": true,
+                    "UpperLimit": 45
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000082",
+            "Name": "Ragdoll Head Mesh",
+            "Parent": "c4a5000000000003",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.11,
+                        0.12,
+                        0.125
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.86,
+                            0.64,
+                            0.5
+                        ],
+                        "Roughness": 0.6,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000083",
+            "Name": "Ragdoll Head Hair",
+            "Parent": "c4a5000000000003",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.035,
+                        0.02
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.115,
+                        0.1,
+                        0.12
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.12,
+                            0.07
+                        ],
+                        "Roughness": 0.9,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000084",
+            "Name": "Ragdoll Head Nose",
+            "Parent": "c4a5000000000003",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.1,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.02,
+                        0.03,
+                        0.025
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.86,
+                            0.64,
+                            0.5
+                        ],
+                        "Roughness": 0.6,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a500000000000b",
+            "Name": "Ragdoll UpperArmL",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.27,
+                        0,
+                        0.42
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 2.5,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.055,
+                    "Height": 0.32,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "BallSocket",
+                    "ConnectedBody": "c4a5000000000002",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.14
+                    ],
+                    "CollideConnected": false,
+                    "UseLimits": true,
+                    "UpperLimit": 85
+                }
+            ]
+        },
+        {
+            "GUID": "c4a50000000000d2",
+            "Name": "Ragdoll UpperArmL Mesh",
+            "Parent": "c4a500000000000b",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.11,
+                        0.16,
+                        0.11
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.72,
+                            0.16,
+                            0.13
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a500000000000c",
+            "Name": "Ragdoll LowerArmL",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.27,
+                        0,
+                        0.12
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 1.5,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.05,
+                    "Height": 0.3,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "Hinge",
+                    "ConnectedBody": "c4a500000000000b",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.14
+                    ],
+                    "CollideConnected": false,
+                    "Axis": [
+                        1,
+                        0,
+                        0
+                    ],
+                    "UseLimits": true,
+                    "LowerLimit": -140,
+                    "UpperLimit": 5
+                }
+            ]
+        },
+        {
+            "GUID": "c4a50000000000dc",
+            "Name": "Ragdoll LowerArmL Mesh",
+            "Parent": "c4a500000000000c",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.1,
+                        0.15,
+                        0.1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.86,
+                            0.64,
+                            0.5
+                        ],
+                        "Roughness": 0.6,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a50000000000dd",
+            "Name": "Ragdoll LowerArmL Hand",
+            "Parent": "c4a500000000000c",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        -0.17
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.045,
+                        0.025,
+                        0.06
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.86,
+                            0.64,
+                            0.5
+                        ],
+                        "Roughness": 0.6,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a500000000000d",
+            "Name": "Ragdoll UpperLegL",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.1,
+                        0,
+                        -0.33
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 8,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.075,
+                    "Height": 0.46,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "BallSocket",
+                    "ConnectedBody": "c4a5000000000001",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.21
+                    ],
+                    "CollideConnected": false,
+                    "UseLimits": true,
+                    "UpperLimit": 70
+                }
+            ]
+        },
+        {
+            "GUID": "c4a50000000000e6",
+            "Name": "Ragdoll UpperLegL Mesh",
+            "Parent": "c4a500000000000d",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.15,
+                        0.23,
+                        0.15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.16,
+                            0.24,
+                            0.42
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a500000000000e",
+            "Name": "Ragdoll LowerLegL",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.1,
+                        0,
+                        -0.78
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 4,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.06,
+                    "Height": 0.44,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "Hinge",
+                    "ConnectedBody": "c4a500000000000d",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.215
+                    ],
+                    "CollideConnected": false,
+                    "Axis": [
+                        1,
+                        0,
+                        0
+                    ],
+                    "UseLimits": true,
+                    "LowerLimit": -5,
+                    "UpperLimit": 140
+                }
+            ]
+        },
+        {
+            "GUID": "c4a50000000000f0",
+            "Name": "Ragdoll LowerLegL Mesh",
+            "Parent": "c4a500000000000e",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.12,
+                        0.22,
+                        0.12
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.16,
+                            0.24,
+                            0.42
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a50000000000f1",
+            "Name": "Ragdoll LowerLegL Shoe",
+            "Parent": "c4a500000000000e",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.05,
+                        -0.22
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.055,
+                        0.1,
+                        0.05
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.1,
+                            0.08,
+                            0.07
+                        ],
+                        "Roughness": 0.5,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000015",
+            "Name": "Ragdoll UpperArmR",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.27,
+                        0,
+                        0.42
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 2.5,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.055,
+                    "Height": 0.32,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "BallSocket",
+                    "ConnectedBody": "c4a5000000000002",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.14
+                    ],
+                    "CollideConnected": false,
+                    "UseLimits": true,
+                    "UpperLimit": 85
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000136",
+            "Name": "Ragdoll UpperArmR Mesh",
+            "Parent": "c4a5000000000015",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.11,
+                        0.16,
+                        0.11
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.72,
+                            0.16,
+                            0.13
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000016",
+            "Name": "Ragdoll LowerArmR",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.27,
+                        0,
+                        0.12
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 1.5,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.05,
+                    "Height": 0.3,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "Hinge",
+                    "ConnectedBody": "c4a5000000000015",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.14
+                    ],
+                    "CollideConnected": false,
+                    "Axis": [
+                        1,
+                        0,
+                        0
+                    ],
+                    "UseLimits": true,
+                    "LowerLimit": -140,
+                    "UpperLimit": 5
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000140",
+            "Name": "Ragdoll LowerArmR Mesh",
+            "Parent": "c4a5000000000016",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.1,
+                        0.15,
+                        0.1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.86,
+                            0.64,
+                            0.5
+                        ],
+                        "Roughness": 0.6,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000141",
+            "Name": "Ragdoll LowerArmR Hand",
+            "Parent": "c4a5000000000016",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        -0.17
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.045,
+                        0.025,
+                        0.06
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.86,
+                            0.64,
+                            0.5
+                        ],
+                        "Roughness": 0.6,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000017",
+            "Name": "Ragdoll UpperLegR",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.1,
+                        0,
+                        -0.33
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 8,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.075,
+                    "Height": 0.46,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "BallSocket",
+                    "ConnectedBody": "c4a5000000000001",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.21
+                    ],
+                    "CollideConnected": false,
+                    "UseLimits": true,
+                    "UpperLimit": 70
+                }
+            ]
+        },
+        {
+            "GUID": "c4a500000000014a",
+            "Name": "Ragdoll UpperLegR Mesh",
+            "Parent": "c4a5000000000017",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.15,
+                        0.23,
+                        0.15
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.16,
+                            0.24,
+                            0.42
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000018",
+            "Name": "Ragdoll LowerLegR",
+            "Parent": "c4a5000000000000",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.1,
+                        0,
+                        -0.78
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 4,
+                    "LinearDamping": 0.05,
+                    "AngularDamping": 0.4,
+                    "ContinuousCollision": true,
+                    "Interpolate": true,
+                    "CanSleep": true,
+                    "GravityScale": 1.0
+                },
+                {
+                    "Type": "CapsuleCollider",
+                    "Radius": 0.06,
+                    "Height": 0.44,
+                    "Direction": "Z",
+                    "Friction": 0.7,
+                    "Restitution": 0.05
+                },
+                {
+                    "Type": "PhysicsJoint",
+                    "JointType": "Hinge",
+                    "ConnectedBody": "c4a5000000000017",
+                    "Anchor": [
+                        0,
+                        0,
+                        0.215
+                    ],
+                    "CollideConnected": false,
+                    "Axis": [
+                        1,
+                        0,
+                        0
+                    ],
+                    "UseLimits": true,
+                    "LowerLimit": -5,
+                    "UpperLimit": 140
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000154",
+            "Name": "Ragdoll LowerLegR Mesh",
+            "Parent": "c4a5000000000018",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0.7071067811865475,
+                        0.0,
+                        0.0,
+                        0.7071067811865476
+                    ],
+                    "Scale": [
+                        0.12,
+                        0.22,
+                        0.12
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Capsule",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.16,
+                            0.24,
+                            0.42
+                        ],
+                        "Roughness": 0.7,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "c4a5000000000155",
+            "Name": "Ragdoll LowerLegR Shoe",
+            "Parent": "c4a5000000000018",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.05,
+                        -0.22
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.055,
+                        0.1,
+                        0.05
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.1,
+                            0.08,
+                            0.07
+                        ],
+                        "Roughness": 0.5,
+                        "Metallic": 0.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": true
+                }
+            ]
+        }
+    ],
+    "Version": 2
+}

@@ -1,0 +1,134 @@
+<rml>
+<head>
+	<title>Blackjack</title>
+	<link type="text/rcss" href="Blackjack.rcss"/>
+</head>
+<body>
+	<!-- Bound to CarCrash.cs through UI.Model("blackjack"): the script owns every value. -->
+	<div id="root" data-model="blackjack">
+		<div id="flash" data-if="flash"></div>
+		<div id="table" data-if="show" data-class-win="outcome == 1" data-class-lose="outcome == 2">
+			<div id="title">DEATH OR DEALER</div>
+			<div id="subtitle">You hit something at {{ impact }} km/h. Beat the dealer to live.</div>
+			<div class="label">Dealer <span class="total">{{ dtotal }}</span></div>
+			<div class="hand" id="dealer">
+				<div class="card" data-class-red="d0s == 1 || d0s == 2" data-if="dn > 0">
+					<div class="rank">{{ d0 }}</div>
+					<img class="pip" src="Spades.png" data-if="d0s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d0s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d0s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d0s == 3"/>
+				</div>
+				<div class="card" data-class-red="d1s == 1 || d1s == 2" data-if="dn > 1 && !hole">
+					<div class="rank">{{ d1 }}</div>
+					<img class="pip" src="Spades.png" data-if="d1s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d1s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d1s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d1s == 3"/>
+				</div>
+				<div class="card back" data-if="dn > 1 && hole"><div class="pattern">?</div></div>
+				<div class="card" data-class-red="d2s == 1 || d2s == 2" data-if="dn > 2">
+					<div class="rank">{{ d2 }}</div>
+					<img class="pip" src="Spades.png" data-if="d2s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d2s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d2s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d2s == 3"/>
+				</div>
+				<div class="card" data-class-red="d3s == 1 || d3s == 2" data-if="dn > 3">
+					<div class="rank">{{ d3 }}</div>
+					<img class="pip" src="Spades.png" data-if="d3s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d3s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d3s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d3s == 3"/>
+				</div>
+				<div class="card" data-class-red="d4s == 1 || d4s == 2" data-if="dn > 4">
+					<div class="rank">{{ d4 }}</div>
+					<img class="pip" src="Spades.png" data-if="d4s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d4s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d4s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d4s == 3"/>
+				</div>
+				<div class="card" data-class-red="d5s == 1 || d5s == 2" data-if="dn > 5">
+					<div class="rank">{{ d5 }}</div>
+					<img class="pip" src="Spades.png" data-if="d5s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d5s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d5s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d5s == 3"/>
+				</div>
+				<div class="card" data-class-red="d6s == 1 || d6s == 2" data-if="dn > 6">
+					<div class="rank">{{ d6 }}</div>
+					<img class="pip" src="Spades.png" data-if="d6s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="d6s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="d6s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="d6s == 3"/>
+				</div>
+			</div>
+			<div class="label">You <span class="total">{{ ptotal }}</span></div>
+			<div class="hand" id="player">
+				<div class="card" data-class-red="p0s == 1 || p0s == 2" data-if="pn > 0">
+					<div class="rank">{{ p0 }}</div>
+					<img class="pip" src="Spades.png" data-if="p0s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p0s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p0s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p0s == 3"/>
+				</div>
+				<div class="card" data-class-red="p1s == 1 || p1s == 2" data-if="pn > 1">
+					<div class="rank">{{ p1 }}</div>
+					<img class="pip" src="Spades.png" data-if="p1s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p1s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p1s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p1s == 3"/>
+				</div>
+				<div class="card" data-class-red="p2s == 1 || p2s == 2" data-if="pn > 2">
+					<div class="rank">{{ p2 }}</div>
+					<img class="pip" src="Spades.png" data-if="p2s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p2s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p2s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p2s == 3"/>
+				</div>
+				<div class="card" data-class-red="p3s == 1 || p3s == 2" data-if="pn > 3">
+					<div class="rank">{{ p3 }}</div>
+					<img class="pip" src="Spades.png" data-if="p3s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p3s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p3s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p3s == 3"/>
+				</div>
+				<div class="card" data-class-red="p4s == 1 || p4s == 2" data-if="pn > 4">
+					<div class="rank">{{ p4 }}</div>
+					<img class="pip" src="Spades.png" data-if="p4s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p4s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p4s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p4s == 3"/>
+				</div>
+				<div class="card" data-class-red="p5s == 1 || p5s == 2" data-if="pn > 5">
+					<div class="rank">{{ p5 }}</div>
+					<img class="pip" src="Spades.png" data-if="p5s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p5s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p5s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p5s == 3"/>
+				</div>
+				<div class="card" data-class-red="p6s == 1 || p6s == 2" data-if="pn > 6">
+					<div class="rank">{{ p6 }}</div>
+					<img class="pip" src="Spades.png" data-if="p6s == 0"/>
+					<img class="pip" src="Hearts.png" data-if="p6s == 1"/>
+					<img class="pip" src="Diamonds.png" data-if="p6s == 2"/>
+					<img class="pip" src="Clubs.png" data-if="p6s == 3"/>
+				</div>
+			</div>
+			<div id="actions" data-if="act">
+				<button class="action" data-event-click="hit">[H] HIT</button>
+				<button class="action" data-event-click="stand">[S] STAND</button>
+			</div>
+			<div id="result" data-if="!act">{{ result }}</div>
+		</div>
+		<div id="survived" data-if="survived">
+			<div class="big">YOU SURVIVED</div>
+			<div class="small">{{ epitaph }}</div>
+		</div>
+		<div id="wasted" data-if="wasted">
+			<div class="big">WASTED</div>
+			<div class="small">{{ epitaph }}</div>
+		</div>
+	</div>
+</body>
+</rml>

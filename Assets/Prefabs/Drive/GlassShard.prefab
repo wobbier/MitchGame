@@ -1,0 +1,67 @@
+{
+    "Entities": [
+        {
+            "GUID": "c4a5100000000001",
+            "Name": "Glass Shard",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.75,
+                            0.9,
+                            0.95
+                        ],
+                        "Roughness": 0.05,
+                        "Metallic": 0.0,
+                        "Opacity": 0.45,
+                        "RenderMode": 1,
+                        "BlendMode": 0
+                    },
+                    "CastShadows": false
+                },
+                {
+                    "Type": "Rigidbody",
+                    "BodyType": "Dynamic",
+                    "Mass": 0.2,
+                    "AngularDamping": 0.2,
+                    "Interpolate": true,
+                    "CanSleep": true
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "Friction": 0.4,
+                    "Restitution": 0.2
+                }
+            ]
+        }
+    ],
+    "Version": 2
+}

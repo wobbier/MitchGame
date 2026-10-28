@@ -7,8 +7,9 @@
 	<!-- Bound to SlotMachine.cs through UI.Model("slots"): the script owns every value. -->
 	<div id="root" data-model="slots">
 		<div id="prompt" data-if="prompt">Press E to play the slots</div>
-		<div id="machine" data-if="machine">
+		<div id="machine" data-if="machine" data-class-spinning="spinning" data-class-fever="fever">
 			<div id="title">NUCLEAR SEVENS</div>
+			<div id="tension" data-if="tension">!!! TWO NUKES !!!</div>
 			<div id="credits">Credits: {{ credits }}</div>
 			<div id="reels">
 				<div class="reel" id="r0" data-class-spinning="s0">
@@ -25,7 +26,7 @@
 					<img class="sym" src="Star.png" data-if="r1 == 3"/>
 					<img class="sym" src="Nuke.png" data-if="r1 == 4"/>
 				</div>
-				<div class="reel" id="r2" data-class-spinning="s2">
+				<div class="reel" id="r2" data-class-spinning="s2" data-class-tension="tension">
 					<span class="sym s0" data-if="r2 == 0">7</span>
 					<span class="sym s1" data-if="r2 == 1">BAR</span>
 					<span class="sym s2" data-if="r2 == 2">&#x2665;</span>

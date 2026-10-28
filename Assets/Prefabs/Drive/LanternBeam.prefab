@@ -1,0 +1,240 @@
+{
+    "Name": "Lantern Beam",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "Light",
+            "LightType": "Point",
+            "Color": [
+                1.0,
+                0.85,
+                0.55
+            ],
+            "Intensity": 120.0,
+            "Range": 16.0,
+            "CastShadows": false
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Lantern Pillar",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        60,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.9,
+                        60,
+                        0.9
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.9,
+                            0.6
+                        ],
+                        "Roughness": 0.5,
+                        "EmissiveColor": [
+                            1.0,
+                            0.8,
+                            0.45
+                        ],
+                        "EmissiveIntensity": 6.0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Lantern Core",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        60,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.35,
+                        60.5,
+                        0.35
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Roughness": 0.5,
+                        "EmissiveColor": [
+                            1.0,
+                            0.97,
+                            0.9
+                        ],
+                        "EmissiveIntensity": 30.0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Lantern Sparks",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "EmissionRate": 220.0,
+                    "Shape": "Hemisphere",
+                    "ShapeRadius": 1.2,
+                    "Lifetime": [
+                        0.4,
+                        0.9
+                    ],
+                    "Speed": [
+                        5.0,
+                        11.0
+                    ],
+                    "Size": [
+                        0.06,
+                        0.14
+                    ],
+                    "Intensity": 14.0,
+                    "Gravity": 1.2,
+                    "Alignment": "Stretched",
+                    "StretchFactor": 0.06,
+                    "StartColor": [
+                        1.0,
+                        0.85,
+                        0.45
+                    ],
+                    "EndColor": [
+                        1.0,
+                        0.3,
+                        0.05
+                    ],
+                    "EndAlpha": 0.0
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Lantern Smoke",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ParticleSystem",
+                    "Blend": "Alpha",
+                    "EmissionRate": 40.0,
+                    "Shape": "Hemisphere",
+                    "ShapeRadius": 1.5,
+                    "Lifetime": [
+                        1.2,
+                        2.0
+                    ],
+                    "Speed": [
+                        1.0,
+                        2.5
+                    ],
+                    "Size": [
+                        0.8,
+                        1.4
+                    ],
+                    "EndSize": 4.0,
+                    "StartColor": [
+                        0.3,
+                        0.27,
+                        0.25
+                    ],
+                    "EndColor": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ],
+                    "StartAlpha": 0.5,
+                    "Gravity": -0.05,
+                    "NoiseStrength": 0.6,
+                    "Lit": true
+                }
+            ],
+            "Children": []
+        }
+    ]
+}
