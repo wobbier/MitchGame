@@ -7,6 +7,11 @@ The scripted form of the "Attach to Havana (.NET)" session in Engine/Docs/Script
 in HotReloadProbe.OnUpdate. Each hit reads the `version` local (1 before the reload, 3 after, so
 the second hit is in the reloaded assembly) and writes Ticks, which opens the flow's next gate.
 
+netcoredbg arms a breakpoint in only one module per source path and never forgets an unloaded
+module, so a session that stays attached keeps it on the old assembly. It re-attaches after the
+reload instead: the old module has lost its in-memory symbols by then, so the breakpoint can only
+bind the new one. (The documented VS Code session uses Microsoft's vsdbg, which isn't scripted here.)
+
 From the project root, after building Havana (editor_debug):
   Engine/Tools/NixEnv.sh python3 Tools/ScriptDebugAttach.py
 netcoredbg comes from PATH or `nix build nixpkgs#netcoredbg`. The log lands in .tmp/ScriptDebugAttach.log.
@@ -116,12 +121,21 @@ class MiDebugger:
                 return line
         raise RuntimeError(f"no answer to {text}")
 
-    def evaluate(self, thread, expression):
-        answer = self.command(f'-var-create --thread {thread} --frame 0 - * "{expression}"')
+    def evaluate(self, expression):
+        # In the stopped thread's top frame (netcoredbg's default after a stop)
+        answer = self.command(f'-var-create - * "{expression}"')
         name, value = mi_field(answer, "name"), mi_field(answer, "value")
         if name is None:
             raise RuntimeError(f"can't evaluate {expression}: {answer}")
         return name, value
+
+
+def insert_breakpoint(debugger):
+    answer = debugger.command(f'-break-insert -f -c "Ticks >= 5 && Ticks < 1000000" {PROBE.name}:{BREAK_LINE}')
+    number = mi_field(answer, "number")
+    if "^error" in answer or number is None:
+        raise RuntimeError(f"breakpoint failed: {answer}")
+    return number
 
 
 def mi_field(line, key):
@@ -157,17 +171,19 @@ def main():
             # The debugger finds the runtime's debug pipes under the editor's TMPDIR
             editor_env = dict(entry.split("=", 1) for entry in Path(f"/proc/{pid}/environ").read_text().split("\0") if "=" in entry)
             env = host_env(TMPDIR=editor_env.get("TMPDIR", "/tmp"))
-            debugger = MiDebugger([debugger_binary, "--interpreter=mi"], env, transcript)
 
-            print(f"attaching {Path(debugger_binary).name} to Havana (pid {pid})")
-            answer = debugger.command(f"-target-attach {pid}")
-            if "^error" in answer:
-                raise RuntimeError(f"attach failed: {answer}")
-            answer = debugger.command(f'-break-insert -f -c "Ticks >= 5 && Ticks < 1000000" {PROBE.name}:{BREAK_LINE}')
-            if "^error" in answer:
-                raise RuntimeError(f"breakpoint failed: {answer}")
-            debugger.command("-exec-continue")  # an ^error just means it was already running
+            def attach():
+                session = MiDebugger([debugger_binary, "--interpreter=mi"], env, transcript)
+                print(f"attaching {Path(debugger_binary).name} to Havana (pid {pid})")
+                answer = session.command(f"-target-attach {pid}")
+                if "^error" in answer:
+                    raise RuntimeError(f"attach failed: {answer}")
+                insert_breakpoint(session)
+                session.command("-exec-continue")  # an ^error just means it was already running
+                return session
 
+            debugger = attach()
+            reattached = False
             while len(hits) < len(EXPECTED_HITS):
                 remaining = deadline - time.time()
                 if remaining <= 0 or editor.poll() is not None:
@@ -179,18 +195,29 @@ def main():
                     continue
                 if event is None:
                     raise RuntimeError("netcoredbg exited")
-                if event.startswith("=library-loaded") and "Game.Script" in (mi_field(event, "name") or ""):
-                    loads.append(mi_field(event, "name"))
+                if event.startswith("=library-loaded") and mi_field(event, "target-name") == "Game.Script":
+                    loads.append(mi_field(event, "id"))
+                    if len(loads) > 1 and not reattached:
+                        # A hot reload. netcoredbg arms a breakpoint in one module per source path and
+                        # never drops an unloaded module, so it stays on the old assembly; re-attach
+                        # once the reload has swapped (and collected) the old context instead.
+                        reattached = True
+                        debugger.command("-target-detach")
+                        debugger.process.kill()
+                        while "Scripts: hot reloaded" not in (log_dir / "ScriptDebugAttach.log").read_text(errors="replace"):
+                            if time.time() > deadline:
+                                raise RuntimeError("the hot reload never finished")
+                            time.sleep(0.2)
+                        debugger = attach()
                 if not event.startswith("*stopped"):
                     continue
                 if mi_field(event, "reason") != "breakpoint-hit":
                     debugger.command("-exec-continue")
                     continue
-                thread = mi_field(event, "thread-id")
                 where = f"{Path(mi_field(event, 'fullname') or '?').name}:{mi_field(event, 'line')}"
                 expected_version, ticks = EXPECTED_HITS[len(hits)]
-                version_var, version = debugger.evaluate(thread, "version")
-                ticks_var, before = debugger.evaluate(thread, "Ticks")
+                version_var, version = debugger.evaluate("version")
+                ticks_var, before = debugger.evaluate("Ticks")
                 debugger.command(f"-var-assign {ticks_var} {ticks}")
                 debugger.command(f"-var-delete {version_var}")
                 debugger.command(f"-var-delete {ticks_var}")
@@ -207,7 +234,7 @@ def main():
             for line in re.findall(r"\[editor-exec\] FAIL[^\n]*", text)[:8]:
                 print(f"    {line}")
             passed = "[editor-exec] PASSED" in text and code == 0
-            print(f"Game.Script loads seen by the debugger: {len(loads)}")
+            print(f"Game.Script module loads seen across both attach sessions: {len(loads)}")
             print(("PASSED" if passed else "FAILED") + ": breakpoint hit before and after a hot reload"
                   + ("" if passed else " (see .tmp/ScriptDebugAttach.log)"))
             return 0 if passed else 1
