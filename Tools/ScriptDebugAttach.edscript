@@ -1,0 +1,24 @@
+# Debugger half of Tools/ScriptDebugAttach.py (run with ScriptTest.lvl; not an editor flow on its own):
+# the gates below only open when an attached .NET debugger stops in HotReloadProbe.OnUpdate and
+# writes Ticks, so the flow proves a breakpoint hit before and after a hot reload.
+wait 20
+
+# Hit 1: the original assembly (version 1). The debugger sets Ticks = 1000000, so Position.x = 100.
+play
+wait-field Reloader | Transform.Position.0 | 100 ~ 0.5 | 72000
+assert-field Reloader | Transform.Scale | [1.0, 1.0, 1.0]
+stop
+wait 5
+
+# Hot reload, then Play again: the same breakpoint re-binds in the new assembly (version 3)
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f; | float version = 3.0f;
+wait-log Scripts: hot reloaded | 3600
+play
+wait-field Reloader | Transform.Position.0 | 200 ~ 0.5 | 72000
+assert-field Reloader | Transform.Scale | [3.0, 3.0, 3.0]
+stop
+wait 5
+
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 3.0f; | float version = 1.0f;
+wait-log Scripts: hot reloaded | 3600
+quit
