@@ -1,0 +1,26 @@
+# Render texture hot reload (run with RenderTexture.lvl; it edits a tracked asset and puts it back,
+# so RunEditorFlows skips it while another Havana is open):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/RenderTexture.lvl --editor-exec Assets/Scenes/Showcase/RenderTextureReloadFlows.edscript
+wait 20
+rtt-assert-size @Security Camera | 128 | 72
+rtt-wait @Security Camera
+
+# The browser shows the asset's settings (and the live image) in its details.
+show-asset Assets/Textures/RenderTexture/SecurityFeed.rendertexture
+wait 4
+screenshot .tmp/RenderTextureFlows/browser-details.png
+
+# Saving new settings resizes the texture in place: the camera follows it, the monitor keeps it.
+replace-in-file Assets/Textures/RenderTexture/SecurityFeed.rendertexture | "Width": 128 | "Width": 192
+rtt-assert-size @Security Camera | 192 | 72 | 600
+rtt-mark @Security Camera
+rtt-wait @Security Camera | 2
+rtt-assert-lit @Security Camera | 0.6
+assert-field Security Monitor | Mesh.Material.Textures.Emissive.Path | "Assets/Textures/RenderTexture/SecurityFeed.rendertexture"
+
+# Put it back.
+replace-in-file Assets/Textures/RenderTexture/SecurityFeed.rendertexture | "Width": 192 | "Width": 128
+rtt-assert-size @Security Camera | 128 | 72 | 600
+rtt-mark @Security Camera
+rtt-wait @Security Camera | 2
+rtt-assert-lit @Security Camera | 0.6

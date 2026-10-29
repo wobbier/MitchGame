@@ -35444,7 +35444,7 @@
           ],
           "Scale": [
             11.5,
-            6.0,
+            6,
             0.125
           ]
         },
@@ -35455,9 +35455,9 @@
           "Material": {
             "Type": "StandardMaterial",
             "DiffuseColor": [
-              1,
-              1,
-              1
+              0.02,
+              0.02,
+              0.022
             ],
             "Roughness": 0.4,
             "Metallic": 0,
@@ -35466,13 +35466,18 @@
               1,
               1
             ],
-            "EmissiveIntensity": 0.9,
+            "EmissiveIntensity": 5.0,
+            "Tiling": [
+              1,
+              -1
+            ],
+            "Offset": [
+              0,
+              1
+            ],
             "Textures": {
-              "Diffuse": {
-                "Path": "Assets/Textures/ConcertTest/LedWall.png"
-              },
               "Emissive": {
-                "Path": "Assets/Textures/ConcertTest/LedWall.png"
+                "Path": "Assets/Textures/ConcertTest/LedWall.rendertexture"
               }
             }
           }
@@ -40032,6 +40037,326 @@
         }
       ],
       "Parent": "3b048f5bd450de77"
+    },
+    {
+      "GUID": "6d8c9f0604a6d577",
+      "Name": "Camera crew - stand aisle",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "a3d7ba559d430110",
+      "Name": "Camera riser",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            17.964756905609164,
+            1.84,
+            -17.070371852864508
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            0.55,
+            0.1,
+            0.55
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "CastShadows": true,
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.03,
+              0.034,
+              0.04
+            ],
+            "Roughness": 0.7,
+            "Metallic": 0,
+            "EmissiveColor": [
+              0.03,
+              0.034,
+              0.04
+            ],
+            "EmissiveIntensity": 0
+          }
+        }
+      ],
+      "Parent": "6d8c9f0604a6d577"
+    },
+    {
+      "GUID": "282e73ef5bbba381",
+      "Name": "Camera operator",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            18.214756905609164,
+            1.94,
+            -17.270371852864507
+          ],
+          "Rotation": [
+            0,
+            135.1679270648593,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Model",
+          "ModelPath": "Assets/Models/ConcertTest/Crowd_idle_male.obj",
+          "Compact": true,
+          "BakedImportScale": 1,
+          "Parts": {
+            "Crowd_idle_male.obj#0/Crowd_idle_male#0/@#0": {
+              "Type": "Mesh",
+              "MeshType": "Model",
+              "CastShadows": true,
+              "Material": {
+                "Type": "StandardMaterial",
+                "DiffuseColor": [
+                  0.05,
+                  0.05,
+                  0.055
+                ],
+                "Roughness": 0.9,
+                "Metallic": 0,
+                "EmissiveIntensity": 0.006,
+                "EmissiveColor": [
+                  0.05,
+                  0.05,
+                  0.055
+                ]
+              }
+            },
+            "Crowd_idle_male.obj#0/Crowd_idle_male#0/@Crowd_idle_male#0": {
+              "Type": "Mesh",
+              "MeshType": "Model",
+              "CastShadows": true,
+              "Material": {
+                "Type": "StandardMaterial",
+                "DiffuseColor": [
+                  0.05,
+                  0.05,
+                  0.055
+                ],
+                "Roughness": 0.9,
+                "Metallic": 0,
+                "EmissiveIntensity": 0.006,
+                "EmissiveColor": [
+                  0.05,
+                  0.05,
+                  0.055
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "Parent": "6d8c9f0604a6d577"
+    },
+    {
+      "GUID": "04cf6f577bf46c2f",
+      "Name": "Crowd Camera",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            17.864756905609163,
+            3.49,
+            -16.970371852864506
+          ],
+          "Rotation": [
+            3.365218329363027,
+            -44.83113572017347,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Camera",
+          "IsCurrent": false,
+          "ClearType": "Color",
+          "ClearColor": [
+            0.012,
+            0.016,
+            0.023
+          ],
+          "Projection": "Perspective",
+          "FieldOfView": 6,
+          "Near": 0.1,
+          "Far": 90,
+          "TargetTexture": "Assets/Textures/ConcertTest/LedWall.rendertexture",
+          "UpdateInterval": 1,
+          "SunShadows": false,
+          "AmbientOcclusion": false,
+          "VolumetricFog": false
+        },
+        {
+          "Type": "PostProcess",
+          "AutoExposure": false,
+          "ExposureCompensation": 1.8,
+          "Tonemapper": "ACES",
+          "Bloom": true,
+          "BloomIntensity": 0.05,
+          "BloomThreshold": 1.2,
+          "AmbientOcclusion": true,
+          "Fog": true,
+          "FogColor": [
+            0.0008,
+            0.0011,
+            0.0016
+          ],
+          "FogDensity": 0.024,
+          "FogHeight": 0,
+          "FogHeightFalloff": 0.012,
+          "FogMaxOpacity": 1,
+          "FogStartDistance": 0,
+          "FogSunIntensity": 0.55,
+          "FogAnisotropy": 0.45,
+          "FogLocalAnisotropy": 0.45,
+          "VolumetricFog": true,
+          "VolumetricDistance": 110,
+          "VolumetricSteps": 64,
+          "VolumetricTemporal": true,
+          "DepthOfField": false,
+          "TemporalAA": false,
+          "FXAA": true,
+          "VignetteIntensity": 0.1,
+          "Saturation": 0.95
+        }
+      ],
+      "Parent": "6d8c9f0604a6d577"
+    },
+    {
+      "GUID": "8e76c0b3b69a8ead",
+      "Name": "Broadcast camera body",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            -0.05,
+            -0.32
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            0.11,
+            0.13,
+            0.25
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "CastShadows": false,
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.02,
+              0.02,
+              0.024
+            ],
+            "Roughness": 0.5,
+            "Metallic": 0,
+            "EmissiveColor": [
+              0.02,
+              0.02,
+              0.024
+            ],
+            "EmissiveIntensity": 0
+          }
+        }
+      ],
+      "Parent": "04cf6f577bf46c2f"
+    },
+    {
+      "GUID": "be12c85272737f39",
+      "Name": "Broadcast camera lens",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            -0.05,
+            0.02
+          ],
+          "Rotation": [
+            90,
+            0,
+            0
+          ],
+          "Scale": [
+            0.065,
+            0.065,
+            0.11
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cylinder",
+          "CastShadows": false,
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.01,
+              0.01,
+              0.012
+            ],
+            "Roughness": 0.3,
+            "Metallic": 0,
+            "EmissiveColor": [
+              0.01,
+              0.01,
+              0.012
+            ],
+            "EmissiveIntensity": 0
+          }
+        }
+      ],
+      "Parent": "04cf6f577bf46c2f"
     },
     {
       "GUID": "e71739cad935c513",

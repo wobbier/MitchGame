@@ -1,0 +1,9 @@
+# Render texture cameras and the main camera (run with RenderTextureOrderTest.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/RenderTextureOrderTest.lvl --editor-exec Assets/Scenes/Tests/RenderTextureOrderFlows.edscript
+# The feed camera is listed first and no camera says IsCurrent: the plain camera still becomes the main
+# camera (CameraCore skips cameras with a target when it picks one), and the feed renders.
+wait 20
+assert-field Plain Camera | Camera.IsCurrent | true
+assert-field Feed Camera | Camera.IsCurrent | false
+rtt-wait @Feed Camera
+rtt-assert-lit @Feed Camera | 0.5

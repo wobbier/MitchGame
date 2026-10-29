@@ -1,0 +1,85 @@
+# Render texture editor regression script (run with RenderTexture.lvl):
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/RenderTexture.lvl --editor-exec Assets/Scenes/Showcase/RenderTextureFlows.edscript
+# Cameras with a Target Texture render into .rendertexture assets that the monitors' materials show.
+wait 20
+
+# The camera links and material slots load from the scene; the assets size the textures.
+assert-field Main Camera | Camera.IsCurrent | true
+assert-field Studio Camera | Camera.IsCurrent | false
+assert-field Studio Camera | Camera.TargetTexture | "Assets/Textures/RenderTexture/StudioFeed.rendertexture"
+assert-field Security Camera | Camera.TargetTexture | "Assets/Textures/RenderTexture/SecurityFeed.rendertexture"
+assert-field Security Camera | Camera.UpdateInterval | 2
+assert-field Security Camera | Camera.SunShadows | false
+assert-field Security Camera | Camera.AmbientOcclusion | false
+assert-field Security Camera | Camera.VolumetricFog | false
+assert-field Studio Monitor | Mesh.Material.Textures.Emissive.Path | "Assets/Textures/RenderTexture/StudioFeed.rendertexture"
+assert-field Studio Monitor | Mesh.Material.Offset | [0.0, 1.0]
+assert-field Graph Monitor | Mesh.Material.Textures.Feed | "Assets/Textures/RenderTexture/StudioFeed.rendertexture"
+rtt-assert-size @Studio Camera | 480 | 270
+rtt-assert-size @Security Camera | 128 | 72
+
+# Live while editing: the studio feed renders every frame, the security feed every other one.
+rtt-wait @Studio Camera
+rtt-assert-renders @Studio Camera | 20 | 19 | 21
+rtt-assert-renders @Security Camera | 20 | 9 | 11
+rtt-assert-lit @Studio Camera | 0.6
+rtt-assert-lit @Security Camera | 0.6
+# The monitor on the set is in the studio camera's own shot: black there, never its own image.
+rtt-assert-dark @Studio Camera | 0.05 | 0.78 0.32 0.16 0.24
+rtt-capture @Studio Camera | .tmp/RenderTextureFlows/studio-edit.png
+
+# Moving the camera changes its feed (and the inspector previews it live).
+rtt-mark @Studio Camera
+select Studio Camera
+set Transform.Position [1.2, 2.2, -6.4]
+assert-field Studio Camera | Transform.Position | [1.2, 2.2, -6.4]
+rtt-assert-changed @Studio Camera | 0.1
+screenshot .tmp/RenderTextureFlows/inspector.png
+undo
+assert-field Studio Camera | Transform.Position | [0.0, 1.6, -6.8]
+
+# Switching a pass back on and off again (undoable like any field).
+select Security Camera
+set Camera.AmbientOcclusion true
+assert-field Security Camera | Camera.AmbientOcclusion | true
+undo
+assert-field Security Camera | Camera.AmbientOcclusion | false
+
+# Adding a camera and giving it a target leaves the main camera current (the add-time guards
+# themselves are unit-tested: RenderTextureTests).
+create ExtraFeedCamera
+add-component Camera
+set Camera.TargetTexture "Assets/Textures/RenderTexture/SecurityFeed.rendertexture"
+assert-field ExtraFeedCamera | Camera.IsCurrent | false
+assert-field Main Camera | Camera.IsCurrent | true
+undo
+undo
+undo
+
+# Save and reopen: the links round-trip.
+save-as .tmp/RenderTextureFlows/RoundTrip.lvl
+load .tmp/RenderTextureFlows/RoundTrip.lvl
+wait 12
+assert-field Studio Camera | Camera.TargetTexture | "Assets/Textures/RenderTexture/StudioFeed.rendertexture"
+assert-field Security Camera | Camera.UpdateInterval | 2
+assert-field Studio Monitor | Mesh.Material.Offset | [0.0, 1.0]
+assert-field Main Camera | Camera.IsCurrent | true
+rtt-mark @Studio Camera
+rtt-wait @Studio Camera | 3
+
+# Play: the turntable turns, so the feed changes by itself.
+play
+wait 10
+assert-playing true
+rtt-mark @Studio Camera
+wait 30
+rtt-assert-changed @Studio Camera | 0.02
+rtt-assert-renders @Security Camera | 20 | 9 | 11
+screenshot .tmp/RenderTextureFlows/play.png
+stop
+wait 10
+assert-playing false
+# The world reloaded: the feeds render again.
+rtt-mark @Studio Camera
+rtt-wait @Studio Camera | 3
+rtt-assert-lit @Studio Camera | 0.6

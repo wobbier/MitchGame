@@ -1,0 +1,273 @@
+{
+	"Version": 1,
+	"Settings": {
+		"Target": "Lit"
+	},
+	"Properties": [
+		{
+			"Id": "p1",
+			"Name": "Feed",
+			"Type": "Texture2D",
+			"Exposed": true,
+			"Texture": "",
+			"DefaultTexture": "black"
+		},
+		{
+			"Id": "p2",
+			"Name": "Brightness",
+			"Type": "Float",
+			"Exposed": true,
+			"Default": [
+				1.4,
+				1.4,
+				1.4,
+				1.4
+			],
+			"Range": [
+				0.0,
+				10.0
+			]
+		}
+	],
+	"Nodes": [
+		{
+			"Id": 1,
+			"Type": "Output",
+			"Defaults": {
+				"Base Color": [
+					0.02,
+					0.02,
+					0.02,
+					0.0
+				],
+				"Roughness": [
+					0.15,
+					0.15,
+					0.15,
+					0.15
+				]
+			},
+			"Position": [
+				1200,
+				-300
+			]
+		},
+		{
+			"Id": 2,
+			"Type": "Property",
+			"Settings": {
+				"Property": "p1"
+			},
+			"Position": [
+				80,
+				-420
+			]
+		},
+		{
+			"Id": 3,
+			"Type": "TilingAndOffset",
+			"Defaults": {
+				"Tiling": [
+					1.0,
+					-1.0,
+					0.0,
+					0.0
+				],
+				"Offset": [
+					0.0,
+					1.0,
+					0.0,
+					0.0
+				]
+			},
+			"Position": [
+				80,
+				-260
+			]
+		},
+		{
+			"Id": 4,
+			"Type": "SampleTexture2D",
+			"Settings": {
+				"Type": "Color"
+			},
+			"Position": [
+				360,
+				-300
+			]
+		},
+		{
+			"Id": 5,
+			"Type": "UV",
+			"Position": [
+				-760,
+				-60
+			]
+		},
+		{
+			"Id": 6,
+			"Type": "Split",
+			"Position": [
+				-480,
+				-60
+			]
+		},
+		{
+			"Id": 7,
+			"Type": "Multiply",
+			"Defaults": {
+				"B": [
+					900.0,
+					900.0,
+					900.0,
+					900.0
+				]
+			},
+			"Position": [
+				-200,
+				-60
+			]
+		},
+		{
+			"Id": 8,
+			"Type": "Sine",
+			"Position": [
+				80,
+				-60
+			]
+		},
+		{
+			"Id": 9,
+			"Type": "Multiply",
+			"Defaults": {
+				"B": [
+					0.1,
+					0.1,
+					0.1,
+					0.1
+				]
+			},
+			"Position": [
+				360,
+				-60
+			]
+		},
+		{
+			"Id": 10,
+			"Type": "Add",
+			"Defaults": {
+				"A": [
+					0.9,
+					0.9,
+					0.9,
+					0.9
+				]
+			},
+			"Position": [
+				640,
+				-60
+			]
+		},
+		{
+			"Id": 11,
+			"Type": "Multiply",
+			"Position": [
+				640,
+				-300
+			]
+		},
+		{
+			"Id": 12,
+			"Type": "Property",
+			"Settings": {
+				"Property": "p2"
+			},
+			"Position": [
+				640,
+				-460
+			]
+		},
+		{
+			"Id": 13,
+			"Type": "Multiply",
+			"Position": [
+				920,
+				-300
+			]
+		}
+	],
+	"Links": [
+		[
+			2,
+			"Out",
+			4,
+			"Texture"
+		],
+		[
+			3,
+			"Out",
+			4,
+			"UV"
+		],
+		[
+			5,
+			"Out",
+			6,
+			"In"
+		],
+		[
+			6,
+			"G",
+			7,
+			"A"
+		],
+		[
+			7,
+			"Out",
+			8,
+			"In"
+		],
+		[
+			8,
+			"Out",
+			9,
+			"A"
+		],
+		[
+			9,
+			"Out",
+			10,
+			"B"
+		],
+		[
+			4,
+			"RGB",
+			11,
+			"A"
+		],
+		[
+			10,
+			"Out",
+			11,
+			"B"
+		],
+		[
+			11,
+			"Out",
+			13,
+			"A"
+		],
+		[
+			12,
+			"Out",
+			13,
+			"B"
+		],
+		[
+			13,
+			"Out",
+			1,
+			"Emission"
+		]
+	]
+}

@@ -1,0 +1,14 @@
+{
+    "Regions": [
+        {
+            "Name": "LED wall (crowd camera feed)",
+            "Rect": [
+                0.57,
+                0.38,
+                0.19,
+                0.18
+            ],
+            "MaxChanged": 0.08
+        }
+    ]
+}

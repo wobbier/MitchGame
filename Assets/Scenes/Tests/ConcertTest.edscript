@@ -1,4 +1,5 @@
-# Concert arena smoke flow: twelve independent rectangle panel beams, temporal fog and serialization.
+# Concert arena smoke flow: twelve independent rectangle panel beams, temporal fog, the LED wall's
+# live crowd camera feed (a render texture) and serialization.
 # ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/ConcertTest.lvl --editor-exec Assets/Scenes/Tests/ConcertTest.edscript
 wait 16
 assert-exists Box Light Bank
@@ -100,6 +101,31 @@ assert-field Box light beam 1-1 | Light.OuterConeAngle | 5.5 ~ 0.001
 assert-field Box light beam 1-1 | Light.InnerConeAngle | 2 ~ 0.001
 assert-exists LED video wall
 
+# The LED wall shows a crowd camera's live feed: a camera crew member in the stands films the singer
+# into a render texture the wall's material emits.
+assert-exists Crowd Camera
+assert-parent Crowd Camera | Camera crew - stand aisle
+assert-field Crowd Camera | Camera.IsCurrent | false
+assert-field Main Camera | Camera.IsCurrent | true
+assert-field Crowd Camera | Camera.TargetTexture | "Assets/Textures/ConcertTest/LedWall.rendertexture"
+assert-field Crowd Camera | Camera.VolumetricFog | false
+assert-field Crowd Camera | Camera.AmbientOcclusion | false
+assert-field LED video wall | Mesh.Material.Textures.Emissive.Path | "Assets/Textures/ConcertTest/LedWall.rendertexture"
+rtt-assert-size @Crowd Camera | 384 | 200
+rtt-wait @Crowd Camera
+rtt-assert-renders @Crowd Camera | 10 | 9 | 11
+rtt-assert-lit @Crowd Camera | 0.05
+rtt-capture @Crowd Camera | .tmp/ConcertTestFlows/crowd-feed.png
+# Live while editing: dousing the followspot darkens the singer in the feed.
+rtt-mark @Crowd Camera
+select Performer Spotlight
+set Light.Intensity 0
+rtt-assert-changed @Crowd Camera | 0.02
+undo
+assert-field Performer Spotlight | Light.Intensity | 100000 ~ 0.01
+select Crowd Camera
+screenshot .tmp/ConcertTestFlows/crowd-camera-inspector.png
+
 # Fog controls survive undo and save/reopen in both states.
 select Main Camera
 set PostProcess.VolumetricFog false
@@ -119,6 +145,8 @@ load .tmp/ConcertTestFlows/RoundTrip.lvl
 wait 12
 assert-field Main Camera | PostProcess.Fog | true
 assert-field Main Camera | PostProcess.VolumetricFog | true
+assert-field Crowd Camera | Camera.TargetTexture | "Assets/Textures/ConcertTest/LedWall.rendertexture"
+assert-field LED video wall | Mesh.Material.Textures.Emissive.Path | "Assets/Textures/ConcertTest/LedWall.rendertexture"
 assert-field Box light beam 1-1 | Light.Intensity | 10000 ~ 0.01
 assert-field Box light beam 1-2 | Light.Intensity | 10000 ~ 0.01
 assert-field Box light beam 1-3 | Light.Intensity | 10000 ~ 0.01
@@ -136,9 +164,12 @@ play
 wait 12
 assert-playing true
 screenshot .tmp/ConcertTestFlows/concert.png
+# Still live in Play.
+rtt-mark @Crowd Camera
 select Performer Spotlight
 set Light.Intensity 0
 assert-field Performer Spotlight | Light.Intensity | 0
+rtt-assert-changed @Crowd Camera | 0.02
 wait 8
 screenshot .tmp/ConcertTestFlows/bank-only.png
 

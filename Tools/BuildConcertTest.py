@@ -2,7 +2,7 @@
 """Rebuild the concert lighting study from the arena photo, using local assets.
 
 Run from any directory. Overwrites only ConcertTest.lvl, its generated crowd
-assets and the LED wall's placeholder texture. All dimensions are metres; the two
+assets and the LED wall's render texture. All dimensions are metres; the two
 light rigs remain editable in Havana.
 """
 import copy
@@ -11,31 +11,26 @@ import json
 import math
 from pathlib import Path
 import random
-import struct
-import zlib
 
 from ConcertAssets import add_performer, build_crowd_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "Assets/Scenes/Tests/ConcertTest.lvl"
-# The LED wall's frame. A flat white stand-in until a real still of the show replaces it.
-SCREEN_TEXTURE = "Assets/Textures/ConcertTest/LedWall.png"
+# The LED wall's live feed: a camera crew member in the stands films the singer into it.
+SCREEN_FEED = "Assets/Textures/ConcertTest/LedWall.rendertexture"
+# Close to the wall's 23 x 12 m shape.
+SCREEN_FEED_SIZE = (384, 200)
 PANEL_INTENSITY = 10000
 PANEL_CONE = (2.0, 5.5)   # inner / outer half-angles: a narrow, soft-edged panel beam
 
 
-def write_white_png(path, size=8):
-    """A size x size opaque white PNG, with no image library."""
-    raw = b"".join(b"\x00" + b"\xff\xff\xff" * size for _ in range(size))
-
-    def chunk(kind, payload):
-        body = kind + payload
-        return struct.pack(">I", len(payload)) + body + struct.pack(">I", zlib.crc32(body) & 0xffffffff)
-
-    header = struct.pack(">IIBBBBB", size, size, 8, 2, 0, 0, 0)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header) +
-                     chunk(b"IDAT", zlib.compress(raw, 9)) + chunk(b"IEND", b""))
+def write_render_texture(path, width, height):
+    """A .rendertexture asset and its meta (as the engine writes metas: no trailing newline)."""
+    target = ROOT / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(dict(Width=width, Height=height, Mips=True, Wrap="Clamp"), indent=4) + "\n")
+    meta = dict(FileType="rendertexture", GUID=hashlib.sha256(path.encode()).hexdigest()[:16])
+    Path(str(target) + ".meta").write_text(json.dumps(meta, indent=4))
 
 
 def transform(position=(0, 0, 0), rotation=(0, 0, 0), scale=(1, 1, 1)):
@@ -155,10 +150,15 @@ def build():
     # A low runway to the blacked-out main stage helps describe the floor plane.
     scene.mesh("Runway", (0, .48, 14.3), (2.4, .96, 20.4), (.04, .045, .055), parent=stage)
     scene.mesh("Rear main stage", (0, .75, 28), (18, 1.5, 7), (.035, .04, .05), parent=stage)
-    # The LED wall: a lit screen behind the main stage (the photo's close-up of the singer).
-    write_white_png(ROOT / SCREEN_TEXTURE)
-    scene.mesh("LED video wall", (0, 7, 32), (23, 12, .25), (1, 1, 1), parent=stage,
-               emission=.9, shadows=False, roughness=.4, texture=SCREEN_TEXTURE)
+    # The LED wall behind the main stage shows the crowd camera's live close-up of the singer
+    # (the photo's close-up). Dark when off; the feed is its emission. The cube's faces map v
+    # up the face, so Tiling (1, -1) with Offset (0, 1) shows the image upright.
+    write_render_texture(SCREEN_FEED, *SCREEN_FEED_SIZE)
+    scene.entity("LED video wall", [transform((0, 7, 32), scale=(11.5, 6, .125)),
+        dict(Type="Mesh", MeshType="Cube", CastShadows=False, Material=dict(
+             Type="StandardMaterial", DiffuseColor=[.02, .02, .022], Roughness=.4, Metallic=0,
+             EmissiveColor=[1, 1, 1], EmissiveIntensity=5.0, Tiling=[1, -1], Offset=[0, 1],
+             Textures=dict(Emissive=dict(Path=SCREEN_FEED))))], stage)
     # The screen's own glow into the haze and onto the main stage: a near-hemisphere
     # rectangle light the size of the wall, facing the audience (-Z).
     scene.entity("LED video wall glow", [transform((0, 7, 31.85), (0, 180, 0)),
@@ -170,6 +170,39 @@ def build():
             scene.mesh(f"Line array {x} {i}", (x, 9.2-i*.48, 25.5-i*.07), (1.0, .43, .65),
                        (.025, .03, .038), parent=stage, rotation=(i*2, 0, 0))
     add_performer(scene, "Singer", (0, 1.04, 1), facing=145, parent=stage)
+
+    # The camera crew: an operator on a riser in a stand aisle (aisle 11, second row), filming
+    # the singer's lit front with a long lens into the LED wall's feed. The wall stays out of shot.
+    crew = scene.group("Camera crew - stand aisle")
+    aisle = (11 + .03) * math.tau / 12
+    floor_x, floor_z, floor_y = 20.56 * math.cos(aisle), 35.1 * math.sin(aisle), 2 * .86 + .02
+    scene.mesh("Camera riser", (floor_x, floor_y + .1, floor_z), (1.1, .2, 1.1), (.03, .034, .04),
+               parent=crew)
+    operator = copy.deepcopy(crowd_assets["idle_male"])
+    for part in operator["Parts"].values():
+        part["Material"].update(DiffuseColor=[.05, .05, .055], Roughness=.9, EmissiveColor=[.05, .05, .055],
+                                EmissiveIntensity=.006)
+    facing = math.degrees(math.atan2(-floor_x, 1 - floor_z)) + 180
+    scene.entity("Camera operator", [transform((floor_x + .25, floor_y + .2, floor_z - .2), (0, facing, 0)),
+                                     operator], crew)
+    lens_position, lens_target = (floor_x - .1, floor_y + 1.75, floor_z + .1), (0, 2.0, 1)
+    crowd_camera = scene.entity("Crowd Camera", [transform(lens_position, aim(lens_position, lens_target)),
+        dict(Type="Camera", IsCurrent=False, ClearType="Color", ClearColor=[.012, .016, .023],
+             Projection="Perspective", FieldOfView=6, Near=.1, Far=90,
+             TargetTexture=SCREEN_FEED, UpdateInterval=1,
+             SunShadows=False, AmbientOcclusion=False, VolumetricFog=False),
+        # The arena's haze without the expensive passes (the camera switches them off).
+        dict(Type="PostProcess", AutoExposure=False, ExposureCompensation=1.8,
+             Tonemapper="ACES", Bloom=True, BloomIntensity=.05, BloomThreshold=1.2,
+             AmbientOcclusion=True, Fog=True, FogColor=[.0008, .0011, .0016], FogDensity=.024,
+             FogHeight=0, FogHeightFalloff=.012, FogMaxOpacity=1, FogStartDistance=0,
+             FogSunIntensity=.55, FogAnisotropy=.45, FogLocalAnisotropy=.45, VolumetricFog=True,
+             VolumetricDistance=110, VolumetricSteps=64, VolumetricTemporal=True,
+             DepthOfField=False, TemporalAA=False, FXAA=True, VignetteIntensity=.1, Saturation=.95)], crew)
+    scene.mesh("Broadcast camera body", (0, -.05, -.32), (.22, .26, .5), (.02, .02, .024),
+               parent=crowd_camera, shadows=False, roughness=.5)
+    scene.mesh("Broadcast camera lens", (0, -.05, .02), (.13, .13, .22), (.01, .01, .012), "Cylinder",
+               parent=crowd_camera, rotation=(90, 0, 0), shadows=False, roughness=.3)
     for i, x in enumerate((-.85, 1.3)):
         scene.mesh(f"Stage wedge monitor {i}", (x, 1.2, -.9), (.62, .32, .43),
                    (.025, .03, .035), rotation=(-18, 0, 0), parent=stage)
@@ -283,7 +316,7 @@ def build():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(dict(Version=2, Cores=[], Entities=scene.entities), indent=2)+"\n")
     print(f"Wrote {OUTPUT.relative_to(ROOT)}: {len(scene.entities)} entities, {count} spectators, "
-          "one performer spotlight, twelve rectangle panel lights and the LED wall")
+          "one performer spotlight, twelve rectangle panel lights and the LED wall's crowd camera feed")
 
 
 if __name__ == "__main__":

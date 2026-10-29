@@ -1,0 +1,50 @@
+{
+	"AlphaClip": false,
+	"Blend": "Alpha",
+	"CastShadows": true,
+	"Graph": "Assets/ShaderGraphs/Examples/CameraFeed.shadergraph",
+	"Parameters": [
+		{
+			"Default": [
+				1.399999976158142,
+				1.399999976158142,
+				1.399999976158142,
+				1.399999976158142
+			],
+			"Exposed": true,
+			"Id": "p2",
+			"Name": "Brightness",
+			"Range": [
+				0.0,
+				10.0
+			],
+			"Slot": 0,
+			"Type": "Float"
+		}
+	],
+	"Programs": {
+		"Forward": [
+			"Forward",
+			"Forward"
+		],
+		"Skinned": [
+			"Skinned",
+			"Forward"
+		]
+	},
+	"RenderFace": "Front",
+	"Surface": "Opaque",
+	"Target": "Lit",
+	"Textures": [
+		{
+			"Asset": "",
+			"Default": "black",
+			"Exposed": true,
+			"Id": "p1",
+			"Name": "Feed",
+			"Slot": 0,
+			"Type": "Texture2D"
+		}
+	],
+	"Version": 1
+}

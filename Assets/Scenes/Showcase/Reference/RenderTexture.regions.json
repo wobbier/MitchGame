@@ -1,0 +1,44 @@
+{
+    "Regions": [
+        {
+            "Name": "Studio monitor (emissive)",
+            "Rect": [
+                0.1,
+                0.13,
+                0.4,
+                0.39
+            ],
+            "MaxChanged": 0.1
+        },
+        {
+            "Name": "Print monitor (diffuse)",
+            "Rect": [
+                0.6,
+                0.12,
+                0.27,
+                0.27
+            ],
+            "MaxChanged": 0.1
+        },
+        {
+            "Name": "Graph monitor (shader graph)",
+            "Rect": [
+                0.6,
+                0.46,
+                0.26,
+                0.26
+            ],
+            "MaxChanged": 0.1
+        },
+        {
+            "Name": "Security monitor (interval, masked passes)",
+            "Rect": [
+                0.17,
+                0.57,
+                0.28,
+                0.27
+            ],
+            "MaxChanged": 0.1
+        }
+    ]
+}

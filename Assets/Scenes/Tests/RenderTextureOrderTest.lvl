@@ -1,0 +1,179 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "bf103ecb5df1b36c",
+            "Name": "Feed Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -6
+                    ],
+                    "Rotation": [
+                        12,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "Projection": "Perspective",
+                    "FieldOfView": 60,
+                    "Near": 0.05,
+                    "Far": 50,
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.2,
+                        0.25,
+                        0.3
+                    ],
+                    "TargetTexture": "Assets/Textures/RenderTexture/SecurityFeed.rendertexture"
+                }
+            ]
+        },
+        {
+            "GUID": "65d825f9b585d694",
+            "Name": "Plain Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1.5,
+                        -4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "Projection": "Perspective",
+                    "FieldOfView": 55,
+                    "Near": 0.05,
+                    "Far": 50,
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.05,
+                        0.05,
+                        0.07
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "7c3e7667c847f347",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        6,
+                        0
+                    ],
+                    "Rotation": [
+                        50,
+                        30,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "DirectionalSource": "Manual",
+                    "Color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "Intensity": 2.5,
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "44b6c30fece35cca",
+            "Name": "Screen",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.6,
+                        0.9,
+                        0.02
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "Roughness": 0.3,
+                        "Metallic": 0,
+                        "EmissiveColor": [
+                            1,
+                            1,
+                            1
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "Tiling": [
+                            1,
+                            -1
+                        ],
+                        "Offset": [
+                            0,
+                            1
+                        ],
+                        "Textures": {
+                            "Emissive": {
+                                "Path": "Assets/Textures/RenderTexture/SecurityFeed.rendertexture"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

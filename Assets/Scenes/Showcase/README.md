@@ -11,6 +11,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 | `ShaderGraph.lvl` | Shader graphs (`Assets/ShaderGraphs/Examples/`): a dissolving sphere (alpha clip with an emissive edge, also in its shadow), a hologram (unlit additive fresnel and scan lines), a wind-swayed post (vertex offset with matching shadows), triplanar concrete, water from scrolling noise normals, a graph scorch decal, a graph fire particle system and a vignette post pass |
 | `Decals.lvl` | Projected decals: a scorch wrapping a wall corner and a ball (angle fade where surfaces turn away), road arrows on the floor and a ramp, a glossy normal-mapped puddle with an arrow sorted on top, an emissive glyph with bloom, an untextured paint swatch |
 | `SplitDiopter.lvl` | Synty Office Pack doorway shot: a near employee on the left and his boss behind a desk on the right stay sharp at independent focus depths; [setup and comparisons](SplitDiopter.md) |
+| `RenderTexture.lvl` | Camera render textures: a studio set on a turntable (`Spinner`, 25°/s) filmed by a studio camera (480 × 270, every frame) and a security camera (128 × 72, every other frame, with sun shadows, ambient occlusion and volumetric fog switched off on the camera). A monitor wall shows the feeds through each kind of consumer: emissive, diffuse (lit by a spot), a shader graph (`Examples/CameraFeed`, scan lines) and the security feed. A monitor on the set is in the studio camera's own shot, so it is black in that feed (a camera never samples its own target) and shows the studio feed in the security camera's. Rebuild it, and its two `.rendertexture` assets in `Assets/Textures/RenderTexture/`, with `python3 Tools/BuildRenderTextureShowcase.py` |
 
 Scripts live in `Assets/Scripts/Showcase/` (`PlayerController`, `FollowCamera`, `Chaser`, `Spinner`, `Bobber`). The playground's navmesh is baked to `Playground.NavSurface.navmesh` (select NavSurface > Bake, or Navigation.BakeAll).
 
@@ -26,4 +27,12 @@ Engine/Tools/ScreenshotRegression.py --game .build/Game_linux_Debug/Game_EntryPo
 Engine/Tools/ScreenshotRegression.py ... --update
 ```
 
-Captures run 480 frames at a fixed 1/60 s (`--frame-time`), so they are repeatable; diffs land in `.tmp/ScreenshotRegression/`. `PlaygroundFlows.edscript` checks the playground's gameplay scripts in the editor (`Havana --scene Assets/Scenes/Showcase/Playground.lvl --editor-exec Assets/Scenes/Showcase/PlaygroundFlows.edscript`), and `DecalFlows.edscript` the decal component's editing and undo.
+Captures run 480 frames at a fixed 1/60 s (`--frame-time`), so they are repeatable; diffs land in `.tmp/ScreenshotRegression/`. A reference can also name regions that matter more than their share of the frame in `Reference/<scene>.regions.json`, each failing on its own limit:
+
+```json
+{ "Regions": [ { "Name": "Studio monitor (emissive)", "Rect": [0.1, 0.13, 0.4, 0.39], "MaxChanged": 0.1 } ] }
+```
+
+`Rect` is x, y, width, height, normalized from the top left; `MaxChanged` defaults to `--max-changed`. `RenderTexture.regions.json` holds each monitor to 10% of its own pixels, so a broken feed can't hide inside the whole frame's 3% limit (the screens are a small part of the frame).
+
+`PlaygroundFlows.edscript` checks the playground's gameplay scripts in the editor (`Havana --scene Assets/Scenes/Showcase/Playground.lvl --editor-exec Assets/Scenes/Showcase/PlaygroundFlows.edscript`), and `DecalFlows.edscript` the decal component's editing and undo. `RenderTextureFlows.edscript` checks the render texture links, sizes and update intervals, the black self-view, live feeds while editing and in Play, undo and save/reopen (the `rtt-*` commands); `RenderTextureReloadFlows.edscript` resizes the security feed by editing its asset and puts it back, so `RunEditorFlows.py` skips it while another Havana is open.
