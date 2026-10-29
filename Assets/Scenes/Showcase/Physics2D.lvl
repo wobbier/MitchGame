@@ -108,29 +108,30 @@
                         2.0
                     ],
                     "Rotation": [
-                        -90.0,
+                        0.0,
                         0.0,
                         0.0
                     ],
                     "Scale": [
                         40.0,
-                        1.0,
-                        24.0
+                        24.0,
+                        1.0
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Plane",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.55,
-                            0.6,
-                            0.7
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.95
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Sky.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "SortingLayer": -1,
+                    "Lit": false
                 }
             ]
         },
@@ -152,30 +153,38 @@
                         0.0
                     ],
                     "Scale": [
-                        20.0,
-                        0.5,
-                        0.6
+                        1.0,
+                        1.0,
+                        1.0
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.35,
-                            0.3,
-                            0.28
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Stone.png",
+                    "Size": [
+                        40.0,
+                        1.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.78,
+                        0.72
+                    ],
+                    "SortingLayer": 0,
+                    "Lit": true,
+                    "PixelsPerUnit": 48.0,
+                    "NineSlice": [
+                        12.0,
+                        12.0,
+                        12.0,
+                        12.0
+                    ]
                 },
                 {
                     "Type": "BoxCollider2D",
                     "Size": [
-                        2.0,
-                        2.0
+                        40.0,
+                        1.0
                     ]
                 }
             ]
@@ -198,30 +207,38 @@
                         0.0
                     ],
                     "Scale": [
-                        0.5,
-                        6.5,
-                        0.6
+                        1.0,
+                        1.0,
+                        1.0
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.35,
-                            0.3,
-                            0.28
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Stone.png",
+                    "Size": [
+                        1.0,
+                        13.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.78,
+                        0.72
+                    ],
+                    "SortingLayer": 0,
+                    "Lit": true,
+                    "PixelsPerUnit": 48.0,
+                    "NineSlice": [
+                        12.0,
+                        12.0,
+                        12.0,
+                        12.0
+                    ]
                 },
                 {
                     "Type": "BoxCollider2D",
                     "Size": [
-                        2.0,
-                        2.0
+                        1.0,
+                        13.0
                     ]
                 }
             ]
@@ -244,30 +261,38 @@
                         0.0
                     ],
                     "Scale": [
-                        0.5,
-                        6.5,
-                        0.6
+                        1.0,
+                        1.0,
+                        1.0
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.35,
-                            0.3,
-                            0.28
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.9
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Stone.png",
+                    "Size": [
+                        1.0,
+                        13.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.78,
+                        0.72
+                    ],
+                    "SortingLayer": 0,
+                    "Lit": true,
+                    "PixelsPerUnit": 48.0,
+                    "NineSlice": [
+                        12.0,
+                        12.0,
+                        12.0,
+                        12.0
+                    ]
                 },
                 {
                     "Type": "BoxCollider2D",
                     "Size": [
-                        2.0,
-                        2.0
+                        1.0,
+                        13.0
                     ]
                 }
             ]
@@ -296,18 +321,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -346,18 +372,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -396,18 +423,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -446,18 +474,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -496,18 +525,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -546,18 +576,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -596,18 +627,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -646,18 +678,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -696,18 +729,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -746,18 +780,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.55,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.55,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -796,18 +831,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -846,18 +882,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -896,18 +933,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -946,18 +984,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -996,18 +1035,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1046,18 +1086,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1096,18 +1137,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1146,18 +1188,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1196,18 +1239,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.8899999999999999,
-                            0.5800000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.8899999999999999,
+                        0.5800000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1246,18 +1290,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1296,18 +1341,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1346,18 +1392,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1396,18 +1443,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1446,18 +1494,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1496,18 +1545,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1546,18 +1596,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1596,18 +1647,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.83,
-                            0.6100000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.83,
+                        0.6100000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1646,18 +1698,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1696,18 +1749,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1746,18 +1800,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1796,18 +1851,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1846,18 +1902,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1896,18 +1953,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1946,18 +2004,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.77,
-                            0.64,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.77,
+                        0.64,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -1996,18 +2055,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.71,
-                            0.67,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.71,
+                        0.67,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2046,18 +2106,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.71,
-                            0.67,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.71,
+                        0.67,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2096,18 +2157,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.71,
-                            0.67,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.71,
+                        0.67,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2146,18 +2208,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.71,
-                            0.67,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.71,
+                        0.67,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2196,18 +2259,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.71,
-                            0.67,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.71,
+                        0.67,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2246,18 +2310,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.71,
-                            0.67,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.71,
+                        0.67,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2296,18 +2361,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6499999999999999,
-                            0.7000000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6499999999999999,
+                        0.7000000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2346,18 +2412,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6499999999999999,
-                            0.7000000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6499999999999999,
+                        0.7000000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2396,18 +2463,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6499999999999999,
-                            0.7000000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6499999999999999,
+                        0.7000000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2446,18 +2514,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6499999999999999,
-                            0.7000000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6499999999999999,
+                        0.7000000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2496,18 +2565,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6499999999999999,
-                            0.7000000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6499999999999999,
+                        0.7000000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2546,18 +2616,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.59,
-                            0.73,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.59,
+                        0.73,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2596,18 +2667,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.59,
-                            0.73,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.59,
+                        0.73,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2646,18 +2718,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.59,
-                            0.73,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.59,
+                        0.73,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2696,18 +2769,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.59,
-                            0.73,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.59,
+                        0.73,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2746,18 +2820,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.53,
-                            0.76,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.53,
+                        0.76,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2796,18 +2871,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.53,
-                            0.76,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.53,
+                        0.76,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2846,18 +2922,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.53,
-                            0.76,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.53,
+                        0.76,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2896,18 +2973,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.47,
-                            0.79,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.47,
+                        0.79,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2946,18 +3024,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.47,
-                            0.79,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.47,
+                        0.79,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -2996,18 +3075,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.4099999999999999,
-                            0.8200000000000001,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.6
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.4099999999999999,
+                        0.8200000000000001,
+                        0.2
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -3046,18 +3126,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.55,
-                            0.9
-                        ],
-                        "Metallic": 0.3,
-                        "Roughness": 0.4
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Blade.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.55,
+                        0.9
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -3104,18 +3185,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.3,
-                            0.25
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.3,
+                        0.25
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3152,18 +3234,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.85,
-                            0.4
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.85,
+                        0.4
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3200,18 +3283,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.85,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.85,
+                        0.3
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3248,18 +3332,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.3,
-                            0.25
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.3,
+                        0.25
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3296,18 +3381,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.85,
-                            0.4
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.85,
+                        0.4
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3344,18 +3430,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.85,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.85,
+                        0.3
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3392,18 +3479,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.3,
-                            0.25
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.3,
+                        0.25
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3440,18 +3528,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.85,
-                            0.4
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.85,
+                        0.4
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3488,18 +3577,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.85,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.85,
+                        0.3
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3536,18 +3626,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.3,
-                            0.25
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.3,
+                        0.25
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3584,18 +3675,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.85,
-                            0.4
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.85,
+                        0.4
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3632,18 +3724,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.85,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.85,
+                        0.3
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3680,18 +3773,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.3,
-                            0.25
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.3,
+                        0.25
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3728,18 +3822,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.85,
-                            0.4
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.85,
+                        0.4
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3776,18 +3871,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.85,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.85,
+                        0.3
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3824,18 +3920,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.3,
-                            0.25
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.3,
+                        0.25
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3872,18 +3969,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.3,
-                            0.85,
-                            0.4
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.3,
+                        0.85,
+                        0.4
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3920,18 +4018,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Sphere",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.95,
-                            0.85,
-                            0.3
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.3
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Ball.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.95,
+                        0.85,
+                        0.3
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "CircleCollider2D",
@@ -3962,30 +4061,38 @@
                         0.0
                     ],
                     "Scale": [
-                        0.3,
-                        3.0,
-                        0.5
+                        1.0,
+                        1.0,
+                        1.0
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.4,
-                            0.3,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.8
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Stone.png",
+                    "Size": [
+                        0.6,
+                        6.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.78,
+                        0.72
+                    ],
+                    "SortingLayer": 0,
+                    "Lit": true,
+                    "PixelsPerUnit": 48.0,
+                    "NineSlice": [
+                        12.0,
+                        12.0,
+                        12.0,
+                        12.0
+                    ]
                 },
                 {
                     "Type": "BoxCollider2D",
                     "Size": [
-                        2.0,
-                        2.0
+                        0.6,
+                        6.0
                     ]
                 }
             ]
@@ -4008,30 +4115,38 @@
                         0.0
                     ],
                     "Scale": [
-                        0.3,
-                        3.0,
-                        0.5
+                        1.0,
+                        1.0,
+                        1.0
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.4,
-                            0.3,
-                            0.2
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.8
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Stone.png",
+                    "Size": [
+                        0.6,
+                        6.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.78,
+                        0.72
+                    ],
+                    "SortingLayer": 0,
+                    "Lit": true,
+                    "PixelsPerUnit": 48.0,
+                    "NineSlice": [
+                        12.0,
+                        12.0,
+                        12.0,
+                        12.0
+                    ]
                 },
                 {
                     "Type": "BoxCollider2D",
                     "Size": [
-                        2.0,
-                        2.0
+                        0.6,
+                        6.0
                     ]
                 }
             ]
@@ -4060,18 +4175,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4119,18 +4235,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4179,18 +4296,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4239,18 +4357,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4299,18 +4418,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4359,18 +4479,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4419,18 +4540,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4479,18 +4601,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4539,18 +4662,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4599,18 +4723,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.6,
-                            0.42,
-                            0.22
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.85
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Plank.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.6,
+                        0.42,
+                        0.22
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4693,18 +4818,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.85,
-                            0.85,
-                            0.9
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.5
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.85,
+                        0.9
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4743,18 +4869,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.85,
-                            0.85,
-                            0.9
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.5
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.85,
+                        0.9
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4793,18 +4920,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.85,
-                            0.85,
-                            0.9
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.5
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.85,
+                        0.9
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
@@ -4843,18 +4971,19 @@
                     ]
                 },
                 {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.85,
-                            0.85,
-                            0.9
-                        ],
-                        "Metallic": 0.0,
-                        "Roughness": 0.5
-                    }
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ],
+                    "Tint": [
+                        0.85,
+                        0.85,
+                        0.9
+                    ],
+                    "SortingLayer": 1,
+                    "Lit": true
                 },
                 {
                     "Type": "BoxCollider2D",
