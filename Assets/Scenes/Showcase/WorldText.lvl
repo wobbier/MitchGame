@@ -1,0 +1,605 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "7e47000000000001",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        2.4,
+                        -9.0
+                    ],
+                    "Rotation": [
+                        10.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Procedural",
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 200.0,
+                    "Zoom": 50.0
+                },
+                {
+                    "Type": "PostProcess",
+                    "AutoExposure": false,
+                    "ExposureCompensation": 0.0,
+                    "Bloom": true,
+                    "BloomIntensity": 0.08,
+                    "BloomThreshold": 1.5,
+                    "AmbientOcclusion": true,
+                    "VignetteIntensity": 0.2,
+                    "FXAA": true,
+                    "TemporalAA": false
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000002",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        10.0,
+                        -6.0
+                    ],
+                    "Rotation": [
+                        40.0,
+                        30.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.95,
+                        0.86
+                    ],
+                    "Intensity": 2.5,
+                    "CastShadows": true,
+                    "ShadowDistance": 50.0
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000003",
+            "Name": "Ground",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        12.0,
+                        1.0,
+                        12.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Plane",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.45,
+                            0.46,
+                            0.44
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.95
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000004",
+            "Name": "Sign Post",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        0.8,
+                        0.08
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.06,
+                        0.8,
+                        0.03
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.4,
+                            0.28,
+                            0.18
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000005",
+            "Name": "Sign Board",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        1.75,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.1,
+                        0.4,
+                        0.04
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.85,
+                            0.7
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000006",
+            "Name": "Sign Text",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.0,
+                        1.75,
+                        -0.05
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "WELCOME TO\nTEXT TOWN",
+                    "Size": 0.3,
+                    "Color": [
+                        0.15,
+                        0.12,
+                        0.1
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Billboard": false,
+                    "Lit": false,
+                    "SortingLayer": 0
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000007",
+            "Name": "Title",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        3.6,
+                        2.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "World-space text",
+                    "Size": 0.7,
+                    "Color": [
+                        1.0,
+                        0.95,
+                        0.8
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Billboard": false,
+                    "Lit": false,
+                    "SortingLayer": 0
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000008",
+            "Name": "Hero Ball",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.2,
+                        0.5,
+                        -0.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.25,
+                            0.2
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7e47000000000009",
+            "Name": "Hero Tag",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.2,
+                        1.35,
+                        -0.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "Ruby  Lv 7",
+                    "Size": 0.22,
+                    "Color": [
+                        1.0,
+                        0.85,
+                        0.3
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Billboard": true,
+                    "Lit": false,
+                    "SortingLayer": 2
+                }
+            ]
+        },
+        {
+            "GUID": "7e4700000000000a",
+            "Name": "Ally Ball",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.8,
+                        0.5,
+                        1.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.2,
+                            0.5,
+                            0.9
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.4
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7e4700000000000b",
+            "Name": "Ally Tag",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.8,
+                        1.35,
+                        1.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "Cobalt",
+                    "Size": 0.22,
+                    "Color": [
+                        0.6,
+                        0.85,
+                        1.0
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Billboard": true,
+                    "Lit": false,
+                    "SortingLayer": 2
+                }
+            ]
+        },
+        {
+            "GUID": "7e4700000000000c",
+            "Name": "Damage",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        1.6,
+                        1.9,
+                        -0.6
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "-128",
+                    "Size": 0.4,
+                    "Color": [
+                        1.0,
+                        0.3,
+                        0.2
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Billboard": true,
+                    "Lit": false,
+                    "SortingLayer": 3
+                }
+            ]
+        },
+        {
+            "GUID": "7e4700000000000d",
+            "Name": "Lit Text",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -4.6,
+                        0.75,
+                        -2.3
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "Lit text takes\nthe lamp's light",
+                    "Size": 0.3,
+                    "Color": [
+                        0.95,
+                        0.95,
+                        0.95
+                    ],
+                    "Alignment": "Left",
+                    "Anchor": "Top",
+                    "Billboard": false,
+                    "Lit": true,
+                    "SortingLayer": 0
+                }
+            ]
+        },
+        {
+            "GUID": "7e4700000000000e",
+            "Name": "Lamp",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -3.6,
+                        0.5,
+                        -3.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        1.0,
+                        0.55,
+                        0.2
+                    ],
+                    "Intensity": 5.0,
+                    "Range": 3.5,
+                    "CastShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "7e4700000000000f",
+            "Name": "Far Text",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        1.0,
+                        9.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "small text, far away, still crisp",
+                    "Size": 0.25,
+                    "Color": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Billboard": false,
+                    "Lit": false,
+                    "SortingLayer": 0
+                }
+            ]
+        }
+    ]
+}

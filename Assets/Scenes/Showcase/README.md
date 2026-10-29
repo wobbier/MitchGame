@@ -15,6 +15,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 | `RenderScale.lvl` | Render scaling (LOOK-S1): the Lighting set through four split-screen cameras rendering below their output, one per upscale filter. Top left Bilinear at 0.5, top right Nearest at 0.35, bottom left Pixel at 0.25 (exact 4×4 blocks), bottom right Sharp at 0.5 (bicubic + contrast-adaptive sharpening). Bloom and SSAO are off (four full post chains pass bgfx's framebuffer limit). Rebuild it with `python3 Tools/BuildRenderScaleShowcase.py` |
 | `Lights2D.lvl` | Lit, normal-mapped sprites (LOOK-S9): a tiled stone wall and crates with generated normal maps next to three flat crates, a rotated crate (its relief turns with it) and the pixel hero, under three coloured point lights (two bob) and a dim moonlight; orthographic camera |
 | `Toon.lvl` | The Custom Lit shader graph target (LOOK-S7): the stock `Examples/Toon.shadergraph` on spheres, a cube and the ground (a hard band, a soft band, a lit-side rim), with outlines, banded shadows from the sun and two coloured point lights through the Additional Lights node |
+| `WorldText.lvl` | World-space text (LOOK-S12): a sign, a floating title, billboarded name tags and a damage number over two spheres, lit text under a lamp, and small text far away, all signed-distance glyphs |
 
 Scripts live in `Assets/Scripts/Showcase/` (`PlayerController`, `FollowCamera`, `Chaser`, `Spinner`, `Bobber`). The playground's navmesh is baked to `Playground.NavSurface.navmesh` (select NavSurface > Bake, or Navigation.BakeAll).
 
