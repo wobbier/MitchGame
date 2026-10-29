@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Writes the 2D sprite art under Assets/Textures/Sprites/ (LOOK-S2), drawn procedurally so it
 stays reproducible: a crate, a ball, a plank, a stone tile with 9-slice borders, a windmill blade,
-a sky gradient and a 4-frame coin strip (sliced by Coins.spritesheet). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
+a sky gradient, a 4-frame coin strip (sliced by Coins.spritesheet) and a 6-frame character
+(Hero.spritesheet: idle and walk, animated by Hero_Idle / Hero_Walk .spriteanim clips). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
 """
 import math
 import os
@@ -123,6 +124,30 @@ def coins(x, y):
     return (v, v * 0.8, 60, 255)
 
 
+def hero(x, y):
+    # 144 x 24: six 24 x 24 frames of a little character (Hero.spritesheet): two idle frames (a
+    # breathing bob) then four walk frames (legs and arms swinging). Top-down rows: y 0 is the top.
+    frame, fx = x // 24, x % 24
+    bob = 1 if frame == 1 else 0
+    swing = (0, 0, 3, 0, -3, 0)[frame]
+    lift = (0, 0, 0, 1, 0, 1)[frame]
+    skin, shirt, trousers, boots, hair = (240, 196, 160), (60, 110, 210), (50, 50, 70), (90, 60, 40), (70, 45, 30)
+    # Head (rows 3-9), hair on top.
+    if (fx - 12) ** 2 + (y - 6 - bob) ** 2 <= 10:
+        return hair + (255,) if y - bob <= 4 else skin + (255,)
+    # Body (rows 10-16) with arms swinging.
+    if 9 <= fx <= 15 and 10 + bob <= y <= 16:
+        return shirt + (255,)
+    if 10 + bob <= y <= 15 and (fx == 8 - (swing > 0) or fx == 16 + (swing < 0)):
+        return skin + (255,)
+    # Legs (rows 17-22): apart by the swing, one lifted on passing frames.
+    left, right = 10 - swing // 2 - (swing > 0), 14 + swing // 2 + (swing < 0)
+    for leg, top in ((left, 17), (right, 17 + lift)):
+        if leg - 1 <= fx <= leg and top <= y <= 22 - (lift if leg == right else 0):
+            return (boots if y >= 21 - (lift if leg == right else 0) else trousers) + (255,)
+    return (0, 0, 0, 0)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_png(os.path.join(OUT, "Crate.png"), 64, 64, crate)
@@ -132,6 +157,7 @@ def main():
     write_png(os.path.join(OUT, "Blade.png"), 128, 16, blade)
     write_png(os.path.join(OUT, "Sky.png"), 4, 64, sky)
     write_png(os.path.join(OUT, "Coins.png"), 64, 16, coins)
+    write_png(os.path.join(OUT, "Hero.png"), 144, 24, hero)
 
 
 if __name__ == "__main__":

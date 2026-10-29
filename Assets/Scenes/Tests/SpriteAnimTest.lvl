@@ -1,0 +1,109 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "5a17e5c0d0000001",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        1.5,
+                        -10.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.33,
+                        0.33,
+                        0.4
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Projection": "Orthographic",
+                    "OrthographicSize": 2.5,
+                    "SunShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "5a17e5c0d0000002",
+            "Name": "Hero",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        3.0,
+                        3.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Sheet": "Assets/Textures/Sprites/Hero.spritesheet",
+                    "SpriteName": "Hero_0",
+                    "PixelsPerUnit": 24.0,
+                    "PointFilter": true
+                },
+                {
+                    "Type": "Animator",
+                    "SpriteClips": [
+                        "Assets/Textures/Sprites/Hero_Idle.spriteanim",
+                        "Assets/Textures/Sprites/Hero_Walk.spriteanim"
+                    ],
+                    "DefaultState": "Idle",
+                    "States": [
+                        {
+                            "Name": "Idle",
+                            "Clip": "Hero_Idle",
+                            "Speed": 1.0,
+                            "Loop": true
+                        },
+                        {
+                            "Name": "Walk",
+                            "Clip": "Hero_Walk",
+                            "Speed": 1.0,
+                            "Loop": true
+                        }
+                    ],
+                    "Transitions": [
+                        {
+                            "From": "Idle",
+                            "To": "Walk",
+                            "Condition": "Always",
+                            "Duration": 0.0,
+                            "ExitTime": 1.0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

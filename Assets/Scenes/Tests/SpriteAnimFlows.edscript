@@ -1,0 +1,23 @@
+# --scene Assets/Scenes/Tests/SpriteAnimTest.lvl --frame-time 0.0166667
+# Sprite animation (LOOK-S4): the Hero's Animator plays flipbook clips (.spriteanim) through its
+# state machine. Idle (2 frames at 2 fps) runs one lap, then an exit-time transition switches to
+# Walk (4 frames at 8 fps, looping). The first lap checks the frames' order within frame budgets
+# (exact timing is AnimationTests' flipbook case); the next lap is captured frame by frame (a
+# capture lets the game run on for a while, so captures never sit between the checks).
+wait 30
+play
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_1" | 60
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_2" | 60
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_3" | 20
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_4" | 20
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_5" | 20
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_2" | 20
+assert-field Hero | Animator.DefaultState | "Idle"
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_3" | 60
+screenshot .tmp/EditorFlows/SpriteAnimFlows_walk1.png
+wait-field Hero | SpriteRenderer.SpriteName | "Hero_5" | 60
+screenshot .tmp/EditorFlows/SpriteAnimFlows_walk3.png
+stop
+wait 5
+assert-field Hero | SpriteRenderer.SpriteName | "Hero_0"
+quit
