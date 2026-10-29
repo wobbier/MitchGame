@@ -1,0 +1,15 @@
+# Event bus (CS-8): typed C# events reach every subscriber, a destroyed script's subscription goes
+# with it, and engine events (an additive scene loading) arrive as typed events.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/EventTest.lvl --editor-exec Assets/Scenes/Tests/EventFlows.edscript
+wait-log dotnet ready | 7200
+wait 30
+play
+wait-log EventProbe Sender: ping 42 | 600
+wait-log EventProbe Doomed: ping 42 | 600
+wait-log EventProbe: 1 ping subscriber(s) left | 600
+wait-log EventProbe Sender: ping 7 | 600
+wait-log EventProbe Sender: additive Assets/Scenes/Tests/EventAdditive.lvl loaded | 600
+assert-exists Additive Marker
+assert-missing Doomed
+stop
+quit

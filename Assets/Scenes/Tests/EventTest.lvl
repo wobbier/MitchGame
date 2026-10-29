@@ -1,0 +1,96 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.1,
+                        0.12,
+                        0.16
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "Name": "Sender",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "EventProbe",
+                    "ScriptFields": "{\"Sender\": true}"
+                }
+            ]
+        },
+        {
+            "Name": "Doomed",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "EventProbe"
+                }
+            ]
+        }
+    ]
+}
