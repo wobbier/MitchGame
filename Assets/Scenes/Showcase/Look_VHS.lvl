@@ -137,7 +137,7 @@
                     "Gamma": 1.0,
                     "GraphParams": {},
                     "Graphs": [
-                        "Assets/ShaderGraphs/Examples/VHSGlitch.shadergraph"
+                        "Assets/ShaderGraphs/Stock/VHS.shadergraph"
                     ],
                     "Lift": 0.0,
                     "Lut": "",

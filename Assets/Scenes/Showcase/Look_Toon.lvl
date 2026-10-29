@@ -241,7 +241,7 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/Examples/Toon.shadergraph",
+                        "Graph": "Engine/Assets/ShaderGraphs/Stock/Toon.shadergraph",
                         "Params": {
                             "Base Color": [
                                 0.8999999761581421,
@@ -285,7 +285,7 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/Examples/Toon.shadergraph",
+                        "Graph": "Engine/Assets/ShaderGraphs/Stock/Toon.shadergraph",
                         "Params": {
                             "Base Color": [
                                 0.8500000238418579,
@@ -329,7 +329,7 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/Examples/Toon.shadergraph",
+                        "Graph": "Engine/Assets/ShaderGraphs/Stock/Toon.shadergraph",
                         "Params": {
                             "Base Color": [
                                 0.25,
@@ -373,7 +373,7 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/Examples/Toon.shadergraph",
+                        "Graph": "Engine/Assets/ShaderGraphs/Stock/Toon.shadergraph",
                         "Params": {
                             "Base Color": [
                                 0.949999988079071,
@@ -417,7 +417,7 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/Examples/Toon.shadergraph",
+                        "Graph": "Engine/Assets/ShaderGraphs/Stock/Toon.shadergraph",
                         "Params": {
                             "Base Color": [
                                 0.8500000238418579,
@@ -514,7 +514,7 @@
                 {
                     "CastShadows": true,
                     "Material": {
-                        "Graph": "Assets/ShaderGraphs/Examples/Toon.shadergraph",
+                        "Graph": "Engine/Assets/ShaderGraphs/Stock/Toon.shadergraph",
                         "Params": {
                             "Base Color": [
                                 1.0,
