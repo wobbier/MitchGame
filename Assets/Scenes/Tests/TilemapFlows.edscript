@@ -1,0 +1,37 @@
+# --scene Assets/Scenes/Tests/TilemapTest.lvl --frame-time 0.0166667
+# Tilemaps (LOOK-S5): paint tiles (a filled floor row of autotiled Ground, a brick, the World view's
+# brush), undo a stroke, then Play: TilemapProbe sets a cell from C#, and the crate falls onto the
+# painted floor and stays on it (the TilemapCollider2D follows the tiles). Saved and reopened,
+# the edit-mode tiles come back.
+wait-log dotnet ready | 7200
+wait 30
+tile-assert-count Ground | 0
+tile-fill Ground | -6 -3 5 -3 | 0
+tile-set Ground | 3 -2 | 1
+tile-assert Ground | 0 -3 | 0
+tile-assert Ground | 3 -2 | 1
+tile-assert-count Ground | 13
+select Ground
+focus-window World View
+wait 2
+action View.Front
+action View.FrameSelected
+wait 30
+tile-paint Ground | 0.5 0.5 | 1
+tile-assert-count Ground | 14
+undo
+tile-assert-count Ground | 13
+screenshot .tmp/EditorFlows/TilemapFlows_painted.png
+play
+wait-log TilemapProbe: 14 tiles, (-6,-2) = 1, cell of (0.75, -2.5) is (0, -3) | 600
+wait 150
+assert-field Box | Transform.Position.1 | -1.25 ~ 0.05
+assert-field Box | Transform.Position.0 | 0.5 ~ 0.05
+screenshot .tmp/EditorFlows/TilemapFlows_landed.png
+stop
+save-as .tmp/Tests/TilemapSaved.lvl
+load .tmp/Tests/TilemapSaved.lvl
+wait 10
+tile-assert-count Ground | 13
+tile-assert Ground | 3 -2 | 1
+quit

@@ -1,0 +1,136 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "71e5a00000000001",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -10.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.45,
+                        0.65,
+                        0.9
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Projection": "Orthographic",
+                    "OrthographicSize": 4.0,
+                    "SunShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "71e5a00000000002",
+            "Name": "Ground",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.25,
+                        0.25,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Tilemap",
+                    "Sheet": "Assets/Textures/Sprites/Tiles.spritesheet",
+                    "Palette": [
+                        "@Ground",
+                        "Brick"
+                    ],
+                    "CellSize": 1.0,
+                    "PointFilter": true,
+                    "Tiles": []
+                },
+                {
+                    "Type": "TilemapCollider2D",
+                    "Friction": 0.6
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "TilemapProbe",
+                    "ScriptFields": "{}"
+                }
+            ]
+        },
+        {
+            "GUID": "71e5a00000000003",
+            "Name": "Box",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.5,
+                        3.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Texture": "Assets/Textures/Sprites/Crate.png",
+                    "Size": [
+                        1.0,
+                        1.0
+                    ],
+                    "SortingLayer": 1
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                }
+            ]
+        }
+    ]
+}

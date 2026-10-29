@@ -3,7 +3,8 @@
 stays reproducible: a crate, a ball, a plank, a stone tile with 9-slice borders, a windmill blade,
 a sky gradient, a 4-frame coin strip (sliced by Coins.spritesheet) and a 6-frame character
 (Hero.spritesheet: idle and walk, animated by Hero_Idle / Hero_Walk .spriteanim clips), plus
-normal maps for the crate and the stone (from height fields) for lit sprites (LOOK-S9). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
+normal maps for the crate and the stone (from height fields) for lit sprites (LOOK-S9), and a
+tileset (Tiles.spritesheet: 16 autotile variants of Ground plus Brick, Stone, Grass, Dirt; LOOK-S5). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
 """
 import math
 import os
@@ -184,6 +185,36 @@ def stone_height(x, y):
     return 0.75 + 0.1 * noise(x // 2, y // 2, 4)
 
 
+def tiles(x, y):
+    # 64 x 80 tileset (Tiles.spritesheet, LOOK-S5): rows 0-3 are the 16 autotile variants of
+    # "Ground" (cell = mask: 1 up, 2 right, 4 down, 8 left neighbours of the same tile), row 4 is
+    # Brick, Stone, Grass and Dirt. 16 x 16 texels each; open sides get a rim, an open top grass.
+    cell_x, cell_y, tx, ty = x // 16, y // 16, x % 16, y % 16
+    grain = 0.9 + 0.1 * noise(x, y, 7)
+    if cell_y < 4:
+        mask = cell_y * 4 + cell_x
+        up, right, down, left = mask & 1, mask & 2, mask & 4, mask & 8
+        if not up and ty < 4:
+            v = 0.85 + 0.15 * noise(x, y, 8)
+            return (70 * v, 170 * v, 60 * v, 255)
+        dirt = (140 * grain, 95 * grain, 60 * grain)
+        if (not right and tx >= 14) or (not left and tx <= 1) or (not down and ty >= 14):
+            return (dirt[0] * 0.6, dirt[1] * 0.6, dirt[2] * 0.6, 255)
+        return dirt + (255,)
+    kind = cell_x
+    if kind == 0:   # brick
+        row = ty // 4
+        mortar = ty % 4 == 0 or (tx + (4 if row % 2 else 0)) % 8 == 0
+        return (200, 190, 180, 255) if mortar else (170 * grain, 70 * grain, 50 * grain, 255)
+    if kind == 1:   # stone
+        edge = min(tx, ty, 15 - tx, 15 - ty)
+        v = (150 if edge > 1 else 100) * grain
+        return (v, v, v * 1.05, 255)
+    if kind == 2:   # grass
+        return (70 * grain, 170 * grain, 60 * grain, 255)
+    return (140 * grain, 95 * grain, 60 * grain, 255)   # dirt
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_png(os.path.join(OUT, "Crate.png"), 64, 64, crate)
@@ -194,6 +225,7 @@ def main():
     write_png(os.path.join(OUT, "Sky.png"), 4, 64, sky)
     write_png(os.path.join(OUT, "Coins.png"), 64, 16, coins)
     write_png(os.path.join(OUT, "Hero.png"), 144, 24, hero)
+    write_png(os.path.join(OUT, "Tiles.png"), 64, 80, tiles)
     write_png(os.path.join(OUT, "Crate_Normal.png"), 64, 64, normal_map(crate_height, 64, 64, 1.2))
     write_png(os.path.join(OUT, "Stone_Normal.png"), 48, 48, normal_map(stone_height, 48, 48, 1.5))
 
