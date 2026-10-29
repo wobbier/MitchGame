@@ -103,8 +103,8 @@ The `Engine` class (singleton-like, `Engine/Source/Engine/Engine.h`) owns the ma
 **Lighting & frame (overhaul Wave 3):** each camera renders linear HDR (RGBA16F):
 
 - **Shadows**: sun CSM (4 cascades) and spot-light shadows.
-- **Opaque**: clustered-forward PBR opaque pass. `StandardMaterial` is metallic-roughness; `Light` components are Directional/Point/Spot; the clusters are a CPU-built 16×9×24 grid uploaded as textures.
-- **Post**: SSAO, then height fog (analytic, or volumetric: half-res raymarch with sun shafts and clustered lights; `PostProcess` component Fog settings, `Fog.sh`), then transparents and particles (which fog themselves), then bloom / eye adaptation / tonemap / FXAA.
+- **Opaque**: clustered-forward PBR opaque pass. `StandardMaterial` is metallic-roughness; `Light` components are Directional/Point/Spot plus the unshadowed Bar/Box/Rectangle emitters (a Rectangle beams through the spot cone angles, measured from its face); the clusters are a CPU-built 16×9×24 grid uploaded as textures.
+- **Post**: SSAO, then height fog (analytic, or volumetric: half-res raymarch with sun shafts and clustered lights, up to 256 steps, accumulated over frames against its own reprojected history with `VolumetricTemporal`, local lights phased by `FogLocalAnisotropy`; `PostProcess` component Fog settings, `Fog.sh`), then transparents and particles (which fog themselves), then bloom / eye adaptation / tonemap / FXAA.
 - **Ambient**: image-based, from per-camera environment probes.
 
 Details:

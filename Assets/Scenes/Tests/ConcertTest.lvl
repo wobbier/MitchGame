@@ -45,7 +45,7 @@
           "ExposureCompensation": -0.25,
           "Tonemapper": "ACES",
           "Bloom": true,
-          "BloomIntensity": 0.055,
+          "BloomIntensity": 0.07,
           "BloomThreshold": 1.2,
           "AmbientOcclusion": true,
           "AORadius": 0.55,
@@ -56,16 +56,18 @@
             0.0011,
             0.0016
           ],
-          "FogDensity": 0.018,
+          "FogDensity": 0.024,
           "FogHeight": 0,
           "FogHeightFalloff": 0.012,
           "FogMaxOpacity": 1,
           "FogStartDistance": 0,
           "FogSunIntensity": 0.55,
           "FogAnisotropy": 0.45,
+          "FogLocalAnisotropy": 0.45,
           "VolumetricFog": true,
           "VolumetricDistance": 110,
           "VolumetricSteps": 64,
+          "VolumetricTemporal": true,
           "DepthOfField": false,
           "TemporalAA": true,
           "TemporalSharpness": 0.2,
@@ -35424,8 +35426,8 @@
       "Parent": "64f7442786292624"
     },
     {
-      "GUID": "37a0f26c79601fe1",
-      "Name": "Rear black drape",
+      "GUID": "2a2c81891c79825e",
+      "Name": "LED video wall",
       "DestroyOnLoad": true,
       "Components": [
         {
@@ -35449,23 +35451,73 @@
         {
           "Type": "Mesh",
           "MeshType": "Cube",
-          "CastShadows": true,
+          "CastShadows": false,
           "Material": {
             "Type": "StandardMaterial",
             "DiffuseColor": [
-              0.012,
-              0.015,
-              0.021
+              1,
+              1,
+              1
             ],
-            "Roughness": 0.7,
+            "Roughness": 0.4,
             "Metallic": 0,
             "EmissiveColor": [
-              0.012,
-              0.015,
-              0.021
+              1,
+              1,
+              1
             ],
-            "EmissiveIntensity": 0
+            "EmissiveIntensity": 0.9,
+            "Textures": {
+              "Diffuse": {
+                "Path": "Assets/Textures/ConcertTest/LedWall.png"
+              },
+              "Emissive": {
+                "Path": "Assets/Textures/ConcertTest/LedWall.png"
+              }
+            }
           }
+        }
+      ],
+      "Parent": "64f7442786292624"
+    },
+    {
+      "GUID": "c0dcf73854c7381e",
+      "Name": "LED video wall glow",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            7,
+            31.85
+          ],
+          "Rotation": [
+            0,
+            180,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Rectangle",
+          "Color": [
+            0.9,
+            0.93,
+            1
+          ],
+          "Intensity": 4,
+          "Range": 28,
+          "RectangleWidth": 23,
+          "RectangleHeight": 12,
+          "InnerConeAngle": 30,
+          "OuterConeAngle": 89,
+          "CastShadows": false
         }
       ],
       "Parent": "64f7442786292624"
@@ -40291,8 +40343,8 @@
           ],
           "Intensity": 100000,
           "Range": 65,
-          "InnerConeAngle": 1.6,
-          "OuterConeAngle": 2.5,
+          "InnerConeAngle": 1.8,
+          "OuterConeAngle": 3.0,
           "CastShadows": true,
           "ShadowBias": 0.4,
           "ShadowNormalBias": 1.0
@@ -40412,8 +40464,8 @@
             0
           ],
           "Rotation": [
-            10.5,
-            -9,
+            7.5,
+            -6,
             0
           ],
           "Scale": [
@@ -40513,7 +40565,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -40529,7 +40581,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -40544,16 +40596,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -40572,7 +40626,7 @@
             0
           ],
           "Rotation": [
-            10.5,
+            7.5,
             0,
             0
           ],
@@ -40673,7 +40727,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -40689,7 +40743,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -40704,16 +40758,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -40732,8 +40788,8 @@
             0
           ],
           "Rotation": [
-            10.5,
-            9,
+            7.5,
+            6,
             0
           ],
           "Scale": [
@@ -40833,7 +40889,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -40849,7 +40905,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -40864,16 +40920,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -40892,8 +40950,8 @@
             0
           ],
           "Rotation": [
-            3.5,
-            -9,
+            2.5,
+            -6,
             0
           ],
           "Scale": [
@@ -40993,7 +41051,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41009,7 +41067,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41024,16 +41082,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -41052,7 +41112,7 @@
             0
           ],
           "Rotation": [
-            3.5,
+            2.5,
             0,
             0
           ],
@@ -41153,7 +41213,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41169,7 +41229,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41184,16 +41244,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -41212,8 +41274,8 @@
             0
           ],
           "Rotation": [
-            3.5,
-            9,
+            2.5,
+            6,
             0
           ],
           "Scale": [
@@ -41313,7 +41375,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41329,7 +41391,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41344,16 +41406,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -41372,8 +41436,8 @@
             0
           ],
           "Rotation": [
-            -3.5,
-            -9,
+            -2.5,
+            -6,
             0
           ],
           "Scale": [
@@ -41473,7 +41537,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41489,7 +41553,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41504,16 +41568,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -41532,7 +41598,7 @@
             0
           ],
           "Rotation": [
-            -3.5,
+            -2.5,
             0,
             0
           ],
@@ -41633,7 +41699,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41649,7 +41715,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41664,16 +41730,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -41692,8 +41760,8 @@
             0
           ],
           "Rotation": [
-            -3.5,
-            9,
+            -2.5,
+            6,
             0
           ],
           "Scale": [
@@ -41793,7 +41861,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41809,7 +41877,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41824,16 +41892,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -41852,8 +41922,8 @@
             0
           ],
           "Rotation": [
-            -10.5,
-            -9,
+            -7.5,
+            -6,
             0
           ],
           "Scale": [
@@ -41953,7 +42023,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -41969,7 +42039,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -41984,16 +42054,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -42012,7 +42084,7 @@
             0
           ],
           "Rotation": [
-            -10.5,
+            -7.5,
             0,
             0
           ],
@@ -42113,7 +42185,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -42129,7 +42201,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -42144,16 +42216,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
@@ -42172,8 +42246,8 @@
             0
           ],
           "Rotation": [
-            -10.5,
-            9,
+            -7.5,
+            6,
             0
           ],
           "Scale": [
@@ -42273,7 +42347,7 @@
               0.96,
               1
             ],
-            "EmissiveIntensity": 15
+            "EmissiveIntensity": 18
           }
         }
       ],
@@ -42289,7 +42363,7 @@
           "Position": [
             0,
             0,
-            0.245
+            0.225
           ],
           "Rotation": [
             0,
@@ -42304,16 +42378,18 @@
         },
         {
           "Type": "Light",
-          "LightType": "Spot",
+          "LightType": "Rectangle",
           "Color": [
             0.83,
             0.94,
             1
           ],
-          "Intensity": 60000,
+          "Intensity": 10000,
           "Range": 62,
-          "InnerConeAngle": 2.4,
-          "OuterConeAngle": 3.2,
+          "RectangleWidth": 0.79,
+          "RectangleHeight": 0.47,
+          "InnerConeAngle": 2.0,
+          "OuterConeAngle": 5.5,
           "CastShadows": false
         }
       ],
