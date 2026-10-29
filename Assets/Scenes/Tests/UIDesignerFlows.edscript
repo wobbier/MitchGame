@@ -1,0 +1,24 @@
+# The UI designer (UI-6): select #title, set a color (live, then in the source), save, check the
+# file, undo, save again: the file is as committed, and the reloaded document follows it.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/DesignerTest.lvl --editor-exec Assets/Scenes/Tests/UIDesignerFlows.edscript
+wait-log UI/Tests/Designer.rml | 600
+wait 10
+designer-open Designer UI
+designer-select #title
+designer-set color | #ff3366
+wait 3
+screenshot .tmp/EditorFlows/UIDesignerFlows_live.png
+designer-save
+assert-file-contains Assets/UI/Tests/Designer.rml | <h1 id="title" style="color: #ff3366;">Designer</h1>
+assert-file-contains Assets/UI/Tests/Designer.rml | <!-- The UI designer's test document (UI-6)
+wait-log UI: reloaded | 600
+wait 5
+ui-assert-text #title | Designer
+show-window UI Designer
+wait 3
+screenshot .tmp/EditorFlows/UIDesignerFlows_designer.png
+designer-undo
+designer-save
+assert-file-contains Assets/UI/Tests/Designer.rml | != color: #ff3366
+assert-file-contains Assets/UI/Tests/Designer.rml | <h1 id="title">Designer</h1>
+quit

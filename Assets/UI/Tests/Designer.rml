@@ -1,0 +1,15 @@
+<rml>
+<head>
+	<title>DesignerTest</title>
+	<link type="text/rcss" href="UINav.rcss"/>
+</head>
+<!-- The UI designer's test document (UI-6): UIDesignerFlows restyles #title and undoes it,
+     so the file must end each run as committed. -->
+<body>
+	<div id="panel">
+		<h1 id="title">Designer</h1>
+		<p id="hint">Restyled from the editor</p>
+		<button id="first">First</button>
+	</div>
+</body>
+</rml>
