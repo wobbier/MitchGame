@@ -2,7 +2,8 @@
 """Writes the 2D sprite art under Assets/Textures/Sprites/ (LOOK-S2), drawn procedurally so it
 stays reproducible: a crate, a ball, a plank, a stone tile with 9-slice borders, a windmill blade,
 a sky gradient, a 4-frame coin strip (sliced by Coins.spritesheet) and a 6-frame character
-(Hero.spritesheet: idle and walk, animated by Hero_Idle / Hero_Walk .spriteanim clips). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
+(Hero.spritesheet: idle and walk, animated by Hero_Idle / Hero_Walk .spriteanim clips), plus
+normal maps for the crate and the stone (from height fields) for lit sprites (LOOK-S9). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
 """
 import math
 import os
@@ -148,6 +149,41 @@ def hero(x, y):
     return (0, 0, 0, 0)
 
 
+def normal_map(height, width, rows, strength):
+    # A tangent-space normal map from a height field (Sobel), green = up (y grows down the image,
+    # so up is -y).
+    def h(x, y):
+        return height(max(0, min(width - 1, x)), max(0, min(rows - 1, y)))
+
+    def pixel(x, y):
+        dx = (h(x + 1, y - 1) + 2 * h(x + 1, y) + h(x + 1, y + 1)) - (h(x - 1, y - 1) + 2 * h(x - 1, y) + h(x - 1, y + 1))
+        dy = (h(x - 1, y + 1) + 2 * h(x, y + 1) + h(x + 1, y + 1)) - (h(x - 1, y - 1) + 2 * h(x, y - 1) + h(x + 1, y - 1))
+        nx, ny, nz = -dx * strength, dy * strength, 1.0
+        length = math.sqrt(nx * nx + ny * ny + nz * nz)
+        return (128 + 127 * nx / length, 128 + 127 * ny / length, 128 + 127 * nz / length, 255)
+    return pixel
+
+
+def crate_height(x, y):
+    # Raised frame and brace over sunken boards with grooves between them.
+    edge = min(x, y, 63 - x, 63 - y)
+    if edge < 6:
+        return 1.0 if edge > 0 else 0.4
+    if abs((x - 6) - (y - 6)) < 4 and 6 <= x < 58:
+        return 0.9
+    return 0.2 if (y - 6) % 13 == 0 else 0.45
+
+
+def stone_height(x, y):
+    # A bevelled rim (rising towards the middle) and cobbles with mortar lines.
+    edge = min(x, y, 47 - x, 47 - y)
+    if edge < 12:
+        return min(edge, 6) / 6.0 * 0.8
+    if (x - 12) % 8 == 0 or (y - 12) % 8 == 0:
+        return 0.3
+    return 0.75 + 0.1 * noise(x // 2, y // 2, 4)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_png(os.path.join(OUT, "Crate.png"), 64, 64, crate)
@@ -158,6 +194,8 @@ def main():
     write_png(os.path.join(OUT, "Sky.png"), 4, 64, sky)
     write_png(os.path.join(OUT, "Coins.png"), 64, 16, coins)
     write_png(os.path.join(OUT, "Hero.png"), 144, 24, hero)
+    write_png(os.path.join(OUT, "Crate_Normal.png"), 64, 64, normal_map(crate_height, 64, 64, 1.2))
+    write_png(os.path.join(OUT, "Stone_Normal.png"), 48, 48, normal_map(stone_height, 48, 48, 1.5))
 
 
 if __name__ == "__main__":
