@@ -106,6 +106,13 @@
                     "DoFSplitFeather": 0.014999999664723873,
                     "DoFSplitFocusDistance": 18.0,
                     "DoFSplitPosition": 0.5,
+                    "EraAffineTextures": false,
+                    "EraColorBits": 0,
+                    "EraDither": 0.0,
+                    "EraKuwahara": 0,
+                    "EraPalette": "",
+                    "EraThreePointFilter": false,
+                    "EraVertexSnap": 0.0,
                     "ExposureCompensation": 0.0,
                     "FXAA": true,
                     "Fog": false,
@@ -237,9 +244,9 @@
                         "Graph": "Assets/ShaderGraphs/Examples/FlatColor.shadergraph",
                         "Params": {
                             "Base Color": [
-                                0.5,
-                                0.6000000238418579,
-                                0.41999998688697815,
+                                0.8999999761581421,
+                                0.949999988079071,
+                                0.8500000238418579,
                                 1.0
                             ]
                         },
@@ -482,6 +489,50 @@
             "DestroyOnLoad": true,
             "GUID": "100c000000000008",
             "Name": "Lamp"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -0.6000000238418579,
+                        0.44999998807907104,
+                        -1.399999976158142
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.2164396196603775,
+                        0.0,
+                        0.9762960076332092
+                    ],
+                    "Scale": [
+                        0.44999998807907104,
+                        0.44999998807907104,
+                        0.44999998807907104
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "Graph": "Assets/ShaderGraphs/Examples/FlatColor.shadergraph",
+                        "Params": {
+                            "Base Color": [
+                                1.0,
+                                0.8500000238418579,
+                                0.6499999761581421,
+                                1.0
+                            ]
+                        },
+                        "Textures": {},
+                        "Type": "ShaderGraphMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000009",
+            "Name": "Crate"
         }
     ],
     "Version": 2

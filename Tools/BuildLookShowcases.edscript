@@ -35,4 +35,12 @@ look-apply Retro-PC | materials
 save-as Assets/Scenes/Showcase/Look_RetroPC.lvl
 load Assets/Scenes/Tests/LookBase.lvl
 wait 20
+look-apply Painterly | materials
+save-as Assets/Scenes/Showcase/Look_Painterly.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply VHS | materials
+save-as Assets/Scenes/Showcase/Look_VHS.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
 quit

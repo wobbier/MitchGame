@@ -1,6 +1,8 @@
 {
     "AssetReferences": {
-        "0186351a54218311": "Assets/Textures/LUTs/Cool.cube"
+        "b2a96986130f1fc1": "Assets/Textures/Sprites/Stone.png",
+        "d70164ba6e534a12": "Assets/Textures/Palettes/EGA.png",
+        "d8a764f7e3a451a9": "Assets/Textures/Sprites/Crate.png"
     },
     "Cores": [],
     "Entities": [
@@ -109,6 +111,13 @@
                     "DoFSplitFeather": 0.014999999664723873,
                     "DoFSplitFocusDistance": 18.0,
                     "DoFSplitPosition": 0.5,
+                    "EraAffineTextures": false,
+                    "EraColorBits": 0,
+                    "EraDither": 0.6000000238418579,
+                    "EraKuwahara": 0,
+                    "EraPalette": "Assets/Textures/Palettes/EGA.png",
+                    "EraThreePointFilter": false,
+                    "EraVertexSnap": 0.0,
                     "ExposureCompensation": 0.0,
                     "FXAA": false,
                     "Fog": false,
@@ -130,8 +139,8 @@
                     "GraphParams": {},
                     "Graphs": [],
                     "Lift": 0.0,
-                    "Lut": "Assets/Textures/LUTs/Cool.cube",
-                    "LutContribution": 0.5,
+                    "Lut": "",
+                    "LutContribution": 0.0,
                     "Outline": false,
                     "OutlineColor": [
                         0.0,
@@ -240,9 +249,9 @@
                         "AlphaCutoff": 0.0,
                         "BlendMode": 0,
                         "DiffuseColor": [
-                            0.5,
-                            0.6000000238418579,
-                            0.41999998688697815
+                            0.8999999761581421,
+                            0.949999988079071,
+                            0.8500000238418579
                         ],
                         "EmissiveColor": [
                             0.0,
@@ -258,9 +267,15 @@
                         "Opacity": 1.0,
                         "RenderMode": 0,
                         "Roughness": 0.949999988079071,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Sprites/Stone.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
                         "Tiling": [
-                            1.0,
-                            1.0
+                            10.0,
+                            10.0
                         ],
                         "Type": "StandardMaterial"
                     },
@@ -560,6 +575,71 @@
             "DestroyOnLoad": true,
             "GUID": "100c000000000008",
             "Name": "Lamp"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -0.6000000238418579,
+                        0.44999998807907104,
+                        -1.399999976158142
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.2164396196603775,
+                        0.0,
+                        0.9762960076332092
+                    ],
+                    "Scale": [
+                        0.44999998807907104,
+                        0.44999998807907104,
+                        0.44999998807907104
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            1.0,
+                            0.8500000238418579,
+                            0.6499999761581421
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.699999988079071,
+                        "Textures": {
+                            "Diffuse": {
+                                "Path": "Assets/Textures/Sprites/Crate.png",
+                                "RenderMode": "Opaque"
+                            }
+                        },
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000009",
+            "Name": "Crate"
         }
     ],
     "Version": 2
