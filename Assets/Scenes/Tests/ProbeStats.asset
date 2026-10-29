@@ -1,0 +1,7 @@
+{
+    "Fields": {
+        "Damage": 25,
+        "Label": "tuned"
+    },
+    "Type": "ProbeStats"
+}

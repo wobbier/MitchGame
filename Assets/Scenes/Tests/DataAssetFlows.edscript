@@ -1,0 +1,25 @@
+# Data assets (CS-7): create one, edit it, reference it from a script through an AssetRef, and edit
+# it again while playing: the shared instance re-reads in place.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/DataAssetTest.lvl --editor-exec Assets/Scenes/Tests/DataAssetFlows.edscript
+wait-log dotnet ready | 7200
+wait 30
+data-asset-create Assets/Scenes/Tests/ProbeStats.asset | ProbeStats
+data-asset-set Assets/Scenes/Tests/ProbeStats.asset | Damage | 25
+data-asset-set Assets/Scenes/Tests/ProbeStats.asset | Label | "tuned"
+data-asset-assert Assets/Scenes/Tests/ProbeStats.asset | Damage | 25
+select Probe
+script-set Stats.Path | "Assets/Scenes/Tests/ProbeStats.asset"
+play
+wait-log DataAssetProbe: loaded Assets/Scenes/Tests/ProbeStats.asset damage 25 ammo 30 label tuned | 600
+wait-log DataAssetProbe: shared True | 600
+data-asset-set Assets/Scenes/Tests/ProbeStats.asset | Damage | 40
+wait-log DataAssetProbe: damage is now 40 | 600
+stop
+# Back to the committed values, so the run leaves the file as it found it.
+data-asset-set Assets/Scenes/Tests/ProbeStats.asset | Damage | 25
+# The asset browser's details pane draws its fields.
+show-window Assets
+show-asset Assets/Scenes/Tests/ProbeStats.asset
+wait 10
+screenshot .tmp/EditorFlows/DataAssetFlows_details.png
+quit
