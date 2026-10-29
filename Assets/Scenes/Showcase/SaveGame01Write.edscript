@@ -1,0 +1,24 @@
+# --scene Assets/Scenes/Showcase/Playground.lvl --user-dir .tmp/EditorFlows/SaveUser
+# Save games (PLAY-4), first launch: play the Playground for a while, change a script field, save.
+# SaveGame02Load loads the slot in a second process (RunEditorFlows --only SaveGame runs both in order).
+wait-log dotnet ready | 7200
+wait 20
+wait-count-stable 90 | 3600
+delete-save playground
+play
+wait 300
+assert-field Chaser 0 | Transform.Position.0 | != -20.0
+select Sweeper
+script-set DegreesPerSecond | 90.0
+wait 30
+
+save-game playground | Playground flow
+assert-save playground | Name | "Playground flow"
+assert-save playground | Scene | "Assets/Scenes/Showcase/Playground.lvl"
+assert-save playground | Version | 1
+# Right after saving, the live scene still matches the slot.
+save-assert playground | Chaser 0 | Transform.Position ~ 0.3
+save-assert playground | Sweeper | ScriptComponent.ScriptName
+wait 5
+stop
+quit

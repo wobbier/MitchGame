@@ -1,0 +1,31 @@
+# --scene Assets/Scenes/Showcase/Playground.lvl --user-dir .tmp/EditorFlows/SaveUser
+# Save games (PLAY-4), second launch: loading the slot SaveGame01Write saved brings back the
+# Playground as it was: positions moved by play, a script field edited in play, a private [Save] field.
+# Run after SaveGame01Write (RunEditorFlows --only SaveGame runs both in order).
+wait-log dotnet ready | 7200
+wait 20
+wait-count-stable 90 | 3600
+# A fresh play starts from the authored scene (the chasers set off from their corners).
+assert-field Chaser 0 | Transform.Position | [-20.0, 0.95, -20.0]
+play
+wait 5
+
+load-game playground
+wait-log SaveGame: loaded playground | 600
+wait-log Spinner: resumed after | 600
+# The chasers keep running at the player (and shove it) for the few frames since the load, so
+# they're held to a metre: still nowhere near the corners a fresh play starts them in. The
+# settled crates haven't moved at all.
+save-assert playground | Chaser 0 | Transform.Position ~ 1.0
+save-assert playground | Chaser 2 | Transform.Position ~ 1.0
+save-assert playground | Crate 0-0-0 | Transform.Position ~ 0.05
+save-assert playground | Crate 1-2-1 | Transform.Position ~ 0.05
+save-assert playground | Sweeper | Transform.Position ~ 0.01
+select Sweeper
+script-assert DegreesPerSecond | 90.0
+assert-field Chaser 0 | Transform.Position.0 | != -20.0
+stop
+wait 5
+assert-field Chaser 0 | Transform.Position | [-20.0, 0.95, -20.0]
+delete-save playground
+quit
