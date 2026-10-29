@@ -1,0 +1,27 @@
+# The sprite rect gizmo (ME-285): with the coin selected, its right edge handle is dragged with the
+# mouse (SDL events, as a user's), which widens the sprite (Size) and leaves its height alone;
+# undo puts it back.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/SpriteScriptTest.lvl --editor-exec Assets/Scenes/Tests/SpriteGizmoFlows.edscript
+wait 30
+select Coin
+focus-window World View
+wait 2
+action View.Front
+action View.FrameSelected
+wait 60
+assert-field Coin | SpriteRenderer.Size | [0.0, 0.0] ~ 0.001
+sprite-handle-mouse right
+wait 3
+scene-mouse-down
+wait 3
+scene-mouse-offset 30 0
+wait 3
+scene-mouse-offset 30 0
+wait 3
+scene-mouse-up
+wait 5
+assert-field Coin | SpriteRenderer.Size.0 | != 2.0 ~ 0.3
+assert-field Coin | SpriteRenderer.Size.1 | 2.0 ~ 0.01
+undo
+wait 3
+assert-field Coin | SpriteRenderer.Size | [0.0, 0.0] ~ 0.001
