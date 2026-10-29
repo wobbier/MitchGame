@@ -1,0 +1,26 @@
+# Localization (PLAY-6): under the pseudo-locale every string of the stock options menu goes
+# through a table (accented, bracketed, padded) and nothing is reported untranslated, on any tab.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/LocalizationFlows.edscript
+wait-log UI/Options/Options.rml | 600
+wait 10
+ui-set-language qps
+wait-log UI: language 'qps' | 600
+wait 10
+ui-assert-text #tab-graphics | [Ĝŕáþĥîçš ~~~]
+ui-assert-text #options-back | [Ɓáçķ ~~]
+loc-assert-missing 0
+screenshot .tmp/EditorFlows/LocalizationFlows_graphics.png
+ui-click #tab-controls
+wait 5
+loc-assert-missing 0
+screenshot .tmp/EditorFlows/LocalizationFlows_controls.png
+ui-click #tab-accessibility
+wait 5
+loc-assert-missing 0
+screenshot .tmp/EditorFlows/LocalizationFlows_accessibility.png
+
+# Back to the documents' own text.
+ui-set-language
+wait 10
+ui-assert-text #options-back | Back
+quit
