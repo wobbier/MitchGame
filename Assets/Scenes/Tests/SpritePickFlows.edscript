@@ -1,0 +1,19 @@
+# Sprite selection (ME-278): Frame Selected frames a sprite's quad (its bounds now count), a click
+# on the coin selects it, and a click on its quad's transparent corner goes through: sprites pick
+# by their texels, not their whole quad.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/SpriteScriptTest.lvl --editor-exec Assets/Scenes/Tests/SpritePickFlows.edscript
+wait 30
+select Coin
+focus-window World View
+wait 2
+action View.Front
+action View.FrameSelected
+wait 60
+select-none
+pick 0.4955 0.5367
+wait 10
+assert-active Coin
+select-none
+pick 0.394 0.321
+wait 10
+assert-selected 0
