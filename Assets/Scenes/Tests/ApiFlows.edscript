@@ -16,6 +16,7 @@ wait-log ApiProbe: particles after a burst 25 | 600
 wait-log ApiProbe: 2D ray hits ground True, point 1, ball moving right True | 600
 wait-log ApiProbe: camera centred True, depth 10.0, right of centre True, ray through point True, fov 55 | 600
 wait-log ApiProbe: material red 1.00.0, light 3.5 | 600
+wait-log ApiProbe: render scale 0.50, upscale Sharp, dynamic True | 600
 assert-exists Probe Parent
 stop
 quit

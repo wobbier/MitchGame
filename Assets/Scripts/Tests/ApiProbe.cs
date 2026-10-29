@@ -84,5 +84,14 @@ public class ApiProbe : Script
         var light = World.Find("Probe Parent").GetComponent<Light>();
         light.Intensity = 3.5f;
         Debug.Log($"ApiProbe: material red {mesh.GetMaterial<Vector3>("DiffuseColor").x:F1}{mesh.GetMaterial<Vector3>("DiffuseColor").y:F1}, light {light.Intensity:F1}");
+
+        // (ME-275) Render scaling from a script: set and read back, then put it back.
+        cam.RenderScale = 0.5f;
+        cam.Upscale = UpscaleFilter.Sharp;
+        cam.DynamicResolution = true;
+        Debug.Log($"ApiProbe: render scale {cam.RenderScale:F2}, upscale {cam.Upscale}, dynamic {cam.DynamicResolution}");
+        cam.RenderScale = 1f;
+        cam.Upscale = UpscaleFilter.Bilinear;
+        cam.DynamicResolution = false;
     }
 }

@@ -17,6 +17,25 @@ input-press Gamepad/South
 wait 3
 settings-assert Graphics.Quality | "Low"
 
+# Render scale (ME-275): the camera's render size follows the player's setting, half the width at 50%
+# (measured by the Steam Deck profile's Resolution line).
+# (Caps still apply on top: the Low preset's 0.75 render scale, an enforced profile's pixels. The
+# player's scale multiplies the camera's own under them, so measure without the preset.)
+settings-set Graphics.Quality | ""
+budget-profile Steam Deck
+wait 5
+budget-mark
+settings-set Graphics.RenderScale | 0.5
+wait 60
+budget-assert Resolution | width | x0.5 ~ 0.02
+budget-assert Resolution | height | x0.5 ~ 0.02
+ui-assert-text #render-scale-value | 50%
+settings-set Graphics.RenderScale | 1.0
+wait 60
+budget-assert Resolution | width | x1.0 ~ 0.02
+budget-profile
+settings-set Graphics.Quality | "Low"
+
 # Audio: back up to the tabs, right to Audio, open it, down the + column, two steps down on Music.
 input-press Gamepad/DPadUp
 ui-assert-focused #tab-graphics
