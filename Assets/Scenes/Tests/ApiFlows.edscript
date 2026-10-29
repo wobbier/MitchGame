@@ -1,0 +1,19 @@
+# Script API breadth (CS-5): entity queries, AddComponent by name for any registered component,
+# the application calls, and the C# math types against the engine's rotation.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/ApiTest.lvl --editor-exec Assets/Scenes/Tests/ApiFlows.edscript
+wait-log dotnet ready | 7200
+wait 30
+play
+wait-log ApiProbe: light added True, lights 1 | 600
+wait-log ApiProbe: children 2, named 1 | 600
+wait-log ApiProbe: layer 3, guid length 16 | 600
+wait-log ApiProbe: window sized, rumble False | 600
+wait-log ApiProbe: forward matches True | 600
+wait-log ApiProbe: pcg a15c02b7 | 600
+wait-log ApiProbe: audio without a clip playing False | 600
+wait-log ApiProbe: ray hits wall True at 6.50, masked out True, all 1, sphere True, box 1 | 600
+wait-log ApiProbe: particles after a burst 25 | 600
+wait-log ApiProbe: 2D ray hits ground True, point 1, ball moving right True | 600
+assert-exists Probe Parent
+stop
+quit

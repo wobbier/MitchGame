@@ -1,0 +1,160 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "Main Camera",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.1,
+                        0.12,
+                        0.16
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "Name": "Probe",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "ApiProbe"
+                }
+            ]
+        },
+        {
+            "Name": "Probe Wall",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        5.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        2.0,
+                        2.0,
+                        0.5
+                    ]
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Probe Ground 2D",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        -2.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        4.0,
+                        0.5,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "BoxCollider2D",
+                    "Size": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Probe Ball 2D",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        3.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Rigidbody2D",
+                    "Mass": 1.0
+                },
+                {
+                    "Type": "CircleCollider2D",
+                    "Radius": 0.5
+                }
+            ]
+        }
+    ]
+}
