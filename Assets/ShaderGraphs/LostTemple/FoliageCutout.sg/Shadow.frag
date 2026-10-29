@@ -7,6 +7,9 @@ $input v_worldPos, v_normal, v_tangent, v_bitangent, v_texcoord0, v_viewPos, v_o
 
 #include "Common.sh"
 #include "ShaderGraph/SGLib.sh"
+#include "Dither.sh"
+
+uniform vec4 u_drawParams; // x screen-door fade (Dither.sh), per draw
 
 uniform vec4 u_sgParams[16];
 SAMPLER2D(s_sgTex0, 0); // Albedo
@@ -18,6 +21,10 @@ SAMPLER2D(s_sgTex0, 0); // Albedo
 
 void main()
 {
+	if (ditherDrops(u_drawParams.x, gl_FragCoord.xy))
+	{
+		discard;
+	}
 	vec4 sg_fragCoord = gl_FragCoord;
 	bool sg_frontFacing = gl_FrontFacing;
 	vec2 sg_UV0 = v_texcoord0;
