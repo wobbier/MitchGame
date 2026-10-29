@@ -1,0 +1,42 @@
+# --scene Assets/Scenes/Tests/SettingsTest.lvl --user-dir .tmp/EditorFlows/SettingsUser
+# Player settings (PLAY-2), first launch: C# changes settings, rebinds Jump to J and saves.
+# Settings02Restart reads them back in a second process (RunEditorFlows --only Settings runs both in order).
+wait-log dotnet ready | 7200
+wait 30
+
+# A clean slate: an earlier run's file would satisfy the second launch on its own.
+settings-reset
+settings-save
+settings-assert Audio.Music | 1.0
+settings-assert Input.Bindings | {}
+
+# An engine-side write (what an options menu's slider does), then the script's turn.
+settings-set Audio.Voice | 0.5
+settings-assert Audio.Voice | 0.5
+
+select Probe
+script-set Write | true
+play
+wait-log SettingsProbe: saved = True | 600
+wait-log SettingsProbe: quality=Low music=0.25 probe=7 jump=J reduce-motion=True presets=Low,Medium,High,Ultra | 600
+
+# The rebind is live: J jumps, Space no longer does.
+input-hold Keyboard/J
+wait-log SettingsProbe: jump 1 | 300
+assert-action Jump | true
+input-release
+wait 3
+input-hold Keyboard/Space
+wait 5
+assert-action Jump | false
+input-release
+stop
+wait 5
+
+# What the C# API wrote, as the engine sees it.
+settings-assert Graphics.Quality | "Low"
+settings-assert Audio.Music | 0.25
+settings-assert Accessibility.ReduceMotion | true
+settings-assert Game.Probe | 7
+settings-assert Input.Bindings | {"Gameplay/Jump/0": "Keyboard/J"}
+quit
