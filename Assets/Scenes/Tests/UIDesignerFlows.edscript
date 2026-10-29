@@ -1,5 +1,7 @@
 # The UI designer (UI-6): select #title, set a color (live, then in the source), save, check the
-# file, undo, save again: the file is as committed, and the reloaded document follows it.
+# file, undo, save again: the file is as committed, and the reloaded document follows it. Then a
+# Steam Deck preview, picking, a stylesheet rule (computed style checked), and a palette button
+# added and deleted, each undone or removed so Designer.rml / Designer.rcss end as committed.
 #   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/DesignerTest.lvl --editor-exec Assets/Scenes/Tests/UIDesignerFlows.edscript
 wait-log UI/Tests/Designer.rml | 600
 wait 10
@@ -21,4 +23,31 @@ designer-undo
 designer-save
 assert-file-contains Assets/UI/Tests/Designer.rml | != color: #ff3366
 assert-file-contains Assets/UI/Tests/Designer.rml | <h1 id="title">Designer</h1>
+designer-preview Steam Deck
+wait 5
+designer-assert-preview 1280x800
+designer-pick 300 110
+designer-assert-selected #title
+designer-select #hint
+designer-assert-computed color | #bfb6d9
+designer-rule #hint | color: #ff3366
+wait 5
+designer-assert-computed color | #ff3366
+screenshot .tmp/EditorFlows/UIDesignerFlows_rule.png
+designer-save
+assert-file-contains Assets/UI/Tests/Designer.rcss | color: #ff3366;
+designer-undo
+designer-save
+assert-file-contains Assets/UI/Tests/Designer.rcss | != #hint {
+designer-select #panel
+designer-insert button
+designer-assert-selected #button
+wait 5
+ui-assert-text #button | Button
+designer-save
+assert-file-contains Assets/UI/Tests/Designer.rml | <button id="button">Button</button>
+designer-delete
+designer-save
+assert-file-contains Assets/UI/Tests/Designer.rml | != id="button"
+designer-preview Freeform
 quit

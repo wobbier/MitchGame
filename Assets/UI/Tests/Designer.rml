@@ -1,10 +1,10 @@
 <rml>
 <head>
 	<title>DesignerTest</title>
-	<link type="text/rcss" href="UINav.rcss"/>
+	<link type="text/rcss" href="Designer.rcss"/>
 </head>
-<!-- The UI designer's test document (UI-6): UIDesignerFlows restyles #title and undoes it,
-     so the file must end each run as committed. -->
+<!-- The UI designer's test document (UI-6): UIDesignerFlows restyles #title, edits Designer.rcss,
+     adds and deletes a button, and undoes each, so both files must end each run as committed. -->
 <body>
 	<div id="panel">
 		<h1 id="title">Designer</h1>

@@ -1,0 +1,44 @@
+/* The UI designer's test stylesheet (UI-6): UIDesignerFlows adds a #hint rule and undoes it. */
+body {
+	font-family: Inter;
+	font-size: 18dp;
+	color: #F2F4F8;
+	width: 100%;
+	height: 100%;
+}
+
+#panel {
+	position: absolute;
+	left: 140px;
+	top: 70px;
+	width: 520px;
+	height: 330px;
+	background-color: #231B33E6;
+	border-radius: 16px;
+	padding: 24px;
+}
+
+h1 {
+	display: block;
+	font-size: 30dp;
+	margin-bottom: 8dp;
+	color: #C9A7FF;
+}
+
+p {
+	display: block;
+	margin-bottom: 16dp;
+	color: #BFB6D9;
+}
+
+button {
+	display: block;
+	width: 200px;
+	padding: 8dp 16dp;
+	margin-bottom: 10px;
+	background-color: #4A3B78;
+	border-radius: 6px;
+	color: #FFFFFF;
+	tab-index: auto;
+	nav: auto;
+}
