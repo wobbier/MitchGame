@@ -1,0 +1,10 @@
+# The .spriteatlas inspector's Pack (ME-282): Physics2D.spriteatlas packs its 10 sprites into
+# <atlas>.png + .spritesheet beside it, as a cook would, and the sheet lists them.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/Physics2D.lvl --editor-exec Assets/Scenes/Tests/SpriteAtlasFlows.edscript
+wait 20
+atlas-pack Assets/Textures/Sprites/Physics2D.spriteatlas | 10
+assert-file-contains Assets/Textures/Sprites/Physics2D.spriteatlas.spritesheet | "Coins/Coins_0"
+assert-file-contains Assets/Textures/Sprites/Physics2D.spriteatlas.spritesheet | "Crate"
+show-asset Assets/Textures/Sprites/Physics2D.spriteatlas
+wait 10
+screenshot .tmp/EditorFlows/SpriteAtlas_inspector.png
