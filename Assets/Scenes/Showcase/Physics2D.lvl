@@ -4997,6 +4997,138 @@
                     "Mass": 1.0
                 }
             ]
+        },
+        {
+            "GUID": "c01a5eed00000000",
+            "Name": "Coin 0",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -15.0,
+                        13.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Sheet": "Assets/Textures/Sprites/Coins.spritesheet",
+                    "SpriteName": "Coins_0",
+                    "PixelsPerUnit": 8.0,
+                    "PointFilter": true,
+                    "SortingLayer": 2
+                }
+            ]
+        },
+        {
+            "GUID": "c01a5eed00000001",
+            "Name": "Coin 1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -12.8,
+                        13.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Sheet": "Assets/Textures/Sprites/Coins.spritesheet",
+                    "SpriteName": "Coins_1",
+                    "PixelsPerUnit": 8.0,
+                    "PointFilter": true,
+                    "SortingLayer": 2
+                }
+            ]
+        },
+        {
+            "GUID": "c01a5eed00000002",
+            "Name": "Coin 2",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -10.6,
+                        13.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Sheet": "Assets/Textures/Sprites/Coins.spritesheet",
+                    "SpriteName": "Coins_2",
+                    "PixelsPerUnit": 8.0,
+                    "PointFilter": true,
+                    "SortingLayer": 2
+                }
+            ]
+        },
+        {
+            "GUID": "c01a5eed00000003",
+            "Name": "Coin 3",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8.399999999999999,
+                        13.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Sheet": "Assets/Textures/Sprites/Coins.spritesheet",
+                    "SpriteName": "Coins_3",
+                    "PixelsPerUnit": 8.0,
+                    "PointFilter": true,
+                    "SortingLayer": 2
+                }
+            ]
         }
     ]
 }

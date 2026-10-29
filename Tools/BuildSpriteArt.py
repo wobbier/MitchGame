@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Writes the 2D sprite art under Assets/Textures/Sprites/ (LOOK-S2), drawn procedurally so it
-stays reproducible: a crate, a ball, a plank, a stone tile with 9-slice borders, a windmill blade
-and a sky gradient. RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
+stays reproducible: a crate, a ball, a plank, a stone tile with 9-slice borders, a windmill blade,
+a sky gradient and a 4-frame coin strip (sliced by Coins.spritesheet). RGBA PNGs; run from the project root:  python3 Tools/BuildSpriteArt.py
 """
 import math
 import os
@@ -109,6 +109,20 @@ def sky(x, y):
     return (60 + 120 * t, 90 + 110 * t, 150 + 80 * t, 255)
 
 
+def coins(x, y):
+    # 64 x 16: four 16 x 16 frames of a spinning coin (a sprite sheet: Coins.spritesheet slices it),
+    # each narrower than the last, on transparent texels.
+    frame, fx = x // 16, x % 16
+    half_width = (7.0, 5.0, 2.5, 1.0)[frame]
+    dx, dy = (fx - 7.5) / half_width, (y - 7.5) / 7.0
+    inside = dx * dx + dy * dy <= 1.0
+    if not inside:
+        return (0, 0, 0, 0)
+    rim = dx * dx + dy * dy > 0.6
+    v = 200 if rim else 245
+    return (v, v * 0.8, 60, 255)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_png(os.path.join(OUT, "Crate.png"), 64, 64, crate)
@@ -117,6 +131,7 @@ def main():
     write_png(os.path.join(OUT, "Stone.png"), 48, 48, stone)
     write_png(os.path.join(OUT, "Blade.png"), 128, 16, blade)
     write_png(os.path.join(OUT, "Sky.png"), 4, 64, sky)
+    write_png(os.path.join(OUT, "Coins.png"), 64, 16, coins)
 
 
 if __name__ == "__main__":

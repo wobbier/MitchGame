@@ -1,0 +1,14 @@
+# Sprite sheets (LOOK-S3): the coin sheet's inspector and the coin sprites, with nothing changed.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Showcase/Physics2D.lvl --editor-exec Assets/Scenes/Tests/SpriteSheetFlows.edscript
+wait 20
+show-window Assets
+show-asset Assets/Textures/Sprites/Coins.spritesheet
+wait 10
+screenshot .tmp/EditorFlows/SpriteSheetFlows_inspector.png
+show-asset Assets/Textures/Sprites/Coins.png
+wait 10
+screenshot .tmp/EditorFlows/SpriteSheetFlows_texture.png
+select Coin 2
+assert-field Coin 2 | SpriteRenderer.SpriteName | "Coins_2"
+assert-file-contains Assets/Textures/Sprites/Coins.spritesheet | "Name": "Coins_3"
+quit
