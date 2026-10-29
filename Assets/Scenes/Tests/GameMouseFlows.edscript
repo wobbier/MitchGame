@@ -1,0 +1,42 @@
+# The Game View's mouse (ME-262): the real pointer, moved over a button where the Game View draws
+# it, hovers and clicks it in FreeForm and letterboxed (Fixed, Ratio) display modes.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/UITest.lvl --editor-exec Assets/Scenes/Tests/GameMouseFlows.edscript
+wait-log UI/Tests/UITest.rml | 600
+play
+wait 20
+
+# FreeForm: the panel's own size.
+ui-mouse-move #press-me
+wait 5
+ui-mouse-down
+wait 3
+ui-mouse-up
+wait 3
+ui-assert-text #click-result | Clicked!
+ui-set-text #click-result | Unclicked
+
+# Fixed 1080p, shrunk into the panel: clicks scale, not just shift.
+designer-preview 1080p
+wait 10
+ui-mouse-move #press-me
+wait 5
+ui-mouse-down
+wait 3
+ui-mouse-up
+wait 3
+ui-assert-text #click-result | Clicked!
+ui-set-text #click-result | Unclicked
+
+# Ultra-Wide (21:9), letterboxed: the image sits lower in the panel, at the panel's own scale.
+designer-preview Ultra-Wide
+wait 10
+ui-mouse-move #press-me
+wait 5
+ui-mouse-down
+wait 3
+ui-mouse-up
+wait 3
+ui-assert-text #click-result | Clicked!
+
+designer-preview Freeform
+stop
