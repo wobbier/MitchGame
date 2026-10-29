@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Rebuild the concert lighting study from the arena photo, using local assets.
 
-Run from any directory. Overwrites only ConcertTest.lvl and its generated crowd
-assets. All dimensions are metres; the two light rigs remain editable in Havana.
+Run from any directory. Overwrites only ConcertTest.lvl, its generated crowd
+assets and the LED wall's placeholder texture. All dimensions are metres; the two
+light rigs remain editable in Havana.
 """
 import copy
 import hashlib
@@ -10,11 +11,31 @@ import json
 import math
 from pathlib import Path
 import random
+import struct
+import zlib
 
 from ConcertAssets import add_performer, build_crowd_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "Assets/Scenes/Tests/ConcertTest.lvl"
+# The LED wall's frame. A flat white stand-in until a real still of the show replaces it.
+SCREEN_TEXTURE = "Assets/Textures/ConcertTest/LedWall.png"
+PANEL_INTENSITY = 10000
+PANEL_CONE = (2.0, 5.5)   # inner / outer half-angles: a narrow, soft-edged panel beam
+
+
+def write_white_png(path, size=8):
+    """A size x size opaque white PNG, with no image library."""
+    raw = b"".join(b"\x00" + b"\xff\xff\xff" * size for _ in range(size))
+
+    def chunk(kind, payload):
+        body = kind + payload
+        return struct.pack(">I", len(payload)) + body + struct.pack(">I", zlib.crc32(body) & 0xffffffff)
+
+    header = struct.pack(">IIBBBBB", size, size, 8, 2, 0, 0, 0)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header) +
+                     chunk(b"IDAT", zlib.compress(raw, 9)) + chunk(b"IEND", b""))
 
 
 def transform(position=(0, 0, 0), rotation=(0, 0, 0), scale=(1, 1, 1)):
@@ -44,14 +65,17 @@ class Scene:
         return self.entity(name, [transform(position, rotation)], parent)
 
     def mesh(self, name, position, full_size, color, shape="Cube", emission=0,
-             parent=None, rotation=(0, 0, 0), shadows=True, metallic=0, roughness=0.7):
+             parent=None, rotation=(0, 0, 0), shadows=True, metallic=0, roughness=0.7,
+             texture=None):
         # Cube, cylinder and sphere all span [-1,1] on each axis.
         scale = [n * .5 for n in full_size]
+        material = dict(Type="StandardMaterial", DiffuseColor=list(color),
+                        Roughness=roughness, Metallic=metallic,
+                        EmissiveColor=list(color), EmissiveIntensity=emission)
+        if texture:
+            material["Textures"] = dict(Diffuse=dict(Path=texture), Emissive=dict(Path=texture))
         return self.entity(name, [transform(position, rotation, scale),
-            dict(Type="Mesh", MeshType=shape, CastShadows=shadows,
-                 Material=dict(Type="StandardMaterial", DiffuseColor=list(color),
-                               Roughness=roughness, Metallic=metallic,
-                               EmissiveColor=list(color), EmissiveIntensity=emission))], parent)
+            dict(Type="Mesh", MeshType=shape, CastShadows=shadows, Material=material)], parent)
 
     def rod(self, name, start, end, width, color, parent=None, emission=0):
         center = [(start[i] + end[i]) * .5 for i in range(3)]
@@ -69,12 +93,13 @@ def build():
         dict(Type="Camera", IsCurrent=True, ClearType="Color", ClearColor=[.012, .016, .023],
              Projection="Perspective", FieldOfView=47, Near=.1, Far=150),
         dict(Type="PostProcess", AutoExposure=False, ExposureCompensation=-.25,
-             Tonemapper="ACES", Bloom=True, BloomIntensity=.055, BloomThreshold=1.2,
+             Tonemapper="ACES", Bloom=True, BloomIntensity=.07, BloomThreshold=1.2,
              AmbientOcclusion=True, AORadius=.55, AOIntensity=.8,
-             Fog=True, FogColor=[.0008, .0011, .0016], FogDensity=.018,
+             Fog=True, FogColor=[.0008, .0011, .0016], FogDensity=.024,
              FogHeight=0, FogHeightFalloff=.012, FogMaxOpacity=1,
              FogStartDistance=0, FogSunIntensity=.55, FogAnisotropy=.45,
-             VolumetricFog=True, VolumetricDistance=110, VolumetricSteps=64,
+             FogLocalAnisotropy=.45, VolumetricFog=True, VolumetricDistance=110,
+             VolumetricSteps=64, VolumetricTemporal=True,
              DepthOfField=False, TemporalAA=True, TemporalSharpness=.2, FXAA=True,
              VignetteIntensity=.22, VignetteSmoothness=.7, Saturation=.83)])
 
@@ -130,7 +155,16 @@ def build():
     # A low runway to the blacked-out main stage helps describe the floor plane.
     scene.mesh("Runway", (0, .48, 14.3), (2.4, .96, 20.4), (.04, .045, .055), parent=stage)
     scene.mesh("Rear main stage", (0, .75, 28), (18, 1.5, 7), (.035, .04, .05), parent=stage)
-    scene.mesh("Rear black drape", (0, 7, 32), (23, 12, .25), (.012, .015, .021), parent=stage)
+    # The LED wall: a lit screen behind the main stage (the photo's close-up of the singer).
+    write_white_png(ROOT / SCREEN_TEXTURE)
+    scene.mesh("LED video wall", (0, 7, 32), (23, 12, .25), (1, 1, 1), parent=stage,
+               emission=.9, shadows=False, roughness=.4, texture=SCREEN_TEXTURE)
+    # The screen's own glow into the haze and onto the main stage: a near-hemisphere
+    # rectangle light the size of the wall, facing the audience (-Z).
+    scene.entity("LED video wall glow", [transform((0, 7, 31.85), (0, 180, 0)),
+        dict(Type="Light", LightType="Rectangle", Color=[.9, .93, 1], Intensity=4,
+             Range=28, RectangleWidth=23, RectangleHeight=12,
+             InnerConeAngle=30, OuterConeAngle=89, CastShadows=False)], stage)
     for x in (-9, 9):
         for i in range(7):
             scene.mesh(f"Line array {x} {i}", (x, 9.2-i*.48, 25.5-i*.07), (1.0, .43, .65),
@@ -154,7 +188,7 @@ def build():
                emission=12, parent=key, shadows=False)
     scene.entity("Performer Spotlight", [transform((0, 0, .24)),
         dict(Type="Light", LightType="Spot", Color=[1, .94, .84], Intensity=100000,
-             Range=65, InnerConeAngle=1.6, OuterConeAngle=2.5, CastShadows=True,
+             Range=65, InnerConeAngle=1.8, OuterConeAngle=3.0, CastShadows=True,
              ShadowBias=.4, ShadowNormalBias=1.0)], key)
 
     bank_position, bank_target = (13, 17, 17), (-1.5, .5, -.5)
@@ -164,17 +198,20 @@ def build():
     for row in range(4):
         for col in range(3):
             center = ((col-1)*1.04, (row-1.5)*.74, 0)
-            # Each panel has its own emitter and aim. An outward fan keeps the
-            # twelve narrow shafts distinct as they spread across the audience.
+            # Each panel has its own emitter and aim. A gentle outward fan lets the
+            # twelve soft beams overlap into one wash across the stage and audience.
             fixture = scene.group(f"Box light fixture {row+1}-{col+1}", center,
-                                  (-(row-1.5)*7, (col-1)*9, 0), wash)
+                                  (-(row-1.5)*5, (col-1)*6, 0), wash)
             scene.mesh(f"Box light housing {row+1}-{col+1}", (0, 0, 0),
                        (.94, .62, .38), steel, parent=fixture)
             scene.mesh(f"Box light luminous face {row+1}-{col+1}", (0, 0, .205),
-                       (.79, .47, .025), (.84, .96, 1), emission=15, parent=fixture, shadows=False)
-            scene.entity(f"Box light beam {row+1}-{col+1}", [transform((0, 0, .245)),
-                dict(Type="Light", LightType="Spot", Color=[.83, .94, 1], Intensity=60000,
-                     Range=62, InnerConeAngle=2.4, OuterConeAngle=3.2,
+                       (.79, .47, .025), (.84, .96, 1), emission=18, parent=fixture, shadows=False)
+            # A rectangle light the size of the luminous face: the beam leaves the whole
+            # panel and feathers out between the inner and outer cone angles.
+            scene.entity(f"Box light beam {row+1}-{col+1}", [transform((0, 0, .225)),
+                dict(Type="Light", LightType="Rectangle", Color=[.83, .94, 1],
+                     Intensity=PANEL_INTENSITY, Range=62, RectangleWidth=.79, RectangleHeight=.47,
+                     InnerConeAngle=PANEL_CONE[0], OuterConeAngle=PANEL_CONE[1],
                      CastShadows=False)], fixture)
     scene.rod("Bank suspension left", (12, 28, 17), (12, 18.5, 17), .06, steel, rigs)
     scene.rod("Bank suspension right", (14, 28, 17), (14, 18.5, 17), .06, steel, rigs)
@@ -246,7 +283,7 @@ def build():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(dict(Version=2, Cores=[], Entities=scene.entities), indent=2)+"\n")
     print(f"Wrote {OUTPUT.relative_to(ROOT)}: {len(scene.entities)} entities, {count} spectators, "
-          "one performer spotlight and twelve panel lights")
+          "one performer spotlight, twelve rectangle panel lights and the LED wall")
 
 
 if __name__ == "__main__":
