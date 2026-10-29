@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "havana": {
+            "command": "python3",
+            "args": ["Engine/Tools/HavanaMCP/havana_mcp.py"]
+        }
+    }
+}
