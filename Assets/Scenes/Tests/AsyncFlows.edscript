@@ -1,0 +1,14 @@
+# --scene Assets/Scenes/Tests/AsyncTest.lvl --frame-time 0.02
+# Async on the game clock (CS-6), at a fixed 0.02 s frame: awaits, a tween and a coroutine land on
+# the expected frames, and await resumes on the main thread.
+wait-log dotnet ready | 7200
+wait 30
+play
+wait-log AsyncProbe: coroutine waited until frame 11 | 600
+wait-log AsyncProbe: coroutine resumed on frame 12 | 600
+wait-log AsyncProbe: tween ended on frame 20 at 10.00 | 600
+wait-log AsyncProbe: delay landed on frame 25 | 600
+wait-log AsyncProbe: three frames later it is frame 28 | 600
+wait-log AsyncProbe: Task.Delay resumed on the main thread: True | 600
+stop
+quit
