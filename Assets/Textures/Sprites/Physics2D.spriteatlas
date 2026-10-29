@@ -1,0 +1,14 @@
+{
+    "Sources": [
+        "Assets/Textures/Sprites/Sky.png",
+        "Assets/Textures/Sprites/Stone.png",
+        "Assets/Textures/Sprites/Crate.png",
+        "Assets/Textures/Sprites/Ball.png",
+        "Assets/Textures/Sprites/Plank.png",
+        "Assets/Textures/Sprites/Blade.png",
+        "Assets/Textures/Sprites/Coins.spritesheet"
+    ],
+    "Padding": 2,
+    "MaxSize": 2048,
+    "Extrude": 2
+}
