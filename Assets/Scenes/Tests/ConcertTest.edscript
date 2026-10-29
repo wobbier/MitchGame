@@ -1,0 +1,212 @@
+# Concert arena smoke flow: twelve independent panel beams, fog and serialization.
+# ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/ConcertTest.lvl --editor-exec Assets/Scenes/Tests/ConcertTest.edscript
+wait 16
+assert-exists Box Light Bank
+assert-parent Crowd Wash | Box Light Bank
+assert-children Crowd Wash | 12
+assert-field Main Camera | PostProcess.Fog | true
+assert-field Main Camera | PostProcess.VolumetricFog | true
+assert-field Indoor ambient - suppress sky fallback | Light.Intensity | 0
+assert-field Performer Spotlight | Light.LightType | "Spot"
+assert-field Performer Spotlight | Light.CastShadows | true
+assert-field Performer Spotlight | Light.Intensity | 100000 ~ 0.01
+
+# Every luminous fixture has an independently editable native light.
+assert-exists Box light beam 1-1
+assert-parent Box light beam 1-1 | Box light fixture 1-1
+assert-field Box light beam 1-1 | Light.LightType | "Spot"
+assert-field Box light beam 1-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-1 | Light.CastShadows | false
+assert-exists Box light beam 1-2
+assert-parent Box light beam 1-2 | Box light fixture 1-2
+assert-field Box light beam 1-2 | Light.LightType | "Spot"
+assert-field Box light beam 1-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-2 | Light.CastShadows | false
+assert-exists Box light beam 1-3
+assert-parent Box light beam 1-3 | Box light fixture 1-3
+assert-field Box light beam 1-3 | Light.LightType | "Spot"
+assert-field Box light beam 1-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-3 | Light.CastShadows | false
+assert-exists Box light beam 2-1
+assert-parent Box light beam 2-1 | Box light fixture 2-1
+assert-field Box light beam 2-1 | Light.LightType | "Spot"
+assert-field Box light beam 2-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-1 | Light.CastShadows | false
+assert-exists Box light beam 2-2
+assert-parent Box light beam 2-2 | Box light fixture 2-2
+assert-field Box light beam 2-2 | Light.LightType | "Spot"
+assert-field Box light beam 2-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-2 | Light.CastShadows | false
+assert-exists Box light beam 2-3
+assert-parent Box light beam 2-3 | Box light fixture 2-3
+assert-field Box light beam 2-3 | Light.LightType | "Spot"
+assert-field Box light beam 2-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-3 | Light.CastShadows | false
+assert-exists Box light beam 3-1
+assert-parent Box light beam 3-1 | Box light fixture 3-1
+assert-field Box light beam 3-1 | Light.LightType | "Spot"
+assert-field Box light beam 3-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-1 | Light.CastShadows | false
+assert-exists Box light beam 3-2
+assert-parent Box light beam 3-2 | Box light fixture 3-2
+assert-field Box light beam 3-2 | Light.LightType | "Spot"
+assert-field Box light beam 3-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-2 | Light.CastShadows | false
+assert-exists Box light beam 3-3
+assert-parent Box light beam 3-3 | Box light fixture 3-3
+assert-field Box light beam 3-3 | Light.LightType | "Spot"
+assert-field Box light beam 3-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-3 | Light.CastShadows | false
+assert-exists Box light beam 4-1
+assert-parent Box light beam 4-1 | Box light fixture 4-1
+assert-field Box light beam 4-1 | Light.LightType | "Spot"
+assert-field Box light beam 4-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-1 | Light.CastShadows | false
+assert-exists Box light beam 4-2
+assert-parent Box light beam 4-2 | Box light fixture 4-2
+assert-field Box light beam 4-2 | Light.LightType | "Spot"
+assert-field Box light beam 4-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-2 | Light.CastShadows | false
+assert-exists Box light beam 4-3
+assert-parent Box light beam 4-3 | Box light fixture 4-3
+assert-field Box light beam 4-3 | Light.LightType | "Spot"
+assert-field Box light beam 4-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-3 | Light.CastShadows | false
+
+# Editing one panel leaves its neighbor unchanged, and Undo restores only that panel.
+select Box light beam 1-1
+set Light.Intensity 4500
+assert-field Box light beam 1-1 | Light.Intensity | 4500 ~ 0.01
+assert-field Box light beam 1-2 | Light.Intensity | 60000 ~ 0.01
+undo
+assert-field Box light beam 1-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-2 | Light.Intensity | 60000 ~ 0.01
+
+# Fog controls survive undo and save/reopen in both states.
+select Main Camera
+set PostProcess.VolumetricFog false
+assert-field Main Camera | PostProcess.VolumetricFog | false
+undo
+assert-field Main Camera | PostProcess.VolumetricFog | true
+set PostProcess.Fog false
+save-as .tmp/ConcertTestFlows/RoundTrip.lvl
+load .tmp/ConcertTestFlows/RoundTrip.lvl
+wait 12
+assert-field Main Camera | PostProcess.Fog | false
+assert-field Main Camera | PostProcess.VolumetricFog | true
+select Main Camera
+set PostProcess.Fog true
+save-as .tmp/ConcertTestFlows/RoundTrip.lvl
+load .tmp/ConcertTestFlows/RoundTrip.lvl
+wait 12
+assert-field Main Camera | PostProcess.Fog | true
+assert-field Main Camera | PostProcess.VolumetricFog | true
+assert-field Box light beam 1-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-3 | Light.Intensity | 60000 ~ 0.01
+
+play
+wait 12
+assert-playing true
+screenshot .tmp/ConcertTestFlows/concert.png
+select Performer Spotlight
+set Light.Intensity 0
+assert-field Performer Spotlight | Light.Intensity | 0
+wait 8
+screenshot .tmp/ConcertTestFlows/bank-only.png
+
+# Isolate one panel: the other eleven real emitters are disabled.
+select Box light beam 1-2
+set Light.Intensity 0
+select Box light beam 1-3
+set Light.Intensity 0
+select Box light beam 2-1
+set Light.Intensity 0
+select Box light beam 2-2
+set Light.Intensity 0
+select Box light beam 2-3
+set Light.Intensity 0
+select Box light beam 3-1
+set Light.Intensity 0
+select Box light beam 3-2
+set Light.Intensity 0
+select Box light beam 3-3
+set Light.Intensity 0
+select Box light beam 4-1
+set Light.Intensity 0
+select Box light beam 4-2
+set Light.Intensity 0
+select Box light beam 4-3
+set Light.Intensity 0
+assert-field Box light beam 1-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-2 | Light.Intensity | 0
+wait 8
+screenshot .tmp/ConcertTestFlows/single-panel-only.png
+select Box light beam 1-1
+set Light.Intensity 0
+select Performer Spotlight
+set Light.Intensity 100000
+wait 8
+screenshot .tmp/ConcertTestFlows/performer-only.png
+
+# Restore the complete bank, then compare fog off and on.
+select Box light beam 1-1
+set Light.Intensity 60000
+select Box light beam 1-2
+set Light.Intensity 60000
+select Box light beam 1-3
+set Light.Intensity 60000
+select Box light beam 2-1
+set Light.Intensity 60000
+select Box light beam 2-2
+set Light.Intensity 60000
+select Box light beam 2-3
+set Light.Intensity 60000
+select Box light beam 3-1
+set Light.Intensity 60000
+select Box light beam 3-2
+set Light.Intensity 60000
+select Box light beam 3-3
+set Light.Intensity 60000
+select Box light beam 4-1
+set Light.Intensity 60000
+select Box light beam 4-2
+set Light.Intensity 60000
+select Box light beam 4-3
+set Light.Intensity 60000
+select Main Camera
+set PostProcess.Fog false
+wait 8
+screenshot .tmp/ConcertTestFlows/no-fog.png
+set PostProcess.Fog true
+assert-field Main Camera | PostProcess.Fog | true
+wait 8
+screenshot .tmp/ConcertTestFlows/restored.png
+stop
+wait 8
+assert-playing false
+assert-field Main Camera | PostProcess.Fog | true
+assert-field Main Camera | PostProcess.VolumetricFog | true
+assert-field Performer Spotlight | Light.Intensity | 100000 ~ 0.01
+assert-field Box light beam 1-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 1-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 2-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 3-3 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-1 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-2 | Light.Intensity | 60000 ~ 0.01
+assert-field Box light beam 4-3 | Light.Intensity | 60000 ~ 0.01
+quit
