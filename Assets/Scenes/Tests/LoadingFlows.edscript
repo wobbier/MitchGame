@@ -1,0 +1,29 @@
+# Loading screens and splashes (PLAY-5): an async main-scene load shows the stock loading screen
+# with live progress over the old scene, then the new scene takes over; a splash shows and goes.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/LoadingFlows.edscript
+wait-log UI/Options/Options.rml | 600
+wait 10
+
+# Splash: the product name from Project Settings, gone after its time.
+play-splash Assets/UI/Loading/Splash.rml | 1
+wait-log UI: overlay Assets/UI/Loading/Splash.rml | 120
+wait 3
+ui-assert-text #splash-product | MitchGame
+screenshot .tmp/EditorFlows/LoadingFlows_splash.png
+wait 90
+
+# The load: reading on a worker, then the Playground's assets. The screen holds 4 s and its bar
+# fills across that time (never ahead of the real progress), so the first capture is mid-load.
+load-scene-async Assets/Scenes/Showcase/Playground.lvl | 4
+wait-log UI: overlay Assets/UI/Loading/Loading.rml | 120
+wait 3
+ui-assert-text #loading-scene | Playground
+screenshot .tmp/EditorFlows/LoadingFlows_loading.png
+# The progress climbs (a log line per quarter it passes; a slow frame can skip one), then the
+# screen goes.
+wait-log Loading: Assets/Scenes/Showcase/Playground.lvl 100% (Ready) | 7200
+wait-log Loading: Assets/Scenes/Showcase/Playground.lvl done | 7200
+assert-exists Chaser 0
+wait 5
+screenshot .tmp/EditorFlows/LoadingFlows_loaded.png
+quit
