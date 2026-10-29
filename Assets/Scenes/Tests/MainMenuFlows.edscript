@@ -14,6 +14,16 @@ ui-assert-focused #scene-graph
 input-press Key/Down
 ui-assert-focused #physics
 
+# Options shows the stock options menu (PLAY-3) over the menu; its Back hides it again.
+assert-field Options | UIDocument.Visible | false
+ui-click #options
+wait 5
+assert-field Options | UIDocument.Visible | true
+ui-assert-focused #tab-graphics
+ui-click #options-back
+wait 5
+assert-field Options | UIDocument.Visible | false
+
 # The click queues the load; the menu scene (and its UI entity) gives way to the physics test.
 ui-click #physics
 wait-log UI: load-scene Assets/Scenes/PhysicsTest.lvl | 60

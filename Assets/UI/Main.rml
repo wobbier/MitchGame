@@ -9,6 +9,7 @@
 		<button id="scene-graph" onclick="load-scene:Assets/SceneGraphTest.lvl">Scene Graph Test</button>
 		<button id="physics" onclick="load-scene:Assets/Scenes/PhysicsTest.lvl">Physics Test</button>
 		<button id="sound" onclick="play-sound:Assets/Sounds/Test/Chime.wav">Play a Sound</button>
+		<button id="options" onclick="show-document:Options">Options</button>
 		<button id="quit" onclick="quit">Quit</button>
 	</div>
 </body>

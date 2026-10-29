@@ -1,0 +1,90 @@
+# The stock options menu (PLAY-3), driven by gamepad navigation: tabs, a quality preset, volume
+# steps and a "press a key" rebind (plus a cancelled one), all landing in the player settings.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/OptionsFlows.edscript
+wait-log UI/Options/Options.rml | 600
+settings-reset
+play
+wait 20
+
+# Showing the document focused its autofocus tab.
+ui-assert-focused #tab-graphics
+screenshot .tmp/EditorFlows/OptionsFlows_graphics.png
+
+# Graphics: down into the quality presets, pick Low.
+input-press Gamepad/DPadDown
+ui-assert-focused #quality-Low
+input-press Gamepad/South
+wait 3
+settings-assert Graphics.Quality | "Low"
+
+# Audio: back up to the tabs, right to Audio, open it, down the + column, two steps down on Music.
+input-press Gamepad/DPadUp
+ui-assert-focused #tab-graphics
+input-press Gamepad/DPadRight
+ui-assert-focused #tab-audio
+input-press Gamepad/South
+wait 3
+input-press Gamepad/DPadDown
+ui-assert-focused #master-up
+input-press Gamepad/DPadDown
+ui-assert-focused #music-up
+input-press Gamepad/DPadLeft
+ui-assert-focused #music-down
+input-press Gamepad/South
+input-press Gamepad/South
+wait 3
+settings-assert Audio.Music | 0.8
+ui-assert-text #music-value | 80%
+screenshot .tmp/EditorFlows/OptionsFlows_audio.png
+
+# Controls: up to the tabs, right to Controls, down the binding column to Jump's first binding.
+input-press Gamepad/DPadUp
+input-press Gamepad/DPadUp
+ui-assert-focused #tab-graphics
+input-press Gamepad/DPadRight
+input-press Gamepad/DPadRight
+ui-assert-focused #tab-controls
+input-press Gamepad/South
+wait 3
+input-press Gamepad/DPadDown
+ui-assert-focused #bind-Move-0-Left
+input-press Gamepad/DPadDown
+ui-assert-focused #bind-Look-0
+input-press Gamepad/DPadDown
+ui-assert-focused #bind-Jump-0
+ui-assert-text #bind-Jump-0 | Space
+
+# South starts the rebind; the next key pressed becomes the binding.
+input-press Gamepad/South
+wait 3
+ui-assert-text #bind-Jump-0 | Press a key...
+screenshot .tmp/EditorFlows/OptionsFlows_rebinding.png
+input-hold Keyboard/J
+wait 5
+input-release
+wait 3
+ui-assert-text #bind-Jump-0 | J
+settings-assert Input.Bindings | {"Gameplay/Jump/0": "Keyboard/J"}
+ui-assert-focused #bind-Jump-0
+
+# Escape cancels a rebind and leaves the binding as it was.
+input-press Gamepad/DPadRight
+ui-assert-focused #bind-Jump-1
+input-press Gamepad/South
+wait 3
+ui-assert-text #bind-Jump-1 | Press a key...
+input-hold Keyboard/Escape
+wait 5
+input-release
+wait 3
+ui-assert-text #bind-Jump-1 | Gamepad South
+settings-assert Input.Bindings | {"Gameplay/Jump/0": "Keyboard/J"}
+screenshot .tmp/EditorFlows/OptionsFlows_controls.png
+
+# Back hides the menu.
+ui-click #options-back
+wait 3
+assert-field Options | UIDocument.Visible | false
+stop
+settings-reset
+quit
