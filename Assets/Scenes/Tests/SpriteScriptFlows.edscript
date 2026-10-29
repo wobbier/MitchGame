@@ -1,0 +1,25 @@
+# C# sprites (ME-276): clicking the coin in the World view selects it (sprites draw into the picking
+# buffer); then SpriteProbe reads its SpriteRenderer and changes its sprite, flip, tint and sorting
+# from C#, and the component holds the new values.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/SpriteScriptTest.lvl --editor-exec Assets/Scenes/Tests/SpriteScriptFlows.edscript
+wait-log dotnet ready | 7200
+wait 30
+select Coin
+focus-window World View
+wait 2
+action View.Front
+action View.FrameSelected
+wait 60
+select-none
+pick 0.5 0.5
+wait 10
+assert-active Coin
+play
+wait-log SpriteProbe: found True, showing Coins_0, layer 1 | 600
+wait-log SpriteProbe: now Coins_2 flipX True flipY False color 0.50 0.75 sorting 3/7 | 600
+assert-field Coin | SpriteRenderer.SpriteName | "Coins_2"
+assert-field Coin | SpriteRenderer.FlipX | true
+assert-field Coin | SpriteRenderer.Opacity | 0.75 ~ 0.001
+screenshot .tmp/EditorFlows/SpriteScriptFlows.png
+stop
+quit

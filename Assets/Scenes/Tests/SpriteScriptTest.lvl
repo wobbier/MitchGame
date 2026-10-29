@@ -1,0 +1,84 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "5a17e5c0d0000101",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -10.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.2,
+                        0.22,
+                        0.3
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Projection": "Orthographic",
+                    "OrthographicSize": 2.0,
+                    "SunShadows": false
+                }
+            ]
+        },
+        {
+            "GUID": "5a17e5c0d0000102",
+            "Name": "Coin",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        -1.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "SpriteRenderer",
+                    "Sheet": "Assets/Textures/Sprites/Coins.spritesheet",
+                    "SpriteName": "Coins_0",
+                    "PixelsPerUnit": 8.0,
+                    "PointFilter": true,
+                    "SortingLayer": 1
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "SpriteProbe",
+                    "ScriptFields": "{}"
+                }
+            ]
+        }
+    ]
+}
