@@ -15,6 +15,13 @@
 		<div id="tilted">transform: rotate</div>
 		<button id="press-me" onclick="set-text:#click-result|Clicked!">Press me</button>
 		<span id="click-result">Unclicked</span>
+		<!-- Engine-native elements (UI-8): a render texture's live feed, a sheet sprite, a flipbook, a binding. -->
+		<viewport id="feed" src="Assets/Textures/RenderTexture/StudioFeed.rendertexture"/>
+		<div id="engine-row">
+			<sprite id="coin" sheet="Assets/Textures/Sprites/Coins.spritesheet" name="Coins_0"/>
+			<sprite id="hero" anim="Assets/Textures/Sprites/Hero_Walk.spriteanim"/>
+			<span id="jump-label">Jump <input-glyph id="jump" action="Jump"/></span>
+		</div>
 	</div>
 </body>
 </rml>

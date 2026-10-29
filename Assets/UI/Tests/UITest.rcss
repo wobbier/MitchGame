@@ -101,3 +101,47 @@ p {
 	top: 320px;
 	color: #B8C2D9;
 }
+
+/* Engine-native elements (UI-8). */
+#feed {
+	position: absolute;
+	left: 440px;
+	top: 140px;
+	width: 160px;
+	height: 90px;
+	border-radius: 6px;
+}
+
+#engine-row {
+	position: absolute;
+	left: 440px;
+	top: 236px;
+	width: 260px;
+	height: 40px;
+}
+
+#coin {
+	width: 32px;
+	height: 32px;
+}
+
+#hero {
+	width: 40px;
+	height: 40px;
+	margin-left: 4px;
+}
+
+#jump-label {
+	margin-left: 8px;
+	color: #B8C2D9;
+	font-size: 16px;
+}
+
+input-glyph {
+	display: inline-block;
+	padding: 2px 8px;
+	background-color: #F2F4F8;
+	border-radius: 4px;
+	color: #1B2433;
+	font-size: 15px;
+}
