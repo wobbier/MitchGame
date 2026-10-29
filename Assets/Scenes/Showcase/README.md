@@ -16,6 +16,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 | `Lights2D.lvl` | Lit, normal-mapped sprites (LOOK-S9): a tiled stone wall and crates with generated normal maps next to three flat crates, a rotated crate (its relief turns with it) and the pixel hero, under three coloured point lights (two bob) and a dim moonlight; orthographic camera |
 | `Toon.lvl` | The Custom Lit shader graph target (LOOK-S7): the stock `Examples/Toon.shadergraph` on spheres, a cube and the ground (a hard band, a soft band, a lit-side rim), with outlines, banded shadows from the sun and two coloured point lights through the Additional Lights node |
 | `WorldText.lvl` | World-space text (LOOK-S12): a sign, a floating title, billboarded name tags and a damage number over two spheres, lit text under a lamp, and small text far away, all signed-distance glyphs |
+| `Look_<Name>.lvl` (8) | The look presets (LOOK-S0): Realistic, StylizedLit, Toon, FlatUnlit, Pixel2D, PS1, N64, RetroPC, one per preset on the same diorama (`Assets/Scenes/Tests/LookBase.lvl`); rebuilt by `Tools/BuildLookShowcases.edscript` (see `Engine/Docs/Look-Presets.md`) |
 
 Scripts live in `Assets/Scripts/Showcase/` (`PlayerController`, `FollowCamera`, `Chaser`, `Spinner`, `Bobber`). The playground's navmesh is baked to `Playground.NavSurface.navmesh` (select NavSurface > Bake, or Navigation.BakeAll).
 

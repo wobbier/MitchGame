@@ -1,0 +1,21 @@
+# Look presets (LOOK-S0): applying a look sets the scene's camera and post-processing and swaps
+# stock materials (keeping each mesh's colour); a second preset overrides the first.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/LookBase.lvl --editor-exec Assets/Scenes/Tests/LookFlows.edscript
+wait 20
+assert-field Main Camera | Camera.RenderScale | 1.0
+look-apply Toon | materials
+wait 5
+assert-field Main Camera | PostProcess.Outline | true
+assert-field Main Camera | PostProcess.TemporalAA | false
+assert-field Red Sphere | Mesh.Material.Type | "ShaderGraphMaterial"
+assert-field Red Sphere | Mesh.Material.Graph | "Assets/ShaderGraphs/Examples/Toon.shadergraph"
+assert-field Red Sphere | Mesh.Material.Params.Base Color.0 | 0.85 ~ 0.001
+look-apply PS1
+wait 5
+assert-field Main Camera | Camera.RenderScale | 0.33 ~ 0.001
+assert-field Main Camera | Camera.Upscale | "Nearest"
+assert-field Main Camera | PostProcess.Outline | false
+screenshot .tmp/EditorFlows/LookFlows_ps1.png
+look-project Pixel-2D
+look-project
+quit

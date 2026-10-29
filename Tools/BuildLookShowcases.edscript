@@ -1,0 +1,38 @@
+# Builds Assets/Scenes/Showcase/Look_<Name>.lvl from Assets/Scenes/Tests/LookBase.lvl, one per
+# look preset (LOOK-S0), through the editor's own look-apply (cameras, post and materials):
+#   Engine/Tools/Headless.sh ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/LookBase.lvl --editor-exec Tools/BuildLookShowcases.edscript
+# Then accept the looks: Engine/Tools/ScreenshotRegression.py ... --update Assets/Scenes/Showcase/Look_*.lvl
+wait 20
+look-apply Realistic | materials
+save-as Assets/Scenes/Showcase/Look_Realistic.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply Stylized-Lit | materials
+save-as Assets/Scenes/Showcase/Look_StylizedLit.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply Toon | materials
+save-as Assets/Scenes/Showcase/Look_Toon.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply Flat/Unlit | materials
+save-as Assets/Scenes/Showcase/Look_FlatUnlit.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply Pixel-2D | materials
+save-as Assets/Scenes/Showcase/Look_Pixel2D.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply PS1 | materials
+save-as Assets/Scenes/Showcase/Look_PS1.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply N64 | materials
+save-as Assets/Scenes/Showcase/Look_N64.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+look-apply Retro-PC | materials
+save-as Assets/Scenes/Showcase/Look_RetroPC.lvl
+load Assets/Scenes/Tests/LookBase.lvl
+wait 20
+quit

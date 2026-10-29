@@ -1,0 +1,566 @@
+{
+    "AssetReferences": {
+        "ef35dc07b9cd6c37": "Assets/Textures/LUTs/Vintage.cube"
+    },
+    "Cores": [],
+    "Entities": [
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        2.0,
+                        -7.0
+                    ],
+                    "Rotation": [
+                        0.10452846437692642,
+                        0.0,
+                        0.0,
+                        0.9945219159126282
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "AmbientOcclusion": false,
+                    "ClearColor": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "ClearType": "Procedural",
+                    "DynamicMinScale": 0.5,
+                    "DynamicResolution": false,
+                    "DynamicTargetMs": 16.600000381469727,
+                    "Far": 150.0,
+                    "FieldOfView": 60.0,
+                    "IsCurrent": true,
+                    "MatchMainCamera": false,
+                    "Near": 0.10000000149011612,
+                    "OrthographicSize": 5.0,
+                    "PixelPerfect": false,
+                    "PixelSnap": true,
+                    "PixelsPerUnit": 16.0,
+                    "ProceduralSky": {
+                        "CloudAltitude": 1500.0,
+                        "CloudCoverage": 0.4000000059604645,
+                        "CloudDensity": 1.0,
+                        "CloudThickness": 2500.0,
+                        "Latitude": -6.0,
+                        "Month": 5,
+                        "MoonAscendingNode": 125.08000183105469,
+                        "MoonBrightness": 1.0,
+                        "MoonOrbitInclination": 5.144999980926514,
+                        "MoonPhase": 0.4000000059604645,
+                        "MoonSize": 3.0,
+                        "StarBrightness": 1.0,
+                        "SunSize": 1.5,
+                        "Time": 15.0,
+                        "TimeScale": 0.0,
+                        "Turbidity": 1.899999976158142,
+                        "WindDirection": 60.0,
+                        "WindSpeed": 8.0
+                    },
+                    "Projection": "Perspective",
+                    "ReferenceResolution": [
+                        320.0,
+                        180.0
+                    ],
+                    "RenderScale": 0.33000001311302185,
+                    "SunShadows": true,
+                    "TargetTexture": "",
+                    "Type": "Camera",
+                    "UpdateInterval": 1,
+                    "Upscale": "Nearest",
+                    "UpscaleSharpness": 0.5,
+                    "Viewport": [
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.0
+                    ],
+                    "VolumetricFog": false,
+                    "Zoom": 50.0
+                },
+                {
+                    "AOIntensity": 1.0,
+                    "AORadius": 0.5,
+                    "AmbientOcclusion": false,
+                    "AutoExposure": false,
+                    "AutoExposureMaxEV": 8.0,
+                    "AutoExposureMinEV": -4.0,
+                    "AutoExposureSpeed": 2.0,
+                    "Bloom": false,
+                    "BloomIntensity": 0.05000000074505806,
+                    "BloomRadius": 1.0,
+                    "BloomThreshold": 1.0,
+                    "Contrast": 1.100000023841858,
+                    "DepthOfField": false,
+                    "DoFAperture": 2.799999952316284,
+                    "DoFDebugCoC": false,
+                    "DoFFocusDistance": 8.0,
+                    "DoFMaxBlurRadius": 16.0,
+                    "DoFSensorHeight": 24.0,
+                    "DoFSplitDiopter": false,
+                    "DoFSplitFeather": 0.014999999664723873,
+                    "DoFSplitFocusDistance": 18.0,
+                    "DoFSplitPosition": 0.5,
+                    "ExposureCompensation": 0.0,
+                    "FXAA": false,
+                    "Fog": false,
+                    "FogAnisotropy": 0.6000000238418579,
+                    "FogColor": [
+                        0.550000011920929,
+                        0.6200000047683716,
+                        0.7200000286102295
+                    ],
+                    "FogDensity": 0.019999999552965164,
+                    "FogHeight": 0.0,
+                    "FogHeightFalloff": 0.15000000596046448,
+                    "FogLocalAnisotropy": 0.0,
+                    "FogMaxOpacity": 1.0,
+                    "FogStartDistance": 0.0,
+                    "FogSunIntensity": 1.0,
+                    "Gain": 1.0,
+                    "Gamma": 1.0,
+                    "GraphParams": {},
+                    "Graphs": [],
+                    "Lift": 0.0,
+                    "Lut": "Assets/Textures/LUTs/Vintage.cube",
+                    "LutContribution": 0.699999988079071,
+                    "Outline": false,
+                    "OutlineColor": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "OutlineDepthThreshold": 0.10000000149011612,
+                    "OutlineNormalThreshold": 0.5,
+                    "OutlineThickness": 1.0,
+                    "Saturation": 1.0,
+                    "Temperature": 0.0,
+                    "TemporalAA": false,
+                    "TemporalSharpness": 0.25,
+                    "Tint": 0.0,
+                    "Tonemapper": "Reinhard",
+                    "Type": "PostProcess",
+                    "VignetteIntensity": 0.30000001192092896,
+                    "VignetteSmoothness": 0.6000000238418579,
+                    "VolumetricDistance": 60.0,
+                    "VolumetricFog": false,
+                    "VolumetricSteps": 24,
+                    "VolumetricTemporal": true
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000001",
+            "Name": "Main Camera"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        10.0,
+                        -5.0
+                    ],
+                    "Rotation": [
+                        0.3417815864086151,
+                        0.28073301911354065,
+                        -0.10776332020759583,
+                        0.8903714418411255
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Color": [
+                        1.0,
+                        0.949999988079071,
+                        0.8600000143051147
+                    ],
+                    "DirectionalSource": "Automatic",
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 2.200000047683716,
+                    "Length": 1.2000000476837158,
+                    "LightType": "Directional",
+                    "OuterConeAngle": 30.0,
+                    "Radius": 0.02500000037252903,
+                    "Range": 10.0,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 40.0,
+                    "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000002",
+            "Name": "Sun"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        6.0,
+                        1.0,
+                        6.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.5,
+                            0.6000000238418579,
+                            0.41999998688697815
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.949999988079071,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Plane",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000003",
+            "Name": "Ground"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -2.0,
+                        0.800000011920929,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.800000011920929,
+                        0.800000011920929,
+                        0.800000011920929
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8500000238418579,
+                            0.2199999988079071,
+                            0.18000000715255737
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.3499999940395355,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000004",
+            "Name": "Red Sphere"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        0.0,
+                        0.699999988079071,
+                        0.800000011920929
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.258819043636322,
+                        0.0,
+                        0.9659258127212524
+                    ],
+                    "Scale": [
+                        0.699999988079071,
+                        0.699999988079071,
+                        0.699999988079071
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.25,
+                            0.44999998807907104,
+                            0.8500000238418579
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000005",
+            "Name": "Blue Cube"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        2.0,
+                        0.6000000238418579,
+                        -0.30000001192092896
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.6000000238418579,
+                        0.6000000238418579,
+                        0.6000000238418579
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.949999988079071,
+                            0.75,
+                            0.30000001192092896
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 1.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.25,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000006",
+            "Name": "Gold Sphere"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        1.0,
+                        1.5,
+                        2.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.25,
+                        1.5,
+                        0.25
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.8500000238418579,
+                            0.8199999928474426,
+                            0.7799999713897705
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.800000011920929,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Cube",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000007",
+            "Name": "Column"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -0.800000011920929,
+                        1.0,
+                        -1.5
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": false,
+                    "Color": [
+                        1.0,
+                        0.550000011920929,
+                        0.25
+                    ],
+                    "DirectionalSource": "Automatic",
+                    "InnerConeAngle": 20.0,
+                    "Intensity": 5.0,
+                    "Length": 1.2000000476837158,
+                    "LightType": "Point",
+                    "OuterConeAngle": 30.0,
+                    "Radius": 0.02500000037252903,
+                    "Range": 4.0,
+                    "RectangleHeight": 1.0,
+                    "RectangleWidth": 2.0,
+                    "ShadowBias": 0.5,
+                    "ShadowDistance": 80.0,
+                    "ShadowNormalBias": 2.5,
+                    "Size": [
+                        1.0,
+                        0.20000000298023224,
+                        0.20000000298023224
+                    ],
+                    "Type": "Light"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "100c000000000008",
+            "Name": "Lamp"
+        }
+    ],
+    "Version": 2
+}
