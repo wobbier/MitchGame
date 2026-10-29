@@ -1,0 +1,24 @@
+# High DPI and keyboard navigation (ED-1): the editor at a 2x UI scale (fonts rebuilt at twice the
+# size, spacing with them), and a panel driven by the keyboard alone (the tour's Next button).
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/DpiFlows.edscript
+wait 20
+preference Appearance.UIScale | 2.0
+wait 40
+screenshot .tmp/EditorFlows/DpiFlows_2x.png
+preference Appearance.UIScale | 1.0
+wait 40
+screenshot .tmp/EditorFlows/DpiFlows_1x.png
+
+# Keyboard only: focus the tour, Tab to its first enabled button (Next), Space presses it.
+action Help.Tour
+wait-log Tour: step 1/6 Welcome to Havana | 60
+wait 3
+imgui-focus Tour
+wait 2
+imgui-key Tab
+wait 2
+imgui-key Space
+wait-log Tour: step 2/6 The scene | 120
+imgui-key Space
+wait-log Tour: step 3/6 Properties | 120
+quit
