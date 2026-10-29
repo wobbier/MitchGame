@@ -1,0 +1,15 @@
+# LOD crossfade (ME-279): pulling the camera back switches every plinth to a coarser level, and the
+# switch dithers across a quarter second instead of popping. Screenshots: just before, mid-fade
+# and settled.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/LodTest.lvl --editor-exec Assets/Scenes/Tests/LodCrossfadeFlows.edscript
+wait 30
+play
+wait 30
+screenshot .tmp/EditorFlows/LodCrossfade_before.png
+select Main Camera
+set Transform.Position [0.0, 1.6, -14.0]
+wait 4
+screenshot .tmp/EditorFlows/LodCrossfade_mid.png
+wait 60
+screenshot .tmp/EditorFlows/LodCrossfade_after.png
+stop
