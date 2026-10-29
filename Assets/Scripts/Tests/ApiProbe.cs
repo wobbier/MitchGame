@@ -65,5 +65,24 @@ public class ApiProbe : Script
         body.Velocity = new Vector2(4f, 0f);
         await Async.Frames(2, this);
         Debug.Log($"ApiProbe: 2D ray hits ground {down && hit2d.Entity == ground}, point {Physics2D.OverlapPoint(new Vector2(20f, -2f)).Length}, ball moving right {body.Velocity.x > 1f}");
+
+        // (e) The main camera: a point straight ahead lands mid-screen, one to its right lands right
+        // of centre, and the ray back through that pixel passes through the point.
+        var cam = World.Find("Main Camera").GetComponent<Camera>();
+        Vector2 size = cam.OutputSize;
+        Vector3 ahead = cam.transform.Position + cam.transform.Forward * 10f;
+        Vector3 onScreen = cam.WorldToScreen(ahead);
+        Vector3 right = cam.WorldToScreen(ahead + cam.transform.Right * 2f);
+        cam.ScreenToRay(new Vector2(right.x, right.y), out Vector3 origin, out Vector3 dir);
+        Vector3 target = ahead + cam.transform.Right * 2f;
+        float miss = Vector3.Cross(target - origin, dir).Length();
+        bool centred = System.Math.Abs(onScreen.x - size.x / 2f) < 1f && System.Math.Abs(onScreen.y - size.y / 2f) < 1f;
+        Debug.Log($"ApiProbe: camera centred {centred}, depth {onScreen.z:F1}, right of centre {right.x > size.x / 2f}, ray through point {miss < 0.01f}, fov {cam.FieldOfView:F0}");
+        // (d) and lights: a mesh's own material and a light's fields.
+        var mesh = World.Find("Probe Cube").GetComponent<Mesh>();
+        mesh.SetMaterial("DiffuseColor", new Vector3(1f, 0f, 0f));
+        var light = World.Find("Probe Parent").GetComponent<Light>();
+        light.Intensity = 3.5f;
+        Debug.Log($"ApiProbe: material red {mesh.GetMaterial<Vector3>("DiffuseColor").x:F1}{mesh.GetMaterial<Vector3>("DiffuseColor").y:F1}, light {light.Intensity:F1}");
     }
 }

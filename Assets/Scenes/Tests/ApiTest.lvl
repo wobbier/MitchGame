@@ -155,6 +155,43 @@
                     "Radius": 0.5
                 }
             ]
+        },
+        {
+            "Name": "Probe Cube",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.8,
+                            0.8,
+                            0.8
+                        ],
+                        "Metallic": 0.0,
+                        "Roughness": 0.5
+                    }
+                }
+            ]
         }
     ]
 }
