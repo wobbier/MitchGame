@@ -1,0 +1,33 @@
+# Help and onboarding (ED-3): the tour steps through the panels (opening each), What's New shows
+# the release notes, and Help > Documentation opens the docs (logged in unattended runs).
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/HelpFlows.edscript
+wait 20
+assert-window Tour | false
+action Help.Tour
+wait-log Tour: step 1/6 Welcome to Havana | 60
+wait 3
+assert-window Tour | true
+screenshot .tmp/EditorFlows/HelpFlows_tour.png
+action Help.TourNext
+wait-log Tour: step 2/6 The scene | 60
+action Help.TourNext
+wait-log Tour: step 3/6 Properties | 60
+assert-window Properties | true
+action Help.TourBack
+wait-log Tour: step 2/6 The scene | 60
+action Help.TourNext
+action Help.TourNext
+action Help.TourNext
+action Help.TourNext
+wait-log Tour: step 6/6 Play | 60
+action Help.TourNext
+wait-log Tour: done | 60
+assert-window Tour | false
+
+action Help.WhatsNew
+wait 3
+assert-window What's New | true
+screenshot .tmp/EditorFlows/HelpFlows_whatsnew.png
+action Help.Documentation
+wait-log Help: Engine/Docs/README.md | 60
+quit
