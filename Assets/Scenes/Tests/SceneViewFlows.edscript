@@ -1,0 +1,48 @@
+# Scene view (ED-8): Drop to Surface settles the selection onto what's below it (one undo step),
+# and camera bookmarks restore the World View camera.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/SceneViewFlows.edscript
+wait 20
+focus-window World View
+
+# Onto the ground plane (top at y = -1): the 2 m cube's centre ends at 0.
+select Right Cube
+set Transform.Position [4, 5, 2]
+action Edit.DropToSurface
+wait 2
+assert-field Right Cube | Transform.Position | [4, 0, 2] ~ 0.01
+undo
+wait 2
+assert-field Right Cube | Transform.Position | [4, 5, 2] ~ 0.01
+
+# Over Parent it lands on Child (a 1 m cube centred at y = 2.5, so its top is at 3): centre at 4.
+set Transform.Position [-3, 10, 0]
+action Edit.DropToSurface
+wait 2
+assert-field Right Cube | Transform.Position | [-3, 4, 0] ~ 0.01
+screenshot .tmp/overhaul/shots/drop_to_surface.png
+
+# Bookmarks: go to a stored one, store it in another slot, move away, come back.
+preference Camera.Bookmarks | {"Assets/Scenes/Tests/HierarchyTest.lvl": [{"Position": [1, 2, 3], "Pitch": 10, "Yaw": 20}]}
+action View.GoToBookmark1
+wait 2
+assert-scene-camera [1, 2, 3] ~ 0.01
+action View.SetBookmark2
+action View.FrameSelected
+wait 60
+assert-scene-camera != [1, 2, 3]
+action View.GoToBookmark2
+wait 2
+assert-scene-camera [1, 2, 3] ~ 0.01
+
+# The grid on the XY plane with 0.5 m cells (a capture to look at; preferences don't persist here).
+preference Camera.Bookmarks | {"Assets/Scenes/Tests/HierarchyTest.lvl": [null, null, {"Position": [0, 1, -8], "Pitch": 0, "Yaw": 0}]}
+action View.GoToBookmark3
+wait 5
+view-option DebugDraw | true
+preference Scene.ShowGrid | true
+preference Scene.GridPlane | 1
+preference Scene.GridSpacing | 0.5
+wait 3
+screenshot .tmp/overhaul/shots/grid_xy.png
+preference Scene.GridPlane | 0
+preference Scene.GridSpacing | 0
