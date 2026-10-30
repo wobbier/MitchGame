@@ -1,0 +1,20 @@
+# Normal map slots (ME-239): a normal map with a name that doesn't say so cooks as colour (BC1)
+# until it's put in a material's Normal slot, which marks it as a normal map and recooks it (BC5).
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/NormalSlotFlows.edscript
+wait 20
+# Its import settings are written first: Auto format whatever the project's look defaults to
+copy-file Assets/Textures/Sprites/Stone_Normal.png | Assets/Textures/Tests/NormalSlot/Bumps.png
+write-file Assets/Textures/Tests/NormalSlot/Bumps.png.meta | {"FileType": "png", "Format": "Auto", "MIPs": true, "Quality": "d", "Type": "Default"}
+material-texture Right Cube | Diffuse | Assets/Textures/Tests/NormalSlot/Bumps.png
+wait 5
+assert-texture-format Assets/Textures/Tests/NormalSlot/Bumps.png | !BC5
+material-texture Right Cube | Normal | Assets/Textures/Tests/NormalSlot/Bumps.png
+wait-log is in a normal map slot: marked as a normal map | 600
+wait-log Hot reloaded: | 600
+wait 5
+assert-texture-format Assets/Textures/Tests/NormalSlot/Bumps.png | BC5
+# Already a normal map: nothing happens the second time
+material-texture Ground | Normal | Assets/Textures/Tests/NormalSlot/Bumps.png
+wait 5
+assert-texture-format Assets/Textures/Tests/NormalSlot/Bumps.png | BC5
+delete-file Assets/Textures/Tests/NormalSlot
