@@ -295,7 +295,3 @@ Timestamps are raw CPU ticks; convert with `ticks * 1000.0 / freq_hz` for millis
 - Baseline: p50=4ms, p95=5ms — engine idles at ~240fps with minimal scene
 - Only 4 event descriptions registered (CPU/GPU/Render Frame + `EditorApp::OnUpdate`) — most engine systems have no `OPTICK_EVENT` marks yet
 - One 172ms spike traced to `EditorApp::OnUpdate` — likely a first-frame asset load; root cause invisible without deeper marks
-
-## TODO / Revisit
-
-- **`EntityID::Value()` hardcoded masks** (`Source/ECS/EntityID.h`): the bit masks `0xFFFFULL` (counter) and `0x0000FFFFFFFFFFFFULL` (index) are hardcoded rather than derived from `MITCH_ENTITY_ID_COUNTER_BIT_COUNT` (16) / `MITCH_ENTITY_ID_INDEX_BIT_COUNT` (48). If those bit-count macros ever change, the masks silently drift out of sync. Replace with masks computed from the macros (e.g. `((1ULL << N) - 1)`).
