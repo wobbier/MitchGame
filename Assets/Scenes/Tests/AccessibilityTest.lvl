@@ -1,0 +1,180 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "GUID": "acce55000000001a",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.1,
+                        0.12,
+                        0.16
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "GUID": "acce55000000003a",
+            "Name": "Sun",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        6,
+                        -4
+                    ],
+                    "Rotation": [
+                        0.25,
+                        -0.33,
+                        0.09,
+                        0.905
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1,
+                        0.95,
+                        0.9
+                    ],
+                    "Intensity": 3.0
+                }
+            ]
+        },
+        {
+            "GUID": "acce55000000002a",
+            "Name": "Floor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        6,
+                        0.1,
+                        6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.4,
+                            0.5
+                        ],
+                        "Roughness": 0.8,
+                        "Metallic": 0.0
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "acce55000000004a",
+            "Name": "Captions",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "UIDocument",
+                    "FilePath": "Assets/UI/Captions/Captions.rml",
+                    "Visible": true,
+                    "SortOrder": 20
+                }
+            ]
+        },
+        {
+            "GUID": "acce55000000005a",
+            "Name": "Options",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "UIDocument",
+                    "FilePath": "Assets/UI/Options/Options.rml",
+                    "Visible": false,
+                    "SortOrder": 30
+                }
+            ]
+        }
+    ]
+}

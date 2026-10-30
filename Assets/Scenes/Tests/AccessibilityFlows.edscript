@@ -1,0 +1,42 @@
+# Accessibility (PLAY-7): C# Captions in the stock caption strip, honouring the player's
+# Accessibility settings (speaker names, size, backdrop, subtitles off), the high-contrast class on
+# documents, and the new rows on the Options menu's Accessibility page.
+#   Havana --scene Assets/Scenes/Tests/AccessibilityTest.lvl --editor-exec Assets/Scenes/Tests/AccessibilityFlows.edscript
+wait 20
+play
+assert-playing 1
+wait 30
+console captions say Guard | Who goes there?
+console captions sound door creaks
+wait 3
+ui-assert-text #caption-speaker-0 | Guard:
+ui-assert-text #caption-text-0 | Who goes there?
+ui-assert-visible #caption-speaker-0 | 1
+ui-assert-text #caption-text-1 | [door creaks]
+ui-assert-visible #caption-2 | 0
+screenshot .tmp/overhaul/shots/captions.png
+
+# Speaker names off: the line stays, the name goes.
+settings-set Accessibility.SpeakerNames | false
+console captions refresh
+wait 2
+ui-assert-visible #caption-speaker-0 | 0
+ui-assert-text #caption-text-0 | Who goes there?
+
+# High contrast reaches every document, including ones loaded later.
+ui-assert-class #captions-body | high-contrast | 0
+settings-set Accessibility.HighContrast | true
+wait 2
+ui-assert-class #captions-body | high-contrast | 1
+screenshot .tmp/overhaul/shots/captions_contrast.png
+
+# Subtitles off: new lines don't show.
+console captions clear
+settings-set Accessibility.Subtitles | false
+console captions say Guard | You shouldn't see this
+wait 2
+ui-assert-visible #caption-0 | 0
+settings-set Accessibility.Subtitles | true
+settings-set Accessibility.SpeakerNames | true
+settings-set Accessibility.HighContrast | false
+stop
