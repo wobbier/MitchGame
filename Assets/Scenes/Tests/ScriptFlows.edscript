@@ -96,6 +96,17 @@ assert-playing 0
 replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f | float version = 1.0f;
 wait-log Scripts: hot reloaded | 3600
 assert-build-errors 0
+
+# Create > C# Script's templates (ME-237) build, in the project's namespace; then they're removed
+create-script Assets/Scripts/Tests/Templates | Script, Networked Script, UI Controller, Data Asset, Class
+wait-log Scripts: hot reloaded | 3600
+assert-build-errors 0
+assert-script-type NewScript
+assert-script-type NewNetworkedScript
+assert-script-type NewUIController
+assert-script-type NewDataAsset
+delete-file Assets/Scripts/Tests/Templates
+wait-log Scripts: hot reloaded | 3600
 play
 wait 5
 assert-playing 1
