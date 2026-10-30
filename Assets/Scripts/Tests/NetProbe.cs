@@ -64,10 +64,36 @@ public partial class NetProbe : Script
             DashCooldown = 2f;
             Dashes++;
             Net.PredictedEvent(this, DashFx, Dashes);
+            Shoot();
         }
 
         character ??= GetComponent<CharacterController>();
         character?.SetMoveInput(DashCooldown > 1.75f ? new Vector3(0f, 0f, 1f) : Vector3.Zero);
+    }
+
+    // NET-15: the dash also fires a shot ahead (+Z) at "NetProbe Target". The server judges it at
+    // the view the owner's command was sent from; the owner predicts it (once, not when
+    // resimulating), as a game would for impact FX.
+    private void Shoot()
+    {
+        if (Net.IsResimulating)
+        {
+            return;
+        }
+        var target = World.Find("NetProbe Target (off camera)");
+        var origin = GetComponent<Transform>().WorldPosition + new Vector3(0f, 0.5f, 0f);
+        var hit = Net.LagCompensatedRaycast(Entity, origin, new Vector3(0f, 0f, 1f), 50f);
+        bool onTarget = hit.Hit && hit.Entity == target;
+        if (Net.IsServer)
+        {
+            Debug.Log(onTarget && hit.Rewound && !hit.Rejected ? $"NetProbe: lag-compensated hit (view tick {Net.Command(Entity).ViewTick:0.0}, server tick {Net.Tick})"
+                : $"NetProbe: lag-compensated shot FAILED ({hit}, view tick {Net.Command(Entity).ViewTick})");
+        }
+        else if (Net.IsClient)
+        {
+            Debug.Log(onTarget && !hit.Rewound ? $"NetProbe: predicted hit (rtt {Net.RoundTripMs:0} ms, predict impacts {Net.PredictImpacts})"
+                : $"NetProbe: predicted shot FAILED ({hit})");
+        }
     }
 
     public override void OnNetEvent(int eventId, int value)

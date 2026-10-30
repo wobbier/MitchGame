@@ -565,6 +565,37 @@
                     ]
                 }
             ]
+        },
+        {
+            "GUID": "4e37000000000302",
+            "Name": "NetProbe Target (off camera)",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        1.0,
+                        -24.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "NetHitbox",
+                    "Radius": 0.4,
+                    "Height": 1.8
+                }
+            ]
         }
     ]
 }
