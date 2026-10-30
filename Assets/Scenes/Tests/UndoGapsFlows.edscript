@@ -1,0 +1,80 @@
+# --scene Assets/Scenes/Tests/HierarchyTest.lvl
+# ED-13: undo for asset rename / move / delete (and restoring from the Trash), Project Settings
+# edits and Prefab Apply. Everything it touches lives under .tmp/Tests/UndoGaps.
+wait 20
+delete-file .tmp/Tests/UndoGaps | optional
+write-file .tmp/Tests/UndoGaps/Note.txt | hello
+write-file .tmp/Tests/UndoGaps/Folder/Keep.txt | keep
+wait 2
+
+# Rename: undo puts the old name back, redo the new one.
+asset-rename .tmp/Tests/UndoGaps/Note.txt | Renamed.txt
+assert-file .tmp/Tests/UndoGaps/Renamed.txt | 1
+undo
+assert-file .tmp/Tests/UndoGaps/Note.txt | 1
+assert-file .tmp/Tests/UndoGaps/Renamed.txt | 0
+redo
+assert-file .tmp/Tests/UndoGaps/Renamed.txt | 1
+undo
+
+# Move into a folder.
+asset-move .tmp/Tests/UndoGaps/Note.txt | .tmp/Tests/UndoGaps/Folder
+assert-file .tmp/Tests/UndoGaps/Folder/Note.txt | 1
+undo
+assert-file .tmp/Tests/UndoGaps/Note.txt | 1
+assert-file .tmp/Tests/UndoGaps/Folder/Note.txt | 0
+
+# Delete goes to the Trash; undo brings it back with its contents.
+asset-delete .tmp/Tests/UndoGaps/Note.txt
+assert-file .tmp/Tests/UndoGaps/Note.txt | 0
+undo
+assert-file-contains .tmp/Tests/UndoGaps/Note.txt | hello
+redo
+assert-file .tmp/Tests/UndoGaps/Note.txt | 0
+# The Trash window lists it; Restore from there is undoable too.
+show-window Asset Browser
+asset-trash-window
+wait 10
+screenshot .tmp/EditorFlows/UndoGapsTrash.png
+asset-restore .tmp/Tests/UndoGaps/Note.txt
+assert-file-contains .tmp/Tests/UndoGaps/Note.txt | hello
+undo
+assert-file .tmp/Tests/UndoGaps/Note.txt | 0
+undo
+assert-file .tmp/Tests/UndoGaps/Note.txt | 1
+
+# Project Settings: each saved edit is a step (saves go to a scratch file, not the project's).
+project-settings-file .tmp/Tests/UndoGaps/ProjectSettings.json
+project-set Gravity | [0,-7,0]
+wait 2
+select Parent
+rename RenamedParent
+project-set Gravity | [0,-5,0]
+wait 2
+project-assert Gravity | [0,-5,0]
+undo
+project-assert Gravity | [0,-7,0]
+assert-file-contains .tmp/Tests/UndoGaps/ProjectSettings.json | -7.0
+redo
+project-assert Gravity | [0,-5,0]
+undo
+undo
+assert-exists Parent
+
+# Prefab Apply: undo restores the prefab and the other instance, and the applying instance keeps
+# its value (an override again).
+create-prefab Parent | .tmp/Tests/UndoGaps/Parent.prefab
+instantiate .tmp/Tests/UndoGaps/Parent.prefab
+rename Instance2
+select Parent/Child
+set Transform.Scale [0.25,0.25,0.25]
+prefab-apply Parent
+assert-field Instance2/Child | Transform.Scale | [0.25,0.25,0.25]
+assert-overridden Parent/Child | Transform.Scale | 0
+undo
+assert-field Instance2/Child | Transform.Scale | [0.5,0.5,0.5]
+assert-field Parent/Child | Transform.Scale | [0.25,0.25,0.25]
+assert-overridden Parent/Child | Transform.Scale | 1
+redo
+assert-field Instance2/Child | Transform.Scale | [0.25,0.25,0.25]
+assert-overridden Parent/Child | Transform.Scale | 0
