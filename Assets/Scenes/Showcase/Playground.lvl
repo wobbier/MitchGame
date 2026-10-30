@@ -56,8 +56,38 @@
                 },
                 {
                     "Type": "ScriptComponent",
-                    "ScriptName": "FollowCamera",
-                    "ScriptFields": "{\"Target\": \"Player\", \"Distance\": 11.0, \"Height\": 1.6, \"Yaw\": 30.0, \"Pitch\": 26.0}"
+                    "ScriptName": "CameraBrain",
+                    "ScriptFields": "{\"DefaultBlend\": 1.0}"
+                }
+            ]
+        },
+        {
+            "GUID": "3c9e1b7a5d2f4e60",
+            "Name": "Camera Rig",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        4.0,
+                        -9.0
+                    ],
+                    "Rotation": [
+                        20.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "VirtualCamera",
+                    "ScriptFields": "{\"Priority\": 10, \"Mode\": 2, \"Target\": \"Player\", \"Distance\": 11.0, \"Height\": 1.6, \"Yaw\": 30.0, \"Pitch\": 26.0, \"Sensitivity\": 0.15, \"FollowHalfLife\": 0.05, \"AvoidWalls\": true, \"BlendSeconds\": 0.0}"
                 }
             ]
         },

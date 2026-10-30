@@ -1,0 +1,182 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "GUID": "7b2c4d6e8f101201",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        5,
+                        -10
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.12,
+                        0.14,
+                        0.18
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "CameraBrain",
+                    "ScriptFields": "{\"DefaultBlend\": 1.0}"
+                }
+            ]
+        },
+        {
+            "GUID": "7b2c4d6e8f101202",
+            "Name": "Target",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.9,
+                            0.5,
+                            0.2
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7b2c4d6e8f101203",
+            "Name": "Ground",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        10,
+                        0.5,
+                        10
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.5,
+                            0.55,
+                            0.6
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "7b2c4d6e8f101205",
+            "Name": "Wide",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        5,
+                        -10
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "VirtualCamera",
+                    "ScriptFields": "{\"Priority\": 10, \"Mode\": 0, \"LookAt\": \"Target\", \"BlendSeconds\": 0.0}"
+                }
+            ]
+        },
+        {
+            "GUID": "7b2c4d6e8f101206",
+            "Name": "Close",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        4,
+                        2,
+                        -4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "VirtualCamera",
+                    "ScriptFields": "{\"Priority\": 0, \"Mode\": 0, \"LookAt\": \"Target\", \"BlendSeconds\": 2.0, \"FieldOfView\": 40.0}"
+                }
+            ]
+        }
+    ]
+}

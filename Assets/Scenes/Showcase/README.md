@@ -5,7 +5,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 | Scene | What it shows |
 |-------|---------------|
 | `Lighting.lvl` | PBR metallic / roughness sphere grid, textured exhibits, neon emissives with bloom, coloured point lights on bobbing orbs, a shadowed spot light, a fire with soft particles, SSAO, procedural sky ambient, temporal anti-aliasing |
-| `Playground.lvl` | Playable: third-person `CharacterController` (Move / Look / Jump / Sprint actions), orbit follow camera, crate stacks, a domino run, a kinematic sweeper in a ball pit, a wrecking ball on a distance joint, a camp fire with 3D audio, Synty props, and three `NavMeshAgent` chasers that path to the player |
+| `Playground.lvl` | Playable: third-person `CharacterController` (Move / Look / Jump / Sprint actions), orbit camera rig (the starter kit's `CameraBrain` + an Orbit `VirtualCamera`, GAME-1), crate stacks, a domino run, a kinematic sweeper in a ball pit, a wrecking ball on a distance joint, a camp fire with 3D audio, Synty props, and three `NavMeshAgent` chasers that path to the player |
 | `Fog.lvl` | Volumetric height fog at dusk: a low sun shining through a slatted wall towards the camera (light shafts and shadowed volumes), a street lamp's shadowed spot cone, lanterns glowing in the haze, fogged transparents, accumulated over frames (temporal volumetric fog) |
 | `Physics2D.lvl` | Box2D, drawn with sprites (LOOK-S2): a 55-crate pyramid, a motorised windmill blade with balls dropping on it, a hinged plank bridge with crates, 9-slice stone ground and walls, a sky backdrop; orthographic camera. The art is `Assets/Textures/Sprites/` (`python3 Tools/BuildSpriteArt.py`) |
 | `ShaderGraph.lvl` | Shader graphs (`Assets/ShaderGraphs/Examples/`): a dissolving sphere (alpha clip with an emissive edge, also in its shadow), a hologram (unlit additive fresnel and scan lines), a wind-swayed post (vertex offset with matching shadows), triplanar concrete, water from scrolling noise normals, a graph scorch decal, a graph fire particle system and a vignette post pass |
@@ -18,7 +18,7 @@ Manual QA scenes and screenshot-regression references for the engine's major sys
 | `WorldText.lvl` | World-space text (LOOK-S12): a sign, a floating title, billboarded name tags and a damage number over two spheres, lit text under a lamp, and small text far away, all signed-distance glyphs |
 | `Look_<Name>.lvl` (8) | The look presets (LOOK-S0): Realistic, StylizedLit, Toon, FlatUnlit, Pixel2D, PS1, N64, RetroPC, one per preset on the same diorama (`Assets/Scenes/Tests/LookBase.lvl`); rebuilt by `Tools/BuildLookShowcases.edscript` (see `Engine/Docs/Look-Presets.md`) |
 
-Scripts live in `Assets/Scripts/Showcase/` (`PlayerController`, `FollowCamera`, `Chaser`, `Spinner`, `Bobber`). The playground's navmesh is baked to `Playground.NavSurface.navmesh` (select NavSurface > Bake, or Navigation.BakeAll).
+Scripts live in `Assets/Scripts/Showcase/` (`PlayerController`, `Chaser`, `Spinner`, `Bobber`; the camera is the kit's `CameraBrain` / `VirtualCamera`). The playground's navmesh is baked to `Playground.NavSurface.navmesh` (select NavSurface > Bake, or Navigation.BakeAll).
 
 ## Regression
 

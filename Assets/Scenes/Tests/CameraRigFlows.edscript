@@ -1,0 +1,24 @@
+# --scene Assets/Scenes/Tests/CameraRigTest.lvl
+# Camera rigs (GAME-1): the CameraBrain on Main Camera shows the highest-priority VirtualCamera.
+# Raising Close's priority blends to it over its 2 s BlendSeconds (position, aim and field of view);
+# lowering it again blends back.
+wait-log dotnet ready | 7200
+wait 10
+play
+wait 20
+assert-field Main Camera | Transform.Position | [0.0, 5.0, -10.0] ~ 0.01
+assert-field Main Camera | Camera.Zoom | 55.0 ~ 0.05
+select Close
+script-set Priority | 20
+wait 12
+# Mid-blend: between the two rigs.
+assert-field Main Camera | Transform.Position.0 | != 0.0 ~ 0.05
+assert-field Main Camera | Transform.Position.0 | != 4.0 ~ 0.05
+assert-field Main Camera | Transform.Position.1 | != 5.0 ~ 0.05
+screenshot .tmp/EditorFlows/CameraRigBlend.png
+wait-field Main Camera | Transform.Position | [4.0, 2.0, -4.0] ~ 0.01 | 600
+assert-field Main Camera | Camera.Zoom | 40.0 ~ 0.05
+script-set Priority | 0
+wait-field Main Camera | Transform.Position | [0.0, 5.0, -10.0] ~ 0.01 | 600
+assert-field Main Camera | Camera.Zoom | 55.0 ~ 0.05
+stop
