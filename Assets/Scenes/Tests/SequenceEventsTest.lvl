@@ -1,0 +1,270 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "5e9e0e7a11c0ffee",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3,
+                        -10
+                    ],
+                    "Rotation": [
+                        0.1305,
+                        0,
+                        0,
+                        0.9914
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.025,
+                        0.04,
+                        0.065
+                    ],
+                    "IsCurrent": true,
+                    "FieldOfView": 52,
+                    "Near": 0.1,
+                    "Far": 100
+                }
+            ]
+        },
+        {
+            "GUID": "507334a61deaa017",
+            "Name": "Key Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        6,
+                        -5
+                    ],
+                    "Rotation": [
+                        0.25,
+                        -0.33,
+                        0.09,
+                        0.905
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.88,
+                        0.7
+                    ],
+                    "Intensity": 3.5,
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "64f9a8c9b32f8823",
+            "Name": "Floor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.15,
+                        6
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        12,
+                        0.15,
+                        20
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.08,
+                            0.12,
+                            0.17
+                        ],
+                        "Roughness": 0.3,
+                        "Metallic": 0.0,
+                        "EmissiveColor": [
+                            0.08,
+                            0.12,
+                            0.17
+                        ],
+                        "EmissiveIntensity": 0.12
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "5e9e0e7a11c0f001",
+            "Name": "Gate Player",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.85,
+                            0.65,
+                            0.12
+                        ],
+                        "Roughness": 0.3,
+                        "Metallic": 0.6
+                    }
+                },
+                {
+                    "Type": "Sequence",
+                    "Name": "Gate",
+                    "FrameRate": 30,
+                    "DurationFrames": 60,
+                    "PlayOnStart": true,
+                    "Loop": false,
+                    "Speed": 1.0,
+                    "Tracks": [
+                        {
+                            "Target": "5e9e0e7a11c0f001",
+                            "Binding": "",
+                            "Component": "Transform",
+                            "Property": "Position",
+                            "Enabled": true,
+                            "Keys": [
+                                {
+                                    "Frame": 0,
+                                    "Value": [
+                                        -2,
+                                        1,
+                                        0,
+                                        0
+                                    ],
+                                    "Interpolation": "Linear"
+                                },
+                                {
+                                    "Frame": 60,
+                                    "Value": [
+                                        -2,
+                                        3,
+                                        0,
+                                        0
+                                    ],
+                                    "Interpolation": "Linear"
+                                }
+                            ]
+                        }
+                    ],
+                    "Markers": [
+                        {
+                            "Frame": 0,
+                            "Name": "Begin",
+                            "Target": "",
+                            "Binding": "",
+                            "Payload": "",
+                            "Number": 0.0
+                        }
+                    ],
+                    "Clip": "",
+                    "Bindings": [],
+                    "Clips": []
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "SequenceEventProbe"
+                }
+            ]
+        },
+        {
+            "GUID": "5e9e0e7a11c0f002",
+            "Name": "Door",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2,
+                        1.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1.2,
+                        3,
+                        0.3
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.3,
+                            0.45,
+                            0.8
+                        ],
+                        "Roughness": 0.4,
+                        "Metallic": 0.1
+                    }
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "SequenceEventProbe"
+                }
+            ]
+        }
+    ],
+    "AssetReferences": {}
+}

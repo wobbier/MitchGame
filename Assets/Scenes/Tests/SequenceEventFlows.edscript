@@ -1,0 +1,45 @@
+# Sequencer event markers (GAME-4): author markers with the Sequencer's commands, then play and
+# check that the receivers' scripts (ISequenceReceiver) heard each crossing once, in order, along
+# with the Started / Finished notifications and the EventBus copies.
+#   Havana --scene Assets/Scenes/Tests/SequenceEventsTest.lvl --editor-exec Assets/Scenes/Tests/SequenceEventFlows.edscript
+wait 20
+select Gate Player
+show-window Sequencer
+wait 3
+
+# "Begin" comes from the scene file, for the player itself.
+seq-assert-marker-count 1
+seq-assert-marker 0 | 0 | Begin | Gate Player
+
+# Add the door's event; spaces survive in names and payloads.
+seq-add-marker 30 | Open | fast | 2.5
+seq-marker-receiver 1 | Door
+seq-assert-marker 1 | 30 | Open | Door
+seq-add-marker 50 | End
+seq-assert-marker-count 3
+
+# Moving keeps the list sorted (a marker dropped onto a frame fires after the ones there).
+seq-add-marker 10 | Scratch marker
+seq-assert-marker 1 | 10 | Scratch marker | Gate Player
+seq-move-marker 1 | 55
+seq-assert-marker 3 | 55 | Scratch marker
+seq-assert-marker 2 | 50 | End
+seq-delete-marker 3
+seq-assert-marker-count 3
+
+# Each edit is one undo step on the scene.
+undo
+seq-assert-marker-count 4
+redo
+seq-assert-marker-count 3
+seq-move-marker 2 | 60
+seq-assert-marker 2 | 60 | End
+screenshot .tmp/overhaul/shots/sequence_events.png
+
+play
+wait-log SequenceEventProbe: Started Begin@Gate Player Open@Door(fast,2.5) End@Gate Player Finished bus=4 | 600
+stop
+wait 5
+# Play mode leaves the authored markers alone.
+seq-assert-marker-count 3
+seq-assert-marker 1 | 30 | Open | Door
