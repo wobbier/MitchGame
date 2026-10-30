@@ -86,6 +86,26 @@
                     ]
                 },
                 {
+                    "Name": "Dash",
+                    "Type": "Button",
+                    "PressThreshold": 0.5,
+                    "Networked": true,
+                    "Bindings": [
+                        {
+                            "Kind": "Control",
+                            "Control": "Keyboard/Q",
+                            "Scale": 1.0,
+                            "InvertY": false
+                        },
+                        {
+                            "Kind": "Control",
+                            "Control": "Gamepad/East",
+                            "Scale": 1.0,
+                            "InvertY": false
+                        }
+                    ]
+                },
+                {
                     "Name": "Crouch",
                     "Type": "Button",
                     "PressThreshold": 0.5,

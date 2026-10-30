@@ -494,6 +494,77 @@
                     "ScriptFields": "{\"DegreesPerTick\": 3.0}"
                 }
             ]
+        },
+        {
+            "GUID": "4e37000000000300",
+            "Name": "NetProbe Pawn (off camera)",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        0.95,
+                        -30.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "CharacterController",
+                    "Radius": 0.4,
+                    "Height": 1.8
+                },
+                {
+                    "Type": "NetIdentity"
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "NetProbe",
+                    "ScriptFields": "{}"
+                }
+            ]
+        },
+        {
+            "GUID": "4e37000000000301",
+            "Name": "NetProbe Floor (off camera)",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        20.0,
+                        -0.5,
+                        -30.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        20.0,
+                        1.0,
+                        20.0
+                    ]
+                }
+            ]
         }
     ]
 }
