@@ -1,0 +1,14 @@
+# --scene Assets/Scenes/Tests/HierarchyTest.lvl
+# The "what's working" status (ED-14): background work shows in the title bar with its progress,
+# notices show as toasts with the action that fixes them. A stand-in task and notice stand for a
+# cook and a failed build (the real ones report the same way: WorkStatus).
+wait 20
+work-begin Cooking | 0.4
+notify The scripts don't build (2 errors) | View.ErrorList
+wait 10
+assert-work Cooking | 1
+screenshot .tmp/EditorFlows/StatusFlows.png
+wait 5
+work-end
+wait 2
+assert-work Cooking | 0
