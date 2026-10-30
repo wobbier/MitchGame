@@ -1,6 +1,6 @@
 # Sprite selection (ME-278): Frame Selected frames a sprite's quad (its bounds now count), a click
 # on the coin selects it, and a click on its quad's transparent corner goes through: sprites pick
-# by their texels, not their whole quad.
+# by their texels, not their whole quad. ED-7: a pick-locked coin can't be clicked.
 #   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/SpriteScriptTest.lvl --editor-exec Assets/Scenes/Tests/SpritePickFlows.edscript
 wait 30
 select Coin
@@ -17,3 +17,13 @@ select-none
 pick 0.394 0.321
 wait 10
 assert-selected 0
+
+# Pick lock (ED-7): a locked entity can't be clicked in the World View; unlocked, it can again.
+pick-lock Coin | 1
+pick 0.4955 0.5367
+wait 10
+assert-selected 0
+pick-lock Coin | 0
+pick 0.4955 0.5367
+wait 10
+assert-active Coin
