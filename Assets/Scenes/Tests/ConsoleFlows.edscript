@@ -1,0 +1,18 @@
+# --scene Assets/Scenes/Tests/ScriptTest.lvl
+# The developer console (PLAY-10): built-in commands and variables, and commands a C# script
+# registers with [ConsoleCommand] (Assets/Scripts/Tests/ConsoleProbe.cs).
+wait-log dotnet ready | 7200
+wait 5
+console greet world
+assert-console-output hello world
+console probe-count
+assert-console-output 1 probe
+console help gr
+assert-console-output greet - Says hello to its arguments (C#)
+console echo "two words" three
+assert-console-output two words three
+console timescale 0.5
+assert-console-output timescale = 0.5
+console timescale 1
+console nonsense
+assert-console-output Unknown command 'nonsense'
