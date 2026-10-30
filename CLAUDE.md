@@ -40,6 +40,9 @@ make -f MitchGame.make Game_EntryPoint config=server_linux_debug -j$(nproc)
 # Host a scene on UDP, and join it from a client
 ./.build/Server_linux_Debug/Game_EntryPoint_x64 --scene Assets/Scenes/Tests/NetTest.lvl --server 7777
 ./.build/Game_linux_Debug/Game_EntryPoint_x64 --scene Assets/Scenes/Tests/NetTest.lvl --connect 127.0.0.1:7777
+
+# Or both at once: a dedicated server plus N client windows (VS Code: the "Net: server + 2 clients" tasks)
+Engine/Tools/RunNetLocal.py --clients 2 [--scene X.lvl] [--net-args "--net-lag 50 --net-loss 2%"] [--build]
 ```
 
 The Nix dev shell (`nix develop`) provides all required dependencies. Without Nix, the README lists the required X11/Vulkan packages for a manual `nix-shell -p ...` invocation.
