@@ -9,6 +9,8 @@ public partial class NetProbe : Script
     [Predicted] public float DashCooldown;
     [Predicted] public int Dashes;
     [Replicated] public int Pings;
+    // How many clients the server has (RunNetSmoke --observer waits for the second before dashing).
+    [Replicated] public int Peers;
 
     [ServerRpc] partial void Ping(int value);
     [ClientRpc(NetTarget.Owner)] partial void Pong(int value);
@@ -16,6 +18,11 @@ public partial class NetProbe : Script
     // ME-291: the dash's predicted event (an FX in a real game) must present exactly once per peer.
     private const int DashFx = 1;
     private int dashFxShown;
+
+    private int expectedPeers = -1;
+    private int pressedAt = -1;
+    private int observedFrames;
+    private bool observerReported;
 
     private CharacterController character;
     private int predictedFrames;
@@ -80,32 +87,48 @@ public partial class NetProbe : Script
     {
         if (Net.IsServer)
         {
-            if (Net.GetOwner(Entity) == 0)
+            Span<int> clients = stackalloc int[16];
+            int count = Net.GetClients(clients);
+            Peers = count;
+            if (Net.GetOwner(Entity) == 0 && count > 0)
             {
-                Span<int> clients = stackalloc int[16];
-                if (Net.GetClients(clients) > 0)
-                {
-                    Net.SetOwner(Entity, clients[0]);
-                    Debug.Log($"NetProbe: owner -> client #{clients[0]}");
-                }
+                Net.SetOwner(Entity, clients[0]);
+                Debug.Log($"NetProbe: owner -> client #{clients[0]}");
             }
             return;
         }
-        if (!Net.IsClient || !Net.IsPredicted(Entity))
+        if (Net.IsClient && !Net.IsPredicted(Entity))
+        {
+            // A client that doesn't own the pawn (RunNetSmoke --observer): the dash's event
+            // reaches it once, from the server.
+            if (++observedFrames == 400 && !observerReported)
+            {
+                observerReported = true;
+                Debug.Log(dashFxShown == 1 ? "NetProbe: observer dash fx once" : $"NetProbe: observer dash fx FAILED (shown {dashFxShown} times)");
+            }
+            return;
+        }
+        if (!Net.IsClient)
         {
             return;
         }
 
         ++predictedFrames;
-        if (predictedFrames == 60)
+        if (expectedPeers < 0)
         {
+            // RunNetSmoke --observer sets Game.NetProbePeers = 2 for this client.
+            expectedPeers = Settings.GetInt("NetProbePeers", 1);
+        }
+        if (pressedAt < 0 && predictedFrames >= 60 && Peers >= expectedPeers)
+        {
+            pressedAt = predictedFrames;
             Net.Press("Dash", true);
         }
-        else if (predictedFrames == 66)
+        else if (pressedAt >= 0 && predictedFrames == pressedAt + 6)
         {
             Net.Press("Dash", false);
         }
-        else if (predictedFrames == 90)
+        else if (pressedAt >= 0 && predictedFrames == pressedAt + 30)
         {
             Ping(42);
         }
@@ -115,7 +138,7 @@ public partial class NetProbe : Script
             replicatedLogged = true;
             Debug.Log("NetProbe: Replicated ok");
         }
-        if (predictedFrames >= 300 && !reported)
+        if (pressedAt >= 0 && predictedFrames >= pressedAt + 240 && !reported)
         {
             reported = true;
             if (Dashes == 1)
