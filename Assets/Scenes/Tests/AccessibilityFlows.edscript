@@ -1,6 +1,6 @@
 # Accessibility (PLAY-7): C# Captions in the stock caption strip, honouring the player's
 # Accessibility settings (speaker names, size, backdrop, subtitles off), the high-contrast class on
-# documents, and the new rows on the Options menu's Accessibility page.
+# documents, the new rows on the Options menu's Accessibility page, and toggle instead of hold.
 #   Havana --scene Assets/Scenes/Tests/AccessibilityTest.lvl --editor-exec Assets/Scenes/Tests/AccessibilityFlows.edscript
 wait 20
 play
@@ -39,4 +39,18 @@ ui-assert-visible #caption-0 | 0
 settings-set Accessibility.Subtitles | true
 settings-set Accessibility.SpeakerNames | true
 settings-set Accessibility.HighContrast | false
+
+# Toggle instead of hold: Sprint (marked Toggle in the input map) latches on a press, lets go on the next.
+settings-set Accessibility.ToggleHolds | true
+input-hold Keyboard/Left Shift
+wait 3
+input-release Keyboard/Left Shift
+wait 5
+assert-action Sprint | true
+input-hold Keyboard/Left Shift
+wait 3
+input-release Keyboard/Left Shift
+wait 5
+assert-action Sprint | false
+settings-set Accessibility.ToggleHolds | false
 stop
