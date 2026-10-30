@@ -35,6 +35,11 @@ redo
 seq-assert-marker-count 3
 seq-move-marker 2 | 60
 seq-assert-marker 2 | 60 | End
+# An animation cue: the tube plays Wave at frame 40 with no script of its own.
+seq-add-marker 40 | Wave
+seq-marker-receiver 2 | Tube
+seq-marker-action 2 | PlayAnimation | Wave | 0.1
+seq-assert-marker 2 | 40 | Wave | Tube
 # Camera cuts: the main camera's shot, then the door's; a second cut can't share a frame.
 seq-add-cut 0 | Main Camera
 seq-add-cut 30 | Door Camera
@@ -56,12 +61,12 @@ wait 3
 seq-assert-cut-camera Main Camera
 
 play
-wait-log SequenceEventProbe: Started Begin@Gate Player Open@Door(fast,2.5) End@Gate Player Finished bus=4 | 600
+wait-log SequenceEventProbe: Started Begin@Gate Player Open@Door(fast,2.5) End@Gate Player Finished bus=5 tube=Wave | 600
 # The finished sequence holds its last shot.
 seq-assert-cut-camera Door Camera
 stop
 wait 5
 # Play mode leaves the authored markers alone.
-seq-assert-marker-count 3
+seq-assert-marker-count 4
 seq-assert-marker 1 | 30 | Open | Door
 seq-assert-cut 1 | 30 | Door Camera

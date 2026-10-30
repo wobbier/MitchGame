@@ -303,6 +303,40 @@
                     "ScriptName": "SequenceEventProbe"
                 }
             ]
+        },
+        {
+            "GUID": "5e9e0e7a11c0f004",
+            "Name": "Tube",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        2
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Test/SkinnedTube.fbx"
+                },
+                {
+                    "Type": "Animator",
+                    "DefaultState": "Bend"
+                }
+            ]
         }
     ],
     "AssetReferences": {}

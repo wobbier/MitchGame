@@ -25,7 +25,10 @@ public class SequenceEventProbe : Script, ISequenceReceiver
         // The receiver hears Finished before the bus does, so the bus has the four before it.
         if (e.Kind == SequenceEventKind.Finished)
         {
-            Debug.Log($"SequenceEventProbe: {string.Join(" ", Heard)} bus={_busEvents}");
+            // The Wave cue (PlayAnimation) switched the tube's Animator without a script.
+            Entity tube = World.Find("Tube");
+            string state = tube.TryGetComponent(out Animator animator) ? animator.GetState() : "<none>";
+            Debug.Log($"SequenceEventProbe: {string.Join(" ", Heard)} bus={_busEvents} tube={state}");
         }
     }
 }
