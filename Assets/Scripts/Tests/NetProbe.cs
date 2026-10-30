@@ -71,9 +71,10 @@ public partial class NetProbe : Script
         character?.SetMoveInput(DashCooldown > 1.75f ? new Vector3(0f, 0f, 1f) : Vector3.Zero);
     }
 
-    // NET-15: the dash also fires a shot ahead (+Z) at "NetProbe Target". The server judges it at
-    // the view the owner's command was sent from; the owner predicts it (once, not when
-    // resimulating), as a game would for impact FX.
+    // NET-15: the dash also fires a shot at "NetProbe Target", 3 m off to the side, along the aim
+    // the owner sends with its commands (Net.SetAim). The server judges it at the view the
+    // owner's command was sent from; the owner predicts it (once, not when resimulating), as a
+    // game would for impact FX. Both log the command's yaw, so they can be compared.
     private void Shoot()
     {
         if (Net.IsResimulating)
@@ -81,19 +82,30 @@ public partial class NetProbe : Script
             return;
         }
         var target = World.Find("NetProbe Target (off camera)");
+        var command = Net.Command(Entity);
         var origin = GetComponent<Transform>().WorldPosition + new Vector3(0f, 0.5f, 0f);
-        var hit = Net.LagCompensatedRaycast(Entity, origin, new Vector3(0f, 0f, 1f), 50f);
+        var direction = command.HasAim ? command.AimDirection : new Vector3(0f, 0f, 1f);
+        var hit = Net.LagCompensatedRaycast(Entity, origin, direction, 50f);
         bool onTarget = hit.Hit && hit.Entity == target;
+        string aim = command.HasAim ? $"aim yaw {command.Yaw:0.000}" : "no aim";
         if (Net.IsServer)
         {
-            Debug.Log(onTarget && hit.Rewound && !hit.Rejected ? $"NetProbe: lag-compensated hit (view tick {Net.Command(Entity).ViewTick:0.0}, server tick {Net.Tick})"
-                : $"NetProbe: lag-compensated shot FAILED ({hit}, view tick {Net.Command(Entity).ViewTick})");
+            Debug.Log(onTarget && hit.Rewound && !hit.Rejected ? $"NetProbe: lag-compensated hit ({aim}, view tick {command.ViewTick:0.0}, server tick {Net.Tick})"
+                : $"NetProbe: lag-compensated shot FAILED ({hit}, {aim}, view tick {command.ViewTick})");
         }
         else if (Net.IsClient)
         {
-            Debug.Log(onTarget && !hit.Rewound ? $"NetProbe: predicted hit (rtt {Net.RoundTripMs:0} ms, predict impacts {Net.PredictImpacts})"
-                : $"NetProbe: predicted shot FAILED ({hit})");
+            Debug.Log(onTarget && !hit.Rewound ? $"NetProbe: predicted hit ({aim}, rtt {Net.RoundTripMs:0} ms, predict impacts {Net.PredictImpacts})"
+                : $"NetProbe: predicted shot FAILED ({hit}, {aim})");
         }
+    }
+
+    // The owner's view looks at the target (a mouse-look game sets it from its camera).
+    private void AimAtTarget()
+    {
+        var target = World.Find("NetProbe Target (off camera)");
+        var to = target.GetComponent<Transform>().WorldPosition - GetComponent<Transform>().WorldPosition;
+        Net.SetAim(MathF.Atan2(to.x, to.z) * (180f / MathF.PI), 0f);
     }
 
     public override void OnNetEvent(int eventId, int value)
@@ -140,6 +152,7 @@ public partial class NetProbe : Script
         }
 
         ++predictedFrames;
+        AimAtTarget();
         if (expectedPeers < 0)
         {
             // RunNetSmoke --observer sets Game.NetProbePeers = 2 for this client.
