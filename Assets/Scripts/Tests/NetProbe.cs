@@ -13,6 +13,10 @@ public partial class NetProbe : Script
     [ServerRpc] partial void Ping(int value);
     [ClientRpc(NetTarget.Owner)] partial void Pong(int value);
 
+    // ME-291: the dash's predicted event (an FX in a real game) must present exactly once per peer.
+    private const int DashFx = 1;
+    private int dashFxShown;
+
     private CharacterController character;
     private int predictedFrames;
     private bool replicatedLogged;
@@ -52,10 +56,23 @@ public partial class NetProbe : Script
         {
             DashCooldown = 2f;
             Dashes++;
+            Net.PredictedEvent(this, DashFx, Dashes);
         }
 
         character ??= GetComponent<CharacterController>();
         character?.SetMoveInput(DashCooldown > 1.75f ? new Vector3(0f, 0f, 1f) : Vector3.Zero);
+    }
+
+    public override void OnNetEvent(int eventId, int value)
+    {
+        if (eventId == DashFx)
+        {
+            ++dashFxShown;
+            if (Net.IsServer)
+            {
+                Debug.Log($"NetProbe: server dash fx #{value}");
+            }
+        }
     }
 
     // Presentation: ownership on the server, the scripted test on the owning client.
@@ -104,6 +121,7 @@ public partial class NetProbe : Script
             if (Dashes == 1)
             {
                 Debug.Log($"NetProbe: dash: {Net.Corrections} corrections");
+                Debug.Log(dashFxShown == 1 ? "NetProbe: dash fx once" : $"NetProbe: dash fx FAILED (shown {dashFxShown} times)");
             }
             else
             {
