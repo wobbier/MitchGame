@@ -133,7 +133,9 @@ python3 Tools/BuildLaunchNight.py --graphs   # graphs only
 python3 Tools/LaunchNightAudio.py --force     # rewrite the sound loops (otherwise only missing ones)
 ```
 
-Both overwrite their files, so save editor changes elsewhere first. After changing a graph,
+Both overwrite their files, so save editor changes elsewhere first. The committed scene is the
+builder's output byte for byte; port lasting edits into the builder rather than re-saving the
+scene from Havana, which reformats it and lets the two drift (ME-256). After changing a graph,
 regenerate its `.sg/` sources: save it in Havana, or run
 `ME_SHADERGRAPH_UPDATE=1 .build/Game_linux_Debug/MitchEngine_Tests -tc="*project graphs*"`.
 
