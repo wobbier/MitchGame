@@ -1,0 +1,8 @@
+# Beat clock (NEXT-8): Kit.BeatClock follows the looping Hum through AudioSource.PlaybackSeconds;
+# BeatProbe.cs reports beats firing in order across the loop, in step with the mixer.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/BeatClockTest.lvl --editor-exec Assets/Scenes/Tests/BeatClockFlows.edscript
+wait 20
+play
+assert-playing 1
+wait-log BeatProbe: ok | 1800
+stop

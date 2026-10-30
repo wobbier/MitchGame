@@ -1,0 +1,84 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "be47000000000001",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        3.4,
+                        -8.5
+                    ],
+                    "Rotation": [
+                        16.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.22,
+                        0.27,
+                        0.36
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "GUID": "be47000000000002",
+            "Name": "Music",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Type": "AudioSource",
+                    "FilePath": "Assets/Sounds/Test/Hum.wav",
+                    "Bus": "Music",
+                    "Volume": 0.5,
+                    "PlayOnAwake": true,
+                    "Loop": true
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "BeatProbe",
+                    "ScriptFields": "{}"
+                }
+            ]
+        }
+    ],
+    "AssetReferences": {}
+}
