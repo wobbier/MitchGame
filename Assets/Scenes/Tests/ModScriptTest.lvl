@@ -1,0 +1,60 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "Name": "GameSpinner",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -2,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Spinner",
+                    "ScriptFields": "{\"DegreesPerSecond\": 90.0, \"Axis\": 1}"
+                }
+            ]
+        },
+        {
+            "Name": "ModSpinner",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "ExampleMod.Spinner"
+                }
+            ]
+        }
+    ]
+}
