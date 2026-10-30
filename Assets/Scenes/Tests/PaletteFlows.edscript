@@ -1,0 +1,14 @@
+# --scene Assets/Scenes/Tests/HierarchyTest.lvl
+# Search everywhere (ED-15): the command palette finds actions, entities, assets, settings and docs.
+wait 20
+palette-search edit dup | Edit: Duplicate
+palette-search grandch | Entity: Grandchild
+palette-run grandch | Entity: Grandchild
+wait 5
+assert-active Grandchild
+palette-search stone_norm | Asset: Assets/Textures/Sprites/Stone_Normal.png
+palette-run stone_norm | Asset: Assets/Textures/Sprites/Stone_Normal.png
+wait 5
+palette-search appearance | Setting: Preferences > Appearance
+palette-search physics | Setting: Project Settings > Physics
+palette-search networking | Doc: Networking
