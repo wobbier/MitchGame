@@ -86,11 +86,16 @@ assert-count-delta 0
 replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f; | float version = 1.0f
 wait-log Assets/Scripts/Tests/HotReloadProbe.cs:12: | 3600
 wait-log error CS1002 | 600
+# ...and stays in the Error List (ME-233) until the scripts build again
+assert-build-errors 1
+show-window Error List
+wait 2
 play
 wait 5
 assert-playing 0
 replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | float version = 1.0f | float version = 1.0f;
 wait-log Scripts: hot reloaded | 3600
+assert-build-errors 0
 play
 wait 5
 assert-playing 1
