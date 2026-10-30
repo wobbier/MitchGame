@@ -1,6 +1,7 @@
-# Sequencer event markers (GAME-4): author markers with the Sequencer's commands, then play and
-# check that the receivers' scripts (ISequenceReceiver) heard each crossing once, in order, along
-# with the Started / Finished notifications and the EventBus copies.
+# Sequencer event markers and camera cuts (GAME-4): author markers and cuts with the Sequencer's
+# commands, then play and check that the receivers' scripts (ISequenceReceiver) heard each crossing
+# once, in order, with the Started / Finished notifications and the EventBus copies, and that the
+# cuts switched the Game View's camera.
 #   Havana --scene Assets/Scenes/Tests/SequenceEventsTest.lvl --editor-exec Assets/Scenes/Tests/SequenceEventFlows.edscript
 wait 20
 select Gate Player
@@ -34,12 +35,33 @@ redo
 seq-assert-marker-count 3
 seq-move-marker 2 | 60
 seq-assert-marker 2 | 60 | End
+# Camera cuts: the main camera's shot, then the door's; a second cut can't share a frame.
+seq-add-cut 0 | Main Camera
+seq-add-cut 30 | Door Camera
+seq-assert-cut-count 2
+seq-move-cut 1 | 40
+seq-assert-cut 1 | 40 | Door Camera
+seq-move-cut 1 | 30
+seq-assert-cut 1 | 30 | Door Camera
+seq-add-cut 10 | Door Camera
+seq-delete-cut 1
+seq-assert-cut-count 2
+# A preview past the cut shows the door camera; stopping it gives the scene its camera back.
+action Sequence.PreviewMiddle
+wait 3
+seq-assert-cut-camera Door Camera
 screenshot .tmp/overhaul/shots/sequence_events.png
+action Sequence.StopPreviews
+wait 3
+seq-assert-cut-camera Main Camera
 
 play
 wait-log SequenceEventProbe: Started Begin@Gate Player Open@Door(fast,2.5) End@Gate Player Finished bus=4 | 600
+# The finished sequence holds its last shot.
+seq-assert-cut-camera Door Camera
 stop
 wait 5
 # Play mode leaves the authored markers alone.
 seq-assert-marker-count 3
 seq-assert-marker 1 | 30 | Open | Door
+seq-assert-cut 1 | 30 | Door Camera

@@ -42,6 +42,45 @@
             ]
         },
         {
+            "GUID": "5e9e0e7a11c0f003",
+            "Name": "Door Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        2,
+                        1.8,
+                        -4
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.025,
+                        0.04,
+                        0.065
+                    ],
+                    "IsCurrent": false,
+                    "FieldOfView": 40,
+                    "Near": 0.1,
+                    "Far": 100
+                }
+            ]
+        },
+        {
             "GUID": "507334a61deaa017",
             "Name": "Key Light",
             "DestroyOnLoad": true,
