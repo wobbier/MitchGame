@@ -4,8 +4,11 @@
 # Debug without compiling: RunChecks built that game first (its Build Game step proves Retail).
 action File.BuildGame
 wait 5
-build-game {"Name": "Flow", "Configuration": "Debug", "Output": ".tmp/BuildGame/Flow", "Scenes": ["Assets/Scenes/Tests/UITest.lvl"], "Pak": true} | no-compile no-record
+# Build & Run (ED-9): once the build succeeds it starts through its launcher, in its own folder; the
+# game captures Run.png there and exits.
+build-game {"Name": "Flow", "Configuration": "Debug", "Output": ".tmp/BuildGame/Flow", "Scenes": ["Assets/Scenes/Tests/UITest.lvl"], "Pak": true} | no-compile no-record run --frames 30 --no-audio --screenshot Run.png --exit
 wait-log 'Flow' succeeded | 7200
 build-game-wait
+wait-file .tmp/BuildGame/Flow/Run.png | 3600
 wait 5
 screenshot .tmp/BuildGameFlows.png

@@ -1,0 +1,17 @@
+# Simulate (ED-9): Play without scripts. Physics runs (a box falls) while NetSpin, a script that
+# turns its entity every fixed step, stays still; Play runs it.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/NetTest.lvl --editor-exec Assets/Scenes/Tests/SimulateFlows.edscript
+wait 30
+simulate
+assert-playing 1
+wait 60
+assert-field Box 1 | Transform.Position.1 | != 2.5 ~ 0.05
+assert-field Spinner (off camera) | Transform.Rotation | [0, 0, 0, 1] ~ 0.001
+stop
+assert-playing 0
+wait 5
+play
+assert-playing 1
+wait 60
+assert-field Spinner (off camera) | Transform.Rotation | != [0, 0, 0, 1] ~ 0.05
+stop

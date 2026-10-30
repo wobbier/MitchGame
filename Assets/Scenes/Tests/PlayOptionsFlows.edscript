@@ -1,0 +1,41 @@
+# Play options (ED-9): Keep Values After Stop carries a component's play-mode values into the scene
+# as one undo step; components that weren't kept go back to their edit-mode values. Play From
+# Scene Camera starts the game camera at the World View's.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/PlayOptionsFlows.edscript
+wait 20
+play
+assert-playing 1
+wait 10
+select Right Cube
+set Transform.Position [4, 1.5, 2]
+keep-values Transform
+select Directional Light
+set Light.Intensity 7
+wait 5
+stop
+assert-playing 0
+wait 5
+assert-field Right Cube | Transform.Position | [4, 1.5, 2] ~ 0.001
+assert-field Directional Light | Light.Intensity | 3 ~ 0.001
+assert-dirty 1
+undo
+wait 2
+assert-field Right Cube | Transform.Position | [4, 0, 2] ~ 0.001
+
+# Play From Scene Camera: Play starts the game's camera where the World View looks; Stop puts it back.
+select Right Cube
+focus-window World View
+action View.FrameSelected
+wait 30
+preference Play.FromSceneCamera | true
+play
+wait 5
+assert-field Main Camera | Transform.Position | != [0, 4, -14] ~ 0.5
+stop
+wait 5
+assert-field Main Camera | Transform.Position | [0, 4, -14] ~ 0.001
+preference Play.FromSceneCamera | false
+play
+wait 5
+assert-field Main Camera | Transform.Position | [0, 4, -14] ~ 0.001
+stop
