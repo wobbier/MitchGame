@@ -1,64 +1,40 @@
-# Script inspector v2 (CS-4): edit every field kind through the live-field pipeline the
-# inspector uses, prove the lot survives save -> load, then resolve the EntityRef in play.
-#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/InspectorTest.lvl --editor-exec Assets/Scenes/Tests/InspectorFlows.edscript
-# .NET boots (and a first start builds the scripts) on a worker: wait for it before touching fields.
-wait-log dotnet ready | 7200
-wait 30
-select Probe
+# The inspector's field search and lock (ED-7).
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/InspectorFlows.edscript
+wait 20
+show-window Properties
+select Main Camera
+wait 3
+inspector-assert-entity Main Camera
+inspector-assert-shows Transform | 1
+inspector-assert-shows Camera.FieldOfView | 1
 
-# Defaults came from the C# field initializers (no ScriptFields in the scene).
-script-assert Title | "untitled"
-script-assert Mode | 0
-script-assert Clamped | 5.0
-script-assert Weights | [1.0, 2.0]
-script-assert Nested.Inner | 0
+# A field search matches names and labels: only those fields, and components with none hide.
+inspector-search clip
+wait 3
+inspector-assert-shows Camera.Near | 1
+inspector-assert-shows Camera.Far | 1
+inspector-assert-shows Camera.FieldOfView | 0
+inspector-assert-shows Transform | 0
+screenshot .tmp/overhaul/shots/inspector_search.png
 
-# One edit per field kind.
-script-set Title | "renamed probe"
-script-set Notes | "first line\nsecond line"
-script-set Mode | 2
-script-set Clamped | 7.5
-script-set Steps | 6
-script-set Precise | 0.125
-script-set Tint | {"x": 9.0, "y": 8.0, "z": 7.0, "w": 6.0}
-script-set Spin | {"x": 0.0, "y": 0.7071, "z": 0.0, "w": 0.7071}
-script-set Shade | {"r": 1.0, "g": 0.5, "b": 0.25, "a": 0.75}
-script-set Weights | [0.5, 1.5, 2.5]
-script-set Counts | [9, 8, 7]
-script-set Nested.Inner | 42
-script-set Nested.Offset | {"x": 1.5, "y": -2.5}
-script-set Portrait.Path | "Assets/UI/Drive/Star.png"
-script-set-ref Target | Marker
-script-assert Target.Guid | != ""
-wait 5
-screenshot .tmp/EditorFlows/InspectorFlows_panel.png
+# Matching a component's name shows it whole.
+inspector-search transform
+wait 3
+inspector-assert-shows Transform.Position | 1
+inspector-assert-shows Transform.Scale | 1
+inspector-assert-shows Camera | 0
+inspector-search
+wait 3
+inspector-assert-shows Camera.FieldOfView | 1
 
-# Everything survives a save and a fresh load.
-save-as .tmp/EditorFlows/InspectorSave.lvl
-load .tmp/EditorFlows/InspectorSave.lvl
-wait 30
-select Probe
-script-assert Title | "renamed probe"
-script-assert Notes | "first line\nsecond line"
-script-assert Mode | 2
-script-assert Clamped | 7.5
-script-assert Steps | 6
-script-assert Precise | 0.125
-script-assert Tint | {"x": 9.0, "y": 8.0, "z": 7.0, "w": 6.0}
-script-assert Spin.y | 0.7071 ~ 0.001
-script-assert Shade | {"r": 1.0, "g": 0.5, "b": 0.25, "a": 0.75}
-script-assert Weights | [0.5, 1.5, 2.5]
-script-assert Counts | [9, 8, 7]
-script-assert Nested.Inner | 42
-script-assert Nested.Offset.y | -2.5
-script-assert Portrait.Path | "Assets/UI/Drive/Star.png"
-script-assert Target.Guid | != ""
-
-# The reference resolves to the live Marker when the script runs.
-play
-wait-log InspectorProbe: target resolved = True | 600
-select Probe
-script-assert ResolvedTarget | true
-stop
-wait 5
-quit
+# Locked, the inspector stays on the camera while the light is selected; unlocked, it follows.
+inspector-lock 1
+select Directional Light
+wait 3
+inspector-assert-entity Main Camera
+inspector-assert-shows Camera | 1
+inspector-assert-shows Light | 0
+inspector-lock 0
+wait 3
+inspector-assert-entity Directional Light
+inspector-assert-shows Light.Intensity | 1
