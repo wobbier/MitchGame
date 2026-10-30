@@ -1,0 +1,103 @@
+{
+    "Cores": [],
+    "Scene": [
+        {
+            "GUID": "6a1f0c2d9b3e4a51",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -8
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.1,
+                        0.12,
+                        0.16
+                    ],
+                    "IsCurrent": true,
+                    "Near": 0.1,
+                    "Far": 100.0,
+                    "Zoom": 55.0
+                }
+            ]
+        },
+        {
+            "GUID": "6a1f0c2d9b3e4a52",
+            "Name": "Dialogue",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "UIDocument",
+                    "FilePath": "Assets/UI/Dialogue/Dialogue.rml",
+                    "Visible": true
+                }
+            ]
+        },
+        {
+            "GUID": "6a1f0c2d9b3e4a53",
+            "Name": "Guard",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "Conversation",
+                    "ScriptFields": "{\"File\": \"Assets/Dialogue/Tests/Gate.dialogue\", \"Node\": \"\", \"StartOnPlay\": true, \"Prompt\": \"Talk\"}"
+                }
+            ]
+        }
+    ]
+}

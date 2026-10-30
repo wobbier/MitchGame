@@ -1,0 +1,25 @@
+// GAME-8's sample conversation (DialogueTest.lvl / DialogueFlows.edscript).
+title: Gate
+---
+<<set $name = "traveller">>
+Guard: Halt! Who goes there?
+-> A friend.
+    <<set $trusted = true>>
+    Guard: Then pass, friend.
+-> None of your business. <<if not $trusted>>
+    Guard: Then you stay out.
+    <<jump Refused>>
+<<if $trusted and $visits >= 1>>
+    Guard: Back again, {$name}?
+<<elseif $trusted>>
+    Guard: Mind the stairs, {$name}.
+<<else>>
+    Guard: Move along.
+<<endif>>
+<<set $visits = $visits + 1>>
+<<event open-gate north>>
+===
+title: Refused
+---
+Guard: Begone.
+===

@@ -1,0 +1,27 @@
+# --scene Assets/Scenes/Tests/DialogueTest.lvl
+# Dialogue (GAME-8): the kit's Conversation runs Assets/Dialogue/Tests/Gate.dialogue through the
+# stock dialogue box (Engine/Assets/UI/Dialogue/Dialogue.rml): a line, a choice clicked in the
+# document, a variable filled into a line, a <<event>> for the game, then the box goes away.
+wait-log dotnet ready | 7200
+wait 10
+play
+wait-log UI: rebound | 600
+wait 10
+ui-assert-text #dialogue-speaker | Guard
+ui-assert-text #dialogue-text | Halt! Who goes there?
+ui-click #dialogue-continue
+wait 3
+ui-assert-text #dialogue-choice-0 | A friend.
+ui-assert-text #dialogue-choice-1 | None of your business.
+screenshot .tmp/EditorFlows/DialogueChoice.png
+ui-click #dialogue-choice-0
+wait 3
+ui-assert-text #dialogue-text | Then pass, friend.
+ui-click #dialogue-continue
+wait 3
+ui-assert-text #dialogue-text | Mind the stairs, traveller.
+ui-click #dialogue-continue
+wait-log Dialogue: event open-gate north | 60
+wait 3
+ui-assert-text #dialogue-text |
+stop
