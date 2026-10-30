@@ -40,6 +40,19 @@ seq-add-marker 40 | Wave
 seq-marker-receiver 2 | Tube
 seq-marker-action 2 | PlayAnimation | Wave | 0.1
 seq-assert-marker 2 | 40 | Wave | Tube
+# Key editing: copy the first key, paste it at frame 30 (one undo step), then lock the track.
+seq-box-select 0 | 0 | 0 | 0
+seq-assert-selected 1
+seq-copy-keys
+seq-paste-keys 30
+seq-assert-key 0 | 30
+undo
+seq-assert-no-key 0 | 30
+seq-lock-track 0 | 1
+seq-box-select 0 | 60 | 0 | 0
+seq-assert-selected 0
+seq-lock-track 0 | 0
+
 # Camera cuts: the main camera's shot, then the door's; a second cut can't share a frame.
 seq-add-cut 0 | Main Camera
 seq-add-cut 30 | Door Camera
