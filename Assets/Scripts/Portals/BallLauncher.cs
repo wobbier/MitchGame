@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using ScriptCore;
 
-// Left click throws a physics ball where the camera looks. Goes on the player's camera. Balls are
+// E (Interact) throws a physics ball where the camera looks. Goes on the player's camera. Balls are
 // ordinary rigidbodies, so they bounce around and fly through Portals like anything else; the
 // oldest is removed once there are more than MaxBalls.
 public class BallLauncher : Script
@@ -17,9 +17,20 @@ public class BallLauncher : Script
     private CharacterController thrower;
     private float reload;
     private bool wasCaptured;
+    private Entity gun;
 
     public override void OnStart()
     {
+        UIModel hud = UI.Model("portalgun");
+        hud.Set("status", "AIM AT A LARGE, FLAT SURFACE");
+        hud.Set("failed", false);
+        if (!gun)
+        {
+            Entity existing = World.Find("Portal Gun");
+            if (existing && existing.Transform.Parent == Entity) gun = existing;
+        }
+        if (!gun)
+            gun = World.Instantiate("Assets/Prefabs/Portals/PortalGun.prefab", Entity);
         Entity body = World.Find(Thrower);
         thrower = body ? body.GetComponent<CharacterController>() : null;
     }
@@ -29,14 +40,19 @@ public class BallLauncher : Script
         OnStart();
     }
 
+    public override void OnDestroy()
+    {
+        if (gun) gun.Destroy();
+    }
+
     public override void OnUpdate(float deltaTime)
     {
         reload -= deltaTime;
-        // The click that captures the cursor shouldn't also throw.
+        // Only accept gameplay input while the cursor is captured.
         bool captured = Input.MouseCaptured;
         bool canThrow = captured && wasCaptured;
         wasCaptured = captured;
-        if (!canThrow || reload > 0f || !Input.WasActionPressed("Fire"))
+        if (!canThrow || reload > 0f || !Input.WasActionPressed("Interact"))
         {
             return;
         }
@@ -56,6 +72,7 @@ public class BallLauncher : Script
         }
         ball.GetComponent<Rigidbody>().Velocity = velocity;
 
+        EventBus.Publish(new PortalBallFired(Entity));
         balls.Enqueue(ball);
         while (balls.Count > MaxBalls)
         {

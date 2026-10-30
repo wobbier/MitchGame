@@ -1,0 +1,2257 @@
+{
+    "Name": "Portal Gun",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0.24,
+                -0.23,
+                0.48
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "ScriptComponent",
+            "ScriptName": "PortalGun",
+            "ScriptFields": "{}"
+        }
+    ],
+    "Children": [
+        {
+            "Name": "Gun Chassis",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.035
+                    ],
+                    "Rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.075,
+                        0.18,
+                        0.07
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cylinder",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Shell Left",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Model",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.84,
+                            0.88,
+                            0.91
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.84,
+                            0.88,
+                            0.91
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/PortalGun/ShellLeft.obj"
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Shell Right",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Model",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.84,
+                            0.88,
+                            0.91
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.84,
+                            0.88,
+                            0.91
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/PortalGun/ShellRight.obj"
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Back Cap",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        -0.13
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.064,
+                        0.06,
+                        0.045
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Grip",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.09,
+                        -0.07
+                    ],
+                    "Rotation": [
+                        -18,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.035,
+                        0.08,
+                        0.042
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Core",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.055,
+                        -0.015
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.025,
+                        0.028,
+                        0.11
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 2
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Rail Left",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.095,
+                        0.012,
+                        0.015
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.008,
+                        0.012,
+                        0.11
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 2
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Rail Right",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.095,
+                        0.012,
+                        0.015
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.008,
+                        0.012,
+                        0.11
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 2
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Barrel",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.12
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Gun Sleeve",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Rotation": [
+                                90,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.064,
+                                0.085,
+                                0.064
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cylinder",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Muzzle",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                0.086
+                            ],
+                            "Rotation": [
+                                90,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.045,
+                                0.012,
+                                0.045
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cylinder",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "EmissiveIntensity": 3
+                            }
+                        }
+                    ],
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Name": "Gun Turbine",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.17
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Gun Energy Halo",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.087,
+                                0.087,
+                                0.6
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "EmissiveIntensity": 2
+                            }
+                        },
+                        {
+                            "Type": "Model",
+                            "ModelPath": "Assets/Models/PortalGun/ReactorRing.obj"
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 0",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.077,
+                                0.0,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                25
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 1",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.05898542212016131,
+                                0.04949464594586352,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                65
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 2",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.013370909680353642,
+                                0.07583019698194002,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                105
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 3",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.038499999999999986,
+                                0.06668395609140178,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                145
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 4",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.07235633180051494,
+                                0.026335551036076505,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                185
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 5",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.07235633180051494,
+                                -0.026335551036076488,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                225
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 6",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.038500000000000034,
+                                -0.06668395609140175,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                265
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 7",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.013370909680353607,
+                                -0.07583019698194003,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                305
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Turbine Blade 8",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.058985422120161286,
+                                -0.049494645945863544,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                345
+                            ],
+                            "Scale": [
+                                0.008,
+                                0.019,
+                                0.014
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.36,
+                                    0.22,
+                                    0.08
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Name": "Gun Rotor",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.08
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Gun Containment Ring",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.096,
+                                0.096,
+                                1.0
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Model",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.22,
+                                    0.25,
+                                    0.3
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.22,
+                                    0.25,
+                                    0.3
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        },
+                        {
+                            "Type": "Model",
+                            "ModelPath": "Assets/Models/PortalGun/ReactorRing.obj"
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Rotor Lug 0",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.085,
+                                0.0,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.013,
+                                0.022,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Rotor Lug 1",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.04250000000000001,
+                                0.07361215932167729,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                60
+                            ],
+                            "Scale": [
+                                0.013,
+                                0.022,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Rotor Lug 2",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.04249999999999998,
+                                0.07361215932167729,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                120
+                            ],
+                            "Scale": [
+                                0.013,
+                                0.022,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Rotor Lug 3",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.085,
+                                1.0409497792752502e-17,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                180
+                            ],
+                            "Scale": [
+                                0.013,
+                                0.022,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Rotor Lug 4",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.04250000000000004,
+                                -0.07361215932167726,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                240
+                            ],
+                            "Scale": [
+                                0.013,
+                                0.022,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Rotor Lug 5",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0.04250000000000001,
+                                -0.07361215932167729,
+                                0
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                300
+                            ],
+                            "Scale": [
+                                0.013,
+                                0.022,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Name": "Gun Flash",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0.36
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        0.0001,
+                        0.0001,
+                        0.0001
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Sphere",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.02,
+                            0.55,
+                            1.0
+                        ],
+                        "EmissiveIntensity": 9
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Pulse Light",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0.08,
+                        0.3
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Point",
+                    "Color": [
+                        0.02,
+                        0.55,
+                        1.0
+                    ],
+                    "Intensity": 0,
+                    "Range": 2,
+                    "CastShadows": false
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Vent 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.086,
+                        0,
+                        -0.1
+                    ],
+                    "Rotation": [
+                        0,
+                        -6,
+                        0
+                    ],
+                    "Scale": [
+                        0.006,
+                        0.026,
+                        0.003
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Vent 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.08499999999999999,
+                        0,
+                        -0.07300000000000001
+                    ],
+                    "Rotation": [
+                        0,
+                        -6,
+                        0
+                    ],
+                    "Scale": [
+                        0.006,
+                        0.026,
+                        0.003
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Vent 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.08399999999999999,
+                        0,
+                        -0.046000000000000006
+                    ],
+                    "Rotation": [
+                        0,
+                        -6,
+                        0
+                    ],
+                    "Scale": [
+                        0.006,
+                        0.026,
+                        0.003
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Vent 3",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.08299999999999999,
+                        0,
+                        -0.019000000000000003
+                    ],
+                    "Rotation": [
+                        0,
+                        -6,
+                        0
+                    ],
+                    "Scale": [
+                        0.006,
+                        0.026,
+                        0.003
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Vent 4",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.08199999999999999,
+                        0,
+                        0.007999999999999993
+                    ],
+                    "Rotation": [
+                        0,
+                        -6,
+                        0
+                    ],
+                    "Scale": [
+                        0.006,
+                        0.026,
+                        0.003
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "Metallic": 0.45,
+                        "Roughness": 0.28,
+                        "EmissiveColor": [
+                            0.035,
+                            0.045,
+                            0.06
+                        ],
+                        "EmissiveIntensity": 0
+                    }
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Name": "Gun Claw 0",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0.09,
+                        0.0,
+                        0.24
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Gun Claw Arm 0",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                -0.01
+                            ],
+                            "Rotation": [
+                                0,
+                                -13,
+                                0
+                            ],
+                            "Scale": [
+                                0.012,
+                                0.017,
+                                0.095
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.16,
+                                    0.19,
+                                    0.23
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.16,
+                                    0.19,
+                                    0.23
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Hinge 0",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                -0.055
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.025,
+                                0.026,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Sphere",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Light 0",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0.019,
+                                0.012
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.004,
+                                0.004,
+                                0.056
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "EmissiveIntensity": 3
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Tip 0",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.018,
+                                0,
+                                0.074
+                            ],
+                            "Rotation": [
+                                0,
+                                -30,
+                                0
+                            ],
+                            "Scale": [
+                                0.018,
+                                0.016,
+                                0.032
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Name": "Gun Claw 1",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.04499999999999998,
+                        0.07794228634059948,
+                        0.24
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        120
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Gun Claw Arm 1",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                -0.01
+                            ],
+                            "Rotation": [
+                                0,
+                                -13,
+                                0
+                            ],
+                            "Scale": [
+                                0.012,
+                                0.017,
+                                0.095
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.16,
+                                    0.19,
+                                    0.23
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.16,
+                                    0.19,
+                                    0.23
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Hinge 1",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                -0.055
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.025,
+                                0.026,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Sphere",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Light 1",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0.019,
+                                0.012
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.004,
+                                0.004,
+                                0.056
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "EmissiveIntensity": 3
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Tip 1",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.018,
+                                0,
+                                0.074
+                            ],
+                            "Rotation": [
+                                0,
+                                -30,
+                                0
+                            ],
+                            "Scale": [
+                                0.018,
+                                0.016,
+                                0.032
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Name": "Gun Claw 2",
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -0.04500000000000004,
+                        -0.07794228634059945,
+                        0.24
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        240
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ],
+            "Children": [
+                {
+                    "Name": "Gun Claw Arm 2",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                -0.01
+                            ],
+                            "Rotation": [
+                                0,
+                                -13,
+                                0
+                            ],
+                            "Scale": [
+                                0.012,
+                                0.017,
+                                0.095
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.16,
+                                    0.19,
+                                    0.23
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.16,
+                                    0.19,
+                                    0.23
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Hinge 2",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0,
+                                -0.055
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.025,
+                                0.026,
+                                0.025
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Sphere",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.84,
+                                    0.88,
+                                    0.91
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Light 2",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                0,
+                                0.019,
+                                0.012
+                            ],
+                            "Rotation": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "Scale": [
+                                0.004,
+                                0.004,
+                                0.056
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.02,
+                                    0.55,
+                                    1.0
+                                ],
+                                "EmissiveIntensity": 3
+                            }
+                        }
+                    ],
+                    "Children": []
+                },
+                {
+                    "Name": "Gun Claw Tip 2",
+                    "Components": [
+                        {
+                            "Type": "Transform",
+                            "Position": [
+                                -0.018,
+                                0,
+                                0.074
+                            ],
+                            "Rotation": [
+                                0,
+                                -30,
+                                0
+                            ],
+                            "Scale": [
+                                0.018,
+                                0.016,
+                                0.032
+                            ]
+                        },
+                        {
+                            "Type": "Mesh",
+                            "MeshType": "Cube",
+                            "CastShadows": false,
+                            "Material": {
+                                "Type": "StandardMaterial",
+                                "DiffuseColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "Metallic": 0.45,
+                                "Roughness": 0.28,
+                                "EmissiveColor": [
+                                    0.035,
+                                    0.045,
+                                    0.06
+                                ],
+                                "EmissiveIntensity": 0
+                            }
+                        }
+                    ],
+                    "Children": []
+                }
+            ]
+        }
+    ]
+}

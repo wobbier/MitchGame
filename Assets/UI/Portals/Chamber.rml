@@ -1,0 +1,34 @@
+<rml>
+<head>
+<title>Test chamber objectives</title>
+<style>
+body { width: 100%; height: 100%; margin: 0; font-family: Inter; color: #e3edf0; }
+#chamber { position: absolute; width: 100%; height: 100%; }
+#objectives { position: absolute; top: 32px; left: 35px; width: 330px; padding: 17px 20px; background-color: #101923de; border-left: 2px #77b9c9; }
+#eyebrow { display: block; color: #7b9da9; font-size: 10px; letter-spacing: 3px; margin-bottom: 11px; }
+#objective { display: block; font-size: 17px; letter-spacing: 1px; margin-bottom: 8px; }
+#detail { display: block; color: #b1c2c9; font-size: 12px; line-height: 17px; margin-bottom: 15px; }
+#progress { display: block; color: #657b86; font-size: 10px; letter-spacing: 1px; }
+#progress span { margin-right: 11px; }
+#progress .done { color: #6ddbd2; }
+#return { display: block; margin-top: 11px; color: #72929f; font-size: 10px; letter-spacing: 1px; }
+#interaction { position: absolute; bottom: 154px; left: 50%; width: 280px; margin-left: -140px; text-align: center; padding: 12px 0; color: #f4d59c; font-size: 14px; letter-spacing: 2px; background-color: #111b23d9; }
+#toast { position: absolute; top: 34px; left: 50%; width: 470px; margin-left: -235px; text-align: center; padding: 15px 20px; background-color: #101d26e8; border-bottom: 2px #79e7df; font-size: 13px; letter-spacing: 2px; }
+#finish { position: absolute; top: 25%; left: 50%; width: 520px; margin-left: -260px; padding: 32px; background-color: #101c27ee; border-top: 3px #79e7df; text-align: center; }
+#finish-title { display: block; font-size: 29px; letter-spacing: 4px; margin-bottom: 13px; color: #a4fff1; }
+#finish-copy { display: block; font-size: 13px; color: #a9c1c9; line-height: 20px; }
+</style>
+</head>
+<body><div id="chamber" data-model="chamber">
+<div id="objectives">
+<div id="eyebrow">TEST CHAMBER  /  TRANSFER</div>
+<div id="objective">{{ objective }}</div>
+<div id="detail">{{ detail }}</div>
+<div id="progress"><span data-class-done="relay">RELAY</span><span data-class-done="plate">SWITCH</span><span data-class-done="complete">EXIT</span></div>
+<div id="return">{{ checkpoint }} &#160; / &#160; R  RETURN</div>
+</div>
+<div id="interaction" data-if="interaction != ''">{{ interaction }}</div>
+<div id="toast" data-if="toast != ''">{{ toast }}</div>
+<div id="finish" data-if="complete"><div id="finish-title">CHAMBER COMPLETE</div><div id="finish-copy">Power routed. Switch secured.<br/>Momentum preserved.</div></div>
+</div></body>
+</rml>

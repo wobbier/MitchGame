@@ -1,0 +1,47 @@
+{
+    "Name": "Portal Shot",
+    "Components": [
+        {
+            "Type": "Transform",
+            "Position": [
+                0,
+                0,
+                0
+            ],
+            "Rotation": [
+                0,
+                0,
+                0
+            ],
+            "Scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Type": "Mesh",
+            "MeshType": "Cube",
+            "CastShadows": false,
+            "Material": {
+                "Type": "StandardMaterial",
+                "DiffuseColor": [
+                    0.02,
+                    0.55,
+                    1
+                ],
+                "EmissiveColor": [
+                    0.02,
+                    0.55,
+                    1
+                ],
+                "EmissiveIntensity": 7
+            }
+        },
+        {
+            "Type": "ScriptComponent",
+            "ScriptName": "PortalShot",
+            "ScriptFields": "{}"
+        }
+    ]
+}

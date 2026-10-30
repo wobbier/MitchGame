@@ -1,0 +1,23 @@
+<rml>
+<head>
+<title>Portal Gun</title>
+<style>
+body { width: 100%; height: 100%; margin: 0; font-family: Inter; color: #d8e5eb; }
+#hud { position: absolute; width: 100%; height: 100%; }
+#aim { position: absolute; left: 50%; top: 50%; width: 34px; height: 28px; margin-left: -17px; margin-top: -14px; }
+#blue { position: absolute; left: 0; top: 0; width: 8px; height: 24px; border-left: 3px #2bc5ff; border-top: 2px #2bc5ff; border-bottom: 2px #2bc5ff; }
+#orange { position: absolute; right: 0; top: 0; width: 8px; height: 24px; border-right: 3px #ff8a32; border-top: 2px #ff8a32; border-bottom: 2px #ff8a32; }
+#dot { position: absolute; left: 16px; top: 12px; width: 3px; height: 3px; background-color: white; }
+#readout { position: absolute; bottom: 35px; left: 35px; padding: 16px 20px; background-color: #0c1423dd; border-left: 2px #2bc5ff; }
+#title { display: block; font-size: 12px; letter-spacing: 3px; color: #7c9cae; margin-bottom: 10px; }
+#controls { display: block; font-size: 14px; }
+.blue { color: #2bc5ff; } .orange { color: #ff8a32; }
+#status { display: block; font-size: 11px; letter-spacing: 1px; margin-top: 10px; color: #8db7c9; }
+#status.failed { color: #ff996d; }
+</style>
+</head>
+<body><div id="hud" data-model="portalgun">
+<div id="aim"><div id="blue"/><div id="orange"/><div id="dot"/></div>
+<div id="readout"><div id="title">APERTURE / DUAL LINK</div><div id="controls"><span class="blue">LMB  BLUE</span> &#160; / &#160; <span class="orange">RMB  ORANGE</span> &#160; / &#160; E  BALL</div><div id="status" data-class-failed="failed">{{ status }}</div></div>
+</div></body>
+</rml>
