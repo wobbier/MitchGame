@@ -1,0 +1,173 @@
+{
+    "Version": 2,
+    "Cores": [],
+    "Entities": [
+        {
+            "GUID": "4a9d011000000001",
+            "Name": "Main Camera",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        2,
+                        -7
+                    ],
+                    "Rotation": [
+                        0.087,
+                        0,
+                        0,
+                        0.996
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Camera",
+                    "ClearType": "Color",
+                    "ClearColor": [
+                        0.025,
+                        0.04,
+                        0.065
+                    ],
+                    "IsCurrent": true,
+                    "FieldOfView": 52,
+                    "Near": 0.1,
+                    "Far": 100
+                }
+            ]
+        },
+        {
+            "GUID": "4a9d011000000002",
+            "Name": "Key Light",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        6,
+                        -5
+                    ],
+                    "Rotation": [
+                        0.25,
+                        -0.33,
+                        0.09,
+                        0.905
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Light",
+                    "LightType": "Directional",
+                    "Color": [
+                        1.0,
+                        0.88,
+                        0.7
+                    ],
+                    "Intensity": 3.5,
+                    "CastShadows": true
+                }
+            ]
+        },
+        {
+            "GUID": "4a9d011000000003",
+            "Name": "Floor",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        -0.5,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        8,
+                        0.5,
+                        8
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.35,
+                            0.37,
+                            0.4
+                        ],
+                        "Roughness": 0.9,
+                        "Metallic": 0.0
+                    }
+                },
+                {
+                    "Type": "BoxCollider",
+                    "Size": [
+                        2,
+                        2,
+                        2
+                    ]
+                }
+            ]
+        },
+        {
+            "GUID": "4a9d011000000004",
+            "Name": "Tube",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "Model",
+                    "ModelPath": "Assets/Models/Test/SkinnedTube.fbx"
+                },
+                {
+                    "Type": "Animator",
+                    "DefaultState": "Wave"
+                },
+                {
+                    "Type": "Ragdoll",
+                    "BlendSeconds": 0.4
+                },
+                {
+                    "Type": "ScriptComponent",
+                    "ScriptName": "RagdollProbe"
+                }
+            ]
+        }
+    ],
+    "AssetReferences": {}
+}

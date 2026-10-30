@@ -1,0 +1,17 @@
+# Ragdolls (GAME-5): build the skinned tube's ragdoll as one undo step, then play: RagdollProbe.cs
+# makes it go limp a second in, checks it fell onto the floor, and that it blends back up.
+#   Havana --scene Assets/Scenes/Tests/RagdollTest.lvl --editor-exec Assets/Scenes/Tests/RagdollFlows.edscript
+wait 60
+select Tube
+ragdoll-build
+assert-ragdoll-bones 3
+undo
+assert-ragdoll-bones 0
+redo
+assert-ragdoll-bones 3
+screenshot .tmp/overhaul/shots/ragdoll_built.png
+
+play
+assert-playing 1
+wait-log RagdollProbe: PASS | 1200
+stop
