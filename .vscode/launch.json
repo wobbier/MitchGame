@@ -3,6 +3,10 @@
   "configurations": [
     {
       "name": "ME HUB (Debug, Linux)",
+      "presentation": {
+        "group": "01 HUB",
+        "order": 1
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Editor_Debug/HUB",
@@ -34,6 +38,10 @@
     },
     {
       "name": "Havana (Editor_Debug, Linux)",
+      "presentation": {
+        "group": "02 Editor",
+        "order": 1
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Editor_Debug/Havana",
@@ -65,6 +73,10 @@
     },
     {
       "name": "Havana (Debug, Linux)",
+      "presentation": {
+        "group": "03 Game",
+        "order": 1
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Game_linux_Debug/Game_EntryPoint_x64",
@@ -96,6 +108,10 @@
     },
     {
       "name": "ME HUB (Release, Linux)",
+      "presentation": {
+        "group": "01 HUB",
+        "order": 2
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Editor_Release/HUB",
@@ -127,6 +143,10 @@
     },
     {
       "name": "Havana (Editor_Release, Linux)",
+      "presentation": {
+        "group": "02 Editor",
+        "order": 2
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Editor_Release/Havana",
@@ -158,6 +178,10 @@
     },
     {
       "name": "MitchGame (Release, Linux)",
+      "presentation": {
+        "group": "03 Game",
+        "order": 2
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Game_linux_Release/Game_EntryPoint_x64",
@@ -189,6 +213,10 @@
     },
     {
       "name": "ME HUB (Retail, Linux)",
+      "presentation": {
+        "group": "01 HUB",
+        "order": 3
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Editor_Retail/HUB",
@@ -220,6 +248,10 @@
     },
     {
       "name": "Havana (Editor_Retail, Linux)",
+      "presentation": {
+        "group": "02 Editor",
+        "order": 3
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Editor_Retail/Havana",
@@ -251,6 +283,10 @@
     },
     {
       "name": "MitchGame (Retail, Linux)",
+      "presentation": {
+        "group": "03 Game",
+        "order": 3
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Game_linux_Retail/Game_EntryPoint_x64",
@@ -282,6 +318,10 @@
     },
     {
       "name": "Attach to Havana (.NET)",
+      "presentation": {
+        "group": "06 Attach",
+        "order": 1
+      },
       "type": "coreclr",
       "request": "attach",
       "processId": "${command:pickProcess}",
@@ -290,6 +330,10 @@
     },
     {
       "name": "Net Server (Server_Debug, Linux)",
+      "presentation": {
+        "group": "05 Network processes",
+        "order": 1
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Server_linux_Debug/Game_EntryPoint_x64",
@@ -327,6 +371,10 @@
     },
     {
       "name": "Net Client 1 (Debug, Linux)",
+      "presentation": {
+        "group": "05 Network processes",
+        "order": 2
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Game_linux_Debug/Game_EntryPoint_x64",
@@ -374,6 +422,10 @@
     },
     {
       "name": "Net Client 2 (Debug, Linux)",
+      "presentation": {
+        "group": "05 Network processes",
+        "order": 3
+      },
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/.build/Game_linux_Debug/Game_EntryPoint_x64",
@@ -421,6 +473,10 @@
     },
     {
       "name": "Net: server + 2 clients (no debugger)",
+      "presentation": {
+        "group": "04 Network sessions",
+        "order": 1
+      },
       "type": "node-terminal",
       "request": "launch",
       "command": "python3 Engine/Tools/RunNetLocal.py --clients 2 --scene Assets/Scenes/Tests/NetTest.lvl",
@@ -431,6 +487,10 @@
   "compounds": [
     {
       "name": "Net: server + client (debug both)",
+      "presentation": {
+        "group": "04 Network sessions",
+        "order": 2
+      },
       "configurations": [
         "Net Server (Server_Debug, Linux)",
         "Net Client 1 (Debug, Linux)"
@@ -440,6 +500,10 @@
     },
     {
       "name": "Net: server + 2 clients (debug all)",
+      "presentation": {
+        "group": "04 Network sessions",
+        "order": 3
+      },
       "configurations": [
         "Net Server (Server_Debug, Linux)",
         "Net Client 1 (Debug, Linux)",
