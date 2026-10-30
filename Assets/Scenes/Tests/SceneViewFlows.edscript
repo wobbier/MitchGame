@@ -34,6 +34,25 @@ action View.GoToBookmark2
 wait 2
 assert-scene-camera [1, 2, 3] ~ 0.01
 
+# Surface snap (what Shift-dragging the move gizmo does; here through surface-place): from 6 m up,
+# looking 45 degrees down, the view's centre meets the ground (y = -1) at z = 1.
+preference Camera.Bookmarks | {"Assets/Scenes/Tests/HierarchyTest.lvl": [null, null, null, {"Position": [0, 6, -6], "Pitch": 45, "Yaw": 0}]}
+action View.GoToBookmark4
+wait 5
+select Right Cube
+surface-place 0.5 0.5
+wait 2
+assert-field Right Cube | Transform.Position | [0, 0, 1] ~ 0.05
+undo
+wait 2
+assert-field Right Cube | Transform.Position | [-3, 4, 0] ~ 0.01
+
+# Measure: from the ground under the view's centre (0, -1, 1) to a point to its right.
+measure 0.5 0.5 | 0.75 0.5
+wait-log Measure: | 30
+wait-log from [0.00, -1.00, 1.00] | 30
+screenshot .tmp/overhaul/shots/measure.png
+
 # The grid on the XY plane with 0.5 m cells (a capture to look at; preferences don't persist here).
 preference Camera.Bookmarks | {"Assets/Scenes/Tests/HierarchyTest.lvl": [null, null, {"Position": [0, 1, -8], "Pitch": 0, "Yaw": 0}]}
 action View.GoToBookmark3
