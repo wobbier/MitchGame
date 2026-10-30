@@ -1,0 +1,22 @@
+# --scene Assets/Scenes/Tests/NavTest.lvl
+# The AI kit (GAME-3): the kit's GuardBrain (a behavior tree over a NavMeshAgent with sight and
+# hearing) patrols PatrolA <-> PatrolB, sees the Intruder stepping into view, chases and catches
+# it, then loses it behind WallA, searches where it last saw it and goes back to patrolling.
+wait-log dotnet ready | 7200
+wait 10
+play
+wait-log Guard: patrol -> waypoint 1 | 3000
+assert-field Guard | Transform.Position.0 | -12.0 ~ 0.6
+# In front of the guard, south of WallA.
+select Intruder
+set Transform.Position [-10.0, 1.0, -1.0]
+wait-log Guard: sees Intruder | 600
+wait-log Guard: caught Intruder | 1200
+assert-near Guard | Intruder | 1.6
+screenshot .tmp/EditorFlows/GuardCaught.png
+# Gone behind the wall and out of range.
+set Transform.Position [12.0, 1.0, 12.0]
+wait-log Guard: lost Intruder, searching | 600
+wait-log Guard: gave up, back to patrol | 1200
+wait-log Guard: patrol -> waypoint | 3000
+stop

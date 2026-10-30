@@ -878,6 +878,263 @@
             "DestroyOnLoad": true,
             "GUID": "7c7751ebae3ba25f",
             "Name": "Jumper"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -12.0,
+                        0.15,
+                        -12.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.30000001192092896,
+                        0.15000000596046448,
+                        0.30000001192092896
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.2
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.4000000059604645,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "5e1a7c3b9d2f4a82",
+            "Name": "PatrolA"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -12.0,
+                        0.15,
+                        -3.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        0.30000001192092896,
+                        0.15000000596046448,
+                        0.30000001192092896
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.2
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.4000000059604645,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Sphere",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "5e1a7c3b9d2f4a83",
+            "Name": "PatrolB"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        -12.0,
+                        1.0,
+                        -12.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.85,
+                            0.2,
+                            0.2
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Capsule",
+                    "Type": "Mesh"
+                },
+                {
+                    "Acceleration": 30.0,
+                    "AgentType": 0,
+                    "AngularSpeed": 360.0,
+                    "AreaMask": 65535,
+                    "Avoidance": "High",
+                    "BaseOffset": 1.0,
+                    "Height": 2.0,
+                    "LinkJumpHeight": 1.0,
+                    "Radius": 0.5,
+                    "Speed": 2.5,
+                    "StoppingDistance": 0.0,
+                    "Type": "NavMeshAgent",
+                    "UpdatePosition": true,
+                    "UpdateRotation": true
+                },
+                {
+                    "ScriptFields": "{\"Target\":\"Intruder\",\"Waypoints\":\"PatrolA,PatrolB\",\"PatrolSpeed\":2.5,\"ChaseSpeed\":5.0,\"CatchDistance\":1.5,\"SightRange\":12.0,\"FieldOfView\":120.0,\"PauseSeconds\":1.0}",
+                    "ScriptName": "GuardBrain",
+                    "Type": "ScriptComponent"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "5e1a7c3b9d2f4a81",
+            "Name": "Guard"
+        },
+        {
+            "Components": [
+                {
+                    "Position": [
+                        12.0,
+                        1.0,
+                        12.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "Type": "Transform"
+                },
+                {
+                    "CastShadows": true,
+                    "Material": {
+                        "AlphaCutoff": 0.0,
+                        "BlendMode": 0,
+                        "DiffuseColor": [
+                            0.95,
+                            0.75,
+                            0.15
+                        ],
+                        "EmissiveColor": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "EmissiveIntensity": 1.0,
+                        "FaceMode": 0,
+                        "InvertRoughness": false,
+                        "Metallic": 0.0,
+                        "NormalStrength": 1.0,
+                        "OcclusionStrength": 1.0,
+                        "Opacity": 1.0,
+                        "RenderMode": 0,
+                        "Roughness": 0.5,
+                        "Tiling": [
+                            1.0,
+                            1.0
+                        ],
+                        "Type": "StandardMaterial"
+                    },
+                    "MeshType": "Capsule",
+                    "Type": "Mesh"
+                }
+            ],
+            "DestroyOnLoad": true,
+            "GUID": "5e1a7c3b9d2f4a84",
+            "Name": "Intruder"
         }
     ],
     "Version": 2
