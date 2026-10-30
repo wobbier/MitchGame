@@ -1,0 +1,14 @@
+# --scene Assets/Scenes/Tests/OptionsTest.lvl --user-dir .tmp/EditorFlows/ModsUser --mods --mod-dir Engine/Tests/Mods
+# The Mods tab (MOD-6), second launch: the mod Mods01Toggle turned off didn't load, the other did.
+# Turning it back on shows it pending (and leaves the next Mods01Toggle run where it started).
+wait-log UI/Options/Options.rml | 600
+wait 10
+assert-mod-loaded com.mitchengine.tests.blue-crates | 0
+assert-mod-loaded com.mitchengine.tests.example-mod | 1
+ui-click #tab-mods
+wait 5
+ui-assert-text #mod-toggle-com-mitchengine-tests-blue-crates | Off
+ui-assert-text #mod-status-com-mitchengine-tests-blue-crates | Off
+ui-click #mod-toggle-com-mitchengine-tests-blue-crates
+wait 5
+ui-assert-text #mod-status-com-mitchengine-tests-blue-crates | Loads after a restart

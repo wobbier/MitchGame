@@ -1,0 +1,16 @@
+# --scene Assets/Scenes/Tests/OptionsTest.lvl --user-dir .tmp/EditorFlows/ModsUser --mods --mod-dir Engine/Tests/Mods
+# The options menu's Mods tab (MOD-6), first launch: the test mods load; turning one off saves the
+# player's choice (user://Config/Mods.json), which applies at the next start (Mods02Restart).
+wait-log UI/Options/Options.rml | 600
+wait 10
+assert-mod-loaded com.mitchengine.tests.blue-crates | 1
+ui-click #tab-mods
+wait 5
+ui-assert-text #mod-toggle-com-mitchengine-tests-blue-crates | On
+ui-assert-text #mod-status-com-mitchengine-tests-blue-crates | Loaded
+ui-click #mod-toggle-com-mitchengine-tests-blue-crates
+wait 5
+ui-assert-text #mod-toggle-com-mitchengine-tests-blue-crates | Off
+ui-assert-text #mod-status-com-mitchengine-tests-blue-crates | Unloads after a restart
+screenshot .tmp/EditorFlows/Mods01Toggle.png
+assert-mod-loaded com.mitchengine.tests.blue-crates | 1
