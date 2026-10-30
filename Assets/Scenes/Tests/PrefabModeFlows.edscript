@@ -1,0 +1,44 @@
+# Prefab mode (ED-6): open a prefab alone, edit and save it; back in the scene its instances take
+# the change (an overridden field keeps the instance's value), as one undo step. Unsaved edits are
+# dropped by a plain close.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/PrefabModeFlows.edscript
+wait 20
+create-prefab Parent | .tmp/Tests/ModeParent.prefab
+instantiate .tmp/Tests/ModeParent.prefab
+rename Instance2
+select Instance2/Child
+set Transform.Scale [2, 2, 2]
+
+# The prefab alone: its own hierarchy, none of the scene's entities.
+prefab-open .tmp/Tests/ModeParent.prefab
+assert-prefab-mode .tmp/Tests/ModeParent.prefab
+assert-exists Parent/Child/Grandchild
+assert-missing Right Cube
+select Parent/Child/Grandchild
+set Transform.Position [3, 1, 0]
+select Parent/Child
+set Transform.Scale [0.75, 0.75, 0.75]
+assert-dirty 1
+prefab-save
+assert-dirty 0
+prefab-close
+assert-prefab-mode 0
+
+# Both instances took the new position; Instance2's scale override stayed.
+assert-exists Right Cube
+assert-field Parent/Child/Grandchild | Transform.Position | [3, 1, 0] ~ 0.001
+assert-field Instance2/Child/Grandchild | Transform.Position | [3, 1, 0] ~ 0.001
+assert-field Parent/Child | Transform.Scale | [0.75, 0.75, 0.75] ~ 0.001
+assert-field Instance2/Child | Transform.Scale | [2, 2, 2] ~ 0.001
+undo
+assert-field Parent/Child/Grandchild | Transform.Position | [3, 0, 0] ~ 0.001
+assert-field Instance2/Child/Grandchild | Transform.Position | [3, 0, 0] ~ 0.001
+redo
+assert-field Instance2/Child/Grandchild | Transform.Position | [3, 1, 0] ~ 0.001
+
+# A close without saving drops the edit.
+prefab-open .tmp/Tests/ModeParent.prefab
+select Parent/Child/Grandchild
+set Transform.Position [9, 9, 9]
+prefab-close
+assert-field Instance2/Child/Grandchild | Transform.Position | [3, 1, 0] ~ 0.001
