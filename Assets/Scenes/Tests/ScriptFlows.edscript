@@ -54,6 +54,18 @@ wait-log Scripts: hot reloaded | 3600
 replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | Ticks++; | Ticks++; if( !s_thrown ) { s_thrown = true; throw new System.InvalidOperationException( "probe throw" ); }
 wait-log probe throw | 3600
 wait-log HotReloadProbe.cs:line 11 | 600
+# ...and with Pause on script exception on (ME-234), the next throw pauses Play and selects the thrower
+preference Editor.PauseOnScriptException | true
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | throw new System.InvalidOperationException( "probe throw" ); | throw new System.InvalidOperationException( "second throw" );
+wait-log Paused: Reloader's script threw | 3600
+assert-paused 1
+assert-active Reloader
+pause
+wait 2
+assert-paused 0
+preference Editor.PauseOnScriptException | false
+replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | throw new System.InvalidOperationException( "second throw" ); | throw new System.InvalidOperationException( "probe throw" );
+wait-log Scripts: hot reloaded | 3600
 replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | Ticks++; if( !s_thrown ) { s_thrown = true; throw new System.InvalidOperationException( "probe throw" ); } | Ticks++;
 wait-log Scripts: hot reloaded | 3600
 replace-in-file Assets/Scripts/Tests/HotReloadProbe.cs | public int Ticks = 0; static bool s_thrown; | public int Ticks = 0;
