@@ -48,7 +48,7 @@ public class ChamberController : Script
         mover = player ? player.GetComponent<CharacterController>() : null;
         ready = player && cube && receiver && plate && mover != null && camera != null;
         heldCube = HeldReference.Resolve();
-        if (heldCube) heldCube.SetField("Rigidbody", "BodyType", "Kinematic");
+        if (heldCube) SetHeldPhysics(heldCube, true);
         hud = UI.Model("chamber");
         hud.Set("toast", "");
         hud.Set("interaction", "");
@@ -94,24 +94,45 @@ public class ChamberController : Script
         Vector3 origin = camera.WorldPosition;
         Vector3 direction = (camera.Forward * 1.55f - camera.Up * 0.24f).Normalized();
         float distance = 1.55f;
+        // The hold ray uses the same opening as the player. A cube can lead the player
+        // through a doorway; do not retract it against the host wall or push the capsule.
+        Portal passage = Portal.FindRayPassage(origin, direction, distance, out float crossing);
         foreach (RaycastHit hit in Physics.RaycastAll(origin, direction, distance + 0.50f))
         {
             if (hit.Entity == player || hit.Entity == heldCube || IsCubePart(hit.Entity)) continue;
-            distance = Mathf.Clamp(hit.Distance - 0.55f, 0.9f, distance);
+            if (passage != null && hit.Entity == passage.SurfaceHost.Resolve()) continue;
+            distance = Mathf.Clamp(hit.Distance - 0.55f, 0.65f, distance);
             break;
+        }
+        Vector3 target = origin + direction * distance;
+        Vector3 forward = camera.Forward, up = camera.Up;
+        if (passage != null && distance >= crossing)
+        {
+            target = passage.ThroughPoint(target);
+            forward = passage.ThroughDirection(forward);
+            up = passage.ThroughDirection(up);
         }
         Rigidbody body = heldCube.GetComponent<Rigidbody>();
         if (body != null)
         {
-            body.Teleport(origin + direction * distance, camera.Forward, camera.Up);
+            body.Teleport(target, forward, up);
             body.Velocity = Vector3.Zero;
         }
+        Portal.UpdateTravellerImages();
+    }
+
+    private static void SetHeldPhysics(Entity entity, bool held)
+    {
+        entity.SetField("Rigidbody", "BodyType", held ? "Kinematic" : "Dynamic");
+        // Held geometry is positioned by the carry ray, not the solver. In particular it
+        // must never become a kinematic obstacle trapping its own player's capsule.
+        entity.SetField("BoxCollider", "IsTrigger", held);
     }
 
     public bool TryReceiveBall(Entity ball)
     {
         if (!ready || Powered || !ball || !ball.HasComponent<Rigidbody>() || !ball.Name.StartsWith("Portal Ball")) return false;
-        if (Vector3.Distance(ball.Transform.WorldPosition, receiver.Transform.WorldPosition) > 0.9f) return false;
+        if (!InsideReceiver(ball.Transform.WorldPosition)) return false;
         AcceptBall(ball);
         return true;
     }
@@ -122,6 +143,7 @@ public class ChamberController : Script
         ball.Destroy();
         ballPositions.Clear();
         Toast("RELAY ONLINE  /  BRIDGE DEPLOYING", 4f);
+        Audio.PlayOneShot("Assets/Sounds/Portals/Pulse.wav", 0.5f);
         UpdateLamps();
         EventBus.Publish(new ChamberProgressChanged("relay", true));
     }
@@ -139,16 +161,29 @@ public class ChamberController : Script
             positions[ball] = current;
             Vector3 segment = current - previous;
             float length = segment.LengthSquared();
-            float t = length > 0.0001f ? Mathf.Clamp01(Vector3.Dot(center - previous, segment) / length) : 0f;
-            // Reject teleport discontinuities; a ball must actually pass through the receiver.
-            bool nearby = Vector3.Distance(center, current) <= 0.9f;
-            bool swept = length < 9f && Vector3.Distance(center, previous + segment * t) <= 0.75f;
+            Vector3 normal = receiver.Transform.Forward;
+            float along = Vector3.Dot(segment, normal);
+            float t = Mathf.Abs(along) > 0.0001f
+                ? Vector3.Dot(center - previous, normal) / along : -1f;
+            // Match the wide visible collector. Ordinary angled shots from the start platform
+            // retain lateral momentum through portals, rather than needing a perpendicular shot.
+            bool nearby = InsideReceiver(current);
+            bool swept = length < 9f && t >= 0f && t <= 1f && InsideReceiver(previous + segment * t);
             if (!nearby && !swept) continue;
             AcceptBall(ball);
             return;
         }
         ballPositions.Clear();
         foreach (var pair in positions) ballPositions[pair.Key] = pair.Value;
+    }
+
+    private bool InsideReceiver(Vector3 point)
+    {
+        Transform target = receiver.Transform;
+        Vector3 offset = point - target.WorldPosition;
+        return Mathf.Abs(Vector3.Dot(offset, target.Right)) <= 1.8f
+            && Mathf.Abs(Vector3.Dot(offset, target.Up)) <= 1.2f
+            && Mathf.Abs(Vector3.Dot(offset, target.Forward)) <= 0.55f;
     }
 
     private void UpdatePressurePlate()
@@ -217,7 +252,7 @@ public class ChamberController : Script
         if (!ready || heldCube || !CanGrabCube()) return false;
         heldCube = cube;
         HeldReference = new EntityRef { Guid = cube.Guid };
-        cube.SetField("Rigidbody", "BodyType", "Kinematic");
+        SetHeldPhysics(cube, true);
         cube.GetComponent<Rigidbody>().Velocity = Vector3.Zero;
         Toast("CUBE HELD  /  F TO DROP", 2f);
         UpdatePressurePlate();
@@ -230,7 +265,7 @@ public class ChamberController : Script
         Entity released = heldCube;
         heldCube = Entity.Null;
         HeldReference = default;
-        released.SetField("Rigidbody", "BodyType", "Dynamic");
+        SetHeldPhysics(released, false);
         Rigidbody body = released.GetComponent<Rigidbody>();
         if (body != null) body.Velocity = mover != null ? mover.Velocity : Vector3.Zero;
     }
@@ -366,7 +401,12 @@ public class ChamberController : Script
 
     private void UpdateLamps()
     {
-        Lamp("Relay Lamp", Powered, new Vector3(0.1f, 0.85f, 1f));
+        Vector3 relayColor = new Vector3(0.1f, 0.85f, 1f);
+        Lamp("Relay Lamp", Powered, relayColor);
+        Lamp("Relay Socket Core", Powered, relayColor);
+        Lamp("Relay Status Face", Powered, relayColor);
+        SetSign("Relay Status Label", Powered ? "RELAY ONLINE" : "RECEIVER / ROUTE AN ENERGY BALL");
+        SetSign("Bridge Notice", Powered ? "BRIDGE ONLINE" : "POWER: ROUTE AN ENERGY BALL / E TO FIRE");
         Vector3 switchColor = new Vector3(0.08f, 0.9f, 0.55f);
         Lamp("Plate Lamp", PlateWeighted, switchColor);
         if (plate)
@@ -383,6 +423,12 @@ public class ChamberController : Script
             if (text != null) text.Text = PlateWeighted ? "SWITCH HELD / GATE OPEN" : "CUBE ON SWITCH = OPEN GATE";
         }
         Lamp("Exit Lamp", Completed || (Powered && PlateWeighted), new Vector3(0.2f, 1f, 0.55f));
+    }
+
+    private static void SetSign(string name, string value)
+    {
+        Entity sign = World.Find(name);
+        if (sign) { TextRenderer text = sign.GetComponent<TextRenderer>(); if (text != null) text.Text = value; }
     }
 
     private static void Lamp(string name, bool on, Vector3 color)
@@ -413,8 +459,8 @@ public class ChamberController : Script
         hud.Set("checkpoint", "CHECKPOINT " + (CheckpointIndex + 1));
         string objective = !Powered ? "01  POWER THE RELAY" : !PlateWeighted ? "02  WEIGHT THE SWITCH" : "03  USE YOUR MOMENTUM";
         string detail = !Powered ? (PlateWeighted
-            ? "Switch held and gate open. Power the relay to enable the bridge and drop hatch."
-            : "Link the white panels. Send a ball through the portal into the sealed relay.")
+            ? "Power is still off: left click BALL ENTRY, right click the white wall through the glass, then aim inside blue and press E."
+            : "1. Left click BALL ENTRY for blue. 2. Right click the white wall THROUGH THE GLASS for orange. 3. Aim inside blue and press E to fire an energy ball.")
             : !PlateWeighted ? "Reach the upper gallery. Bring its cube to the amber floor switch."
             : "Link the shaft floor to the angled panel. Stand on the hatch and press F to drop through.";
         hud.Set("objective", Completed ? "TEST COMPLETE" : objective);

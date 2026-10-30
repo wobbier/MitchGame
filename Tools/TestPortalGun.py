@@ -41,7 +41,7 @@ try:
     output = (OUT / f'{args.label}.log').read_text()
     for line in output.splitlines():
         if 'PORTAL ' in line or 'Exception' in line: print(line)
-    if 'PORTAL FAIL:' in output or 'threw ' in output or 'PORTAL ALL PASSED:' not in output:
+    if 'Shader compile failed:' in output or 'PORTAL FAIL:' in output or 'threw ' in output or 'PORTAL ALL PASSED:' not in output:
         raise RuntimeError(f'Portal regression failed: {OUT / (args.label + '.log')}')
 finally:
     build(ROOT / 'Project/Game.Script.csproj')

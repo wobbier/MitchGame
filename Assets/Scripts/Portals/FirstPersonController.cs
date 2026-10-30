@@ -95,19 +95,7 @@ public class FirstPersonController : Script
         {
             if (Input.MouseCaptured)
             {
-                Vector2 look = Input.GetActionVector2("Look");
-                // Yaw about gravity, as in ordinary FPS controls: yawing while pitched must
-                // not bank the view. Keep the complete mapped frame instead of reading Euler angles.
-                viewRotation = (Quaternion.AngleAxis(look.x * Sensitivity, Vector3.Up) * viewRotation).Normalized();
-                Vector3 right = viewRotation * Vector3.Right;
-                float pitch = (InvertY ? look.y : -look.y) * Sensitivity;
-                Quaternion pitched = (Quaternion.AngleAxis(pitch, right) * viewRotation).Normalized();
-                // Normal looking is limited at the poles. A portal may put us exactly at or
-                // beyond either pole; leave that pose intact and allow input to look out of it.
-                Vector3 before = viewRotation * Vector3.Forward;
-                Vector3 after = pitched * Vector3.Forward;
-                if (Mathf.Abs(after.y) <= 0.99996f || Mathf.Abs(before.y) > 0.99996f)
-                    viewRotation = pitched;
+                ApplyLookInput(Input.GetActionVector2("Look"));
             }
 
             recoveryDelay -= deltaTime;
@@ -135,6 +123,23 @@ public class FirstPersonController : Script
         character.MaxSpeed = Input.IsActionPressed("Sprint") ? SprintSpeed : WalkSpeed;
         character.SetMoveInput(moveDirection);
         if (Input.WasActionPressed("Jump") && character.IsGrounded) character.Jump();
+    }
+
+    // Clamp the swept pitch angle, rather than testing only the final direction: a
+    // large mouse delta can jump over a pole and end up inside the old direction limit.
+    public void ApplyLookInput(Vector2 look)
+    {
+        viewRotation = (Quaternion.AngleAxis(look.x * Sensitivity, Vector3.Up) * viewRotation).Normalized();
+        Vector3 forward = viewRotation * Vector3.Forward;
+        Vector3 right = viewRotation * Vector3.Right;
+        float elevation = Mathf.Atan2(forward.y, Mathf.Sqrt(forward.x * forward.x + forward.z * forward.z)) * Mathf.Rad2Deg;
+        float requested = (InvertY ? look.y : -look.y) * Sensitivity;
+        if (requested == 0f) return; // An exact portal-mapped pole remains untouched until input.
+        // Positive rotation about right lowers the gaze. Account for temporary portal roll
+        // without discarding the mapped view frame or moving the aim during roll recovery.
+        float pitchSign = Vector3.Dot(Vector3.Cross(right, forward), Vector3.Up) > 0f ? 1f : -1f;
+        float change = Mathf.Clamp(elevation + requested * pitchSign, -89f, 89f) - elevation;
+        viewRotation = (Quaternion.AngleAxis(change * pitchSign, right) * viewRotation).Normalized();
     }
 
     public override void OnFixedUpdate(float deltaTime)

@@ -48,7 +48,7 @@ try:
     for line in output.splitlines():
         if 'CHAMBER ' in line or 'Exception' in line:
             print(line)
-    if 'CHAMBER FAIL:' in output or 'threw ' in output or 'CHAMBER ALL PASSED:' not in output:
+    if 'Shader compile failed:' in output or 'CHAMBER FAIL:' in output or 'threw ' in output or 'CHAMBER ALL PASSED:' not in output:
         raise RuntimeError(f'Chamber regression failed: {OUT / "probe.log"}')
 finally:
     build(ROOT / 'Project/Game.Script.csproj')

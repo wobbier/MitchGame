@@ -21,6 +21,7 @@ public class Portal : Script
     public static readonly Dictionary<string, Portal> Instances = new Dictionary<string, Portal>();
     private static readonly Dictionary<Entity, Vector3> previousEyes = new Dictionary<Entity, Vector3>();
     private static Dictionary<Entity, Vector3> previousBodies = new Dictionary<Entity, Vector3>();
+    private static readonly Dictionary<Entity, Entity> images = new Dictionary<Entity, Entity>();
     private Transform exit, viewCamera, traveller;
     private Camera portalCamera;
     private Entity surfaceEntity, unlinkedPreview;
@@ -68,6 +69,7 @@ public class Portal : Script
 
     public override void OnDestroy()
     {
+        ClearTravellerImages();
         Physics.ClearPortalPassage(Entity);
         Instances.Remove(Entity.Name);
         foreach (Portal portal in Instances.Values) portal.RefreshLink();
@@ -83,7 +85,7 @@ public class Portal : Script
     // player pose. Neither camera can render a stale pose because of entity update order.
     public override void OnLateUpdate(float deltaTime)
     {
-        if (!Ready) return;
+        if (!Ready) { UpdateTravellerImages(); return; }
         foreach (Portal other in Instances.Values)
             if (other.Ready && other.Entity.Index < Entity.Index) return;
         var portals = new List<Portal>(Instances.Values);
@@ -132,6 +134,75 @@ public class Portal : Script
             camera.LookDirection(portal.ThroughDirection(portal.viewCamera.Forward), portal.ThroughDirection(portal.viewCamera.Up));
             portal.portalCamera.SetClipPlane(portal.exit.WorldPosition + portal.exit.Forward * 0.005f, portal.exit.Forward);
         }
+        UpdateTravellerImages();
+    }
+
+    // One visual per mesh (including cube decorations), sharing its native geometry/material.
+    // No scripts or colliders are cloned. Reconcile every frame, including deleted/unlinked portals.
+    public static void UpdateTravellerImages()
+    {
+        var visible = new HashSet<Entity>();
+        foreach (Entity body in Query.WithComponent("Rigidbody"))
+        {
+            if (!body || !body.Active) continue;
+            Vector3 center = body.Transform.WorldPosition;
+            Vector3 scale = body.Transform.Scale;
+            Vector3 size = body.GetField("BoxCollider", "Size", new Vector3(2, 2, 2));
+            float radius = body.HasComponent("BoxCollider")
+                ? new Vector3(scale.x * size.x, scale.y * size.y, scale.z * size.z).Length() * 0.5f
+                : body.GetField("SphereCollider", "Radius", 1f) * Mathf.Max(Mathf.Abs(scale.x), Mathf.Max(Mathf.Abs(scale.y), Mathf.Abs(scale.z)));
+            Portal closest = null;
+            float nearest = float.MaxValue;
+            foreach (Portal portal in Instances.Values)
+            {
+                if (!portal.Ready) continue;
+                float side = portal.Side(center);
+                Vector3 offset = center - portal.transform.WorldPosition;
+                if (side < -0.05f || side > radius || side >= nearest
+                    || Mathf.Abs(Vector3.Dot(offset, portal.transform.Right)) > portal.Width * 0.5f
+                    || Mathf.Abs(Vector3.Dot(offset, portal.transform.Up)) > portal.Height * 0.5f) continue;
+                closest = portal;
+                nearest = side;
+            }
+            if (closest != null) SliceHierarchy(body, closest, visible);
+        }
+        var stale = new List<Entity>();
+        foreach (var pair in images)
+        {
+            if (visible.Contains(pair.Key)) continue;
+            if (pair.Key) pair.Key.GetComponent<Mesh>()?.SetPortalSlice();
+            if (pair.Value) pair.Value.Destroy();
+            stale.Add(pair.Key);
+        }
+        foreach (Entity source in stale) images.Remove(source);
+    }
+
+    private static void SliceHierarchy(Entity source, Portal portal, HashSet<Entity> visible)
+    {
+        if (!source || !source.Active) return;
+        Mesh mesh = source.GetComponent<Mesh>();
+        if (mesh != null)
+        {
+            if (!images.TryGetValue(source, out Entity image) || !image)
+            {
+                image = World.CreateEntity("Portal Image / " + source.Name);
+                image.AddComponent<Mesh>();
+                images[source] = image;
+            }
+            mesh.SetPortalSlice(image, portal.Entity, portal.exit.Entity);
+            visible.Add(source);
+        }
+        foreach (Entity child in source.Children) SliceHierarchy(child, portal, visible);
+    }
+
+    private static void ClearTravellerImages()
+    {
+        foreach (var pair in images)
+        {
+            if (pair.Key) pair.Key.GetComponent<Mesh>()?.SetPortalSlice();
+            if (pair.Value) pair.Value.Destroy();
+        }
+        images.Clear();
     }
 
     // Explicit respawns are not a swept movement through the chamber.
@@ -231,11 +302,28 @@ public class Portal : Script
         EventBus.Publish(new PortalPlaced(Entity));
     }
 
+    public static Portal FindRayPassage(Vector3 origin, Vector3 direction, float distance, out float crossing)
+    {
+        Portal found = null;
+        crossing = distance;
+        foreach (Portal portal in Instances.Values)
+        {
+            if (!portal.Ready) continue;
+            float approach = Vector3.Dot(direction, portal.transform.Forward);
+            if (approach >= -0.0001f || portal.Side(origin) < 0f) continue;
+            float t = -portal.Side(origin) / approach;
+            if (t > crossing || !portal.Crossed(origin, origin + direction * (t + 0.001f))) continue;
+            crossing = t;
+            found = portal;
+        }
+        return found;
+    }
+
     private float Side(Vector3 point) => Vector3.Dot(point - transform.WorldPosition, transform.Forward);
 
-    private Vector3 ThroughPoint(Vector3 point) => exit.WorldPosition + ThroughDirection(point - transform.WorldPosition);
+    public Vector3 ThroughPoint(Vector3 point) => exit.WorldPosition + ThroughDirection(point - transform.WorldPosition);
 
-    private Vector3 ThroughDirection(Vector3 direction)
+    public Vector3 ThroughDirection(Vector3 direction)
     {
         return exit.Right * -Vector3.Dot(direction, transform.Right)
             + exit.Up * Vector3.Dot(direction, transform.Up)

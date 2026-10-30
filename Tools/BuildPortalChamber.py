@@ -203,9 +203,11 @@ def lighting():
     box('Exit Lamp', [0,9.05,17.35], [2.2,.12,.12], AMBER, glow=1.5)
     # Receiver collider-free socket: a glowing target catches balls along -Z from the back panel.
     entity('Relay Receiver', [-8,1.3,3.8])
-    box('Relay Socket Body', [-8,1.3,3.5], [1.55,1.5,.35], METAL)
-    box('Relay Socket Core', [-8,1.3,3.72], [.82,.82,.12], CYAN, glow=1.4)
-    for x in (-8.64,-7.36): box('Relay Socket Clamp ' + str(x), [x,1.3,3.82], [.15,1.1,.15], WHITE)
+    box('Relay Socket Body', [-8,.10,3.5], [3.6,.20,.45], METAL)
+    box('Relay Socket Core', [-8,2.42,3.72], [3.3,.10,.12], CYAN, glow=1.4)
+    box('Relay Status Face', [-8,.23,3.29], [3.3,.11,.06], CYAN, glow=.5)
+    text('Relay Status Label', 'RECEIVER / ROUTE AN ENERGY BALL', [-8,2.79,3.26], .22, CYAN)
+    for x in (-9.65,-6.35): box('Relay Socket Clamp ' + str(x), [x,1.3,3.82], [.15,2.2,.15], WHITE)
 
 
 def details():
@@ -224,13 +226,10 @@ def details():
             box(f'Wall Upright {side}-{i}', [side*11.88,5.5,z+2.45], [.16,11,.13], METAL)
         box('Wall Cyan Service Strip '+str(side), [side*11.85,3.1,10.5], [.065,.055,48.6], CYAN, glow=1.25)
         box('Wall Amber Service Strip '+str(side), [side*11.85,.55,10.5], [.065,.04,48.6], AMBER, glow=.5)
-    # Mark danger as a physical edge, never a continuation of the walkable floor.
-    for z in (-2.04,6.04):
-        for i in range(15):
-            x=-11.3+i*1.6
-            if abs(x)<1.85: continue
-            box(f'Power Pit Chevron {z}-{i}', [x,.025,z], [.7,.045,.28], AMBER, rotation=(0,25,0))
+    # Continuous inlaid edge bands read as boundaries, not loose orange objects/debris.
+    for z in (-2.12,6.12):
         for side in (-1,1):
+            box('Pit Edge Band '+str(z)+'-'+str(side), [side*6.95,.006,z], [10.1,.009,.065], AMBER)
             box('Pit Lip '+str(z)+'-'+str(side), [side*6.95,-.06,z], [10.1,.12,.18], METAL)
     for side in (-1,1):
         box('Bridge Guide Rail '+str(side), [side*.965,1.4,0], [.07/1.7,.25/.15,7.9/4.05], CYAN, glow=1.3, parent=guid('Bridge'))
@@ -240,14 +239,15 @@ def details():
     for i in range(9):
         box('Bridge Deck Slat '+str(i), [0,1.08,-.88+i*.22], [2.9/1.7,.035/.15,.045/4.05], [.31,.37,.4], parent=guid('Bridge'))
     # Cable paths form visual cause-and-effect links between relay, bridge, plate and gate.
-    for i in range(10):
-        box('Relay Wire '+str(i), [-4.7+i*.45,.055,-1.5], [.28,.055,.065], AMBER, glow=.75)
-    for i in range(9):
-        box('Plate Wire '+str(i), [1.55,.05,13.4+i*.45], [.08,.045,.23], CYAN, glow=.9)
-    for i in range(6):
-        box('Fling Approach Chevron '+str(i), [0,.033,20.9+i*.31], [.36,.045,.11], AMBER, rotation=(0,25,0))
+    box('Relay Inlaid Conduit', [-3.2,.008,-2.65], [3,.01,.035], CYAN, glow=.25)
+    box('Plate Inlaid Conduit', [1.55,.008,15.1], [.035,.01,3.6], CYAN, glow=.25)
+    # Joined, flush white arrows use built-in primitives; there are no loose marker blocks.
+    for i,z in enumerate((21.1,22.25)):
+        box('Fling Floor Arrow Shaft '+str(i), [0,.025,z-.12], [.055,.008,.65], WHITE)
+        box('Fling Floor Arrow Left '+str(i), [-.10,.025,z+.19], [.055,.008,.30], WHITE, rotation=(0,45,0))
+        box('Fling Floor Arrow Right '+str(i), [.10,.025,z+.19], [.055,.008,.30], WHITE, rotation=(0,-45,0))
     for side in (-1,1):
-        box('Drop Hazard Side '+str(side), [side*3.02,.025,26], [.14,.05,5.9], AMBER, glow=.6)
+        box('Drop Hazard Side '+str(side), [side*3.08,.006,26], [.065,.009,5.9], AMBER, glow=.6)
         box('Drop Shaft Ruler '+str(side), [side*2.97,-4.2,26], [.03,7.6,.08], CYAN, glow=1)
         for j in range(8):
             box(f'Drop Depth Tick {side}-{j}', [side*2.96,-.75-j,25.75], [.04,.045,.45], WHITE, glow=.4)
@@ -270,11 +270,12 @@ def details():
     text('Chamber Subtitle','TRANSFER / WEIGHT / MOMENTUM', [4.4,3.06,-3.21], .19, CYAN)
     text('Chamber Controls','LMB + RMB  PORTALS\nE  LAUNCH BALL    F  CARRY CUBE\nR  RETURN TO CHECKPOINT', [4.4,2.31,-3.21], .23, [.55,.67,.72])
     text('Entry Panel Label','01', [-3,5,-3.26], .85, CYAN)
-    text('Entry Panel Prompt','BALL ENTRY', [-3,4.65,-3.26], .18, WHITE)
+    text('Entry Panel Prompt','1 / LEFT CLICK: BLUE PORTAL', [-3,4.65,-3.26], .18, WHITE)
     box('Relay Label Backer', [-8,5.65,-1.12], [6.2,1,.12], DARK)
     text('Relay Label','01 / POWER RELAY', [-8,5.85,-1.21], .43, CYAN)
-    text('Relay Window Instructions','PORTAL WINDOW / SOLID TO OBJECTS', [-8,5.4,-1.21], .16, [.65,.75,.8])
-    text('Relay Receiver Label','ROUTE A BALL INTO THE RECEIVER', [-8,4.45,6.77], .25, METAL)
+    text('Relay Window Instructions','RIGHT CLICK WHITE WALL THROUGH GLASS', [-8,5.4,-1.21], .16, [.65,.75,.8])
+    text('Energy Ball Instructions', '3 / AIM INSIDE BLUE + E TO FIRE AN ENERGY BALL', [0,3.7,-3.3], .22, CYAN)
+    text('Relay Receiver Label','2 / RIGHT CLICK: ORANGE PORTAL', [-8,4.45,6.77], .25, METAL)
     text('Bridge Notice','POWER REQUIRED', [0,1.3,6.2], .34, AMBER)
     text('Lab Title','02 / WEIGHTED ACCESS', [0,4.45,17.61], .48, WHITE)
     text('Plate Prompt','CUBE ON SWITCH = OPEN GATE', [0,3.91,17.61], .19, CYAN)

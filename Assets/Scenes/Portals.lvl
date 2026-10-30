@@ -5382,7 +5382,7 @@
                     "Type": "Transform",
                     "Position": [
                         -8,
-                        1.3,
+                        0.1,
                         3.5
                     ],
                     "Rotation": [
@@ -5391,9 +5391,9 @@
                         0
                     ],
                     "Scale": [
-                        0.775,
-                        0.75,
-                        0.175
+                        1.8,
+                        0.1,
+                        0.225
                     ]
                 },
                 {
@@ -5428,7 +5428,7 @@
                     "Type": "Transform",
                     "Position": [
                         -8,
-                        1.3,
+                        2.42,
                         3.72
                     ],
                     "Rotation": [
@@ -5437,8 +5437,8 @@
                         0
                     ],
                     "Scale": [
-                        0.41,
-                        0.41,
+                        1.65,
+                        0.05,
                         0.06
                     ]
                 },
@@ -5466,14 +5466,99 @@
             ]
         },
         {
-            "GUID": "d299d747cfd93641",
-            "Name": "Relay Socket Clamp -8.64",
+            "GUID": "5ae1535fc5877dd9",
+            "Name": "Relay Status Face",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        -8.64,
+                        -8,
+                        0.23,
+                        3.29
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1.65,
+                        0.055,
+                        0.03
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": false,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            0.025,
+                            0.65,
+                            0.9
+                        ],
+                        "Roughness": 0.65,
+                        "Metallic": 0.1,
+                        "EmissiveColor": [
+                            0.025,
+                            0.65,
+                            0.9
+                        ],
+                        "EmissiveIntensity": 0.5
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "1a3899b46c87209e",
+            "Name": "Relay Status Label",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -8,
+                        2.79,
+                        3.26
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "RECEIVER / ROUTE AN ENERGY BALL",
+                    "Font": "Assets/Fonts/Inter-Regular.ttf",
+                    "Size": 0.22,
+                    "Color": [
+                        0.025,
+                        0.65,
+                        0.9
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Lit": false
+                }
+            ]
+        },
+        {
+            "GUID": "d5537f04009c8948",
+            "Name": "Relay Socket Clamp -9.65",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        -9.65,
                         1.3,
                         3.82
                     ],
@@ -5484,7 +5569,7 @@
                     ],
                     "Scale": [
                         0.075,
-                        0.55,
+                        1.1,
                         0.075
                     ]
                 },
@@ -5512,14 +5597,14 @@
             ]
         },
         {
-            "GUID": "a43254cc9677cb92",
-            "Name": "Relay Socket Clamp -7.36",
+            "GUID": "42b7fdb07d2381a2",
+            "Name": "Relay Socket Clamp -6.35",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        -7.36,
+                        -6.35,
                         1.3,
                         3.82
                     ],
@@ -5530,7 +5615,7 @@
                     ],
                     "Scale": [
                         0.075,
-                        0.55,
+                        1.1,
                         0.075
                     ]
                 },
@@ -11538,26 +11623,26 @@
             ]
         },
         {
-            "GUID": "a371427588c7442c",
-            "Name": "Power Pit Chevron -2.04-0",
+            "GUID": "5acd3bf91e874519",
+            "Name": "Pit Edge Band -2.12--1",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        -11.3,
-                        0.025,
-                        -2.04
+                        -6.95,
+                        0.006,
+                        -2.12
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        0,
                         0
                     ],
                     "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
+                        5.05,
+                        0.0045,
+                        0.0325
                     ]
                 },
                 {
@@ -11584,514 +11669,8 @@
             ]
         },
         {
-            "GUID": "07549c9958e0cd07",
-            "Name": "Power Pit Chevron -2.04-1",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -9.700000000000001,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "e88f99ed272cc201",
-            "Name": "Power Pit Chevron -2.04-2",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -8.100000000000001,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "df726451c57976c7",
-            "Name": "Power Pit Chevron -2.04-3",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -6.5,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "1063aacf9019928b",
-            "Name": "Power Pit Chevron -2.04-4",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -4.9,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "6e74c819a4c70675",
-            "Name": "Power Pit Chevron -2.04-5",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -3.3000000000000007,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "7fd0413671dd7230",
-            "Name": "Power Pit Chevron -2.04-9",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        3.0999999999999996,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "2664a59140117489",
-            "Name": "Power Pit Chevron -2.04-10",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        4.699999999999999,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "2107de9259d4dadf",
-            "Name": "Power Pit Chevron -2.04-11",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        6.300000000000001,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "f1c3c311b34772e3",
-            "Name": "Power Pit Chevron -2.04-12",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        7.900000000000002,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "ed53a995405cae7d",
-            "Name": "Power Pit Chevron -2.04-13",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        9.5,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "99ae22898b29f9ce",
-            "Name": "Power Pit Chevron -2.04-14",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        11.100000000000001,
-                        0.025,
-                        -2.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "d4f8226dd0cb5cae",
-            "Name": "Pit Lip -2.04--1",
+            "GUID": "dac189fdf7f7f9ba",
+            "Name": "Pit Lip -2.12--1",
             "DestroyOnLoad": true,
             "Components": [
                 {
@@ -12099,7 +11678,7 @@
                     "Position": [
                         -6.95,
                         -0.06,
-                        -2.04
+                        -2.12
                     ],
                     "Rotation": [
                         0,
@@ -12136,8 +11715,54 @@
             ]
         },
         {
-            "GUID": "cc71866e4d1cd1e2",
-            "Name": "Pit Lip -2.04-1",
+            "GUID": "108ad10ba4fc6fbf",
+            "Name": "Pit Edge Band -2.12-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.95,
+                        0.006,
+                        -2.12
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        5.05,
+                        0.0045,
+                        0.0325
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.36,
+                            0.045
+                        ],
+                        "Roughness": 0.65,
+                        "Metallic": 0.1,
+                        "EmissiveColor": [
+                            1.0,
+                            0.36,
+                            0.045
+                        ],
+                        "EmissiveIntensity": 0.085
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "6c6ec686453a7350",
+            "Name": "Pit Lip -2.12-1",
             "DestroyOnLoad": true,
             "Components": [
                 {
@@ -12145,7 +11770,7 @@
                     "Position": [
                         6.95,
                         -0.06,
-                        -2.04
+                        -2.12
                     ],
                     "Rotation": [
                         0,
@@ -12182,26 +11807,26 @@
             ]
         },
         {
-            "GUID": "c0913eaf34c0183c",
-            "Name": "Power Pit Chevron 6.04-0",
+            "GUID": "08d093707763d799",
+            "Name": "Pit Edge Band 6.12--1",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        -11.3,
-                        0.025,
-                        6.04
+                        -6.95,
+                        0.006,
+                        6.12
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        0,
                         0
                     ],
                     "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
+                        5.05,
+                        0.0045,
+                        0.0325
                     ]
                 },
                 {
@@ -12228,514 +11853,8 @@
             ]
         },
         {
-            "GUID": "3bb64bab524a3ba3",
-            "Name": "Power Pit Chevron 6.04-1",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -9.700000000000001,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "534f3e836cc49614",
-            "Name": "Power Pit Chevron 6.04-2",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -8.100000000000001,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "8cf604aca23c0857",
-            "Name": "Power Pit Chevron 6.04-3",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -6.5,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "0fefeaba4a952b4c",
-            "Name": "Power Pit Chevron 6.04-4",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -4.9,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "6b9c4d591ed03be7",
-            "Name": "Power Pit Chevron 6.04-5",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -3.3000000000000007,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "7a2e56d64a053b71",
-            "Name": "Power Pit Chevron 6.04-9",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        3.0999999999999996,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "35676cf57b71f4fe",
-            "Name": "Power Pit Chevron 6.04-10",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        4.699999999999999,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "4a4dc408d8865ed8",
-            "Name": "Power Pit Chevron 6.04-11",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        6.300000000000001,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "eb4b609635936f2d",
-            "Name": "Power Pit Chevron 6.04-12",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        7.900000000000002,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "c2989c2995a9007a",
-            "Name": "Power Pit Chevron 6.04-13",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        9.5,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "d215f116f82da566",
-            "Name": "Power Pit Chevron 6.04-14",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        11.100000000000001,
-                        0.025,
-                        6.04
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.35,
-                        0.0225,
-                        0.14
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": true,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.085
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "46e1eda2aa67258e",
-            "Name": "Pit Lip 6.04--1",
+            "GUID": "348885f1413da6a1",
+            "Name": "Pit Lip 6.12--1",
             "DestroyOnLoad": true,
             "Components": [
                 {
@@ -12743,7 +11862,7 @@
                     "Position": [
                         -6.95,
                         -0.06,
-                        6.04
+                        6.12
                     ],
                     "Rotation": [
                         0,
@@ -12780,8 +11899,54 @@
             ]
         },
         {
-            "GUID": "58be1ff7171bfbb4",
-            "Name": "Pit Lip 6.04-1",
+            "GUID": "613a4e2d2c9cfa05",
+            "Name": "Pit Edge Band 6.12-1",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        6.95,
+                        0.006,
+                        6.12
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        5.05,
+                        0.0045,
+                        0.0325
+                    ]
+                },
+                {
+                    "Type": "Mesh",
+                    "MeshType": "Cube",
+                    "CastShadows": true,
+                    "Material": {
+                        "Type": "StandardMaterial",
+                        "DiffuseColor": [
+                            1.0,
+                            0.36,
+                            0.045
+                        ],
+                        "Roughness": 0.65,
+                        "Metallic": 0.1,
+                        "EmissiveColor": [
+                            1.0,
+                            0.36,
+                            0.045
+                        ],
+                        "EmissiveIntensity": 0.085
+                    }
+                }
+            ]
+        },
+        {
+            "GUID": "543237d3d848aef2",
+            "Name": "Pit Lip 6.12-1",
             "DestroyOnLoad": true,
             "Components": [
                 {
@@ -12789,7 +11954,7 @@
                     "Position": [
                         6.95,
                         -0.06,
-                        6.04
+                        6.12
                     ],
                     "Rotation": [
                         0,
@@ -13619,16 +12784,16 @@
             "Parent": "1359c5cd4a74b28d"
         },
         {
-            "GUID": "2693e2945aa5250d",
-            "Name": "Relay Wire 0",
+            "GUID": "95bc78cf7779bca5",
+            "Name": "Relay Inlaid Conduit",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        -4.7,
-                        0.055,
-                        -1.5
+                        -3.2,
+                        0.008,
+                        -2.65
                     ],
                     "Rotation": [
                         0,
@@ -13636,9 +12801,9 @@
                         0
                     ],
                     "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
+                        1.5,
+                        0.005,
+                        0.0175
                     ]
                 },
                 {
@@ -13648,447 +12813,33 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.025,
+                            0.65,
+                            0.9
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.025,
+                            0.65,
+                            0.9
                         ],
-                        "EmissiveIntensity": 0.75
+                        "EmissiveIntensity": 0.25
                     }
                 }
             ]
         },
         {
-            "GUID": "ad1bddb7bf291557",
-            "Name": "Relay Wire 1",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -4.25,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "0aaa62d3d18edcc7",
-            "Name": "Relay Wire 2",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -3.8000000000000003,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "aaa55746f566a299",
-            "Name": "Relay Wire 3",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -3.35,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "b1d00212e72410e8",
-            "Name": "Relay Wire 4",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -2.9000000000000004,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "7d844222a1fe8a1d",
-            "Name": "Relay Wire 5",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -2.45,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "2d7343be631d775d",
-            "Name": "Relay Wire 6",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -2.0,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "25f669de14c8d478",
-            "Name": "Relay Wire 7",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -1.5500000000000003,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "b8cd7f2ecdd0c8ad",
-            "Name": "Relay Wire 8",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -1.1,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "46dbe43e3ecd20be",
-            "Name": "Relay Wire 9",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        -0.6500000000000004,
-                        0.055,
-                        -1.5
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.14,
-                        0.0275,
-                        0.0325
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
-                        ],
-                        "EmissiveIntensity": 0.75
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "f35f890fac913dd7",
-            "Name": "Plate Wire 0",
+            "GUID": "fa4637b8f5e2fb10",
+            "Name": "Plate Inlaid Conduit",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
                         1.55,
-                        0.05,
-                        13.4
+                        0.008,
+                        15.1
                     ],
                     "Rotation": [
                         0,
@@ -14096,9 +12847,9 @@
                         0
                     ],
                     "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
+                        0.0175,
+                        0.005,
+                        1.8
                     ]
                 },
                 {
@@ -14119,22 +12870,22 @@
                             0.65,
                             0.9
                         ],
-                        "EmissiveIntensity": 0.9
+                        "EmissiveIntensity": 0.25
                     }
                 }
             ]
         },
         {
-            "GUID": "d1843453097bd4e4",
-            "Name": "Plate Wire 1",
+            "GUID": "814653d63e9279fa",
+            "Name": "Fling Floor Arrow Shaft 0",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        1.55,
-                        0.05,
-                        13.85
+                        0,
+                        0.025,
+                        20.98
                     ],
                     "Rotation": [
                         0,
@@ -14142,377 +12893,9 @@
                         0
                     ],
                     "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "b0ec4ca520d5e305",
-            "Name": "Plate Wire 2",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        14.3
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "a9391c3401853f94",
-            "Name": "Plate Wire 3",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        14.75
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "d384af08b4411034",
-            "Name": "Plate Wire 4",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        15.200000000000001
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "4c17ee72d921c9c9",
-            "Name": "Plate Wire 5",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        15.65
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "dfbd23ef9d7d20ba",
-            "Name": "Plate Wire 6",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        16.1
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "9b1270d977b84a35",
-            "Name": "Plate Wire 7",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        16.55
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "c97f2008b99e87cb",
-            "Name": "Plate Wire 8",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        1.55,
-                        0.05,
-                        17.0
-                    ],
-                    "Rotation": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "Scale": [
-                        0.04,
-                        0.0225,
-                        0.115
-                    ]
-                },
-                {
-                    "Type": "Mesh",
-                    "MeshType": "Cube",
-                    "CastShadows": false,
-                    "Material": {
-                        "Type": "StandardMaterial",
-                        "DiffuseColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "Roughness": 0.65,
-                        "Metallic": 0.1,
-                        "EmissiveColor": [
-                            0.025,
-                            0.65,
-                            0.9
-                        ],
-                        "EmissiveIntensity": 0.9
-                    }
-                }
-            ]
-        },
-        {
-            "GUID": "a139d9ec0a4e0bdc",
-            "Name": "Fling Approach Chevron 0",
-            "DestroyOnLoad": true,
-            "Components": [
-                {
-                    "Type": "Transform",
-                    "Position": [
-                        0,
-                        0.033,
-                        20.9
-                    ],
-                    "Rotation": [
-                        0,
-                        25,
-                        0
-                    ],
-                    "Scale": [
-                        0.18,
-                        0.0225,
-                        0.055
+                        0.0275,
+                        0.004,
+                        0.325
                     ]
                 },
                 {
@@ -14522,43 +12905,43 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
-                        "EmissiveIntensity": 0.085
+                        "EmissiveIntensity": 0.12
                     }
                 }
             ]
         },
         {
-            "GUID": "77acb6fd729afede",
-            "Name": "Fling Approach Chevron 1",
+            "GUID": "efd785fda65f47cc",
+            "Name": "Fling Floor Arrow Left 0",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        0,
-                        0.033,
-                        21.209999999999997
+                        -0.1,
+                        0.025,
+                        21.290000000000003
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        45,
                         0
                     ],
                     "Scale": [
-                        0.18,
-                        0.0225,
-                        0.055
+                        0.0275,
+                        0.004,
+                        0.15
                     ]
                 },
                 {
@@ -14568,43 +12951,43 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
-                        "EmissiveIntensity": 0.085
+                        "EmissiveIntensity": 0.12
                     }
                 }
             ]
         },
         {
-            "GUID": "9d85c53b78d55f43",
-            "Name": "Fling Approach Chevron 2",
+            "GUID": "561997313d76b2cd",
+            "Name": "Fling Floor Arrow Right 0",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        0,
-                        0.033,
-                        21.52
+                        0.1,
+                        0.025,
+                        21.290000000000003
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        -45,
                         0
                     ],
                     "Scale": [
-                        0.18,
-                        0.0225,
-                        0.055
+                        0.0275,
+                        0.004,
+                        0.15
                     ]
                 },
                 {
@@ -14614,43 +12997,43 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
-                        "EmissiveIntensity": 0.085
+                        "EmissiveIntensity": 0.12
                     }
                 }
             ]
         },
         {
-            "GUID": "5d907711b0e3638d",
-            "Name": "Fling Approach Chevron 3",
+            "GUID": "e2fe8eb77451cd50",
+            "Name": "Fling Floor Arrow Shaft 1",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
                         0,
-                        0.033,
-                        21.83
+                        0.025,
+                        22.13
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        0,
                         0
                     ],
                     "Scale": [
-                        0.18,
-                        0.0225,
-                        0.055
+                        0.0275,
+                        0.004,
+                        0.325
                     ]
                 },
                 {
@@ -14660,43 +13043,43 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
-                        "EmissiveIntensity": 0.085
+                        "EmissiveIntensity": 0.12
                     }
                 }
             ]
         },
         {
-            "GUID": "cd341b67ff4387f9",
-            "Name": "Fling Approach Chevron 4",
+            "GUID": "5d158db145925ad8",
+            "Name": "Fling Floor Arrow Left 1",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        0,
-                        0.033,
-                        22.139999999999997
+                        -0.1,
+                        0.025,
+                        22.44
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        45,
                         0
                     ],
                     "Scale": [
-                        0.18,
-                        0.0225,
-                        0.055
+                        0.0275,
+                        0.004,
+                        0.15
                     ]
                 },
                 {
@@ -14706,43 +13089,43 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
-                        "EmissiveIntensity": 0.085
+                        "EmissiveIntensity": 0.12
                     }
                 }
             ]
         },
         {
-            "GUID": "44cfeed54410db77",
-            "Name": "Fling Approach Chevron 5",
+            "GUID": "07ab7c174510b81f",
+            "Name": "Fling Floor Arrow Right 1",
             "DestroyOnLoad": true,
             "Components": [
                 {
                     "Type": "Transform",
                     "Position": [
-                        0,
-                        0.033,
-                        22.45
+                        0.1,
+                        0.025,
+                        22.44
                     ],
                     "Rotation": [
                         0,
-                        25,
+                        -45,
                         0
                     ],
                     "Scale": [
-                        0.18,
-                        0.0225,
-                        0.055
+                        0.0275,
+                        0.004,
+                        0.15
                     ]
                 },
                 {
@@ -14752,18 +13135,18 @@
                     "Material": {
                         "Type": "StandardMaterial",
                         "DiffuseColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
                         "Roughness": 0.65,
                         "Metallic": 0.1,
                         "EmissiveColor": [
-                            1.0,
-                            0.36,
-                            0.045
+                            0.76,
+                            0.79,
+                            0.77
                         ],
-                        "EmissiveIntensity": 0.085
+                        "EmissiveIntensity": 0.12
                     }
                 }
             ]
@@ -14776,8 +13159,8 @@
                 {
                     "Type": "Transform",
                     "Position": [
-                        -3.02,
-                        0.025,
+                        -3.08,
+                        0.006,
                         26
                     ],
                     "Rotation": [
@@ -14786,8 +13169,8 @@
                         0
                     ],
                     "Scale": [
-                        0.07,
-                        0.025,
+                        0.0325,
+                        0.0045,
                         2.95
                     ]
                 },
@@ -15236,8 +13619,8 @@
                 {
                     "Type": "Transform",
                     "Position": [
-                        3.02,
-                        0.025,
+                        3.08,
+                        0.006,
                         26
                     ],
                     "Rotation": [
@@ -15246,8 +13629,8 @@
                         0
                     ],
                     "Scale": [
-                        0.07,
-                        0.025,
+                        0.0325,
+                        0.0045,
                         2.95
                     ]
                 },
@@ -16605,7 +14988,7 @@
                 },
                 {
                     "Type": "TextRenderer",
-                    "Text": "BALL ENTRY",
+                    "Text": "1 / LEFT CLICK: BLUE PORTAL",
                     "Font": "Assets/Fonts/Inter-Regular.ttf",
                     "Size": 0.18,
                     "Color": [
@@ -16729,7 +15112,7 @@
                 },
                 {
                     "Type": "TextRenderer",
-                    "Text": "PORTAL WINDOW / SOLID TO OBJECTS",
+                    "Text": "RIGHT CLICK WHITE WALL THROUGH GLASS",
                     "Font": "Assets/Fonts/Inter-Regular.ttf",
                     "Size": 0.16,
                     "Color": [
@@ -16768,7 +15151,7 @@
                 },
                 {
                     "Type": "TextRenderer",
-                    "Text": "ROUTE A BALL INTO THE RECEIVER",
+                    "Text": "2 / RIGHT CLICK: ORANGE PORTAL",
                     "Font": "Assets/Fonts/Inter-Regular.ttf",
                     "Size": 0.25,
                     "Color": [
@@ -20437,6 +18820,45 @@
                         ],
                         "EmissiveIntensity": 1.1
                     }
+                }
+            ]
+        },
+        {
+            "GUID": "5d7465ff1e6e0cb7",
+            "Name": "Energy Ball Instructions",
+            "DestroyOnLoad": true,
+            "Components": [
+                {
+                    "Type": "Transform",
+                    "Position": [
+                        0,
+                        3.7,
+                        -3.3
+                    ],
+                    "Rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Scale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": "TextRenderer",
+                    "Text": "3 / AIM INSIDE BLUE + E TO FIRE AN ENERGY BALL",
+                    "Font": "Assets/Fonts/Inter-Regular.ttf",
+                    "Size": 0.22,
+                    "Color": [
+                        0.025,
+                        0.65,
+                        0.9
+                    ],
+                    "Alignment": "Center",
+                    "Anchor": "Middle",
+                    "Lit": false
                 }
             ]
         }

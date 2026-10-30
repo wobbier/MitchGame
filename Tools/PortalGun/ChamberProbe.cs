@@ -131,16 +131,25 @@ public class ChamberProbe : Script
                 "rejected surface leaves existing portal intact");
             Check(Shoot("Orange Portal", new Vector3(-8, 1.6f, -7), new Vector3(-8, 1.6f, 7)),
                 "portal beam reaches internal relay panel through viewing window");
+            // Use the real E launcher from the normal starting area, including its inherited
+            // motion, gravity choice and oblique entry angle. A near-portal synthetic spawn
+            // missed the old gravity drop and undersized receiver bugs.
             Transform entrance = World.GetTransformByName("Blue Portal");
-            ball = SpawnBall(entrance.WorldPosition + entrance.Forward * 0.8f + entrance.Up * 0.3f,
-                -entrance.Forward * 14);
+            Vector3 firingPosition = new Vector3(0, 0.9f, -11);
+            Vector3 aim = (entrance.WorldPosition + entrance.Up * 0.3f
+                - (firingPosition + Vector3.Up * 0.7f)).Normalized();
+            PutPlayer(firingPosition, aim);
+            Check(BallLauncher.Active != null, "normal player launcher exists");
+            ball = BallLauncher.Active.FireBall();
+            Check(ball && ball.GetField("Rigidbody", "GravityScale", 1f) == 0f,
+                "E energy ball follows player aim instead of falling short");
         }
         else if (stage == 3)
         {
             if (chamber.Powered)
             {
                 Check(!ball || Vector3.Distance(ball.Transform.WorldPosition,
-                    World.GetTransformByName("Relay Receiver").WorldPosition) < 1.2f,
+                    World.GetTransformByName("Relay Receiver").WorldPosition) < 2.3f,
                     "receiver activates from routed ball");
                 Pass();
                 Begin(4, "powered bridge raises into a usable crossing");
@@ -174,7 +183,29 @@ public class ChamberProbe : Script
             Check(ChamberController.IsHolding(cube), "carried cube stays held");
             Check(Vector3.Distance(cube.Transform.WorldPosition, eye.WorldPosition) < 2.4f,
                 "held cube follows player camera");
+            Check(cube.GetField("BoxCollider", "IsTrigger", false), "held cube cannot block its carrier");
+            // Place the held cube ahead of the eye across an actual mounted doorway.
+            Check(Shoot("Blue Portal", new Vector3(-3, 1.6f, -7), new Vector3(-3, 1.6f, -3)), "carry entry placed");
+            Check(Shoot("Orange Portal", new Vector3(-8, 1.6f, -7), new Vector3(-8, 1.6f, 7)), "carry exit placed");
+            Portal entrance = Portal.Instances["Blue Portal"];
+            Portal destination = Portal.Instances["Orange Portal"];
+            Vector3 heldEye = entrance.transform.WorldPosition + entrance.transform.Up * 0.3f + entrance.transform.Forward * 0.85f;
+            PutPlayer(heldEye - Vector3.Up * 0.7f, -entrance.transform.Forward);
+            chamber.OnLateUpdate(0);
+            Check(Vector3.Dot(cube.Transform.WorldPosition - destination.transform.WorldPosition,
+                destination.transform.Forward) > 0f, "held cube leads player through portal instead of hitting host wall");
+            Check(World.Find("Portal Image / Companion Cube"), "straddling cube has a visual image at the entrance");
+            Portal.ResetTravellerHistory(player);
+            playerMover.Velocity = -entrance.transform.Forward * 8f;
+            Begin(15, "walking through a portal while carrying");
+        }
+        else if (stage == 15 && Elapsed(20))
+        {
+            Check(player.Transform.WorldPosition.x < -6f, "native capsule crosses the portal while holding its cube");
+            Check(ChamberController.IsHolding(cube), "portal crossing preserves the held cube");
+            Check(Vector3.Distance(cube.Transform.WorldPosition, eye.WorldPosition) < 2.4f, "cube follows carrier after crossing");
             chamber.DropCube();
+            Check(!cube.GetField("BoxCollider", "IsTrigger", true), "drop restores solid cube collision");
             Check(!ChamberController.IsHolding(cube), "dropping cube releases carry state");
             Pass();
             PutPlayer(new Vector3(0, 0.9f, 8), Vector3.Forward);

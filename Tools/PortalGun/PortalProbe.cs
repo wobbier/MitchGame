@@ -111,6 +111,34 @@ public class PortalProbe : Script
             mover = player.GetComponent<CharacterController>();
             eye = World.GetTransformByName("Player Camera");
             Check(FirstPersonController.TryGet(player,out controller), "player controller registered");
+            Input.MouseCaptured = false;
+            foreach (float pitch in new[] { -80f, -45f, 0f, 45f, 80f })
+            foreach (float yaw in new[] { 0f, 45f, 90f, 135f, 180f, 225f, 270f, 315f })
+            {
+                Vector3 Direction(float y, float p) => new Vector3(
+                    Mathf.Sin(y * Mathf.Deg2Rad) * Mathf.Cos(p * Mathf.Deg2Rad),
+                    Mathf.Sin(p * Mathf.Deg2Rad),
+                    Mathf.Cos(y * Mathf.Deg2Rad) * Mathf.Cos(p * Mathf.Deg2Rad));
+                controller.ApplyPortalView(eye.WorldPosition, Direction(yaw, pitch), Vector3.Up);
+                controller.ApplyLookInput(new Vector2(5, 2));
+                controller.OnUpdate(0);
+                Check(Vector3.Dot(eye.Forward, Direction(yaw + 5, pitch + 2)) > 0.99999f,
+                    "diagonal mouse input retains yaw and pitch accuracy at every heading and elevation");
+                controller.ApplyLookInput(new Vector2(-5, -2));
+                controller.OnUpdate(0);
+                Check(Vector3.Dot(eye.Forward, Direction(yaw, pitch)) > 0.99999f,
+                    "opposite mouse delta returns to the same aim without drift");
+            }
+            controller.ApplyPortalView(eye.WorldPosition, Vector3.Forward, Vector3.Up);
+            controller.ApplyLookInput(new Vector2(0, -120));
+            controller.OnUpdate(0);
+            Check(eye.Forward.y < -0.99f && eye.Up.y > 0f, "large downward mouse delta clamps before somersault");
+            controller.ApplyLookInput(new Vector2(0, 260));
+            controller.OnUpdate(0);
+            Check(eye.Forward.y > 0.99f && eye.Up.y > 0f, "large upward mouse delta clamps before somersault");
+            controller.ApplyLookInput(new Vector2(0, -20));
+            controller.OnUpdate(0);
+            Check(eye.Forward.y < 0.99f, "looking away from pitch limit responds immediately");
             blue = Portal.Instances["Blue Portal"];
             orange = Portal.Instances["Orange Portal"];
             player.SetField("CharacterController", "GravityScale", 0f);

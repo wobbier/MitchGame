@@ -12,6 +12,7 @@ public class BallLauncher : Script
     public int MaxBalls = 40;
     // Inherit the thrower's motion, so balls don't lag behind when you run and throw.
     public string Thrower = "Player";
+    public static BallLauncher Active;
 
     private readonly Queue<Entity> balls = new Queue<Entity>();
     private CharacterController thrower;
@@ -21,6 +22,7 @@ public class BallLauncher : Script
 
     public override void OnStart()
     {
+        Active = this;
         UIModel hud = UI.Model("portalgun");
         hud.Set("status", "AIM AT A LARGE, FLAT SURFACE");
         hud.Set("failed", false);
@@ -42,6 +44,7 @@ public class BallLauncher : Script
 
     public override void OnDestroy()
     {
+        if (Active == this) Active = null;
         if (gun) gun.Destroy();
     }
 
@@ -56,13 +59,19 @@ public class BallLauncher : Script
         {
             return;
         }
-        reload = Cooldown;
+        FireBall();
+    }
 
+    // The same launch path is used by E and the chamber's end-to-end gameplay probe.
+    public Entity FireBall()
+    {
+        if (reload > 0f) return Entity.Null;
+        reload = Cooldown;
         Entity ball = World.Instantiate(BallPrefab);
-        if (!ball)
-        {
-            return;
-        }
+        if (!ball) return Entity.Null;
+        // Chamber energy balls follow the aim ray so a shot from the normal starting area
+        // reaches the portal instead of dropping to the floor before the opening.
+        if (ChamberController.Active != null) ball.SetField("Rigidbody", "GravityScale", 0f);
         Vector3 aim = transform.Forward;
         ball.Transform.WorldPosition = transform.WorldPosition + aim * 0.6f;
         Vector3 velocity = aim * Speed;
@@ -82,5 +91,6 @@ public class BallLauncher : Script
                 oldest.Destroy();
             }
         }
+        return ball;
     }
 }
