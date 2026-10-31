@@ -1,0 +1,59 @@
+# Prefab variants (ED-6): a variant stores only how it differs from its base (an overridden field,
+# a removed entity, an added one). Base edits reach the variant's instances wherever the variant
+# doesn't override them, as one undo step; new instances of the variant resolve over the new base.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/PrefabVariantFlows.edscript
+wait 20
+create-prefab Parent | .tmp/Tests/VarBase.prefab
+prefab-variant .tmp/Tests/VarBase.prefab | .tmp/Tests/VarRed.prefab
+assert-prefab-base .tmp/Tests/VarRed.prefab | .tmp/Tests/VarBase.prefab
+assert-prefab-base .tmp/Tests/VarBase.prefab | none
+instantiate .tmp/Tests/VarRed.prefab
+rename Red
+assert-prefab Red/Child/Grandchild | .tmp/Tests/VarRed.prefab
+assert-field Red/Child | Transform.Scale | [0.5, 0.5, 0.5] ~ 0.001
+
+# The variant in prefab mode: scale Child, drop Grandchild, add Lamp. The file keeps only that.
+prefab-open .tmp/Tests/VarRed.prefab
+assert-prefab-mode .tmp/Tests/VarRed.prefab
+select Parent/Child
+set Transform.Scale [0.25, 0.25, 0.25]
+select Parent/Child/Grandchild
+action Edit.Delete
+create Lamp | Parent
+prefab-save
+prefab-close
+assert-file-contains .tmp/Tests/VarRed.prefab | "Base"
+assert-file-contains .tmp/Tests/VarRed.prefab | "Removed"
+assert-file-contains .tmp/Tests/VarRed.prefab | "Lamp"
+assert-file-contains .tmp/Tests/VarRed.prefab | != "Child"
+assert-field Red/Child | Transform.Scale | [0.25, 0.25, 0.25] ~ 0.001
+assert-field Parent/Child | Transform.Scale | [0.5, 0.5, 0.5] ~ 0.001
+instantiate .tmp/Tests/VarRed.prefab
+rename Red2
+assert-missing Red2/Child/Grandchild
+assert-exists Red2/Lamp
+assert-field Red2/Child | Transform.Scale | [0.25, 0.25, 0.25] ~ 0.001
+assert-exists Parent/Child/Grandchild
+
+# Edit the base: Child moves for everyone; its scale changes only where the variant doesn't set it.
+prefab-open .tmp/Tests/VarBase.prefab
+select Parent/Child
+set Transform.Position [0, 4, 0]
+set Transform.Scale [0.75, 0.75, 0.75]
+prefab-save
+prefab-close
+assert-field Parent/Child | Transform.Position | [0, 4, 0] ~ 0.001
+assert-field Parent/Child | Transform.Scale | [0.75, 0.75, 0.75] ~ 0.001
+assert-field Red/Child | Transform.Position | [0, 4, 0] ~ 0.001
+assert-field Red2/Child | Transform.Position | [0, 4, 0] ~ 0.001
+assert-field Red/Child | Transform.Scale | [0.25, 0.25, 0.25] ~ 0.001
+undo
+assert-field Red/Child | Transform.Position | [0, 2.5, 0] ~ 0.001
+assert-field Parent/Child | Transform.Position | [0, 2.5, 0] ~ 0.001
+redo
+assert-field Red2/Child | Transform.Position | [0, 4, 0] ~ 0.001
+instantiate .tmp/Tests/VarRed.prefab
+rename Red3
+assert-field Red3/Child | Transform.Position | [0, 4, 0] ~ 0.001
+assert-field Red3/Child | Transform.Scale | [0.25, 0.25, 0.25] ~ 0.001
+assert-missing Red3/Child/Grandchild
