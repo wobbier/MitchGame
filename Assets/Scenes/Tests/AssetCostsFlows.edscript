@@ -1,0 +1,13 @@
+# Asset costs (NEXT-11): Window > Resource Monitor lists every loaded asset with its estimated
+# memory, biggest first, and the same report goes to a file. The model and its texture both cost
+# something; a material doesn't.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/ModelHierarchyTest.lvl --editor-exec Assets/Scenes/Tests/AssetCostsFlows.edscript
+wait 30
+show-window Resource Monitor
+wait 5
+asset-costs .tmp/Tests/AssetCosts.json
+wait-file .tmp/Tests/AssetCosts.json | 30
+assert-file-contains .tmp/Tests/AssetCosts.json | "Kind": "Model"
+assert-file-contains .tmp/Tests/AssetCosts.json | "Kind": "Texture"
+assert-file-contains .tmp/Tests/AssetCosts.json | "Total"
+screenshot .tmp/overhaul/shots/resource_monitor.png
