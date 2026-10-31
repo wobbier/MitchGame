@@ -1,5 +1,5 @@
 # Scene view (ED-8): Drop to Surface settles the selection onto what's below it (one undo step),
-# and camera bookmarks restore the World View camera.
+# camera bookmarks restore the World View camera, and surface / vertex snap and Measure work.
 #   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/HierarchyTest.lvl --editor-exec Assets/Scenes/Tests/SceneViewFlows.edscript
 wait 20
 focus-window World View
@@ -52,6 +52,16 @@ measure 0.5 0.5 | 0.75 0.5
 wait-log Measure: | 30
 wait-log from [0.00, -1.00, 1.00] | 30
 screenshot .tmp/overhaul/shots/measure.png
+
+# Vertex snap (what V-dragging the move gizmo does; here through vertex-snap): the light's pivot
+# onto Right Cube's top front corner (the 2 m cube sits at [-3, 4, 0]), as one undo step.
+select Directional Light
+vertex-snap [-2.05, 5.02, -0.97]
+wait 2
+assert-field Directional Light | Transform.Position | [-2, 5, -1] ~ 0.01
+undo
+wait 2
+assert-field Directional Light | Transform.Position | [0, 0, 0] ~ 0.01
 
 # The grid on the XY plane with 0.5 m cells (a capture to look at; preferences don't persist here).
 preference Camera.Bookmarks | {"Assets/Scenes/Tests/HierarchyTest.lvl": [null, null, {"Position": [0, 1, -8], "Pitch": 0, "Yaw": 0}]}
