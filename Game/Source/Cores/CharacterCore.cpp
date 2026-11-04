@@ -139,6 +139,7 @@ void CharacterCore::Update( const UpdateContext& inUpdateContext )
         controller.SetMoveInput( moveInput );
         if( jump && !state.Crouching )
         {
+            DBG( "Character '" + transform.GetName() + "': jump requested (grounded " + std::string( controller.IsOnGround() ? "yes" : "no" ) + ")" );
             controller.Jump();
         }
 
