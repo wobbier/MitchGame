@@ -4,6 +4,7 @@
 # child Camera at eye height. Mouse look can't be injected from an edscript; the yaw/pitch path is
 # the same code, exercised by hand in Play.
 #   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/CharacterTest.lvl --editor-exec Assets/Scenes/Tests/CharacterFlows.edscript
+wait-log dotnet ready | 7200
 wait 30
 assert-parent Camera | Player
 play
@@ -19,12 +20,9 @@ assert-field Player | Transform.Position.0 | 0 ~ 0.6
 assert-parent Camera | Player
 assert-field Camera | Transform.Position | [0, 0.7, 0] ~ 0.05
 assert-field Camera | Transform.Rotation | [0, 0, 0, 1] ~ 0.01
-# Jump lifts the capsule about JumpHeight (1.2 m) above its rest height.
-input-hold Keyboard/Space
-wait 3
-input-release Keyboard/Space
-wait-field Player | Transform.Position.1 | 1.9 ~ 0.6 | 300
-wait-field Player | Transform.Position.1 | 0.9 ~ 0.3 | 600
+# Play-mode tests: a direct Jump(), a jump through the core from a held Space, walking speed.
+console game-tests CharacterTests
+wait-log GameTests: 3 passed, 0 failed | 3600
 stop
 wait 10
 quit
