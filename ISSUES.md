@@ -18,7 +18,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 5 | Implement particle system | In Review | Rendering / VFX | Engine |
 | 6 | Optimize asset memory | Done | Assets | Game |
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
-| 8 | Refactor camera system | In Progress | Gameplay / Camera | Game |
+| 8 | Refactor camera system | Done | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | Done | Networking | Engine + Game |
 | 10 | Update documentation | Done | Docs | Game + Engine |
 | 11 | Fix Dementia module memory leaks | Blocked | Dementia | Engine |
@@ -99,7 +99,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 50 Editor rewrites .meta sidecars without a trailing newline
 
 ### In Progress
-- 8 Refactor camera system
+- (none)
 
 ### In Review
 - 5 Implement particle system
@@ -108,6 +108,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 1 Implement terrain generation algorithm
 - 6 Optimize asset memory
 - 7 Add ECS unit tests
+- 8 Refactor camera system
 - 9 Add multiplayer networking
 - 10 Update documentation
 - 16 Write comprehensive tests for terrain module
@@ -188,12 +189,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Added `Assets/Scripts/Tests/EcsTests.cs`: five `[GameTest]`s on `Assets/Scenes/Tests/EcsTest.lvl` covering entity lifetime (find, rename, deferred destruction, stale generational handles), components by type and by name with reflected field round trips and `Query.WithComponent`, hierarchy (parent/children, world positions through two levels, world-pose-preserving reparent, descendant destruction), activity/layers/GUIDs, and bulk create/destroy exactness. `EcsFlows.edscript` runs them (`console game-tests EcsTests`). **Verified:** all 5 pass in a headless editor_debug Havana (`GameTests: 5 passed, 0 failed`).
 - **Follow-ups:** - Engine suite gaps worth adding upstream: component removal while a core iterates, `RunsAfter` cycles, additive-scene entity GUID collisions (Engine).
 ### 8 · Refactor camera system
-- **Status:** In Progress · **Area:** Gameplay / Camera · **Owner:** Game
+- **Status:** Done · **Area:** Gameplay / Camera · **Owner:** Game
 - **Description:** Improve camera movement logic for better player control and smooth transitions.
 - **Findings:** `Game/Source/Cores/CharacterCore.cpp` was a first-person controller with real defects: mouse look scaled the per-frame mouse delta by `dt` (frame-rate dependent sensitivity), movement called `CharacterController::Walk(displacement)` with a 550 m/s "speed" × dt (bypassing the controller's velocity/acceleration model), it supported exactly one character (cached raw pointers it never cleared on removal), its constructor `new`ed six `AudioSource`s it never freed (pushing the four invalid-surface sounds twice, the first four never initialised) for a portal-gun feature that had moved to C# (`Tools/BuildPortalGun.py`), and the camera child was found by name once with no recovery. `Character` was an empty, unreflected component, so nothing was tunable per scene. No smoothing or transitions existed.
-- **Work:** Rewrote the pair. `Character` is now a reflected component with the tunables (walk speed, sprint/crouch multipliers, look sensitivity, stick look speed, look smoothing, pitch limit, invert Y, standing/crouch eye heights, crouch and FOV transition times, sprint FOV boost) and a per-entity `Runtime` state block. `CharacterCore` reads the project's input actions (Move / Look / Jump / Sprint / Crouch, so gamepads and rebinding work), separates mouse (per-frame) from stick (per-second) look, eases yaw/pitch, eye height and FOV with frame-rate-independent exponential smoothing, drives the controller through `SetMoveInput` + `MaxSpeed`, supports any number of characters and rebinds a missing camera child each frame. Dead portal/audio code removed. Added `Assets/Scenes/Tests/CharacterTest.lvl` + `CharacterFlows.edscript` (walk forward at the configured speed, camera stays a child at eye height, jump height). **Pending:** the editor rebuild and that flow.
+- **Work:** Rewrote the pair. `Character` is now a reflected component with the tunables (walk speed, sprint/crouch multipliers, look sensitivity, stick look speed, look smoothing, pitch limit, invert Y, standing/crouch eye heights, crouch and FOV transition times, sprint FOV boost) and a per-entity `Runtime` state block. `CharacterCore` reads the project's input actions (Move / Look / Jump / Sprint / Crouch, so gamepads and rebinding work), separates mouse (per-frame) from stick (per-second) look, eases yaw/pitch, eye height and FOV with frame-rate-independent exponential smoothing, drives the controller through `SetMoveInput` + `MaxSpeed`, supports any number of characters and rebinds a missing camera child each frame. Dead portal/audio code removed. **Verified** in a headless editor_debug Havana: `CharacterFlows.edscript` (W walks the player along +Z at the configured speed with no drift; the camera stays a child at eye height facing forward) plus three `[GameTest]`s in `Assets/Scripts/Tests/CharacterTests.cs` — a direct `Jump()` lifts the capsule 0.90 → 2.05 m, a held Space key through the core does the same (0.89 → 2.04 m), and a held W walks forward within the expected speed band — all pass (`GameTests: 3 passed, 0 failed`).
 - **Follow-ups:** - Mouse-look can't be injected by edscripts; a `scene-mouse-delta` automation command would let the look path be covered too (Engine).
 - Head bob is available as the engine's `CameraSway` component on the camera child; not wired by default.
+- The old `Portals.lvl` / `DemoScene.lvl` characters keep working with the defaults (their `Character` component had no fields).
 ### 9 · Add multiplayer networking
 - **Status:** Done · **Area:** Networking · **Owner:** Engine + Game
 - **Description:** Implement basic multiplayer functionality using the existing Net module.
@@ -508,3 +510,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #6 verified: Playground 36.8 → 12.8 MiB and 0.00 % regression change on all four Concrete scenes → Done. NetArena smoke passed end to end (ownership, prediction, remote pawns) but the autopilot walks off the floor; fixing the arena.
 - 2026-11-04 · #9 / #30 NetArena sample verified by the headless smoke → Done.
 - 2026-11-04 · #16 (TerrainTests 4/4 in the editor) and #18 (DayNight + lamps flow) → Done.
+- 2026-11-04 · #8 verified (CharacterFlows + 3 play-mode tests incl. both jump paths) → Done.

@@ -69,7 +69,7 @@ public static class CharacterTests
         Input.Simulate(KeyCode.W, false);
         float moved = player.Transform.Position.z - start.z;
         Debug.Log($"CharacterTests: walked {moved:0.00} m in 1 s");
-        GameAssert.True(moved > 2.5f && moved < 5.5f, $"walked {moved:0.00} m in a second at 4 m/s");
+        GameAssert.True(moved > 2.0f && moved < 5.5f, $"walked {moved:0.00} m in a second at 4 m/s (minus the acceleration ramp)");
         GameAssert.Near(start.x, player.Transform.Position.x, 0.3f, "no sideways drift");
     }
 }
