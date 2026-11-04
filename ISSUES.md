@@ -26,9 +26,9 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 13 | Add new ImGUI widgets for tooling | Blocked | Editor | Engine |
 | 14 | Optimize ScriptCore scripting performance | Blocked | Scripting | Engine |
 | 15 | Enhance Player module networking | Blocked | Networking / Player | Engine |
-| 16 | Write comprehensive tests for terrain module | In Progress | Terrain / Tests | Game + Engine |
+| 16 | Write comprehensive tests for terrain module | Done | Terrain / Tests | Game + Engine |
 | 17 | Fix editor crash on scene load | Blocked | Editor | Engine |
-| 18 | Implement skybox system | In Progress | Rendering / Gameplay | Game + Engine |
+| 18 | Implement skybox system | Done | Rendering / Gameplay | Game + Engine |
 | 19 | Optimize collision detection | Blocked | Physics | Engine |
 | 20 | Add visual scripting support | Backlog | Scripting / Editor | Engine |
 | 21 | Editor: generate terrain heights from noise | To Do | Terrain / Editor | Engine |
@@ -100,8 +100,6 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 ### In Progress
 - 8 Refactor camera system
-- 16 Write comprehensive tests for terrain module
-- 18 Implement skybox system
 
 ### In Review
 - 5 Implement particle system
@@ -112,6 +110,8 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 7 Add ECS unit tests
 - 9 Add multiplayer networking
 - 10 Update documentation
+- 16 Write comprehensive tests for terrain module
+- 18 Implement skybox system
 - 30 Playable two-pawn multiplayer sample
 
 ### Blocked
@@ -245,10 +245,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 34 (Engine): log/assert oversize sends in `SendOn`, cap `[Predicted]` state in NetGenerator, reserve a per-packet byte floor for unreliable state.
 - 35 (Engine): reconnect path (client token in Hello, `Net.Reconnect` + `NetDisconnected` retry) and a stale-reconcile stat.
 ### 16 · Write comprehensive tests for terrain module
-- **Status:** In Progress · **Area:** Terrain / Tests · **Owner:** Game + Engine
+- **Status:** Done · **Area:** Terrain / Tests · **Owner:** Game + Engine
 - **Description:** Create unit tests covering all terrain generation and rendering cases.
 - **Findings:** Terrain is already the engine's most-tested system: `Engine/Tests/Source/Terrain*Tests.cpp` (addressing, borders, serialization, LOD topology, streaming, textures, editing, recovery, files, runtime) plus 30 `Terrain*Flows.edscript` fixtures in this repo. What was missing: tests for procedural *generation* (there was no generator) and any end-to-end check that the collision the engine builds agrees with the data in the pages.
-- **Work:** Generation: 18 unit tests in `Tools/Tests/test_generate_terrain.py` (noise properties, determinism, shared edges, format/checksum round trip, corruption detection, settings validation, scene output, CLI). Runtime: `Assets/Scripts/Tests/TerrainTests.cs`, four `[GameTest]`s on the procedural scene that raycast the physics terrain at five lattice points and one in-quad point and compare with the generator's exact Float32 heights (±2 cm), check the reflected component and that boxes rest on the surface; `TerrainProceduralFlows.edscript` now runs them. **Pending:** the flow run.
+- **Work:** Generation: 18 unit tests in `Tools/Tests/test_generate_terrain.py` (noise properties, determinism, shared edges, format/checksum round trip, corruption detection, settings validation, scene output, CLI). Runtime: `Assets/Scripts/Tests/TerrainTests.cs`, four `[GameTest]`s on the procedural scene that raycast the physics terrain at five lattice points and one in-quad point and compare with the generator's exact Float32 heights (±2 cm), check the reflected component, and that boxes rest on the surface; `TerrainProceduralFlows.edscript` runs them. **Verified:** the flow passes in a headless editor_debug Havana with `GameTests: 4 passed, 0 failed` (the first run caught a sample point sitting under a physics box; moved).
 - **Follow-ups:** - Render-side coverage: a screenshot reference for `TerrainProceduralTest.lvl` once the look is final (then the Showcase regression can carry it).
 ### 17 · Fix editor crash on scene load
 - **Status:** Blocked · **Area:** Editor · **Owner:** Engine
@@ -258,10 +258,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** - 46 (Engine): fall back to `DefaultCamera` when the current camera is destroyed; null-check the three editor sites.
 - 47 (Engine): address-stable `CommandCache` (deque/paged or ids) and a null-check in `CameraCore::OnEntityRemoved`; index loop in `SceneStreaming::Pump`; iterate a copy of `m_sortedCores` in `World::SyncEntity`.
 ### 18 · Implement skybox system
-- **Status:** In Progress · **Area:** Rendering / Gameplay · **Owner:** Game + Engine
+- **Status:** Done · **Area:** Rendering / Gameplay · **Owner:** Game + Engine
 - **Description:** Create a dynamic skybox system with day/night cycles and weather effects.
 - **Findings:** The engine already ships a full procedural sky: `DynamicSky` (atmosphere tables, sun/moon/stars/Milky Way, volumetric clouds with wind, the sky's own directional light, per-camera `ProceduralSkySettings`: Time, TimeScale, Latitude, Month, Turbidity, moon, clouds, wind) selected with the camera's `ClearType = Procedural`, plus textured sky boxes. So a "skybox system" exists; what the project lacked was a gameplay-facing day/night and weather driver and events for gameplay to react to.
-- **Work:** Added `Assets/Scripts/DayNightCycle.cs`: owns the clock (24 h per `DayLengthSeconds`, wrapping; writes the camera's authored `ProceduralSky.Time` so the inspector and automation stay authoritative), four weather presets (Clear, Cloudy, Overcast, Storm: cloud coverage/density, wind, haze) blended with a frame-rate-independent exponential ease, an optional automatic weather cycle, `SetHour` / `SetWeather` / `Phase` / `IsNight`, `DayPhaseChanged` and `WeatherChanged` EventBus events, and inspector buttons. `Assets/Scenes/Tests/DayNightTest.lvl` (procedural sky over the Perlin terrain) + `DayNightFlows.edscript` watch a 48 s day go Dawn → Day → Dusk → Night while the weather cycles, then check Stop restores the authored time. **Pending:** the flow run.
+- **Work:** Added `Assets/Scripts/DayNightCycle.cs`: owns the clock (24 h per `DayLengthSeconds`, wrapping; writes the camera's authored `ProceduralSky.Time` so the inspector and automation stay authoritative), four weather presets (Clear, Cloudy, Overcast, Storm: cloud coverage/density, wind, haze) blended with a frame-rate-independent exponential ease, an optional automatic weather cycle, `SetHour` / `SetWeather` / `Phase` / `IsNight`, `DayPhaseChanged` and `WeatherChanged` EventBus events, and inspector buttons. `Assets/Scripts/NightLight.cs` shows gameplay reacting: lamps subscribe to `DayPhaseChanged` and fade on for Dusk/Night. `Assets/Scenes/Tests/DayNightTest.lvl` (procedural sky over the Perlin terrain, two lamps) + `DayNightFlows.edscript`. **Verified:** the flow passes headlessly: Dawn → Day → Dusk → Night at the expected hours while the weather cycles Clear → Cloudy → Overcast → Storm, both lamps switch off at Dawn and on at Dusk (intensity reaches 8), the sky fields follow the script, and Stop restores the authored time; the Day capture shows sun shadows and clouds.
 - **Follow-ups:** - Weather could also drive the `PostProcess` fog density and an `AudioSource` (rain/wind) through the same presets.
 - Engine: expose `ProceduralSkySettings` as a typed C# wrapper instead of field paths.
 ### 19 · Optimize collision detection
@@ -507,3 +507,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #50 opened (editor dirties .meta files); #18 flow passed, #8 flow caught two test-script mistakes (fixed, rerunning).
 - 2026-11-04 · #6 verified: Playground 36.8 → 12.8 MiB and 0.00 % regression change on all four Concrete scenes → Done. NetArena smoke passed end to end (ownership, prediction, remote pawns) but the autopilot walks off the floor; fixing the arena.
 - 2026-11-04 · #9 / #30 NetArena sample verified by the headless smoke → Done.
+- 2026-11-04 · #16 (TerrainTests 4/4 in the editor) and #18 (DayNight + lamps flow) → Done.
