@@ -37,7 +37,7 @@ public partial class NetPawn : Script
     private bool simulatedYawKnown;
     private Vector3 spawn;
     private int autopilot = -1;
-    private int ownedFrames;
+    private float ownedSeconds;
     private bool movedLogged;
     private bool remoteLogged;
     private bool connectedLogged;
@@ -171,10 +171,10 @@ public partial class NetPawn : Script
             {
                 AssignPawns();
             }
-            if (!movedLogged && OwnerClient != 0 && (transform.WorldPosition - spawn).Length() > 2f)
+            if (!movedLogged && OwnerClient != 0 && HorizontalDistance(transform.WorldPosition, spawn) > 2f)
             {
                 movedLogged = true;
-                Debug.Log($"NetPawn: pawn {Slot} moved {(transform.WorldPosition - spawn).Length():0.0} m");
+                Debug.Log($"NetPawn: pawn {Slot} moved {HorizontalDistance(transform.WorldPosition, spawn):0.0} m");
             }
             return;
         }
@@ -182,10 +182,10 @@ public partial class NetPawn : Script
         bool mine = Net.IsActive ? Net.IsOwner(Entity) : Slot == 1;
         if (!mine)
         {
-            if (Net.IsClient && !remoteLogged && (transform.WorldPosition - spawn).Length() > 2f)
+            if (Net.IsClient && !remoteLogged && HorizontalDistance(transform.WorldPosition, spawn) > 2f)
             {
                 remoteLogged = true;
-                Debug.Log($"NetPawn: remote pawn {Slot} moved {(transform.WorldPosition - spawn).Length():0.0} m");
+                Debug.Log($"NetPawn: remote pawn {Slot} moved {HorizontalDistance(transform.WorldPosition, spawn):0.0} m");
             }
             return;
         }
@@ -201,7 +201,7 @@ public partial class NetPawn : Script
         pitch = Math.Clamp(pitch - look.y * LookSensitivity, -60f, 70f);
         Net.SetAim(yaw, pitch);
 
-        Autopilot();
+        Autopilot(deltaTime);
     }
 
     // Camera after the pose is final for this frame.
@@ -226,9 +226,11 @@ public partial class NetPawn : Script
         view.LookAt(focus);
     }
 
-    // Game.NetPawnAutoPilot = 1 (user://Settings.json) makes the owning client walk forward and jump once,
-    // for the headless smoke (Tools/TestNetArena.py). It logs how far its pawn got.
-    private void Autopilot()
+    // Game.NetPawnAutoPilot = 1 (user://Settings.json) makes the owning client walk forward for 2.5 s of
+    // game time and jump once, for the headless smoke (Tools/TestNetArena.py); it logs how far its pawn got.
+    // Game time, not frames: a slow headless run clamps its frame delta to 0.25 s, so frame counts would
+    // walk much further than a real 60 Hz run.
+    private void Autopilot(float dt)
     {
         if (autopilot < 0)
         {
@@ -238,28 +240,35 @@ public partial class NetPawn : Script
         {
             return;
         }
-        ++ownedFrames;
-        if (ownedFrames == 30)
+        float before = ownedSeconds;
+        ownedSeconds += dt;
+        if (before < 0.5f && ownedSeconds >= 0.5f)
         {
             Input.Simulate(KeyCode.W, true);
         }
-        else if (ownedFrames == 90)
+        else if (before < 1.5f && ownedSeconds >= 1.5f)
         {
             Input.Simulate(KeyCode.Space, true);
         }
-        else if (ownedFrames == 96)
+        else if (before < 1.7f && ownedSeconds >= 1.7f)
         {
             Input.Simulate(KeyCode.Space, false);
         }
-        else if (ownedFrames == 240)
+        else if (before < 3.0f && ownedSeconds >= 3.0f)
         {
             Input.Simulate(KeyCode.W, false);
         }
-        else if (ownedFrames == 300)
+        else if (before < 5.0f && ownedSeconds >= 5.0f)
         {
-            float distance = (transform.WorldPosition - spawn).Length();
-            Debug.Log(distance > 2f ? $"NetPawn: autopilot: own pawn moved {distance:0.0} m, jumps {Jumps}, corrections {Net.Corrections}"
+            float distance = HorizontalDistance(transform.WorldPosition, spawn);
+            Debug.Log(distance > 2f && distance < 30f ? $"NetPawn: autopilot: own pawn moved {distance:0.0} m, jumps {Jumps}, corrections {Net.Corrections}"
                 : $"NetPawn: autopilot FAILED (moved {distance:0.00} m)");
         }
+    }
+
+    private static float HorizontalDistance(Vector3 a, Vector3 b)
+    {
+        float dx = a.x - b.x, dz = a.z - b.z;
+        return MathF.Sqrt(dx * dx + dz * dz);
     }
 }

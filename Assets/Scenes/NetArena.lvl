@@ -94,9 +94,9 @@
             0
           ],
           "Scale": [
-            40,
+            60,
             1,
-            40
+            60
           ]
         },
         {
@@ -595,6 +595,194 @@
             "Metallic": 0.0,
             "Roughness": 0.4
           }
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000500",
+      "Name": "Wall North",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            1.5,
+            30.5
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            62,
+            3,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.55,
+              0.55,
+              0.6
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.8
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000501",
+      "Name": "Wall South",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            1.5,
+            -30.5
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            62,
+            3,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.55,
+              0.55,
+              0.6
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.8
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000502",
+      "Name": "Wall East",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            30.5,
+            1.5,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            3,
+            62
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.55,
+              0.55,
+              0.6
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.8
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000503",
+      "Name": "Wall West",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -30.5,
+            1.5,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            3,
+            62
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.55,
+              0.55,
+              0.6
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.8
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
         }
       ]
     }
