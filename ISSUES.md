@@ -20,7 +20,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
 | 8 | Refactor camera system | To Do | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | In Review | Networking | Engine + Game |
-| 10 | Update documentation | To Do | Docs | Game + Engine |
+| 10 | Update documentation | Done | Docs | Game + Engine |
 | 11 | Fix Dementia module memory leaks | Blocked | Dementia | Engine |
 | 12 | Improve Havana editor UI responsiveness | Blocked | Editor | Engine |
 | 13 | Add new ImGUI widgets for tooling | Blocked | Editor | Engine |
@@ -67,7 +67,6 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 ### To Do
 - 6 Optimize asset memory
 - 8 Refactor camera system
-- 10 Update documentation
 - 16 Write comprehensive tests for terrain module
 - 18 Implement skybox system
 - 21 Editor: generate terrain heights from noise
@@ -108,6 +107,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 ### Done
 - 1 Implement terrain generation algorithm
 - 7 Add ECS unit tests
+- 10 Update documentation
 
 ### Blocked
 - 2 Fix terrain rendering bugs
@@ -194,12 +194,12 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 31 (Engine): copy the entity's `PrefabAsset` into `NetIdentity::Prefab` at spawn and register `NetIdentity` for C#, so `World.Instantiate` spawns replicate properly.
 - 32 (Engine): `Net.Host(port)` / `Net.Connect(host)` / `Net.Disconnect()` script API for menu-driven sessions.
 ### 10 · Update documentation
-- **Status:** To Do · **Area:** Docs · **Owner:** Game + Engine
+- **Status:** Done · **Area:** Docs · **Owner:** Game + Engine
 - **Description:** Complete the Architecture.md file with detailed diagrams and explanations.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** `Engine/Docs/Architecture.md` (engine repo) already has a module graph, the `Engine::Init` sequence, a Mermaid frame-loop diagram, the stage table and feature-flag table, verified against recent engine commits; it is complete for the engine. What was missing was any architecture description of *this* project: the game module, where game code runs, the content/scene formats, the C# pipeline and how to verify changes. The README linked none of the docs.
+- **Work:** Added `ARCHITECTURE.md` at the root (226 lines, five Mermaid diagrams: build-target graph, engine↔game lifecycle sequence, first-person character data flow, script build/hot-reload pipeline, network topology) with tables for build targets, the C++ module, update stages and the verification commands; linked it, the issue board and the engine docs from `README.md`.
+- **Follow-ups:** - Keep `ARCHITECTURE.md` in step when cores/components are added (the module table) — a one-line rule for future PRs.
+- Engine: `Engine/Docs/Architecture.md` could gain a diagram of the engine-owned core order inside one frame (today a flowchart of stages, not of cores).
 ### 11 · Fix Dementia module memory leaks
 - **Status:** Blocked · **Area:** Dementia · **Owner:** Engine
 - **Description:** Address memory leaks in the Dementia module's entity management system.
@@ -473,3 +473,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · Audits recorded for #4 #5 #9 #12 #13 #15 #20; follow-ups #30-#40 opened. Board header repaired (a helper bug had merged the Columns and Issues sections).
 - 2026-11-04 · #1 verified in the editor (TerrainProceduralFlows passed headlessly) → Done. #11 #14 #17 audited; follow-ups #41-#47 opened.
 - 2026-11-04 · #7 C# ECS tests verified in the editor (5/5) → Done.
+- 2026-11-04 · #10 ARCHITECTURE.md (game-level architecture with diagrams) + README links → Done.

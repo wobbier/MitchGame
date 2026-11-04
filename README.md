@@ -39,6 +39,13 @@ Editing the project name
 
 Set `Name` in `Game.sharpmake.cs` (both the project and the solution class) to your game's name. Generation writes it to `Project/Game.meproj` and names the solution and makefile after it (`<Name>.sln`, `<Name>.make`). The `Game` and `Game_EntryPoint` folders keep their names.
 
+Project docs
+------------
+
+* [ARCHITECTURE.md](ARCHITECTURE.md): how the game sits on the engine, where game code runs, content layout, build targets and the checks.
+* [ISSUES.md](ISSUES.md): the issue board (status, findings and follow-ups for every tracked item).
+* [Engine/Docs](Engine/Docs/README.md): the engine's own documentation.
+
 Contact me
 ----------
 
