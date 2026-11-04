@@ -17,7 +17,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 4 | Fix editor lighting issues | Blocked | Editor / Rendering | Engine |
 | 5 | Implement particle system | In Review | Rendering / VFX | Engine |
 | 6 | Optimize asset memory | To Do | Assets | Game |
-| 7 | Add ECS unit tests | In Progress | ECS / Tests | Game + Engine |
+| 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
 | 8 | Refactor camera system | To Do | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | In Review | Networking | Engine + Game |
 | 10 | Update documentation | To Do | Docs | Game + Engine |
@@ -99,7 +99,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 47 Editor crash: pointer stability in CommandCache and scene streaming
 
 ### In Progress
-- 7 Add ECS unit tests
+- (none)
 
 ### In Review
 - 5 Implement particle system
@@ -107,6 +107,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 ### Done
 - 1 Implement terrain generation algorithm
+- 7 Add ECS unit tests
 
 ### Blocked
 - 2 Fix terrain rendering bugs
@@ -172,12 +173,11 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 7 · Add ECS unit tests
-- **Status:** In Progress · **Area:** ECS / Tests · **Owner:** Game + Engine
+- **Status:** Done · **Area:** ECS / Tests · **Owner:** Game + Engine
 - **Description:** Write tests for core ECS components and systems to ensure stability.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** The engine already has a C++ ECS suite (`Engine/Tests/Source/ECSTests.cpp`: generational ids, deferred removal, stable component addresses, core filters/activation, parent destruction, GUIDs, `World::Each`, priority ordering, singletons) plus Transform/Bounds cases. What the game had nothing for was the ECS *as scripts see it* (the C# bindings), which is the surface game code actually uses.
+- **Work:** Added `Assets/Scripts/Tests/EcsTests.cs`: five `[GameTest]`s on `Assets/Scenes/Tests/EcsTest.lvl` covering entity lifetime (find, rename, deferred destruction, stale generational handles), components by type and by name with reflected field round trips and `Query.WithComponent`, hierarchy (parent/children, world positions through two levels, world-pose-preserving reparent, descendant destruction), activity/layers/GUIDs, and bulk create/destroy exactness. `EcsFlows.edscript` runs them (`console game-tests EcsTests`). **Verified:** all 5 pass in a headless editor_debug Havana (`GameTests: 5 passed, 0 failed`).
+- **Follow-ups:** - Engine suite gaps worth adding upstream: component removal while a core iterates, `RunsAfter` cycles, additive-scene entity GUID collisions (Engine).
 ### 8 · Refactor camera system
 - **Status:** To Do · **Area:** Gameplay / Camera · **Owner:** Game
 - **Description:** Improve camera movement logic for better player control and smooth transitions.
@@ -472,3 +472,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #2 #3 #19 audited (terrain tiling precision, terrain draw calls, physics sync cost): findings recorded, engine follow-ups #22-#29 opened; marked Blocked (no MitchEngine push access from this session).
 - 2026-11-04 · Audits recorded for #4 #5 #9 #12 #13 #15 #20; follow-ups #30-#40 opened. Board header repaired (a helper bug had merged the Columns and Issues sections).
 - 2026-11-04 · #1 verified in the editor (TerrainProceduralFlows passed headlessly) → Done. #11 #14 #17 audited; follow-ups #41-#47 opened.
+- 2026-11-04 · #7 C# ECS tests verified in the editor (5/5) → Done.
