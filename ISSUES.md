@@ -60,6 +60,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 47 | Editor crash: pointer stability in CommandCache and scene streaming | To Do | Editor / Rendering | Engine |
 | 48 | Audit the remaining 4K textures | To Do | Assets | Game |
 | 49 | Texture import: MaxSize setting | To Do | Assets / Engine | Engine |
+| 50 | Editor rewrites .meta sidecars without a trailing newline | To Do | Editor / Assets | Engine |
 
 ## Columns
 
@@ -96,6 +97,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 47 Editor crash: pointer stability in CommandCache and scene streaming
 - 48 Audit the remaining 4K textures
 - 49 Texture import: MaxSize setting
+- 50 Editor rewrites .meta sidecars without a trailing newline
 
 ### In Progress
 - 6 Optimize asset memory
@@ -485,6 +487,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** —
 - **Follow-ups:** —
 
+### 50 · Editor rewrites .meta sidecars without a trailing newline
+- **Status:** To Do · **Area:** Editor / Assets · **Owner:** Engine
+- **Description:** Opening a project in Havana rewrites unchanged sidecars (seen: Engine/Assets/Shaders/OutlineHull*.meta, Post/Outline.frag.meta, Assets/Terrain/Procedural.terrain.meta) with 4-space indentation and no final newline, dirtying the engine submodule and every game checkout. The metadata writer should keep the file byte-identical when nothing changed (and end with a newline).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
 ## Changelog
 
 - 2026-11-04 · Board created from the imported issue list (20 issues).
@@ -495,3 +504,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #7 C# ECS tests verified in the editor (5/5) → Done.
 - 2026-11-04 · #10 ARCHITECTURE.md (game-level architecture with diagrams) + README links → Done.
 - 2026-11-04 · Board brought up to date with in-flight work: #6 measurements + Concrete downscale, #8 character rewrite, #16 TerrainTests.cs, #18 DayNightCycle.cs, #9/#30 NetArena sample; #48 #49 opened. Verifications pending on the editor rebuild and the game build.
+- 2026-11-04 · #50 opened (editor dirties .meta files); #18 flow passed, #8 flow caught two test-script mistakes (fixed, rerunning).
