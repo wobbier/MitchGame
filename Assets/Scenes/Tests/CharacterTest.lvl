@@ -1,0 +1,353 @@
+{
+  "Version": 2,
+  "Cores": [
+    {
+      "Type": "CharacterCore"
+    }
+  ],
+  "Entities": [
+    {
+      "GUID": "c4a7ac7e7e5700a1",
+      "Name": "Player",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            1.0,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Character",
+          "WalkSpeed": 4.0,
+          "SprintMultiplier": 1.6,
+          "StandingEyeHeight": 0.7
+        },
+        {
+          "Type": "CharacterController",
+          "Radius": 0.4,
+          "Height": 1.8,
+          "MaxSpeed": 4.0,
+          "JumpHeight": 1.2
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700a2",
+      "Name": "Camera",
+      "DestroyOnLoad": true,
+      "Parent": "c4a7ac7e7e5700a1",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0.7,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Camera",
+          "ClearType": "Color",
+          "ClearColor": [
+            0.25,
+            0.3,
+            0.4
+          ],
+          "IsCurrent": true,
+          "Near": 0.05,
+          "Far": 200.0,
+          "Zoom": 70.0
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700a3",
+      "Name": "Floor",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            -0.5,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            60,
+            1,
+            60
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.45,
+              0.5,
+              0.45
+            ],
+            "Roughness": 0.8
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700a4",
+      "Name": "Sun",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            10,
+            0
+          ],
+          "Rotation": [
+            50,
+            -30,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Directional",
+          "Color": [
+            1,
+            0.95,
+            0.85
+          ],
+          "Intensity": 2.5,
+          "CastShadows": true
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700b0",
+      "Name": "Pillar 1",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -4,
+            1,
+            8
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.4,
+              0.2
+            ],
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700b1",
+      "Name": "Pillar 2",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            4,
+            1,
+            8
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.4,
+              0.2
+            ],
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700b2",
+      "Name": "Pillar 3",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            1,
+            14
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.4,
+              0.2
+            ],
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "c4a7ac7e7e5700b3",
+      "Name": "Pillar 4",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            8,
+            1,
+            2
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.4,
+              0.2
+            ],
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}
