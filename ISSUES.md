@@ -16,7 +16,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 3 | Optimize terrain LOD system | Blocked | Terrain / Rendering | Engine |
 | 4 | Fix editor lighting issues | Blocked | Editor / Rendering | Engine |
 | 5 | Implement particle system | In Review | Rendering / VFX | Engine |
-| 6 | Optimize asset memory | In Progress | Assets | Game |
+| 6 | Optimize asset memory | Done | Assets | Game |
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
 | 8 | Refactor camera system | In Progress | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | In Review | Networking | Engine + Game |
@@ -100,7 +100,6 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 50 Editor rewrites .meta sidecars without a trailing newline
 
 ### In Progress
-- 6 Optimize asset memory
 - 8 Refactor camera system
 - 16 Write comprehensive tests for terrain module
 - 18 Implement skybox system
@@ -111,6 +110,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 ### Done
 - 1 Implement terrain generation algorithm
+- 6 Optimize asset memory
 - 7 Add ECS unit tests
 - 10 Update documentation
 
@@ -171,14 +171,14 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Verified against the engine; the ask is covered except the listed extensions (#40).
 - **Follow-ups:** - 40 (Engine): curve/gradient over-lifetime, mesh/edge emitters, collision, vertex-stage particle graphs, richer C# `ParticleSystem` API.
 ### 6 · Optimize asset memory
-- **Status:** In Progress · **Area:** Assets · **Owner:** Game
+- **Status:** Done · **Area:** Assets · **Owner:** Game
 - **Description:** Reduce memory usage by 20% for commonly used assets like textures and models.
 - **Findings:** Measured with the editor's Resource Monitor (`asset-costs` report, headless Havana) on the three showcase scenes that use the big materials. Texture memory is what matters (models are < 1 MiB):
   - Playground 36.8 MiB, Lighting 65.3 MiB, Fog 33.3 MiB in total.
   - `ConcreteNormal.png` (4096², BC5, 13 mips) = 21.3 MiB and `ConcreteDiffuse.png` (4096², BC1) = 10.7 MiB appear in all three; `MarbleDark_Normal/Diffuse` add 32 MiB more to Lighting. The 4K pair is 87 % of Playground, 96 % of Fog and 49 % of Lighting.
   - Compression is already in place (`Format: Auto` → BC1/BC5 with mips for every texture; `tga` sources cook the same way), so the remaining lever is resolution. A 2K round trip of the Concrete sources loses nothing visible (PSNR 45.9 dB normal, 42.0 dB diffuse: the 4K files carry no detail above 2K), whereas `MarbleDark_Normal` is genuine 4K grain (17.9 dB) and stays.
   - The engine's quality presets already cap uploads (`MaxTextureSize` 1024 / 2048 for Low / Medium, `Texture.cpp` skips mips above the cap), so players on those presets were never paying for 4K; the default (no cap) and the showcase references were.
-- **Work:** Downscaled `Assets/Textures/Concrete/ConcreteNormal.png` and `ConcreteDiffuse.png` from 4096² to 2048² (Lanczos; the sources shrink from 32 MB to 8 MB on disk too). **Measured** with the Resource Monitor after the change: Playground 36.8 → 12.8 MiB (-65 %; the pair now costs 5.3 + 2.7 MiB), which also predicts Fog 33.3 → 9.3 MiB (-72 %) and Lighting 65.3 → 41.3 MiB (-37 %), i.e. well past the 20 % target for the commonly used set. **Pending:** the showcase screenshot regression (Playground, Lighting, Fog, RenderScale) against the committed references once the game build finishes; the change is only kept if the captures stay within tolerance.
+- **Work:** Downscaled `Assets/Textures/Concrete/ConcreteNormal.png` and `ConcreteDiffuse.png` from 4096² to 2048² (Lanczos; the sources shrink from 32 MB to 8 MB on disk too). **Measured** with the Resource Monitor after the change: Playground 36.8 → 12.8 MiB (-65 %; the pair now costs 5.3 + 2.7 MiB), which also makes Fog 33.3 → 9.3 MiB (-72 %) and Lighting 65.3 → 41.3 MiB (-37 %), well past the 20 % target for the commonly used set. **Verified visually:** the showcase screenshot regression (game build, lavapipe, 480 frames at a fixed frame time) reports 0.00 % changed pixels against the committed references for Playground (mean difference 0.17 %), Lighting (0.01 %), Fog (0.02 %) and RenderScale (0.02 %), so no reference needed updating.
 - **Follow-ups:** - 48 (Game): the remaining 4K sources (`MarbleDark_*`, `BrickWall101`, `TileGroundSand118`, the Synty metallic maps) are candidates for the same measurement when their scenes are profiled.
 - 49 (Engine): a per-texture `MaxSize` import setting (cook-time downscale) so artists can keep 4K sources while shipping 2K, instead of editing source files.
 ### 7 · Add ECS unit tests
@@ -505,3 +505,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #10 ARCHITECTURE.md (game-level architecture with diagrams) + README links → Done.
 - 2026-11-04 · Board brought up to date with in-flight work: #6 measurements + Concrete downscale, #8 character rewrite, #16 TerrainTests.cs, #18 DayNightCycle.cs, #9/#30 NetArena sample; #48 #49 opened. Verifications pending on the editor rebuild and the game build.
 - 2026-11-04 · #50 opened (editor dirties .meta files); #18 flow passed, #8 flow caught two test-script mistakes (fixed, rerunning).
+- 2026-11-04 · #6 verified: Playground 36.8 → 12.8 MiB and 0.00 % regression change on all four Concrete scenes → Done. NetArena smoke passed end to end (ownership, prediction, remote pawns) but the autopilot walks off the floor; fixing the arena.
