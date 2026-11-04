@@ -1,0 +1,256 @@
+{
+  "Cores": [],
+  "Scene": [
+    {
+      "Name": "Main Camera",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0.0,
+            90.97140292800697,
+            -166.4
+          ],
+          "Rotation": [
+            30,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Camera",
+          "ClearType": "Color",
+          "ClearColor": [
+            0.16,
+            0.24,
+            0.34
+          ],
+          "IsCurrent": true,
+          "Near": 0.1,
+          "Far": 1024.0,
+          "Zoom": 55
+        }
+      ]
+    },
+    {
+      "Name": "Terrain",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Terrain",
+          "Asset": "Assets/Terrain/Procedural.terrain",
+          "Color": [
+            0.34,
+            0.5,
+            0.22
+          ],
+          "Roughness": 0.9,
+          "CastShadows": true,
+          "Collision": true,
+          "Friction": 0.6,
+          "Restitution": 0
+        }
+      ]
+    },
+    {
+      "Name": "Sun",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0.0,
+            50.0,
+            0.0
+          ],
+          "Rotation": [
+            50,
+            -30,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Directional",
+          "Color": [
+            1,
+            0.93,
+            0.78
+          ],
+          "Intensity": 3,
+          "CastShadows": true
+        }
+      ]
+    },
+    {
+      "Name": "Terrain Box 1",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -51.2,
+            -0.09682943637502972,
+            0.0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.85,
+              0.32,
+              0.1
+            ],
+            "Roughness": 0.55
+          }
+        },
+        {
+          "Type": "Rigidbody",
+          "Mass": 1
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Terrain Box 2",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0.0,
+            -1.0016332840544058,
+            0.0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.85,
+              0.32,
+              0.1
+            ],
+            "Roughness": 0.55
+          }
+        },
+        {
+          "Type": "Rigidbody",
+          "Mass": 1
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Terrain Box 3",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            51.2,
+            0.7651847509787391,
+            0.0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.85,
+              0.32,
+              0.1
+            ],
+            "Roughness": 0.55
+          }
+        },
+        {
+          "Type": "Rigidbody",
+          "Mass": 1
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

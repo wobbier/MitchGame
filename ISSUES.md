@@ -11,7 +11,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 | ID | Title | Status | Area | Owner |
 |---:|-------|--------|------|-------|
-| 1 | Implement terrain generation algorithm | To Do | Terrain | Game |
+| 1 | Implement terrain generation algorithm | In Review | Terrain | Game |
 | 2 | Fix terrain rendering bugs | In Progress | Terrain / Rendering | Engine |
 | 3 | Optimize terrain LOD system | To Do | Terrain / Rendering | Engine |
 | 4 | Fix editor lighting issues | In Progress | Editor / Rendering | Engine |
@@ -31,6 +31,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 18 | Implement skybox system | To Do | Rendering / Gameplay | Game + Engine |
 | 19 | Optimize collision detection | To Do | Physics | Engine |
 | 20 | Add visual scripting support | Backlog | Scripting / Editor | Engine |
+| 21 | Editor: generate terrain heights from noise | To Do | Terrain / Editor | Engine |
 
 ## Columns
 
@@ -53,14 +54,14 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 ### Blocked
 - (none)
 
-## Issues
-
-### 1 · Implement terrain generation algorithm
-- **Status:** To Do · **Area:** Terrain · **Owner:** Game
+## Issu### 1 · Implement terrain generation algorithm
+- **Status:** In Review · **Area:** Terrain · **Owner:** Game
 - **Description:** Create a new algorithm for procedural terrain generation based on Perlin noise.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
+- **Findings:** The engine already has a mature resident/streamed terrain system (`Engine/Source/Terrain/`, `Engine/Docs/Terrain.md`) and a `Noise` library in Dementia (`Modules/Dementia/Source/Math/Noise.h`: gradient noise, fBm, ridged, hybrid multifractal, Voronoi), but nothing turns noise into a terrain asset: the only generator was the hand-written bump in `Engine/Tools/BuildTerrainTest.py`, and C# has no terrain bindings yet (Terrain.md caveats).
+- **Work:** Added `Tools/GenerateTerrain.py`: a pure-Python procedural generator writing version 1 terrain sources (manifest + Float32 `.thp` pages with the engine's FNV-1a checksums + `.meta`). Perlin gradient noise with a quintic fade, rotated-octave fBm, Musgrave ridged multifractal and domain warping; presets `hills`, `mountains`, `island`; heights are a pure function of the terrain-wide lattice so tiles agree on shared edges; HeightBase/HeightRange are derived so UInt16 cooks work; `--scene` writes a test scene. Generated `Assets/Terrain/Procedural.terrain` (2×2 tiles, 64 quads, 2 m spacing, seed 7) and `Assets/Scenes/Tests/TerrainProceduralTest.lvl` + `TerrainProceduralFlows.edscript` (boxes settle on the noise surface in Play, save/reopen keeps the asset). 18 unit tests in `Tools/Tests/test_generate_terrain.py` (`python3 -I -m unittest discover -s Tools/Tests`).
+- **Follow-ups:** - 21: an in-editor "Generate from noise" tool on top of `Noise::Fbm2` / `Ridged2` (Terrain panel, Sculpt or Tiles workspace) so artists don't need the script (Engine).
+- The editor flow still has to be run against a built Havana (see the Changelog).
+ —
 
 ### 2 · Fix terrain rendering bugs
 - **Status:** In Progress · **Area:** Terrain / Rendering · **Owner:** Engine
@@ -197,8 +198,14 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 ## Follow-ups and new issues
 
-(none yet)
+### 21 · Editor: generate terrain heights from noise
+- **Status:** To Do · **Area:** Terrain / Editor · **Owner:** Engine
+- **Description:** Expose Dementia's Noise (fBm, ridged, hybrid multifractal, Voronoi) as a terrain authoring tool in Havana's Terrain panel: seed, frequency, octaves, amplitude, preset; writes into the TerrainDocument as one undo step. Tools/GenerateTerrain.py is the offline reference implementation.
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
 
 ## Changelog
 
 - 2026-11-04 · Board created from the imported issue list (20 issues).
+- 2026-11-04 · #1 Perlin terrain generator (Tools/GenerateTerrain.py), Procedural.terrain asset, TerrainProceduralTest scene + flow, 18 unit tests; #21 opened.

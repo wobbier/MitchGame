@@ -1,0 +1,48 @@
+{
+  "Format": "MitchTerrain",
+  "Version": 1,
+  "AssetGUID": "7df7b3d7fcc7beda",
+  "Settings": {
+    "TileQuads": 64,
+    "PatchQuads": 16,
+    "SampleSpacing": 2.0,
+    "HeightBase": -7.0,
+    "HeightRange": 13.0,
+    "MinTile": [
+      -1,
+      -1
+    ],
+    "TilesX": 2,
+    "TilesZ": 2
+  },
+  "Pages": [
+    {
+      "Tile": [
+        -1,
+        -1
+      ],
+      "Source": "Procedural.source/-1_-1.thp"
+    },
+    {
+      "Tile": [
+        -1,
+        0
+      ],
+      "Source": "Procedural.source/-1_0.thp"
+    },
+    {
+      "Tile": [
+        0,
+        -1
+      ],
+      "Source": "Procedural.source/0_-1.thp"
+    },
+    {
+      "Tile": [
+        0,
+        0
+      ],
+      "Source": "Procedural.source/0_0.thp"
+    }
+  ]
+}

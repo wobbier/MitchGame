@@ -1,0 +1,26 @@
+# --scene Assets/Scenes/Tests/TerrainProceduralTest.lvl
+# Procedural Perlin terrain (Tools/GenerateTerrain.py, issue board #1): the generated asset loads as
+# one scene entity with no generated children, physics boxes come to rest on the noise surface in
+# Play, and the asset reference survives save / reopen.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/TerrainProceduralTest.lvl --editor-exec Assets/Scenes/Tests/TerrainProceduralFlows.edscript
+wait 30
+mark-count
+assert-children Terrain | 0
+assert-field Terrain | Terrain.Asset | "Assets/Terrain/Procedural.terrain"
+play
+# Each box starts 1 m above the generator's height at its column and settles half its size above it.
+wait-field Terrain Box 2 | Transform.Position.1 | -1.5 ~ 0.8 | 900
+wait-field Terrain Box 1 | Transform.Position.1 | -0.6 ~ 0.8 | 900
+wait-field Terrain Box 3 | Transform.Position.1 | 0.27 ~ 0.8 | 900
+wait 60
+assert-count-delta 0
+assert-children Terrain | 0
+screenshot .tmp/Tests/TerrainProcedural.png
+stop
+wait 30
+save-as .tmp/Tests/TerrainProceduralSaved.lvl
+load .tmp/Tests/TerrainProceduralSaved.lvl
+wait 30
+assert-field Terrain | Terrain.Asset | "Assets/Terrain/Procedural.terrain"
+assert-children Terrain | 0
+quit
