@@ -58,7 +58,8 @@ public static class TerrainTests
     {
         // Inside the quad whose corners are the lattice points (0,0) (1,0) (0,1) (1,1): the engine
         // splits it into the triangles (a, c, b) / (b, c, d), so this point lies on the first one.
-        GameAssert.Near(-1.96554f, GroundHeightAt(0.5f, 1.0f, Terrain()), 0.02f, "height inside the quad");
+        // 1e-3 tells the (a, c, b) triangle (-1.96554) from the other diagonal (-1.96477) and from bilinear (-1.96592).
+        GameAssert.Near(-1.96554f, GroundHeightAt(0.5f, 1.0f, Terrain()), 0.001f, "height inside the quad");
         return Task.CompletedTask;
     }
 

@@ -70,9 +70,10 @@ flowchart LR
 | `MitchEngine_Tests` | — | The engine's doctest suite (`Engine/Tests/Source`) |
 
 The C# side is separate: `Project/Game.Script.csproj` compiles every `.cs` under `Assets/` against
-`Engine/Modules/ScriptCore/ScriptCore.csproj`. On Linux and macOS the engine runs `dotnet build`
-itself at startup when sources are newer than the DLL, and again on a worker thread for hot reload
-in the editor; Visual Studio uses the Sharpmake-generated C# projects instead.
+`Engine/Modules/ScriptCore/ScriptCore.csproj`. Tools builds (the editor, the Player, debug and
+release games) run `dotnet build` on it at startup when sources are newer than the DLL, and again on
+a worker thread for hot reload in the editor; Retail and shipped builds only load the DLLs already
+there. On Windows, Visual Studio additionally builds the Sharpmake-generated C# projects.
 
 Feature flags (`USING( ME_EDITOR )`, `USING( ME_PLATFORM_LINUX )`, `USING( ME_HEADLESS )`, …) select
 code per target; see the table in `Engine/Docs/Architecture.md`. Game code must build and run on
@@ -99,8 +100,8 @@ sequenceDiagram
     Engine->>Engine: window, renderer, engine cores, .NET host
     Engine->>Game: OnInitialize()
     Game->>World: Start() / Simulate()
-    Engine->>Engine: load Product.StartupScene (or --scene)
-    Engine->>Game: OnStart()
+    Engine->>Game: OnStart() (no scene yet)
+    Engine->>Engine: load --scene or Product.StartupScene
     loop every frame (Engine::Run)
         Engine->>Cores: FixedUpdate / OnFixedUpdate (60 Hz steps, before physics)
         Engine->>Cores: Update / OnUpdate (after physics interpolation)

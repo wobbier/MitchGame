@@ -61,6 +61,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 48 | Audit the remaining 4K textures | To Do | Assets | Game |
 | 49 | Texture import: MaxSize setting | To Do | Assets / Engine | Engine |
 | 50 | Editor rewrites .meta sidecars without a trailing newline | To Do | Editor / Assets | Engine |
+| 51 | C# Camera.FieldOfView and CameraRigs write the dead Zoom field | To Do | Scripting / Rendering | Engine |
 
 ## Columns
 
@@ -97,6 +98,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 48 Audit the remaining 4K textures
 - 49 Texture import: MaxSize setting
 - 50 Editor rewrites .meta sidecars without a trailing newline
+- 51 C# Camera.FieldOfView and CameraRigs write the dead Zoom field
 
 ### In Progress
 - (none)
@@ -497,6 +499,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** —
 - **Follow-ups:** —
 
+### 51 · C# Camera.FieldOfView and CameraRigs write the dead Zoom field
+- **Status:** To Do · **Area:** Scripting / Rendering · **Owner:** Engine
+- **Description:** Camera::Zoom is a hidden legacy field nothing reads (the projection uses the private m_FOV, reflected as FieldOfView), yet ScriptCore's Camera.FieldOfView property, Kit/CameraRigs.cs and CameraRigFlows go through "Zoom"; many scenes still author "Zoom". Route the wrapper to FieldOfView and migrate Zoom on load (found by the review of #8, where the sprint FOV boost had no visible effect).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
 ## Changelog
 
 - 2026-11-04 · Board created from the imported issue list (20 issues).
@@ -513,3 +522,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #16 (TerrainTests 4/4 in the editor) and #18 (DayNight + lamps flow) → Done.
 - 2026-11-04 · #8 verified (CharacterFlows + 3 play-mode tests incl. both jump paths) → Done.
 - 2026-11-04 · #5 closed: the particle system exists in the engine (customizable shaders via the Particle graph target, five emitter shapes); extensions tracked in #40.
+- 2026-11-04 · Adversarial review of the new code (41 agents, 18 candidates, 8 confirmed) fixed: sprint FOV wrote the dead Camera.Zoom (#51 opened for the engine side), initial yaw via Euler folding, NetPawn session events never subscribed outside the editor, NightLight reload resync, per-client Xvfb displays in the NetArena smoke, terrain in-quad tolerance, two ARCHITECTURE.md corrections; my scenes now author FieldOfView.

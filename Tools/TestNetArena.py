@@ -95,8 +95,11 @@ def main():
                 "--no-audio", "--no-profile-enforcement", "--user-dir", user_dir, "--screenshot", os.path.join(args.out, f"client{i}.png"),
                 "--net-report", os.path.join(args.out, f"client{i}.json"), "--exit"] + net_args
             print(f"client {i}: " + " ".join(shlex.quote(p) for p in command))
+            # Each wrapped client gets its own virtual display: Headless.sh stops the Xvfb it started
+            # when its command exits, which would take a shared display away from the other client.
+            environment = dict(os.environ, HEADLESS_DISPLAY=f":{120 + 10 * i}")
             with open(log_path, "w") as log:
-                clients.append((i, log_path, subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)))
+                clients.append((i, log_path, subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True, env=environment)))
             # The second client joins once the first is in, so pawn 1 goes to client 1.
             if i == 1 and not wait_for_line(server_log, "NetPawn: pawn 1 -> client #", server, args.client_timeout):
                 failures.append("the server never handed pawn 1 to the first client")

@@ -24,8 +24,13 @@ public class NightLight : Script
 
     public override void OnReload()
     {
+        // Only public fields survive a hot reload: re-subscribe and re-derive the target so a lit
+        // lamp doesn't fade back off until the next phase change.
         light = GetComponent<Light>();
         On<DayPhaseChanged>(e => Apply(e.Phase));
+        reported = true;
+        if (DayNightCycle.Current != null) Apply(DayNightCycle.Current.Phase);
+        else if (light != null) target = light.Intensity;
     }
 
     private void Apply(DayPhase phase)

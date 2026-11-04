@@ -33,7 +33,7 @@
           "IsCurrent": true,
           "Near": 0.1,
           "Far": 1024.0,
-          "Zoom": 55
+          "FieldOfView": 55
         }
       ]
     },

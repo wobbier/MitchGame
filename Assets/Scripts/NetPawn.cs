@@ -48,14 +48,22 @@ public partial class NetPawn : Script
         spawn = transform.WorldPosition;
         yaw = transform.Rotation.y;
         Register();
-        if (Net.IsServer)
-        {
-            On<NetClientJoined>(e => AssignPawns());
-            On<NetClientLeft>(e => ReleasePawns(e.ClientId));
-        }
+        Subscribe();
     }
 
-    public override void OnReload() => Register();
+    public override void OnReload()
+    {
+        Register();
+        Subscribe();
+    }
+
+    // Scripts start before the session is hosted (Net.Role is still None in OnStart), so subscribe
+    // regardless of role and check it when an event arrives.
+    private void Subscribe()
+    {
+        On<NetClientJoined>(e => { if (Net.IsServer) AssignPawns(); });
+        On<NetClientLeft>(e => { if (Net.IsServer) ReleasePawns(e.ClientId); });
+    }
 
     public override void OnDestroy() => Pawns.Remove(this);
 

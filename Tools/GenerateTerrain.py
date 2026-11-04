@@ -346,7 +346,7 @@ def build_scene(asset_path, generator, color=(0.34, 0.5, 0.22)):
         {"Name": "Main Camera", "Components": [
             transform((center_x, peak + size * 0.35, z0 - size * 0.15), (30, 0, 0)),
             {"Type": "Camera", "ClearType": "Color", "ClearColor": [0.16, 0.24, 0.34], "IsCurrent": True,
-             "Near": 0.1, "Far": max(500.0, size * 4.0), "Zoom": 55}]},
+             "Near": 0.1, "Far": max(500.0, size * 4.0), "FieldOfView": 55}]},
         {"Name": "Terrain", "Components": [
             transform((0, 0, 0)),
             {"Type": "Terrain", "Asset": asset_path, "Color": list(color), "Roughness": 0.9,

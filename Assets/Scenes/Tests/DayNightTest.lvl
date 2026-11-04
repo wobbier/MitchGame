@@ -36,7 +36,7 @@
           "IsCurrent": true,
           "Near": 0.1,
           "Far": 900.0,
-          "Zoom": 60.0,
+          "FieldOfView": 60.0,
           "ProceduralSky": {
             "Time": 6.0,
             "TimeScale": 0.0,

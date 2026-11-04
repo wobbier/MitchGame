@@ -9,6 +9,8 @@
 #include "Input/InputTypes.h"
 #include "CLog.h"
 #include "Mathf.h"
+#include "Reflection/Reflection.h"
+#include "JSON.h"
 #include "optick.h"
 #include <cmath>
 
@@ -38,7 +40,8 @@ namespace
         state.CameraTransform = cameraTransform;
         state.Pitch = state.TargetPitch = Mathf::Clamp( -InCharacter.MaxPitch, InCharacter.MaxPitch, cameraTransform->GetRotationEuler().x );
         state.EyeHeight = cameraTransform->GetPosition().y;
-        state.BaseFov = state.Fov = state.View->Zoom;
+        // The projection reads the camera's (private) field of view, not the hidden legacy Zoom field.
+        state.BaseFov = state.Fov = state.View->GetFOV();
         return true;
     }
 
@@ -66,7 +69,9 @@ void CharacterCore::OnEntityAdded( Entity& NewEntity )
 {
     Character& character = NewEntity.GetComponent<Character>();
     character.Runtime = Character::State();
-    character.Runtime.Yaw = character.Runtime.TargetYaw = NewEntity.GetComponent<Transform>().GetRotationEuler().y;
+    // The heading from the facing direction, not an Euler decomposition (which folds |yaw| > 90).
+    const Vector3 front = NewEntity.GetComponent<Transform>().Front();
+    character.Runtime.Yaw = character.Runtime.TargetYaw = Mathf::Degrees( std::atan2( front.x, front.z ) );
     if( !BindCamera( NewEntity, character ) )
     {
         YIKES( "Character '" + NewEntity.GetComponent<Transform>().GetName() + "' has no child entity named 'Camera' with a Camera; it will look for one each frame." );
@@ -148,6 +153,9 @@ void CharacterCore::Update( const UpdateContext& inUpdateContext )
         state.Fov = Approach( state.Fov, state.BaseFov + ( state.Sprinting ? character.SprintFovBoost : 0.f ), character.FovTransitionSeconds, dt );
         state.CameraTransform->SetPosition( Vector3( 0.f, state.EyeHeight, 0.f ) );
         state.CameraTransform->SetRotation( Vector3( state.Pitch, 0.f, 0.f ) );
-        state.View->Zoom = state.Fov;
+        if( std::abs( state.View->GetFOV() - state.Fov ) > 1e-3f )
+        {
+            Reflection::SetPathJson( Camera::StaticType(), state.View, "FieldOfView", json( state.Fov ) );
+        }
     }
 }
