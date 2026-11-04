@@ -19,7 +19,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 6 | Optimize asset memory | Done | Assets | Game |
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
 | 8 | Refactor camera system | In Progress | Gameplay / Camera | Game |
-| 9 | Add multiplayer networking | In Review | Networking | Engine + Game |
+| 9 | Add multiplayer networking | Done | Networking | Engine + Game |
 | 10 | Update documentation | Done | Docs | Game + Engine |
 | 11 | Fix Dementia module memory leaks | Blocked | Dementia | Engine |
 | 12 | Improve Havana editor UI responsiveness | Blocked | Editor | Engine |
@@ -40,7 +40,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 27 | Physics: revision-gated body sync and move events | To Do | Physics | Engine |
 | 28 | Physics: allocation-free event routing and queries | To Do | Physics | Engine |
 | 29 | Physics: cheaper terrain collision cooks | To Do | Physics | Engine |
-| 30 | Playable two-pawn multiplayer sample | To Do | Networking / Gameplay | Game |
+| 30 | Playable two-pawn multiplayer sample | Done | Networking / Gameplay | Game |
 | 31 | Net: replicate prefab spawns from C# | To Do | Networking | Engine |
 | 32 | Net: C# session control | To Do | Networking / Scripting | Engine |
 | 33 | Net: RTT-sized snapshot history | To Do | Networking | Engine |
@@ -77,7 +77,6 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 27 Physics: revision-gated body sync and move events
 - 28 Physics: allocation-free event routing and queries
 - 29 Physics: cheaper terrain collision cooks
-- 30 Playable two-pawn multiplayer sample
 - 31 Net: replicate prefab spawns from C#
 - 32 Net: C# session control
 - 33 Net: RTT-sized snapshot history
@@ -106,13 +105,14 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 ### In Review
 - 5 Implement particle system
-- 9 Add multiplayer networking
 
 ### Done
 - 1 Implement terrain generation algorithm
 - 6 Optimize asset memory
 - 7 Add ECS unit tests
+- 9 Add multiplayer networking
 - 10 Update documentation
+- 30 Playable two-pawn multiplayer sample
 
 ### Blocked
 - 2 Fix terrain rendering bugs
@@ -195,13 +195,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** - Mouse-look can't be injected by edscripts; a `scene-mouse-delta` automation command would let the look path be covered too (Engine).
 - Head bob is available as the engine's `CameraSway` component on the camera child; not wired by default.
 ### 9 · Add multiplayer networking
-- **Status:** In Review · **Area:** Networking · **Owner:** Engine + Game
+- **Status:** Done · **Area:** Networking · **Owner:** Engine + Game
 - **Description:** Implement basic multiplayer functionality using the existing Net module.
 - **Findings:** The Net module is complete and tested end to end (`Engine/Source/Net/`, `NetCore`, `NetLaunch`, headless Server build; C# `Net` API in `Modules/ScriptCore/Source/Net/Net.cs`: role/tick, owners, `Command`/`LocalCommand`, `SetAim`, RPC attributes, `NetClientJoined`/`NetClientLeft` events, lag-compensated raycasts). The game repo exercises it with `Assets/Scenes/Tests/NetTest.lvl` + `NetProbe.cs` (predicted dash, RPC round trip) and `RunNetSmoke.py`; nothing playable uses it, and no template or sample does. API gaps for a *playable* sample: no C# `Net.Host/Connect/Disconnect` (sessions start from the command line only), `NetIdentity` isn't a registered C# component and `InstantiatePrefab` never fills `NetIdentity::Prefab` (`NetReplication.cpp:204-212`, `SceneSerializer.cpp:1002`), so dynamically spawned pawns replicate as bare transforms; only `Dash` is a networked input action.
-- **Work:** Scoped and built the sample: `Assets/Scenes/NetArena.lvl` (two placed pawns with `NetIdentity` + `CharacterController`, pillars, floor, overview camera) and `Assets/Scripts/NetPawn.cs` (server hands each joining client the first free pawn on `NetClientJoined` with a per-frame sweep as a safety net and releases it on `NetClientLeft`; every peer simulates from `Net.Command` / `Net.LocalCommand` (networked Move / Jump / Sprint, aim yaw via `Net.SetAim`), the owner predicts and drives a third-person follow camera; `[Replicated]` owner/jump counters). `Move`, `Jump` and `Sprint` are now `Networked` in `Assets/Config/Input.inputactions`. `Tools/TestNetArena.py` is a headless smoke (server + two autopiloted clients, log expectations). **Pending:** running the smoke once the game build finishes.
-- **Follow-ups:** - 30 (Game): `Assets/Scenes/Showcase/NetArena.lvl` + `NetPawn.cs`, Move/Jump/Sprint marked `Networked`, wired into `RunNetLocal.py` / the net smoke.
-- 31 (Engine): copy the entity's `PrefabAsset` into `NetIdentity::Prefab` at spawn and register `NetIdentity` for C#, so `World.Instantiate` spawns replicate properly.
-- 32 (Engine): `Net.Host(port)` / `Net.Connect(host)` / `Net.Disconnect()` script API for menu-driven sessions.
+- **Work:** Built the playable sample: `Assets/Scenes/NetArena.lvl` (two placed pawns with `NetIdentity` + `CharacterController`, a walled 60 m arena, pillars, overview camera) and `Assets/Scripts/NetPawn.cs` (the server hands each joining client the first free pawn on `NetClientJoined` with a per-frame sweep as a safety net and releases it on `NetClientLeft`; every peer simulates from `Net.Command` / `Net.LocalCommand` (networked Move / Jump / Sprint, aim yaw via `Net.SetAim`), the owner predicts and drives a third-person follow camera; `[Replicated]` owner/jump counters). `Move`, `Jump` and `Sprint` are now `Networked` in `Assets/Config/Input.inputactions`. `Tools/TestNetArena.py` is a headless smoke: the game build hosts on a free UDP port, two autopiloted clients join (`Game.NetPawnAutoPilot` in their user settings). **Verified:** the smoke passes end to end: the server logs both hand-overs and both pawns moving, each client owns its pawn, walks 4.6–5.2 m and jumps once with 0 prediction corrections, and sees the other pawn move; the server exits when the last client leaves. Play it with `Engine/Tools/RunNetLocal.py --scene Assets/Scenes/NetArena.lvl --clients 2`.
+- **Follow-ups:** - 31 (Engine): prefab spawns from C# replicate as bare transforms (`NetIdentity::Prefab` never filled); the sample places its pawns in the scene to avoid it.
+- 32 (Engine): `Net.Host/Connect/Disconnect` from C# for a menu-driven session.
+- The smoke rendering three lavapipe windows on one small machine shows 400–1300 ms RTT; run it alone.
 ### 10 · Update documentation
 - **Status:** Done · **Area:** Docs · **Owner:** Game + Engine
 - **Description:** Complete the Architecture.md file with detailed diagrams and explanations.
@@ -348,10 +348,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 30 · Playable two-pawn multiplayer sample
-- **Status:** To Do · **Area:** Networking / Gameplay · **Owner:** Game
+- **Status:** Done · **Area:** Networking / Gameplay · **Owner:** Game
 - **Description:** NetArena scene + NetPawn.cs: pawns placed in the scene, NetClientJoined → Net.SetOwner, Move/Jump/Sprint marked Networked, aim via Net.SetAim; run with RunNetLocal.py --clients 2 (see #9).
 - **Findings:** —
-- **Work:** —
+- **Work:** Done as part of #9: NetArena.lvl + NetPawn.cs + Tools/TestNetArena.py, verified headlessly.
 - **Follow-ups:** —
 
 ### 31 · Net: replicate prefab spawns from C#
@@ -506,3 +506,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · Board brought up to date with in-flight work: #6 measurements + Concrete downscale, #8 character rewrite, #16 TerrainTests.cs, #18 DayNightCycle.cs, #9/#30 NetArena sample; #48 #49 opened. Verifications pending on the editor rebuild and the game build.
 - 2026-11-04 · #50 opened (editor dirties .meta files); #18 flow passed, #8 flow caught two test-script mistakes (fixed, rerunning).
 - 2026-11-04 · #6 verified: Playground 36.8 → 12.8 MiB and 0.00 % regression change on all four Concrete scenes → Done. NetArena smoke passed end to end (ownership, prediction, remote pawns) but the autopilot walks off the floor; fixing the arena.
+- 2026-11-04 · #9 / #30 NetArena sample verified by the headless smoke → Done.
