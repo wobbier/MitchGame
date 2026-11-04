@@ -16,9 +16,9 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 3 | Optimize terrain LOD system | Blocked | Terrain / Rendering | Engine |
 | 4 | Fix editor lighting issues | Blocked | Editor / Rendering | Engine |
 | 5 | Implement particle system | In Review | Rendering / VFX | Engine |
-| 6 | Optimize asset memory | To Do | Assets | Game |
+| 6 | Optimize asset memory | In Progress | Assets | Game |
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
-| 8 | Refactor camera system | To Do | Gameplay / Camera | Game |
+| 8 | Refactor camera system | In Progress | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | In Review | Networking | Engine + Game |
 | 10 | Update documentation | Done | Docs | Game + Engine |
 | 11 | Fix Dementia module memory leaks | Blocked | Dementia | Engine |
@@ -26,9 +26,9 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 13 | Add new ImGUI widgets for tooling | Blocked | Editor | Engine |
 | 14 | Optimize ScriptCore scripting performance | Blocked | Scripting | Engine |
 | 15 | Enhance Player module networking | Blocked | Networking / Player | Engine |
-| 16 | Write comprehensive tests for terrain module | To Do | Terrain / Tests | Game + Engine |
+| 16 | Write comprehensive tests for terrain module | In Progress | Terrain / Tests | Game + Engine |
 | 17 | Fix editor crash on scene load | Blocked | Editor | Engine |
-| 18 | Implement skybox system | To Do | Rendering / Gameplay | Game + Engine |
+| 18 | Implement skybox system | In Progress | Rendering / Gameplay | Game + Engine |
 | 19 | Optimize collision detection | Blocked | Physics | Engine |
 | 20 | Add visual scripting support | Backlog | Scripting / Editor | Engine |
 | 21 | Editor: generate terrain heights from noise | To Do | Terrain / Editor | Engine |
@@ -58,6 +58,8 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 45 | ScriptCore: pool-driven queries and batched callbacks | To Do | Scripting | Engine |
 | 46 | Editor crash: current camera destroyed | To Do | Editor | Engine |
 | 47 | Editor crash: pointer stability in CommandCache and scene streaming | To Do | Editor / Rendering | Engine |
+| 48 | Audit the remaining 4K textures | To Do | Assets | Game |
+| 49 | Texture import: MaxSize setting | To Do | Assets / Engine | Engine |
 
 ## Columns
 
@@ -65,10 +67,6 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 20 Add visual scripting support
 
 ### To Do
-- 6 Optimize asset memory
-- 8 Refactor camera system
-- 16 Write comprehensive tests for terrain module
-- 18 Implement skybox system
 - 21 Editor: generate terrain heights from noise
 - 22 Terrain shader: patch-local tiling varyings
 - 23 Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize
@@ -96,9 +94,14 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 45 ScriptCore: pool-driven queries and batched callbacks
 - 46 Editor crash: current camera destroyed
 - 47 Editor crash: pointer stability in CommandCache and scene streaming
+- 48 Audit the remaining 4K textures
+- 49 Texture import: MaxSize setting
 
 ### In Progress
-- (none)
+- 6 Optimize asset memory
+- 8 Refactor camera system
+- 16 Write comprehensive tests for terrain module
+- 18 Implement skybox system
 
 ### In Review
 - 5 Implement particle system
@@ -166,12 +169,16 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Verified against the engine; the ask is covered except the listed extensions (#40).
 - **Follow-ups:** - 40 (Engine): curve/gradient over-lifetime, mesh/edge emitters, collision, vertex-stage particle graphs, richer C# `ParticleSystem` API.
 ### 6 · Optimize asset memory
-- **Status:** To Do · **Area:** Assets · **Owner:** Game
+- **Status:** In Progress · **Area:** Assets · **Owner:** Game
 - **Description:** Reduce memory usage by 20% for commonly used assets like textures and models.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** Measured with the editor's Resource Monitor (`asset-costs` report, headless Havana) on the three showcase scenes that use the big materials. Texture memory is what matters (models are < 1 MiB):
+  - Playground 36.8 MiB, Lighting 65.3 MiB, Fog 33.3 MiB in total.
+  - `ConcreteNormal.png` (4096², BC5, 13 mips) = 21.3 MiB and `ConcreteDiffuse.png` (4096², BC1) = 10.7 MiB appear in all three; `MarbleDark_Normal/Diffuse` add 32 MiB more to Lighting. The 4K pair is 87 % of Playground, 96 % of Fog and 49 % of Lighting.
+  - Compression is already in place (`Format: Auto` → BC1/BC5 with mips for every texture; `tga` sources cook the same way), so the remaining lever is resolution. A 2K round trip of the Concrete sources loses nothing visible (PSNR 45.9 dB normal, 42.0 dB diffuse: the 4K files carry no detail above 2K), whereas `MarbleDark_Normal` is genuine 4K grain (17.9 dB) and stays.
+  - The engine's quality presets already cap uploads (`MaxTextureSize` 1024 / 2048 for Low / Medium, `Texture.cpp` skips mips above the cap), so players on those presets were never paying for 4K; the default (no cap) and the showcase references were.
+- **Work:** Downscaled `Assets/Textures/Concrete/ConcreteNormal.png` and `ConcreteDiffuse.png` from 4096² to 2048² (Lanczos; the sources shrink from 32 MB to 8 MB on disk too). Expected: Playground 36.8 → 12.8 MiB (-65 %), Fog 33.3 → 9.3 MiB (-72 %), Lighting 65.3 → 41.3 MiB (-37 %), i.e. well past the 20 % target for the commonly used set. **Pending:** re-measure with the Resource Monitor and run the showcase screenshot regression (Playground, Lighting, Fog, RenderScale) against the committed references once the game build finishes; the change is only kept if the captures stay within tolerance.
+- **Follow-ups:** - 48 (Game): the remaining 4K sources (`MarbleDark_*`, `BrickWall101`, `TileGroundSand118`, the Synty metallic maps) are candidates for the same measurement when their scenes are profiled.
+- 49 (Engine): a per-texture `MaxSize` import setting (cook-time downscale) so artists can keep 4K sources while shipping 2K, instead of editing source files.
 ### 7 · Add ECS unit tests
 - **Status:** Done · **Area:** ECS / Tests · **Owner:** Game + Engine
 - **Description:** Write tests for core ECS components and systems to ensure stability.
@@ -179,17 +186,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Added `Assets/Scripts/Tests/EcsTests.cs`: five `[GameTest]`s on `Assets/Scenes/Tests/EcsTest.lvl` covering entity lifetime (find, rename, deferred destruction, stale generational handles), components by type and by name with reflected field round trips and `Query.WithComponent`, hierarchy (parent/children, world positions through two levels, world-pose-preserving reparent, descendant destruction), activity/layers/GUIDs, and bulk create/destroy exactness. `EcsFlows.edscript` runs them (`console game-tests EcsTests`). **Verified:** all 5 pass in a headless editor_debug Havana (`GameTests: 5 passed, 0 failed`).
 - **Follow-ups:** - Engine suite gaps worth adding upstream: component removal while a core iterates, `RunsAfter` cycles, additive-scene entity GUID collisions (Engine).
 ### 8 · Refactor camera system
-- **Status:** To Do · **Area:** Gameplay / Camera · **Owner:** Game
+- **Status:** In Progress · **Area:** Gameplay / Camera · **Owner:** Game
 - **Description:** Improve camera movement logic for better player control and smooth transitions.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** `Game/Source/Cores/CharacterCore.cpp` was a first-person controller with real defects: mouse look scaled the per-frame mouse delta by `dt` (frame-rate dependent sensitivity), movement called `CharacterController::Walk(displacement)` with a 550 m/s "speed" × dt (bypassing the controller's velocity/acceleration model), it supported exactly one character (cached raw pointers it never cleared on removal), its constructor `new`ed six `AudioSource`s it never freed (pushing the four invalid-surface sounds twice, the first four never initialised) for a portal-gun feature that had moved to C# (`Tools/BuildPortalGun.py`), and the camera child was found by name once with no recovery. `Character` was an empty, unreflected component, so nothing was tunable per scene. No smoothing or transitions existed.
+- **Work:** Rewrote the pair. `Character` is now a reflected component with the tunables (walk speed, sprint/crouch multipliers, look sensitivity, stick look speed, look smoothing, pitch limit, invert Y, standing/crouch eye heights, crouch and FOV transition times, sprint FOV boost) and a per-entity `Runtime` state block. `CharacterCore` reads the project's input actions (Move / Look / Jump / Sprint / Crouch, so gamepads and rebinding work), separates mouse (per-frame) from stick (per-second) look, eases yaw/pitch, eye height and FOV with frame-rate-independent exponential smoothing, drives the controller through `SetMoveInput` + `MaxSpeed`, supports any number of characters and rebinds a missing camera child each frame. Dead portal/audio code removed. Added `Assets/Scenes/Tests/CharacterTest.lvl` + `CharacterFlows.edscript` (walk forward at the configured speed, camera stays a child at eye height, jump height). **Pending:** the editor rebuild and that flow.
+- **Follow-ups:** - Mouse-look can't be injected by edscripts; a `scene-mouse-delta` automation command would let the look path be covered too (Engine).
+- Head bob is available as the engine's `CameraSway` component on the camera child; not wired by default.
 ### 9 · Add multiplayer networking
 - **Status:** In Review · **Area:** Networking · **Owner:** Engine + Game
 - **Description:** Implement basic multiplayer functionality using the existing Net module.
 - **Findings:** The Net module is complete and tested end to end (`Engine/Source/Net/`, `NetCore`, `NetLaunch`, headless Server build; C# `Net` API in `Modules/ScriptCore/Source/Net/Net.cs`: role/tick, owners, `Command`/`LocalCommand`, `SetAim`, RPC attributes, `NetClientJoined`/`NetClientLeft` events, lag-compensated raycasts). The game repo exercises it with `Assets/Scenes/Tests/NetTest.lvl` + `NetProbe.cs` (predicted dash, RPC round trip) and `RunNetSmoke.py`; nothing playable uses it, and no template or sample does. API gaps for a *playable* sample: no C# `Net.Host/Connect/Disconnect` (sessions start from the command line only), `NetIdentity` isn't a registered C# component and `InstantiatePrefab` never fills `NetIdentity::Prefab` (`NetReplication.cpp:204-212`, `SceneSerializer.cpp:1002`), so dynamically spawned pawns replicate as bare transforms; only `Dash` is a networked input action.
-- **Work:** Scoped: a two-pawn arena (pawns placed in the scene, `NetClientJoined` → `Net.SetOwner`, networked Move/Jump/Sprint actions, aim via `Net.SetAim`) is buildable today with the existing API; tracked as #30.
+- **Work:** Scoped and built the sample: `Assets/Scenes/NetArena.lvl` (two placed pawns with `NetIdentity` + `CharacterController`, pillars, floor, overview camera) and `Assets/Scripts/NetPawn.cs` (server hands each joining client the first free pawn on `NetClientJoined` with a per-frame sweep as a safety net and releases it on `NetClientLeft`; every peer simulates from `Net.Command` / `Net.LocalCommand` (networked Move / Jump / Sprint, aim yaw via `Net.SetAim`), the owner predicts and drives a third-person follow camera; `[Replicated]` owner/jump counters). `Move`, `Jump` and `Sprint` are now `Networked` in `Assets/Config/Input.inputactions`. `Tools/TestNetArena.py` is a headless smoke (server + two autopiloted clients, log expectations). **Pending:** running the smoke once the game build finishes.
 - **Follow-ups:** - 30 (Game): `Assets/Scenes/Showcase/NetArena.lvl` + `NetPawn.cs`, Move/Jump/Sprint marked `Networked`, wired into `RunNetLocal.py` / the net smoke.
 - 31 (Engine): copy the entity's `PrefabAsset` into `NetIdentity::Prefab` at spawn and register `NetIdentity` for C#, so `World.Instantiate` spawns replicate properly.
 - 32 (Engine): `Net.Host(port)` / `Net.Connect(host)` / `Net.Disconnect()` script API for menu-driven sessions.
@@ -236,12 +243,11 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 34 (Engine): log/assert oversize sends in `SendOn`, cap `[Predicted]` state in NetGenerator, reserve a per-packet byte floor for unreliable state.
 - 35 (Engine): reconnect path (client token in Hello, `Net.Reconnect` + `NetDisconnected` retry) and a stale-reconcile stat.
 ### 16 · Write comprehensive tests for terrain module
-- **Status:** To Do · **Area:** Terrain / Tests · **Owner:** Game + Engine
+- **Status:** In Progress · **Area:** Terrain / Tests · **Owner:** Game + Engine
 - **Description:** Create unit tests covering all terrain generation and rendering cases.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** Terrain is already the engine's most-tested system: `Engine/Tests/Source/Terrain*Tests.cpp` (addressing, borders, serialization, LOD topology, streaming, textures, editing, recovery, files, runtime) plus 30 `Terrain*Flows.edscript` fixtures in this repo. What was missing: tests for procedural *generation* (there was no generator) and any end-to-end check that the collision the engine builds agrees with the data in the pages.
+- **Work:** Generation: 18 unit tests in `Tools/Tests/test_generate_terrain.py` (noise properties, determinism, shared edges, format/checksum round trip, corruption detection, settings validation, scene output, CLI). Runtime: `Assets/Scripts/Tests/TerrainTests.cs`, four `[GameTest]`s on the procedural scene that raycast the physics terrain at five lattice points and one in-quad point and compare with the generator's exact Float32 heights (±2 cm), check the reflected component and that boxes rest on the surface; `TerrainProceduralFlows.edscript` now runs them. **Pending:** the flow run.
+- **Follow-ups:** - Render-side coverage: a screenshot reference for `TerrainProceduralTest.lvl` once the look is final (then the Showcase regression can carry it).
 ### 17 · Fix editor crash on scene load
 - **Status:** Blocked · **Area:** Editor · **Owner:** Engine
 - **Description:** Resolve segmentation fault when loading large scenes in Havana editor.
@@ -250,12 +256,12 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** - 46 (Engine): fall back to `DefaultCamera` when the current camera is destroyed; null-check the three editor sites.
 - 47 (Engine): address-stable `CommandCache` (deque/paged or ids) and a null-check in `CameraCore::OnEntityRemoved`; index loop in `SceneStreaming::Pump`; iterate a copy of `m_sortedCores` in `World::SyncEntity`.
 ### 18 · Implement skybox system
-- **Status:** To Do · **Area:** Rendering / Gameplay · **Owner:** Game + Engine
+- **Status:** In Progress · **Area:** Rendering / Gameplay · **Owner:** Game + Engine
 - **Description:** Create a dynamic skybox system with day/night cycles and weather effects.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** The engine already ships a full procedural sky: `DynamicSky` (atmosphere tables, sun/moon/stars/Milky Way, volumetric clouds with wind, the sky's own directional light, per-camera `ProceduralSkySettings`: Time, TimeScale, Latitude, Month, Turbidity, moon, clouds, wind) selected with the camera's `ClearType = Procedural`, plus textured sky boxes. So a "skybox system" exists; what the project lacked was a gameplay-facing day/night and weather driver and events for gameplay to react to.
+- **Work:** Added `Assets/Scripts/DayNightCycle.cs`: owns the clock (24 h per `DayLengthSeconds`, wrapping; writes the camera's authored `ProceduralSky.Time` so the inspector and automation stay authoritative), four weather presets (Clear, Cloudy, Overcast, Storm: cloud coverage/density, wind, haze) blended with a frame-rate-independent exponential ease, an optional automatic weather cycle, `SetHour` / `SetWeather` / `Phase` / `IsNight`, `DayPhaseChanged` and `WeatherChanged` EventBus events, and inspector buttons. `Assets/Scenes/Tests/DayNightTest.lvl` (procedural sky over the Perlin terrain) + `DayNightFlows.edscript` watch a 48 s day go Dawn → Day → Dusk → Night while the weather cycles, then check Stop restores the authored time. **Pending:** the flow run.
+- **Follow-ups:** - Weather could also drive the `PostProcess` fog density and an `AudioSource` (rain/wind) through the same presets.
+- Engine: expose `ProceduralSkySettings` as a typed C# wrapper instead of field paths.
 ### 19 · Optimize collision detection
 - **Status:** Blocked · **Area:** Physics · **Owner:** Engine
 - **Description:** Reduce physics calculation time by 25% for complex object interactions.
@@ -465,6 +471,20 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** —
 - **Follow-ups:** —
 
+### 48 · Audit the remaining 4K textures
+- **Status:** To Do · **Area:** Assets · **Owner:** Game
+- **Description:** Measure MarbleDark_*, BrickWall101, TileGroundSand118 and the Synty metallic maps with the Resource Monitor and the 2K round-trip PSNR; downscale the ones that carry no 4K detail (see #6).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 49 · Texture import: MaxSize setting
+- **Status:** To Do · **Area:** Assets / Engine · **Owner:** Engine
+- **Description:** A per-texture MaxSize import setting that downscales at cook time, so 4K sources can ship as 2K without editing the files (see #6).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
 ## Changelog
 
 - 2026-11-04 · Board created from the imported issue list (20 issues).
@@ -474,3 +494,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #1 verified in the editor (TerrainProceduralFlows passed headlessly) → Done. #11 #14 #17 audited; follow-ups #41-#47 opened.
 - 2026-11-04 · #7 C# ECS tests verified in the editor (5/5) → Done.
 - 2026-11-04 · #10 ARCHITECTURE.md (game-level architecture with diagrams) + README links → Done.
+- 2026-11-04 · Board brought up to date with in-flight work: #6 measurements + Concrete downscale, #8 character rewrite, #16 TerrainTests.cs, #18 DayNightCycle.cs, #9/#30 NetArena sample; #48 #49 opened. Verifications pending on the editor rebuild and the game build.
