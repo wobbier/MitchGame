@@ -11,7 +11,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 | ID | Title | Status | Area | Owner |
 |---:|-------|--------|------|-------|
-| 1 | Implement terrain generation algorithm | In Review | Terrain | Game |
+| 1 | Implement terrain generation algorithm | Done | Terrain | Game |
 | 2 | Fix terrain rendering bugs | Blocked | Terrain / Rendering | Engine |
 | 3 | Optimize terrain LOD system | Blocked | Terrain / Rendering | Engine |
 | 4 | Fix editor lighting issues | Blocked | Editor / Rendering | Engine |
@@ -21,13 +21,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 8 | Refactor camera system | To Do | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | In Review | Networking | Engine + Game |
 | 10 | Update documentation | To Do | Docs | Game + Engine |
-| 11 | Fix Dementia module memory leaks | In Progress | Dementia | Engine |
+| 11 | Fix Dementia module memory leaks | Blocked | Dementia | Engine |
 | 12 | Improve Havana editor UI responsiveness | Blocked | Editor | Engine |
 | 13 | Add new ImGUI widgets for tooling | Blocked | Editor | Engine |
-| 14 | Optimize ScriptCore scripting performance | In Progress | Scripting | Engine |
+| 14 | Optimize ScriptCore scripting performance | Blocked | Scripting | Engine |
 | 15 | Enhance Player module networking | Blocked | Networking / Player | Engine |
 | 16 | Write comprehensive tests for terrain module | To Do | Terrain / Tests | Game + Engine |
-| 17 | Fix editor crash on scene load | In Progress | Editor | Engine |
+| 17 | Fix editor crash on scene load | Blocked | Editor | Engine |
 | 18 | Implement skybox system | To Do | Rendering / Gameplay | Game + Engine |
 | 19 | Optimize collision detection | Blocked | Physics | Engine |
 | 20 | Add visual scripting support | Backlog | Scripting / Editor | Engine |
@@ -51,6 +51,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 38 | Havana: hierarchy, inspector and asset browser per-frame cost | To Do | Editor | Engine |
 | 39 | Havana: texture viewer widgets | To Do | Editor | Engine |
 | 40 | Particles: curves, mesh emitters, collision, vertex graphs | To Do | Rendering / VFX | Engine |
+| 41 | Engine owns its cores, renderer, window and scene | To Do | Engine / Memory | Engine |
+| 42 | Dementia::Buffer ownership | To Do | Dementia | Engine |
+| 43 | ScriptCore: cached per-phase run lists | To Do | Scripting | Engine |
+| 44 | ScriptCore: integer component ids and cheap wrappers | To Do | Scripting | Engine |
+| 45 | ScriptCore: pool-driven queries and batched callbacks | To Do | Scripting | Engine |
+| 46 | Editor crash: current camera destroyed | To Do | Editor | Engine |
+| 47 | Editor crash: pointer stability in CommandCache and scene streaming | To Do | Editor / Rendering | Engine |
 
 ## Columns
 
@@ -83,41 +90,44 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 38 Havana: hierarchy, inspector and asset browser per-frame cost
 - 39 Havana: texture viewer widgets
 - 40 Particles: curves, mesh emitters, collision, vertex graphs
+- 41 Engine owns its cores, renderer, window and scene
+- 42 Dementia::Buffer ownership
+- 43 ScriptCore: cached per-phase run lists
+- 44 ScriptCore: integer component ids and cheap wrappers
+- 45 ScriptCore: pool-driven queries and batched callbacks
+- 46 Editor crash: current camera destroyed
+- 47 Editor crash: pointer stability in CommandCache and scene streaming
 
 ### In Progress
 - 7 Add ECS unit tests
-- 11 Fix Dementia module memory leaks
-- 14 Optimize ScriptCore scripting performance
-- 17 Fix editor crash on scene load
 
 ### In Review
-- 1 Implement terrain generation algorithm
 - 5 Implement particle system
 - 9 Add multiplayer networking
 
 ### Done
-- (none)
+- 1 Implement terrain generation algorithm
 
 ### Blocked
 - 2 Fix terrain rendering bugs
 - 3 Optimize terrain LOD system
 - 4 Fix editor lighting issues
+- 11 Fix Dementia module memory leaks
 - 12 Improve Havana editor UI responsiveness
 - 13 Add new ImGUI widgets for tooling
+- 14 Optimize ScriptCore scripting performance
 - 15 Enhance Player module networking
+- 17 Fix editor crash on scene load
 - 19 Optimize collision detection
 
 ## Issues
 
 ### 1 · Implement terrain generation algorithm
-- **Status:** In Review · **Area:** Terrain · **Owner:** Game
+- **Status:** Done · **Area:** Terrain · **Owner:** Game
 - **Description:** Create a new algorithm for procedural terrain generation based on Perlin noise.
 - **Findings:** The engine already has a mature resident/streamed terrain system (`Engine/Source/Terrain/`, `Engine/Docs/Terrain.md`) and a `Noise` library in Dementia (`Modules/Dementia/Source/Math/Noise.h`: gradient noise, fBm, ridged, hybrid multifractal, Voronoi), but nothing turns noise into a terrain asset: the only generator was the hand-written bump in `Engine/Tools/BuildTerrainTest.py`, and C# has no terrain bindings yet (Terrain.md caveats).
-- **Work:** Added `Tools/GenerateTerrain.py`: a pure-Python procedural generator writing version 1 terrain sources (manifest + Float32 `.thp` pages with the engine's FNV-1a checksums + `.meta`). Perlin gradient noise with a quintic fade, rotated-octave fBm, Musgrave ridged multifractal and domain warping; presets `hills`, `mountains`, `island`; heights are a pure function of the terrain-wide lattice so tiles agree on shared edges; HeightBase/HeightRange are derived so UInt16 cooks work; `--scene` writes a test scene. Generated `Assets/Terrain/Procedural.terrain` (2×2 tiles, 64 quads, 2 m spacing, seed 7) and `Assets/Scenes/Tests/TerrainProceduralTest.lvl` + `TerrainProceduralFlows.edscript` (boxes settle on the noise surface in Play, save/reopen keeps the asset). 18 unit tests in `Tools/Tests/test_generate_terrain.py` (`python3 -I -m unittest discover -s Tools/Tests`).
-- **Follow-ups:** - 21: an in-editor "Generate from noise" tool on top of `Noise::Fbm2` / `Ridged2` (Terrain panel, Sculpt or Tiles workspace) so artists don't need the script (Engine).
-- The editor flow still has to be run against a built Havana (see the Changelog).
- —
-
+- **Work:** Added `Tools/GenerateTerrain.py`: a pure-Python procedural generator writing version 1 terrain sources (manifest + Float32 `.thp` pages with the engine's FNV-1a checksums + `.meta`). Perlin gradient noise with a quintic fade, rotated-octave fBm, Musgrave ridged multifractal and domain warping; presets `hills`, `mountains`, `island`; heights are a pure function of the terrain-wide lattice so tiles agree on shared edges; HeightBase/HeightRange are derived so UInt16 cooks work; `--scene` writes a test scene. Generated `Assets/Terrain/Procedural.terrain` (2×2 tiles, 64 quads, 2 m spacing, seed 7) and `Assets/Scenes/Tests/TerrainProceduralTest.lvl` + `TerrainProceduralFlows.edscript`. **Verified:** 18 unit tests pass (`python3 -I -m unittest discover -s Tools/Tests`) and the editor flow passed in a headless Havana (editor_debug, lavapipe): the terrain loads as one entity, the three boxes come to rest on the noise surface in Play, save/reopen keeps the asset.
+- **Follow-ups:** - 21 (Engine): an in-editor "Generate from noise" tool on top of `Noise::Fbm2` / `Ridged2` so artists don't need the script.
 ### 2 · Fix terrain rendering bugs
 - **Status:** Blocked · **Area:** Terrain / Rendering · **Owner:** Engine
 - **Description:** Resolve issues with texture tiling on large terrain meshes.
@@ -191,12 +201,12 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 11 · Fix Dementia module memory leaks
-- **Status:** In Progress · **Area:** Dementia · **Owner:** Engine
+- **Status:** Blocked · **Area:** Dementia · **Owner:** Engine
 - **Description:** Address memory leaks in the Dementia module's entity management system.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** **Mismatch:** Dementia (`Modules/Dementia/`) has no entity management; the ECS is `Engine/Source/ECS/` + `World.cpp`. Both audited. Verified **not** leaking: `ResourceCache` (keep-alive eviction + `ReleaseAll`), `EventManager` (receivers deregister in `~EventReceiver`), `JobSystem` contexts, Meyers singletons, `World::AddCore` duplicates, `ComponentPool` pages (high-water mark by design), `Reflection` registry (intentional static). Real items: (1) **engine systems are never freed** — every engine core, the window, the renderer and `CurrentScene` are raw `new` in `Engine.cpp:395-488` and neither `~Engine` nor `Engine::Shutdown` (`:1185-1230`) deletes them (process-lifetime leak; what LSan/CRT reports show); (2) `Dementia::Buffer` (`Core/Buffer.h:9-37`) owns a raw pointer with a defaulted copy constructor, so `ScopedBuffer(const Buffer&)` double-frees or leaks; `PlatformUtils::ReadBytes` returns one nobody releases (dead API today).
+- **Work:** Findings written up; engine-side.
+- **Follow-ups:** - 41 (Engine): own the engine cores/renderer/window/`CurrentScene` with `unique_ptr`, released in `Shutdown` after `GameWorld.reset()`.
+- 42 (Engine): `Dementia::Buffer` on `unique_ptr<uint8_t[]>` with the copy constructor deleted; remove or fix `PlatformUtils::ReadBytes`.
 ### 12 · Improve Havana editor UI responsiveness
 - **Status:** Blocked · **Area:** Editor · **Owner:** Engine
 - **Description:** Optimize the editor's UI to reduce lag during scene editing.
@@ -210,12 +220,13 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Proposals written up (engine-side).
 - **Follow-ups:** - 39 (Engine): `HavanaUtils::TextureViewer` (zoom/pan, checkerboard alpha, channel isolate, mip slider) in `AssetPreviewWidget` and the import inspector; tiling preview; source-vs-cooked compare with PSNR; per-channel histogram; gradient/curve field drawers reusing `CurveEditor`.
 ### 14 · Optimize ScriptCore scripting performance
-- **Status:** In Progress · **Area:** Scripting · **Owner:** Engine
+- **Status:** Blocked · **Area:** Scripting · **Owner:** Engine
 - **Description:** Reduce script execution time by 15% through caching.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** Hot paths (`Source/Cores/Scripting/ScriptCore.cpp`, `Bindings/`, `Modules/ScriptCore/Source/`): (1) `RunList()` (`ScriptCore.cpp:239-266`) rebuilds and `std::sort`s the script run list for **every** phase — each fixed step, Update and LateUpdate; (2) every `Entity.GetComponent<T>()` / `Entity.Transform` / `Component.transform` does a string-keyed native `HasComponent` (`BindingContext.cpp:96-99`, temporary `std::string` + `std::function`) and allocates a new wrapper, so `transform.Position` in `OnUpdate` costs a lookup and a GC allocation per script per frame; (3) `World_FindAllWithComponent` scans all entities (`Query.bindings.cpp:73-83`) and `Query.Fill` may call native twice; (4) one managed transition + dictionary lookup + try/catch per script per phase (`Engine.cs:551-566`). No evidence of per-frame JSON, function-pointer re-resolution or runtime reflection. (1)+(2)+(4) plausibly reach the 15 % target in script-heavy scenes.
+- **Work:** Findings written up; engine-side.
+- **Follow-ups:** - 43 (Engine): cache one sorted run list per callback mask, invalidated on add/remove/enable/active/reload.
+- 44 (Engine): integer component-type-id binding (`Entity_ResolveComponentType` once per `ComponentName<T>`, `Mask.test(id)` per call) and struct or cached C# component wrappers.
+- 45 (Engine): pool-driven `World_FindAllWithComponent`; batch `ScriptOnUpdate/FixedUpdate/LateUpdate` into one managed call per phase.
 ### 15 · Enhance Player module networking
 - **Status:** Blocked · **Area:** Networking / Player · **Owner:** Engine
 - **Description:** Add support for more reliable client-server synchronization.
@@ -232,12 +243,12 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 17 · Fix editor crash on scene load
-- **Status:** In Progress · **Area:** Editor · **Owner:** Engine
+- **Status:** Blocked · **Area:** Editor · **Owner:** Engine
 - **Description:** Resolve segmentation fault when loading large scenes in Havana editor.
-- **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Findings:** Ranked segfault candidates: (1) **`Camera::CurrentCamera` null deref** — `~Camera` nulls it (`Camera.cpp:81-85`) and only `CameraCore::Init` (which runs *before* `World::Unload`) or a new camera's `Init` repopulates it; `EditorApp.cpp:249/256` and `AssetPreviewWidget.cpp:94` deref it every editor frame, so destroying the current camera outside `LoadSceneInternal` (deleting the camera entity, unloading an additive scene, a camera that fails to deserialize) crashes next frame. (2) `CommandCache<T>::Get` returns pointers into a reallocating `std::vector` (`CommandCache.h:31-82`); every camera/mesh push can move all `CameraData*` / `MeshCommand*` — bigger scenes, more pushes; `CameraCore::OnEntityRemoved` also derefs `camData->Buffer` unchecked. (3) `SceneStreaming::Pump` holds an `Entry&` across instantiation while `m_scenes.push_back` can reallocate (`SceneStreaming.cpp:123-150`). (4) `World::SyncEntity` iterates `m_sortedCores` while `OnEntityAdded → AddCore → SortCores` can clear it. Verified safe: paged address-stable component storage, deque entity records, flat (non-recursive) scene deserialization, queued scene loads.
+- **Work:** Findings written up; engine-side.
+- **Follow-ups:** - 46 (Engine): fall back to `DefaultCamera` when the current camera is destroyed; null-check the three editor sites.
+- 47 (Engine): address-stable `CommandCache` (deque/paged or ids) and a null-check in `CameraCore::OnEntityRemoved`; index loop in `SceneStreaming::Pump`; iterate a copy of `m_sortedCores` in `World::SyncEntity`.
 ### 18 · Implement skybox system
 - **Status:** To Do · **Area:** Rendering / Gameplay · **Owner:** Game + Engine
 - **Description:** Create a dynamic skybox system with day/night cycles and weather effects.
@@ -405,9 +416,59 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** —
 - **Follow-ups:** —
 
+### 41 · Engine owns its cores, renderer, window and scene
+- **Status:** To Do · **Area:** Engine / Memory · **Owner:** Engine
+- **Description:** unique_ptr ownership released in Engine::Shutdown after GameWorld.reset(), in reverse creation order (see #11).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 42 · Dementia::Buffer ownership
+- **Status:** To Do · **Area:** Dementia · **Owner:** Engine
+- **Description:** unique_ptr<uint8_t[]> storage, copy constructor deleted; remove or fix PlatformUtils::ReadBytes (see #11).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 43 · ScriptCore: cached per-phase run lists
+- **Status:** To Do · **Area:** Scripting · **Owner:** Engine
+- **Description:** Keep one sorted run list per callback mask, invalidated on entity add/remove, enable/active changes and script reload instead of rebuilding and sorting every phase (see #14).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 44 · ScriptCore: integer component ids and cheap wrappers
+- **Status:** To Do · **Area:** Scripting · **Owner:** Engine
+- **Description:** Resolve component names to type ids once per ComponentName<T>, test the entity mask per call, make C# component wrappers structs or cache them per script (see #14).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 45 · ScriptCore: pool-driven queries and batched callbacks
+- **Status:** To Do · **Area:** Scripting · **Owner:** Engine
+- **Description:** World_FindAllWithComponent from the component pool entries; one managed transition per phase for OnUpdate/OnFixedUpdate/OnLateUpdate (see #14).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 46 · Editor crash: current camera destroyed
+- **Status:** To Do · **Area:** Editor · **Owner:** Engine
+- **Description:** Reset Camera::CurrentCamera to DefaultCamera when a camera is destroyed; null-check EditorApp.cpp:249/256 and AssetPreviewWidget.cpp:94 (see #17).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
+### 47 · Editor crash: pointer stability in CommandCache and scene streaming
+- **Status:** To Do · **Area:** Editor / Rendering · **Owner:** Engine
+- **Description:** Address-stable CommandCache storage, null-check in CameraCore::OnEntityRemoved, index loop in SceneStreaming::Pump, iterate a copy of m_sortedCores in World::SyncEntity (see #17).
+- **Findings:** —
+- **Work:** —
+- **Follow-ups:** —
+
 ## Changelog
 
 - 2026-11-04 · Board created from the imported issue list (20 issues).
 - 2026-11-04 · #1 Perlin terrain generator (Tools/GenerateTerrain.py), Procedural.terrain asset, TerrainProceduralTest scene + flow, 18 unit tests; #21 opened.
 - 2026-11-04 · #2 #3 #19 audited (terrain tiling precision, terrain draw calls, physics sync cost): findings recorded, engine follow-ups #22-#29 opened; marked Blocked (no MitchEngine push access from this session).
 - 2026-11-04 · Audits recorded for #4 #5 #9 #12 #13 #15 #20; follow-ups #30-#40 opened. Board header repaired (a helper bug had merged the Columns and Issues sections).
+- 2026-11-04 · #1 verified in the editor (TerrainProceduralFlows passed headlessly) → Done. #11 #14 #17 audited; follow-ups #41-#47 opened.

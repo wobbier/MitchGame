@@ -1,0 +1,26 @@
+{
+  "Cores": [],
+  "Scene": [
+    {
+      "Name": "Main Camera",
+      "Components": [
+        {"Type": "Transform", "Position": [0, 2, -8], "Rotation": [0, 0, 0], "Scale": [1, 1, 1]},
+        {"Type": "Camera", "ClearType": "Color", "ClearColor": [0.1, 0.12, 0.16], "IsCurrent": true, "Near": 0.1, "Far": 100.0, "Zoom": 55.0}
+      ]
+    },
+    {
+      "Name": "Sun",
+      "Components": [
+        {"Type": "Transform", "Position": [0, 5, 0], "Rotation": [50, -30, 0], "Scale": [1, 1, 1]},
+        {"Type": "Light", "LightType": "Directional", "Color": [1, 0.95, 0.85], "Intensity": 2.0, "CastShadows": false}
+      ]
+    },
+    {
+      "Name": "Floor",
+      "Components": [
+        {"Type": "Transform", "Position": [0, -1, 0], "Rotation": [0, 0, 0], "Scale": [10, 0.2, 10]},
+        {"Type": "Mesh", "MeshType": "Cube", "Material": {"Type": "StandardMaterial", "DiffuseColor": [0.5, 0.5, 0.55], "Metallic": 0.0, "Roughness": 0.7}}
+      ]
+    }
+  ]
+}

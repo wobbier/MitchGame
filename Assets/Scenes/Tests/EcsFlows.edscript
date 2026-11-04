@@ -1,0 +1,14 @@
+# --scene Assets/Scenes/Tests/EcsTest.lvl
+# ECS contract from C# (issue board #7): Assets/Scripts/Tests/EcsTests.cs runs as [GameTest]s in Play:
+# entity lifetime and generational handles, components by type and by name, reflected fields,
+# queries, hierarchy and world positions, activity, layers, GUIDs, bulk cleanup.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/EcsTest.lvl --editor-exec Assets/Scenes/Tests/EcsFlows.edscript
+wait-log dotnet ready | 7200
+wait 30
+play
+assert-playing 1
+wait 30
+console game-tests EcsTests
+wait-log GameTests: 5 passed, 0 failed | 2400
+stop
+quit
