@@ -523,3 +523,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #8 verified (CharacterFlows + 3 play-mode tests incl. both jump paths) → Done.
 - 2026-11-04 · #5 closed: the particle system exists in the engine (customizable shaders via the Particle graph target, five emitter shapes); extensions tracked in #40.
 - 2026-11-04 · Adversarial review of the new code (41 agents, 18 candidates, 8 confirmed) fixed: sprint FOV wrote the dead Camera.Zoom (#51 opened for the engine side), initial yaw via Euler folding, NetPawn session events never subscribed outside the editor, NightLight reload resync, per-client Xvfb displays in the NetArena smoke, terrain in-quad tolerance, two ARCHITECTURE.md corrections; my scenes now author FieldOfView.
+- 2026-11-04 · Re-verified after the review fixes: CharacterFlows (3/3 play-mode tests), TerrainProceduralFlows (4/4) and the NetArena smoke all pass on a rebuilt editor.
