@@ -1,8 +1,10 @@
 # --scene Assets/Scenes/Tests/TerrainProceduralTest.lvl
-# Procedural Perlin terrain (Tools/GenerateTerrain.py, issue board #1): the generated asset loads as
-# one scene entity with no generated children, physics boxes come to rest on the noise surface in
-# Play, and the asset reference survives save / reopen.
+# Procedural Perlin terrain (Tools/GenerateTerrain.py, issue board #1 / #16): the generated asset loads
+# as one scene entity with no generated children, physics boxes come to rest on the noise surface in
+# Play, TerrainTests.cs checks the collision heights against the generator, and the asset reference
+# survives save / reopen.
 #   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/TerrainProceduralTest.lvl --editor-exec Assets/Scenes/Tests/TerrainProceduralFlows.edscript
+wait-log dotnet ready | 7200
 wait 30
 mark-count
 assert-children Terrain | 0
@@ -16,6 +18,9 @@ wait 60
 assert-count-delta 0
 assert-children Terrain | 0
 screenshot .tmp/Tests/TerrainProcedural.png
+# Play-mode tests: physics collision against the generator's exact heights (Assets/Scripts/Tests/TerrainTests.cs).
+console game-tests TerrainTests
+wait-log GameTests: 4 passed, 0 failed | 2400
 stop
 wait 30
 save-as .tmp/Tests/TerrainProceduralSaved.lvl
