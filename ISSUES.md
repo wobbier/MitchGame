@@ -15,7 +15,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 2 | Fix terrain rendering bugs | Blocked | Terrain / Rendering | Engine |
 | 3 | Optimize terrain LOD system | Blocked | Terrain / Rendering | Engine |
 | 4 | Fix editor lighting issues | Blocked | Editor / Rendering | Engine |
-| 5 | Implement particle system | In Review | Rendering / VFX | Engine |
+| 5 | Implement particle system | Done | Rendering / VFX | Engine |
 | 6 | Optimize asset memory | Done | Assets | Game |
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
 | 8 | Refactor camera system | Done | Gameplay / Camera | Game |
@@ -102,10 +102,11 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - (none)
 
 ### In Review
-- 5 Implement particle system
+- (none)
 
 ### Done
 - 1 Implement terrain generation algorithm
+- 5 Implement particle system
 - 6 Optimize asset memory
 - 7 Add ECS unit tests
 - 8 Refactor camera system
@@ -166,10 +167,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** - 36 (Engine): key procedural probes by sky state only (or one probe per camera; `m_probes` already holds 3).
 - 37 (Engine): soften the fog history cut, build clusters from the unjittered projection, round the cascade extension.
 ### 5 · Implement particle system
-- **Status:** In Review · **Area:** Rendering / VFX · **Owner:** Engine
+- **Status:** Done · **Area:** Rendering / VFX · **Owner:** Engine
 - **Description:** Create a new particle system with customizable shaders and emitter types.
 - **Findings:** A particle system already exists: `ParticleSystem` (`Engine/Source/Components/Effects/`) with Point/Sphere/Hemisphere/Cone/Box emitters (+shell), world/local space, rate + burst, ranged lifetime/speed/size/rotation/spin, two start colours, size/colour/alpha over life, gravity, drag, noise, Additive/Alpha blend, Billboard/Stretched/Horizontal alignment, flipbooks, soft particles, lit particles and a **Particle shader-graph target** (`Graph` + `GraphParams`; fragment stage only). CPU simulation on jobs, instanced quads; C# exposes Play/Stop/Burst/ParticleCount. The issue text is therefore mostly satisfied; remaining gaps: curves/gradients over life (linear `mix` only), mesh/edge emitters and emit-from-surface, trails/sub-emitters/mesh particles, collision, a vertex-stage graph, GPU simulation, and property access from C#.
-- **Work:** Verified against the engine; the ask is covered except the listed extensions (#40).
+- **Work:** Verified against the engine: the particle system the issue asks for already exists (CPU-simulated `ParticleSystem` with five emitter shapes, world/local space, rate + bursts, ranged start values, size/colour/alpha over life, gravity/drag/noise, additive/alpha blending, billboard/stretched/flat alignment, flipbooks, soft particles, lit particles, and customizable shading through the Particle shader-graph target with per-system `GraphParams`; C# Play/Stop/Burst). `Assets/Scenes/Tests/ParticleTest.lvl` and `ApiFlows` exercise it in this repo. Nothing remains to implement for the issue as written; the extensions beyond it are tracked as #40.
 - **Follow-ups:** - 40 (Engine): curve/gradient over-lifetime, mesh/edge emitters, collision, vertex-stage particle graphs, richer C# `ParticleSystem` API.
 ### 6 · Optimize asset memory
 - **Status:** Done · **Area:** Assets · **Owner:** Game
@@ -511,3 +512,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #9 / #30 NetArena sample verified by the headless smoke → Done.
 - 2026-11-04 · #16 (TerrainTests 4/4 in the editor) and #18 (DayNight + lamps flow) → Done.
 - 2026-11-04 · #8 verified (CharacterFlows + 3 play-mode tests incl. both jump paths) → Done.
+- 2026-11-04 · #5 closed: the particle system exists in the engine (customizable shaders via the Particle graph target, five emitter shapes); extensions tracked in #40.
