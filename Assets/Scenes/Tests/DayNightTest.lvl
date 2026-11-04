@@ -1,0 +1,249 @@
+{
+  "Version": 2,
+  "Cores": [],
+  "Entities": [
+    {
+      "GUID": "da11a1b2c3d4e5f6",
+      "Name": "Main Camera",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            26,
+            -70
+          ],
+          "Rotation": [
+            14,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Camera",
+          "ClearType": "Procedural",
+          "ClearColor": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "IsCurrent": true,
+          "Near": 0.1,
+          "Far": 900.0,
+          "Zoom": 60.0,
+          "ProceduralSky": {
+            "Time": 6.0,
+            "TimeScale": 0.0,
+            "Latitude": 40.0,
+            "Month": 5,
+            "Turbidity": 1.9,
+            "CloudCoverage": 0.15,
+            "CloudDensity": 1.0,
+            "WindSpeed": 6.0,
+            "WindDirection": 60.0
+          }
+        },
+        {
+          "Type": "ScriptComponent",
+          "ScriptName": "DayNightCycle",
+          "ScriptFields": "{\"DayLengthSeconds\": 48.0, \"StartHour\": 6.0, \"WeatherCycleSeconds\": 10.0, \"WeatherTransitionSeconds\": 2.0, \"Weather\": \"Clear\"}"
+        }
+      ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e5f7",
+      "Name": "Sun",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            50,
+            0
+          ],
+          "Rotation": [
+            50,
+            -30,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Directional",
+          "Color": [
+            1,
+            0.93,
+            0.78
+          ],
+          "Intensity": 3,
+          "CastShadows": true
+        }
+      ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e5f8",
+      "Name": "Terrain",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Terrain",
+          "Asset": "Assets/Terrain/Procedural.terrain",
+          "Color": [
+            0.34,
+            0.5,
+            0.22
+          ],
+          "Roughness": 0.9,
+          "CastShadows": true,
+          "Collision": true,
+          "Friction": 0.6,
+          "Restitution": 0
+        }
+      ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e600",
+      "Name": "Marker 1",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -20,
+            4,
+            -10
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            2,
+            6,
+            2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.75,
+              0.65
+            ],
+            "Roughness": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e601",
+      "Name": "Marker 2",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            4,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            2,
+            6,
+            2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.75,
+              0.65
+            ],
+            "Roughness": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e602",
+      "Name": "Marker 3",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            18,
+            4,
+            12
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            2,
+            6,
+            2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.8,
+              0.75,
+              0.65
+            ],
+            "Roughness": 0.6
+          }
+        }
+      ]
+    }
+  ]
+}

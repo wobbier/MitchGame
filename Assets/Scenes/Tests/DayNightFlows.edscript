@@ -1,0 +1,27 @@
+# --scene Assets/Scenes/Tests/DayNightTest.lvl
+# Dynamic sky (issue board #18): DayNightCycle.cs drives the camera's procedural sky through a 48 s
+# day (0.5 h per second) and cycles the weather presets every 10 s, logging each phase and weather
+# change as it publishes the DayPhaseChanged / WeatherChanged events.
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/DayNightTest.lvl --editor-exec Assets/Scenes/Tests/DayNightFlows.edscript
+wait-log dotnet ready | 7200
+wait 30
+assert-field Main Camera | Camera.ClearType | "Procedural"
+play
+wait-log DayNightCycle: phase Dawn | 600
+wait-log DayNightCycle: weather Clear | 600
+wait-log DayNightCycle: phase Day | 1200
+screenshot .tmp/Tests/DayNight_Day.png
+wait-log DayNightCycle: weather Cloudy | 1200
+wait-log DayNightCycle: phase Dusk | 2400
+wait-log DayNightCycle: weather Overcast | 1200
+wait-log DayNightCycle: phase Night | 1200
+wait 10
+screenshot .tmp/Tests/DayNight_Night.png
+# The script writes the authored sky time, so the camera's field follows the cycle (0.5 h/s, past 20 h).
+assert-field Main Camera | Camera.ProceduralSky.Time | != 6
+assert-field Main Camera | Camera.ProceduralSky.CloudCoverage | != 0.15
+stop
+wait 10
+# Stop restores the authored scene values.
+assert-field Main Camera | Camera.ProceduralSky.Time | 6 ~ 0.001
+quit
