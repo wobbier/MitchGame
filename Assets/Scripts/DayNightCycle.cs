@@ -59,6 +59,9 @@ public class DayNightCycle : Script
     private float weatherTimer;
     private int presetIndex;
 
+    /// <summary>The cycle that started last (for scripts that start after it and missed its first event).</summary>
+    public static DayNightCycle? Current { get; private set; }
+
     /// <summary>The current phase of the day.</summary>
     public DayPhase Phase => phase;
     /// <summary>Whether it is night (before 5 h or from 20 h).</summary>
@@ -74,6 +77,7 @@ public class DayNightCycle : Script
 
     private void Bind()
     {
+        Current = this;
         camera = Entity.HasComponent<Camera>() ? Entity : FindCurrentCamera();
         if (!camera.IsAlive)
         {
@@ -99,6 +103,11 @@ public class DayNightCycle : Script
         ApplyTime();
         UpdatePhase();
         Debug.Log($"DayNightCycle: weather {Weather}");
+    }
+
+    public override void OnDestroy()
+    {
+        if (Current == this) Current = null;
     }
 
     public override void OnUpdate(float dt)

@@ -18,12 +18,13 @@ assert-field Player | Transform.Position.0 | 0 ~ 0.6
 # The camera stays a child at eye height, aimed along the body.
 assert-parent Camera | Player
 assert-field Camera | Transform.Position | [0, 0.7, 0] ~ 0.05
-assert-field Camera | Transform.Rotation | [0, 0, 0] ~ 0.5
+assert-field Camera | Transform.Rotation | [0, 0, 0, 1] ~ 0.01
 # Jump lifts the capsule about JumpHeight (1.2 m) above its rest height.
-input-press Keyboard/Space
+input-hold Keyboard/Space
+wait 3
+input-release Keyboard/Space
 wait-field Player | Transform.Position.1 | 1.9 ~ 0.6 | 300
 wait-field Player | Transform.Position.1 | 0.9 ~ 0.3 | 600
-# Sprinting (Shift is a toggle action) covers the same distance faster: back to z≈-6 then forward.
 stop
 wait 10
 quit

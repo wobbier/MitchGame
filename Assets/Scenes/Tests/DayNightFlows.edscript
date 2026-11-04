@@ -8,14 +8,18 @@ wait 30
 assert-field Main Camera | Camera.ClearType | "Procedural"
 play
 wait-log DayNightCycle: phase Dawn | 600
+wait-log NightLight: off (Lamp 1, Dawn) | 600
 wait-log DayNightCycle: weather Clear | 600
 wait-log DayNightCycle: phase Day | 1200
 screenshot .tmp/Tests/DayNight_Day.png
 wait-log DayNightCycle: weather Cloudy | 1200
 wait-log DayNightCycle: phase Dusk | 2400
+# Lamps react to the DayPhaseChanged event.
+wait-log NightLight: on (Lamp 2, Dusk) | 600
 wait-log DayNightCycle: weather Overcast | 1200
 wait-log DayNightCycle: phase Night | 1200
 wait 10
+assert-field Lamp 1 | Light.Intensity | 8 ~ 1
 screenshot .tmp/Tests/DayNight_Night.png
 # The script writes the authored sky time, so the camera's field follows the cycle (0.5 h/s, past 20 h).
 assert-field Main Camera | Camera.ProceduralSky.Time | != 6

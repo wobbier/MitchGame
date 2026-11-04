@@ -244,6 +244,90 @@
           }
         }
       ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e700",
+      "Name": "Lamp 1",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -20,
+            8.5,
+            -10
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Point",
+          "Color": [
+            1.0,
+            0.72,
+            0.4
+          ],
+          "Intensity": 0.0,
+          "Range": 30.0,
+          "CastShadows": false
+        },
+        {
+          "Type": "ScriptComponent",
+          "ScriptName": "NightLight",
+          "ScriptFields": "{\"OnIntensity\": 8.0, \"FadeSeconds\": 1.5}"
+        }
+      ]
+    },
+    {
+      "GUID": "da11a1b2c3d4e701",
+      "Name": "Lamp 2",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            18,
+            8.5,
+            12
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Point",
+          "Color": [
+            1.0,
+            0.72,
+            0.4
+          ],
+          "Intensity": 0.0,
+          "Range": 30.0,
+          "CastShadows": false
+        },
+        {
+          "Type": "ScriptComponent",
+          "ScriptName": "NightLight",
+          "ScriptFields": "{\"OnIntensity\": 8.0, \"FadeSeconds\": 1.5}"
+        }
+      ]
     }
   ]
 }
