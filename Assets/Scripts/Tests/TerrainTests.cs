@@ -10,10 +10,10 @@ public static class TerrainTests
 {
     private const string Scene = "Assets/Scenes/Tests/TerrainProceduralTest.lvl";
 
-    // World X, Z (terrain at the origin, 2 m spacing) and the page height there.
+    // World X, Z (terrain at the origin, 2 m spacing) and the page height there; none under a box.
     private static readonly (float X, float Z, float Height)[] LatticePoints =
     {
-        (0f, 0f, -2.00163f),
+        (4f, -6f, -2.37905f),   // (0, 0) itself sits under Terrain Box 2
         (20f, -14f, -2.07599f),
         (-60f, 50f, 1.73142f),
         (100f, 120f, 2.73438f),
