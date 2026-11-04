@@ -1,0 +1,602 @@
+{
+  "Version": 2,
+  "Cores": [],
+  "Entities": [
+    {
+      "GUID": "4e74a0e0a0000001",
+      "Name": "Main Camera",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            9,
+            -16
+          ],
+          "Rotation": [
+            28,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Camera",
+          "ClearType": "Color",
+          "ClearColor": [
+            0.2,
+            0.26,
+            0.36
+          ],
+          "IsCurrent": true,
+          "Near": 0.1,
+          "Far": 200.0,
+          "Zoom": 60.0
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000002",
+      "Name": "Sun",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            10,
+            0
+          ],
+          "Rotation": [
+            50,
+            -30,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "Light",
+          "LightType": "Directional",
+          "Color": [
+            1,
+            0.95,
+            0.85
+          ],
+          "Intensity": 2.5,
+          "CastShadows": true
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000003",
+      "Name": "Floor",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            -0.5,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            40,
+            1,
+            40
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.42,
+              0.47,
+              0.42
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.85
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000100",
+      "Name": "Pillar 1",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -6,
+            1.5,
+            6
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1.2,
+            3,
+            1.2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.7,
+              0.7,
+              0.75
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000101",
+      "Name": "Pillar 2",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            6,
+            1.5,
+            6
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1.2,
+            3,
+            1.2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.7,
+              0.7,
+              0.75
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000102",
+      "Name": "Pillar 3",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -6,
+            1.5,
+            -6
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1.2,
+            3,
+            1.2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.7,
+              0.7,
+              0.75
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000103",
+      "Name": "Pillar 4",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            6,
+            1.5,
+            -6
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1.2,
+            3,
+            1.2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.7,
+              0.7,
+              0.75
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000104",
+      "Name": "Pillar 5",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            1.5,
+            10
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1.2,
+            3,
+            1.2
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.85,
+              0.6,
+              0.3
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.6
+          }
+        },
+        {
+          "Type": "BoxCollider",
+          "Size": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000201",
+      "Name": "Pawn 1",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            -2.0,
+            0.95,
+            -4
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "CharacterController",
+          "Radius": 0.4,
+          "Height": 1.8,
+          "MaxSpeed": 4.0,
+          "JumpHeight": 1.2
+        },
+        {
+          "Type": "NetIdentity"
+        },
+        {
+          "Type": "ScriptComponent",
+          "ScriptName": "NetPawn",
+          "ScriptFields": "{\"Slot\": 1, \"CameraName\": \"Main Camera\"}"
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000301",
+      "Name": "Pawn 1 Body",
+      "DestroyOnLoad": true,
+      "Parent": "4e74a0e0a0000201",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            0.7,
+            1.7,
+            0.7
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.25,
+              0.45,
+              0.9
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000401",
+      "Name": "Pawn 1 Nose",
+      "DestroyOnLoad": true,
+      "Parent": "4e74a0e0a0000201",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0.55,
+            0.45
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            0.25,
+            0.25,
+            0.4
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.95,
+              0.95,
+              0.95
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000202",
+      "Name": "Pawn 2",
+      "DestroyOnLoad": true,
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            2.0,
+            0.95,
+            -4
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "Type": "CharacterController",
+          "Radius": 0.4,
+          "Height": 1.8,
+          "MaxSpeed": 4.0,
+          "JumpHeight": 1.2
+        },
+        {
+          "Type": "NetIdentity"
+        },
+        {
+          "Type": "ScriptComponent",
+          "ScriptName": "NetPawn",
+          "ScriptFields": "{\"Slot\": 2, \"CameraName\": \"Main Camera\"}"
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000302",
+      "Name": "Pawn 2 Body",
+      "DestroyOnLoad": true,
+      "Parent": "4e74a0e0a0000202",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            0.7,
+            1.7,
+            0.7
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.95,
+              0.5,
+              0.2
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "GUID": "4e74a0e0a0000402",
+      "Name": "Pawn 2 Nose",
+      "DestroyOnLoad": true,
+      "Parent": "4e74a0e0a0000202",
+      "Components": [
+        {
+          "Type": "Transform",
+          "Position": [
+            0,
+            0.55,
+            0.45
+          ],
+          "Rotation": [
+            0,
+            0,
+            0
+          ],
+          "Scale": [
+            0.25,
+            0.25,
+            0.4
+          ]
+        },
+        {
+          "Type": "Mesh",
+          "MeshType": "Cube",
+          "Material": {
+            "Type": "StandardMaterial",
+            "DiffuseColor": [
+              0.95,
+              0.95,
+              0.95
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.4
+          }
+        }
+      ]
+    }
+  ]
+}

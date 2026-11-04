@@ -26,7 +26,8 @@
                             "Scale": 1.0,
                             "InvertY": false
                         }
-                    ]
+                    ],
+                    "Networked": true
                 },
                 {
                     "Name": "Look",
@@ -64,7 +65,8 @@
                             "Scale": 1.0,
                             "InvertY": false
                         }
-                    ]
+                    ],
+                    "Networked": true
                 },
                 {
                     "Name": "Sprint",
@@ -84,7 +86,8 @@
                             "Scale": 1.0,
                             "InvertY": false
                         }
-                    ]
+                    ],
+                    "Networked": true
                 },
                 {
                     "Name": "Dash",
