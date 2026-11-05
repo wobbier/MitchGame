@@ -33,35 +33,35 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 20 | Add visual scripting support | Backlog | Scripting / Editor | Engine |
 | 21 | Editor: generate terrain heights from noise | To Do | Terrain / Editor | Engine |
 | 22 | Terrain shader: patch-local tiling varyings | To Do | Terrain / Rendering | Engine |
-| 23 | Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize | To Do | Terrain / Rendering | Engine |
+| 23 | Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize | In Progress | Terrain / Rendering | Engine |
 | 24 | Terrain: merged per-terrain vertex/index buffers | To Do | Terrain / Rendering | Engine |
 | 25 | Terrain: one material per terrain | To Do | Terrain / Rendering | Engine |
 | 26 | Terrain: gate LOD selection and shadow caster bounds | To Do | Terrain / Rendering | Engine |
 | 27 | Physics: revision-gated body sync and move events | To Do | Physics | Engine |
-| 28 | Physics: allocation-free event routing and queries | To Do | Physics | Engine |
+| 28 | Physics: allocation-free event routing and queries | In Progress | Physics | Engine |
 | 29 | Physics: cheaper terrain collision cooks | To Do | Physics | Engine |
 | 30 | Playable two-pawn multiplayer sample | Done | Networking / Gameplay | Game |
-| 31 | Net: replicate prefab spawns from C# | To Do | Networking | Engine |
+| 31 | Net: replicate prefab spawns from C# | In Progress | Networking | Engine |
 | 32 | Net: C# session control | To Do | Networking / Scripting | Engine |
-| 33 | Net: RTT-sized snapshot history | To Do | Networking | Engine |
-| 34 | Net: oversize sends and reliable starvation | To Do | Networking | Engine |
+| 33 | Net: RTT-sized snapshot history | In Progress | Networking | Engine |
+| 34 | Net: oversize sends and reliable starvation | In Progress | Networking | Engine |
 | 35 | Net: reconnect path | To Do | Networking | Engine |
-| 36 | Editor lighting: probe key independent of the camera | To Do | Editor / Rendering | Engine |
+| 36 | Editor lighting: probe key independent of the camera | In Progress | Editor / Rendering | Engine |
 | 37 | Editor lighting: temporal pops on rotation | To Do | Editor / Rendering | Engine |
 | 38 | Havana: hierarchy, inspector and asset browser per-frame cost | To Do | Editor | Engine |
 | 39 | Havana: texture viewer widgets | To Do | Editor | Engine |
 | 40 | Particles: curves, mesh emitters, collision, vertex graphs | To Do | Rendering / VFX | Engine |
 | 41 | Engine owns its cores, renderer, window and scene | To Do | Engine / Memory | Engine |
-| 42 | Dementia::Buffer ownership | To Do | Dementia | Engine |
-| 43 | ScriptCore: cached per-phase run lists | To Do | Scripting | Engine |
+| 42 | Dementia::Buffer ownership | In Progress | Dementia | Engine |
+| 43 | ScriptCore: cached per-phase run lists | In Progress | Scripting | Engine |
 | 44 | ScriptCore: integer component ids and cheap wrappers | To Do | Scripting | Engine |
 | 45 | ScriptCore: pool-driven queries and batched callbacks | To Do | Scripting | Engine |
-| 46 | Editor crash: current camera destroyed | To Do | Editor | Engine |
-| 47 | Editor crash: pointer stability in CommandCache and scene streaming | To Do | Editor / Rendering | Engine |
+| 46 | Editor crash: current camera destroyed | In Progress | Editor | Engine |
+| 47 | Editor crash: pointer stability in CommandCache and scene streaming | In Progress | Editor / Rendering | Engine |
 | 48 | Audit the remaining 4K textures | To Do | Assets | Game |
 | 49 | Texture import: MaxSize setting | To Do | Assets / Engine | Engine |
-| 50 | Editor rewrites .meta sidecars without a trailing newline | To Do | Editor / Assets | Engine |
-| 51 | C# Camera.FieldOfView and CameraRigs write the dead Zoom field | To Do | Scripting / Rendering | Engine |
+| 50 | Editor rewrites .meta sidecars without a trailing newline | In Progress | Editor / Assets | Engine |
+| 51 | C# Camera.FieldOfView and CameraRigs write the dead Zoom field | In Progress | Scripting / Rendering | Engine |
 
 ## Columns
 
@@ -71,37 +71,36 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 ### To Do
 - 21 Editor: generate terrain heights from noise
 - 22 Terrain shader: patch-local tiling varyings
-- 23 Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize
 - 24 Terrain: merged per-terrain vertex/index buffers
 - 25 Terrain: one material per terrain
 - 26 Terrain: gate LOD selection and shadow caster bounds
 - 27 Physics: revision-gated body sync and move events
-- 28 Physics: allocation-free event routing and queries
 - 29 Physics: cheaper terrain collision cooks
-- 31 Net: replicate prefab spawns from C#
 - 32 Net: C# session control
-- 33 Net: RTT-sized snapshot history
-- 34 Net: oversize sends and reliable starvation
 - 35 Net: reconnect path
-- 36 Editor lighting: probe key independent of the camera
 - 37 Editor lighting: temporal pops on rotation
 - 38 Havana: hierarchy, inspector and asset browser per-frame cost
 - 39 Havana: texture viewer widgets
 - 40 Particles: curves, mesh emitters, collision, vertex graphs
 - 41 Engine owns its cores, renderer, window and scene
-- 42 Dementia::Buffer ownership
-- 43 ScriptCore: cached per-phase run lists
 - 44 ScriptCore: integer component ids and cheap wrappers
 - 45 ScriptCore: pool-driven queries and batched callbacks
-- 46 Editor crash: current camera destroyed
-- 47 Editor crash: pointer stability in CommandCache and scene streaming
 - 48 Audit the remaining 4K textures
 - 49 Texture import: MaxSize setting
-- 50 Editor rewrites .meta sidecars without a trailing newline
-- 51 C# Camera.FieldOfView and CameraRigs write the dead Zoom field
 
 ### In Progress
-- (none)
+- 23 Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize
+- 28 Physics: allocation-free event routing and queries
+- 31 Net: replicate prefab spawns from C#
+- 33 Net: RTT-sized snapshot history
+- 34 Net: oversize sends and reliable starvation
+- 36 Editor lighting: probe key independent of the camera
+- 42 Dementia::Buffer ownership
+- 43 ScriptCore: cached per-phase run lists
+- 46 Editor crash: current camera destroyed
+- 47 Editor crash: pointer stability in CommandCache and scene streaming
+- 50 Editor rewrites .meta sidecars without a trailing newline
+- 51 C# Camera.FieldOfView and CameraRigs write the dead Zoom field
 
 ### In Review
 - (none)
@@ -304,10 +303,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 23 · Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize
-- **Status:** To Do · **Area:** Terrain / Rendering · **Owner:** Engine
+- **Status:** In Progress · **Area:** Terrain / Rendering · **Owner:** Engine
 - **Description:** Per-mip interior in the derivative scale, aniso-aware LOD bias, cell size and max mip from TerrainTextureSet, guard 1/TileSize in RenderCore.cpp:343 (see #2).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine (branch engine-fixes in the submodule checkout, pushed to MitchEngine overhaul once verified): `RenderCore.cpp` divides by `max(TileSize, 0.01)`; `TerrainMaterial::Use` takes the atlas cell size and last mip from `TerrainTextureSet` instead of the hard-coded 512 / 7. The aniso-aware LOD bias and exact per-mip derivative scale are still open.
 - **Follow-ups:** —
 
 ### 24 · Terrain: merged per-terrain vertex/index buffers
@@ -339,10 +338,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 28 · Physics: allocation-free event routing and queries
-- **Status:** To Do · **Area:** Physics · **Owner:** Engine
+- **Status:** In Progress · **Area:** Physics · **Owner:** Engine
 - **Description:** Keep m_pendingEvents capacity, call listeners by reference, cache body depth; span/out-param RaycastAll and Overlap* with O(n log n) dedup (see #19).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `PhysicsCore` delivers collision events from a member buffer swapped back after delivery, so neither vector reallocates every fixed step. Listener-by-reference was deliberately not done (the copy protects against a callback unsubscribing and the listener vector rehashing); the O(n²) overlap dedup stays (result counts are tiny).
 - **Follow-ups:** —
 
 ### 29 · Physics: cheaper terrain collision cooks
@@ -360,10 +359,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 31 · Net: replicate prefab spawns from C#
-- **Status:** To Do · **Area:** Networking · **Owner:** Engine
+- **Status:** In Progress · **Area:** Networking · **Owner:** Engine
 - **Description:** Copy the entity's PrefabAsset into NetIdentity::Prefab at spawn and register NetIdentity as a C# component (see #9).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: a dynamic spawn whose `NetIdentity.Prefab` is empty takes the entity's `PrefabAsset` (what `World.Instantiate` / `CreateFromPrefab` recorded), so prefab spawns replicate as that prefab; `NetIdentity` is registered as a script component. Docs updated.
 - **Follow-ups:** —
 
 ### 32 · Net: C# session control
@@ -374,17 +373,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 33 · Net: RTT-sized snapshot history
-- **Status:** To Do · **Area:** Networking · **Owner:** Engine
+- **Status:** In Progress · **Area:** Networking · **Owner:** Engine
 - **Description:** Time-based snapshot history (≥ 2×RTT) or full-state fallback when the acked tick has left the 32-tick history (see #15).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: clients keep 128 decoded snapshots (`kReceivedHistory`) as delta baselines, the server its 32 sent (`kSentHistory`), so the baseline still exists when the server's delta arrives a round trip later (stall threshold moves from ~530 ms to ~2 s RTT at 60 Hz). Docs updated.
 - **Follow-ups:** —
 
 ### 34 · Net: oversize sends and reliable starvation
-- **Status:** To Do · **Area:** Networking · **Owner:** Engine
+- **Status:** In Progress · **Area:** Networking · **Owner:** Engine
 - **Description:** Log/assert when SendReliable/SendUnreliable fail in SendOn, cap [Predicted] state size in NetGenerator, reserve a per-packet byte floor for unreliable state (see #15).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `NetSession::SendOn` logs (once a second) a message it had to drop for exceeding 1024 bytes instead of failing silently; `NetConnection::SendPacket` reserves room in each packet for the largest unreliable message queued that tick, so Spawn bursts no longer starve snapshots and owner state. Docs updated. Capping `[Predicted]` state in NetGenerator is still open.
 - **Follow-ups:** —
 
 ### 35 · Net: reconnect path
@@ -395,10 +394,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 36 · Editor lighting: probe key independent of the camera
-- **Status:** To Do · **Area:** Editor / Rendering · **Owner:** Engine
+- **Status:** In Progress · **Area:** Editor / Rendering · **Owner:** Engine
 - **Description:** Drop or coarsen m_cameraKm in DynamicSky::GetEnvironmentKey, or keep one procedural probe per camera, so the editor and main cameras stop fighting over the single probe (see #4).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `DynamicSky` quantises the camera terms of the environment-probe key to 1 km of altitude and 4 km of travel (was 10 m / 250 m), so the editor and main cameras, which share the one procedural probe, stop recapturing it in turns while orbiting. Docs updated.
 - **Follow-ups:** —
 
 ### 37 · Editor lighting: temporal pops on rotation
@@ -437,17 +436,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 42 · Dementia::Buffer ownership
-- **Status:** To Do · **Area:** Dementia · **Owner:** Engine
+- **Status:** In Progress · **Area:** Dementia · **Owner:** Engine
 - **Description:** unique_ptr<uint8_t[]> storage, copy constructor deleted; remove or fix PlatformUtils::ReadBytes (see #11).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `Dementia::Buffer` owns its bytes through `unique_ptr<uint8_t[]>`, is move-only (copying shared the allocation and double freed on Release) and exposes `Data()`; the broken, unused `ScopedBuffer` is gone; `PlatformUtils::ReadBytes` updated.
 - **Follow-ups:** —
 
 ### 43 · ScriptCore: cached per-phase run lists
-- **Status:** To Do · **Area:** Scripting · **Owner:** Engine
+- **Status:** In Progress · **Area:** Scripting · **Owner:** Engine
 - **Description:** Keep one sorted run list per callback mask, invalidated on entity add/remove, enable/active changes and script reload instead of rebuilding and sorting every phase (see #14).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `ScriptCore` keeps one ordered script list, re-sorted only when a script joins, leaves or starts or the scripts reload; every fixed step, update and late update filters it without sorting or allocating.
 - **Follow-ups:** —
 
 ### 44 · ScriptCore: integer component ids and cheap wrappers
@@ -465,17 +464,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 46 · Editor crash: current camera destroyed
-- **Status:** To Do · **Area:** Editor · **Owner:** Engine
+- **Status:** In Progress · **Area:** Editor · **Owner:** Engine
 - **Description:** Reset Camera::CurrentCamera to DefaultCamera when a camera is destroyed; null-check EditorApp.cpp:249/256 and AssetPreviewWidget.cpp:94 (see #17).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `Camera::FallbackCamera` (CameraCore's default camera) replaces a destroyed current camera in `~Camera`; `CameraCore::OnEntityRemoved` hands a removed current camera back to the default one; the unguarded readers in `EditorApp.cpp` (environment camera, post settings), `AssetPreviewWidget.cpp` and `RmlUiCore.cpp` (camera cache lookup) are null-checked.
 - **Follow-ups:** —
 
 ### 47 · Editor crash: pointer stability in CommandCache and scene streaming
-- **Status:** To Do · **Area:** Editor / Rendering · **Owner:** Engine
+- **Status:** In Progress · **Area:** Editor / Rendering · **Owner:** Engine
 - **Description:** Address-stable CommandCache storage, null-check in CameraCore::OnEntityRemoved, index loop in SceneStreaming::Pump, iterate a copy of m_sortedCores in World::SyncEntity (see #17).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `CommandCache<T>` stores its commands in a `std::deque`, so the `CameraData*` / `MeshCommand*` pointers callers keep survive later pushes; `CameraCore::OnEntityRemoved` null-checks the cache slot. The `SceneStreaming::Pump` index loop and the `m_sortedCores` copy are still open.
 - **Follow-ups:** —
 
 ### 48 · Audit the remaining 4K textures
@@ -493,19 +492,18 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 50 · Editor rewrites .meta sidecars without a trailing newline
-- **Status:** To Do · **Area:** Editor / Assets · **Owner:** Engine
+- **Status:** In Progress · **Area:** Editor / Assets · **Owner:** Engine
 - **Description:** Opening a project in Havana rewrites unchanged sidecars (seen: Engine/Assets/Shaders/OutlineHull*.meta, Post/Outline.frag.meta, Assets/Terrain/Procedural.terrain.meta) with 4-space indentation and no final newline, dirtying the engine submodule and every game checkout. The metadata writer should keep the file byte-identical when nothing changed (and end with a newline).
 - **Findings:** —
-- **Work:** —
+- **Work:** Engine: `MetaBase::Save` writes sidecars with a trailing newline and treats a file that differs only by its final newline as unchanged, so opening a project no longer dirties checkouts.
 - **Follow-ups:** —
 
 ### 51 · C# Camera.FieldOfView and CameraRigs write the dead Zoom field
-- **Status:** To Do · **Area:** Scripting / Rendering · **Owner:** Engine
+- **Status:** In Progress · **Area:** Scripting / Rendering · **Owner:** Engine
 - **Description:** Camera::Zoom is a hidden legacy field nothing reads (the projection uses the private m_FOV, reflected as FieldOfView), yet ScriptCore's Camera.FieldOfView property, Kit/CameraRigs.cs and CameraRigFlows go through "Zoom"; many scenes still author "Zoom". Route the wrapper to FieldOfView and migrate Zoom on load (found by the review of #8, where the sprint FOV boost had no visible effect).
 - **Findings:** —
-- **Work:** —
-- **Follow-ups:** —
-
+- **Work:** Engine: C# `Camera.FieldOfView` and the `CameraBrain` rig read and write the reflected `FieldOfView` (the field the projection uses) instead of the dead `Zoom`. Scenes were left alone: 54 cameras (showcase references among them) author only `Zoom`, so migrating them on load would change their look and needs a separate decision. Game: `CameraRigTest.lvl` authors `FieldOfView` 55 and `CameraRigFlows` asserts it.
+- **Follow-ups:** - Decide whether to migrate `Zoom`-only cameras to `FieldOfView` on load (and refresh the showcase references), or keep the hidden field as a no-op forever.
 ## Changelog
 
 - 2026-11-04 · Board created from the imported issue list (20 issues).
@@ -524,3 +522,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · #5 closed: the particle system exists in the engine (customizable shaders via the Particle graph target, five emitter shapes); extensions tracked in #40.
 - 2026-11-04 · Adversarial review of the new code (41 agents, 18 candidates, 8 confirmed) fixed: sprint FOV wrote the dead Camera.Zoom (#51 opened for the engine side), initial yaw via Euler folding, NetPawn session events never subscribed outside the editor, NightLight reload resync, per-client Xvfb displays in the NetArena smoke, terrain in-quad tolerance, two ARCHITECTURE.md corrections; my scenes now author FieldOfView.
 - 2026-11-04 · Re-verified after the review fixes: CharacterFlows (3/3 play-mode tests), TerrainProceduralFlows (4/4) and the NetArena smoke all pass on a rebuilt editor.
+- 2026-11-05 · Engine push access granted: clone at /home/user/mitchengine (overhaul). First engine batch implemented in the submodule checkout: #23 (partial) #28 (partial) #31 #33 #34 #36 #42 #43 #46 #47 (partial) #50 #51; building and verifying.
