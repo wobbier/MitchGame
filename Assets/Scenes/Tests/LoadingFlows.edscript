@@ -1,6 +1,8 @@
 # Loading screens and splashes (PLAY-5): an async main-scene load shows the stock loading screen
 # with live progress over the old scene, then the new scene takes over; a splash shows and goes.
-#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/LoadingFlows.edscript
+#   ./.build/Editor_Debug/Havana --scene Assets/Scenes/Tests/OptionsTest.lvl --editor-exec Assets/Scenes/Tests/LoadingFlows.edscript --frame-time 0.016666
+# Frame-exact (--frame-time): the waits below count frames and assume 60 Hz; a slow software renderer
+# would otherwise blend past the mid-point / drop the splash before the asserts.
 wait-log UI/Options/Options.rml | 600
 wait 10
 

@@ -1,4 +1,6 @@
-# --scene Assets/Scenes/Tests/CameraRigTest.lvl
+# --scene Assets/Scenes/Tests/CameraRigTest.lvl --frame-time 0.016666
+# Frame-exact (--frame-time): the waits below count frames and assume 60 Hz; a slow software renderer
+# would otherwise blend past the mid-point / drop the splash before the asserts.
 # Camera rigs (GAME-1): the CameraBrain on Main Camera shows the highest-priority VirtualCamera.
 # Raising Close's priority blends to it over its 2 s BlendSeconds (position, aim and field of view);
 # lowering it again blends back.

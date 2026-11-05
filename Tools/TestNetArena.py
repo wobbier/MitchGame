@@ -61,7 +61,7 @@ def main():
     parser.add_argument("--wrapper", default="Engine/Tools/Headless.sh", help="command prefix for windowed processes")
     parser.add_argument("--frames", type=int, default=700, help="client frames before they leave")
     parser.add_argument("--host-timeout", type=float, default=300.0)
-    parser.add_argument("--client-timeout", type=float, default=600.0)
+    parser.add_argument("--client-timeout", type=float, default=1200.0, help="seconds a client may run (three software-rendered windows on a small machine are slow)")
     parser.add_argument("--net-args", default="", help="extra arguments for both sides, e.g. '--net-lag 40'")
     parser.add_argument("--out", default=".tmp/NetArena")
     args = parser.parse_args()
