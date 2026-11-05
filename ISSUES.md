@@ -12,24 +12,24 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | ID | Title | Status | Area | Owner |
 |---:|-------|--------|------|-------|
 | 1 | Implement terrain generation algorithm | Done | Terrain | Game |
-| 2 | Fix terrain rendering bugs | Blocked | Terrain / Rendering | Engine |
-| 3 | Optimize terrain LOD system | Blocked | Terrain / Rendering | Engine |
-| 4 | Fix editor lighting issues | Blocked | Editor / Rendering | Engine |
+| 2 | Fix terrain rendering bugs | To Do | Terrain / Rendering | Engine |
+| 3 | Optimize terrain LOD system | To Do | Terrain / Rendering | Engine |
+| 4 | Fix editor lighting issues | To Do | Editor / Rendering | Engine |
 | 5 | Implement particle system | Done | Rendering / VFX | Engine |
 | 6 | Optimize asset memory | Done | Assets | Game |
 | 7 | Add ECS unit tests | Done | ECS / Tests | Game + Engine |
 | 8 | Refactor camera system | Done | Gameplay / Camera | Game |
 | 9 | Add multiplayer networking | Done | Networking | Engine + Game |
 | 10 | Update documentation | Done | Docs | Game + Engine |
-| 11 | Fix Dementia module memory leaks | Blocked | Dementia | Engine |
-| 12 | Improve Havana editor UI responsiveness | Blocked | Editor | Engine |
-| 13 | Add new ImGUI widgets for tooling | Blocked | Editor | Engine |
-| 14 | Optimize ScriptCore scripting performance | Blocked | Scripting | Engine |
-| 15 | Enhance Player module networking | Blocked | Networking / Player | Engine |
+| 11 | Fix Dementia module memory leaks | To Do | Dementia | Engine |
+| 12 | Improve Havana editor UI responsiveness | To Do | Editor | Engine |
+| 13 | Add new ImGUI widgets for tooling | To Do | Editor | Engine |
+| 14 | Optimize ScriptCore scripting performance | To Do | Scripting | Engine |
+| 15 | Enhance Player module networking | To Do | Networking / Player | Engine |
 | 16 | Write comprehensive tests for terrain module | Done | Terrain / Tests | Game + Engine |
-| 17 | Fix editor crash on scene load | Blocked | Editor | Engine |
+| 17 | Fix editor crash on scene load | To Do | Editor | Engine |
 | 18 | Implement skybox system | Done | Rendering / Gameplay | Game + Engine |
-| 19 | Optimize collision detection | Blocked | Physics | Engine |
+| 19 | Optimize collision detection | To Do | Physics | Engine |
 | 20 | Add visual scripting support | Backlog | Scripting / Editor | Engine |
 | 21 | Editor: generate terrain heights from noise | To Do | Terrain / Editor | Engine |
 | 22 | Terrain shader: patch-local tiling varyings | To Do | Terrain / Rendering | Engine |
@@ -38,30 +38,30 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 | 25 | Terrain: one material per terrain | To Do | Terrain / Rendering | Engine |
 | 26 | Terrain: gate LOD selection and shadow caster bounds | To Do | Terrain / Rendering | Engine |
 | 27 | Physics: revision-gated body sync and move events | To Do | Physics | Engine |
-| 28 | Physics: allocation-free event routing and queries | In Progress | Physics | Engine |
+| 28 | Physics: allocation-free event routing and queries | Done | Physics | Engine |
 | 29 | Physics: cheaper terrain collision cooks | To Do | Physics | Engine |
 | 30 | Playable two-pawn multiplayer sample | Done | Networking / Gameplay | Game |
-| 31 | Net: replicate prefab spawns from C# | In Progress | Networking | Engine |
+| 31 | Net: replicate prefab spawns from C# | Done | Networking | Engine |
 | 32 | Net: C# session control | To Do | Networking / Scripting | Engine |
-| 33 | Net: RTT-sized snapshot history | In Progress | Networking | Engine |
-| 34 | Net: oversize sends and reliable starvation | In Progress | Networking | Engine |
+| 33 | Net: RTT-sized snapshot history | Done | Networking | Engine |
+| 34 | Net: oversize sends and reliable starvation | Done | Networking | Engine |
 | 35 | Net: reconnect path | To Do | Networking | Engine |
-| 36 | Editor lighting: probe key independent of the camera | In Progress | Editor / Rendering | Engine |
+| 36 | Editor lighting: probe key independent of the camera | Done | Editor / Rendering | Engine |
 | 37 | Editor lighting: temporal pops on rotation | To Do | Editor / Rendering | Engine |
 | 38 | Havana: hierarchy, inspector and asset browser per-frame cost | To Do | Editor | Engine |
 | 39 | Havana: texture viewer widgets | To Do | Editor | Engine |
 | 40 | Particles: curves, mesh emitters, collision, vertex graphs | To Do | Rendering / VFX | Engine |
 | 41 | Engine owns its cores, renderer, window and scene | To Do | Engine / Memory | Engine |
-| 42 | Dementia::Buffer ownership | In Progress | Dementia | Engine |
-| 43 | ScriptCore: cached per-phase run lists | In Progress | Scripting | Engine |
+| 42 | Dementia::Buffer ownership | Done | Dementia | Engine |
+| 43 | ScriptCore: cached per-phase run lists | Done | Scripting | Engine |
 | 44 | ScriptCore: integer component ids and cheap wrappers | To Do | Scripting | Engine |
 | 45 | ScriptCore: pool-driven queries and batched callbacks | To Do | Scripting | Engine |
-| 46 | Editor crash: current camera destroyed | In Progress | Editor | Engine |
-| 47 | Editor crash: pointer stability in CommandCache and scene streaming | In Progress | Editor / Rendering | Engine |
+| 46 | Editor crash: current camera destroyed | Done | Editor | Engine |
+| 47 | Editor crash: pointer stability in CommandCache and scene streaming | Done | Editor / Rendering | Engine |
 | 48 | Audit the remaining 4K textures | To Do | Assets | Game |
 | 49 | Texture import: MaxSize setting | To Do | Assets / Engine | Engine |
-| 50 | Editor rewrites .meta sidecars without a trailing newline | In Progress | Editor / Assets | Engine |
-| 51 | C# Camera.FieldOfView and CameraRigs write the dead Zoom field | In Progress | Scripting / Rendering | Engine |
+| 50 | Editor rewrites .meta sidecars without a trailing newline | Done | Editor / Assets | Engine |
+| 51 | C# Camera.FieldOfView and CameraRigs write the dead Zoom field | Done | Scripting / Rendering | Engine |
 
 ## Columns
 
@@ -69,6 +69,16 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 20 Add visual scripting support
 
 ### To Do
+- 2 Fix terrain rendering bugs
+- 3 Optimize terrain LOD system
+- 4 Fix editor lighting issues
+- 11 Fix Dementia module memory leaks
+- 12 Improve Havana editor UI responsiveness
+- 13 Add new ImGUI widgets for tooling
+- 14 Optimize ScriptCore scripting performance
+- 15 Enhance Player module networking
+- 17 Fix editor crash on scene load
+- 19 Optimize collision detection
 - 21 Editor: generate terrain heights from noise
 - 22 Terrain shader: patch-local tiling varyings
 - 24 Terrain: merged per-terrain vertex/index buffers
@@ -90,17 +100,6 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 
 ### In Progress
 - 23 Terrain atlas sampling: exact mip derivatives, aniso bias, guarded TileSize
-- 28 Physics: allocation-free event routing and queries
-- 31 Net: replicate prefab spawns from C#
-- 33 Net: RTT-sized snapshot history
-- 34 Net: oversize sends and reliable starvation
-- 36 Editor lighting: probe key independent of the camera
-- 42 Dementia::Buffer ownership
-- 43 ScriptCore: cached per-phase run lists
-- 46 Editor crash: current camera destroyed
-- 47 Editor crash: pointer stability in CommandCache and scene streaming
-- 50 Editor rewrites .meta sidecars without a trailing newline
-- 51 C# Camera.FieldOfView and CameraRigs write the dead Zoom field
 
 ### In Review
 - (none)
@@ -115,19 +114,21 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 10 Update documentation
 - 16 Write comprehensive tests for terrain module
 - 18 Implement skybox system
+- 28 Physics: allocation-free event routing and queries
 - 30 Playable two-pawn multiplayer sample
+- 31 Net: replicate prefab spawns from C#
+- 33 Net: RTT-sized snapshot history
+- 34 Net: oversize sends and reliable starvation
+- 36 Editor lighting: probe key independent of the camera
+- 42 Dementia::Buffer ownership
+- 43 ScriptCore: cached per-phase run lists
+- 46 Editor crash: current camera destroyed
+- 47 Editor crash: pointer stability in CommandCache and scene streaming
+- 50 Editor rewrites .meta sidecars without a trailing newline
+- 51 C# Camera.FieldOfView and CameraRigs write the dead Zoom field
 
 ### Blocked
-- 2 Fix terrain rendering bugs
-- 3 Optimize terrain LOD system
-- 4 Fix editor lighting issues
-- 11 Fix Dementia module memory leaks
-- 12 Improve Havana editor UI responsiveness
-- 13 Add new ImGUI widgets for tooling
-- 14 Optimize ScriptCore scripting performance
-- 15 Enhance Player module networking
-- 17 Fix editor crash on scene load
-- 19 Optimize collision detection
+- (none)
 
 ## Issues
 
@@ -138,7 +139,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Added `Tools/GenerateTerrain.py`: a pure-Python procedural generator writing version 1 terrain sources (manifest + Float32 `.thp` pages with the engine's FNV-1a checksums + `.meta`). Perlin gradient noise with a quintic fade, rotated-octave fBm, Musgrave ridged multifractal and domain warping; presets `hills`, `mountains`, `island`; heights are a pure function of the terrain-wide lattice so tiles agree on shared edges; HeightBase/HeightRange are derived so UInt16 cooks work; `--scene` writes a test scene. Generated `Assets/Terrain/Procedural.terrain` (2×2 tiles, 64 quads, 2 m spacing, seed 7) and `Assets/Scenes/Tests/TerrainProceduralTest.lvl` + `TerrainProceduralFlows.edscript`. **Verified:** 18 unit tests pass (`python3 -I -m unittest discover -s Tools/Tests`) and the editor flow passed in a headless Havana (editor_debug, lavapipe): the terrain loads as one entity, the three boxes come to rest on the noise surface in Play, save/reopen keeps the asset.
 - **Follow-ups:** - 21 (Engine): an in-editor "Generate from noise" tool on top of `Noise::Fbm2` / `Ridged2` so artists don't need the script.
 ### 2 · Fix terrain rendering bugs
-- **Status:** Blocked · **Area:** Terrain / Rendering · **Owner:** Engine
+- **Status:** To Do · **Area:** Terrain / Rendering · **Owner:** Engine
 - **Description:** Resolve issues with texture tiling on large terrain meshes.
 - **Findings:** Audited `Engine/Assets/Shaders/TerrainSurface.{vert,sh}`, `TerrainMaterial.cpp`, `TerrainTexturePacking.cpp`, `RenderCore.cpp`.
   - **Confirmed precision bug:** layer UVs come from `v_worldPos.xz - u_terrainOrigin.xy` (`TerrainSurface.sh:39-45`), both Float32 world values (`TerrainSurface.vert:9-18`; per-patch model = `glm::translate(world, Offset)` at `RenderCore.cpp:491`). At |X| ≈ 8 km the ULP is ~1 mm; with the default 4 m `TileSize` (`TerrainSurface.h:17`) one texel is ~8 mm, so UVs quantise to 1/8 texel (shimmer under camera motion); at `TileSize ≤ 1` or ≥ 30 km it reaches a whole texel. This is the "tiling on large terrains" bug.
@@ -150,7 +151,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 23 (Engine): exact per-mip derivative scale, aniso-aware LOD bias, cell/maxMip from `TerrainTextureSet`; guard `1.f / TileSize`.
 - Blocked here: this session has no push access to MitchEngine (add_repo denied), so engine fixes are tracked, not landed.
 ### 3 · Optimize terrain LOD system
-- **Status:** Blocked · **Area:** Terrain / Rendering · **Owner:** Engine
+- **Status:** To Do · **Area:** Terrain / Rendering · **Owner:** Engine
 - **Description:** Improve performance by reducing draw calls for terrain LOD.
 - **Findings:** Audited `RenderCore.cpp`, `Renderer.cpp`, `TerrainLod.cpp`, `ShadowCascades.cpp`, `TerrainMaterial.cpp`.
   - **One draw per patch per view; instancing is dead code.** Each patch has its own `MeshData` (own vertex buffer, `RenderCore.cpp:213-228`), its own material instance (`Mesh.cpp:59`) and weight texture; batches key on vertex buffer + `GetInstanceBatchKey`, which mixes in the per-patch weight texture handle (`TerrainMaterial.cpp:88`), so `SupportsInstancing = true` never merges anything. Every draw pays `Material::Use` (12 `std::pow` sRGB conversions, 5 uniform + 4 texture sets).
@@ -161,7 +162,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 25 (Engine): one material per terrain (weights as a texture array indexed by patch id) so the batch key is patch-independent.
 - 26 (Engine): gate `SelectTerrainLods` + the material loop on a hash of quantised view poses/translation/revision; member scratch buffers; exclude terrain from the cascade caster-bounds extension.
 ### 4 · Fix editor lighting issues
-- **Status:** Blocked · **Area:** Editor / Rendering · **Owner:** Engine
+- **Status:** To Do · **Area:** Editor / Rendering · **Owner:** Engine
 - **Description:** Resolve flickering in the editor's lighting preview when rotating the camera.
 - **Findings:** Frame order for the editor camera is sound: `EditorCameraController::Update` moves the camera, then `EditorApp::UpdateCameras` snapshots it, then culling, clusters, cascades and fog all read that snapshot (`EditorApp.cpp:203-279`, `Renderer.cpp:1750, 2224`). No one-frame lights-vs-view mismatch. **Most likely cause (high confidence): environment-probe ping-pong.** `DynamicSky::GetEnvironmentKey` hashes the current camera's altitude at 10 m (and x/z at 250 m with clouds, `DynamicSky.cpp:795-804`); in the editor both the editor camera and the main camera render each frame but `EnvironmentLighting::Prepare` keeps one probe for all procedural-sky cameras (`EnvironmentLighting.cpp:163-213`), so when the two cameras sit in different buckets the probe recaptures every two frames and IBL ambient/specular pops. Orbiting changes altitude, so "rotating" crosses buckets. Secondary: volumetric fog drops its history when the view turns > ~25° (`PostProcess.cpp:357-360`) and switches blur kernels; clusters are built from the TAA-jittered projection (`Renderer.cpp:1092-1113`); cascade depth extension isn't rounded (`ShadowCascades.cpp:72-80`).
 - **Work:** Findings written up; engine-side.
@@ -214,26 +215,26 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** - Keep `ARCHITECTURE.md` in step when cores/components are added (the module table) — a one-line rule for future PRs.
 - Engine: `Engine/Docs/Architecture.md` could gain a diagram of the engine-owned core order inside one frame (today a flowchart of stages, not of cores).
 ### 11 · Fix Dementia module memory leaks
-- **Status:** Blocked · **Area:** Dementia · **Owner:** Engine
+- **Status:** To Do · **Area:** Dementia · **Owner:** Engine
 - **Description:** Address memory leaks in the Dementia module's entity management system.
 - **Findings:** **Mismatch:** Dementia (`Modules/Dementia/`) has no entity management; the ECS is `Engine/Source/ECS/` + `World.cpp`. Both audited. Verified **not** leaking: `ResourceCache` (keep-alive eviction + `ReleaseAll`), `EventManager` (receivers deregister in `~EventReceiver`), `JobSystem` contexts, Meyers singletons, `World::AddCore` duplicates, `ComponentPool` pages (high-water mark by design), `Reflection` registry (intentional static). Real items: (1) **engine systems are never freed** — every engine core, the window, the renderer and `CurrentScene` are raw `new` in `Engine.cpp:395-488` and neither `~Engine` nor `Engine::Shutdown` (`:1185-1230`) deletes them (process-lifetime leak; what LSan/CRT reports show); (2) `Dementia::Buffer` (`Core/Buffer.h:9-37`) owns a raw pointer with a defaulted copy constructor, so `ScopedBuffer(const Buffer&)` double-frees or leaks; `PlatformUtils::ReadBytes` returns one nobody releases (dead API today).
 - **Work:** Findings written up; engine-side.
 - **Follow-ups:** - 41 (Engine): own the engine cores/renderer/window/`CurrentScene` with `unique_ptr`, released in `Shutdown` after `GameWorld.reset()`.
 - 42 (Engine): `Dementia::Buffer` on `unique_ptr<uint8_t[]>` with the copy constructor deleted; remove or fix `PlatformUtils::ReadBytes`.
 ### 12 · Improve Havana editor UI responsiveness
-- **Status:** Blocked · **Area:** Editor · **Owner:** Engine
+- **Status:** To Do · **Area:** Editor · **Owner:** Engine
 - **Description:** Optimize the editor's UI to reduce lag during scene editing.
 - **Findings:** Per-frame work that scales with scene size (`Modules/Havana/Source/`): the hierarchy draws every node with no `ImGuiListClipper` and copies child vectors per node (`SceneHierarchyWidget.cpp:270-328`); the filter re-lowercases names per node per frame (`:108-143`); two full `ForEachEntity` scans per frame (`:672-680`, `SceneViewWidget.cpp:1249`); `Selection::Contains` is a linear `std::find` per row (`Selection.cpp:138`); the inspector re-serializes every component of the selection to JSON on any input frame, i.e. throughout drags (`PropertiesWidget.cpp:558-585`), and builds string keys per component per frame (`:39`); the asset browser rescans `Assets/` on every search keystroke (`AssetBrowser.cpp:936-939`).
 - **Work:** Findings written up; engine-side.
 - **Follow-ups:** - 38 (Engine): cached flattened hierarchy rows + list clipper, lowercase-name cache, selection set, inspector snapshot only on edit begin, in-memory asset search.
 ### 13 · Add new ImGUI widgets for tooling
-- **Status:** Blocked · **Area:** Editor · **Owner:** Engine
+- **Status:** To Do · **Area:** Editor · **Owner:** Engine
 - **Description:** Create custom widgets for common editor tasks like texture adjustment.
 - **Findings:** Existing widgets: `HavanaUtils` (label/value layout, drag axes, editable vectors, colour/toggle buttons), `ImGuiTheme`, `CurveEditor`, reflection-driven field drawers (`ReflectionUI.cpp`), `AssetPreviewWidget` (a plain image + size). The texture inspector (`Texture.cpp:789+`) offers Type/Format/Quality combos, mips, Pixel Art and Make Sprite Sheet — no channel, mip, histogram, tiling or before/after view anywhere.
 - **Work:** Proposals written up (engine-side).
 - **Follow-ups:** - 39 (Engine): `HavanaUtils::TextureViewer` (zoom/pan, checkerboard alpha, channel isolate, mip slider) in `AssetPreviewWidget` and the import inspector; tiling preview; source-vs-cooked compare with PSNR; per-channel histogram; gradient/curve field drawers reusing `CurveEditor`.
 ### 14 · Optimize ScriptCore scripting performance
-- **Status:** Blocked · **Area:** Scripting · **Owner:** Engine
+- **Status:** To Do · **Area:** Scripting · **Owner:** Engine
 - **Description:** Reduce script execution time by 15% through caching.
 - **Findings:** Hot paths (`Source/Cores/Scripting/ScriptCore.cpp`, `Bindings/`, `Modules/ScriptCore/Source/`): (1) `RunList()` (`ScriptCore.cpp:239-266`) rebuilds and `std::sort`s the script run list for **every** phase — each fixed step, Update and LateUpdate; (2) every `Entity.GetComponent<T>()` / `Entity.Transform` / `Component.transform` does a string-keyed native `HasComponent` (`BindingContext.cpp:96-99`, temporary `std::string` + `std::function`) and allocates a new wrapper, so `transform.Position` in `OnUpdate` costs a lookup and a GC allocation per script per frame; (3) `World_FindAllWithComponent` scans all entities (`Query.bindings.cpp:73-83`) and `Query.Fill` may call native twice; (4) one managed transition + dictionary lookup + try/catch per script per phase (`Engine.cs:551-566`). No evidence of per-frame JSON, function-pointer re-resolution or runtime reflection. (1)+(2)+(4) plausibly reach the 15 % target in script-heavy scenes.
 - **Work:** Findings written up; engine-side.
@@ -241,7 +242,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 44 (Engine): integer component-type-id binding (`Entity_ResolveComponentType` once per `ComponentName<T>`, `Mask.test(id)` per call) and struct or cached C# component wrappers.
 - 45 (Engine): pool-driven `World_FindAllWithComponent`; batch `ScriptOnUpdate/FixedUpdate/LateUpdate` into one managed call per phase.
 ### 15 · Enhance Player module networking
-- **Status:** Blocked · **Area:** Networking / Player · **Owner:** Engine
+- **Status:** To Do · **Area:** Networking / Player · **Owner:** Engine
 - **Description:** Add support for more reliable client-server synchronization.
 - **Findings:** The Player module (`Modules/Player/Source/main.cpp`, 40 lines) has no networking of its own: the dedicated server is the engine's `NetLaunch` in the Server config, so the work is in `Engine/Source/Net`. Audit (ranked): (1) **Delta baseline eviction on high-RTT links** — both snapshot histories are 32 ticks (`NetReplication.cpp:15`); above ~530 ms RTT at 60 Hz the server's delta baseline has left the client's history, every snapshot fails `NetSnapshotCodec::Read` and sync stalls until a full state is resent (stall/burst cycle). (2) **No fragmentation, silent oversize drops** — `SendReliable/SendUnreliable` return false above 1024 B and `NetSession::SendOn` ignores it; `OwnerState` appends unbounded `[Predicted]` bytes, so a pawn with ~950+ predicted bytes never reconciles. (3) **Reliable traffic starves unreliable state** — a late joiner's Spawn burst fills packets for several ticks (`NetConnection.cpp:114-150`), and one reliable stream head-of-line blocks RPCs behind a lost Spawn. (4) **No reconnect/resume** — `NetClient::Connect` works once, a client past the 10 s timeout is dead for good; clients are keyed by address so a restart on the same port is dropped as duplicates until the stale entry times out. (5) Prediction stops reconciling silently beyond the 128-tick history. Found sound: duplicate/out-of-order handling, 16-bit sequence wrap, spawn/snapshot ordering, interpolation underflow, clock resync, RPC reliability.
 - **Work:** Findings and fixes written up; engine-side.
@@ -255,7 +256,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Work:** Generation: 18 unit tests in `Tools/Tests/test_generate_terrain.py` (noise properties, determinism, shared edges, format/checksum round trip, corruption detection, settings validation, scene output, CLI). Runtime: `Assets/Scripts/Tests/TerrainTests.cs`, four `[GameTest]`s on the procedural scene that raycast the physics terrain at five lattice points and one in-quad point and compare with the generator's exact Float32 heights (±2 cm), check the reflected component, and that boxes rest on the surface; `TerrainProceduralFlows.edscript` runs them. **Verified:** the flow passes in a headless editor_debug Havana with `GameTests: 4 passed, 0 failed` (the first run caught a sample point sitting under a physics box; moved).
 - **Follow-ups:** - Render-side coverage: a screenshot reference for `TerrainProceduralTest.lvl` once the look is final (then the Showcase regression can carry it).
 ### 17 · Fix editor crash on scene load
-- **Status:** Blocked · **Area:** Editor · **Owner:** Engine
+- **Status:** To Do · **Area:** Editor · **Owner:** Engine
 - **Description:** Resolve segmentation fault when loading large scenes in Havana editor.
 - **Findings:** Ranked segfault candidates: (1) **`Camera::CurrentCamera` null deref** — `~Camera` nulls it (`Camera.cpp:81-85`) and only `CameraCore::Init` (which runs *before* `World::Unload`) or a new camera's `Init` repopulates it; `EditorApp.cpp:249/256` and `AssetPreviewWidget.cpp:94` deref it every editor frame, so destroying the current camera outside `LoadSceneInternal` (deleting the camera entity, unloading an additive scene, a camera that fails to deserialize) crashes next frame. (2) `CommandCache<T>::Get` returns pointers into a reallocating `std::vector` (`CommandCache.h:31-82`); every camera/mesh push can move all `CameraData*` / `MeshCommand*` — bigger scenes, more pushes; `CameraCore::OnEntityRemoved` also derefs `camData->Buffer` unchecked. (3) `SceneStreaming::Pump` holds an `Entry&` across instantiation while `m_scenes.push_back` can reallocate (`SceneStreaming.cpp:123-150`). (4) `World::SyncEntity` iterates `m_sortedCores` while `OnEntityAdded → AddCore → SortCores` can clear it. Verified safe: paged address-stable component storage, deque entity records, flat (non-recursive) scene deserialization, queued scene loads.
 - **Work:** Findings written up; engine-side.
@@ -269,7 +270,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** - Weather could also drive the `PostProcess` fog density and an `AudioSource` (rain/wind) through the same presets.
 - Engine: expose `ProceduralSkySettings` as a typed C# wrapper instead of field paths.
 ### 19 · Optimize collision detection
-- **Status:** Blocked · **Area:** Physics · **Owner:** Engine
+- **Status:** To Do · **Area:** Physics · **Owner:** Engine
 - **Description:** Reduce physics calculation time by 25% for complex object interactions.
 - **Findings:** Audited `PhysicsCore.cpp`, `CollisionRouter.cpp`, `TerrainCollisionCook.cpp`.
   - **Full passes every fixed step regardless of sleep:** `SyncBodies` (`PhysicsCore.cpp:761-921`) walks every entity (6 `TryGetComponent` each), builds two `unordered_map`s + a vector per owner, sorts, and recomputes `ComputeShapeSignature` for every body; `FixedUpdate` then loops all bodies twice and `WritePoses` (`:1479-1530`) allocates, walks parent chains for depth and `stable_sort`s each step (up to 8 steps/frame). Box3D's `b3Body_IsAwake` / `b3World_GetBodyEvents` are unused by the core.
@@ -306,7 +307,7 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Status:** In Progress · **Area:** Terrain / Rendering · **Owner:** Engine
 - **Description:** Per-mip interior in the derivative scale, aniso-aware LOD bias, cell size and max mip from TerrainTextureSet, guard 1/TileSize in RenderCore.cpp:343 (see #2).
 - **Findings:** —
-- **Work:** Engine (branch engine-fixes in the submodule checkout, pushed to MitchEngine overhaul once verified): `RenderCore.cpp` divides by `max(TileSize, 0.01)`; `TerrainMaterial::Use` takes the atlas cell size and last mip from `TerrainTextureSet` instead of the hard-coded 512 / 7. The aniso-aware LOD bias and exact per-mip derivative scale are still open.
+- **Work:** Engine (landed): `RenderCore.cpp` divides by `max(TileSize, 0.01)` and `TerrainMaterial::Use` takes the atlas cell size and last mip from `TerrainTextureSet`. Still open: the exact per-mip derivative scale and an aniso-aware LOD bias in `TerrainSurface.sh`. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 24 · Terrain: merged per-terrain vertex/index buffers
@@ -338,10 +339,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 28 · Physics: allocation-free event routing and queries
-- **Status:** In Progress · **Area:** Physics · **Owner:** Engine
+- **Status:** Done · **Area:** Physics · **Owner:** Engine
 - **Description:** Keep m_pendingEvents capacity, call listeners by reference, cache body depth; span/out-param RaycastAll and Overlap* with O(n log n) dedup (see #19).
 - **Findings:** —
-- **Work:** Engine: `PhysicsCore` delivers collision events from a member buffer swapped back after delivery, so neither vector reallocates every fixed step. Listener-by-reference was deliberately not done (the copy protects against a callback unsubscribing and the listener vector rehashing); the O(n²) overlap dedup stays (result counts are tiny).
+- **Work:** Engine: collision events are delivered from a member buffer swapped back after delivery, so neither vector reallocates every fixed step. Deliberately not done: calling listeners by reference (the copy guards against a callback unsubscribing while the listener vector rehashes) and replacing the overlap dedup (result counts are tiny). **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 29 · Physics: cheaper terrain collision cooks
@@ -359,10 +360,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 31 · Net: replicate prefab spawns from C#
-- **Status:** In Progress · **Area:** Networking · **Owner:** Engine
+- **Status:** Done · **Area:** Networking · **Owner:** Engine
 - **Description:** Copy the entity's PrefabAsset into NetIdentity::Prefab at spawn and register NetIdentity as a C# component (see #9).
 - **Findings:** —
-- **Work:** Engine: a dynamic spawn whose `NetIdentity.Prefab` is empty takes the entity's `PrefabAsset` (what `World.Instantiate` / `CreateFromPrefab` recorded), so prefab spawns replicate as that prefab; `NetIdentity` is registered as a script component. Docs updated.
+- **Work:** Engine: a dynamic spawn whose `NetIdentity.Prefab` is empty takes the entity's `PrefabAsset`, so prefab spawns replicate as that prefab; `NetIdentity` is registered as a script component; Networking.md updated. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 32 · Net: C# session control
@@ -373,17 +374,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 33 · Net: RTT-sized snapshot history
-- **Status:** In Progress · **Area:** Networking · **Owner:** Engine
+- **Status:** Done · **Area:** Networking · **Owner:** Engine
 - **Description:** Time-based snapshot history (≥ 2×RTT) or full-state fallback when the acked tick has left the 32-tick history (see #15).
 - **Findings:** —
-- **Work:** Engine: clients keep 128 decoded snapshots (`kReceivedHistory`) as delta baselines, the server its 32 sent (`kSentHistory`), so the baseline still exists when the server's delta arrives a round trip later (stall threshold moves from ~530 ms to ~2 s RTT at 60 Hz). Docs updated.
+- **Work:** Engine: both snapshot histories are 128 ticks (`kSentHistory` / `kReceivedHistory`): a delta's baseline is acked half a round trip after it was sent and the delta lands another half later, so both sides must outlast a round trip; beyond ~2 s RTT at 60 Hz the server falls back to full state (no stall). Review corrected my first version, which raised only the client side. Docs updated. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 34 · Net: oversize sends and reliable starvation
-- **Status:** In Progress · **Area:** Networking · **Owner:** Engine
+- **Status:** Done · **Area:** Networking · **Owner:** Engine
 - **Description:** Log/assert when SendReliable/SendUnreliable fail in SendOn, cap [Predicted] state size in NetGenerator, reserve a per-packet byte floor for unreliable state (see #15).
 - **Findings:** —
-- **Work:** Engine: `NetSession::SendOn` logs (once a second) a message it had to drop for exceeding 1024 bytes instead of failing silently; `NetConnection::SendPacket` reserves room in each packet for the largest unreliable message queued that tick, so Spawn bursts no longer starve snapshots and owner state. Docs updated. Capping `[Predicted]` state in NetGenerator is still open.
+- **Work:** Engine: `NetSession::SendOn` logs (once a second) any message dropped for exceeding 1024 bytes; `NetConnection::SendPacket` reserves room for the largest unreliable message queued that tick, except for the first reliable message of a packet, so the reliable head always advances (the review caught that an unconditional reservation could deadlock RPCs behind a big snapshot). Docs updated. Capping `[Predicted]` state in NetGenerator stays open. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 35 · Net: reconnect path
@@ -394,10 +395,10 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 36 · Editor lighting: probe key independent of the camera
-- **Status:** In Progress · **Area:** Editor / Rendering · **Owner:** Engine
+- **Status:** Done · **Area:** Editor / Rendering · **Owner:** Engine
 - **Description:** Drop or coarsen m_cameraKm in DynamicSky::GetEnvironmentKey, or keep one procedural probe per camera, so the editor and main cameras stop fighting over the single probe (see #4).
 - **Findings:** —
-- **Work:** Engine: `DynamicSky` quantises the camera terms of the environment-probe key to 1 km of altitude and 4 km of travel (was 10 m / 250 m), so the editor and main cameras, which share the one procedural probe, stop recapturing it in turns while orbiting. Docs updated.
+- **Work:** Engine: the environment-probe key quantises the camera to 1 km of altitude and 4 km of travel (was 10 m / 250 m), so the editor and main cameras stop recapturing the shared procedural probe in turns. Rendering-Pipeline.md updated. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 37 · Editor lighting: temporal pops on rotation
@@ -436,17 +437,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 42 · Dementia::Buffer ownership
-- **Status:** In Progress · **Area:** Dementia · **Owner:** Engine
+- **Status:** Done · **Area:** Dementia · **Owner:** Engine
 - **Description:** unique_ptr<uint8_t[]> storage, copy constructor deleted; remove or fix PlatformUtils::ReadBytes (see #11).
 - **Findings:** —
-- **Work:** Engine: `Dementia::Buffer` owns its bytes through `unique_ptr<uint8_t[]>`, is move-only (copying shared the allocation and double freed on Release) and exposes `Data()`; the broken, unused `ScopedBuffer` is gone; `PlatformUtils::ReadBytes` updated.
+- **Work:** Engine: `Dementia::Buffer` owns its bytes through `unique_ptr<uint8_t[]>`, is move-only and exposes `Data()`; the double-freeing `ScopedBuffer` is gone; `PlatformUtils::ReadBytes` updated. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 43 · ScriptCore: cached per-phase run lists
-- **Status:** In Progress · **Area:** Scripting · **Owner:** Engine
+- **Status:** Done · **Area:** Scripting · **Owner:** Engine
 - **Description:** Keep one sorted run list per callback mask, invalidated on entity add/remove, enable/active changes and script reload instead of rebuilding and sorting every phase (see #14).
 - **Findings:** —
-- **Work:** Engine: `ScriptCore` keeps one ordered script list, re-sorted only when a script joins, leaves or starts or the scripts reload; every fixed step, update and late update filters it without sorting or allocating.
+- **Work:** Engine: `ScriptCore` keeps one ordered script list, re-sorted only when a script joins, leaves or starts or the scripts reload; each fixed step, update and late update filters it without sorting or allocating. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 44 · ScriptCore: integer component ids and cheap wrappers
@@ -464,17 +465,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 46 · Editor crash: current camera destroyed
-- **Status:** In Progress · **Area:** Editor · **Owner:** Engine
+- **Status:** Done · **Area:** Editor · **Owner:** Engine
 - **Description:** Reset Camera::CurrentCamera to DefaultCamera when a camera is destroyed; null-check EditorApp.cpp:249/256 and AssetPreviewWidget.cpp:94 (see #17).
 - **Findings:** —
-- **Work:** Engine: `Camera::FallbackCamera` (CameraCore's default camera) replaces a destroyed current camera in `~Camera`; `CameraCore::OnEntityRemoved` hands a removed current camera back to the default one; the unguarded readers in `EditorApp.cpp` (environment camera, post settings), `AssetPreviewWidget.cpp` and `RmlUiCore.cpp` (camera cache lookup) are null-checked.
+- **Work:** Engine: `Camera::FallbackCamera` (CameraCore's default camera) replaces a destroyed current camera; a removed current camera hands the screen back to the default; the unguarded readers in `EditorApp`, `AssetPreviewWidget` and `RmlUiCore` are null-checked. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 47 · Editor crash: pointer stability in CommandCache and scene streaming
-- **Status:** In Progress · **Area:** Editor / Rendering · **Owner:** Engine
+- **Status:** Done · **Area:** Editor / Rendering · **Owner:** Engine
 - **Description:** Address-stable CommandCache storage, null-check in CameraCore::OnEntityRemoved, index loop in SceneStreaming::Pump, iterate a copy of m_sortedCores in World::SyncEntity (see #17).
 - **Findings:** —
-- **Work:** Engine: `CommandCache<T>` stores its commands in a `std::deque`, so the `CameraData*` / `MeshCommand*` pointers callers keep survive later pushes; `CameraCore::OnEntityRemoved` null-checks the cache slot. The `SceneStreaming::Pump` index loop and the `m_sortedCores` copy are still open.
+- **Work:** Engine: `CommandCache<T>` stores commands in a deque so the pointers callers keep survive later pushes; `CameraCore::OnEntityRemoved` null-checks its slot; `SceneStreaming` keeps entries in a deque and unloads by iterator (a load that queues another load no longer moves the entry under it; the review caught a leftover `data()` call); `World::SyncEntity` iterates a copy of the core list. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 48 · Audit the remaining 4K textures
@@ -492,17 +493,17 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - **Follow-ups:** —
 
 ### 50 · Editor rewrites .meta sidecars without a trailing newline
-- **Status:** In Progress · **Area:** Editor / Assets · **Owner:** Engine
+- **Status:** Done · **Area:** Editor / Assets · **Owner:** Engine
 - **Description:** Opening a project in Havana rewrites unchanged sidecars (seen: Engine/Assets/Shaders/OutlineHull*.meta, Post/Outline.frag.meta, Assets/Terrain/Procedural.terrain.meta) with 4-space indentation and no final newline, dirtying the engine submodule and every game checkout. The metadata writer should keep the file byte-identical when nothing changed (and end with a newline).
 - **Findings:** —
-- **Work:** Engine: `MetaBase::Save` writes sidecars with a trailing newline and treats a file that differs only by its final newline as unchanged, so opening a project no longer dirties checkouts.
+- **Work:** Engine: `MetaBase::Save` writes sidecars with a trailing newline and treats a file differing only by its final newline as unchanged, so opening a project no longer dirties checkouts. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** —
 
 ### 51 · C# Camera.FieldOfView and CameraRigs write the dead Zoom field
-- **Status:** In Progress · **Area:** Scripting / Rendering · **Owner:** Engine
+- **Status:** Done · **Area:** Scripting / Rendering · **Owner:** Engine
 - **Description:** Camera::Zoom is a hidden legacy field nothing reads (the projection uses the private m_FOV, reflected as FieldOfView), yet ScriptCore's Camera.FieldOfView property, Kit/CameraRigs.cs and CameraRigFlows go through "Zoom"; many scenes still author "Zoom". Route the wrapper to FieldOfView and migrate Zoom on load (found by the review of #8, where the sprint FOV boost had no visible effect).
 - **Findings:** —
-- **Work:** Engine: C# `Camera.FieldOfView` and the `CameraBrain` rig read and write the reflected `FieldOfView` (the field the projection uses) instead of the dead `Zoom`. Scenes were left alone: 54 cameras (showcase references among them) author only `Zoom`, so migrating them on load would change their look and needs a separate decision. Game: `CameraRigTest.lvl` authors `FieldOfView` 55 and `CameraRigFlows` asserts it.
+- **Work:** Engine: C# `Camera.FieldOfView` and the `CameraBrain` rig read and write the reflected `FieldOfView`; API reference regenerated. Scenes are untouched (54 cameras author only `Zoom`; migrating them would change their look). Game: `CameraRigTest.lvl` and `ApiTest.lvl` author `FieldOfView` so their flows read the live field. **Verified** on the final engine state: Havana, the game and MitchEngine_Tests build; 599/599 unit tests; the editor flows (CameraRig, Api, Ecs, Character, DayNight, TerrainProcedural, TerrainLod, TerrainPaint, Editor, TreeEditor, Loading, Async, Simulate, Physics, Physics2D, SceneView, Sequence, Prefab, ModelHierarchy) pass; all 22 showcase captures 0.00 % changed; NetArena smoke passes. Landed on MitchEngine `overhaul`.
 - **Follow-ups:** - Decide whether to migrate `Zoom`-only cameras to `FieldOfView` on load (and refresh the showcase references), or keep the hidden field as a no-op forever.
 ## Changelog
 
@@ -524,3 +525,4 @@ Follow-ups and newly found bugs get their own IDs (21+) at the bottom. Keep the 
 - 2026-11-04 · Re-verified after the review fixes: CharacterFlows (3/3 play-mode tests), TerrainProceduralFlows (4/4) and the NetArena smoke all pass on a rebuilt editor.
 - 2026-11-05 · Engine push access granted: clone at /home/user/mitchengine (overhaul). First engine batch implemented in the submodule checkout: #23 (partial) #28 (partial) #31 #33 #34 #36 #42 #43 #46 #47 (partial) #50 #51; building and verifying.
 - 2026-11-05 · Engine batch reviewed adversarially (22 agents): fixed a CRLF rewrite in the terrain commit, the reliable-stream head now bypasses the packet reservation, both snapshot histories 128; game: ApiTest authors FieldOfView (its flow expects fov 55).
+- 2026-11-05 · Engine access granted; the first engine batch landed on MitchEngine overhaul (c93c813 → 038f76b: 11 commits) after two adversarial reviews (26 agents; 5 confirmed findings fixed) and a full verification pass. #28 #31 #33 #34 #36 #42 #43 #46 #47 #50 #51 → Done; #23 partially landed. The engine-owned parents (#2 #3 #4 #11 #12 #13 #14 #15 #17 #19) move from Blocked to To Do now that engine pushes are possible.
